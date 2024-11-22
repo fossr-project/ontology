@@ -1,0 +1,86 @@
+@prefix : <http://www.semanticweb.org/sara/ontologies/2024/10/SemasOntology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/sara/ontologies/2024/10/SemasOntology/> .
+
+<http://www.semanticweb.org/sara/ontologies/2024/10/SemasOntology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#hasBelief
+<http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#hasBelief> rdf:type owl:ObjectProperty ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Agent> ;
+                                                                                    rdfs:range <http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Belief> .
+
+
+###  http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#hasDesire
+<http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#hasDesire> rdf:type owl:ObjectProperty ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Agent> ;
+                                                                                    rdfs:range <http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Desire> .
+
+
+###  http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#hasIntention
+<http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#hasIntention> rdf:type owl:ObjectProperty ;
+                                                                                       rdfs:domain <http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Agent> ;
+                                                                                       rdfs:range <http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Intention> .
+
+
+###  http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#objectBelif
+<http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#objectBelif> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:domain <http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Belief> ;
+                                                                                      rdfs:range <http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Object> .
+
+
+###  http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#subjectBelief
+<http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#subjectBelief> rdf:type owl:ObjectProperty ;
+                                                                                        rdfs:domain <http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Belief> ;
+                                                                                        rdfs:range <http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Subject> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#nameBelief
+<http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#nameBelief> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Agent
+<http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Agent> rdf:type owl:Class ;
+                                                                                rdfs:comment "Represents the agent in the BDI model." .
+
+
+###  http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Belief
+<http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Belief> rdf:type owl:Class ;
+                                                                                 rdfs:comment "Represents the beliefs of an agent about the environment or internal states." .
+
+
+###  http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Desire
+<http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Desire> rdf:type owl:Class ;
+                                                                                 rdfs:comment "Represents the goals or objectives an agent wants to achieve." .
+
+
+###  http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Intention
+<http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Intention> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Object
+<http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Object> rdf:type owl:Class ;
+                                                                                 rdfs:comment "Object of the Triple OWL imported in SEMAS. It is an element of a Belief" .
+
+
+###  http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Subject
+<http://www.semanticweb.org/sara/ontologies/2024/10/untitled-ontology-19#Subject> rdf:type owl:Class ;
+                                                                                  rdfs:comment "Subject of the Triple OWL imported in SEMAS. It is an element of a Belief" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
