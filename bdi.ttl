@@ -1,0 +1,228 @@
+@prefix : <https://w3id.org/fossr/bdi/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/fossr/bdi/> .
+
+<https://w3id.org/fossr/bdi/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/fossr/bdi/hasBelief
+:hasBelief rdf:type owl:ObjectProperty ;
+           rdfs:domain :Agent ;
+           rdfs:range :Belief .
+
+
+###  https://w3id.org/fossr/bdi/hasDesire
+:hasDesire rdf:type owl:ObjectProperty ;
+           rdfs:domain :Agent ;
+           rdfs:range :Desire .
+
+
+###  https://w3id.org/fossr/bdi/hasIntention
+:hasIntention rdf:type owl:ObjectProperty ;
+              rdfs:domain :Agent ;
+              rdfs:range :Intention .
+
+
+###  https://w3id.org/fossr/bdi/hasMentalState
+:hasMentalState rdf:type owl:ObjectProperty ;
+                owl:inverseOf :isMentalStateOf ;
+                rdfs:domain :Agent ;
+                rdfs:range :MentalState .
+
+
+###  https://w3id.org/fossr/bdi/hasTime
+:hasTime rdf:type owl:ObjectProperty ;
+         rdfs:domain owl:Thing ;
+         rdfs:range :TimeEntity ;
+         rdfs:comment "The property that allows to add a temporal dimension to any possible entity in the domain of interest that might have a temporal extension."@en ;
+         rdfs:isDefinedBy <https://w3id.org/fossr/bdi/> ;
+         rdfs:label "has time"@en .
+
+
+###  https://w3id.org/fossr/bdi/isMentalStateOf
+:isMentalStateOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain :MentalState ;
+                 rdfs:range :Agent ;
+                 rdfs:comment "The relation that associates a Mental State with an Agent having such a mental state."@en ;
+                 rdfs:isDefinedBy <https://w3id.org/fossr/bdi/> ;
+                 rdfs:label "is mental state of" .
+
+
+###  https://w3id.org/fossr/bdi/objectBelif
+:objectBelif rdf:type owl:ObjectProperty ;
+             rdfs:domain :Belief ;
+             rdfs:range :Object .
+
+
+###  https://w3id.org/fossr/bdi/subjectBelief
+:subjectBelief rdf:type owl:ObjectProperty ;
+               rdfs:domain :Belief ;
+               rdfs:range :Subject .
+
+
+###  https://w3id.org/fossr/bdi//leadsToDesire
+<https://w3id.org/fossr/bdi//leadsToDesire> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            rdfs:domain :Belief ;
+                                            rdfs:range :Desire ;
+                                            rdfs:comment "A Belief creates a desire" .
+
+
+###  https://w3id.org/fossr/bdi//transformsIntoIntention
+<https://w3id.org/fossr/bdi//transformsIntoIntention> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                      rdfs:domain :Desire ;
+                                                      rdfs:range :Intention ;
+                                                      rdfs:comment "A desire becomes an intention." .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/fossr/bdi/nameBelief
+:nameBelief rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Belief ;
+            rdfs:range rdfs:Literal ;
+            rdfs:comment "belief description" .
+
+
+###  https://w3id.org/fossr/bdi//hasBeliefEndTime
+<https://w3id.org/fossr/bdi//hasBeliefEndTime> rdf:type owl:DatatypeProperty ;
+                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                               rdfs:domain :Belief ;
+                                               rdfs:comment "when a belief  finish to exixt" .
+
+
+###  https://w3id.org/fossr/bdi//hasBeliefStartTime
+<https://w3id.org/fossr/bdi//hasBeliefStartTime> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                 rdfs:domain :Belief ;
+                                                 rdfs:label "when a belief start" .
+
+
+###  https://w3id.org/fossr/bdi//hasMentalStateEndTime
+<https://w3id.org/fossr/bdi//hasMentalStateEndTime> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                                    rdfs:comment "when a mental state finish to exist" .
+
+
+###  https://w3id.org/fossr/bdi//hasMentalStateProbability
+<https://w3id.org/fossr/bdi//hasMentalStateProbability> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                                        rdfs:domain :MentalState ;
+                                                        rdfs:range xsd:float ;
+                                                        rdfs:comment "Probability of a Mental State" .
+
+
+###  https://w3id.org/fossr/bdi//hasMentalStateStartTime
+<https://w3id.org/fossr/bdi//hasMentalStateStartTime> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                                      rdfs:domain :MentalState ;
+                                                      rdfs:comment "When a mental state start" .
+
+
+###  https://w3id.org/fossr/bdi//isBeliefActive
+<https://w3id.org/fossr/bdi//isBeliefActive> rdf:type owl:DatatypeProperty ;
+                                             rdfs:subPropertyOf owl:topDataProperty ;
+                                             rdfs:domain :Belief ;
+                                             rdfs:range xsd:boolean ;
+                                             rdfs:label "if a belief is active then the value is true" .
+
+
+###  https://w3id.org/fossr/bdi//isMentalStateActive
+<https://w3id.org/fossr/bdi//isMentalStateActive> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                  rdfs:domain :MentalState ;
+                                                  rdfs:range xsd:boolean ;
+                                                  rdfs:comment "If a Mental State is active the value is True" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/fossr/bdi/Agent
+:Agent rdf:type owl:Class ;
+       owl:disjointWith :MentalState ;
+       rdfs:comment "Represents the agent in the BDI model." .
+
+
+###  https://w3id.org/fossr/bdi/Belief
+:Belief rdf:type owl:Class ;
+        rdfs:subClassOf :MentalState ;
+        rdfs:comment "Represents the beliefs of an agent about the environment or internal states." .
+
+
+###  https://w3id.org/fossr/bdi/Desire
+:Desire rdf:type owl:Class ;
+        rdfs:subClassOf :MentalState ;
+        rdfs:comment "Represents the goals or objectives an agent wants to achieve." .
+
+
+###  https://w3id.org/fossr/bdi/GoalAchieved
+:GoalAchieved rdf:type owl:Class ;
+              rdfs:subClassOf :Desire ;
+              rdfs:comment "Goal achivied" .
+
+
+###  https://w3id.org/fossr/bdi/Intention
+:Intention rdf:type owl:Class ;
+           rdfs:subClassOf :MentalState ;
+           rdfs:comment "An agent has intentions" .
+
+
+###  https://w3id.org/fossr/bdi/MentalState
+:MentalState rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasTime ;
+                               owl:someValuesFrom :TimeEntity
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isMentalStateOf ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Agent
+                             ] .
+
+
+###  https://w3id.org/fossr/bdi/Object
+:Object rdf:type owl:Class ;
+        rdfs:comment "Object of the Triple OWL imported in SEMAS. It is an element of a Belief" .
+
+
+###  https://w3id.org/fossr/bdi/Subject
+:Subject rdf:type owl:Class ;
+         rdfs:comment "Subject of the Triple OWL imported in SEMAS. It is an element of a Belief" .
+
+
+###  https://w3id.org/fossr/bdi/TimeEntity
+:TimeEntity rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/fossr/bdi/ag1
+:ag1 rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/fossr/bdi/ag2
+:ag2 rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/fossr/bdi/ms
+:ms rdf:type owl:NamedIndividual ,
+             :MentalState ;
+    :isMentalStateOf :ag1 ,
+                     :ag2 .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
