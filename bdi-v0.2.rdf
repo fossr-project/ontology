@@ -1,0 +1,597 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/fossr/bdi/"
+     xml:base="https://w3id.org/fossr/bdi/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://w3id.org/fossr/bdi/">
+        <owl:versionIRI rdf:resource="https://w3id.org/fossr/bdi/0.1/"/>
+        <rdfs:comment xml:lang="en">The BDI Ontology provides a formal framework to model the Belief-Desire-Intention (BDI) architecture for rational agents. It defines key mental states—Beliefs, Desires, and Intentions—and their relationships, capturing the agent’s reasoning, motivation, and commitment to action. Supporting classes include Propositions (content of mental states), Justifications (rationale for mental states), Plans (action sequences for goals), and TimeIntervals (temporal validity of entities).
+
+Key properties like hasBelief, hasDesire, and hasIntention link agents to mental states, while fulfills, adoptsIntention, and motivatesDesire model dynamic interactions. Temporal properties enable reasoning about time-sensitive states and plans. Axioms ensure consistency, such as disjointness between mental states and domain-specific constraints.
+
+This ontology supports reasoning, querying, and analysis of agent behaviour, enabling applications in AI, multi-agent systems, and decision support.</rdfs:comment>
+        <rdfs:label xml:lang="en">Belief-Desire-Intention Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/adoptsIntention -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/adoptsIntention">
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isIntentionAdoptedFrom"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
+        <rdfs:comment xml:lang="en">The adoptsIntention property links a desire to the intention that operationalises it, representing the process by which an agent commits to act upon a desire.</rdfs:comment>
+        <rdfs:comment xml:lang="en">adopts intention</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/fulfills -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/fulfills">
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isFulfilledBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/fossr/bdi/Intention"/>
+                    <rdf:Description rdf:about="https://w3id.org/fossr/bdi/Plan"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Goal"/>
+        <rdfs:comment xml:lang="en">The fulfills property links an entity, such as an intention or a plan, to the goal it is designed to achieve. It represents the relationship between an agent&apos;s commitment or strategy and the desired outcome.</rdfs:comment>
+        <rdfs:label xml:lang="en">fulfills</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/hasBelief -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasBelief">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalState"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isBeliefOf"/>
+        <rdfs:comment xml:lang="en">The hasBelief property links an agent to the belief(s) they hold, representing the agent’s informational state about the world.</rdfs:comment>
+        <rdfs:label xml:lang="en">has belief</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/hasDesire -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasDesire">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalState"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isDesireOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
+        <rdfs:comment xml:lang="en">The hasDesire property links an agent to the desire(s) they aspire to achieve, representing the agent’s motivational preferences.</rdfs:comment>
+        <rdfs:label xml:lang="en">has desire</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/hasIntention -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasIntention">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalState"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isIntentionOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
+        <rdfs:comment xml:lang="en">The hasIntention property links an agent to the intention(s) they commit to, representing the agent’s deliberative state for action.</rdfs:comment>
+        <rdfs:label xml:lang="en">has intention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/hasMentalState -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasMentalState">
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isMentalStateOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+        <rdfs:comment xml:lang="en">The hasMentalState property is an object property that links an agent to one or more of its mental states, such as beliefs, desires, or intentions. It establishes a relationship between the agent (as the holder of mental states) and the abstract representations of those states, enabling reasoning about the agent&apos;s internal cognitive or motivational processes.</rdfs:comment>
+        <rdfs:comment xml:lang="en">has mental state</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/hasProposition -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasProposition">
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isPropositionOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Proposition"/>
+        <rdfs:comment xml:lang="en">The hasProposition property links a mental state (e.g., belief, desire, or intention) to the proposition that represents its content. This property captures the informational or semantic content associated with the mental state.</rdfs:comment>
+        <rdfs:label xml:lang="en">has proposition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/hasTemporalValidity -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasTemporalValidity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isTemporalValidityOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/TimeInterval"/>
+        <rdfs:comment xml:lang="en">The hasTemporalValidity property links an entity to a TimeInterval during which it is valid, active, or applicable. This property represents the temporal scope or extent of the entity&apos;s relevance or operation.</rdfs:comment>
+        <rdfs:label xml:lang="en">has temporal validity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isBeliefOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isBeliefOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/isMentalStateOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:comment xml:lang="en">The isBeliefOf property links a belief to the agent that holds it.</rdfs:comment>
+        <rdfs:label xml:lang="en">is belief of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isDesireMotivatedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isDesireMotivatedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/motivatesDesire"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
+        <rdfs:comment xml:lang="en">The isDesireMotivatedBy property is the inverse of motivatesDesire. It links a desire to the belief(s) that provide the motivational basis for its formation. This property captures the relationship where a belief influences an agent to form or hold a specific desire.</rdfs:comment>
+        <rdfs:label xml:lang="en">is desire motivated by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isDesireOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isDesireOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/isMentalStateOf"/>
+        <rdfs:comment xml:lang="en">The isDesireOf property links a desire to the agent that holds it.</rdfs:comment>
+        <rdfs:label xml:lang="en">is desire of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isFulfilledBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isFulfilledBy">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Goal"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/fossr/bdi/Intention"/>
+                    <rdf:Description rdf:about="https://w3id.org/fossr/bdi/Plan"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">The isFulfilledBy property is the inverse of fulfills. It links a goal to the intention(s) or plan(s) that are committed to or designed to achieve it. This property enables reasoning from the perspective of goals to identify the entities working toward their fulfilment.</rdfs:comment>
+        <rdfs:comment xml:lang="en">is fulfilled by</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isIntentionAdoptedFrom -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isIntentionAdoptedFrom">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
+        <rdfs:comment xml:lang="en">The isIntentionAdoptedFrom property is the inverse of adoptsIntention. It links an intention to the desire from which it is adopted, capturing the motivational basis for the agent&apos;s commitment.</rdfs:comment>
+        <rdfs:label xml:lang="en">is intention adopted from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isIntentionOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isIntentionOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/isMentalStateOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:comment xml:lang="en">The isIntentionOf property links an intention to the agent that holds it.</rdfs:comment>
+        <rdfs:label xml:lang="en">is intention of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isIntentionSupportedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isIntentionSupportedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isIntentionSupportedBy"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
+        <rdfs:comment xml:lang="en">The isIntentionSupportedBy property is the inverse of supportsIntention. It links an intention to the belief(s) that justify or support the agent’s decision to pursue it.</rdfs:comment>
+        <rdfs:label xml:lang="en">is intention supported by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isJustifiedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isJustifiedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/justifies"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Justification"/>
+        <rdfs:comment xml:lang="en">The isJustifiedBy property is the inverse of justifies. It links a mental state to the justification(s) that support it, enabling reasoning about the basis for the mental state.</rdfs:comment>
+        <rdfs:label xml:lang="en">is justified by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isMentalStateOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isMentalStateOf">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:comment xml:lang="en">The isMentalStateOf property is the inverse object property of hasMentalState. It links a mental state (such as a belief, desire, or intention) to the agent that holds it. This property allows for reasoning and querying in the opposite direction, starting from a mental state and identifying the associated agent.</rdfs:comment>
+        <rdfs:label xml:lang="en">is mental state of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isPlanSpecifiedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isPlanSpecifiedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/specifiesPlan"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Plan"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
+        <rdfs:comment xml:lang="en">The isPlanSpecifiedBy property is the inverse of specifiesPlan. It links a plan to the intention it is designed to fulfil, enabling reasoning about the motivational context behind the plan.</rdfs:comment>
+        <rdfs:label xml:lang="en">is plan specified by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isPropositionOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isPropositionOf">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Proposition"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+        <rdfs:comment xml:lang="en">The isPropositionOf property is the inverse of hasProposition. It relates a proposition to the mental state(s) in which it serves as the content. This enables reasoning from the perspective of a proposition to identify the mental states that reference it.</rdfs:comment>
+        <rdfs:label xml:lang="en">is proposition of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isTemporalValidityOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isTemporalValidityOf">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/TimeInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">The isTemporalValidityOf property is the inverse of hasTemporalValidity. It links a TimeInterval to the entity it defines the temporal validity for, specifying the time period during which the entity is active or applicable.</rdfs:comment>
+        <rdfs:label xml:lang="en">is temporal validity of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/justifies -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/justifies">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Justification"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+        <rdfs:comment xml:lang="en">The justifies property links a justification to the mental state it supports, providing the rationale, evidence, or explanation for why the mental state is held.</rdfs:comment>
+        <rdfs:label xml:lang="en">justifies</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/motivatesDesire -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/motivatesDesire">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
+        <rdfs:comment xml:lang="en">Beliefs often influence or motivate the formation of desires. For example, if an agent believes that exercising improves health, this belief may motivate a desire to exercise.</rdfs:comment>
+        <rdfs:label xml:lang="en">motivates desire</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/specifiesPlan -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/specifiesPlan">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Plan"/>
+        <rdfs:comment xml:lang="en">The specifiesPlan property links an intention to the plan that operationalises it. This property represents how an agent’s commitment to achieving a goal (intention) is translated into a structured sequence of actions (plan).</rdfs:comment>
+        <rdfs:label xml:lang="en">specifies plan</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/supportsIntention -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/supportsIntention">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
+        <rdfs:comment xml:lang="en">The supportsIntention property links a belief to the intention it provides justification or epistemic support for, representing the reasoning or evidence behind the agent’s commitment to act.</rdfs:comment>
+        <rdfs:label xml:lang="en">supports intention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/endTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/bdi/endTime">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/TimeInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Specifies the ending point of a time interval.</rdfs:comment>
+        <rdfs:label xml:lang="en">end time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/startTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/bdi/startTime">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/TimeInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Specifies the starting point of a time interval.</rdfs:comment>
+        <rdfs:label xml:lang="en">start time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/Agent -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/Agent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/hasMentalState"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/fossr/bdi/Proposition"/>
+        <rdfs:comment xml:lang="en">An Agent is an autonomous entity capable of perceiving its environment, reasoning about it, and acting upon it to achieve specific goals or objectives. Agents can hold mental states such as beliefs, desires, and intentions, which guide their decision-making processes and interactions with the world. Agents may be individuals, organisations, or artificial systems, depending on the context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/Belief -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/Belief">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/motivatesDesire"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isBeliefOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Belief</rdfs:comment>
+        <rdfs:comment xml:lang="en">The Belief class represents the mental state of an agent regarding something that the agent holds to be true. It captures the subjective perception or understanding of the world by an agent, which may or may not align with objective reality. In this ontology, beliefs are modelled as descriptions that connect</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/Desire -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/Desire">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/adoptsIntention"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isDesireMotivatedBy"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isDesireOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The Desire class represents a motivational mental state of an agent, encapsulating what the agent wishes or aspires to bring about in the world. Desires are expressions of preferences or goals, but unlike intentions, they do not imply a commitment to act. Desires serve as the driving force behind an agent’s decision-making process, often interacting with beliefs and intentions to influence behaviour.</rdfs:comment>
+        <rdfs:label xml:lang="en">Desire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/Goal -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/Goal">
+        <rdfs:comment xml:lang="en">A Goal represents a desired state or outcome that an agent aspires to achieve. Goals reflect the agent&apos;s motivational preferences but do not imply any commitment to act or the feasibility of achieving them. Goals serve as the foundation for forming intentions when prioritised and deemed actionable.
+
+A example of goal is: &quot;Learn Python programming.&quot;. This goal may later lead to an intention: &quot;I intend to enrol in a Python course.&quot;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Goal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/Intention -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/Intention">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/fulfills"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Goal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isIntentionAdoptedFrom"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isIntentionOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Intention</rdfs:comment>
+        <rdfs:comment xml:lang="en">The Intention class represents a deliberative mental state of an agent, characterised by the agent’s commitment to achieving a specific goal or executing a plan. Unlike a desire, which expresses a motivational preference, an intention reflects a higher degree of resolve, where the agent actively decides to pursue the desired outcome.
+
+Intentions bridge the gap between an agent’s desires and actions, driving goal-oriented behaviour based on the agent’s beliefs about feasibility and circumstances.
+
+Intentions depend on beliefs about feasibility and current conditions (e.g., &quot;I believe the store is open.&quot;).
+Intentions emerge from prioritised desires or goals (e.g., &quot;I desire to buy groceries.&quot;).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/Justification -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/Justification">
+        <rdfs:comment xml:lang="en">A justification is a reason, evidence, or explanation that supports a mental state (e.g., belief, intention). It provides the grounds or basis for a mental state (e.g., why a belief is held or a goal is pursued) and Explains or supports mental states (e.g., &quot;I believe it will rain because the forecast says so&quot;). Justifications are typically agent-specific, reflecting the reasoning or evidence considered by an agent.</rdfs:comment>
+        <rdfs:label xml:lang="en">Justification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/MentalState -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/MentalState">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/hasProposition"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Proposition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/hasTemporalValidity"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/TimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isJustifiedBy"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Justification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isMentalStateOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://w3id.org/fossr/bdi/Proposition"/>
+        <rdfs:comment xml:lang="en">A mental state is a conceptual representation of an agent&apos;s internal condition, which encompasses beliefs, desires, intentions, emotions, and other cognitive or affective states. It is the foundation of an agent’s reasoning, decision-making, and behaviour. Mental states are dynamic and context-dependent, changing in response to external stimuli, internal deliberations, or interactions with other agents.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mental state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/Plan -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/Plan">
+        <rdfs:comment xml:lang="en">A plan is a structured sequence of actions or steps devised by an agent to achieve a specific goal or fulfil an intention. It serves as an operational framework that translates an agent’s intentions into actionable strategies, guiding behaviour toward a desired goal.</rdfs:comment>
+        <rdfs:label xml:lang="en">Plan</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/Proposition -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/Proposition">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isPropositionOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A proposition is an abstract informational entity that can be true or false, representing a state of the world.
+The Proposition class represents the content of a belief. It abstracts what is believed to be true or considered by an agent. In the ontology, it provides a way to separate the act of believing (modelled as the Belief class) from what is being believed (modelled as Proposition). This separation allows for flexibility in reasoning, querying, and validation of the truth or consistency of beliefs across agents or systems. 
+A proposition captures the informational content (e.g., &quot;The sky is blue&quot;) independently of the agent or system holding the belief. Propositions can be shared or compared among multiple agents. For instance, two agents might hold the same belief about a proposition, but with different justifications or confidence levels. Propositions enable reasoning about the consistency or alignment of beliefs between agents. By abstracting content, propositions can be reused in other contexts, such as desires or intentions, supporting modular design.</rdfs:comment>
+        <rdfs:label xml:lang="en">Proposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/TimeInterval -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/TimeInterval">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/endTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/startTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The TimeInterval class represents a bounded period of time with a defined start and end. It is used to specify the temporal extent of events, states, or processes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Time interval</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/fossr/bdi/Belief"/>
+            <rdf:Description rdf:about="https://w3id.org/fossr/bdi/Desire"/>
+            <rdf:Description rdf:about="https://w3id.org/fossr/bdi/Intention"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
