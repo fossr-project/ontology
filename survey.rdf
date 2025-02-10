@@ -7,12 +7,336 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://w3id.org/fossr/survey/">
-        <rdfs:comment xml:lang="en">The Survey Ontology provides a formal framework to model the survey activity, starting from defining a new survey, a group of participant and . It defines key elements in a survey—Question, variable, participant, userAnswer—and their relationships. Supporting classes include Language (survey language), Condition (define conditions to show questions), Attribute (descrive participant characterstics).
+        <rdfs:comment xml:lang="en">The Survey Ontology provides a formal framework for modeling survey activities, starting from defining a new survey, a group of participants, and related components. It defines key elements in a survey—Question, Variable, Participant, and UserAnswer—and their relationships. Supporting classes include Language (survey language), Condition (defines conditions for displaying questions), and Attribute (describes participant characteristics).
 
-
-This ontology supports reasoning, querying, and analysis of a survey definition and data, enabling applications in social scienses, and analysis data.</rdfs:comment>
+This ontology supports reasoning, querying, and analysis of survey definitions and data report, enabling applications in social sciences and data analysis.</rdfs:comment>
         <rdfs:label xml:lang="en">Survey Ontology</rdfs:label>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/ParticipantAnswer"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Content"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/derivedFrom -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/derivedFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyVersion"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/SurveyVersion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasAttribute -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasAttribute">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Participant"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Attribute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasAttributeType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasAttributeType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Attribute"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/AttributeType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasAttributeValue -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasAttributeValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Attribute"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/AttributeValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasContent -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasContent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Question"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Content"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasExecutionTime -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasExecutionTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyExecution"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/TimeInterval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasInstrument -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasInstrument">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Study"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Survey"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasLanguage -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasLanguage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Content"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Language"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasParticipant">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyVersion"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Participant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasQuestion -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasQuestion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/QuestionGroup"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Question"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasQuestionGroup -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasQuestionGroup">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyVersion"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/QuestionGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasSurveyVersion -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasSurveyVersion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Survey"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/SurveyVersion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/participantExecutesSurvey -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/participantExecutesSurvey">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Participant"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/SurveyExecution"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/fossr/survey/endTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/survey/endTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/TimeInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/id -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/survey/id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Identifier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/langTag -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/survey/langTag">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Language"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/startTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/survey/startTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/TimeInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/value -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/survey/value">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/AttributeValue"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/fossr/survey/Attribute -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/Attribute"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/AttributeType -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/AttributeType"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/AttributeValue -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/AttributeValue"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/Content -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/Content"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/Identifier -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/Identifier"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/Language -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/Language"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/Participant -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/Participant"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/ParticipantAnswer -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/ParticipantAnswer"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/Question -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/Question"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/QuestionGroup -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/QuestionGroup"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/QuestionType -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/QuestionType"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/Study -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/Study"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/Survey -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/Survey"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/SurveyExecution -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/SurveyExecution"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/SurveyVersion -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/SurveyVersion"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/TimeInterval -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/TimeInterval"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/Variable -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/Variable"/>
 </rdf:RDF>
 
 
