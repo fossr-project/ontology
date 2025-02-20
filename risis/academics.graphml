@@ -1280,6 +1280,17 @@ xsd:    http://www.w3.org/2001/XMLSchema#</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
+    <node id="n107">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="44.0" width="126.09496821071735" x="642.3213392475926" y="449.42099875106044"/>
+          <y:Fill color="#FFFF00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="22.625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="115.84375" x="5.125609105358677" xml:space="preserve" y="10.6875">pub:Affiliation</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
     <edge id="e0" source="n5" target="n4">
       <data key="d10">
         <y:PolyLineEdge>
