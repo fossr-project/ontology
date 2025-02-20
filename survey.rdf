@@ -26,12 +26,12 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
-    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+    <!-- https://w3id.org/fossr/survey/activates -->
 
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/ParticipantAnswer"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Content"/>
-    </rdf:Description>
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/activates">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Condition"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/SurveyStep"/>
+    </owl:ObjectProperty>
     
 
 
@@ -41,6 +41,16 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyVersion"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/survey/SurveyVersion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/executesFlow -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/executesFlow">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyExecution"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/SurveyFlow"/>
     </owl:ObjectProperty>
     
 
@@ -75,10 +85,20 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
+    <!-- https://w3id.org/fossr/survey/hasCondition -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasCondition">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyStep"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Condition"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/fossr/survey/hasContent -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasContent">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/PossibleAnswer"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Question"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Content"/>
     </owl:ObjectProperty>
@@ -91,6 +111,16 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyExecution"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/survey/TimeInterval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasFirstSurveyStep -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasFirstSurveyStep">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyFlow"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/SurveyStep"/>
     </owl:ObjectProperty>
     
 
@@ -115,6 +145,35 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
+    <!-- https://w3id.org/fossr/survey/hasLastSurveyStep -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasLastSurveyStep">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyFlow"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/SurveyStep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasLeftOperand -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasLeftOperand">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Condition"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Operand"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasNextSurveyStep -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasNextSurveyStep">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyStep"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/SurveyStep"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/fossr/survey/hasParticipant -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasParticipant">
@@ -125,11 +184,31 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
+    <!-- https://w3id.org/fossr/survey/hasParticipantAnswer -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasParticipantAnswer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyExecution"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/ParticipantAnswer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasPossibleAnswer -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasPossibleAnswer">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Question"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/PossibleAnswer"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/fossr/survey/hasQuestion -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasQuestion">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/QuestionGroup"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyVersion"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Question"/>
     </owl:ObjectProperty>
     
@@ -145,6 +224,36 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
+    <!-- https://w3id.org/fossr/survey/hasRightOperand -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasRightOperand">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Condition"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Operand"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasSurveyFlow -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasSurveyFlow">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyVersion"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/SurveyFlow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/hasSurveyStep -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasSurveyStep">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/SurveyFlow"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/SurveyStep"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/fossr/survey/hasSurveyVersion -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasSurveyVersion">
@@ -155,12 +264,57 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
+    <!-- https://w3id.org/fossr/survey/hasType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/hasType">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Question"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/QuestionType"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/fossr/survey/participantExecutesSurvey -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/participantExecutesSurvey">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Participant"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/survey/SurveyExecution"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/refersTo -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/refersTo">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Operand"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/satisfies -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/satisfies">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/ParticipantAnswer"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/Condition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/usersAnswer -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/usersAnswer">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Participant"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/PossibleAnswer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/withOperator -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/survey/withOperator">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/survey/Condition"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/survey/ComparisonOperator"/>
     </owl:ObjectProperty>
     
 
@@ -256,9 +410,35 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
+    <!-- https://w3id.org/fossr/survey/ComparisonOperator -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/ComparisonOperator"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/Condition -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/Condition"/>
+    
+
+
     <!-- https://w3id.org/fossr/survey/Content -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/survey/Content"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/DefaultAnswer -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/DefaultAnswer">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/survey/PossibleAnswer"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/Entity -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/Entity"/>
     
 
 
@@ -274,6 +454,12 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
+    <!-- https://w3id.org/fossr/survey/Operand -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/Operand"/>
+    
+
+
     <!-- https://w3id.org/fossr/survey/Participant -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/survey/Participant"/>
@@ -283,6 +469,12 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/survey/ParticipantAnswer -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/survey/ParticipantAnswer"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/PossibleAnswer -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/PossibleAnswer"/>
     
 
 
@@ -319,6 +511,18 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/survey/SurveyExecution -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/survey/SurveyExecution"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/SurveyFlow -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/SurveyFlow"/>
+    
+
+
+    <!-- https://w3id.org/fossr/survey/SurveyStep -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/survey/SurveyStep"/>
     
 
 
