@@ -1,0 +1,138 @@
+{
+  _id: '85137468687',
+  '@_fa': 'true',
+  link: [
+    {
+      '@_fa': 'true',
+      '@ref': 'self',
+      '@href': 'https://api.elsevier.com/content/abstract/scopus_id/85137468687'
+    },
+    {
+      '@_fa': 'true',
+      '@ref': 'author-affiliation',
+      '@href': 'https://api.elsevier.com/content/abstract/scopus_id/85137468687?field=author,affiliation'
+    },
+    {
+      '@_fa': 'true',
+      '@ref': 'scopus',
+      '@href': 'https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85137468687&origin=inward'
+    },
+    {
+      '@_fa': 'true',
+      '@ref': 'scopus-citedby',
+      '@href': 'https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85137468687&origin=inward'
+    }
+  ],
+  'prism:url': 'https://api.elsevier.com/content/abstract/scopus_id/85137468687',
+  'dc:identifier': 'SCOPUS_ID:85137468687',
+  eid: '2-s2.0-85137468687',
+  'dc:title': 'The role of citation networks to explain academic promotions: an empirical analysis of the Italian national scientific qualification',
+  'dc:creator': 'Martini M.C.',
+  'prism:publicationName': 'Scientometrics',
+  'prism:issn': '01389130',
+  'prism:eIssn': '15882861',
+  'prism:volume': '127',
+  'prism:issueIdentifier': '10',
+  'prism:pageRange': '5633-5659',
+  'prism:coverDate': '2022-10-01',
+  'prism:coverDisplayDate': 'October 2022',
+  'prism:doi': '10.1007/s11192-022-04485-5',
+  'dc:description': 'The aim of this paper is to study the role of citation network measures in the assessment of scientific maturity. Referring to the case of the Italian national scientific qualification (ASN), we investigate if there is a relationship between citation network indices and the results of the researchers’ evaluation procedures. In particular, we want to understand if network measures can enhance the prediction accuracy of the results of the evaluation procedures beyond basic performance indices. Moreover, we want to highlight which citation network indices prove to be more relevant in explaining the ASN results, and if quantitative indices used in the citation-based disciplines assessment can replace the citation network measures in non-citation-based disciplines. Data concerning Statistics and Computer Science disciplines are collected from different sources (ASN, Italian Ministry of University and Research, and Scopus) and processed in order to calculate the citation-based measures used in this study. Then, we apply logistic regression models to estimate the effects of network variables. We find that network measures are strongly related to the results of the ASN and significantly improve the explanatory power of the models, especially for the research fields of Statistics. Additionally, citation networks in the specific sub-disciplines are far more relevant than those in the general disciplines. Finally, results show that the citation network measures are not a substitute of the citation-based bibliometric indices.',
+  'citedby-count': '2',
+  affiliation: [
+    {
+      '@_fa': 'true',
+      'affiliation-url': 'https://api.elsevier.com/content/affiliation/affiliation_id/60012572',
+      afid: '60012572',
+      affilname: 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome',
+      'affiliation-city': 'Rome',
+      'affiliation-country': 'Italy'
+    },
+    {
+      '@_fa': 'true',
+      'affiliation-url': 'https://api.elsevier.com/content/affiliation/affiliation_id/60004591',
+      afid: '60004591',
+      affilname: 'Università degli Studi di Modena e Reggio Emilia',
+      'affiliation-city': 'Modena',
+      'affiliation-country': 'Italy'
+    }
+  ],
+  'prism:aggregationType': 'Journal',
+  subtype: 'ar',
+  subtypeDescription: 'Article',
+  'author-count': { '@limit': '100', '@total': '4', '$': '4' },
+  author: [
+    {
+      '@_fa': 'true',
+      '@seq': '1',
+      'author-url': 'https://api.elsevier.com/content/author/author_id/55938524900',
+      authid: '55938524900',
+      orcid: '0000-0001-5622-9187',
+      authname: 'Martini M.C.',
+      surname: 'Martini',
+      'given-name': 'Maria Cristiana',
+      initials: 'M.C.',
+      afid: [ { '@_fa': 'true', '$': '60004591' } ]
+    },
+    {
+      '@_fa': 'true',
+      '@seq': '2',
+      'author-url': 'https://api.elsevier.com/content/author/author_id/56912169200',
+      authid: '56912169200',
+      orcid: '0000-0002-3247-4150',
+      authname: 'Pelle E.',
+      surname: 'Pelle',
+      'given-name': 'Elvira',
+      initials: 'E.',
+      afid: [ { '@_fa': 'true', '$': '60004591' } ]
+    },
+    {
+      '@_fa': 'true',
+      '@seq': '3',
+      'author-url': 'https://api.elsevier.com/content/author/author_id/57562645800',
+      authid: '57562645800',
+      orcid: '0000-0001-6577-5606',
+      authname: 'Poggi F.',
+      surname: 'Poggi',
+      'given-name': 'Francesco',
+      initials: 'F.',
+      afid: [ { '@_fa': 'true', '$': '60012572' } ]
+    },
+    {
+      '@_fa': 'true',
+      '@seq': '4',
+      'author-url': 'https://api.elsevier.com/content/author/author_id/56122575600',
+      authid: '56122575600',
+      orcid: '0000-0001-5621-5463',
+      authname: 'Sciandra A.',
+      surname: 'Sciandra',
+      'given-name': 'Andrea',
+      initials: 'A.',
+      afid: [ { '@_fa': 'true', '$': '60004591' } ]
+    }
+  ],
+  authkeywords: 'Academic promotion | ASN | Bibliometrics | Citation networks | Citation-based metrics | Research evaluation',
+  'source-id': '24222',
+  'fund-acr': 'UNIMORE',
+  'fund-no': 'FAR 2020',
+  'fund-sponsor': 'Università Degli Studi di Modena e Reggio Emila',
+  openaccess: '1',
+  openaccessFlag: true,
+  freetoread: {
+    value: [
+      { '$': 'all' },
+      { '$': 'publisherhybridgold' },
+      { '$': 'repository' },
+      { '$': 'repositoryvor' }
+    ]
+  },
+  freetoreadLabel: {
+    value: [
+      { '$': 'All Open Access' },
+      { '$': 'Hybrid Gold' },
+      { '$': 'Green' }
+    ]
+  },
+  'request-time': '2024-11-13 15:11:51.594092',
+  'pg:scopus-pub-year': '2022'
+}

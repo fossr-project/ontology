@@ -1,0 +1,137 @@
+{
+  _id: '55231977700',
+  '@status': 'found',
+  '@_fa': 'true',
+  coredata: {
+    'prism:url': 'http://api.elsevier.com/content/author/author_id/55231977700',
+    'dc:identifier': 'AUTHOR_ID:55231977700',
+    eid: '9-s2.0-55231977700',
+    'document-count': '2',
+    'cited-by-count': '5',
+    'citation-count': '5',
+    link: [
+      {
+        '@href': 'https://www.scopus.com/authid/detail.uri?partnerID=HzOxMe3b&authorId=55231977700&origin=inward',
+        '@rel': 'scopus-author',
+        '@_fa': 'true'
+      },
+      {
+        '@href': 'http://api.elsevier.com/content/author/author_id/55231977700',
+        '@rel': 'self',
+        '@_fa': 'true'
+      },
+      {
+        '@href': 'http://api.elsevier.com/content/search/scopus?query=au-id%2855231977700%29',
+        '@rel': 'search',
+        '@_fa': 'true'
+      },
+      {
+        '@href': 'http://api.elsevier.com/content/search/author?co-author=55231977700',
+        '@rel': 'coauthor-search',
+        '@_fa': 'true'
+      }
+    ]
+  },
+  'h-index': '2',
+  'coauthor-count': '4',
+  'affiliation-current': {
+    '@id': '60084296',
+    '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/'
+  },
+  'affiliation-history': {
+    affiliation: [
+      {
+        '@_fa': 'true',
+        '@id': '60084296',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60084296'
+      }
+    ]
+  },
+  'subject-areas': {
+    'subject-area': [
+      {
+        '@_fa': 'true',
+        '@abbrev': 'EART',
+        '@code': '1906',
+        '$': 'Geochemistry and Petrology'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'EART',
+        '@code': '1909',
+        '$': 'Geotechnical Engineering and Engineering Geology'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'EART',
+        '@code': '1907',
+        '$': 'Geology'
+      }
+    ]
+  },
+  'author-profile': {
+    status: 'update',
+    'date-created': { '@day': '05', '@month': '06', '@year': '2012' },
+    'preferred-name': {
+      '@source': 'internal-ani',
+      initials: 'M.',
+      'indexed-name': 'Merlini M.',
+      surname: 'Merlini',
+      'given-name': 'M.'
+    },
+    classificationgroup: {
+      classifications: {
+        '@type': 'ASJC',
+        classification: [
+          { '@frequency': '1', '$': '1906' },
+          { '@frequency': '2', '$': '1909' },
+          { '@frequency': '1', '$': '1907' }
+        ]
+      }
+    },
+    'publication-range': { '@end': '2001', '@start': '1996' },
+    'affiliation-current': {
+      affiliation: {
+        '@affiliation-id': '60084296',
+        '@source': 'internal-ani',
+        'ip-doc': {
+          '@id': '60084296',
+          '@type': 'parent',
+          '@relationship': 'author',
+          afnameid: 'AGIP S.p.A.#60084296',
+          afdispname: 'AGIP S.p.A.',
+          'preferred-name': { '@source': 'internal-ani', '$': 'AGIP S.p.A.' },
+          'sort-name': 'AGIP S.p.A.',
+          address: {
+            '@country': 'ita',
+            city: 'Milan',
+            state: 'MI',
+            country: 'Italy'
+          }
+        }
+      }
+    },
+    'affiliation-history': {
+      affiliation: {
+        '@affiliation-id': '60084296',
+        '@source': 'internal-ani',
+        'ip-doc': {
+          '@id': '60084296',
+          '@type': 'parent',
+          '@relationship': 'author',
+          afnameid: 'AGIP S.p.A.#60084296',
+          afdispname: 'AGIP S.p.A.',
+          'preferred-name': { '@source': 'internal-ani', '$': 'AGIP S.p.A.' },
+          'sort-name': 'AGIP S.p.A.',
+          address: {
+            '@country': 'ita',
+            city: 'Milan',
+            state: 'MI',
+            country: 'Italy'
+          }
+        }
+      }
+    }
+  },
+  'request-time': '2025-01-22 17:19:15.870562'
+}

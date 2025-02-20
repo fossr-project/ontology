@@ -1,0 +1,141 @@
+{
+  _id: '10038800400',
+  '@status': 'found',
+  '@_fa': 'true',
+  coredata: {
+    'prism:url': 'http://api.elsevier.com/content/author/author_id/10038800400',
+    'dc:identifier': 'AUTHOR_ID:10038800400',
+    'superseding-identifier': [ { '@_fa': 'true', '$': 'author_id:55231977700' } ],
+    'historical-identifier': [ { '@_fa': 'true', '$': 'author_id:7006360680' } ],
+    eid: '9-s2.0-10038800400',
+    'document-count': '1',
+    'cited-by-count': '21',
+    'citation-count': '21',
+    link: [
+      {
+        '@href': 'https://www.scopus.com/authid/detail.uri?partnerID=HzOxMe3b&authorId=10038800400&origin=inward',
+        '@rel': 'scopus-author',
+        '@_fa': 'true'
+      },
+      {
+        '@href': 'http://api.elsevier.com/content/author/author_id/10038800400',
+        '@rel': 'self',
+        '@_fa': 'true'
+      },
+      {
+        '@href': 'http://api.elsevier.com/content/search/scopus?query=au-id%2810038800400%29',
+        '@rel': 'search',
+        '@_fa': 'true'
+      },
+      {
+        '@href': 'http://api.elsevier.com/content/search/author?co-author=10038800400',
+        '@rel': 'coauthor-search',
+        '@_fa': 'true'
+      }
+    ]
+  },
+  'h-index': '1',
+  'coauthor-count': '3',
+  'affiliation-current': {
+    '@id': '60015202',
+    '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/'
+  },
+  'subject-areas': {
+    'subject-area': [
+      {
+        '@_fa': 'true',
+        '@abbrev': 'CENG',
+        '@code': '1501',
+        '$': 'Chemical Engineering (miscellaneous)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ENVI',
+        '@code': '2300',
+        '$': 'Environmental Science (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MATE',
+        '@code': '2507',
+        '$': 'Polymers and Plastics'
+      }
+    ]
+  },
+  'author-profile': {
+    status: 'update',
+    'date-created': { '@year': '2006', '@month': '01', '@day': '05' },
+    alias: {
+      '@current-status': 'moved-into',
+      'aliased-id': {
+        '@status': 'moved-into',
+        '@timestamp': '2012-06-05T07:03:59.000059+01:00',
+        '$': '55231977700'
+      }
+    },
+    'preferred-name': {
+      '@source': 'internal-ani',
+      initials: 'M.',
+      'indexed-name': 'Merlini M.',
+      surname: 'Merlini',
+      'given-name': 'Massimo'
+    },
+    classificationgroup: {
+      classifications: {
+        '@type': 'ASJC',
+        classification: [
+          { '@frequency': '2', '$': '1501' },
+          { '@frequency': '2', '$': '2300' },
+          { '@frequency': '2', '$': '2507' }
+        ]
+      }
+    },
+    'publication-range': { '@start': '2005', '@end': '2005' },
+    'journal-history': {
+      '@type': 'author',
+      journal: {
+        '@type': 'j',
+        sourcetitle: 'Industrial and Engineering Chemistry Research',
+        'sourcetitle-abbrev': 'Ind. Eng. Chem. Res.',
+        issn: '08885885'
+      }
+    },
+    'affiliation-current': {
+      affiliation: {
+        '@source': 'internal-ani',
+        '@affiliation-id': '60015202',
+        'ip-doc': {
+          '@id': '60015202',
+          '@type': 'parent',
+          '@relationship': 'author',
+          afnameid: 'ENI S.p.A., Italy#60015202',
+          afdispname: 'ENI S.p.A., Italy',
+          'manual-curation': {
+            '@curated': 'true',
+            'date-curation': {
+              '@day': '30',
+              '@month': '11',
+              '@timestamp': '2017-11-30T07:19:44.848-05:00',
+              '@year': '2017'
+            },
+            'curation-source': 'QABOAPI',
+            'curation-type': 'QABO-3496454'
+          },
+          'preferred-name': { '@source': 'internal-ani', '$': 'ENI S.p.A., Italy' },
+          'sort-name': 'ENI S.p.A., Italy',
+          address: {
+            '@country': 'ita',
+            'address-part': 'Piazzale E. Mattei 1',
+            city: 'Rome',
+            state: 'RM',
+            'postal-code': '100144',
+            country: 'Italy'
+          },
+          'org-domain': 'eni.com',
+          'org-URL': 'https://www.eni.com/en-IT/home.html'
+        }
+      }
+    }
+  },
+  'request-time': '2025-01-25 11:50:53.535117'
+}
