@@ -1,0 +1,76 @@
+{
+  _id: '0003438001',
+  '@_fa': 'true',
+  link: [
+    {
+      '@_fa': 'true',
+      '@ref': 'self',
+      '@href': 'https://api.elsevier.com/content/abstract/scopus_id/0003438001'
+    },
+    {
+      '@_fa': 'true',
+      '@ref': 'author-affiliation',
+      '@href': 'https://api.elsevier.com/content/abstract/scopus_id/0003438001?field=author,affiliation'
+    },
+    {
+      '@_fa': 'true',
+      '@ref': 'scopus',
+      '@href': 'https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=0003438001&origin=inward'
+    },
+    {
+      '@_fa': 'true',
+      '@ref': 'scopus-citedby',
+      '@href': 'https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=0003438001&origin=inward'
+    }
+  ],
+  'prism:url': 'https://api.elsevier.com/content/abstract/scopus_id/0003438001',
+  'dc:identifier': 'SCOPUS_ID:0003438001',
+  eid: '2-s2.0-0003438001',
+  'dc:title': 'Subjective probability models for lifetimes',
+  'dc:creator': 'Spizzichino F.',
+  'prism:publicationName': 'Subjective Probability Models for Lifetimes',
+  'prism:isbn': [
+    {
+      '@_fa': 'true',
+      '$': '[9781420036138, 1584880600, 9781584880608]'
+    }
+  ],
+  'prism:pageRange': '1-248',
+  'prism:coverDate': '2001-01-01',
+  'prism:coverDisplayDate': '1 January 2001',
+  'dc:description': 'Bayesian methods in reliability cannot be fully utilized and understood without full comprehension of the essential differences that exist between frequentist probability and subjective probability. Switching from the frequentist to the subjective approach requires that some fundamental concepts be rethought and suitably redefined.',
+  'citedby-count': '71',
+  affiliation: [
+    {
+      '@_fa': 'true',
+      'affiliation-url': 'https://api.elsevier.com/content/affiliation/affiliation_id/60032350',
+      afid: '60032350',
+      affilname: 'Sapienza Università di Roma',
+      'affiliation-city': 'Rome',
+      'affiliation-country': 'Italy'
+    }
+  ],
+  'prism:aggregationType': 'Book',
+  subtype: 'bk',
+  subtypeDescription: 'Book',
+  'author-count': { '@limit': '100', '@total': '1', '$': '1' },
+  author: [
+    {
+      '@_fa': 'true',
+      '@seq': '1',
+      'author-url': 'https://api.elsevier.com/content/author/author_id/6603599366',
+      authid: '6603599366',
+      authname: 'Spizzichino F.',
+      surname: 'Spizzichino',
+      'given-name': 'Fabio',
+      initials: 'F.',
+      afid: [ { '@_fa': 'true', '$': '60032350' } ]
+    }
+  ],
+  'source-id': '21100888706',
+  'fund-no': 'undefined',
+  openaccess: '0',
+  openaccessFlag: false,
+  'request-time': '2024-11-11 16:12:33.947345',
+  'pg:scopus-pub-year': '2001'
+}

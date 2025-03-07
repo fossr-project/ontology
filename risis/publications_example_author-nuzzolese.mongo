@@ -1,0 +1,798 @@
+{
+  _id: '42862074000',
+  '@status': 'found',
+  '@_fa': 'true',
+  coredata: {
+    'prism:url': 'http://api.elsevier.com/content/author/author_id/42862074000',
+    'dc:identifier': 'AUTHOR_ID:42862074000',
+    eid: '9-s2.0-42862074000',
+    orcid: '0000-0003-2928-9496',
+    'document-count': '87',
+    'cited-by-count': '1322',
+    'citation-count': '1606',
+    link: [
+      {
+        '@href': 'https://www.scopus.com/authid/detail.uri?partnerID=HzOxMe3b&authorId=42862074000&origin=inward',
+        '@rel': 'scopus-author',
+        '@_fa': 'true'
+      },
+      {
+        '@href': 'http://api.elsevier.com/content/author/author_id/42862074000',
+        '@rel': 'self',
+        '@_fa': 'true'
+      },
+      {
+        '@href': 'http://api.elsevier.com/content/search/scopus?query=au-id%2842862074000%29',
+        '@rel': 'search',
+        '@_fa': 'true'
+      },
+      {
+        '@href': 'http://api.elsevier.com/content/search/author?co-author=42862074000',
+        '@rel': 'coauthor-search',
+        '@_fa': 'true'
+      }
+    ]
+  },
+  'h-index': '20',
+  'coauthor-count': '79',
+  'affiliation-current': {
+    '@id': '107857353',
+    '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/'
+  },
+  'affiliation-history': {
+    affiliation: [
+      {
+        '@_fa': 'true',
+        '@id': '60021199',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60021199'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60012572',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60012572'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60009647',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60009647'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60028218',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60028218'
+      }
+    ]
+  },
+  'subject-areas': {
+    'subject-area': [
+      {
+        '@_fa': 'true',
+        '@abbrev': 'DECI',
+        '@code': '1802',
+        '$': 'Information Systems and Management'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'DECI',
+        '@code': '1803',
+        '$': 'Management Science and Operations Research'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'NEUR',
+        '@code': '2805',
+        '$': 'Cognitive Neuroscience'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MEDI',
+        '@code': '2739',
+        '$': 'Public Health, Environmental and Occupational Health'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1706',
+        '$': 'Computer Science Applications'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MATH',
+        '@code': '2614',
+        '$': 'Theoretical Computer Science'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MATH',
+        '@code': '2600',
+        '$': 'Mathematics (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1712',
+        '$': 'Software'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'HEAL',
+        '@code': '3605',
+        '$': 'Health Information Management'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1702',
+        '$': 'Artificial Intelligence'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MEDI',
+        '@code': '2700',
+        '$': 'Medicine (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'SOCI',
+        '@code': '3309',
+        '$': 'Library and Information Sciences'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1709',
+        '$': 'Human-Computer Interaction'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1703',
+        '$': 'Computational Theory and Mathematics'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MEDI',
+        '@code': '2718',
+        '$': 'Health Informatics'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MULT',
+        '@code': '1000',
+        '$': 'Multidisciplinary'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ENGI',
+        '@code': '2213',
+        '$': 'Safety, Risk, Reliability and Quality'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1705',
+        '$': 'Computer Networks and Communications'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1707',
+        '$': 'Computer Vision and Pattern Recognition'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1710',
+        '$': 'Information Systems'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'BUSI',
+        '@code': '1404',
+        '$': 'Management Information Systems'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ENGI',
+        '@code': '2204',
+        '$': 'Biomedical Engineering'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1700',
+        '$': 'Computer Science (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'SOCI',
+        '@code': '3300',
+        '$': 'Social Sciences (all)'
+      }
+    ]
+  },
+  'author-profile': {
+    status: 'update',
+    'date-created': { '@day': '24', '@month': '07', '@year': '2011' },
+    'preferred-name': {
+      '@date-locked': '2015-01-26T16:22:29.269-05:00',
+      '@source': 'corrapi-external',
+      initials: 'A.G.',
+      'indexed-name': 'Nuzzolese A.',
+      surname: 'Nuzzolese',
+      'given-name': 'Andrea Giovanni'
+    },
+    'name-variant': [
+      {
+        '@doc-count': '2',
+        '@source': 'internal-ani',
+        initials: 'A.',
+        'indexed-name': 'Nuzzolese A.',
+        surname: 'Nuzzolese',
+        'given-name': 'Andrea'
+      },
+      {
+        '@doc-count': '4',
+        '@source': 'internal-ani',
+        initials: 'A.G.',
+        'indexed-name': 'Nuzzolese A.',
+        surname: 'Nuzzolese',
+        'given-name': 'Andrea G.'
+      }
+    ],
+    classificationgroup: {
+      classifications: {
+        '@type': 'ASJC',
+        classification: [
+          { '@frequency': '4', '$': '1802' },
+          { '@frequency': '1', '$': '1803' },
+          { '@frequency': '1', '$': '2805' },
+          { '@frequency': '1', '$': '2739' },
+          { '@frequency': '12', '$': '1706' },
+          { '@frequency': '22', '$': '2614' },
+          { '@frequency': '6', '$': '2600' },
+          { '@frequency': '7', '$': '1712' },
+          { '@frequency': '1', '$': '3605' },
+          { '@frequency': '4', '$': '1702' },
+          { '@frequency': '3', '$': '2700' },
+          { '@frequency': '3', '$': '3309' },
+          { '@frequency': '2', '$': '1709' },
+          { '@frequency': '1', '$': '1703' },
+          { '@frequency': '2', '$': '2718' },
+          { '@frequency': '1', '$': '1000' },
+          { '@frequency': '1', '$': '2213' },
+          { '@frequency': '12', '$': '1705' },
+          { '@frequency': '2', '$': '1707' },
+          { '@frequency': '10', '$': '1710' },
+          { '@frequency': '2', '$': '1404' },
+          { '@frequency': '1', '$': '2204' },
+          { '@frequency': '59', '$': '1700' },
+          { '@frequency': '3', '$': '3300' }
+        ]
+      }
+    },
+    'publication-range': { '@end': '2024', '@start': '2010' },
+    'affiliation-current': {
+      affiliation: {
+        '@affiliation-id': '107857353',
+        '@parent': '60012572',
+        '@source': 'internal-ani',
+        'ip-doc': {
+          '@id': '107857353',
+          '@type': 'dept',
+          '@relationship': 'author',
+          afdispname: 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome, Semantic Technology Laboratory',
+          'preferred-name': {
+            '@source': 'internal-ani',
+            '$': 'Semantic Technology Laboratory'
+          },
+          'parent-preferred-name': {
+            '@source': 'internal-ani',
+            '$': 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome'
+          },
+          'sort-name': 'Semantic Technology Laboratory',
+          address: {
+            '@country': 'ita',
+            'address-part': 'Via S. Martino della Battaglia 44',
+            city: 'Rome',
+            state: 'RM',
+            'postal-code': '185',
+            country: 'Italy'
+          },
+          'org-domain': 'istc.cnr.it',
+          'org-URL': 'http://www.istc.cnr.it'
+        }
+      }
+    },
+    'affiliation-history': {
+      affiliation: [
+        {
+          '@affiliation-id': '107857353',
+          '@parent': '60012572',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '107857353',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome, Semantic Technology Laboratory',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Semantic Technology Laboratory'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome'
+            },
+            'sort-name': 'Semantic Technology Laboratory',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via S. Martino della Battaglia 44',
+              city: 'Rome',
+              state: 'RM',
+              'postal-code': '185',
+              country: 'Italy'
+            },
+            'org-domain': 'istc.cnr.it',
+            'org-URL': 'http://www.istc.cnr.it'
+          }
+        },
+        {
+          '@affiliation-id': '130087865',
+          '@parent': '60012572',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '130087865',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome, Semantic Technology Laboratory & Collective Intelligence in Natural and Artificial Systems Laboratory',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Semantic Technology Laboratory & Collective Intelligence in Natural and Artificial Systems Laboratory'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome'
+            },
+            'sort-name': 'Semantic Technology Laboratory & Collective Intelligence in Natural and Artificial Systems Laboratory',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via S. Martino della Battaglia 44',
+              city: 'Rome',
+              state: 'RM',
+              'postal-code': '185',
+              country: 'Italy'
+            },
+            'org-domain': 'istc.cnr.it',
+            'org-URL': 'http://www.istc.cnr.it'
+          }
+        },
+        {
+          '@affiliation-id': '60021199',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60021199',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Consiglio Nazionale delle Ricerche#60021199',
+            afdispname: 'Consiglio Nazionale delle Ricerche',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Consiglio Nazionale delle Ricerche'
+            },
+            'sort-name': 'Italian National Research Council',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Piazzale Aldo Moro,7',
+              city: 'Rome',
+              state: 'RM',
+              'postal-code': '185',
+              country: 'Italy'
+            },
+            'org-domain': 'cnr.it',
+            'org-URL': 'https://www.cnr.it/en'
+          }
+        },
+        {
+          '@affiliation-id': '60012572',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60012572',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome#60012572',
+            afdispname: 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome'
+            },
+            'sort-name': 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via S. Martino della Battaglia 44',
+              city: 'Rome',
+              state: 'RM',
+              'postal-code': '185',
+              country: 'Italy'
+            },
+            'org-domain': 'istc.cnr.it',
+            'org-URL': 'http://www.istc.cnr.it'
+          }
+        },
+        {
+          '@affiliation-id': '107857354',
+          '@parent': '60012572',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '107857354',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome, STLab',
+            'preferred-name': { '@source': 'internal-ani', '$': 'STLab' },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome'
+            },
+            'sort-name': 'STLab',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via S. Martino della Battaglia 44',
+              city: 'Rome',
+              state: 'RM',
+              'postal-code': '185',
+              country: 'Italy'
+            },
+            'org-domain': 'istc.cnr.it',
+            'org-URL': 'http://www.istc.cnr.it'
+          }
+        },
+        {
+          '@affiliation-id': '112748495',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '112748495',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, DISI',
+            'preferred-name': { '@source': 'internal-ani', '$': 'DISI' },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'DISI',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '125623067',
+          '@parent': '125622301',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '125623067',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'ISTC-CNR, STLab',
+            'preferred-name': { '@source': 'internal-ani', '$': 'STLab' },
+            'parent-preferred-name': { '@source': 'internal-ani', '$': 'ISTC-CNR' },
+            'sort-name': 'STLab',
+            address: null
+          }
+        },
+        {
+          '@affiliation-id': '111088308',
+          '@parent': '60021199',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '111088308',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Consiglio Nazionale delle Ricerche, Semantic Technology Lab',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Semantic Technology Lab'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Consiglio Nazionale delle Ricerche'
+            },
+            'sort-name': 'Semantic Technology Lab',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Piazzale Aldo Moro,7',
+              city: 'Rome',
+              state: 'RM',
+              'postal-code': '185',
+              country: 'Italy'
+            },
+            'org-domain': 'cnr.it',
+            'org-URL': 'https://www.cnr.it/en'
+          }
+        },
+        {
+          '@affiliation-id': '114108952',
+          '@parent': '60021199',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '114108952',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Consiglio Nazionale delle Ricerche, STLab-ISTC',
+            'preferred-name': { '@source': 'internal-ani', '$': 'STLab-ISTC' },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Consiglio Nazionale delle Ricerche'
+            },
+            'sort-name': 'STLab-ISTC',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Piazzale Aldo Moro,7',
+              city: 'Rome',
+              state: 'RM',
+              'postal-code': '185',
+              country: 'Italy'
+            },
+            'org-domain': 'cnr.it',
+            'org-URL': 'https://www.cnr.it/en'
+          }
+        },
+        {
+          '@affiliation-id': '109897387',
+          '@parent': '100474304',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '109897387',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'ISTC-CNR, Semantic Technology Lab',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Semantic Technology Lab'
+            },
+            'parent-preferred-name': { '@source': 'internal-ani', '$': 'ISTC-CNR' },
+            'sort-name': 'Semantic Technology Lab',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via S. Martino della Battaglia 44, I-00185 Rom',
+              country: 'Italy'
+            }
+          }
+        },
+        {
+          '@affiliation-id': '116676199',
+          '@parent': '60021199',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '116676199',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Consiglio Nazionale delle Ricerche, ISTC/STLab',
+            'preferred-name': { '@source': 'internal-ani', '$': 'ISTC/STLab' },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Consiglio Nazionale delle Ricerche'
+            },
+            'sort-name': 'ISTC/STLab',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Piazzale Aldo Moro,7',
+              city: 'Rome',
+              state: 'RM',
+              'postal-code': '185',
+              country: 'Italy'
+            },
+            'org-domain': 'cnr.it',
+            'org-URL': 'https://www.cnr.it/en'
+          }
+        },
+        {
+          '@affiliation-id': '106546129',
+          '@parent': '100407023',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '106546129',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'ISTC-CNR, Semantic Technology Lab',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Semantic Technology Lab'
+            },
+            'parent-preferred-name': { '@source': 'internal-ani', '$': 'ISTC-CNR' },
+            'sort-name': 'Semantic Technology Lab',
+            address: {
+              '@country': 'ita',
+              'address-part': 'viale Europa 190',
+              city: 'Rome',
+              country: 'Italy'
+            }
+          }
+        },
+        {
+          '@affiliation-id': '113831521',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '113831521',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Department of Computer Science and Engineering',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Computer Science and Engineering'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Department of Computer Science and Engineering',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '113480232',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '113480232',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Department of Computer Science',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Computer Science'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Department of Computer Science',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '60009647',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60009647',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'University Sorbonne Paris Nord#60009647',
+            afdispname: 'University Sorbonne Paris Nord',
+            'manual-curation': {
+              '@curated': 'true',
+              'date-curation': [Object],
+              'curation-source': 'PARITY',
+              'curation-type': 'PARITY-22092020060803414'
+            },
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'University Sorbonne Paris Nord'
+            },
+            'sort-name': 'Sorbonne Paris Nord, University',
+            address: {
+              '@country': 'fra',
+              'address-part': '99 avenue Jean-Baptiste Clément',
+              city: 'Villetaneuse',
+              state: 'Ile-de-France',
+              'postal-code': '93430',
+              country: 'France'
+            },
+            'org-domain': 'univ-spn.fr',
+            'org-URL': 'https://www.univ-spn.fr/engagements/'
+          }
+        },
+        {
+          '@affiliation-id': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60028218',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Alma Mater Studiorum Università di Bologna#60028218',
+            afdispname: 'Alma Mater Studiorum Università di Bologna',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Bologna, University of',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '104427059',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '104427059',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: "Alma Mater Studiorum Università di Bologna, Dipartimento di Scienze dell'Informazione",
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': "Dipartimento di Scienze dell'Informazione"
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': "Dipartimento di Scienze dell'Informazione",
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '105894728',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '105894728',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, CS Dept.',
+            'preferred-name': { '@source': 'internal-ani', '$': 'CS Dept.' },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'CS Dept.',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        }
+      ]
+    }
+  },
+  'request-time': '2024-11-19 16:58:18.460127'
+}

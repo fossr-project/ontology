@@ -1,0 +1,784 @@
+[
+  {
+    _id: ObjectId('66e18dae5d2dd93eb111444f'),
+    situazione_al: '11/09/2024',
+    situazione_al_codice: '0',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [ '85184804391', '85185725772', '85205217656' ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18dbb5d2dd93eb1115191'),
+    situazione_al: '31/12/2023',
+    situazione_al_codice: '24',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '85148538880',
+            '85160239137',
+            '85160547889',
+            '85163379719',
+            '85163786526',
+            '85173589438',
+            '85173594142',
+            '85173601186',
+            '85173979312'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18dcf5d2dd93eb1115ea0'),
+    situazione_al: '31/12/2022',
+    situazione_al_codice: '23',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [ '85120943585', '85132836984', '85147805634' ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18de25d2dd93eb1116ae6'),
+    situazione_al: '31/12/2021',
+    situazione_al_codice: '22',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '85105037346',
+            '85105950736',
+            '85115232844',
+            '85123278442',
+            '85123297226',
+            '85137969583'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18df75d2dd93eb111768f'),
+    situazione_al: '31/12/2020',
+    situazione_al_codice: '21',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '85064182546',
+            '85079095807',
+            '85079783673',
+            '85084968476',
+            '85089718202',
+            '85092707271',
+            '85096376534',
+            '85097385337',
+            '85097646730',
+            '85097715141'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18e085d2dd93eb11181a8'),
+    situazione_al: '31/12/2019',
+    situazione_al_codice: '20',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '85059581022',
+            '85067784206',
+            '85071385092',
+            '85071515728',
+            '85071636994',
+            '85071695031',
+            '85073252069',
+            '85075650940',
+            '85075738168'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18e1b5d2dd93eb1118c84'),
+    situazione_al: '31/12/2018',
+    situazione_al_codice: '19',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '85030700460', '85030720259',
+            '85041823642', '85041830846',
+            '85041851601', '85049692993',
+            '85050529052', '85053913046',
+            '85054582214', '85054607574',
+            '85055714642', '85059013403',
+            '85118432092'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18e2c5d2dd93eb1119737'),
+    situazione_al: '31/12/2017',
+    situazione_al_codice: '18',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '84999041225', '85019709999',
+            '85021800279', '85021833820',
+            '85021836697', '85030449884',
+            '85030991487', '85031913713',
+            '85032008340', '85041572700',
+            '85046422481', '85052430506'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18e3c5d2dd93eb111a1ee'),
+    situazione_al: '31/12/2016',
+    situazione_al_codice: '17',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '84954026072', '84958259328',
+            '84958260732', '84958977919',
+            '84971324139', '84973631196',
+            '84975873974', '84983781382',
+            '84988346594', '84992125284',
+            '84995559833', '84997386055',
+            '85005950045', '85021831563',
+            '85021838978', '85026649976'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18e495d2dd93eb111accf'),
+    situazione_al: '31/12/2015',
+    situazione_al_codice: '16',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '84923078946',
+            '84928532295',
+            '84951816953',
+            '85006825654'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18e5a5d2dd93eb111b7b3'),
+    situazione_al: '31/12/2014',
+    situazione_al_codice: '15',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '84902586433',
+            '84903164582',
+            '84918819252',
+            '84949468940'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18e655d2dd93eb111c2bb'),
+    situazione_al: '31/12/2013',
+    situazione_al_codice: '14',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '84883062997',
+            '84884925856',
+            '84885209688',
+            '84892700221',
+            '84893815226',
+            '84922805643',
+            '84923831935',
+            '84924672122'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18e735d2dd93eb111cddc'),
+    situazione_al: '31/12/2012',
+    situazione_al_codice: '13',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: '',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: 'Informatica - Scienza e Ingegneria',
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '84860670166',
+            '84866605304',
+            '84868516993',
+            '84875648144',
+            '84893201690'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18e805d2dd93eb111d901'),
+    situazione_al: '31/12/2011',
+    situazione_al_codice: '12',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: 'Scienze Matematiche Fisiche e Naturali',
+    ssd: 'INF/01',
+    sc: '01/B1',
+    strutturaAfferenza: "SCIENZE DELL'INFORMAZIONE",
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [ '80055043220', '81855167421', '84891063737' ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18e8b5d2dd93eb111e44e'),
+    situazione_al: '31/12/2010',
+    situazione_al_codice: '11',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: 'Scienze Matematiche Fisiche e Naturali',
+    ssd: 'INF/01',
+    sc: '',
+    strutturaAfferenza: "SCIENZE DELL'INFORMAZIONE",
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '77953797840',
+            '77955696313',
+            '77956095598',
+            '80051949922',
+            '80054036092',
+            '84888883730',
+            '84889642874'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18e9b5d2dd93eb111f000'),
+    situazione_al: '31/12/2009',
+    situazione_al_codice: '10',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: 'Scienze Matematiche Fisiche e Naturali',
+    ssd: 'INF/01',
+    sc: '',
+    strutturaAfferenza: "SCIENZE DELL'INFORMAZIONE",
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '67349276111',
+            '70549087872',
+            '77649141431',
+            '77949792088',
+            '77953555137',
+            '78650195274',
+            '78751700612'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18ead5d2dd93eb111fc57'),
+    situazione_al: '31/12/2008',
+    situazione_al_codice: '9',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: 'Scienze Matematiche Fisiche e Naturali',
+    ssd: 'INF/01',
+    sc: '',
+    strutturaAfferenza: "SCIENZE DELL'INFORMAZIONE",
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '45849095739',
+            '48249085385',
+            '57649227757',
+            '58149376842',
+            '60949103581',
+            '84892076214'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18ec15d2dd93eb11208ed'),
+    situazione_al: '31/12/2007',
+    situazione_al_codice: '8',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: 'Scienze Matematiche Fisiche e Naturali',
+    ssd: 'INF/01',
+    sc: '',
+    strutturaAfferenza: "SCIENZE DELL'INFORMAZIONE",
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '34248641987',
+            '37449031961',
+            '51149085650',
+            '80051948696',
+            '84889852105'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18ed25d2dd93eb1121587'),
+    situazione_al: '31/12/2006',
+    situazione_al_codice: '7',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: 'Scienze Matematiche Fisiche e Naturali',
+    ssd: 'INF/01',
+    sc: '',
+    strutturaAfferenza: "SCIENZE DELL'INFORMAZIONE",
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '33745137785',
+            '33745429890',
+            '33745775454',
+            '33746673188',
+            '33748945988',
+            '33846890297',
+            '84884952313',
+            '85006168557',
+            '85163166334'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18ee55d2dd93eb1122221'),
+    situazione_al: '31/12/2005',
+    situazione_al_codice: '1',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: 'Scienze Matematiche Fisiche e Naturali',
+    ssd: 'INF/01',
+    sc: '',
+    strutturaAfferenza: "SCIENZE DELL'INFORMAZIONE",
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '24644446588',
+            '29744458823',
+            '30344484552',
+            '33244484345',
+            '33644549955',
+            '85088189905'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18ef85d2dd93eb1122e3d'),
+    situazione_al: '31/12/2004',
+    situazione_al_codice: '2',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: 'Scienze Matematiche Fisiche e Naturali',
+    ssd: 'INF/01',
+    sc: '',
+    strutturaAfferenza: "SCIENZE DELL'INFORMAZIONE",
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '10444276726',
+            '33749078074',
+            '35048881530',
+            '84902465744'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18f095d2dd93eb11239ec'),
+    situazione_al: '31/12/2003',
+    situazione_al_codice: '3',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Ordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: 'Scienze Matematiche Fisiche e Naturali',
+    ssd: 'INF/01',
+    sc: '',
+    strutturaAfferenza: "SCIENZE DELL'INFORMAZIONE",
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [ { auid: '7004218817', eids: [ '0037209874', '15744386854' ] } ]
+    }
+  },
+  {
+    _id: ObjectId('66e18f1d5d2dd93eb11245b4'),
+    situazione_al: '31/12/2002',
+    situazione_al_codice: '4',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Straordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: 'Scienze Matematiche Fisiche e Naturali',
+    ssd: 'INF/01',
+    sc: '',
+    strutturaAfferenza: "SCIENZE DELL'INFORMAZIONE",
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '0036041582',
+            '0037941595',
+            '0141427834',
+            '0141461834',
+            '0348162597',
+            '1542325378',
+            '84957065546',
+            '84959044258'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18f2d5d2dd93eb1125198'),
+    situazione_al: '31/12/2001',
+    situazione_al_codice: '5',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Straordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: 'Scienze Matematiche Fisiche e Naturali',
+    ssd: 'INF/01',
+    sc: '',
+    strutturaAfferenza: "SCIENZE DELL'INFORMAZIONE",
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '0035427112',
+            '70350629546',
+            '84937545135',
+            '84954053571',
+            '84959040052'
+          ]
+        }
+      ]
+    }
+  },
+  {
+    _id: ObjectId('66e18f3d5d2dd93eb1125d14'),
+    situazione_al: '31/12/2000',
+    situazione_al_codice: '6',
+    universita: 'BOLOGNA',
+    universita_codice: '03',
+    fascia: 'Straordinario',
+    nome: 'Paolo',
+    cognome: 'Ciancarini',
+    cognome_nome: 'CIANCARINI Paolo',
+    genere: 'M',
+    facolta: 'Scienze Matematiche Fisiche e Naturali',
+    ssd: '',
+    sc: '',
+    strutturaAfferenza: "SCIENZE DELL'INFORMAZIONE",
+    'scopus-disambiguation': {
+      'match-type': '1',
+      matches: [
+        {
+          auid: '7004218817',
+          eids: [
+            '0006576034',
+            '0011314848',
+            '0033725607',
+            '0034593026',
+            '0035391462',
+            '84942936413',
+            '84942942991',
+            '84947708105'
+          ]
+        }
+      ]
+    }
+  }
+]

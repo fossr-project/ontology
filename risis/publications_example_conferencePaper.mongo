@@ -1,0 +1,84 @@
+{
+  _id: '85135734226',
+  '@_fa': 'true',
+  link: [
+    {
+      '@_fa': 'true',
+      '@ref': 'self',
+      '@href': 'https://api.elsevier.com/content/abstract/scopus_id/85135734226'
+    },
+    {
+      '@_fa': 'true',
+      '@ref': 'author-affiliation',
+      '@href': 'https://api.elsevier.com/content/abstract/scopus_id/85135734226?field=author,affiliation'
+    },
+    {
+      '@_fa': 'true',
+      '@ref': 'scopus',
+      '@href': 'https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85135734226&origin=inward'
+    },
+    {
+      '@_fa': 'true',
+      '@ref': 'scopus-citedby',
+      '@href': 'https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85135734226&origin=inward'
+    }
+  ],
+  'prism:url': 'https://api.elsevier.com/content/abstract/scopus_id/85135734226',
+  'dc:identifier': 'SCOPUS_ID:85135734226',
+  eid: '2-s2.0-85135734226',
+  'dc:title': 'A Web Of Things Context-Aware IoT System leveraging Q-learning',
+  'dc:creator': 'Bedogni L.',
+  'prism:publicationName': 'Proceedings - IEEE Consumer Communications and Networking Conference, CCNC',
+  'prism:issn': '23319860',
+  'prism:pageRange': '405-410',
+  'prism:coverDate': '2022-01-01',
+  'prism:coverDisplayDate': '2022',
+  'prism:doi': '10.1109/CCNC49033.2022.9700519',
+  'dc:description': 'The Internet of Things and more recently the Web of Things are changing how we interact with devices. The possibilities and novel services they provide enables the users to perform automatic operations and to monitor data of interest. Although many operations are performed autonomously by devices, there is still the need for the user to understand the data provided, and to configure their own services according to it. In this work we explore the possibility for devices to autonomously organize and understand the effects of the actions on the scenario, and provide a better status of the system. We do so by presenting a novel architecture, and developing a Q-learning algorithm which learns from the different statuses in which the system is. Our results indicate that devices with no prior knowledge of each other may eventually collaborate to provide a novel service to the end user, without any human intervention, and eventually achieve a better system status.',
+  'citedby-count': '3',
+  affiliation: [
+    {
+      '@_fa': 'true',
+      'affiliation-url': 'https://api.elsevier.com/content/affiliation/affiliation_id/60004591',
+      afid: '60004591',
+      affilname: 'Università degli Studi di Modena e Reggio Emilia',
+      'affiliation-city': 'Modena',
+      'affiliation-country': 'Italy'
+    }
+  ],
+  'prism:aggregationType': 'Conference Proceeding',
+  subtype: 'cp',
+  subtypeDescription: 'Conference Paper',
+  'author-count': { '@limit': '100', '@total': '2', '$': '2' },
+  author: [
+    {
+      '@_fa': 'true',
+      '@seq': '1',
+      'author-url': 'https://api.elsevier.com/content/author/author_id/54580586400',
+      authid: '54580586400',
+      authname: 'Bedogni L.',
+      surname: 'Bedogni',
+      'given-name': 'Luca',
+      initials: 'L.',
+      afid: [ { '@_fa': 'true', '$': '60004591' } ]
+    },
+    {
+      '@_fa': 'true',
+      '@seq': '2',
+      'author-url': 'https://api.elsevier.com/content/author/author_id/57562645800',
+      authid: '57562645800',
+      authname: 'Poggi F.',
+      surname: 'Poggi',
+      'given-name': 'Francesco',
+      initials: 'F.',
+      afid: [ { '@_fa': 'true', '$': '60004591' } ]
+    }
+  ],
+  authkeywords: 'Autonomous systems | IoT | Q-learning | WoT',
+  'source-id': '21101100718',
+  'fund-no': 'undefined',
+  openaccess: '0',
+  openaccessFlag: false,
+  'request-time': '2024-11-13 16:30:38.037684',
+  'pg:scopus-pub-year': '2022'
+}

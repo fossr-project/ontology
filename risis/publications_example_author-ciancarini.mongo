@@ -1,0 +1,1833 @@
+
+  _id: '7004218817',
+  '@status': 'found',
+  '@_fa': 'true',
+  coredata: {
+    'prism:url': 'http://api.elsevier.com/content/author/author_id/7004218817',
+    'dc:identifier': 'AUTHOR_ID:7004218817',
+    'historical-identifier': [ { '@_fa': 'true', '$': 'author_id:57195740739' } ],
+    eid: '9-s2.0-7004218817',
+    orcid: '0000-0002-7958-9924',
+    'document-count': '244',
+    'cited-by-count': '1929',
+    'citation-count': '2378',
+    link: [
+      {
+        '@href': 'https://www.scopus.com/authid/detail.uri?partnerID=HzOxMe3b&authorId=7004218817&origin=inward',
+        '@rel': 'scopus-author',
+        '@_fa': 'true'
+      },
+      {
+        '@href': 'http://api.elsevier.com/content/author/author_id/7004218817',
+        '@rel': 'self',
+        '@_fa': 'true'
+      },
+      {
+        '@href': 'http://api.elsevier.com/content/search/scopus?query=au-id%287004218817%29',
+        '@rel': 'search',
+        '@_fa': 'true'
+      },
+      {
+        '@href': 'http://api.elsevier.com/content/search/author?co-author=7004218817',
+        '@rel': 'coauthor-search',
+        '@_fa': 'true'
+      }
+    ]
+  },
+  'h-index': '22',
+  'coauthor-count': '263',
+  'affiliation-current': {
+    '@id': '60028218',
+    '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/'
+  },
+  'affiliation-history': {
+    affiliation: [
+      {
+        '@_fa': 'true',
+        '@id': '60028218',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60028218'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60105869',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60105869'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60020261',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60020261'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '101574102',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/101574102'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '101781354',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/101781354'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60004591',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60004591'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60021199',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60021199'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '126381232',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/126381232'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '127274510',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/127274510'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60000251',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60000251'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60011575',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60011575'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60011604',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60011604'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60028868',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60028868'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60157832',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60157832'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '60005455',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/60005455'
+      },
+      {
+        '@_fa': 'true',
+        '@id': '100814913',
+        '@href': 'http://api.elsevier.com/content/affiliation/affiliation_id/100814913'
+      }
+    ]
+  },
+  'subject-areas': {
+    'subject-area': [
+      {
+        '@_fa': 'true',
+        '@abbrev': 'SOCI',
+        '@code': '3300',
+        '$': 'Social Sciences (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'SOCI',
+        '@code': '3310',
+        '$': 'Linguistics and Language'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ENGI',
+        '@code': '2204',
+        '$': 'Biomedical Engineering'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MATH',
+        '@code': '2600',
+        '$': 'Mathematics (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ENGI',
+        '@code': '2214',
+        '$': 'Media Technology'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ENGI',
+        '@code': '2200',
+        '$': 'Engineering (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MEDI',
+        '@code': '2711',
+        '$': 'Emergency Medicine'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'SOCI',
+        '@code': '3307',
+        '$': 'Human Factors and Ergonomics'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ENGI',
+        '@code': '2207',
+        '$': 'Control and Systems Engineering'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MEDI',
+        '@code': '2718',
+        '$': 'Health Informatics'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'PHYS',
+        '@code': '3105',
+        '$': 'Instrumentation'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ENGI',
+        '@code': '2201',
+        '$': 'Engineering (miscellaneous)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'DECI',
+        '@code': '1802',
+        '$': 'Information Systems and Management'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1708',
+        '$': 'Hardware and Architecture'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1711',
+        '$': 'Signal Processing'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MATE',
+        '@code': '2500',
+        '$': 'Materials Science (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'SOCI',
+        '@code': '3304',
+        '$': 'Education'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ENGI',
+        '@code': '2208',
+        '$': 'Electrical and Electronic Engineering'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MATH',
+        '@code': '2611',
+        '$': 'Modeling and Simulation'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'SOCI',
+        '@code': '3308',
+        '$': 'Law'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1701',
+        '$': 'Computer Science (miscellaneous)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ECON',
+        '@code': '2000',
+        '$': 'Economics, Econometrics and Finance (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MATH',
+        '@code': '2601',
+        '$': 'Mathematics (miscellaneous)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1704',
+        '$': 'Computer Graphics and Computer-Aided Design'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'SOCI',
+        '@code': '3301',
+        '$': 'Social Sciences (miscellaneous)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1710',
+        '$': 'Information Systems'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1712',
+        '$': 'Software'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'AGRI',
+        '@code': '1106',
+        '$': 'Food Science'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1706',
+        '$': 'Computer Science Applications'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'DECI',
+        '@code': '1801',
+        '$': 'Decision Sciences (miscellaneous)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'BUSI',
+        '@code': '1405',
+        '$': 'Management of Technology and Innovation'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1707',
+        '$': 'Computer Vision and Pattern Recognition'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MATH',
+        '@code': '2614',
+        '$': 'Theoretical Computer Science'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ENGI',
+        '@code': '2206',
+        '$': 'Computational Mechanics'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ECON',
+        '@code': '2001',
+        '$': 'Economics, Econometrics and Finance (miscellaneous)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1703',
+        '$': 'Computational Theory and Mathematics'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'BIOC',
+        '@code': '1300',
+        '$': 'Biochemistry, Genetics and Molecular Biology (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ARTS',
+        '@code': '1203',
+        '$': 'Language and Linguistics'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ENER',
+        '@code': '2102',
+        '$': 'Energy Engineering and Power Technology'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'DECI',
+        '@code': '1804',
+        '$': 'Statistics, Probability and Uncertainty'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'BUSI',
+        '@code': '1401',
+        '$': 'Business, Management and Accounting (miscellaneous)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'BUSI',
+        '@code': '1408',
+        '$': 'Strategy and Management'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'ENGI',
+        '@code': '2213',
+        '$': 'Safety, Risk, Reliability and Quality'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1702',
+        '$': 'Artificial Intelligence'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'SOCI',
+        '@code': '3306',
+        '$': 'Health (social science)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'BUSI',
+        '@code': '1404',
+        '$': 'Management Information Systems'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'MATH',
+        '@code': '2606',
+        '$': 'Control and Optimization'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'DECI',
+        '@code': '1800',
+        '$': 'Decision Sciences (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1700',
+        '$': 'Computer Science (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'DECI',
+        '@code': '1803',
+        '$': 'Management Science and Operations Research'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'SOCI',
+        '@code': '3309',
+        '$': 'Library and Information Sciences'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'BUSI',
+        '@code': '1407',
+        '$': 'Organizational Behavior and Human Resource Management'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1705',
+        '$': 'Computer Networks and Communications'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'BUSI',
+        '@code': '1400',
+        '$': 'Business, Management and Accounting (all)'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'COMP',
+        '@code': '1709',
+        '$': 'Human-Computer Interaction'
+      },
+      {
+        '@_fa': 'true',
+        '@abbrev': 'PSYC',
+        '@code': '3205',
+        '$': 'Experimental and Cognitive Psychology'
+      }
+    ]
+  },
+  'author-profile': {
+    status: 'update',
+    'date-created': { '@day': '04', '@month': '12', '@year': '2005' },
+    'preferred-name': {
+      '@date-locked': '2021-09-08T18:42:06.401-04:00',
+      '@source': 'corrapi-external',
+      initials: 'P.',
+      'indexed-name': 'Ciancarini P.',
+      surname: 'Ciancarini',
+      'given-name': 'Paolo'
+    },
+    'name-variant': [
+      {
+        '@doc-count': '31',
+        '@source': 'internal-ani',
+        initials: 'P.',
+        'indexed-name': 'Ciancarini P.',
+        surname: 'Ciancarini',
+        'given-name': 'P.'
+      },
+      {
+        '@doc-count': '1',
+        '@source': 'internal-ani',
+        initials: 'P.',
+        'indexed-name': 'Ciancaxini P.',
+        surname: 'Ciancaxini',
+        'given-name': 'Paolo'
+      }
+    ],
+    classificationgroup: {
+      classifications: {
+        '@type': 'ASJC',
+        classification: [
+          { '@frequency': '2', '$': '3300' },
+          { '@frequency': '1', '$': '3310' },
+          { '@frequency': '1', '$': '2204' },
+          { '@frequency': '7', '$': '2600' },
+          { '@frequency': '6', '$': '2214' },
+          { '@frequency': '20', '$': '2200' },
+          { '@frequency': '1', '$': '2711' },
+          { '@frequency': '1', '$': '3307' },
+          { '@frequency': '21', '$': '2207' },
+          { '@frequency': '1', '$': '2718' },
+          { '@frequency': '2', '$': '3105' },
+          { '@frequency': '2', '$': '2201' },
+          { '@frequency': '11', '$': '1802' },
+          { '@frequency': '21', '$': '1708' },
+          { '@frequency': '2', '$': '1711' },
+          { '@frequency': '2', '$': '2500' },
+          { '@frequency': '8', '$': '3304' },
+          { '@frequency': '10', '$': '2208' },
+          { '@frequency': '4', '$': '2611' },
+          { '@frequency': '1', '$': '3308' },
+          { '@frequency': '7', '$': '1701' },
+          { '@frequency': '1', '$': '2000' },
+          { '@frequency': '1', '$': '2601' },
+          { '@frequency': '18', '$': '1704' },
+          { '@frequency': '1', '$': '3301' },
+          { '@frequency': '24', '$': '1710' },
+          { '@frequency': '82', '$': '1712' },
+          { '@frequency': '1', '$': '1106' },
+          { '@frequency': '33', '$': '1706' },
+          { '@frequency': '1', '$': '1801' },
+          { '@frequency': '1', '$': '1405' },
+          { '@frequency': '6', '$': '1707' },
+          { '@frequency': '62', '$': '2614' },
+          { '@frequency': '1', '$': '2206' },
+          { '@frequency': '1', '$': '2001' },
+          { '@frequency': '6', '$': '1703' },
+          { '@frequency': '6', '$': '1300' },
+          { '@frequency': '2', '$': '1203' },
+          { '@frequency': '1', '$': '2102' },
+          { '@frequency': '1', '$': '1804' },
+          { '@frequency': '1', '$': '1401' },
+          { '@frequency': '1', '$': '1408' },
+          { '@frequency': '3', '$': '2213' },
+          { '@frequency': '20', '$': '1702' },
+          { '@frequency': '1', '$': '3306' },
+          { '@frequency': '3', '$': '1404' },
+          { '@frequency': '3', '$': '2606' },
+          { '@frequency': '1', '$': '1800' },
+          { '@frequency': '105', '$': '1700' },
+          { '@frequency': '1', '$': '1803' },
+          { '@frequency': '6', '$': '3309' },
+          { '@frequency': '1', '$': '1407' },
+          { '@frequency': '21', '$': '1705' },
+          { '@frequency': '1', '$': '1400' },
+          { '@frequency': '14', '$': '1709' },
+          { '@frequency': '1', '$': '3205' }
+        ]
+      }
+    },
+    'publication-range': { '@end': '2024', '@start': '1990' },
+    'affiliation-current': {
+      affiliation: {
+        '@affiliation-id': '60028218',
+        '@source': 'corrapi-external',
+        'ip-doc': {
+          '@id': '60028218',
+          '@type': 'parent',
+          '@relationship': 'author',
+          afnameid: 'Alma Mater Studiorum Università di Bologna#60028218',
+          afdispname: 'Alma Mater Studiorum Università di Bologna',
+          'preferred-name': {
+            '@source': 'internal-ani',
+            '$': 'Alma Mater Studiorum Università di Bologna'
+          },
+          'sort-name': 'Bologna, University of',
+          address: {
+            '@country': 'ita',
+            'address-part': 'Via Zamboni 33',
+            city: 'Bologna',
+            state: 'BO',
+            'postal-code': '40126',
+            country: 'Italy'
+          },
+          'org-domain': 'unibo.it',
+          'org-URL': 'https://www.unibo.it/en/homepage'
+        }
+      }
+    },
+    'affiliation-history': {
+      affiliation: [
+        {
+          '@affiliation-id': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60028218',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Alma Mater Studiorum Università di Bologna#60028218',
+            afdispname: 'Alma Mater Studiorum Università di Bologna',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Bologna, University of',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '113831521',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '113831521',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Department of Computer Science and Engineering',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Computer Science and Engineering'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Department of Computer Science and Engineering',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '113480232',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '113480232',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Department of Computer Science',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Computer Science'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Department of Computer Science',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '60105869',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60105869',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Innopolis University#60105869',
+            afdispname: 'Innopolis University',
+            'preferred-name': { '@source': 'internal-ani', '$': 'Innopolis University' },
+            'sort-name': 'Innopolis University',
+            address: {
+              '@country': 'rus',
+              'address-part': '1, Universitetskaya Str.',
+              city: 'Innopolis',
+              'postal-code': '420500',
+              country: 'Russian Federation'
+            },
+            'org-domain': 'innopolis.university',
+            'org-URL': 'https://innopolis.university/en/'
+          }
+        },
+        {
+          '@affiliation-id': '60020261',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60020261',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Università della Calabria#60020261',
+            afdispname: 'Università della Calabria',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Università della Calabria'
+            },
+            'sort-name': 'Calabria, University of',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Pietro Bucci',
+              city: 'Rende',
+              state: 'CS',
+              'postal-code': '87036',
+              country: 'Italy'
+            },
+            'org-domain': 'unical.it',
+            'org-URL': 'https://www.unical.it/?lang=en'
+          }
+        },
+        {
+          '@affiliation-id': '119524875',
+          '@parent': '60105869',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '119524875',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Innopolis University, Institute of Software Development and Engineering',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Institute of Software Development and Engineering'
+            },
+            'parent-preferred-name': { '@source': 'internal-ani', '$': 'Innopolis University' },
+            'sort-name': 'Institute of Software Development and Engineering',
+            address: {
+              '@country': 'rus',
+              'address-part': '1, Universitetskaya Str.',
+              city: 'Innopolis',
+              'postal-code': '420500',
+              country: 'Russian Federation'
+            },
+            'org-domain': 'innopolis.university',
+            'org-URL': 'https://innopolis.university/en/'
+          }
+        },
+        {
+          '@affiliation-id': '107857354',
+          '@parent': '60012572',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '107857354',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome, STLab',
+            'preferred-name': { '@source': 'internal-ani', '$': 'STLab' },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome'
+            },
+            'sort-name': 'STLab',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via S. Martino della Battaglia 44',
+              city: 'Rome',
+              state: 'RM',
+              'postal-code': '185',
+              country: 'Italy'
+            },
+            'org-domain': 'istc.cnr.it',
+            'org-URL': 'http://www.istc.cnr.it'
+          }
+        },
+        {
+          '@affiliation-id': '112748495',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '112748495',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, DISI',
+            'preferred-name': { '@source': 'internal-ani', '$': 'DISI' },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'DISI',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '101574102',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '101574102',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: "CONSORZIO INTERUNIVERSITARIO NAZIONALE PER L'INFORMATICA#101574102",
+            afdispname: "CONSORZIO INTERUNIVERSITARIO NAZIONALE PER L'INFORMATICA",
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': "CONSORZIO INTERUNIVERSITARIO NAZIONALE PER L'INFORMATICA"
+            },
+            'sort-name': "CONSORZIO INTERUNIVERSITARIO NAZIONALE PER L'INFORMATICA",
+            address: {
+              '@country': 'ita',
+              'address-part': 'VIA ARIOSTO 25',
+              city: 'Rome',
+              'postal-code': '00185',
+              country: 'Italy'
+            }
+          }
+        },
+        {
+          '@affiliation-id': '101781354',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '101781354',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'AITIA#101781354',
+            afdispname: 'AITIA',
+            'preferred-name': { '@source': 'internal-ani', '$': 'AITIA' },
+            'sort-name': 'AITIA',
+            address: {
+              '@country': 'hun',
+              'address-part': 'Infopark setany 1',
+              city: 'Budapest',
+              'postal-code': '1117',
+              country: 'Hungary'
+            }
+          }
+        },
+        {
+          '@affiliation-id': '114108952',
+          '@parent': '60021199',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '114108952',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Consiglio Nazionale delle Ricerche, STLab-ISTC',
+            'preferred-name': { '@source': 'internal-ani', '$': 'STLab-ISTC' },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Consiglio Nazionale delle Ricerche'
+            },
+            'sort-name': 'STLab-ISTC',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Piazzale Aldo Moro,7',
+              city: 'Rome',
+              state: 'RM',
+              'postal-code': '185',
+              country: 'Italy'
+            },
+            'org-domain': 'cnr.it',
+            'org-URL': 'https://www.cnr.it/en'
+          }
+        },
+        {
+          '@affiliation-id': '60004591',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60004591',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Università degli Studi di Modena e Reggio Emilia#60004591',
+            afdispname: 'Università degli Studi di Modena e Reggio Emilia',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Università degli Studi di Modena e Reggio Emilia'
+            },
+            'sort-name': 'Modena and Reggio Emilia, University of',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Università 4',
+              city: 'Modena',
+              state: 'MO',
+              'postal-code': '41121',
+              country: 'Italy'
+            },
+            'org-domain': 'international.unimore.it',
+            'org-URL': 'https://international.unimore.it/'
+          }
+        },
+        {
+          '@affiliation-id': '113657002',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '113657002',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Department of Computer Science and Engineering (DISI)',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Computer Science and Engineering (DISI)'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Department of Computer Science and Engineering (DISI)',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '107857353',
+          '@parent': '60012572',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '107857353',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome, Semantic Technology Laboratory',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Semantic Technology Laboratory'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome'
+            },
+            'sort-name': 'Semantic Technology Laboratory',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via S. Martino della Battaglia 44',
+              city: 'Rome',
+              state: 'RM',
+              'postal-code': '185',
+              country: 'Italy'
+            },
+            'org-domain': 'istc.cnr.it',
+            'org-URL': 'http://www.istc.cnr.it'
+          }
+        },
+        {
+          '@affiliation-id': '105972219',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '105972219',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Faculty of Science',
+            'preferred-name': { '@source': 'internal-ani', '$': 'Faculty of Science' },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Faculty of Science',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '104427059',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '104427059',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: "Alma Mater Studiorum Università di Bologna, Dipartimento di Scienze dell'Informazione",
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': "Dipartimento di Scienze dell'Informazione"
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': "Dipartimento di Scienze dell'Informazione",
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '60021199',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60021199',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Consiglio Nazionale delle Ricerche#60021199',
+            afdispname: 'Consiglio Nazionale delle Ricerche',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Consiglio Nazionale delle Ricerche'
+            },
+            'sort-name': 'Italian National Research Council',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Piazzale Aldo Moro,7',
+              city: 'Rome',
+              state: 'RM',
+              'postal-code': '185',
+              country: 'Italy'
+            },
+            'org-domain': 'cnr.it',
+            'org-URL': 'https://www.cnr.it/en'
+          }
+        },
+        {
+          '@affiliation-id': '112248124',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '112248124',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Department of Computer Science',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Computer Science'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Department of Computer Science',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '105894728',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '105894728',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, CS Dept.',
+            'preferred-name': { '@source': 'internal-ani', '$': 'CS Dept.' },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'CS Dept.',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '113100746',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '113100746',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Department of Computer Science',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Computer Science'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Department of Computer Science',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '104426810',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '104426810',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Department of Computer Science',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Computer Science'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Department of Computer Science',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '122197954',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '122197954',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Department of Information and Communication Technologies',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Information and Communication Technologies'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Department of Information and Communication Technologies',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '126381232',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '126381232',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: "Consorzio Interuniversitario Nazionale per l'Informatica - CINI#126381232",
+            afdispname: "Consorzio Interuniversitario Nazionale per l'Informatica - CINI",
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': "Consorzio Interuniversitario Nazionale per l'Informatica - CINI"
+            },
+            'sort-name': "Consorzio Interuniversitario Nazionale per l'Informatica - CINI",
+            address: {
+              '@country': 'ita',
+              'address-part': 'via Orabona, 4',
+              city: 'Bari',
+              'postal-code': '70125',
+              country: 'Italy'
+            }
+          }
+        },
+        {
+          '@affiliation-id': '127274658',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '127274658',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Software Comitato Scientifico di Mondo Digitale',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Software Comitato Scientifico di Mondo Digitale'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Software Comitato Scientifico di Mondo Digitale',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '127274510',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '127274510',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Commissione Europea per Varie Attività di Monitoraggio dei Programmi Quadro#127274510',
+            afdispname: 'Commissione Europea per Varie Attività di Monitoraggio dei Programmi Quadro',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Commissione Europea per Varie Attività di Monitoraggio dei Programmi Quadro'
+            },
+            'sort-name': 'Commissione Europea per Varie Attività di Monitoraggio dei Programmi Quadro',
+            address: { '@country': 'ita', country: 'Italy' }
+          }
+        },
+        {
+          '@affiliation-id': '105306978',
+          '@parent': '105305071',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '105306978',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Osservatorio Permanente dell Certificazioni Informatiche negli Atenei Italiani, Gruppo di Lavoro che ha Realizzato',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Gruppo di Lavoro che ha Realizzato'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Osservatorio Permanente dell Certificazioni Informatiche negli Atenei Italiani'
+            },
+            'sort-name': 'Gruppo di Lavoro che ha Realizzato',
+            address: { '@country': 'ita', country: 'Italy' }
+          }
+        },
+        {
+          '@affiliation-id': '104428664',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '104428664',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: "Alma Mater Studiorum Università di Bologna, Dipto. di Scienze dell'lnformazione",
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': "Dipto. di Scienze dell'lnformazione"
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': "Dipto. di Scienze dell'lnformazione",
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '104427416',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '104427416',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Dipartimento di Scienze',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Dipartimento di Scienze'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Dipartimento di Scienze',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '104428929',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '104428929',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: "Alma Mater Studiorum Università di Bologna, Dipto. di Scienze dell'Informazione",
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': "Dipto. di Scienze dell'Informazione"
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': "Dipto. di Scienze dell'Informazione",
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '116389735',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '116389735',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Department of Information Science',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Information Science'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Department of Information Science',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '112950585',
+          '@parent': '60012259',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '112950585',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Università degli Studi di Torino, Department of Computer Science',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Computer Science'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Università degli Studi di Torino'
+            },
+            'sort-name': 'Department of Computer Science',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Verdi, 8',
+              city: 'Turin',
+              state: 'TO',
+              'postal-code': '10124',
+              country: 'Italy'
+            },
+            'org-domain': 'en.unito.it',
+            'org-URL': 'https://en.unito.it/'
+          }
+        },
+        {
+          '@affiliation-id': '104429105',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '104429105',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: "Alma Mater Studiorum Università di Bologna, Dip. di Scienze dell'Inf.",
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': "Dip. di Scienze dell'Inf."
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': "Dip. di Scienze dell'Inf.",
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '105735712',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '105735712',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Dipartimento di Scienze DellInformazione',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Dipartimento di Scienze DellInformazione'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Dipartimento di Scienze DellInformazione',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '60000251',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60000251',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'IEEE#60000251',
+            afdispname: 'IEEE',
+            'preferred-name': { '@source': 'internal-ani', '$': 'IEEE' },
+            'sort-name': 'IEEE',
+            address: {
+              '@country': 'usa',
+              'address-part': '3 Park Avenue',
+              city: 'New York',
+              state: 'NY',
+              'postal-code': '10016',
+              country: 'United States'
+            },
+            'org-domain': 'ieee.org',
+            'org-URL': 'https://www.ieee.org/'
+          }
+        },
+        {
+          '@affiliation-id': '60011575',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60011575',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Centrum Wiskunde & Informatica#60011575',
+            afdispname: 'Centrum Wiskunde & Informatica',
+            'manual-curation': {
+              '@curated': 'true',
+              'date-curation': [Object],
+              'curation-source': 'Elsevier',
+              'curation-type': 'SCOPUS-1244'
+            },
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Centrum Wiskunde & Informatica'
+            },
+            'sort-name': 'Center for Mathematics and Computer Science - Amsterdam',
+            address: {
+              '@country': 'nld',
+              'address-part': 'Science Park 123',
+              city: 'Amsterdam',
+              state: 'Noord-Holland',
+              'postal-code': '1098 XG',
+              country: 'Netherlands'
+            },
+            'org-domain': 'cwi.nl',
+            'org-URL': 'https://www.cwi.nl/en/'
+          }
+        },
+        {
+          '@affiliation-id': '60011604',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60011604',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Technische Universität Berlin#60011604',
+            afdispname: 'Technische Universität Berlin',
+            'manual-curation': {
+              '@curated': 'true',
+              'date-curation': [Object],
+              'curation-source': 'QABOAPI',
+              'curation-type': 'QABO-4135858'
+            },
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Technische Universität Berlin'
+            },
+            'sort-name': 'Technical University of Berlin',
+            address: {
+              '@country': 'deu',
+              'address-part': 'Straße des 17. Juni 135',
+              city: 'Berlin',
+              'postal-code': '10623',
+              country: 'Germany'
+            },
+            'org-domain': 'tu.berlin',
+            'org-URL': 'https://www.tu.berlin/en/'
+          }
+        },
+        {
+          '@affiliation-id': '104427974',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '104427974',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: "Alma Mater Studiorum Università di Bologna, Dipto. di Science dell 'Informazione",
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': "Dipto. di Science dell 'Informazione"
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': "Dipto. di Science dell 'Informazione",
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '60028868',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60028868',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Università di Pisa#60028868',
+            afdispname: 'Università di Pisa',
+            'preferred-name': { '@source': 'internal-ani', '$': 'Università di Pisa' },
+            'sort-name': 'Pisa, University of',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Lungarno Pacinotti 43',
+              city: 'Pisa',
+              state: 'PI',
+              'postal-code': '56126',
+              country: 'Italy'
+            },
+            'org-domain': 'unipi.it',
+            'org-URL': 'https://www.unipi.it/'
+          }
+        },
+        {
+          '@affiliation-id': '113563554',
+          '@parent': '60028218',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '113563554',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Alma Mater Studiorum Università di Bologna, Department of Mathematics',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Mathematics'
+            },
+            'parent-preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Alma Mater Studiorum Università di Bologna'
+            },
+            'sort-name': 'Department of Mathematics',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Zamboni 33',
+              city: 'Bologna',
+              state: 'BO',
+              'postal-code': '40126',
+              country: 'Italy'
+            },
+            'org-domain': 'unibo.it',
+            'org-URL': 'https://www.unibo.it/en/homepage'
+          }
+        },
+        {
+          '@affiliation-id': '116962289',
+          '@parent': '116961423',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '116962289',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'University di Piss, Department of Computer Science',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Computer Science'
+            },
+            'parent-preferred-name': { '@source': 'internal-ani', '$': 'University di Piss' },
+            'sort-name': 'Department of Computer Science',
+            address: {
+              '@country': 'ita',
+              'address-part': '401-56125, Piss',
+              country: 'Italy'
+            }
+          }
+        },
+        {
+          '@affiliation-id': '60157832',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60157832',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Yale School of Engineering & Applied Science#60157832',
+            afdispname: 'Yale School of Engineering & Applied Science',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Yale School of Engineering & Applied Science'
+            },
+            'sort-name': 'Yale School of Engineering & Applied Science',
+            address: {
+              '@country': 'usa',
+              'address-part': 'P.O. Box 208292, 17 Hillhouse Avenue',
+              city: 'New Haven',
+              state: 'CT',
+              'postal-code': '06520–8292',
+              country: 'United States'
+            },
+            'org-domain': 'seas.yale.edu',
+            'org-URL': 'https://seas.yale.edu/'
+          }
+        },
+        {
+          '@affiliation-id': '60005455',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '60005455',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Yale University#60005455',
+            afdispname: 'Yale University',
+            'preferred-name': { '@source': 'internal-ani', '$': 'Yale University' },
+            'sort-name': 'Yale University',
+            address: {
+              '@country': 'usa',
+              'address-part': '265 Church Street, Suite 901',
+              city: 'New Haven',
+              state: 'CT',
+              'postal-code': '06510-7012',
+              country: 'United States'
+            },
+            'org-domain': 'yale.edu',
+            'org-URL': 'https://www.yale.edu/'
+          }
+        },
+        {
+          '@affiliation-id': '104458836',
+          '@parent': '60028868',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '104458836',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Università di Pisa, Dipartimento di Informatica',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Dipartimento di Informatica'
+            },
+            'parent-preferred-name': { '@source': 'internal-ani', '$': 'Università di Pisa' },
+            'sort-name': 'Dipartimento di Informatica',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Lungarno Pacinotti 43',
+              city: 'Pisa',
+              state: 'PI',
+              'postal-code': '56126',
+              country: 'Italy'
+            },
+            'org-domain': 'unipi.it',
+            'org-URL': 'https://www.unipi.it/'
+          }
+        },
+        {
+          '@affiliation-id': '109696702',
+          '@parent': '60028868',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '109696702',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Università di Pisa, Department of Computer Science',
+            'preferred-name': {
+              '@source': 'internal-ani',
+              '$': 'Department of Computer Science'
+            },
+            'parent-preferred-name': { '@source': 'internal-ani', '$': 'Università di Pisa' },
+            'sort-name': 'Department of Computer Science',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Lungarno Pacinotti 43',
+              city: 'Pisa',
+              state: 'PI',
+              'postal-code': '56126',
+              country: 'Italy'
+            },
+            'org-domain': 'unipi.it',
+            'org-URL': 'https://www.unipi.it/'
+          }
+        },
+        {
+          '@affiliation-id': '104459261',
+          '@parent': '60028868',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '104459261',
+            '@type': 'dept',
+            '@relationship': 'author',
+            afdispname: 'Università di Pisa, Dipartimento di Inf',
+            'preferred-name': { '@source': 'internal-ani', '$': 'Dipartimento di Inf' },
+            'parent-preferred-name': { '@source': 'internal-ani', '$': 'Università di Pisa' },
+            'sort-name': 'Dipartimento di Inf',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Lungarno Pacinotti 43',
+              city: 'Pisa',
+              state: 'PI',
+              'postal-code': '56126',
+              country: 'Italy'
+            },
+            'org-domain': 'unipi.it',
+            'org-URL': 'https://www.unipi.it/'
+          }
+        },
+        {
+          '@affiliation-id': '100814913',
+          '@source': 'internal-ani',
+          'ip-doc': {
+            '@id': '100814913',
+            '@type': 'parent',
+            '@relationship': 'author',
+            afnameid: 'Universita di Voline#100814913',
+            afdispname: 'Universita di Voline',
+            'preferred-name': { '@source': 'internal-ani', '$': 'Universita di Voline' },
+            'sort-name': 'Voline, Universita di',
+            address: {
+              '@country': 'ita',
+              'address-part': 'Via Colugna 40',
+              city: 'Voline',
+              'postal-code': '33100',
+              country: 'Italy'
+            }
+          }
+        }
+      ]
+    }
+  },
+  'request-time': '2024-11-19 16:44:13.828945'
+}
