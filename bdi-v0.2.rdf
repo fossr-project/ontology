@@ -53,7 +53,7 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     <!-- https://w3id.org/fossr/bdi/basedOn -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/basedOn">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/DesireDefinition"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/DesireFormation"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
     </owl:ObjectProperty>
     
@@ -62,7 +62,6 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     <!-- https://w3id.org/fossr/bdi/defines -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/defines">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/DesireDefinition"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
     </owl:ObjectProperty>
     
@@ -71,7 +70,7 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     <!-- https://w3id.org/fossr/bdi/deliberates -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/deliberates">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/IntentionDeliberation"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/IntentionFormation"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
     </owl:ObjectProperty>
     
@@ -151,9 +150,33 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     
 
 
+    <!-- https://w3id.org/fossr/bdi/hasMentalEntity -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasMentalEntity">
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isMentalEntityOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/MentalEntity"/>
+        <rdfs:label xml:lang="en">has mental object</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/hasMentalProcess -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasMentalProcess">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalEntity"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isMentalProcessOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
+        <rdfs:label xml:lang="en">has mental process</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/fossr/bdi/hasMentalState -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasMentalState">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalEntity"/>
         <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isMentalStateOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
@@ -296,9 +319,30 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     
 
 
+    <!-- https://w3id.org/fossr/bdi/isMentalEntityOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isMentalEntityOf">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalEntity"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:label>is mental entity of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isMentalProcessOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isMentalProcessOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/isMentalEntityOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/fossr/bdi/isMentalStateOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isMentalStateOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/isMentalEntityOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
         <rdfs:comment xml:lang="en">The isMentalStateOf property is the inverse object property of hasMentalState. It links a mental state (such as a belief, desire, or intention) to the agent that holds it. This property allows for reasoning and querying in the opposite direction, starting from a mental state and identifying the associated agent.</rdfs:comment>
@@ -341,6 +385,17 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     
 
 
+    <!-- https://w3id.org/fossr/bdi/isTriggeredBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isTriggeredBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/triggers"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">is triggered by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/fossr/bdi/justifies -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/justifies">
@@ -367,7 +422,7 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/on">
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Observation"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/BeliefFormation"/>
     </owl:ObjectProperty>
     
 
@@ -416,8 +471,9 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     <!-- https://w3id.org/fossr/bdi/triggers -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/triggers">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Observation"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/DesireDefinition"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
+        <rdfs:label xml:lang="en">triggers</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -475,7 +531,6 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
                 <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
         <owl:disjointWith rdf:resource="https://w3id.org/fossr/bdi/Proposition"/>
         <rdfs:comment xml:lang="en">An Agent is an autonomous entity capable of perceiving its environment, reasoning about it, and acting upon it to achieve specific goals or objectives. Agents can hold mental states such as beliefs, desires, and intentions, which guide their decision-making processes and interactions with the world. Agents may be individuals, organisations, or artificial systems, depending on the context.</rdfs:comment>
         <rdfs:label xml:lang="en">Agent</rdfs:label>
@@ -502,6 +557,17 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Belief</rdfs:comment>
         <rdfs:comment xml:lang="en">The Belief class represents the mental state of an agent regarding something that the agent holds to be true. It captures the subjective perception or understanding of the world by an agent, which may or may not align with objective reality. In this ontology, beliefs are modelled as descriptions that connect</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/BeliefFormation -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/BeliefFormation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
+        <rdfs:comment xml:lang="en">BeliefFormation is the cognitive process through which an agent generates, updates, or modifies beliefs based on perception, inference, or communication with other agents. This process allows agents to maintain a dynamically evolving mental representation of their environment and internal states.
+For example, an agent monitoring a public health database initially holds the belief that a disease outbreak is contained. However, upon processing new epidemiological reports, the agent updates its belief to reflect the risk of a wider spread and adjusts its reasoning accordingly.&quot;</rdfs:comment>
+        <rdfs:label xml:lang="en">Belief Formation</rdfs:label>
     </owl:Class>
     
 
@@ -535,10 +601,13 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     
 
 
-    <!-- https://w3id.org/fossr/bdi/DesireDefinition -->
+    <!-- https://w3id.org/fossr/bdi/DesireFormation -->
 
-    <owl:Class rdf:about="https://w3id.org/fossr/bdi/DesireDefinition">
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/DesireFormation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
+        <rdfs:comment xml:lang="en">DesireFormation is the mental process by which an agent generates, modifies, or updates desires based on internal motivations, contextual changes, or interactions with external information sources. This process helps agents structure goal-oriented behaviour before intentions are formed.
+For example, a decision-support agent in a climate policy system initially lacks any specific desire regarding renewable energy subsidies. After analysing recent economic and environmental reports, it generates a new desire to advocate for increased subsidies, which may later influence its intentions and actions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Desire Formation</rdfs:label>
     </owl:Class>
     
 
@@ -588,10 +657,13 @@ Intentions emerge from prioritised desires or goals (e.g., &quot;I desire to buy
     
 
 
-    <!-- https://w3id.org/fossr/bdi/IntentionDeliberation -->
+    <!-- https://w3id.org/fossr/bdi/IntentionFormation -->
 
-    <owl:Class rdf:about="https://w3id.org/fossr/bdi/IntentionDeliberation">
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/IntentionFormation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
+        <rdfs:comment xml:lang="en">IntentionFormation is the process by which an agent selects, commits to, and refines intentions based on its desires, available resources, and deliberative reasoning. It determines which desires are pursued as actionable commitments and adapts them as new information emerges.
+For example, an autonomous assistant tasked with monitoring policy compliance may develop a desire to verify the implementation of a new regulation. After assessing feasibility and priority, it forms an intention to generate a compliance report, refining it further as new data becomes available.</rdfs:comment>
+        <rdfs:label xml:lang="en">Intention Formation</rdfs:label>
     </owl:Class>
     
 
@@ -605,15 +677,64 @@ Intentions emerge from prioritised desires or goals (e.g., &quot;I desire to buy
     
 
 
+    <!-- https://w3id.org/fossr/bdi/MentalEntity -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/MentalEntity">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isMentalEntityOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isMentalEntityOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">MentalEntity is an abstract class that serves as a unifying concept for representing both mental states and mental processes within an agent&apos;s cognitive framework. It provides a high-level categorisation for all entities related to an agent’s reasoning, decision-making, and goal-directed behaviour.
+
+Mental states, such as Belief, Desire, and Intention, represent the informational and motivational aspects of an agent’s cognition. These states can influence and be influenced by mental processes, such as BeliefFormation, DesireFormation, and IntentionFormation, which govern their generation, modification, and updating over time.
+
+By structuring mental states and processes under a common superclass, MentalEntity facilitates a coherent representation of cognitive dynamics, supporting interoperability and reasoning within the ontology.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mental entity</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/fossr/bdi/MentalProcess -->
 
-    <owl:Class rdf:about="https://w3id.org/fossr/bdi/MentalProcess"/>
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/MentalProcess">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isMentalProcessOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isTriggeredBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isMentalProcessOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/fossr/bdi/MentalState -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/bdi/MentalState">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/hasProposition"/>
@@ -639,17 +760,8 @@ Intentions emerge from prioritised desires or goals (e.g., &quot;I desire to buy
                 <owl:onClass rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="https://w3id.org/fossr/bdi/Proposition"/>
         <rdfs:comment xml:lang="en">A mental state is a conceptual representation of an agent&apos;s internal condition, which encompasses beliefs, desires, intentions, emotions, and other cognitive or affective states. It is the foundation of an agent’s reasoning, decision-making, and behaviour. Mental states are dynamic and context-dependent, changing in response to external stimuli, internal deliberations, or interactions with other agents.</rdfs:comment>
         <rdfs:label xml:lang="en">Mental state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/fossr/bdi/Observation -->
-
-    <owl:Class rdf:about="https://w3id.org/fossr/bdi/Observation">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
     </owl:Class>
     
 
@@ -659,6 +771,18 @@ Intentions emerge from prioritised desires or goals (e.g., &quot;I desire to buy
     <owl:Class rdf:about="https://w3id.org/fossr/bdi/Plan">
         <rdfs:comment xml:lang="en">A plan is a structured sequence of actions or steps devised by an agent to achieve a specific goal or fulfil an intention. It serves as an operational framework that translates an agent’s intentions into actionable strategies, guiding behaviour toward a desired goal.</rdfs:comment>
         <rdfs:label xml:lang="en">Plan</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/Planning -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/Planning">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
+        <rdfs:comment xml:lang="en">Planning is the cognitive process through which an agent generates, structures, and organises a sequence of actions to achieve a desired goal. It transforms an agent’s intentions into a concrete plan that can guide execution. This process involves selecting appropriate steps, considering constraints, and adapting the plan based on available information.
+
+For example, an autonomous agent responsible for disaster response may form the intention to deliver medical supplies to a remote area. Through the Planning process, it determines the optimal route, identifies necessary resources, and structures the sequence of actions required to execute the delivery efficiently.</rdfs:comment>
+        <rdfs:label xml:lang="en">Planning</rdfs:label>
     </owl:Class>
     
 
