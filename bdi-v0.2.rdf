@@ -44,17 +44,10 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     <!-- https://w3id.org/fossr/bdi/atTime -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/atTime">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalEntity"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/TemporalEntity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/bdi/basedOn -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/basedOn">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/DesireFormation"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
+        <rdfs:comment xml:lang="en">The &apos;at time&apos; property represents the relationship between a mental entity (such as a belief, desire, or intention) and the temporal entity it produces  or influences. This property is used to model how mental states give rise to time-bound events, processes, or commitments.</rdfs:comment>
+        <rdfs:label xml:lang="en">at time</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -62,7 +55,16 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     <!-- https://w3id.org/fossr/bdi/defines -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/defines">
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isDefinedBy"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Planning"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Plan"/>
+        <rdfs:label xml:lang="en">define</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -100,6 +102,18 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Goal"/>
         <rdfs:comment xml:lang="en">The fulfills property links an entity, such as an intention or a plan, to the goal it is designed to achieve. It represents the relationship between an agent&apos;s commitment or strategy and the desired outcome.</rdfs:comment>
         <rdfs:label xml:lang="en">fulfills</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/generates -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/generates">
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isGeneretedBy"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/BeliefFormation"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
+        <rdfs:comment xml:lang="en">generates property represents the relationship between a belief formation process and the beliefs it produces. It defines how new beliefs are derived, inferred, or acquired within the agent&apos;s reasoning system.</rdfs:comment>
+        <rdfs:label xml:lang="en">generates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -232,6 +246,18 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     
 
 
+    <!-- https://w3id.org/fossr/bdi/isDefinedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isDefinedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Plan"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Planning"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/fossr/bdi/isDesireMotivatedBy -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isDesireMotivatedBy">
@@ -268,6 +294,17 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         </rdfs:range>
         <rdfs:comment xml:lang="en">The isFulfilledBy property is the inverse of fulfills. It links a goal to the intention(s) or plan(s) that are committed to or designed to achieve it. This property enables reasoning from the perspective of goals to identify the entities working toward their fulfilment.</rdfs:comment>
         <rdfs:comment xml:lang="en">is fulfilled by</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isGeneretedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isGeneretedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/BeliefFormation"/>
+        <rdfs:comment xml:lang="en">The isGeneretedBy property is the inverse of generetes. It links an Belieg to the beliefFormation.</rdfs:comment>
+        <rdfs:label xml:lang="en">is genereted by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -400,8 +437,8 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/justifies">
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Justification"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
-        <rdfs:comment xml:lang="en">The justifies property links a justification to the mental state it supports, providing the rationale, evidence, or explanation for why the mental state is held.</rdfs:comment>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/MentalEntity"/>
+        <rdfs:comment xml:lang="en">The justifies property links a justification to the mental state it supports, providing the rationale, evidence, or explanation for why the mental entity is held.</rdfs:comment>
         <rdfs:label xml:lang="en">justifies</rdfs:label>
     </owl:ObjectProperty>
     
@@ -414,15 +451,6 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
         <rdfs:comment xml:lang="en">Beliefs often influence or motivate the formation of desires. For example, if an agent believes that exercising improves health, this belief may motivate a desire to exercise.</rdfs:comment>
         <rdfs:label xml:lang="en">motivates desire</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/bdi/on -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/on">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/BeliefFormation"/>
     </owl:ObjectProperty>
     
 
@@ -806,7 +834,11 @@ A proposition captures the informational content (e.g., &quot;The sky is blue&qu
 
     <!-- https://w3id.org/fossr/bdi/TemporalEntity -->
 
-    <owl:Class rdf:about="https://w3id.org/fossr/bdi/TemporalEntity"/>
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/TemporalEntity">
+        <rdfs:comment xml:lang="en">The TemporalEntity class represents a general temporal concept that can be either a specific point in time (instant) or a time span (interval). 
+This class is useful for modeling events, schedules, and historical data where time-related attributes are essential.</rdfs:comment>
+        <rdfs:label xml:lang="en">Temporal entity</rdfs:label>
+    </owl:Class>
     
 
 
@@ -838,6 +870,8 @@ A proposition captures the informational content (e.g., &quot;The sky is blue&qu
 
     <owl:Class rdf:about="https://w3id.org/fossr/bdi/TimeIstant">
         <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The TimeInstant class represents an exact time. It is used to specify the time when events occur, start and end.</rdfs:comment>
+        <rdfs:label xml:lang="en">Time istant</rdfs:label>
     </owl:Class>
     
 
