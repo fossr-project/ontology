@@ -1,0 +1,134 @@
+{
+  _id: '85142355811',
+  '@_fa': 'true',
+  link: [
+    {
+      '@_fa': 'true',
+      '@ref': 'self',
+      '@href': 'https://api.elsevier.com/content/abstract/scopus_id/85142355811'
+    },
+    {
+      '@_fa': 'true',
+      '@ref': 'author-affiliation',
+      '@href': 'https://api.elsevier.com/content/abstract/scopus_id/85142355811?field=author,affiliation'
+    },
+    {
+      '@_fa': 'true',
+      '@ref': 'scopus',
+      '@href': 'https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85142355811&origin=inward'
+    },
+    {
+      '@_fa': 'true',
+      '@ref': 'scopus-citedby',
+      '@href': 'https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85142355811&origin=inward'
+    }
+  ],
+  'prism:url': 'https://api.elsevier.com/content/abstract/scopus_id/85142355811',
+  'dc:identifier': 'SCOPUS_ID:85142355811',
+  eid: '2-s2.0-85142355811',
+  'dc:title': 'Do open citations give insights on the qualitative peer-review evaluation in research assessments? An analysis of the Italian National Scientific Qualification',
+  'dc:creator': 'Bologna F.',
+  'prism:publicationName': 'Scientometrics',
+  'prism:issn': '01389130',
+  'prism:eIssn': '15882861',
+  'prism:volume': '128',
+  'prism:issueIdentifier': '1',
+  'prism:pageRange': '19-53',
+  'prism:coverDate': '2023-01-01',
+  'prism:coverDisplayDate': 'January 2023',
+  'prism:doi': '10.1007/s11192-022-04581-6',
+  'dc:description': 'In the past, several works have investigated ways for combining quantitative and qualitative methods in research assessment exercises. Indeed, the Italian National Scientific Qualification (NSQ), i.e. the national assessment exercise which aims at deciding whether a scholar can apply to professorial academic positions as Associate Professor and Full Professor, adopts a quantitative and qualitative evaluation process: it makes use of bibliometrics followed by a peer-review process of candidates’ CVs. The NSQ divides academic disciplines into two categories, i.e. citation-based disciplines (CDs) and non-citation-based disciplines (NDs), a division that affects the metrics used for assessing the candidates of that discipline in the first part of the process, which is based on bibliometrics. In this work, we aim at exploring whether citation-based metrics, calculated only considering open bibliographic and citation data, can support the human peer-review of NDs and yield insights on how it is conducted. To understand if and what citation-based (and, possibly, other) metrics provide relevant information, we created a series of machine learning models to replicate the decisions of the NSQ committees. As one of the main outcomes of our study, we noticed that the strength of the citational relationship between the candidate and the commission in charge of assessing his/her CV seems to play a role in the peer-review phase of the NSQ of NDs.',
+  'citedby-count': '7',
+  affiliation: [
+    {
+      '@_fa': 'true',
+      'affiliation-url': 'https://api.elsevier.com/content/affiliation/affiliation_id/60028218',
+      afid: '60028218',
+      affilname: 'Alma Mater Studiorum Università di Bologna',
+      'affiliation-city': 'Bologna',
+      'affiliation-country': 'Italy'
+    },
+    {
+      '@_fa': 'true',
+      'affiliation-url': 'https://api.elsevier.com/content/affiliation/affiliation_id/60028072',
+      afid: '60028072',
+      affilname: 'Cornell University Department of Information Science',
+      'affiliation-city': 'Ithaca',
+      'affiliation-country': 'United States'
+    },
+    {
+      '@_fa': 'true',
+      'affiliation-url': 'https://api.elsevier.com/content/affiliation/affiliation_id/60012572',
+      afid: '60012572',
+      affilname: 'Istituto Di Scienze E Tecnologie Della Cognizione, Rome',
+      'affiliation-city': 'Rome',
+      'affiliation-country': 'Italy'
+    }
+  ],
+  'prism:aggregationType': 'Journal',
+  subtype: 'ar',
+  subtypeDescription: 'Article',
+  'author-count': { '@limit': '100', '@total': '4', '$': '4' },
+  author: [
+    {
+      '@_fa': 'true',
+      '@seq': '1',
+      'author-url': 'https://api.elsevier.com/content/author/author_id/57222865390',
+      authid: '57222865390',
+      orcid: '0000-0002-3845-8266',
+      authname: 'Bologna F.',
+      surname: 'Bologna',
+      'given-name': 'Federica',
+      initials: 'F.',
+      afid: [ { '@_fa': 'true', '$': '60028072' } ]
+    },
+    {
+      '@_fa': 'true',
+      '@seq': '2',
+      'author-url': 'https://api.elsevier.com/content/author/author_id/35247442500',
+      authid: '35247442500',
+      orcid: '0000-0002-6893-7452',
+      authname: 'Di Iorio A.',
+      surname: 'Di Iorio',
+      'given-name': 'Angelo',
+      initials: 'A.',
+      afid: [ { '@_fa': 'true', '$': '60028218' } ]
+    },
+    {
+      '@_fa': 'true',
+      '@seq': '3',
+      'author-url': 'https://api.elsevier.com/content/author/author_id/35183805200',
+      authid: '35183805200',
+      orcid: '0000-0003-0530-4305',
+      authname: 'Peroni S.',
+      surname: 'Peroni',
+      'given-name': 'Silvio',
+      initials: 'S.',
+      afid: [ { '@_fa': 'true', '$': '60028218' } ]
+    },
+    {
+      '@_fa': 'true',
+      '@seq': '4',
+      'author-url': 'https://api.elsevier.com/content/author/author_id/57562645800',
+      authid: '57562645800',
+      orcid: '0000-0001-6577-5606',
+      authname: 'Poggi F.',
+      surname: 'Poggi',
+      'given-name': 'Francesco',
+      initials: 'F.',
+      afid: [ { '@_fa': 'true', '$': '60012572' } ]
+    }
+  ],
+  authkeywords: 'Academic evaluation | Bibliometrics | Citation networks | Citation-based metrics | Dimensions of proximity | Open access | Open science | Scientometrics',
+  'source-id': '24222',
+  'fund-acr': 'UNIMORE',
+  'fund-no': '101017452',
+  'fund-sponsor': 'Università Degli Studi di Modena e Reggio Emila',
+  openaccess: '1',
+  openaccessFlag: true,
+  freetoread: { value: [ { '$': 'all' }, { '$': 'publisherhybridgold' } ] },
+  freetoreadLabel: { value: [ { '$': 'All Open Access' }, { '$': 'Hybrid Gold' } ] },
+  'request-time': '2024-11-13 14:47:14.167885',
+  'pg:scopus-pub-year': '2023'
+}
+

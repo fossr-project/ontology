@@ -1,0 +1,1055 @@
+@prefix : <http://istc.cnr.it/fossr/academics#> .
+@prefix ac: <http://istc.cnr.it/fossr/academic-career/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pub: <http://istc.cnr.it/fossr/publications/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix data: <http://istc.cnr.it/data/example/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@base <http://istc.cnr.it/fossr/academics> .
+
+<http://istc.cnr.it/fossr/academics> rdf:type owl:Ontology ;
+                                      owl:versionIRI <http://istc.cnr.it/fossr/academics/2025-03-11> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty ;
+               rdfs:range xsd:string .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://istc.cnr.it/fossr/academic-career/hasAuthorProfile
+ac:hasAuthorProfile rdf:type owl:ObjectProperty ;
+                    owl:inverseOf pub:isAuthorProfileOf ;
+                    rdfs:domain ac:Scholar ;
+                    rdfs:range pub:AuthorProfile .
+
+
+###  http://istc.cnr.it/fossr/publications/contains
+pub:contains rdf:type owl:ObjectProperty ;
+             rdfs:domain pub:List ;
+             rdfs:range pub:ListItem .
+
+
+###  http://istc.cnr.it/fossr/publications/containsReferenceTo
+pub:containsReferenceTo rdf:type owl:ObjectProperty ;
+                        rdfs:domain pub:Publication ;
+                        rdfs:range pub:Publication .
+
+
+###  http://istc.cnr.it/fossr/publications/first
+pub:first rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf pub:contains .
+
+
+###  http://istc.cnr.it/fossr/publications/hasAlias
+pub:hasAlias rdf:type owl:ObjectProperty ;
+             rdfs:domain pub:InformationObject ;
+             rdfs:range pub:InformationObject .
+
+
+###  http://istc.cnr.it/fossr/publications/hasAuthorList
+pub:hasAuthorList rdf:type owl:ObjectProperty ;
+                  rdfs:domain pub:Publication ;
+                  rdfs:range pub:AuthorList .
+
+
+###  http://istc.cnr.it/fossr/publications/hasIdentifier
+pub:hasIdentifier rdf:type owl:ObjectProperty ;
+                  rdfs:domain pub:InformationObject ;
+                  rdfs:range pub:Identifier .
+
+
+###  http://istc.cnr.it/fossr/publications/hasNameVariant
+pub:hasNameVariant rdf:type owl:ObjectProperty ;
+                   rdfs:domain pub:AuthorProfile ;
+                   rdfs:range pub:AuthorNameVariant .
+
+
+###  http://istc.cnr.it/fossr/publications/hasOrganizationType
+pub:hasOrganizationType rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf pub:hasType ;
+                        rdfs:domain pub:OrganizationProfile ;
+                        rdfs:range pub:OrganizationType .
+
+
+###  http://istc.cnr.it/fossr/publications/hasParent
+pub:hasParent rdf:type owl:ObjectProperty ;
+              rdfs:domain pub:OrganizationProfile ;
+              rdfs:range pub:OrganizationProfile .
+
+
+###  http://istc.cnr.it/fossr/publications/hasPreferredNameVariant
+pub:hasPreferredNameVariant rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf pub:hasNameVariant .
+
+
+###  http://istc.cnr.it/fossr/publications/hasPublicationSourceType
+pub:hasPublicationSourceType rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf pub:hasType ;
+                             rdfs:domain pub:PublicationSource ;
+                             rdfs:range pub:PublicationSourceType .
+
+
+###  http://istc.cnr.it/fossr/publications/hasPublicationType
+pub:hasPublicationType rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf pub:hasType ;
+                       rdfs:domain pub:Publication ;
+                       rdfs:range pub:PublicationType .
+
+
+###  http://istc.cnr.it/fossr/publications/hasReferenceList
+pub:hasReferenceList rdf:type owl:ObjectProperty ;
+                     rdfs:domain pub:Publication ;
+                     rdfs:range pub:ReferenceList .
+
+
+###  http://istc.cnr.it/fossr/publications/hasType
+pub:hasType rdf:type owl:ObjectProperty ;
+            rdfs:domain pub:InformationObject ;
+            rdfs:range pub:InformationObjectTypes .
+
+
+###  http://istc.cnr.it/fossr/publications/inDatasource
+pub:inDatasource rdf:type owl:ObjectProperty ;
+                 rdfs:domain pub:InformationObject ;
+                 rdfs:range pub:Datasource .
+
+
+###  http://istc.cnr.it/fossr/publications/isAuthorProfileOf
+pub:isAuthorProfileOf rdf:type owl:ObjectProperty ;
+                      rdfs:domain pub:AuthorProfile ;
+                      rdfs:range ac:Scholar .
+
+
+###  http://istc.cnr.it/fossr/publications/isPartOf
+pub:isPartOf rdf:type owl:ObjectProperty ;
+             rdfs:domain pub:Publication ;
+             rdfs:range pub:PublicationSource .
+
+
+###  http://istc.cnr.it/fossr/publications/last
+pub:last rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf pub:contains .
+
+
+###  http://istc.cnr.it/fossr/publications/next
+pub:next rdf:type owl:ObjectProperty ;
+         owl:inverseOf pub:prev ;
+         rdfs:domain pub:AuthorItem ;
+         rdfs:range pub:AuthorItem .
+
+
+###  http://istc.cnr.it/fossr/publications/prev
+pub:prev rdf:type owl:ObjectProperty ;
+         rdfs:domain pub:ListItem ;
+         rdfs:range pub:ListItem .
+
+
+###  http://istc.cnr.it/fossr/publications/relatedAuthor
+pub:relatedAuthor rdf:type owl:ObjectProperty ;
+                  rdfs:domain pub:AuthorItem ;
+                  rdfs:range pub:AuthorProfile .
+
+
+###  http://istc.cnr.it/fossr/publications/relatedPublication
+pub:relatedPublication rdf:type owl:ObjectProperty ;
+                       rdfs:domain pub:ReferenceItem ;
+                       rdfs:range pub:Publication .
+
+
+###  http://istc.cnr.it/fossr/publications/statedAffiliation
+pub:statedAffiliation rdf:type owl:ObjectProperty ;
+                      rdfs:domain pub:AuthorItem ;
+                      rdfs:range pub:OrganizationProfile .
+
+
+###  http://istc.cnr.it/fossr/publications/statedName
+pub:statedName rdf:type owl:ObjectProperty ;
+               rdfs:domain pub:AuthorItem ;
+               rdfs:range pub:AuthorNameVariant .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:ObjectProperty ;
+              rdfs:range skos:ConceptScheme ;
+              rdfs:label "is in scheme"@en ;
+              skos:definition "Relates a resource (for example a concept) to a concept scheme in which it is included."@en ;
+              skos:scopeNote "A concept may be a member of more than one concept scheme."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://istc.cnr.it/fossr/publications/affCity
+pub:affCity rdf:type owl:DatatypeProperty ;
+            rdfs:domain pub:OrganizationProfile ;
+            rdfs:range xsd:string .
+
+
+###  http://istc.cnr.it/fossr/publications/affCountry
+pub:affCountry rdf:type owl:DatatypeProperty ;
+               rdfs:domain pub:OrganizationProfile ;
+               rdfs:range xsd:string .
+
+
+###  http://istc.cnr.it/fossr/publications/affName
+pub:affName rdf:type owl:DatatypeProperty ;
+            rdfs:domain pub:OrganizationProfile ;
+            rdfs:range xsd:string .
+
+
+###  http://istc.cnr.it/fossr/publications/fullName
+pub:fullName rdf:type owl:DatatypeProperty ;
+             rdfs:domain pub:AuthorNameVariant ;
+             rdfs:range xsd:string .
+
+
+###  http://istc.cnr.it/fossr/publications/givenName
+pub:givenName rdf:type owl:DatatypeProperty ;
+              rdfs:domain pub:AuthorNameVariant ;
+              rdfs:range xsd:string .
+
+
+###  http://istc.cnr.it/fossr/publications/hasURL
+pub:hasURL rdf:type owl:DatatypeProperty ;
+           rdfs:domain pub:InformationObject ;
+           rdfs:range xsd:anyURI .
+
+
+###  http://istc.cnr.it/fossr/publications/index
+pub:index rdf:type owl:DatatypeProperty ;
+          rdfs:domain pub:ListItem ;
+          rdfs:range xsd:integer .
+
+
+###  http://istc.cnr.it/fossr/publications/size
+pub:size rdf:type owl:DatatypeProperty ;
+         rdfs:domain pub:List ;
+         rdfs:range xsd:integer .
+
+
+###  http://istc.cnr.it/fossr/publications/surname
+pub:surname rdf:type owl:DatatypeProperty ;
+            rdfs:domain pub:AuthorNameVariant ;
+            rdfs:range xsd:string .
+
+
+###  http://prismstandard.org/namespaces/basic/2.0/issueIdentifier
+prism:issueIdentifier rdf:type owl:DatatypeProperty ;
+                      rdfs:domain pub:PublicationSource .
+
+
+###  http://prismstandard.org/namespaces/basic/2.0/pageRange
+prism:pageRange rdf:type owl:DatatypeProperty .
+
+
+###  http://prismstandard.org/namespaces/basic/2.0/publicationName
+prism:publicationName rdf:type owl:DatatypeProperty .
+
+
+###  http://prismstandard.org/namespaces/basic/2.0/volume
+prism:volume rdf:type owl:DatatypeProperty ;
+             rdfs:domain pub:PublicationSource .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://istc.cnr.it/fossr/academic-career/Scholar
+ac:Scholar rdf:type owl:Class ;
+           rdfs:comment "A scholar is a person who is a researcher or has expertise in an academic discipline. A scholar can be an academic, who works as a professor, teacher, or researcher at a university. A scholar writes publications (e.g. papers, books, etc.)."@en .
+
+
+###  http://istc.cnr.it/fossr/publications/AffiliationSet
+pub:AffiliationSet rdf:type owl:Class .
+
+
+###  http://istc.cnr.it/fossr/publications/AuthorItem
+pub:AuthorItem rdf:type owl:Class ;
+               rdfs:subClassOf pub:ListItem .
+
+
+###  http://istc.cnr.it/fossr/publications/AuthorList
+pub:AuthorList rdf:type owl:Class ;
+               rdfs:subClassOf pub:List .
+
+
+###  http://istc.cnr.it/fossr/publications/AuthorNameVariant
+pub:AuthorNameVariant rdf:type owl:Class .
+
+
+###  http://istc.cnr.it/fossr/publications/AuthorProfile
+pub:AuthorProfile rdf:type owl:Class ;
+                  rdfs:subClassOf pub:InformationObject .
+
+
+###  http://istc.cnr.it/fossr/publications/Datasource
+pub:Datasource rdf:type owl:Class .
+
+
+###  http://istc.cnr.it/fossr/publications/Identifier
+pub:Identifier rdf:type owl:Class ;
+               rdfs:subClassOf skos:Concept .
+
+
+###  http://istc.cnr.it/fossr/publications/InformationObject
+pub:InformationObject rdf:type owl:Class .
+
+
+###  http://istc.cnr.it/fossr/publications/InformationObjectTypes
+pub:InformationObjectTypes rdf:type owl:Class ;
+                           rdfs:subClassOf skos:Concept .
+
+
+###  http://istc.cnr.it/fossr/publications/List
+pub:List rdf:type owl:Class .
+
+
+###  http://istc.cnr.it/fossr/publications/ListItem
+pub:ListItem rdf:type owl:Class .
+
+
+###  http://istc.cnr.it/fossr/publications/OrganizationProfile
+pub:OrganizationProfile rdf:type owl:Class ;
+                        rdfs:subClassOf pub:InformationObject .
+
+
+###  http://istc.cnr.it/fossr/publications/OrganizationType
+pub:OrganizationType rdf:type owl:Class ;
+                     rdfs:subClassOf pub:InformationObjectTypes .
+
+
+###  http://istc.cnr.it/fossr/publications/Publication
+pub:Publication rdf:type owl:Class ;
+                rdfs:subClassOf pub:InformationObject .
+
+
+###  http://istc.cnr.it/fossr/publications/PublicationSource
+pub:PublicationSource rdf:type owl:Class ;
+                      rdfs:subClassOf pub:InformationObject .
+
+
+###  http://istc.cnr.it/fossr/publications/PublicationSourceType
+pub:PublicationSourceType rdf:type owl:Class ;
+                          rdfs:subClassOf pub:InformationObjectTypes .
+
+
+###  http://istc.cnr.it/fossr/publications/PublicationType
+pub:PublicationType rdf:type owl:Class ;
+                    rdfs:subClassOf pub:InformationObjectTypes .
+
+
+###  http://istc.cnr.it/fossr/publications/ReferenceItem
+pub:ReferenceItem rdf:type owl:Class ;
+                  rdfs:subClassOf pub:ListItem .
+
+
+###  http://istc.cnr.it/fossr/publications/ReferenceList
+pub:ReferenceList rdf:type owl:Class ;
+                  rdfs:subClassOf pub:List .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class ;
+             owl:disjointWith skos:ConceptScheme ;
+             rdfs:label "Concept"@en ;
+             skos:definition "An idea or notion; a unit of thought."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+skos:ConceptScheme rdf:type owl:Class ;
+                   rdfs:label "Concept Scheme"@en ;
+                   skos:definition "A concept scheme may be defined to include concepts from different sources."@en ,
+                                   "A set of concepts, optionally including statements about semantic relationships between those concepts."@en ,
+                                   "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://istc.cnr.it/data/example/affid-scheme
+data:affid-scheme rdf:type owl:NamedIndividual ,
+                           skos:ConceptScheme ;
+                  pub:hasIdentifier data:affid2 .
+
+
+###  http://istc.cnr.it/data/example/affid1
+data:affid1 rdf:type owl:NamedIndividual ,
+                     pub:Identifier ;
+            skos:inScheme data:affid-scheme ;
+            skos:prefLabel 60028218 .
+
+
+###  http://istc.cnr.it/data/example/affid2
+data:affid2 rdf:type owl:NamedIndividual ,
+                     pub:Identifier ;
+            pub:hasIdentifier data:affid3 ;
+            skos:inScheme data:affid-scheme ;
+            skos:prefLabel 60028072 .
+
+
+###  http://istc.cnr.it/data/example/affid3
+data:affid3 rdf:type owl:NamedIndividual ,
+                     pub:Identifier ;
+            skos:inScheme data:affid-scheme ;
+            skos:prefLabel 60012572 .
+
+
+###  http://istc.cnr.it/data/example/auid-scheme
+data:auid-scheme rdf:type owl:NamedIndividual ,
+                          skos:ConceptScheme ;
+                 skos:inScheme data:auid-scheme ,
+                               data:orcid-scheme .
+
+
+###  http://istc.cnr.it/data/example/auid1
+data:auid1 rdf:type owl:NamedIndividual ,
+                    pub:Identifier ;
+           skos:inScheme data:auid-scheme ;
+           skos:prefLabel 57222865390 .
+
+
+###  http://istc.cnr.it/data/example/auid2
+data:auid2 rdf:type owl:NamedIndividual ,
+                    pub:Identifier ;
+           skos:inScheme data:auid-scheme ;
+           skos:prefLabel 35247442500 .
+
+
+###  http://istc.cnr.it/data/example/auid3
+data:auid3 rdf:type owl:NamedIndividual ,
+                    pub:Identifier ;
+           skos:inScheme data:auid-scheme ;
+           skos:prefLabel 35183805200 .
+
+
+###  http://istc.cnr.it/data/example/auid4
+data:auid4 rdf:type owl:NamedIndividual ,
+                    pub:Identifier ;
+           skos:prefLabel 57562645800 .
+
+
+###  http://istc.cnr.it/data/example/author1
+data:author1 rdf:type owl:NamedIndividual ,
+                      pub:AuthorProfile ;
+             pub:hasIdentifier data:auid1 ,
+                               data:orcid1 ;
+             pub:hasPreferredNameVariant data:namevariant1 ;
+             pub:statedAffiliation data:organization2 .
+
+
+###  http://istc.cnr.it/data/example/author2
+data:author2 rdf:type owl:NamedIndividual ,
+                      pub:AuthorProfile ;
+             pub:hasIdentifier data:auid2 ,
+                               data:orcid2 ;
+             pub:hasPreferredNameVariant data:namevariant2 ;
+             pub:statedAffiliation data:organization1 .
+
+
+###  http://istc.cnr.it/data/example/author3
+data:author3 rdf:type owl:NamedIndividual ,
+                      pub:AuthorProfile ;
+             pub:hasIdentifier data:auid3 ,
+                               data:orcid3 ;
+             pub:hasPreferredNameVariant data:namevariant3 ;
+             pub:statedAffiliation data:organization1 .
+
+
+###  http://istc.cnr.it/data/example/author4
+data:author4 rdf:type owl:NamedIndividual ,
+                      pub:AuthorProfile ;
+             pub:hasIdentifier data:auid4 ,
+                               data:orcid4 ;
+             pub:hasPreferredNameVariant data:namevariant4 ;
+             pub:statedAffiliation data:organization3 .
+
+
+###  http://istc.cnr.it/data/example/doi-scheme
+data:doi-scheme rdf:type owl:NamedIndividual ,
+                         skos:ConceptScheme ;
+                skos:inScheme data:doi-scheme .
+
+
+###  http://istc.cnr.it/data/example/doi1
+data:doi1 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:doi-scheme ;
+          skos:prefLabel "10.1007/s11192-022-04581-6" .
+
+
+###  http://istc.cnr.it/data/example/doi10
+data:doi10 rdf:type owl:NamedIndividual ,
+                    pub:Identifier ;
+           skos:inScheme data:doi-scheme ;
+           skos:prefLabel "10.1002/asi.21419" .
+
+
+###  http://istc.cnr.it/data/example/doi2
+data:doi2 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:doi-scheme ;
+          skos:prefLabel "10.1093/scipol/scu086" .
+
+
+###  http://istc.cnr.it/data/example/doi3
+data:doi3 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:doi-scheme ;
+          skos:prefLabel "10.1093/reseval/rvv019" .
+
+
+###  http://istc.cnr.it/data/example/doi4
+data:doi4 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:doi-scheme ;
+          skos:prefLabel "10.1016/j.labeco.2019.04.005" .
+
+
+###  http://istc.cnr.it/data/example/doi5
+data:doi5 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:doi-scheme ;
+          skos:prefLabel "10.2307/2657504" .
+
+
+###  http://istc.cnr.it/data/example/doi6
+data:doi6 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:doi-scheme ;
+          skos:prefLabel "10.1108/LHT-09-2021-0305" .
+
+
+###  http://istc.cnr.it/data/example/doi7
+data:doi7 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:doi-scheme ;
+          skos:prefLabel "10.1038/srep10312" .
+
+
+###  http://istc.cnr.it/data/example/doi8
+data:doi8 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:doi-scheme ;
+          skos:prefLabel "10.1162/qss_a_00203" .
+
+
+###  http://istc.cnr.it/data/example/doi9
+data:doi9 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:doi-scheme ;
+          skos:prefLabel "10.1515/9783110308464-020" .
+
+
+###  http://istc.cnr.it/data/example/eid-scheme
+data:eid-scheme rdf:type owl:NamedIndividual ,
+                         skos:ConceptScheme .
+
+
+###  http://istc.cnr.it/data/example/eid1
+data:eid1 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:eid-scheme ;
+          skos:prefLabel "2-s2.0-85142355811" .
+
+
+###  http://istc.cnr.it/data/example/eid10
+data:eid10 rdf:type owl:NamedIndividual ,
+                    pub:Identifier ;
+           skos:inScheme data:eid-scheme ;
+           skos:prefLabel "2-s2.0-78449276223" .
+
+
+###  http://istc.cnr.it/data/example/eid2
+data:eid2 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:eid-scheme ;
+          skos:prefLabel "2-s2.0-84954129560" .
+
+
+###  http://istc.cnr.it/data/example/eid3
+data:eid3 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:eid-scheme ;
+          skos:prefLabel "2-s2.0-84947594835" .
+
+
+###  http://istc.cnr.it/data/example/eid4
+data:eid4 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:eid-scheme ;
+          skos:prefLabel "2-s2.0-85064739908" .
+
+
+###  http://istc.cnr.it/data/example/eid5
+data:eid5 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:eid-scheme ;
+          skos:prefLabel "2-s2.0-0032415217" .
+
+
+###  http://istc.cnr.it/data/example/eid6
+data:eid6 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:eid-scheme ;
+          skos:prefLabel "2-s2.0-85125903394" .
+
+
+###  http://istc.cnr.it/data/example/eid7
+data:eid7 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:eid-scheme ;
+          skos:prefLabel "2-s2.0-84930221871" .
+
+
+###  http://istc.cnr.it/data/example/eid8
+data:eid8 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:eid-scheme ;
+          skos:prefLabel "2-s2.0-85141608000" .
+
+
+###  http://istc.cnr.it/data/example/eid9
+data:eid9 rdf:type owl:NamedIndividual ,
+                   pub:Identifier ;
+          skos:inScheme data:eid-scheme ;
+          skos:prefLabel "2-s2.0-85011706845" .
+
+
+###  http://istc.cnr.it/data/example/namevariant1
+data:namevariant1 rdf:type owl:NamedIndividual ,
+                           pub:AuthorNameVariant ;
+                  pub:givenName "Federica"^^xsd:string ;
+                  pub:surname "Bologna"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/namevariant2
+data:namevariant2 rdf:type owl:NamedIndividual ,
+                           pub:AuthorNameVariant ;
+                  pub:givenName "Angelo"^^xsd:string ;
+                  pub:surname "Di Iorio"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/namevariant3
+data:namevariant3 rdf:type owl:NamedIndividual ,
+                           pub:AuthorNameVariant ;
+                  pub:givenName "Silvio"^^xsd:string ;
+                  pub:surname "Peroni"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/namevariant4
+data:namevariant4 rdf:type owl:NamedIndividual ,
+                           pub:AuthorNameVariant ;
+                  pub:givenName "Francesco"^^xsd:string ;
+                  pub:surname "Poggi"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/orcid-scheme
+data:orcid-scheme rdf:type owl:NamedIndividual ,
+                           skos:ConceptScheme .
+
+
+###  http://istc.cnr.it/data/example/orcid1
+data:orcid1 rdf:type owl:NamedIndividual ,
+                     pub:Identifier ;
+            skos:prefLabel "0000-0002-3845-8266" .
+
+
+###  http://istc.cnr.it/data/example/orcid2
+data:orcid2 rdf:type owl:NamedIndividual ,
+                     pub:Identifier ;
+            skos:inScheme data:orcid-scheme ;
+            skos:prefLabel "0000-0002-6893-7452" .
+
+
+###  http://istc.cnr.it/data/example/orcid3
+data:orcid3 rdf:type owl:NamedIndividual ,
+                     pub:Identifier ;
+            skos:inScheme data:orcid-scheme ;
+            skos:prefLabel "0000-0003-0530-4305" .
+
+
+###  http://istc.cnr.it/data/example/orcid4
+data:orcid4 rdf:type owl:NamedIndividual ,
+                     pub:Identifier ;
+            skos:inScheme data:orcid-scheme ;
+            skos:prefLabel "0000-0001-6577-5606" .
+
+
+###  http://istc.cnr.it/data/example/organization1
+data:organization1 rdf:type owl:NamedIndividual ,
+                            pub:OrganizationProfile ;
+                   pub:hasIdentifier data:affid1 ;
+                   pub:affCity "Bologna"^^xsd:string ;
+                   pub:affCountry "Italy"^^xsd:string ;
+                   pub:affName "Alma Mater Studiorum Università di Bologna"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/organization2
+data:organization2 rdf:type owl:NamedIndividual ,
+                            pub:OrganizationProfile ;
+                   pub:affCity "Ithaca"^^xsd:string ;
+                   pub:affCountry "United States"^^xsd:string ;
+                   pub:affName "Cornell University Department of Information Science"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/organization3
+data:organization3 rdf:type owl:NamedIndividual ,
+                            pub:OrganizationProfile ;
+                   pub:affCity "Rome"^^xsd:string ;
+                   pub:affCountry "Italy"^^xsd:string ;
+                   pub:affName "Istituto Di Scienze E Tecnologie Della Cognizione, Rome"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/paper1
+data:paper1 rdf:type owl:NamedIndividual ,
+                     pub:Publication ;
+            pub:hasAuthorList data:paper1_al ;
+            pub:hasIdentifier data:doi1 ,
+                              data:eid1 ,
+                              data:scopusId1 ;
+            pub:hasReferenceList data:paper1_rl ;
+            prism:pageRange "19-53"^^xsd:string ;
+            prism:publicationName "Scientometrics"^^xsd:string ;
+            dc:title "Do open citations give insights on the qualitative peer-review evaluation in research assessments? An analysis of the Italian National Scientific Qualification"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/paper10
+data:paper10 rdf:type owl:NamedIndividual ,
+                      pub:Publication ;
+             pub:hasIdentifier data:doi10 ,
+                               data:eid10 ,
+                               data:scopusId10 ;
+             dc:title "Co-citation analysis, bibliographic coupling, and direct citation: Which citation approach represents the research front most accurately?"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/paper1_ai_1
+data:paper1_ai_1 rdf:type owl:NamedIndividual ,
+                          pub:AuthorItem ;
+                 pub:hasIdentifier data:auid1 ;
+                 pub:next data:paper1_ai_2 ;
+                 pub:relatedAuthor data:auid1 ;
+                 pub:statedName data:namevariant1 ;
+                 pub:index 1 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ai_2
+data:paper1_ai_2 rdf:type owl:NamedIndividual ,
+                          pub:AuthorItem ;
+                 pub:next data:paper1_ai_3 ;
+                 pub:prev data:paper1_ai_1 ;
+                 pub:relatedAuthor data:auid2 ;
+                 pub:statedName data:namevariant2 ;
+                 pub:index 2 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ai_3
+data:paper1_ai_3 rdf:type owl:NamedIndividual ,
+                          pub:AuthorItem ;
+                 pub:next data:paper1_ai_4 ;
+                 pub:prev data:paper1_ai_2 ;
+                 pub:relatedAuthor data:auid3 ;
+                 pub:statedName data:namevariant3 ;
+                 pub:index 3 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ai_4
+data:paper1_ai_4 rdf:type owl:NamedIndividual ,
+                          pub:AuthorItem ;
+                 pub:prev data:paper1_ai_3 ;
+                 pub:relatedAuthor data:auid4 ;
+                 pub:statedName data:namevariant4 ;
+                 pub:index 4 .
+
+
+###  http://istc.cnr.it/data/example/paper1_al
+data:paper1_al rdf:type owl:NamedIndividual ,
+                        pub:AuthorList ;
+               pub:contains data:paper1_ai_2 ,
+                            data:paper1_ai_3 ;
+               pub:first data:paper1_ai_1 ;
+               pub:hasAuthorList data:paper1_al ;
+               pub:last data:paper1_ai_4 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ri_1
+data:paper1_ri_1 rdf:type owl:NamedIndividual ,
+                          pub:ReferenceItem ;
+                 pub:next data:paper1_ri_2 ;
+                 pub:relatedPublication data:paper1 ;
+                 pub:index 1 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ri_10
+data:paper1_ri_10 rdf:type owl:NamedIndividual ,
+                           pub:ReferenceItem ;
+                  pub:relatedPublication data:paper10 ;
+                  pub:index 10 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ri_2
+data:paper1_ri_2 rdf:type owl:NamedIndividual ,
+                          pub:ReferenceItem ;
+                 pub:next data:paper1_ri_3 ;
+                 pub:relatedPublication data:paper2 ;
+                 pub:index 2 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ri_3
+data:paper1_ri_3 rdf:type owl:NamedIndividual ,
+                          pub:ReferenceItem ;
+                 pub:next data:paper1_ri_4 ;
+                 pub:relatedPublication data:paper3 ;
+                 pub:index 3 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ri_4
+data:paper1_ri_4 rdf:type owl:NamedIndividual ,
+                          pub:ReferenceItem ;
+                 pub:next data:paper1_ri_5 ;
+                 pub:relatedPublication data:paper4 ;
+                 pub:index 4 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ri_5
+data:paper1_ri_5 rdf:type owl:NamedIndividual ,
+                          pub:ReferenceItem ;
+                 pub:next data:paper1_ri_6 ;
+                 pub:relatedPublication data:paper5 ;
+                 pub:index 5 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ri_6
+data:paper1_ri_6 rdf:type owl:NamedIndividual ,
+                          pub:ReferenceItem ;
+                 pub:next data:paper1_ri_7 ;
+                 pub:relatedPublication data:paper6 ;
+                 pub:index 6 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ri_7
+data:paper1_ri_7 rdf:type owl:NamedIndividual ,
+                          pub:ReferenceItem ;
+                 pub:next data:paper1_ri_8 ;
+                 pub:relatedPublication data:paper7 ;
+                 pub:index 7 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ri_8
+data:paper1_ri_8 rdf:type owl:NamedIndividual ,
+                          pub:ReferenceItem ;
+                 pub:next data:paper1_ri_9 ;
+                 pub:relatedPublication data:paper8 ;
+                 pub:index 8 .
+
+
+###  http://istc.cnr.it/data/example/paper1_ri_9
+data:paper1_ri_9 rdf:type owl:NamedIndividual ,
+                          pub:ReferenceItem ;
+                 pub:next data:paper1_ri_10 ;
+                 pub:relatedPublication data:paper9 ;
+                 pub:index 9 .
+
+
+###  http://istc.cnr.it/data/example/paper1_rl
+data:paper1_rl rdf:type owl:NamedIndividual ,
+                        pub:ReferenceList ;
+               pub:contains data:paper1_ri_10 ,
+                            data:paper1_ri_2 ,
+                            data:paper1_ri_3 ,
+                            data:paper1_ri_4 ,
+                            data:paper1_ri_5 ,
+                            data:paper1_ri_6 ,
+                            data:paper1_ri_7 ,
+                            data:paper1_ri_8 ,
+                            data:paper1_ri_9 ;
+               pub:first data:paper1_ri_1 .
+
+
+###  http://istc.cnr.it/data/example/paper2
+data:paper2 rdf:type owl:NamedIndividual ,
+                     pub:Publication ;
+            pub:hasIdentifier data:doi2 ,
+                              data:eid2 ,
+                              data:scopusId2 ;
+            dc:title "The determinants of academic career advancement: Evidence from Italy"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/paper3
+data:paper3 rdf:type owl:NamedIndividual ,
+                     pub:Publication ;
+            pub:hasIdentifier data:doi3 ,
+                              data:eid3 ,
+                              data:scopusId3 ;
+            dc:title "Selection committees for academic recruitment: Does gender matter?"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/paper4
+data:paper4 rdf:type owl:NamedIndividual ,
+                     pub:Publication ;
+            pub:hasIdentifier data:doi4 ,
+                              data:eid4 ,
+                              data:scopusId4 ;
+            dc:title "Connections in scientific committees and applicants’ self-selection: Evidence from a natural randomized experiment"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/paper5
+data:paper5 rdf:type owl:NamedIndividual ,
+                     pub:Publication ;
+            pub:hasIdentifier data:doi5 ,
+                              data:eid5 ,
+                              data:scopusId5 ;
+            dc:title "Normative versus social constructivist processes in the allocation of citations: A network-analytic model"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/paper6
+data:paper6 rdf:type owl:NamedIndividual ,
+                     pub:Publication ;
+            pub:hasIdentifier data:doi6 ,
+                              data:eid6 ,
+                              data:scopusId6 ;
+            dc:title "Does the venue of scientific conferences leverage their impact? A large scale study on Computer Science conferences"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/paper7
+data:paper7 rdf:type owl:NamedIndividual ,
+                     pub:Publication ;
+            pub:hasIdentifier data:doi7 ,
+                              data:eid7 ,
+                              data:scopusId7 ;
+            dc:title "Application of high-dimensional feature selection: Evaluation for genomic prediction in man"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/paper8
+data:paper8 rdf:type owl:NamedIndividual ,
+                     pub:Publication ;
+            pub:hasIdentifier data:doi8 ,
+                              data:eid8 ,
+                              data:scopusId8 ;
+            dc:title "Open bibliographic data and the Italian National Scientific Qualification: Measuring coverage of academic fields"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/paper9
+data:paper9 rdf:type owl:NamedIndividual ,
+                     pub:Publication ;
+            pub:hasIdentifier data:doi9 ,
+                              data:eid9 ,
+                              data:scopusId9 ;
+            dc:title "Scientific revolution in scientometrics: The broadening of impact from citation to societal"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/scopusId-scheme
+data:scopusId-scheme rdf:type owl:NamedIndividual ,
+                              skos:ConceptScheme .
+
+
+###  http://istc.cnr.it/data/example/scopusId1
+data:scopusId1 rdf:type owl:NamedIndividual ,
+                        pub:Identifier ;
+               skos:inScheme data:scopusId-scheme ;
+               skos:prefLabel 85142355811 .
+
+
+###  http://istc.cnr.it/data/example/scopusId10
+data:scopusId10 rdf:type owl:NamedIndividual ,
+                         pub:Identifier ;
+                skos:inScheme data:scopusId-scheme ;
+                skos:prefLabel 78449276223 .
+
+
+###  http://istc.cnr.it/data/example/scopusId2
+data:scopusId2 rdf:type owl:NamedIndividual ,
+                        pub:Identifier ;
+               skos:inScheme data:scopusId-scheme ;
+               skos:prefLabel 84954129560 .
+
+
+###  http://istc.cnr.it/data/example/scopusId3
+data:scopusId3 rdf:type owl:NamedIndividual ,
+                        pub:Identifier ;
+               skos:inScheme data:scopusId-scheme ;
+               skos:prefLabel 84947594835 .
+
+
+###  http://istc.cnr.it/data/example/scopusId4
+data:scopusId4 rdf:type owl:NamedIndividual ,
+                        pub:Identifier ;
+               skos:inScheme data:scopusId-scheme ;
+               skos:prefLabel 85064739908 .
+
+
+###  http://istc.cnr.it/data/example/scopusId5
+data:scopusId5 rdf:type owl:NamedIndividual ,
+                        pub:Identifier ;
+               skos:inScheme data:scopusId-scheme ;
+               skos:prefLabel 0032415217 .
+
+
+###  http://istc.cnr.it/data/example/scopusId6
+data:scopusId6 rdf:type owl:NamedIndividual ,
+                        pub:Identifier ;
+               skos:inScheme data:scopusId-scheme ;
+               skos:prefLabel 85125903394 .
+
+
+###  http://istc.cnr.it/data/example/scopusId7
+data:scopusId7 rdf:type owl:NamedIndividual ,
+                        pub:Identifier ;
+               skos:inScheme data:scopusId-scheme ;
+               skos:prefLabel 84930221871 .
+
+
+###  http://istc.cnr.it/data/example/scopusId8
+data:scopusId8 rdf:type owl:NamedIndividual ,
+                        pub:Identifier ;
+               skos:inScheme data:scopusId-scheme ;
+               skos:prefLabel 85141608000 .
+
+
+###  http://istc.cnr.it/data/example/scopusId9
+data:scopusId9 rdf:type owl:NamedIndividual ,
+                        pub:Identifier ;
+               skos:inScheme data:scopusId-scheme ;
+               skos:prefLabel 85011706845 .
+
+
+###  http://istc.cnr.it/fossr/academics#dataa:orcid2
+:dataa:orcid2 rdf:type owl:NamedIndividual ,
+                       pub:Identifier .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
