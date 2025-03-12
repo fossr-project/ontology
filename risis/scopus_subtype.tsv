@@ -1,0 +1,27 @@
+subtype (in scopus web è "Document type"):
+
+ar  Article 0000008830
+bk  Book  0003438001
+bz  Business Article  33745338903
+cb  null  85193466679
+ch  Book Chapter  0000112964
+cp  Conference Paper  0000364706
+cr  Conference Review 70349459663
+dp  Data Paper  84923653148
+ed  Editorial 0001508837
+er  Erratum 0003183162
+le  Letter  0006282034
+no  Note  0000067596
+re  Review  0000061399
+rp  Report  84952690944
+sh  Short Survey  0001102809
+tb  Retracted 0033624126
+
+aggregationType (in scopus web è "Source Type")
+
+Book
+Book Series
+Conference Proceeding
+Journal
+Report
+Trade Journal

@@ -469,6 +469,7 @@ data:author1 rdf:type owl:NamedIndividual ,
              pub:hasIdentifier data:auid1 ,
                                data:orcid1 ;
              pub:hasPreferredNameVariant data:namevariant1 ;
+             pub:inDatasource data:scopus_datasource ;
              pub:statedAffiliation data:organization2 .
 
 
@@ -478,6 +479,7 @@ data:author2 rdf:type owl:NamedIndividual ,
              pub:hasIdentifier data:auid2 ,
                                data:orcid2 ;
              pub:hasPreferredNameVariant data:namevariant2 ;
+             pub:inDatasource data:scopus_datasource ;
              pub:statedAffiliation data:organization1 .
 
 
@@ -487,6 +489,7 @@ data:author3 rdf:type owl:NamedIndividual ,
              pub:hasIdentifier data:auid3 ,
                                data:orcid3 ;
              pub:hasPreferredNameVariant data:namevariant3 ;
+             pub:inDatasource data:scopus_datasource ;
              pub:statedAffiliation data:organization1 .
 
 
@@ -496,6 +499,7 @@ data:author4 rdf:type owl:NamedIndividual ,
              pub:hasIdentifier data:auid4 ,
                                data:orcid4 ;
              pub:hasPreferredNameVariant data:namevariant4 ;
+             pub:inDatasource data:scopus_datasource ;
              pub:statedAffiliation data:organization3 .
 
 
@@ -575,6 +579,18 @@ data:doi9 rdf:type owl:NamedIndividual ,
           skos:prefLabel "10.1515/9783110308464-020" .
 
 
+###  http://istc.cnr.it/data/example/eIssn-scheme
+data:eIssn-scheme rdf:type owl:NamedIndividual ,
+                           skos:ConceptScheme .
+
+
+###  http://istc.cnr.it/data/example/eIssn1
+data:eIssn1 rdf:type owl:NamedIndividual ,
+                     pub:Identifier ;
+            skos:inScheme data:eIssn-scheme ;
+            skos:prefLabel "15882861"^^xsd:string .
+
+
 ###  http://istc.cnr.it/data/example/eid-scheme
 data:eid-scheme rdf:type owl:NamedIndividual ,
                          skos:ConceptScheme .
@@ -650,6 +666,23 @@ data:eid9 rdf:type owl:NamedIndividual ,
           skos:prefLabel "2-s2.0-85011706845" .
 
 
+###  http://istc.cnr.it/data/example/isbn-scheme
+data:isbn-scheme rdf:type owl:NamedIndividual ,
+                          skos:ConceptScheme .
+
+
+###  http://istc.cnr.it/data/example/issn-scheme
+data:issn-scheme rdf:type owl:NamedIndividual ,
+                          skos:ConceptScheme .
+
+
+###  http://istc.cnr.it/data/example/issn1
+data:issn1 rdf:type owl:NamedIndividual ,
+                    pub:Identifier ;
+           skos:inScheme data:issn-scheme ;
+           skos:prefLabel "01389130"^^xsd:string .
+
+
 ###  http://istc.cnr.it/data/example/namevariant1
 data:namevariant1 rdf:type owl:NamedIndividual ,
                            pub:AuthorNameVariant ;
@@ -686,6 +719,7 @@ data:orcid-scheme rdf:type owl:NamedIndividual ,
 ###  http://istc.cnr.it/data/example/orcid1
 data:orcid1 rdf:type owl:NamedIndividual ,
                      pub:Identifier ;
+            skos:inScheme data:orcid-scheme ;
             skos:prefLabel "0000-0002-3845-8266" .
 
 
@@ -714,6 +748,7 @@ data:orcid4 rdf:type owl:NamedIndividual ,
 data:organization1 rdf:type owl:NamedIndividual ,
                             pub:OrganizationProfile ;
                    pub:hasIdentifier data:affid1 ;
+                   pub:inDatasource data:scopus_datasource ;
                    pub:affCity "Bologna"^^xsd:string ;
                    pub:affCountry "Italy"^^xsd:string ;
                    pub:affName "Alma Mater Studiorum Università di Bologna"^^xsd:string .
@@ -722,6 +757,7 @@ data:organization1 rdf:type owl:NamedIndividual ,
 ###  http://istc.cnr.it/data/example/organization2
 data:organization2 rdf:type owl:NamedIndividual ,
                             pub:OrganizationProfile ;
+                   pub:inDatasource data:scopus_datasource ;
                    pub:affCity "Ithaca"^^xsd:string ;
                    pub:affCountry "United States"^^xsd:string ;
                    pub:affName "Cornell University Department of Information Science"^^xsd:string .
@@ -730,6 +766,7 @@ data:organization2 rdf:type owl:NamedIndividual ,
 ###  http://istc.cnr.it/data/example/organization3
 data:organization3 rdf:type owl:NamedIndividual ,
                             pub:OrganizationProfile ;
+                   pub:inDatasource data:scopus_datasource ;
                    pub:affCity "Rome"^^xsd:string ;
                    pub:affCountry "Italy"^^xsd:string ;
                    pub:affName "Istituto Di Scienze E Tecnologie Della Cognizione, Rome"^^xsd:string .
@@ -743,6 +780,7 @@ data:paper1 rdf:type owl:NamedIndividual ,
                               data:eid1 ,
                               data:scopusId1 ;
             pub:hasReferenceList data:paper1_rl ;
+            pub:inDatasource data:scopus_datasource ;
             prism:pageRange "19-53"^^xsd:string ;
             prism:publicationName "Scientometrics"^^xsd:string ;
             dc:title "Do open citations give insights on the qualitative peer-review evaluation in research assessments? An analysis of the Italian National Scientific Qualification"^^xsd:string .
@@ -754,6 +792,7 @@ data:paper10 rdf:type owl:NamedIndividual ,
              pub:hasIdentifier data:doi10 ,
                                data:eid10 ,
                                data:scopusId10 ;
+             pub:inDatasource data:scopus_datasource ;
              dc:title "Co-citation analysis, bibliographic coupling, and direct citation: Which citation approach represents the research front most accurately?"^^xsd:string .
 
 
@@ -906,6 +945,7 @@ data:paper2 rdf:type owl:NamedIndividual ,
             pub:hasIdentifier data:doi2 ,
                               data:eid2 ,
                               data:scopusId2 ;
+            pub:inDatasource data:scopus_datasource ;
             dc:title "The determinants of academic career advancement: Evidence from Italy"^^xsd:string .
 
 
@@ -915,6 +955,7 @@ data:paper3 rdf:type owl:NamedIndividual ,
             pub:hasIdentifier data:doi3 ,
                               data:eid3 ,
                               data:scopusId3 ;
+            pub:inDatasource data:scopus_datasource ;
             dc:title "Selection committees for academic recruitment: Does gender matter?"^^xsd:string .
 
 
@@ -924,6 +965,7 @@ data:paper4 rdf:type owl:NamedIndividual ,
             pub:hasIdentifier data:doi4 ,
                               data:eid4 ,
                               data:scopusId4 ;
+            pub:inDatasource data:scopus_datasource ;
             dc:title "Connections in scientific committees and applicants’ self-selection: Evidence from a natural randomized experiment"^^xsd:string .
 
 
@@ -933,6 +975,7 @@ data:paper5 rdf:type owl:NamedIndividual ,
             pub:hasIdentifier data:doi5 ,
                               data:eid5 ,
                               data:scopusId5 ;
+            pub:inDatasource data:scopus_datasource ;
             dc:title "Normative versus social constructivist processes in the allocation of citations: A network-analytic model"^^xsd:string .
 
 
@@ -942,6 +985,7 @@ data:paper6 rdf:type owl:NamedIndividual ,
             pub:hasIdentifier data:doi6 ,
                               data:eid6 ,
                               data:scopusId6 ;
+            pub:inDatasource data:scopus_datasource ;
             dc:title "Does the venue of scientific conferences leverage their impact? A large scale study on Computer Science conferences"^^xsd:string .
 
 
@@ -951,6 +995,7 @@ data:paper7 rdf:type owl:NamedIndividual ,
             pub:hasIdentifier data:doi7 ,
                               data:eid7 ,
                               data:scopusId7 ;
+            pub:inDatasource data:scopus_datasource ;
             dc:title "Application of high-dimensional feature selection: Evaluation for genomic prediction in man"^^xsd:string .
 
 
@@ -960,6 +1005,7 @@ data:paper8 rdf:type owl:NamedIndividual ,
             pub:hasIdentifier data:doi8 ,
                               data:eid8 ,
                               data:scopusId8 ;
+            pub:inDatasource data:scopus_datasource ;
             dc:title "Open bibliographic data and the Italian National Scientific Qualification: Measuring coverage of academic fields"^^xsd:string .
 
 
@@ -969,7 +1015,17 @@ data:paper9 rdf:type owl:NamedIndividual ,
             pub:hasIdentifier data:doi9 ,
                               data:eid9 ,
                               data:scopusId9 ;
+            pub:inDatasource data:scopus_datasource ;
             dc:title "Scientific revolution in scientometrics: The broadening of impact from citation to societal"^^xsd:string .
+
+
+###  http://istc.cnr.it/data/example/scientometrics_vol128_issue1
+data:scientometrics_vol128_issue1 rdf:type owl:NamedIndividual ,
+                                           pub:PublicationSource ;
+                                  pub:hasIdentifier data:eIssn1 ,
+                                                    data:issn1 ;
+                                  prism:issueIdentifier "1"^^xsd:string ;
+                                  prism:volume "128"^^xsd:string .
 
 
 ###  http://istc.cnr.it/data/example/scopusId-scheme
@@ -1047,9 +1103,9 @@ data:scopusId9 rdf:type owl:NamedIndividual ,
                skos:prefLabel 85011706845 .
 
 
-###  http://istc.cnr.it/fossr/academics#dataa:orcid2
-:dataa:orcid2 rdf:type owl:NamedIndividual ,
-                       pub:Identifier .
+###  http://istc.cnr.it/data/example/scopus_datasource
+data:scopus_datasource rdf:type owl:NamedIndividual ,
+                                pub:Datasource .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
