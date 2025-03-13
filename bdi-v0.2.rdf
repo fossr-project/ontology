@@ -328,9 +328,9 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isJustifiedBy">
         <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/justifies"/>
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalState"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalEntity"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Justification"/>
-        <rdfs:comment xml:lang="en">The isJustifiedBy property is the inverse of justifies. It links a mental state to the justification(s) that support it, enabling reasoning about the basis for the mental state.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The isJustifiedBy property is the inverse of justifies. It links a mental entity to the justification(s) that support it, enabling reasoning about the basis for the mental entity.</rdfs:comment>
         <rdfs:label xml:lang="en">is justified by</rdfs:label>
     </owl:ObjectProperty>
     
@@ -434,7 +434,7 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/justifies">
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Justification"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/MentalEntity"/>
-        <rdfs:comment xml:lang="en">The justifies property links a justification to the mental state it supports, providing the rationale, evidence, or explanation for why the mental entity is held.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The justifies property links a justification to the mental entity it supports, providing the rationale, evidence, or explanation for why the mental entity is held.</rdfs:comment>
         <rdfs:label xml:lang="en">justifies</rdfs:label>
     </owl:ObjectProperty>
     
