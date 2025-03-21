@@ -98,8 +98,21 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasBelief">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalState"/>
         <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isBeliefOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
         <rdfs:comment xml:lang="en">The hasBelief property links an agent to the belief(s) they hold, representing the agent’s informational state about the world.</rdfs:comment>
         <rdfs:label xml:lang="en">has belief</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/hasBeliefFormation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasBeliefFormation">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalProcess"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isBeliefFormationOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/BeliefFormation"/>
     </owl:ObjectProperty>
     
 
@@ -113,6 +126,17 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
         <rdfs:comment xml:lang="en">The hasDesire property links an agent to the desire(s) they aspire to achieve, representing the agent’s motivational preferences.</rdfs:comment>
         <rdfs:label xml:lang="en">has desire</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/hasDesireFormation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasDesireFormation">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalProcess"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isDesireFormationOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/DesireFormation"/>
     </owl:ObjectProperty>
     
 
@@ -137,6 +161,15 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
         <rdfs:comment xml:lang="en">The hasIntention property links an agent to the intention(s) they commit to, representing the agent’s deliberative state for action.</rdfs:comment>
         <rdfs:label xml:lang="en">has intention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/hasIntentionFormation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasIntentionFormation">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalProcess"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isIntentionFormationOf"/>
     </owl:ObjectProperty>
     
 
@@ -196,8 +229,8 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasStartTime">
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/TimeInterval"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/TimeIstant"/>
-        <rdfs:label xml:lang="en">has start time</rdfs:label>
         <rdfs:label>Defines the temporal istant by specifying when a TimeInterval starts. This is essential for modeling the execution timeframe of an agent’s plans, actions, or mental states.</rdfs:label>
+        <rdfs:label xml:lang="en">has start time</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -211,6 +244,16 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/TimeInterval"/>
         <rdfs:comment xml:lang="en">The hasTemporalValidity property links an entity to a TimeInterval during which it is valid, active, or applicable. This property represents the temporal scope or extent of the entity&apos;s relevance or operation.</rdfs:comment>
         <rdfs:label xml:lang="en">has temporal validity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isBeliefFormationOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isBeliefFormationOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/isMentalProcessOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/BeliefFormation"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
     </owl:ObjectProperty>
     
 
@@ -234,6 +277,16 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Planning"/>
         <rdfs:comment xml:lang="en">Indicates that a Plan instance is defined by a specific Planning entity.</rdfs:comment>
         <rdfs:label xml:lang="en">is defined by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isDesireFormationOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isDesireFormationOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/isMentalProcessOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/DesireFormation"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
     </owl:ObjectProperty>
     
 
@@ -296,6 +349,16 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
         <rdfs:comment xml:lang="en">The isIntentionAdoptedFrom property is the inverse of adoptsIntention. It links an intention to the desire from which it is adopted, capturing the motivational basis for the agent&apos;s commitment.</rdfs:comment>
         <rdfs:label xml:lang="en">is intention adopted from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isIntentionFormationOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isIntentionFormationOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/isMentalProcessOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/IntentionFormation"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
     </owl:ObjectProperty>
     
 
@@ -383,6 +446,27 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     
 
 
+    <!-- https://w3id.org/fossr/bdi/isPlannedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isPlannedBy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/isMentalProcessOf"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isPlanning"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Planning"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/bdi/isPlanning -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isPlanning">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalProcess"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Planning"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/fossr/bdi/isPropositionOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isPropositionOf">
@@ -411,8 +495,8 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/thinks"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
-        <rdfs:comment xml:lang="en">is thought by</rdfs:comment>
         <rdfs:comment>Indicates that a MentalProcess is performed or carried out by a specific Agent as part of its cognitive activities</rdfs:comment>
+        <rdfs:comment xml:lang="en">is thought by</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -583,7 +667,7 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
     <owl:Class rdf:about="https://w3id.org/fossr/bdi/BeliefFormation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
         <rdfs:comment xml:lang="en">BeliefFormation is the cognitive process through which an agent generates, updates, or modifies beliefs based on perception, inference, or communication with other agents. This process allows agents to maintain a dynamically evolving mental representation of their environment and internal states.
-For example, an agent monitoring a public health database initially holds the belief that a disease outbreak is contained. However, upon processing new epidemiological reports, the agent updates its belief to reflect the risk of a wider spread and adjusts its reasoning accordingly.&quot;</rdfs:comment>
+For example, an agent monitoring a public health database initially holds the belief that a disease outbreak is contained. However, upon processing new epidemiological reports, the agent updates its belief to reflect the risk of a wider spread and adjusts its reasoning accordingly.</rdfs:comment>
         <rdfs:label xml:lang="en">Belief Formation</rdfs:label>
     </owl:Class>
     
