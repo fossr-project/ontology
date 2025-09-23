@@ -1,6 +1,6 @@
 # BDI + MS-LaTTE: Data Cleaning & Validation Experiments
 
-A small toolkit to (1) clean MS-LaTTE task annotations into a high-agreement dataset and (2) run BDI-augmented vs. plain LLM validations, saving results.
+This folder contains code that: (1) cleans MS-LaTTE task annotations into a high-agreement dataset and (2) runs BDI-augmented vs. plain LLM validations, saving results.
 
 --------------------------------------------------------------------------------
 
