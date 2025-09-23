@@ -1,0 +1,2202 @@
+[
+  {
+    "ID": "7589762",
+    "TaskTitle": "call rika",
+    "ListTitle": "work",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "10322663",
+    "TaskTitle": "check email rules",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-night,WE-night"
+      }
+    ]
+  },
+  {
+    "ID": "3350128",
+    "TaskTitle": "email ruchita",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "4882696",
+    "TaskTitle": "call range",
+    "ListTitle": "to do",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "2255370",
+    "TaskTitle": "call tambie",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "7228980",
+    "TaskTitle": "email margus",
+    "ListTitle": "to do",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "9490499",
+    "TaskTitle": "pay jiusheng",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      }
+    ]
+  },
+  {
+    "ID": "11931866",
+    "TaskTitle": "email uncle mark",
+    "ListTitle": "to do",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WD-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "12058917",
+    "TaskTitle": "write in mother s day cards",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-morning"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning"
+      }
+    ]
+  },
+  {
+    "ID": "11327122",
+    "TaskTitle": "cancel rental car",
+    "ListTitle": "to do",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "5524371",
+    "TaskTitle": "text charlyn",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "1329350",
+    "TaskTitle": "transfer credit card balance",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,public",
+        "PublicLocations": "bank"
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "10269821",
+    "TaskTitle": "email sargun",
+    "ListTitle": "work",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "8725146",
+    "TaskTitle": "cards book",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WE-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-evening"
+      },
+      {
+        "Known": "no",
+        "Times": ""
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon"
+      }
+    ]
+  },
+  {
+    "ID": "5067579",
+    "TaskTitle": "email donkak",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "4174661",
+    "TaskTitle": "email zohreh",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      }
+    ]
+  },
+  {
+    "ID": "3494879",
+    "TaskTitle": "design poster",
+    "ListTitle": "to do",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WE-afternoon,WD-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "1542877",
+    "TaskTitle": "call dennis",
+    "ListTitle": "work",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-night,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-evening,WE-evening,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "5140039",
+    "TaskTitle": "order cize",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "11309605",
+    "TaskTitle": "booting",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WD-evening,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon"
+      }
+    ]
+  },
+  {
+    "ID": "1860907",
+    "TaskTitle": "call boyce",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "10477508",
+    "TaskTitle": "pay miron",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "11500323",
+    "TaskTitle": "respond to andy",
+    "ListTitle": "to do",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WE-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "12534346",
+    "TaskTitle": "write song",
+    "ListTitle": "tasks",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-night"
+      }
+    ]
+  },
+  {
+    "ID": "12200093",
+    "TaskTitle": "email mary lynn",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WE-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "11439167",
+    "TaskTitle": "pay ghadah",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon"
+      }
+    ]
+  },
+  {
+    "ID": "1853165",
+    "TaskTitle": "call 8",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "6781931",
+    "TaskTitle": "email cso",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "11764160",
+    "TaskTitle": "message hisham",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      }
+    ]
+  },
+  {
+    "ID": "4184602",
+    "TaskTitle": "email ri",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WE-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "5692531",
+    "TaskTitle": "email rae",
+    "ListTitle": "to do",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "12794995",
+    "TaskTitle": "call puay",
+    "ListTitle": "work",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "6103916",
+    "TaskTitle": "check house keys",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WE-afternoon,WD-evening,WE-evening,WE-night"
+      }
+    ]
+  },
+  {
+    "ID": "11150920",
+    "TaskTitle": "email dorota",
+    "ListTitle": "work",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "10934909",
+    "TaskTitle": "message photographers",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "9725692",
+    "TaskTitle": "email teela",
+    "ListTitle": "to do",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "7524256",
+    "TaskTitle": "rsvp s",
+    "ListTitle": "today",
+    "LocJudgements": [
+      {
+        "Known": "no",
+        "Locations": "",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "2805132",
+    "TaskTitle": "news stories",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-evening,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning"
+      }
+    ]
+  },
+  {
+    "ID": "8974840",
+    "TaskTitle": "smile card",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-morning"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-morning"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon"
+      }
+    ]
+  },
+  {
+    "ID": "8930332",
+    "TaskTitle": "bday call",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-night,WE-night"
+      }
+    ]
+  },
+  {
+    "ID": "9627389",
+    "TaskTitle": "reply to giacomo",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-afternoon,WE-evening,WD-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WD-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening"
+      }
+    ]
+  },
+  {
+    "ID": "8022916",
+    "TaskTitle": "go through email",
+    "ListTitle": "this week",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "6015973",
+    "TaskTitle": "make meal plans",
+    "ListTitle": "family",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon,WD-evening"
+      }
+    ]
+  },
+  {
+    "ID": "8823304",
+    "TaskTitle": "sausage",
+    "ListTitle": "short term",
+    "LocJudgements": [
+      {
+        "Known": "no",
+        "Locations": "",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "public",
+        "PublicLocations": "grocery"
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,public",
+        "PublicLocations": "grocery"
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-night,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon,WD-night,WE-night"
+      }
+    ]
+  },
+  {
+    "ID": "8117512",
+    "TaskTitle": "email prof about class",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WD-afternoon,WD-evening"
+      }
+    ]
+  },
+  {
+    "ID": "6889179",
+    "TaskTitle": "email christin",
+    "ListTitle": "work",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "13192090",
+    "TaskTitle": "text shailiza",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-morning,WE-afternoon,WD-evening,WE-evening"
+      }
+    ]
+  },
+  {
+    "ID": "2322339",
+    "TaskTitle": "call rogers",
+    "ListTitle": "to do list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-evening,WE-evening,WE-night"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      }
+    ]
+  },
+  {
+    "ID": "5224857",
+    "TaskTitle": "text mitsuroh",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-night,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon"
+      }
+    ]
+  },
+  {
+    "ID": "6839752",
+    "TaskTitle": "respond karen",
+    "ListTitle": "default list",
+    "LocJudgements": [
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      },
+      {
+        "Known": "yes",
+        "Locations": "home,work",
+        "PublicLocations": ""
+      }
+    ],
+    "TimeJudgements": [
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WD-afternoon,WE-afternoon,WD-evening,WE-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-afternoon,WE-afternoon,WD-evening"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-anytime,WE-anytime"
+      },
+      {
+        "Known": "yes",
+        "Times": "WD-morning,WD-afternoon"
+      },
+      {
+        "Known": "yes",
+        "Times": "WE-morning,WE-afternoon,WD-evening,WE-evening,WD-night,WE-night"
+      }
+    ]
+  }
+]
