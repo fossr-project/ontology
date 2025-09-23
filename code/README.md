@@ -6,7 +6,7 @@ A small toolkit to (1) clean MS-LaTTE task annotations into a high-agreement dat
 
 ## Repository files
 
-.
+
 ├─ clean-original-data.py          # cleans raw MS-LaTTE annotations
 ├─ bdi-experiment.py               # runs BDI-vs-plain validation experiments
 ├─ MS-LaTTE.json                   # input 
@@ -25,7 +25,7 @@ python -m venv .venv
 # Linux/Mac
 source .venv/bin/activate
 # Windows (PowerShell)
-# .venv\Scripts\Activate.ps1
+ .venv\Scripts\Activate.ps1
 
 pip install -U openai
 
@@ -33,7 +33,7 @@ pip install -U openai
 # Linux/Mac:
 export OPENAI_API_KEY=sk-...
 # Windows (PowerShell):
-# $env:OPENAI_API_KEY="sk-..."
+ $env:OPENAI_API_KEY="sk-..."
 
 
 ### 2) Data Cleaning (MS-LaTTE → CSV/JSON)
