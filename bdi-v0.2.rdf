@@ -81,9 +81,9 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/generates">
         <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isGeneretedBy"/>
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/BeliefFormation"/>
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/DesireFormation"/>
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/IntentionFormation"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/BeliefProcessing"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/DesireProcessing"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/IntentionProcessing"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
@@ -112,9 +112,7 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalProcess"/>
         <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isBeliefFormationOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/BeliefFormation"/>
-        <rdfs:comment xml:lang="en">This property links an agent to the process of forming a belief. Ensure it is consistently used for all agents who engage in belief formation.</rdfs:comment>
-        <rdfs:label xml:lang="en">has belief formation</rdfs:label>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/BeliefProcessing"/>
     </owl:ObjectProperty>
     
 
@@ -138,10 +136,7 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalProcess"/>
         <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isDesireFormationOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/DesireFormation"/>
-        <rdfs:comment xml:lang="en">The property &quot;hasDesireFormation&quot; as a subproperty of &quot;hasMentalProcess&quot; establishes a specialized hierarchical relationship in the BDI ontology.
-The property associete an agent to a desire fomration, this automatically implies that the agent also has the more general &quot;hasMentalProcess&quot; relation to the same process.</rdfs:comment>
-        <rdfs:label xml:lang="en">has desire formation</rdfs:label>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/DesireProcessing"/>
     </owl:ObjectProperty>
     
 
@@ -175,8 +170,6 @@ The property associete an agent to a desire fomration, this automatically implie
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/hasIntentionFormation">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalProcess"/>
         <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isIntentionFormationOf"/>
-        <rdfs:comment xml:lang="en">This property links an agent to the process of forming a intention. Ensure it is consistently used for all agents who engage in intention formation</rdfs:comment>
-        <rdfs:label xml:lang="en">has intention formation</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -259,10 +252,8 @@ The property associete an agent to a desire fomration, this automatically implie
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isBeliefFormationOf">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/isMentalProcessOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/BeliefFormation"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/BeliefProcessing"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
-        <rdfs:comment xml:lang="en">This property is the inverse of hasBeliefFormation, connecting a belief formation process to the agent that performs it. It should be consistently applied to all belief formation processes to maintain bidirectional relationships with their respective agents.</rdfs:comment>
-        <rdfs:label xml:lang="en">is belief formation of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -294,10 +285,8 @@ The property associete an agent to a desire fomration, this automatically implie
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isDesireFormationOf">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/isMentalProcessOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/DesireFormation"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/DesireProcessing"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
-        <rdfs:comment xml:lang="en">This property is the inverse of hasDesireFormation, connecting a desire formation process to the agent that undergoes it. When a desire formation process is linked to an agent through this inverse property, it implicitly establishes that the process is part of the agent&apos;s mental processes. This maintains the hierarchical relationship structure within the BDI ontology while providing bidirectional navigation between agents and their specific desire formation processes.</rdfs:comment>
-        <rdfs:label xml:lang="en">is desire formation of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -326,15 +315,6 @@ The property associete an agent to a desire fomration, this automatically implie
     
 
 
-    <!-- https://w3id.org/fossr/bdi/isEvolvedIn -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isEvolvedIn">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/MentalEntity"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/MentalEntity"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/fossr/bdi/isFulfilledBy -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isFulfilledBy">
@@ -353,9 +333,9 @@ The property associete an agent to a desire fomration, this automatically implie
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/BeliefFormation"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/DesireFormation"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/IntentionFormation"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/BeliefProcessing"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/DesireProcessing"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/IntentionProcessing"/>
         <rdfs:comment xml:lang="en">The isGeneretedBy property is the inverse of generetes. It links Belief, Desire and Intention to the beliefFormation, desireFormation and intentionFormation .</rdfs:comment>
         <rdfs:label xml:lang="en">is genereted by</rdfs:label>
     </owl:ObjectProperty>
@@ -377,10 +357,8 @@ The property associete an agent to a desire fomration, this automatically implie
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/bdi/isIntentionFormationOf">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/isMentalProcessOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/IntentionFormation"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/IntentionProcessing"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
-        <rdfs:comment xml:lang="en">This property is the inverse of hasIntentionFormation, connecting an intention formation process to the agent that performs it. It should be consistently applied to all intention formation processes to maintain bidirectional relationships with their respective agents.</rdfs:comment>
-        <rdfs:label xml:lang="en">is intention formation of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -475,8 +453,6 @@ The property associete an agent to a desire fomration, this automatically implie
         <owl:inverseOf rdf:resource="https://w3id.org/fossr/bdi/isPlanning"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Planning"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
-        <rdfs:comment xml:lang="en">This property is the inverse of hasPlanning, connecting a planning process to the agent that performs it. It should be consistently applied to all planning processes to maintain bidirectional relationships with their respective agents.</rdfs:comment>
-        <rdfs:label xml:lang="en">is planned by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -487,8 +463,6 @@ The property associete an agent to a desire fomration, this automatically implie
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/bdi/hasMentalProcess"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/bdi/Planning"/>
-        <rdfs:comment xml:lang="en">This property links an agent to the process of planning. Ensure it is consistently used for all agents who engage in planning formation.</rdfs:comment>
-        <rdfs:label xml:lang="en">is planning</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -688,16 +662,10 @@ The property associete an agent to a desire fomration, this automatically implie
     
 
 
-    <!-- https://w3id.org/fossr/bdi/BeliefFormation -->
+    <!-- https://w3id.org/fossr/bdi/BeliefProcessing -->
 
-    <owl:Class rdf:about="https://w3id.org/fossr/bdi/BeliefFormation">
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/BeliefProcessing">
         <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/generates"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Belief"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">BeliefFormation is the cognitive process through which an agent generates, updates, or modifies beliefs based on perception, inference, or communication with other agents. This process allows agents to maintain a dynamically evolving mental representation of their environment and internal states.
 For example, an agent monitoring a public health database initially holds the belief that a disease outbreak is contained. However, upon processing new epidemiological reports, the agent updates its belief to reflect the risk of a wider spread and adjusts its reasoning accordingly.</rdfs:comment>
         <rdfs:label xml:lang="en">Belief Formation</rdfs:label>
@@ -734,16 +702,10 @@ For example, an agent monitoring a public health database initially holds the be
     
 
 
-    <!-- https://w3id.org/fossr/bdi/DesireFormation -->
+    <!-- https://w3id.org/fossr/bdi/DesireProcessing -->
 
-    <owl:Class rdf:about="https://w3id.org/fossr/bdi/DesireFormation">
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/DesireProcessing">
         <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/generates"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Desire"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">DesireFormation is the mental process by which an agent generates, modifies, or updates desires based on internal motivations, contextual changes, or interactions with external information sources. This process helps agents structure goal-oriented behaviour before intentions are formed.
 For example, a decision-support agent in a climate policy system initially lacks any specific desire regarding renewable energy subsidies. After analysing recent economic and environmental reports, it generates a new desire to advocate for increased subsidies, which may later influence its intentions and actions.</rdfs:comment>
         <rdfs:label xml:lang="en">Desire Formation</rdfs:label>
@@ -780,12 +742,6 @@ A example of goal is: &quot;Learn Python programming.&quot;. This goal may later
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/specifiesPlan"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Plan"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isIntentionOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
@@ -802,16 +758,10 @@ Intentions emerge from prioritised desires or goals (e.g., &quot;I desire to buy
     
 
 
-    <!-- https://w3id.org/fossr/bdi/IntentionFormation -->
+    <!-- https://w3id.org/fossr/bdi/IntentionProcessing -->
 
-    <owl:Class rdf:about="https://w3id.org/fossr/bdi/IntentionFormation">
+    <owl:Class rdf:about="https://w3id.org/fossr/bdi/IntentionProcessing">
         <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/generates"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Intention"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">IntentionFormation is the process by which an agent selects, commits to, and refines intentions based on its desires, available resources, and deliberative reasoning. It determines which desires are pursued as actionable commitments and adapts them as new information emerges.
 For example, an autonomous assistant tasked with monitoring policy compliance may develop a desire to verify the implementation of a new regulation. After assessing feasibility and priority, it forms an intention to generate a compliance report, refining it further as new data becomes available.</rdfs:comment>
         <rdfs:label xml:lang="en">Intention Formation</rdfs:label>
@@ -831,30 +781,6 @@ For example, an autonomous assistant tasked with monitoring policy compliance ma
     <!-- https://w3id.org/fossr/bdi/MentalEntity -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/bdi/MentalEntity">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/atTime"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/TemporalEntity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/hasProposition"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Proposition"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isEvolvedIn"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/MentalEntity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isJustifiedBy"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Justification"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isMentalEntityOf"/>
@@ -890,12 +816,6 @@ By structuring mental states and processes under a common superclass, MentalEnti
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isThoughtBy"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isTriggeredBy"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
@@ -918,8 +838,20 @@ By structuring mental states and processes under a common superclass, MentalEnti
         <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/hasProposition"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Proposition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/hasTemporalValidity"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/TimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/isJustifiedBy"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Justification"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -938,12 +870,6 @@ By structuring mental states and processes under a common superclass, MentalEnti
     <!-- https://w3id.org/fossr/bdi/Plan -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/bdi/Plan">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/fulfills"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Goal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A plan is a structured sequence of actions or steps devised by an agent to achieve a specific goal or fulfil an intention. It serves as an operational framework that translates an agent’s intentions into actionable strategies, guiding behaviour toward a desired goal.</rdfs:comment>
         <rdfs:label xml:lang="en">Plan</rdfs:label>
     </owl:Class>
@@ -954,12 +880,6 @@ By structuring mental states and processes under a common superclass, MentalEnti
 
     <owl:Class rdf:about="https://w3id.org/fossr/bdi/Planning">
         <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/MentalProcess"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/generates"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/fossr/bdi/Planning"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Planning is the cognitive process through which an agent generates, structures, and organises a sequence of actions to achieve a desired goal. It transforms an agent’s intentions into a concrete plan that can guide execution. This process involves selecting appropriate steps, considering constraints, and adapting the plan based on available information.
 
 For example, an autonomous agent responsible for disaster response may form the intention to deliver medical supplies to a remote area. Through the Planning process, it determines the optimal route, identifies necessary resources, and structures the sequence of actions required to execute the delivery efficiently.</rdfs:comment>
@@ -999,13 +919,6 @@ This class is useful for modeling events, schedules, and historical data where t
 
     <owl:Class rdf:about="https://w3id.org/fossr/bdi/TimeInterval">
         <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/bdi/TemporalEntity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/hasStartTime"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://w3id.org/fossr/bdi/TimeIstant"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/fossr/bdi/endTime"/>
@@ -1056,5 +969,5 @@ This class is useful for modeling events, schedules, and historical data where t
 
 
 
-<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
 
