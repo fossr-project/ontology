@@ -1,20 +1,57 @@
 @prefix : <https://w3id.org/fossr/ontology/bdi/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rev: <https://w3id.org/fossr/ontology/bdi-rev/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix terms: <http://purl.org/dc/terms/> .
 @base <https://w3id.org/fossr/ontology/bdi/> .
 
 <https://w3id.org/fossr/ontology/bdi/> rdf:type owl:Ontology ;
                                         owl:versionIRI <https://w3id.org/fossr/bdi/ontology/0.3/> ;
+                                        dc:description <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/bdi.png> ,
+                                                       """The BDI Ontology provides a formal framework to model the Belief-Desire-Intention (BDI) architecture for rational agents. It defines key mental states—Beliefs, Desires, and Intentions—and their relationships, capturing the agent’s reasoning, motivation, and commitment to action. Supporting classes include Propositions (content of mental states), Justifications (rationale for mental states), Plans (action sequences for goals), and TimeIntervals (temporal validity of entities).
+
+Key properties like hasBelief, hasDesire, and hasIntention link agents to mental states, while fulfills, adoptsIntention, and motivatesDesire model dynamic interactions. Temporal properties enable reasoning about time-sensitive states and plans. Axioms ensure consistency, such as disjointness between mental states and domain-specific constraints.
+
+This ontology supports reasoning, querying, and analysis of agent behaviour, enabling applications in AI, multi-agent systems, and decision support."""@en ;
+                                        terms:creator <https://w3id.org/italia/data/organization/support-unit/cnr-Z6HZEH/stlab> ;
+                                        terms:issued "2025-10-28" ;
+                                        terms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                        terms:title "Belief-Desire-Intention Ontology"@en ;
                                         rdfs:comment """The BDI Ontology provides a formal framework to model the Belief-Desire-Intention (BDI) architecture for rational agents. It defines key mental states—Beliefs, Desires, and Intentions—and their relationships, capturing the agent’s reasoning, motivation, and commitment to action. Supporting classes include Propositions (content of mental states), Justifications (rationale for mental states), Plans (action sequences for goals), and TimeIntervals (temporal validity of entities).
 
 Key properties like hasBelief, hasDesire, and hasIntention link agents to mental states, while fulfills, adoptsIntention, and motivatesDesire model dynamic interactions. Temporal properties enable reasoning about time-sensitive states and plans. Axioms ensure consistency, such as disjointness between mental states and domain-specific constraints.
 
 This ontology supports reasoning, querying, and analysis of agent behaviour, enabling applications in AI, multi-agent systems, and decision support."""@en ;
-                                        rdfs:label "Belief-Desire-Intention Ontology"@en .
+                                        rdfs:label "Belief-Desire-Intention Ontology"@en ;
+                                        owl:versionInfo "Version 0.3"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+terms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties

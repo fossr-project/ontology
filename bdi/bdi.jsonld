@@ -602,8 +602,42 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/WorldState"
   } ]
 }, {
+  "@id" : "http://purl.org/dc/elements/1.1/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/issued",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/description" : [ {
+    "@id" : "https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/bdi.png"
+  }, {
+    "@language" : "en",
+    "@value" : "The BDI Ontology provides a formal framework to model the Belief-Desire-Intention (BDI) architecture for rational agents. It defines key mental states—Beliefs, Desires, and Intentions—and their relationships, capturing the agent’s reasoning, motivation, and commitment to action. Supporting classes include Propositions (content of mental states), Justifications (rationale for mental states), Plans (action sequences for goals), and TimeIntervals (temporal validity of entities).\n\nKey properties like hasBelief, hasDesire, and hasIntention link agents to mental states, while fulfills, adoptsIntention, and motivatesDesire model dynamic interactions. Temporal properties enable reasoning about time-sensitive states and plans. Axioms ensure consistency, such as disjointness between mental states and domain-specific constraints.\n\nThis ontology supports reasoning, querying, and analysis of agent behaviour, enabling applications in AI, multi-agent systems, and decision support."
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@id" : "https://w3id.org/italia/data/organization/support-unit/cnr-Z6HZEH/stlab"
+  } ],
+  "http://purl.org/dc/terms/issued" : [ {
+    "@value" : "2025-10-28"
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "https://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "Belief-Desire-Intention Ontology"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The BDI Ontology provides a formal framework to model the Belief-Desire-Intention (BDI) architecture for rational agents. It defines key mental states—Beliefs, Desires, and Intentions—and their relationships, capturing the agent’s reasoning, motivation, and commitment to action. Supporting classes include Propositions (content of mental states), Justifications (rationale for mental states), Plans (action sequences for goals), and TimeIntervals (temporal validity of entities).\n\nKey properties like hasBelief, hasDesire, and hasIntention link agents to mental states, while fulfills, adoptsIntention, and motivatesDesire model dynamic interactions. Temporal properties enable reasoning about time-sensitive states and plans. Axioms ensure consistency, such as disjointness between mental states and domain-specific constraints.\n\nThis ontology supports reasoning, querying, and analysis of agent behaviour, enabling applications in AI, multi-agent systems, and decision support."
@@ -614,6 +648,10 @@
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
     "@id" : "https://w3id.org/fossr/bdi/ontology/0.3/"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@language" : "en",
+    "@value" : "Version 0.3"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/Action",
