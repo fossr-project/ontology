@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/fossr/ontology/bdi-dul/"
+     xml:base="https://w3id.org/fossr/ontology/bdi-dul/"
+     xmlns:d0="http://www.ontologydesignpatterns.org/ont/d0.owl#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:bdi="https://w3id.org/fossr/ontology/bdi/"
+     xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://w3id.org/fossr/ontology/bdi-dul">
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/d0.owl"/>
+        <owl:imports rdf:resource="https://w3id.org/fossr/bdi/ontology/0.3/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#follows -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#follows">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/fossr/ontology/bdi/follows"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasComponent -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasComponent">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/fossr/ontology/bdi/hasComponent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/fossr/ontology/bdi/hasPart"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isComponentOf -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isComponentOf">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/fossr/ontology/bdi/isComponentOf"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/fossr/ontology/bdi/isPartOf"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/fossr/ontology/bdi/precedes"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/isSatisfiedBy -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/isSatisfiedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSatisfiedBy"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/satisfies -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/satisfies">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval">
+        <owl:equivalentClass rdf:resource="https://w3id.org/fossr/ontology/bdi/TimeInterval"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/Action -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/Action">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/Agent -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/Agent">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/Goal -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/Goal">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/Justification -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/Justification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/MentalEntity -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/MentalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/d0.owl#CognitiveEntity"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/MentalProcess -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/MentalProcess">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/d0.owl#Activity"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/Plan -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/Plan">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/PlanExecution -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/PlanExecution">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PlanExecution"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/Task -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/Task">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/TemporalEntity -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/TemporalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/bdi/WorldState -->
+
+    <rdf:Description rdf:about="https://w3id.org/fossr/ontology/bdi/WorldState">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/d0.owl#Eventuality"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
