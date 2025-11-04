@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://w3id.org/fossr/ontology/survey//"
-     xml:base="https://w3id.org/fossr/ontology/survey//"
+<rdf:RDF xmlns="https://w3id.org/fossr/ontology/survey/"
+     xml:base="https://w3id.org/fossr/ontology/survey/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://w3id.org/fossr/ontology/survey/">
+    <owl:Ontology rdf:about="https://w3id.org/fossr/ontology/survey">
         <rdfs:comment xml:lang="en">The Survey Ontology provides a formal framework for modeling survey activities, starting from defining a new survey, a group of participants, and related components. It defines key elements in a survey—Question, Variable, Participant, and UserAnswer—and their relationships. Supporting classes include Language (survey language), Condition (defines conditions for displaying questions), and Attribute (describes participant characteristics).
 
 This ontology supports reasoning, querying, and analysis of survey definitions and data report, enabling applications in social sciences and data analysis.</rdfs:comment>

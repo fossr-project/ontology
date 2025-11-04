@@ -1,16 +1,16 @@
-@prefix : <https://w3id.org/fossr/ontology/survey//> .
+@prefix : <https://w3id.org/fossr/ontology/survey/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/fossr/ontology/survey//> .
+@base <https://w3id.org/fossr/ontology/survey/> .
 
-<https://w3id.org/fossr/ontology/survey/> rdf:type owl:Ontology ;
-                                           rdfs:comment """The Survey Ontology provides a formal framework for modeling survey activities, starting from defining a new survey, a group of participants, and related components. It defines key elements in a survey—Question, Variable, Participant, and UserAnswer—and their relationships. Supporting classes include Language (survey language), Condition (defines conditions for displaying questions), and Attribute (describes participant characteristics).
+<https://w3id.org/fossr/ontology/survey> rdf:type owl:Ontology ;
+                                          rdfs:comment """The Survey Ontology provides a formal framework for modeling survey activities, starting from defining a new survey, a group of participants, and related components. It defines key elements in a survey—Question, Variable, Participant, and UserAnswer—and their relationships. Supporting classes include Language (survey language), Condition (defines conditions for displaying questions), and Attribute (describes participant characteristics).
 
 This ontology supports reasoning, querying, and analysis of survey definitions and data report, enabling applications in social sciences and data analysis."""@en ;
-                                           rdfs:label "Survey Ontology"@en .
+                                          rdfs:label "Survey Ontology"@en .
 
 #################################################################
 #    Object Properties
