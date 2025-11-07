@@ -7,6 +7,7 @@
 @base <https://w3id.org/fossr/ontology/limesurvey/> .
 
 <https://w3id.org/fossr/ontology/limesurvey> rdf:type owl:Ontology ;
+                                              owl:versionIRI <https://w3id.org/fossr/limesurvey/ontology/0.3/> ;
                                               rdfs:comment """The Survey Ontology provides a formal framework for modeling survey activities, starting from defining a new survey, a group of participants, and related components. It defines key elements in a survey—Question, Variable, Participant, and UserAnswer—and their relationships. Supporting classes include Language (survey language), Condition (defines conditions for displaying questions), and Attribute (describes participant characteristics).
 
 This ontology supports reasoning, querying, and analysis of survey definitions and data report, enabling applications in social sciences and data analysis."""@en ;
