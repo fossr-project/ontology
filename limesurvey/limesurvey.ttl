@@ -17,6 +17,13 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
 #    Object Properties
 #################################################################
 
+###  https://w3id.org/fossr/ontology/limesurvey/hasAnswerOption
+:hasAnswerOption rdf:type owl:ObjectProperty ;
+    rdfs:domain :Question ;
+    rdfs:range :AnswerOption ;
+    rdfs:label "has answer option"@en ;
+    rdfs:comment "Links a Question to one of its possible answer choices."@en .
+
 ###  https://w3id.org/fossr/ontology/limesurvey/derivedFrom
 :derivedFrom rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
@@ -163,26 +170,57 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
              rdfs:domain :Question ;
              rdfs:range :Variable .
 
+### https://w3id.org/fossr/ontology/limesurvey/hasAttribute
+:hasAttribute rdf:type owl:ObjectProperty ;
+    rdfs:domain :Question ;
+    rdfs:range :QuestionAttribute ;
+    rdfs:label "has attribute"@en ;
+    rdfs:comment "Links a Question to its technical attributes."@en .
+
+### https://w3id.org/fossr/ontology/limesurvey/hasAttributeLang
+:hasAttributeLang rdf:type owl:ObjectProperty ;
+    rdfs:domain :Question ;
+    rdfs:range :QuestionAttributeLang ;
+    rdfs:label "has language attribute"@en ;
+    rdfs:comment "Links a Question to its language-specific attributes."@en .
+
+
+### https://w3id.org/fossr/ontology/limesurvey/hasDefaultValue
+:hasDefaultValue rdf:type owl:ObjectProperty ;
+    rdfs:domain :Question ;
+    rdfs:range :DefaultValue ;
+    rdfs:label "has default value"@en ;
+    rdfs:comment "Links a Question to its default value."@en .
+
+### https://w3id.org/fossr/ontology/limesurvey/hasParentQuestion
+:hasParentQuestion rdf:type owl:ObjectProperty ;
+    rdfs:domain :Question ;
+    rdfs:range :Question ;
+    rdfs:label "has parent question"@en ;
+    rdfs:comment "Links a subquestion to its parent question (for nested/matrix questions)."@en .
+
+
+
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  https://w3id.org/fossr/ontology/grelevance
+###  https://w3id.org/fossr/ontology/limesurvey/grelevance
 <https://w3id.org/fossr/ontology/grelevance> rdf:type owl:DatatypeProperty ;
                                              rdfs:domain :GroupFlowStep ;
                                              rdfs:range rdfs:Literal ;
                                              rdfs:comment "group condition, if the condition is true the group question will be visible during the survey"@en .
 
 
-###  https://w3id.org/fossr/ontology/groupdescription
+###  https://w3id.org/fossr/ontology/limesurvey/groupdescription
 <https://w3id.org/fossr/ontology/groupdescription> rdf:type owl:DatatypeProperty ;
                                                    rdfs:domain :QuestionGroup ;
                                                    rdfs:range rdfs:Literal ;
                                                    rdfs:comment "group question description"@en .
 
 
-###  https://w3id.org/fossr/ontology/groupname
+###  https://w3id.org/fossr/ontology/limesurvey/groupname
 <https://w3id.org/fossr/ontology/groupname> rdf:type owl:DatatypeProperty ;
                                             rdfs:domain :QuestionGroup ;
                                             rdfs:range rdfs:Literal ;
@@ -265,10 +303,247 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
              rdfs:range rdfs:Literal ;
              rdfs:comment "Code of the variable"@en .
 
+###  https://w3id.org/fossr/ontology/limesurvey/defaultValueContent
+:defaultValueContent rdf:type owl:DatatypeProperty ;
+    rdfs:domain :DefaultValue ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "default value"@en ;
+    rdfs:comment "The default value for the question."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributeAnswerOrder
+:attributeAnswerOrder rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttribute ;
+    rdfs:range xsd:string ;
+    rdfs:label "answer order attribute"@en ;
+    rdfs:comment "Order in which answers are displayed (normal/random)."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributeArrayFilter
+:attributeArrayFilter rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttribute ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "array filter"@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributeCssClass
+:attributeCssClass rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttribute ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "CSS class"@en ;
+    rdfs:comment "Custom CSS class for styling."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributeHidden
+:attributeHidden rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttribute ;
+    rdfs:range xsd:integer ;
+    rdfs:label "is hidden"@en ;
+    rdfs:comment "Whether the question is hidden from respondents."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributeHideTip
+:attributeHideTip rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttribute ;
+    rdfs:range xsd:integer ;
+    rdfs:label "hide tip"@en ;
+    rdfs:comment "Whether to hide help tooltips."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributeTimeLimit
+:attributeTimeLimit rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttribute ;
+    rdfs:range xsd:integer ;
+    rdfs:label "time limit"@en ;
+    rdfs:comment "Time limit in seconds for answering the question."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributeTimeLimitAction
+:attributeTimeLimitAction rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttribute ;
+    rdfs:range xsd:integer ;
+    rdfs:label "time limit action"@en ;
+    rdfs:comment "Action to take when time limit expires."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributeRandomGroup
+:attributeRandomGroup rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttribute ;
+    rdfs:range xsd:string ;
+    rdfs:label "random group"@en ;
+    rdfs:comment "Group identifier for randomization."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributePublicStatistics
+:attributePublicStatistics rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttribute ;
+    rdfs:range xsd:integer ;
+    rdfs:label "public statistics"@en ;
+    rdfs:comment "Whether to show in public statistics."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributeLangValidationTip
+:attributeLangValidationTip rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttributeLang ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "validation tip"@en ;
+    rdfs:comment "Localized validation error message."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributeLangOtherReplaceText
+:attributeLangOtherReplaceText rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttributeLang ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "other replace text"@en ;
+    rdfs:comment "Text to replace 'Other' label."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributeLangPrintableHelp
+:attributeLangPrintableHelp rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttributeLang ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "printable help"@en ;
+    rdfs:comment "Help text for printable version."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/attributeLangTimeLimitMessage
+:attributeLangTimeLimitMessage rdf:type owl:DatatypeProperty ;
+    rdfs:domain :QuestionAttributeLang ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "time limit message"@en ;
+    rdfs:comment "Message displayed when time limit is reached."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/answerCode
+:answerCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain :AnswerOption ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "answer code"@en ;
+    rdfs:comment "Internal code for the answer (e.g., AO01, AO02)."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/answerText
+:answerText rdf:type owl:DatatypeProperty ;
+    rdfs:domain :AnswerOption ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "answer text"@en ;
+    rdfs:comment "The text displayed for this answer option."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/assessmentValue
+:assessmentValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :AnswerOption ;
+    rdfs:range xsd:integer ;
+    rdfs:label "assessment value"@en ;
+    rdfs:comment "Numeric value used for assessment/scoring."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/answerScaleId
+:answerScaleId rdf:type owl:DatatypeProperty ;
+    rdfs:domain :AnswerOption ;
+    rdfs:range xsd:integer ;
+    rdfs:label "answer scale ID"@en ;
+    rdfs:comment "Scale identifier for this answer option."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/answerOrder
+:answerOrder rdf:type owl:DatatypeProperty ;
+    rdfs:domain :AnswerOption ;
+    rdfs:range xsd:integer ;
+    rdfs:label "answer order"@en ;
+    rdfs:comment "Display order of this answer option."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/questionId
+:questionId rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range xsd:integer ;
+    rdfs:label "question ID"@en ;
+    rdfs:comment "Unique identifier for the question (qid)."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/questionId
+:parentQuestionId rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range xsd:integer ;
+    rdfs:label "parent question ID"@en ;
+    rdfs:comment "ID of parent question if this is a subquestion (0 if root question)."@en .
+
+
+###  https://w3id.org/fossr/ontology/limesurvey/questionText
+:questionText rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "question text"@en ;
+    rdfs:comment "The actual question text presented to respondents."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/preg
+:preg rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "validation regex"@en ;
+    rdfs:comment "Regular expression for input validation."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/hasOther
+:hasOther rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has other option"@en ;
+    rdfs:comment "Whether the question includes an 'Other' option."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/isMandatory
+:isMandatory rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range xsd:integer ;
+    rdfs:label "is mandatory"@en ;
+    rdfs:comment "Whether the question requires an answer."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/isEncrypted
+:isEncrypted rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range xsd:integer ;
+    rdfs:label "is encrypted"@en ;
+    rdfs:comment "Whether the answer is stored encrypted."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/scaleId
+:scaleId rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range xsd:integer ;
+    rdfs:label "scale ID"@en ;
+    rdfs:comment "Scale identifier for multi-scale questions."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/sameDefault
+:sameDefault rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range xsd:integer ;
+    rdfs:label "same default"@en ;
+    rdfs:comment "Whether subquestions share the same default value."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/questionThemeName
+:questionThemeName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "question theme"@en ;
+    rdfs:comment "Display theme/template for the question (e.g., listradio)."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/moduleName
+:moduleName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "module name"@en ;
+    rdfs:comment "Module name if question uses custom module."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/sameScript
+:sameScript rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range xsd:integer ;
+    rdfs:label "same script"@en ;
+    rdfs:comment "Whether subquestions share the same JavaScript."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/availableAnswers
+:availableAnswers rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "available answers"@en ;
+    rdfs:comment "Summary of available answers."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/hasSubquestions
+:hasSubquestions rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Question ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "has subquestions"@en ;
+    rdfs:comment "Information about subquestions availability."@en .
+
 
 #################################################################
 #    Classes
 #################################################################
+
+###  https://w3id.org/fossr/ontology/limesurvey/AnswerOption
+:AnswerOption rdf:type owl:Class ;
+    rdfs:label "Answer Option"@en ;
+    rdfs:comment "Represents a possible answer choice for a question, including its text, order, and assessment value."@en .
+
 
 ###  https://w3id.org/fossr/ontology/limesurvey/GroupFlow
 :GroupFlow rdf:type owl:Class ;
@@ -328,6 +603,21 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
 ###  https://w3id.org/fossr/ontology/limesurvey/Variable
 :Variable rdf:type owl:Class ;
           rdfs:comment "The social variable investigated during the survey"@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/QuestionAttribute
+:QuestionAttribute rdf:type owl:Class ;
+    rdfs:label "Question Attribute"@en ;
+    rdfs:comment "Represents technical and display attributes of a question, such as CSS classes, validation rules, time limits, and display options."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/QuestionAttributeLang
+:QuestionAttributeLang rdf:type owl:Class ;
+    rdfs:label "Question Attribute Language"@en ;
+    rdfs:comment "Language-specific attributes for a question, including validation tips, help text, and localized messages."@en .
+
+###  https://w3id.org/fossr/ontology/limesurvey/DefaultValue
+:DefaultValue rdf:type owl:Class ;
+    rdfs:label "Default Value"@en ;
+    rdfs:comment "Represents the default value pre-filled for a question."@en .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
