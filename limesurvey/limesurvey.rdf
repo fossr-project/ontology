@@ -62,13 +62,80 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
-    <!-- https://w3id.org/fossr/ontology/limesurvey/hasAttributeLang -->
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasComponentAttribute -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasAttributeLang">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Question"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionAttributeLang"/>
-        <rdfs:comment xml:lang="en">Links a Question to its language-specific attributes.</rdfs:comment>
-        <rdfs:label xml:lang="en">has language attribute</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasComponentAttribute">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/SurveyCompoment"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentAttribute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowFirstStep -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowFirstStep">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlow"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep"/>
+        <rdfs:comment xml:lang="en">Relates a ComponentFlow to its first ComponentFlowStep, representing the fist stage in the sequence of question groups presented in a survey. This property identifies the intial point of the survey flow. It enables explicit modeling of flow completion and supports reasoning over ordered or conditional survey structures.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowLastStep -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowLastStep">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlow"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep"/>
+        <rdfs:comment>Relates a ComponentFlow to its final ComponentFlowStep, representing the last stage in the sequence of question groups presented in a survey. This property identifies the terminal point of the survey flow, where no subsequent step follows. It enables explicit modeling of flow completion and supports reasoning over ordered or conditional survey structures.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowNextStep -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowNextStep">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep"/>
+        <rdfs:comment xml:lang="en">Relates a ComponentFlowStep to the next step within the same ComponentFlow. This property defines the sequential order of steps specific to a particular flow, supporting the modeling of linear or conditional navigation of question groups or question order in a survey.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowPreviusStep -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowPreviusStep">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep"/>
+        <rdfs:comment xml:lang="en">Relates a ComponentFlowStep to the preceding step within the same ComponentFlow. This property represents the step that immediately comes before the current step in the flow, supporting backward navigation and the modeling of sequential or conditional survey logic.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowStep -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowStep">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlow"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep"/>
+        <rdfs:comment xml:lang="en">An object property indicating that a ComponentFlow is composed of one or more ComponentFlowStep instances. Each step represents a stage in the survey flow, typically corresponding to the display of a GroupQuestion. The property enables the representation of ordered, conditional, or branching sequences of question groups.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasCondition -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasCondition">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Relevance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasContent -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasContent">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/SurveyCompoment"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Content"/>
     </owl:ObjectProperty>
     
 
@@ -87,9 +154,19 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/hasFirstQuestionStep -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasFirstQuestionStep">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowFirstStep"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionFlow"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionStep"/>
         <rdfs:comment xml:lang="en">Relates a QuestionFlow to its first QuestionFlowStep, representing the initial question in the sequence. This property identifies the starting point of a question-level flow within a survey or question group.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasGroup -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasGroup">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Question"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionGroup"/>
     </owl:ObjectProperty>
     
 
@@ -104,53 +181,11 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
-    <!-- https://w3id.org/fossr/ontology/limesurvey/hasGroupFlowFirstStep -->
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasId -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasGroupFlowFirstStep">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/GroupFlow"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/GroupFlowStep"/>
-        <rdfs:comment xml:lang="en">Relates a GroupFlow to its first GroupFlowStep, representing the fist stage in the sequence of question groups presented in a survey. This property identifies the intial point of the survey flow. It enables explicit modeling of flow completion and supports reasoning over ordered or conditional survey structures.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/hasGroupFlowLastStep -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasGroupFlowLastStep">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/GroupFlow"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/GroupFlowStep"/>
-        <rdfs:comment>Relates a GroupFlow to its final GroupFlowStep, representing the last stage in the sequence of question groups presented in a survey. This property identifies the terminal point of the survey flow, where no subsequent step follows. It enables explicit modeling of flow completion and supports reasoning over ordered or conditional survey structures.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/hasGroupFlowNextStep -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasGroupFlowNextStep">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/GroupFlowStep"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/GroupFlowStep"/>
-        <rdfs:comment xml:lang="en">Relates a GroupFlowStep to the next step within the same GroupFlow. This property defines the sequential order of steps specific to a particular flow, supporting the modeling of linear or conditional navigation of question groups in a survey.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/hasGroupFlowPreviusStep -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasGroupFlowPreviusStep">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/GroupFlowStep"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/GroupFlowStep"/>
-        <rdfs:comment xml:lang="en">Relates a GroupFlowStep to the preceding step within the same GroupFlow. This property represents the step that immediately comes before the current step in the flow, supporting backward navigation and the modeling of sequential or conditional survey logic.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/hasGroupFlowStep -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasGroupFlowStep">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/GroupFlow"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/GroupFlowStep"/>
-        <rdfs:comment xml:lang="en">An object property indicating that a GroupFlow is composed of one or more GroupFlowStep instances. Each step represents a stage in the survey flow, typically corresponding to the display of a GroupQuestion. The property enables the representation of ordered, conditional, or branching sequences of question groups.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasId">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/SurveyCompoment"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Identifier"/>
     </owl:ObjectProperty>
     
 
@@ -179,7 +214,7 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/hasLastQuestionStep -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasLastQuestionStep">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowLastStep"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionFlow"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionStep"/>
         <rdfs:comment xml:lang="en">Relates a QuestionFlow to its final QuestionFlowStep, representing the last question in the sequence. This property identifies the terminal point of the question-level flow.</rdfs:comment>
@@ -187,12 +222,31 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasName -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasName">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/SurveyCompoment"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Name"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/fossr/ontology/limesurvey/hasNextQuestionStep -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasNextQuestionStep">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowNextStep"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionStep"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionStep"/>
         <rdfs:comment xml:lang="en">Relates a QuestionStep to the next QuestionStep in the sequence of a QuestionFlow. This property defines the forward navigation between questions, supporting linear or conditional progression within a survey.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasOrder -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasOrder">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Order"/>
     </owl:ObjectProperty>
     
 
@@ -211,6 +265,7 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/hasPreviusQuestionStep -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasPreviusQuestionStep">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowPreviusStep"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionStep"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionStep"/>
         <rdfs:comment xml:lang="en">Relates a QuestionStep to the preceding QuestionStep in the sequence of a QuestionFlow. This property defines backward navigation and supports reasoning about the order of questions.</rdfs:comment>
@@ -253,9 +308,30 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/hasQuestionStep -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasQuestionStep">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/ontology/limesurvey/hasComponentFlowStep"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionFlow"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionStep"/>
         <rdfs:comment xml:lang="en">Represents an individual step in a QuestionFlow, corresponding to the presentation of a single QuestionItem. Each QuestionStep defines its position, sequence, or conditional transition in the flow. Multiple QuestionStep instances together form the complete question-level navigation within a survey or survey section.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasRecurrentTimePeriod -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasRecurrentTimePeriod">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Survey"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/RecurrentTimePeriod"/>
+        <rdfs:comment xml:lang="en">Relates a survey to the corresponding recurrent time period that determines its allowed resubmission schedule.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/hasSurveyId -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasSurveyId">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Survey"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/SurveyVersion"/>
+        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Identifier"/>
     </owl:ObjectProperty>
     
 
@@ -300,17 +376,6 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
-    <!-- https://w3id.org/fossr/ontology/limesurvey/answerCode -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/answerCode">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/AnswerOption"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Internal code for the answer (e.g., AO01, AO02).</rdfs:comment>
-        <rdfs:label xml:lang="en">answer code</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://w3id.org/fossr/ontology/limesurvey/answerOrder -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/answerOrder">
@@ -333,17 +398,6 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
-    <!-- https://w3id.org/fossr/ontology/limesurvey/answerText -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/answerText">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/AnswerOption"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">The text displayed for this answer option.</rdfs:comment>
-        <rdfs:label xml:lang="en">answer text</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://w3id.org/fossr/ontology/limesurvey/assessmentValue -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/assessmentValue">
@@ -351,115 +405,6 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment xml:lang="en">Numeric value used for assessment/scoring.</rdfs:comment>
         <rdfs:label xml:lang="en">assessment value</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/attributeAnswerOrder -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/attributeAnswerOrder">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionAttribute"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Order in which answers are displayed (normal/random).</rdfs:comment>
-        <rdfs:label xml:lang="en">answer order attribute</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/attributeArrayFilter -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/attributeArrayFilter">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionAttribute"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:label xml:lang="en">array filter</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/attributeCssClass -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/attributeCssClass">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionAttribute"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Custom CSS class for styling.</rdfs:comment>
-        <rdfs:label xml:lang="en">CSS class</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/attributeHidden -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/attributeHidden">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionAttribute"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">Whether the question is hidden from respondents.</rdfs:comment>
-        <rdfs:label xml:lang="en">is hidden</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/attributeHideTip -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/attributeHideTip">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionAttribute"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">Whether to hide help tooltips.</rdfs:comment>
-        <rdfs:label xml:lang="en">hide tip</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/attributeLangOtherReplaceText -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/attributeLangOtherReplaceText">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionAttributeLang"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Text to replace &apos;Other&apos; label.</rdfs:comment>
-        <rdfs:label xml:lang="en">other replace text</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/attributeLangPrintableHelp -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/attributeLangPrintableHelp">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionAttributeLang"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Help text for printable version.</rdfs:comment>
-        <rdfs:label xml:lang="en">printable help</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/attributeLangTimeLimitMessage -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/attributeLangTimeLimitMessage">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionAttributeLang"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Message displayed when time limit is reached.</rdfs:comment>
-        <rdfs:label xml:lang="en">time limit message</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/attributeLangValidationTip -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/attributeLangValidationTip">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionAttributeLang"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Localized validation error message.</rdfs:comment>
-        <rdfs:label xml:lang="en">validation tip</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/attributePublicStatistics -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/attributePublicStatistics">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionAttribute"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">Whether to show in public statistics.</rdfs:comment>
-        <rdfs:label xml:lang="en">public statistics</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -508,11 +453,24 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
-    <!-- https://w3id.org/fossr/ontology/limesurvey/code -->
+    <!-- https://w3id.org/fossr/ontology/limesurvey/componentName -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/code">
-        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/componentName">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentAttribute"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">The text displayed for this answer option.</rdfs:comment>
+        <rdfs:label xml:lang="en">answer text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/componentValue -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/componentValue">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentAttribute"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Internal code for the answer (e.g., AO01, AO02).</rdfs:comment>
+        <rdfs:label xml:lang="en">answer code</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -538,84 +496,12 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
-    <!-- https://w3id.org/fossr/ontology/limesurvey/grelevance -->
+    <!-- https://w3id.org/fossr/ontology/limesurvey/id -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/grelevance">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/GroupFlowStep"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">group condition, if the condition is true the group question will be visible during the survey</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/groupId -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/groupId">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">Unique Group Identifier</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/groupOrder -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/groupOrder">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/GroupFlowStep"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/id">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Identifier"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-        <rdfs:comment xml:lang="en">order group</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/groupQuestionId -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/groupQuestionId">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-        <rdfs:comment xml:lang="en">Group Identifier</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/groupdescription -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/groupdescription">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">group question description</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/groupname -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/groupname">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">group name</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/hasOther -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasOther">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Question"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">Whether the question includes an &apos;Other&apos; option.</rdfs:comment>
-        <rdfs:label xml:lang="en">has other option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/hasSubquestions -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/hasSubquestions">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Question"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Information about subquestions availability.</rdfs:comment>
-        <rdfs:label xml:lang="en">has subquestions</rdfs:label>
+        <rdfs:comment xml:lang="en">Unique Survey Identifier</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -642,13 +528,12 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
-    <!-- https://w3id.org/fossr/ontology/limesurvey/moduleName -->
+    <!-- https://w3id.org/fossr/ontology/limesurvey/nameText -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/moduleName">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Question"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/nameText">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Name"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Module name if question uses custom module.</rdfs:comment>
-        <rdfs:label xml:lang="en">module name</rdfs:label>
+        <rdfs:comment xml:lang="en">group question description</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -656,74 +541,9 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/order -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/order">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionStep"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Order"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:comment xml:lang="en">Questions order</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/parentQuestionId -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/parentQuestionId">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Question"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">ID of parent question if this is a subquestion (0 if root question).</rdfs:comment>
-        <rdfs:label xml:lang="en">parent question ID</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/preg -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/preg">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Question"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Regular expression for input validation.</rdfs:comment>
-        <rdfs:label xml:lang="en">validation regex</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/questionId -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/questionId">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Question"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">Unique identifier for the question (qid).</rdfs:comment>
-        <rdfs:label xml:lang="en">question ID</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/questionOrder -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/questionOrder">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionStep"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">order question</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/questionText -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/questionText">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Question"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">The actual question text presented to respondents.</rdfs:comment>
-        <rdfs:label xml:lang="en">question text</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/questionThemeName -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/questionThemeName">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Question"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Display theme/template for the question (e.g., listradio).</rdfs:comment>
-        <rdfs:label xml:lang="en">question theme</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -741,31 +561,9 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/relevance -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/relevance">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/QuestionStep"/>
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Relevance"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Question condition if the condition is true the question will be visible during the survey</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/sameDefault -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/sameDefault">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Question"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">Whether subquestions share the same default value.</rdfs:comment>
-        <rdfs:label xml:lang="en">same default</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fossr/ontology/limesurvey/sameScript -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/sameScript">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Question"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">Whether subquestions share the same JavaScript.</rdfs:comment>
-        <rdfs:label xml:lang="en">same script</rdfs:label>
+        <rdfs:comment xml:lang="en">condition, if the condition is true the group question will be visible during the survey</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -791,12 +589,13 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     
 
 
-    <!-- https://w3id.org/fossr/ontology/limesurvey/surveyId -->
+    <!-- https://w3id.org/fossr/ontology/limesurvey/text -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/surveyId">
-        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Survey"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-        <rdfs:comment xml:lang="en">Unique Survey Identifier</rdfs:comment>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/fossr/ontology/limesurvey/text">
+        <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/limesurvey/Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">The actual question text presented to respondents.</rdfs:comment>
+        <rdfs:label xml:lang="en">question text</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -825,14 +624,45 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/AnswerOption -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/AnswerOption">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/ontology/limesurvey/SurveyCompoment"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/ontology/limesurvey/code"/>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/ontology/limesurvey/componentValue"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Represents a possible answer choice for a question, including its text, order, and assessment value.</rdfs:comment>
         <rdfs:label xml:lang="en">Answer Option</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/ComponentAttribute -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/ComponentAttribute"/>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/ComponentFlow -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/ComponentFlow">
+        <rdfs:comment xml:lang="en">A structural element that defines the ordered process through which different component of survey  are presented within a survey. The ComponentFlow models the logical or sequential organization of these components, allowing the representation of branching, conditional paths, or linear progression in a survey’s design. Each step in the flow is represented by an associated ComponentFlowStep instance</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep">
+        <rdfs:comment xml:lang="en">Represents a specific step or node within a ComponentFlow, corresponding to the presentation of a particular ComponentFlow. Each ComponentFlowStep defines the position, sequence, or conditional transition that governs how respondents move from one component survey to the next. Together, multiple ComponentFlowStep instances form the complete flow structure of a survey.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/Content -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/Content">
+        <rdfs:comment xml:lang="en">Represents a description of a component</rdfs:comment>
     </owl:Class>
     
 
@@ -849,6 +679,7 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/GroupFlow -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/GroupFlow">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlow"/>
         <rdfs:comment>A structural element that defines the ordered process through which different groups of questions (GroupQuestion) are presented within a survey. The GroupFlow models the logical or sequential organization of these question groups, allowing the representation of branching, conditional paths, or linear progression in a survey’s design. Each step in the flow is represented by an associated GroupFlowStep instance.</rdfs:comment>
     </owl:Class>
     
@@ -857,7 +688,30 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/GroupFlowStep -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/GroupFlowStep">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep"/>
         <rdfs:comment xml:lang="en">Represents a specific step or node within a GroupFlow, corresponding to the presentation of a particular GroupQuestion or section of a survey. Each GroupFlowStep defines the position, sequence, or conditional transition that governs how respondents move from one question group to the next. Together, multiple GroupFlowStep instances form the complete flow structure of a survey.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/Identifier -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/Identifier">
+        <rdfs:comment xml:lang="en">Represents the identifier of a component</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/Name -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/Name"/>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/Order -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/Order">
+        <rdfs:comment xml:lang="en">Represents an ordinal number which define the order of an element</rdfs:comment>
     </owl:Class>
     
 
@@ -865,6 +719,7 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/Question -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/Question">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/ontology/limesurvey/SurveyCompoment"/>
         <rdfs:comment xml:lang="en">Represents an individual survey question or item that is presented to respondents. A Question contains the content, format, and possible response options, and is linked to a QuestionStep that specifies its position and order in a QuestionFlow. Questions may belong to one or more GroupQuestions and can be reused across different survey versions or flows.</rdfs:comment>
     </owl:Class>
     
@@ -891,6 +746,7 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/QuestionFlow -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/QuestionFlow">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlow"/>
         <rdfs:comment xml:lang="en">Represents the ordered process or sequence by which individual questions (QuestionItem) are presented within a survey or a survey section. QuestionFlow defines the logical progression, branching, or conditional display of questions, allowing precise modeling of the survey’s structure at the question level. Each step in the flow is represented by a QuestionFlowStep linked to a specific question.</rdfs:comment>
     </owl:Class>
     
@@ -899,6 +755,7 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/QuestionGroup -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/QuestionGroup">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/ontology/limesurvey/SurveyCompoment"/>
         <rdfs:comment xml:lang="en">A collection of thematically or logically related questions in a survey, grouped together to facilitate coherent presentation and analysis. GroupQuestion instances are linked to GroupFlowStep to define the order of display and any conditional navigation within a survey.</rdfs:comment>
     </owl:Class>
     
@@ -907,6 +764,7 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <!-- https://w3id.org/fossr/ontology/limesurvey/QuestionStep -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/QuestionStep">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/ontology/limesurvey/ComponentFlowStep"/>
         <rdfs:comment xml:lang="en">A unit of control in a survey’s question-level flow. Each QuestionFlowStep corresponds to a specific QuestionItem and may define order, branching, or skip logic. Together, the steps form the complete QuestionFlow, enabling detailed modeling of survey navigation at the individual question level.</rdfs:comment>
     </owl:Class>
     
@@ -916,6 +774,22 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
 
     <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/QuestionType">
         <rdfs:comment xml:lang="en">Represents the structural or functional category of a Question, describing how the question is presented and how responses are expected.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/RecurrentTimePeriod -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/RecurrentTimePeriod">
+        <rdfs:comment xml:lang="en">Represents the date on which the survey is resubmitted</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/Relevance -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/Relevance">
+        <rdfs:comment xml:lang="en">Represents a condition that must be satisfied.</rdfs:comment>
     </owl:Class>
     
 
@@ -933,6 +807,20 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
     <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/Survey">
         <rdfs:comment>A data collection instrument consisting of structured questions used to gather information from respondents. Connected to a study via hasInstrument.</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/SurveyCompoment -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/SurveyCompoment">
+        <rdfs:comment xml:lang="en">Represents an elemen of a  survey, such as answer option, question or question group.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/fossr/ontology/limesurvey/SurveyExecution -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/ontology/limesurvey/SurveyExecution"/>
     
 
 
@@ -961,5 +849,5 @@ This ontology supports reasoning, querying, and analysis of survey definitions a
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
