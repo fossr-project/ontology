@@ -1,0 +1,194 @@
+@prefix ns1: <https://w3id.org/fossr/ontology/limesurvey/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/fossr/data/questionGroup_30> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_30_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_30_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_30_name> .
+
+<https://w3id.org/fossr/data/questionGroup_31> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_31_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_31_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_31_name> .
+
+<https://w3id.org/fossr/data/questionGroup_32> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_32_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_32_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_32_name> .
+
+<https://w3id.org/fossr/data/questionGroup_33> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_33_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_33_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_33_name> .
+
+<https://w3id.org/fossr/data/questionGroup_34> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_34_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_34_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_34_name> .
+
+<https://w3id.org/fossr/data/questionGroup_35> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_35_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_35_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_35_name> .
+
+<https://w3id.org/fossr/data/questionGroup_36> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_36_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_36_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_36_name> .
+
+<https://w3id.org/fossr/data/questionGroup_37> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_37_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_37_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_37_name> .
+
+<https://w3id.org/fossr/data/questionGroup_38> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_38_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_38_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_38_name> .
+
+<https://w3id.org/fossr/data/questionGroup_39> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_39_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_39_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_39_name> .
+
+<https://w3id.org/fossr/data/questionGroup_40> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_40_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_40_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_40_name> .
+
+<https://w3id.org/fossr/data/questionGroup_41> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_41_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_41_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_41_name> .
+
+<https://w3id.org/fossr/data/questionGroup_42> a ns1:QuestionGroup ;
+    ns1:hasContent <https://w3id.org/fossr/data/questionGroup_42_content> ;
+    ns1:hasId <https://w3id.org/fossr/data/questionGroup_42_identifier> ;
+    ns1:hasName <https://w3id.org/fossr/data/questionGroup_42_name> .
+
+<https://w3id.org/fossr/data/surveyVersion_694511> a ns1:SurveyVersion ;
+    ns1:hasSurveyId <https://w3id.org/fossr/data/surveyVersion_694511_identifier> .
+
+<https://w3id.org/fossr/data/questionGroup_30_content> a ns1:Content ;
+    ns1:text "nan" .
+
+<https://w3id.org/fossr/data/questionGroup_30_identifier> a ns1:Identifier ;
+    ns1:id "30"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_30_name> a ns1:Name ;
+    ns1:nameText "Verifica requisiti partecipazione" .
+
+<https://w3id.org/fossr/data/questionGroup_31_content> a ns1:Content ;
+    ns1:text "nan" .
+
+<https://w3id.org/fossr/data/questionGroup_31_identifier> a ns1:Identifier ;
+    ns1:id "31"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_31_name> a ns1:Name ;
+    ns1:nameText "Caratteristiche sociodemografiche" .
+
+<https://w3id.org/fossr/data/questionGroup_32_content> a ns1:Content ;
+    ns1:text "nan" .
+
+<https://w3id.org/fossr/data/questionGroup_32_identifier> a ns1:Identifier ;
+    ns1:id "32"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_32_name> a ns1:Name ;
+    ns1:nameText "Risorse e competenze informatiche" .
+
+<https://w3id.org/fossr/data/questionGroup_33_content> a ns1:Content ;
+    ns1:text "nan" .
+
+<https://w3id.org/fossr/data/questionGroup_33_identifier> a ns1:Identifier ;
+    ns1:id "33"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_33_name> a ns1:Name ;
+    ns1:nameText "Benessere e salute" .
+
+<https://w3id.org/fossr/data/questionGroup_34_content> a ns1:Content ;
+    ns1:text "nan" .
+
+<https://w3id.org/fossr/data/questionGroup_34_identifier> a ns1:Identifier ;
+    ns1:id "34"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_34_name> a ns1:Name ;
+    ns1:nameText "Interesse e informazione" .
+
+<https://w3id.org/fossr/data/questionGroup_35_content> a ns1:Content ;
+    ns1:text "<span style='font-size:11.0pt'><span style='line-height:115%'><span style='font-family:&quot;Segoe UI&quot;,sans-serif'>Di seguito, si riportano alcune domande che rappresentano un buon esempio di quelle che potrebbe trovare all’interno del panel IOPP. Abbracciano un’ampia gamma di argomenti utili a comprendere le modalità di risposta e le finalità dell’indagine.</span></span></span>" .
+
+<https://w3id.org/fossr/data/questionGroup_35_identifier> a ns1:Identifier ;
+    ns1:id "35"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_35_name> a ns1:Name ;
+    ns1:nameText "Valori" .
+
+<https://w3id.org/fossr/data/questionGroup_36_content> a ns1:Content ;
+    ns1:text "nan" .
+
+<https://w3id.org/fossr/data/questionGroup_36_identifier> a ns1:Identifier ;
+    ns1:id "36"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_36_name> a ns1:Name ;
+    ns1:nameText "Fiducia" .
+
+<https://w3id.org/fossr/data/questionGroup_37_content> a ns1:Content ;
+    ns1:text "nan" .
+
+<https://w3id.org/fossr/data/questionGroup_37_identifier> a ns1:Identifier ;
+    ns1:id "37"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_37_name> a ns1:Name ;
+    ns1:nameText "Orientamenti politici" .
+
+<https://w3id.org/fossr/data/questionGroup_38_content> a ns1:Content ;
+    ns1:text """<p><b>Desideriamo infine porle alcune domande su questa indagine. La sua opinione è molto importante per migliorare la qualità del questionario e la buona riuscita della ricerca. In che misura è d’accordo con le seguenti affermazioni? Per ogni affermazione è possibile fornire solo una risposta.</b></p>
+
+<p><i>Con indagine demoscopica intendiamo ad esempio la ricerca che stiamo svolgendo con la somministrazione di questo questionario.</i></p>
+""" .
+
+<https://w3id.org/fossr/data/questionGroup_38_identifier> a ns1:Identifier ;
+    ns1:id "38"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_38_name> a ns1:Name ;
+    ns1:nameText "Atteggiamenti verso l’indagine" .
+
+<https://w3id.org/fossr/data/questionGroup_39_content> a ns1:Content ;
+    ns1:text "nan" .
+
+<https://w3id.org/fossr/data/questionGroup_39_identifier> a ns1:Identifier ;
+    ns1:id "39"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_39_name> a ns1:Name ;
+    ns1:nameText "Reclutamento" .
+
+<https://w3id.org/fossr/data/questionGroup_40_content> a ns1:Content ;
+    ns1:text "nan" .
+
+<https://w3id.org/fossr/data/questionGroup_40_identifier> a ns1:Identifier ;
+    ns1:id "40"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_40_name> a ns1:Name ;
+    ns1:nameText "CHIUSURA DEL QUESTIONARIO" .
+
+<https://w3id.org/fossr/data/questionGroup_41_content> a ns1:Content ;
+    ns1:text "nan" .
+
+<https://w3id.org/fossr/data/questionGroup_41_identifier> a ns1:Identifier ;
+    ns1:id "41"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_41_name> a ns1:Name ;
+    ns1:nameText "Modulo di consenso per la partecipazione all’indagine IOPP" .
+
+<https://w3id.org/fossr/data/questionGroup_42_content> a ns1:Content ;
+    ns1:text "nan" .
+
+<https://w3id.org/fossr/data/questionGroup_42_identifier> a ns1:Identifier ;
+    ns1:id "42"^^xsd:int .
+
+<https://w3id.org/fossr/data/questionGroup_42_name> a ns1:Name ;
+    ns1:nameText "Iscrizione al panel IOPP" .
+
+<https://w3id.org/fossr/data/surveyVersion_694511_identifier> a ns1:Identifier ;
+    ns1:id "694511"^^xsd:int .
+

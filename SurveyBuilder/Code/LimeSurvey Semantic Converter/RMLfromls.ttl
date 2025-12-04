@@ -1,0 +1,1063 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix ls: <https://w3id.org/fossr/ontology/limesurvey/> .
+@prefix ex: <http://example.org/limesurvey/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================
+# MAPPING PRINCIPALE DELLA QUESTION
+# ============================================
+<#QuestionMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/question/{qid}" ;
+    rr:class ls:Question
+  ] ;
+
+  # ID della Question
+  rr:predicateObjectMap [
+    rr:predicate ls:hasId ;
+    rr:objectMap [
+      rr:parentTriplesMap <#QuestionIdMapping> ;
+      rr:joinCondition [
+        rr:child "qid" ;
+        rr:parent "qid"
+      ]
+    ]
+  ] ;
+
+  # Survey ID
+  rr:predicateObjectMap [
+    rr:predicate ls:hasSurveyId ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SurveyIdMapping> ;
+      rr:joinCondition [
+        rr:child "sid" ;
+        rr:parent "sid"
+      ]
+    ]
+  ] ;
+
+  # Group della Question
+  rr:predicateObjectMap [
+    rr:predicate ls:hasGroup ;
+    rr:objectMap [
+      rr:template "http://example.org/limesurvey/group/{gid}"
+    ]
+  ] ;
+
+  # Question Type
+  rr:predicateObjectMap [
+    rr:predicate ls:hasType ;
+    rr:objectMap [
+      rr:parentTriplesMap <#QuestionTypeMapping> ;
+      rr:joinCondition [
+        rr:child "type" ;
+        rr:parent "type"
+      ]
+    ]
+  ] ;
+
+  # Variable (title)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasVariable ;
+    rr:objectMap [
+      rr:parentTriplesMap <#VariableMapping> ;
+      rr:joinCondition [
+        rr:child "title" ;
+        rr:parent "title"
+      ]
+    ]
+  ] ;
+
+  # Name della Question
+  rr:predicateObjectMap [
+    rr:predicate ls:hasName ;
+    rr:objectMap [
+      rr:parentTriplesMap <#QuestionNameMapping> ;
+      rr:joinCondition [
+        rr:child "qid" ;
+        rr:parent "qid"
+      ]
+    ]
+  ] ;
+
+  # Content (testo della domanda)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasContent ;
+    rr:objectMap [
+      rr:parentTriplesMap <#QuestionContentMapping> ;
+      rr:joinCondition [
+        rr:child "qid" ;
+        rr:parent "qid"
+      ]
+    ]
+  ] ;
+
+  # Component Attributes base (preg, other, mandatory, etc.)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#ComponentAttributeOtherMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#ComponentAttributeMandatoryMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#ComponentAttributeEncryptedMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#ComponentAttributeQuestionOrderMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#ComponentAttributeScaleIdMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#ComponentAttributeSameDefaultMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#ComponentAttributeRelevanceMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#ComponentAttributeQuestionThemeMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#ComponentAttributeModuleNameMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#ComponentAttributeSameScriptMapping>
+    ]
+  ] .
+
+# ============================================
+# MAPPING SUBQUESTIONS (domande annidate/array)
+# ============================================
+<#SubQuestionMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/subquestions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/question/{qid}" ;
+    rr:class ls:Question
+  ] ;
+
+  # Parent Question (relazione hasParentQuestion)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasParentQuestion ;
+    rr:objectMap [
+      rr:template "http://example.org/limesurvey/question/{parent_qid}"
+    ]
+  ] ;
+
+  # ID della SubQuestion
+  rr:predicateObjectMap [
+    rr:predicate ls:hasId ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionIdMapping> ;
+      rr:joinCondition [
+        rr:child "qid" ;
+        rr:parent "qid"
+      ]
+    ]
+  ] ;
+
+  # Survey ID
+  rr:predicateObjectMap [
+    rr:predicate ls:hasSurveyId ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionSurveyIdMapping> ;
+      rr:joinCondition [
+        rr:child "sid" ;
+        rr:parent "sid"
+      ]
+    ]
+  ] ;
+
+  # Group
+  rr:predicateObjectMap [
+    rr:predicate ls:hasGroup ;
+    rr:objectMap [
+      rr:template "http://example.org/limesurvey/group/{gid}"
+    ]
+  ] ;
+
+  # Type
+  rr:predicateObjectMap [
+    rr:predicate ls:hasType ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionTypeMapping> ;
+      rr:joinCondition [
+        rr:child "type" ;
+        rr:parent "type"
+      ]
+    ]
+  ] ;
+
+  # Variable (title)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasVariable ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionVariableMapping> ;
+      rr:joinCondition [
+        rr:child "title" ;
+        rr:parent "title"
+      ]
+    ]
+  ] ;
+
+  # Name
+  rr:predicateObjectMap [
+    rr:predicate ls:hasName ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionNameMapping> ;
+      rr:joinCondition [
+        rr:child "qid" ;
+        rr:parent "qid"
+      ]
+    ]
+  ] ;
+
+  # Content (dalla stessa row delle subquestions)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasContent ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionContentMapping> ;
+      rr:joinCondition [
+        rr:child "qid" ;
+        rr:parent "qid"
+      ]
+    ]
+  ] ;
+
+  # Component Attributes per SubQuestions
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionAttributeOtherMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionAttributeMandatoryMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionAttributeEncryptedMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionAttributeQuestionOrderMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionAttributeScaleIdMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionAttributeRelevanceMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionAttributeSameScriptMapping>
+    ]
+  ] .
+
+# ============================================
+# MAPPING ANSWER OPTIONS
+# ============================================
+<#AnswerOptionMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/answers/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/answer/{aid}" ;
+    rr:class ls:AnswerOption
+  ] ;
+
+  # Collegamento alla Question
+  rr:predicateObjectMap [
+    rr:predicate ls:hasAnswerOption ;
+    rr:objectMap [
+      rr:template "http://example.org/limesurvey/question/{qid}" ;
+      rr:termType rr:IRI
+    ] ;
+    rr:inverseProperty rr:predicate
+  ] ;
+
+  # ID dell'Answer Option
+  rr:predicateObjectMap [
+    rr:predicate ls:hasId ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AnswerIdMapping> ;
+      rr:joinCondition [
+        rr:child "aid" ;
+        rr:parent "aid"
+      ]
+    ]
+  ] ;
+
+  # Component Value (code)
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "code"
+    ]
+  ] ;
+
+  # Component Attributes per Answer Options
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AnswerAttributeSortOrderMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AnswerAttributeAssessmentValueMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AnswerAttributeScaleIdMapping>
+    ]
+  ] ;
+
+  # Answer Text (localizzato)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasContent ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AnswerContentMapping> ;
+      rr:joinCondition [
+        rr:child "aid" ;
+        rr:parent "aid"
+      ]
+    ]
+  ] .
+
+# ============================================
+# MAPPING QUESTION_ATTRIBUTES (tutti gli attributi aggiuntivi)
+# ============================================
+<#QuestionAttributesMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/question_attributes/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/question/{qid}/{attribute}" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  # Collegamento alla Question padre
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:template "http://example.org/limesurvey/question/{qid}" ;
+      rr:termType rr:IRI
+    ] ;
+    rr:inverseProperty rr:predicate
+  ] ;
+
+  # Nome dell'attributo
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rml:reference "attribute"
+    ]
+  ] ;
+
+  # Valore dell'attributo
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "value"
+    ]
+  ] .
+
+# ============================================
+# MAPPING ENTITÀ SUPPORTO - QUESTION
+# ============================================
+
+<#QuestionIdMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/identifier/question/{qid}" ;
+    rr:class ls:Identifier
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:id ;
+    rr:objectMap [
+      rml:reference "qid" ;
+      rr:datatype xsd:int
+    ]
+  ] .
+
+<#SurveyIdMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/identifier/survey/{sid}" ;
+    rr:class ls:Identifier
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:id ;
+    rr:objectMap [
+      rml:reference "sid" ;
+      rr:datatype xsd:int
+    ]
+  ] .
+
+<#QuestionTypeMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/questiontype/{type}" ;
+    rr:class ls:QuestionType
+  ] .
+
+<#VariableMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/variable/{title}" ;
+    rr:class ls:Variable
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:variableCod ;
+    rr:objectMap [
+      rml:reference "title"
+    ]
+  ] .
+
+<#QuestionNameMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/name/question/{qid}" ;
+    rr:class ls:Name
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:nameText ;
+    rr:objectMap [
+      rml:reference "title"
+    ]
+  ] .
+
+<#QuestionContentMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/question_l10ns/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/content/question/{qid}" ;
+    rr:class ls:Content
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:text ;
+    rr:objectMap [
+      rml:reference "question"
+    ]
+  ] .
+
+# ============================================
+# MAPPING ENTITÀ SUPPORTO - SUBQUESTIONS
+# ============================================
+
+<#SubQuestionIdMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/subquestions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/identifier/question/{qid}" ;
+    rr:class ls:Identifier
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:id ;
+    rr:objectMap [
+      rml:reference "qid" ;
+      rr:datatype xsd:int
+    ]
+  ] .
+
+<#SubQuestionSurveyIdMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/subquestions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/identifier/survey/{sid}" ;
+    rr:class ls:Identifier
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:id ;
+    rr:objectMap [
+      rml:reference "sid" ;
+      rr:datatype xsd:int
+    ]
+  ] .
+
+<#SubQuestionTypeMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/subquestions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/questiontype/{type}" ;
+    rr:class ls:QuestionType
+  ] .
+
+<#SubQuestionVariableMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/subquestions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/variable/{title}" ;
+    rr:class ls:Variable
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:variableCod ;
+    rr:objectMap [
+      rml:reference "title"
+    ]
+  ] .
+
+<#SubQuestionNameMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/subquestions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/name/question/{qid}" ;
+    rr:class ls:Name
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:nameText ;
+    rr:objectMap [
+      rml:reference "title"
+    ]
+  ] .
+
+<#SubQuestionContentMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/subquestions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/content/question/{qid}" ;
+    rr:class ls:Content
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:text ;
+    rr:objectMap [
+      rml:reference "question"
+    ]
+  ] .
+
+# ============================================
+# MAPPING COMPONENT ATTRIBUTES - QUESTION BASE
+# ============================================
+
+<#ComponentAttributeOtherMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/question/{qid}/other" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "other"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "other"
+    ]
+  ] .
+
+<#ComponentAttributeMandatoryMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/question/{qid}/mandatory" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "mandatory"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "mandatory"
+    ]
+  ] .
+
+<#ComponentAttributeEncryptedMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/question/{qid}/encrypted" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "encrypted"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "encrypted"
+    ]
+  ] .
+
+<#ComponentAttributeQuestionOrderMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/question/{qid}/question_order" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "question_order"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "question_order"
+    ]
+  ] .
+
+<#ComponentAttributeScaleIdMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/question/{qid}/scale_id" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "scale_id"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "scale_id"
+    ]
+  ] .
+
+<#ComponentAttributeSameDefaultMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/question/{qid}/same_default" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "same_default"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "same_default"
+    ]
+  ] .
+
+<#ComponentAttributeRelevanceMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/question/{qid}/relevance" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "relevance"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "relevance"
+    ]
+  ] .
+
+<#ComponentAttributeQuestionThemeMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/question/{qid}/question_theme_name" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "question_theme_name"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "question_theme_name"
+    ]
+  ] .
+
+<#ComponentAttributeModuleNameMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/question/{qid}/modulename" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "modulename"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "modulename"
+    ]
+  ] .
+
+<#ComponentAttributeSameScriptMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/questions/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/question/{qid}/same_script" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "same_script"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+     rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "same_script"
+    ]
+  ] .
+
+# ============================================
+# MAPPING ENTITÀ SUPPORTO - ANSWER OPTIONS
+# ============================================
+
+<#AnswerIdMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/answers/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/identifier/answer/{aid}" ;
+    rr:class ls:Identifier
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:id ;
+    rr:objectMap [
+      rml:reference "aid" ;
+      rr:datatype xsd:int
+    ]
+  ] .
+
+<#AnswerContentMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/answer_l10ns/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/content/answer/{aid}" ;
+    rr:class ls:Content
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:text ;
+    rr:objectMap [
+      rml:reference "answer"
+    ]
+  ] .
+
+# ============================================
+# MAPPING COMPONENT ATTRIBUTES - ANSWER OPTIONS
+# ============================================
+
+<#AnswerAttributeSortOrderMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/answers/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/answer/{aid}/sortorder" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "sortorder"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "sortorder"
+    ]
+  ] .
+
+<#AnswerAttributeAssessmentValueMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/answers/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/answer/{aid}/assessment_value" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "assessment_value"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "assessment_value"
+    ]
+  ] .
+
+<#AnswerAttributeScaleIdMapping>
+  rml:logicalSource [
+    rml:source "limesurvey_question.lsq" ;
+    rml:referenceFormulation ql:XPath ;
+    rml:iterator "/document/answers/rows/row"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/answer/{aid}/scale_id" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "scale_id"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "scale_id"
+    ]
+  ] .

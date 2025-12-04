@@ -1,0 +1,732 @@
+@prefix ls: <https://w3id.org/fossr/ontology/limesurvey/> .
+@prefix data: <https://w3id.org/fossr/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# ============================================
+# SURVEY 3
+# ============================================
+
+data:survey_003 a ls:Survey ;
+    ls:hasSurveyId data:id_survey_003 ;
+    ls:hasQuestionGroup data:group_008 ;
+    ls:hasName data:name_survey_003 ;
+    ls:hasContent data:content_survey_003 .
+
+data:id_survey_003 a ls:Identifier ;
+    ls:id 3 .
+
+data:name_survey_003 a ls:Name ;
+    ls:nameText "General Survey Questionnaire" .
+
+data:content_survey_003 a ls:Content ;
+    ls:text "Multi-topic survey questionnaire" .
+
+# ============================================
+# GROUP 8 - Main Questionnaire
+# ============================================
+
+data:group_008 a ls:QuestionGroup ;
+    ls:hasId data:id_group_008 ;
+    ls:hasName data:name_group_008 ;
+    ls:hasContent data:content_group_008 .
+
+data:id_group_008 a ls:Identifier ;
+    ls:id 8 .
+
+data:name_group_008 a ls:Name ;
+    ls:nameText "Main Questionnaire" .
+
+data:content_group_008 a ls:Content ;
+    ls:text "General questionnaire with multiple topics" .
+
+# ============================================
+# Q63 - Gender
+# ============================================
+
+data:question_063 a ls:Question ;
+    ls:hasId data:id_question_063 ;
+    ls:hasGroup data:group_008 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_063 ;
+    ls:hasContent data:content_question_063 ;
+    ls:hasComponentAttribute data:attr_mandatory_063, data:attr_order_063 ;
+    ls:hasAnswerOption data:answer_gender_001, data:answer_gender_002 .
+
+data:id_question_063 a ls:Identifier ;
+    ls:id 63 .
+
+data:var_063 a ls:Variable ;
+    ls:variableCod "SQ001" .
+
+data:content_question_063 a ls:Content ;
+    ls:text "Are you male or female?" .
+
+data:attr_mandatory_063 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_063 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:answer_gender_001 a ls:AnswerOption ;
+    ls:componentValue "A1" ;
+    ls:hasContent data:content_answer_gender_001 ;
+    ls:hasComponentAttribute data:attr_sortorder_gender_001 .
+
+data:content_answer_gender_001 a ls:Content ;
+    ls:text "Female" .
+
+data:attr_sortorder_gender_001 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_gender_002 a ls:AnswerOption ;
+    ls:componentValue "A2" ;
+    ls:hasContent data:content_answer_gender_002 ;
+    ls:hasComponentAttribute data:attr_sortorder_gender_002 .
+
+data:content_answer_gender_002 a ls:Content ;
+    ls:text "Male" .
+
+data:attr_sortorder_gender_002 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+# ============================================
+# Q64 - Age
+# ============================================
+
+data:question_064 a ls:Question ;
+    ls:hasId data:id_question_064 ;
+    ls:hasGroup data:group_008 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_064 ;
+    ls:hasContent data:content_question_064 ;
+    ls:hasComponentAttribute data:attr_mandatory_064, data:attr_order_064 ;
+    ls:hasAnswerOption data:answer_age_001, data:answer_age_002, data:answer_age_003, data:answer_age_004, data:answer_age_005 .
+
+data:id_question_064 a ls:Identifier ;
+    ls:id 64 .
+
+data:var_064 a ls:Variable ;
+    ls:variableCod "SQ002" .
+
+data:content_question_064 a ls:Content ;
+    ls:text "What is your year of birth?" .
+
+data:attr_mandatory_064 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_064 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:answer_age_001 a ls:AnswerOption ;
+    ls:componentValue "A1" ;
+    ls:hasContent data:content_answer_age_001 ;
+    ls:hasComponentAttribute data:attr_sortorder_age_001 .
+
+data:content_answer_age_001 a ls:Content ;
+    ls:text "18-24 years old" .
+
+data:attr_sortorder_age_001 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_age_002 a ls:AnswerOption ;
+    ls:componentValue "A2" ;
+    ls:hasContent data:content_answer_age_002 ;
+    ls:hasComponentAttribute data:attr_sortorder_age_002 .
+
+data:content_answer_age_002 a ls:Content ;
+    ls:text "25-34 years old" .
+
+data:attr_sortorder_age_002 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+data:answer_age_003 a ls:AnswerOption ;
+    ls:componentValue "A3" ;
+    ls:hasContent data:content_answer_age_003 ;
+    ls:hasComponentAttribute data:attr_sortorder_age_003 .
+
+data:content_answer_age_003 a ls:Content ;
+    ls:text "35-44 years old" .
+
+data:attr_sortorder_age_003 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "3" .
+
+data:answer_age_004 a ls:AnswerOption ;
+    ls:componentValue "A4" ;
+    ls:hasContent data:content_answer_age_004 ;
+    ls:hasComponentAttribute data:attr_sortorder_age_004 .
+
+data:content_answer_age_004 a ls:Content ;
+    ls:text "45-60 years old" .
+
+data:attr_sortorder_age_004 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "4" .
+
+data:answer_age_005 a ls:AnswerOption ;
+    ls:componentValue "A5" ;
+    ls:hasContent data:content_answer_age_005 ;
+    ls:hasComponentAttribute data:attr_sortorder_age_005 .
+
+data:content_answer_age_005 a ls:Content ;
+    ls:text "60+ years old" .
+
+data:attr_sortorder_age_005 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "5" .
+
+# ============================================
+# Q65 - Employment Status
+# ============================================
+
+data:question_065 a ls:Question ;
+    ls:hasId data:id_question_065 ;
+    ls:hasGroup data:group_008 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_065 ;
+    ls:hasContent data:content_question_065 ;
+    ls:hasComponentAttribute data:attr_mandatory_065, data:attr_order_065 ;
+    ls:hasAnswerOption data:answer_employ_001, data:answer_employ_002, data:answer_employ_003, data:answer_employ_004, data:answer_employ_005, data:answer_employ_006, data:answer_employ_007 .
+
+data:id_question_065 a ls:Identifier ;
+    ls:id 65 .
+
+data:var_065 a ls:Variable ;
+    ls:variableCod "SQ003" .
+
+data:content_question_065 a ls:Content ;
+    ls:text "What is your current employment status?" .
+
+data:attr_mandatory_065 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_065 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:answer_employ_001 a ls:AnswerOption ;
+    ls:componentValue "A1" ;
+    ls:hasContent data:content_answer_employ_001 ;
+    ls:hasComponentAttribute data:attr_sortorder_employ_001 .
+
+data:content_answer_employ_001 a ls:Content ;
+    ls:text "Employed for wages" .
+
+data:attr_sortorder_employ_001 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_employ_002 a ls:AnswerOption ;
+    ls:componentValue "A2" ;
+    ls:hasContent data:content_answer_employ_002 ;
+    ls:hasComponentAttribute data:attr_sortorder_employ_002 .
+
+data:content_answer_employ_002 a ls:Content ;
+    ls:text "Self-employed" .
+
+data:attr_sortorder_employ_002 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+data:answer_employ_003 a ls:AnswerOption ;
+    ls:componentValue "A3" ;
+    ls:hasContent data:content_answer_employ_003 ;
+    ls:hasComponentAttribute data:attr_sortorder_employ_003 .
+
+data:content_answer_employ_003 a ls:Content ;
+    ls:text "Unemployed and looking for work" .
+
+data:attr_sortorder_employ_003 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "3" .
+
+data:answer_employ_004 a ls:AnswerOption ;
+    ls:componentValue "A4" ;
+    ls:hasContent data:content_answer_employ_004 ;
+    ls:hasComponentAttribute data:attr_sortorder_employ_004 .
+
+data:content_answer_employ_004 a ls:Content ;
+    ls:text "Unemployed and not looking for work" .
+
+data:attr_sortorder_employ_004 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "4" .
+
+data:answer_employ_005 a ls:AnswerOption ;
+    ls:componentValue "A5" ;
+    ls:hasContent data:content_answer_employ_005 ;
+    ls:hasComponentAttribute data:attr_sortorder_employ_005 .
+
+data:content_answer_employ_005 a ls:Content ;
+    ls:text "A homemaker" .
+
+data:attr_sortorder_employ_005 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "5" .
+
+data:answer_employ_006 a ls:AnswerOption ;
+    ls:componentValue "A6" ;
+    ls:hasContent data:content_answer_employ_006 ;
+    ls:hasComponentAttribute data:attr_sortorder_employ_006 .
+
+data:content_answer_employ_006 a ls:Content ;
+    ls:text "A student" .
+
+data:attr_sortorder_employ_006 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "6" .
+
+data:answer_employ_007 a ls:AnswerOption ;
+    ls:componentValue "A7" ;
+    ls:hasContent data:content_answer_employ_007 ;
+    ls:hasComponentAttribute data:attr_sortorder_employ_007 .
+
+data:content_answer_employ_007 a ls:Content ;
+    ls:text "Retired" .
+
+data:attr_sortorder_employ_007 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "7" .
+
+# ============================================
+# Q66 - Marital Status
+# ============================================
+
+data:question_066 a ls:Question ;
+    ls:hasId data:id_question_066 ;
+    ls:hasGroup data:group_008 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_066 ;
+    ls:hasContent data:content_question_066 ;
+    ls:hasComponentAttribute data:attr_mandatory_066, data:attr_order_066 ;
+    ls:hasAnswerOption data:answer_marital_001, data:answer_marital_002, data:answer_marital_003, data:answer_marital_004, data:answer_marital_005, data:answer_marital_006 .
+
+data:id_question_066 a ls:Identifier ;
+    ls:id 66 .
+
+data:var_066 a ls:Variable ;
+    ls:variableCod "SQ004" .
+
+data:content_question_066 a ls:Content ;
+    ls:text "What is your marital status?" .
+
+data:attr_mandatory_066 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_066 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+data:answer_marital_001 a ls:AnswerOption ;
+    ls:componentValue "A1" ;
+    ls:hasContent data:content_answer_marital_001 ;
+    ls:hasComponentAttribute data:attr_sortorder_marital_001 .
+
+data:content_answer_marital_001 a ls:Content ;
+    ls:text "Single, never married" .
+
+data:attr_sortorder_marital_001 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_marital_002 a ls:AnswerOption ;
+    ls:componentValue "A2" ;
+    ls:hasContent data:content_answer_marital_002 ;
+    ls:hasComponentAttribute data:attr_sortorder_marital_002 .
+
+data:content_answer_marital_002 a ls:Content ;
+    ls:text "Married or domestic partnership" .
+
+data:attr_sortorder_marital_002 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+data:answer_marital_003 a ls:AnswerOption ;
+    ls:componentValue "A3" ;
+    ls:hasContent data:content_answer_marital_003 ;
+    ls:hasComponentAttribute data:attr_sortorder_marital_003 .
+
+data:content_answer_marital_003 a ls:Content ;
+    ls:text "Widowed" .
+
+data:attr_sortorder_marital_003 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "3" .
+
+data:answer_marital_004 a ls:AnswerOption ;
+    ls:componentValue "A4" ;
+    ls:hasContent data:content_answer_marital_004 ;
+    ls:hasComponentAttribute data:attr_sortorder_marital_004 .
+
+data:content_answer_marital_004 a ls:Content ;
+    ls:text "Divorced" .
+
+data:attr_sortorder_marital_004 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "4" .
+
+data:answer_marital_005 a ls:AnswerOption ;
+    ls:componentValue "A5" ;
+    ls:hasContent data:content_answer_marital_005 ;
+    ls:hasComponentAttribute data:attr_sortorder_marital_005 .
+
+data:content_answer_marital_005 a ls:Content ;
+    ls:text "Separated" .
+
+data:attr_sortorder_marital_005 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "5" .
+
+data:answer_marital_006 a ls:AnswerOption ;
+    ls:componentValue "A6" ;
+    ls:hasContent data:content_answer_marital_006 ;
+    ls:hasComponentAttribute data:attr_sortorder_marital_006 .
+
+data:content_answer_marital_006 a ls:Content ;
+    ls:text "Prefer not to answer" .
+
+data:attr_sortorder_marital_006 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "6" .
+
+# ============================================
+# Q67 - Education Level
+# ============================================
+
+data:question_067 a ls:Question ;
+    ls:hasId data:id_question_067 ;
+    ls:hasGroup data:group_008 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_067 ;
+    ls:hasContent data:content_question_067 ;
+    ls:hasComponentAttribute data:attr_mandatory_067, data:attr_order_067 ;
+    ls:hasAnswerOption data:answer_edu_001, data:answer_edu_002, data:answer_edu_003, data:answer_edu_004, data:answer_edu_005, data:answer_edu_006 .
+
+data:id_question_067 a ls:Identifier ;
+    ls:id 67 .
+
+data:var_067 a ls:Variable ;
+    ls:variableCod "SQ005" .
+
+data:content_question_067 a ls:Content ;
+    ls:text "What is the highest degree or level of school you have completed?" .
+
+data:attr_mandatory_067 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_067 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "5" .
+
+data:answer_edu_001 a ls:AnswerOption ;
+    ls:componentValue "A1" ;
+    ls:hasContent data:content_answer_edu_001 ;
+    ls:hasComponentAttribute data:attr_sortorder_edu_001 .
+
+data:content_answer_edu_001 a ls:Content ;
+    ls:text "Less than a high school diploma" .
+
+data:attr_sortorder_edu_001 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_edu_002 a ls:AnswerOption ;
+    ls:componentValue "A2" ;
+    ls:hasContent data:content_answer_edu_002 ;
+    ls:hasComponentAttribute data:attr_sortorder_edu_002 .
+
+data:content_answer_edu_002 a ls:Content ;
+    ls:text "High school degree or equivalent (e.g. GED)" .
+
+data:attr_sortorder_edu_002 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+data:answer_edu_003 a ls:AnswerOption ;
+    ls:componentValue "A3" ;
+    ls:hasContent data:content_answer_edu_003 ;
+    ls:hasComponentAttribute data:attr_sortorder_edu_003 .
+
+data:content_answer_edu_003 a ls:Content ;
+    ls:text "Some college, no degree" .
+
+data:attr_sortorder_edu_003 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "3" .
+
+data:answer_edu_004 a ls:AnswerOption ;
+    ls:componentValue "A4" ;
+    ls:hasContent data:content_answer_edu_004 ;
+    ls:hasComponentAttribute data:attr_sortorder_edu_004 .
+
+data:content_answer_edu_004 a ls:Content ;
+    ls:text "Associate degree (e.g. AA, AS)" .
+
+data:attr_sortorder_edu_004 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "4" .
+
+data:answer_edu_005 a ls:AnswerOption ;
+    ls:componentValue "A5" ;
+    ls:hasContent data:content_answer_edu_005 ;
+    ls:hasComponentAttribute data:attr_sortorder_edu_005 .
+
+data:content_answer_edu_005 a ls:Content ;
+    ls:text "Bachelor's degree (e.g. BA, BS)" .
+
+data:attr_sortorder_edu_005 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "5" .
+
+data:answer_edu_006 a ls:AnswerOption ;
+    ls:componentValue "A6" ;
+    ls:hasContent data:content_answer_edu_006 ;
+    ls:hasComponentAttribute data:attr_sortorder_edu_006 .
+
+data:content_answer_edu_006 a ls:Content ;
+    ls:text "Graduate degree (e.g. Master's, Professional, Doctorate)" .
+
+data:attr_sortorder_edu_006 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "6" .
+
+# ============================================
+# Q68 - Race/Ethnicity
+# ============================================
+
+data:question_068 a ls:Question ;
+    ls:hasId data:id_question_068 ;
+    ls:hasGroup data:group_008 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_068 ;
+    ls:hasContent data:content_question_068 ;
+    ls:hasComponentAttribute data:attr_mandatory_068, data:attr_order_068 ;
+    ls:hasAnswerOption data:answer_race_001, data:answer_race_002, data:answer_race_003, data:answer_race_004, data:answer_race_005, data:answer_race_006, data:answer_race_007 .
+
+data:id_question_068 a ls:Identifier ;
+    ls:id 68 .
+
+data:var_068 a ls:Variable ;
+    ls:variableCod "SQ006" .
+
+data:content_question_068 a ls:Content ;
+    ls:text "Which race/ethnicity best describes you?" .
+
+data:attr_mandatory_068 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_068 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "6" .
+
+data:answer_race_001 a ls:AnswerOption ;
+    ls:componentValue "A1" ;
+    ls:hasContent data:content_answer_race_001 ;
+    ls:hasComponentAttribute data:attr_sortorder_race_001 .
+
+data:content_answer_race_001 a ls:Content ;
+    ls:text "American Indian or Alaska Native" .
+
+data:attr_sortorder_race_001 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_race_002 a ls:AnswerOption ;
+    ls:componentValue "A2" ;
+    ls:hasContent data:content_answer_race_002 ;
+    ls:hasComponentAttribute data:attr_sortorder_race_002 .
+
+data:content_answer_race_002 a ls:Content ;
+    ls:text "Asian" .
+
+data:attr_sortorder_race_002 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+data:answer_race_003 a ls:AnswerOption ;
+    ls:componentValue "A3" ;
+    ls:hasContent data:content_answer_race_003 ;
+    ls:hasComponentAttribute data:attr_sortorder_race_003 .
+
+data:content_answer_race_003 a ls:Content ;
+    ls:text "Black or African American" .
+
+data:attr_sortorder_race_003 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "3" .
+
+data:answer_race_004 a ls:AnswerOption ;
+    ls:componentValue "A4" ;
+    ls:hasContent data:content_answer_race_004 ;
+    ls:hasComponentAttribute data:attr_sortorder_race_004 .
+
+data:content_answer_race_004 a ls:Content ;
+    ls:text "Hispanic or Latino" .
+
+data:attr_sortorder_race_004 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "4" .
+
+data:answer_race_005 a ls:AnswerOption ;
+    ls:componentValue "A5" ;
+    ls:hasContent data:content_answer_race_005 ;
+    ls:hasComponentAttribute data:attr_sortorder_race_005 .
+
+data:content_answer_race_005 a ls:Content ;
+    ls:text "Native Hawaiian or Other Pacific Islander" .
+
+data:attr_sortorder_race_005 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "5" .
+
+data:answer_race_006 a ls:AnswerOption ;
+    ls:componentValue "A6" ;
+    ls:hasContent data:content_answer_race_006 ;
+    ls:hasComponentAttribute data:attr_sortorder_race_006 .
+
+data:content_answer_race_006 a ls:Content ;
+    ls:text "White" .
+
+data:attr_sortorder_race_006 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "6" .
+
+data:answer_race_007 a ls:AnswerOption ;
+    ls:componentValue "A7" ;
+    ls:hasContent data:content_answer_race_007 ;
+    ls:hasComponentAttribute data:attr_sortorder_race_007 .
+
+data:content_answer_race_007 a ls:Content ;
+    ls:text "Prefer not to answer" .
+
+data:attr_sortorder_race_007 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "7" .
+
+# ============================================
+# Q69 - Number of Children
+# ============================================
+
+data:question_069 a ls:Question ;
+    ls:hasId data:id_question_069 ;
+    ls:hasGroup data:group_008 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_069 ;
+    ls:hasContent data:content_question_069 ;
+    ls:hasComponentAttribute data:attr_mandatory_069, data:attr_order_069 ;
+    ls:hasAnswerOption data:answer_children_001, data:answer_children_002, data:answer_children_003, data:answer_children_004, data:answer_children_005, data:answer_children_006, data:answer_children_007 .
+
+data:id_question_069 a ls:Identifier ;
+    ls:id 69 .
+
+data:var_069 a ls:Variable ;
+    ls:variableCod "SQ007" .
+
+data:content_question_069 a ls:Content ;
+    ls:text "How many children do you have?" .
+
+data:attr_mandatory_069 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_069 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "7" .
+
+data:answer_children_001 a ls:AnswerOption ;
+    ls:componentValue "A1" ;
+    ls:hasContent data:content_answer_children_001 ;
+    ls:hasComponentAttribute data:attr_sortorder_children_001 .
+
+data:content_answer_children_001 a ls:Content ;
+    ls:text "0" .
+
+data:attr_sortorder_children_001 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_children_002 a ls:AnswerOption ;
+    ls:componentValue "A2" ;
+    ls:hasContent data:content_answer_children_002 ;
+    ls:hasComponentAttribute data:attr_sortorder_children_002 .
+
+data:content_answer_children_002 a ls:Content ;
+    ls:text "1" .
+
+data:attr_sortorder_children_002 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+data:answer_children_003 a ls:AnswerOption ;
+    ls:componentValue "A3" ;
+    ls:hasContent data:content_answer_children_003 ;
+    ls:hasComponentAttribute data:attr_sortorder_children_003 .
+
+data:content_answer_children_003 a ls:Content ;
+    ls:text "2" .
+
+data:attr_sortorder_children_003 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "3" .
+
+data:answer_children_004 a ls:AnswerOption ;
+    ls:componentValue "A4" ;
+    ls:hasContent data:content_answer_children_004 ;
+    ls:hasComponentAttribute data:attr_sortorder_children_004 .
+
+data:content_answer_children_004 a ls:Content ;
+    ls:text "3" .
+
+data:attr_sortorder_children_004 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "4" .
+
+data:answer_children_005 a ls:AnswerOption ;
+    ls:componentValue "A5" ;
+    ls:hasContent data:content_answer_children_005 ;
+    ls:hasComponentAttribute data:attr_sortorder_children_005 .
+
+data:content_answer_children_005 a ls:Content ;
+    ls:text "4" .
+
+data:attr_sortorder_children_005 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "5" .
+
+data:answer_children_006 a ls:AnswerOption ;
+    ls:componentValue "A6" ;
+    ls:hasContent data:content_answer_children_006 ;
+    ls:hasComponentAttribute data:attr_sortorder_children_006 .
+
+data:content_answer_children_006 a ls:Content ;
+    ls:text "5" .
+
+data:attr_sortorder_children_006 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "6" .
+
+data:answer_children_007 a ls:AnswerOption ;
+    ls:componentValue "A7" ;
+    ls:hasContent data:content_answer_children_007 ;
+    ls:hasComponentAttribute data:attr_sortorder_children_007 .
+
+data:content_answer_children_007 a ls:Content ;
+    ls:text "More than 5" .
+
+data:attr_sortorder_children_007 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "7" .

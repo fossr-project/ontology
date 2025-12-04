@@ -1,0 +1,2491 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphDB Survey Builder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 40px);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 0.95em;
+        }
+
+        .config-bar {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .config-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .config-group label {
+            font-weight: 600;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .config-group input {
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.9em;
+            min-width: 200px;
+        }
+
+        .config-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 350px;
+            border-right: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            background: #fafafa;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .sidebar-header h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .items-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .group-item,
+        .question-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .group-item:hover,
+        .question-item:hover {
+            border-color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .group-item.selected,
+        .question-item.selected {
+            border-color: #667eea;
+            background: #e8ebff;
+        }
+
+        .group-item.expanded {
+            border-color: #667eea;
+        }
+
+        .nested-question {
+            margin-left: 20px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding: 12px 15px;
+            background: linear-gradient(to right, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .nested-question::before {
+            content: "└─";
+            position: absolute;
+            left: -20px;
+            color: #999;
+            font-weight: bold;
+        }
+
+        .nested-question:hover {
+            background: linear-gradient(to right, #e8ebff 0%, #f8f9ff 100%);
+            transform: translateX(3px);
+            border-left-color: #667eea;
+        }
+
+        .nested-question.selected {
+            background: linear-gradient(to right, #d4e3ff 0%, #e8f0ff 100%);
+            border-left-color: #667eea;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+        }
+
+        .questions-container {
+            margin-top: 10px;
+            padding-left: 15px;
+            border-left: 2px solid #e0e0e0;
+            margin-left: 10px;
+        }
+
+        .questions-container.visible {
+            display: block !important;
+        }
+
+        .expand-icon {
+            cursor: pointer;
+            margin-right: 8px;
+            transition: transform 0.3s;
+            display: inline-block;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .expand-icon.expanded {
+            transform: rotate(90deg);
+        }
+
+        .question-count {
+            background: #764ba2;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            margin-left: 8px;
+        }
+
+        .edit-icon {
+            color: #667eea;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 0.9em;
+        }
+
+        .edit-icon:hover {
+            color: #764ba2;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .item-badge {
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+
+        .item-description {
+            color: #666;
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+
+        .item-meta {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+            font-size: 0.8em;
+            color: #999;
+        }
+
+        .main-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .tabs {
+            display: flex;
+            background: white;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab {
+            padding: 15px 25px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab:hover {
+            color: #667eea;
+        }
+
+        .tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 25px;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .preview-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .preview-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .preview-group {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .preview-group-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .preview-group-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .preview-question {
+            background: #fafafa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 3px solid #764ba2;
+        }
+
+        .preview-question-text {
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .empty-state-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .selected-items {
+            background: #e8f5e9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .selected-items h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .selected-chip {
+            display: inline-block;
+            background: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            margin: 3px;
+            font-size: 0.75em;
+            border: 2px solid #4caf50;
+        }
+
+        .action-bar {
+            padding: 20px 25px;
+            background: white;
+            border-top: 2px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .action-bar-left {
+            display: flex;
+            gap: 10px;
+        }
+
+        .status-message {
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        .status-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status-message.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        .btn-remove {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
+
+        .btn-remove:hover {
+            background: #c82333;
+        }
+
+        .draggable {
+            cursor: move;
+        }
+
+        .dragging {
+            opacity: 0.5;
+        }
+
+        .drag-handle {
+            cursor: grab;
+            color: #999;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .drag-handle:active {
+            cursor: grabbing;
+        }
+
+        .order-badge {
+            background: #28a745;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 500px;
+            max-width: 90%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: slideDown 0.3s;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .modal-header h2 {
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .modal-body {
+            margin: 20px 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .btn-cancel {
+            background: #6c757d;
+        }
+
+        .drop-zone {
+            border: 2px dashed #28a745;
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            text-align: center;
+            color: #28a745;
+        }
+
+        .close-modal {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗂️ GraphDB Survey Builder</h1>
+            <p>Seleziona gruppi e domande dal tuo repository GraphDB per creare un nuovo questionario</p>
+        </div>
+
+        <div class="config-bar">
+            <div class="config-group">
+                <label>🔗 GraphDB URL:</label>
+                <input type="text" id="graphdbUrl" value="http://localhost:7200" placeholder="http://localhost:7200">
+            </div>
+            <div class="config-group">
+                <label>📦 Repository:</label>
+                <input type="text" id="repository" value="limesurvey" placeholder="limesurvey">
+            </div>
+            <button class="btn" onclick="testConnection()">🧪 Test Connessione</button>
+            <button class="btn" onclick="connectToGraphDB()">🔌 Carica Dati</button>
+            <button class="btn" onclick="showSparqlModal()" style="background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);">
+                🔍 Query SPARQL
+            </button>
+            <div style="flex: 1;"></div>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <h3>📚 Elementi Disponibili</h3>
+                    <input type="text" class="search-box" id="searchBox" placeholder="🔍 Cerca..." onkeyup="filterItems()">
+                </div>
+                <div class="items-list" id="itemsList">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📦</div>
+                        <p>Connettiti a GraphDB per visualizzare<br>gruppi e domande disponibili</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-panel">
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('preview')">👁️ Anteprima</button>
+                    <button class="tab" onclick="switchTab('json')">📄 JSON</button>
+                    <button class="tab" onclick="switchTab('csv')">📊 CSV</button>
+                </div>
+
+                <div id="preview" class="tab-content active">
+                    <div id="statusMessage" class="status-message"></div>
+
+                    <div class="selected-items" id="selectedItems" style="display: none;">
+                        <h4>✅ Elementi Selezionati</h4>
+                        <div id="selectedChips"></div>
+                    </div>
+
+                    <div class="preview-section">
+                        <h3>📋 Anteprima Questionario</h3>
+                        <div id="previewContent">
+                            <div class="empty-state">
+                                <div class="empty-state-icon">📝</div>
+                                <p>Seleziona gruppi o domande dalla barra laterale</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="json" class="tab-content">
+                    <h3 style="margin-bottom: 15px;">📄 Formato JSON</h3>
+                    <pre class="code-block" id="jsonOutput">Seleziona elementi per generare JSON</pre>
+                </div>
+
+                <div id="csv" class="tab-content">
+                    <h3 style="margin-bottom: 15px;">📊 Formato CSV</h3>
+                    <pre class="code-block" id="csvOutput">Seleziona elementi per generare CSV</pre>
+                </div>
+
+                <div class="action-bar">
+                    <div class="action-bar-left">
+                        <button class="btn" onclick="clearSelection()">🗑️ Cancella</button>
+                        <button class="btn" onclick="selectAllGroups()">☑️ Tutti i Gruppi</button>
+                        <button class="btn" onclick="showImportLsqModal()" style="background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);">
+                            📤 Import da .lsq
+                        </button>
+                    </div>
+                    <div>
+                        <button class="btn btn-success" onclick="exportSurvey()">📥 Esporta File</button>
+                        <button class="btn btn-success" onclick="showCreateSurveyModal()">🚀 Crea su LimeSurvey</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per creare survey -->
+    <div id="createSurveyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal" onclick="closeCreateSurveyModal()">&times;</span>
+                <h2>🚀 Crea Survey su LimeSurvey</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>📝 Nome Survey:</label>
+                    <input type="text" id="surveyTitle" placeholder="Es: Questionario CHILD-UP 2025" value="Nuovo Questionario">
+                </div>
+                <div class="form-group">
+                    <label>🔗 LimeSurvey URL:</label>
+                    <input type="text" id="limesurveyUrl" placeholder="http://localhost:8080/index.php/admin/remotecontrol" value="http://localhost:8080/index.php/admin/remotecontrol">
+                </div>
+                <div class="form-group">
+                    <label>👤 Username:</label>
+                    <input type="text" id="limesurveyUsername" value="admin">
+                </div>
+                <div class="form-group">
+                    <label>🔒 Password:</label>
+                    <input type="password" id="limesurveyPassword" value="password">
+                </div>
+                <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                    <strong>✅ Elementi selezionati:</strong><br>
+                    <span id="modalSelectedCount">0 gruppi, 0 domande</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="closeCreateSurveyModal()">Annulla</button>
+                <button class="btn btn-success" onclick="createSurveyOnLimeSurvey()">🚀 Crea Survey</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per Modifica Gruppo/Domanda -->
+    <div id="editTextModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal" onclick="closeEditTextModal()">&times;</span>
+                <h2 id="editTextModalTitle">✏️ Modifica</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label id="editTextLabel">Testo:</label>
+                    <textarea id="editTextArea"
+                              style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; resize: vertical;"
+                              placeholder="Inserisci il testo..."></textarea>
+                    <div style="color: #999; font-size: 0.85em; margin-top: 5px;">
+                        <span id="editTextCharCount">0</span> caratteri
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="closeEditTextModal()">Annulla</button>
+                <button class="btn btn-success" onclick="saveEditText()" id="saveEditTextBtn">💾 Salva</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per Import .lsq -->
+    <div id="importLsqModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal" onclick="closeImportLsqModal()">&times;</span>
+                <h2>📤 Import Domande da file .lsq</h2>
+            </div>
+            <div class="modal-body">
+                <p style="color: #666; margin-bottom: 15px;">
+                    Carica file .lsq (LimeSurvey Question) per importare domande con tutti i loro attributi,
+                    subdomande e opzioni di risposta.
+                </p>
+
+                <div class="form-group">
+                    <label>📁 Seleziona file .lsq:</label>
+                    <input type="file" id="lsqFileInput" accept=".lsq" multiple
+                           style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 8px;">
+                </div>
+
+                <div id="lsqFilesList" style="margin-top: 15px; display: none;">
+                    <h4 style="color: #333; margin-bottom: 10px;">File selezionati:</h4>
+                    <div id="lsqFilesContent" style="max-height: 200px; overflow-y: auto;"></div>
+                </div>
+
+                <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px; border-left: 4px solid #2196f3;">
+                    <strong>ℹ️ Info:</strong><br>
+                    • Puoi selezionare più file .lsq contemporaneamente<br>
+                    • Ogni domanda verrà importata nel gruppo selezionato<br>
+                    • Gli attributi originali verranno preservati<br>
+                    • Le subdomande verranno importate automaticamente
+                </div>
+
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>📦 Gruppo di destinazione:</label>
+                    <select id="lsqTargetGroup" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 8px;">
+                        <option value="">-- Seleziona gruppo --</option>
+                    </select>
+                </div>
+
+                <div id="lsqImportStatus" class="status-message" style="display: none; margin-top: 15px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="closeImportLsqModal()">Annulla</button>
+                <button class="btn btn-success" onclick="importLsqFiles()" id="importLsqBtn">📤 Importa Domande</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per Query SPARQL -->
+    <div id="sparqlModal" class="modal">
+        <div class="modal-content" style="width: 900px; max-width: 95%;">
+            <div class="modal-header">
+                <span class="close-modal" onclick="closeSparqlModal()">&times;</span>
+                <h2>🔍 Query SPARQL sul Knowledge Graph</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>📋 Template Query:</label>
+                    <select id="sparqlTemplate" onchange="loadTemplate()" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 8px;">
+                        <option value="">-- Seleziona un template --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>✍️ Query SPARQL:</label>
+                    <textarea id="sparqlQueryInput"
+                              style="width: 100%; height: 250px; padding: 10px; border: 2px solid #ddd; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 0.9em;"
+                              placeholder="PREFIX ls: <https://w3id.org/fossr/ontology/limesurvey/>
+
+SELECT ?group ?groupname
+WHERE {
+    ?group a ls:QuestionGroup .
+}
+LIMIT 10"></textarea>
+                </div>
+                <div id="sparqlResults" style="display: none; margin-top: 20px;">
+                    <h4 style="color: #28a745; margin-bottom: 10px;">📊 Risultati (<span id="resultCount">0</span>)</h4>
+                    <div style="max-height: 300px; overflow-y: auto; border: 2px solid #e0e0e0; border-radius: 8px;">
+                        <table id="resultsTable" style="width: 100%; border-collapse: collapse;">
+                            <thead id="resultsHeader" style="background: #f8f9fa; position: sticky; top: 0;"></thead>
+                            <tbody id="resultsBody"></tbody>
+                        </table>
+                    </div>
+                    <div style="margin-top: 10px; display: flex; gap: 10px;">
+                        <button class="btn" onclick="exportResultsCSV()">📥 Export CSV</button>
+                        <button class="btn" onclick="exportResultsJSON()">📥 Export JSON</button>
+                        <button class="btn btn-success" onclick="loadResultsIntoApp()" id="loadResultsBtn">
+                            ✅ Carica questi dati nell'app
+                        </button>
+                    </div>
+                </div>
+                <div id="sparqlError" class="status-message error" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="closeSparqlModal()">Chiudi</button>
+                <button class="btn btn-success" onclick="executeSparqlQuery()">▶️ Esegui Query</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedGroups = [];
+        let selectedQuestions = [];
+        let allGroups = [];
+        let allQuestions = [];
+        let draggedElement = null;
+        let sparqlTemplates = [];
+        let lastQueryResults = null;
+
+        // SPARQL Modal Functions
+        async function showSparqlModal() {
+            document.getElementById('sparqlModal').style.display = 'block';
+            if (sparqlTemplates.length === 0) {
+                await loadSparqlTemplates();
+            }
+        }
+
+        function closeSparqlModal() {
+            document.getElementById('sparqlModal').style.display = 'none';
+            document.getElementById('sparqlResults').style.display = 'none';
+            document.getElementById('sparqlError').style.display = 'none';
+        }
+
+        async function loadSparqlTemplates() {
+            try {
+                const response = await fetch('/api/sparql/templates');
+                const data = await response.json();
+                if (data.status === 'success') {
+                    sparqlTemplates = data.templates;
+                    const select = document.getElementById('sparqlTemplate');
+                    select.innerHTML = '<option value="">-- Seleziona un template --</option>';
+                    data.templates.forEach((template, index) => {
+                        const option = document.createElement('option');
+                        option.value = index;
+                        option.textContent = `${template.name} - ${template.description}`;
+                        select.appendChild(option);
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading templates:', error);
+            }
+        }
+
+        function loadTemplate() {
+            const select = document.getElementById('sparqlTemplate');
+            const index = select.value;
+            if (index !== '') {
+                const template = sparqlTemplates[index];
+                document.getElementById('sparqlQueryInput').value = template.query;
+            }
+        }
+
+        async function executeSparqlQuery() {
+            const query = document.getElementById('sparqlQueryInput').value;
+            if (!query.trim()) {
+                alert('⚠️ Inserisci una query SPARQL!');
+                return;
+            }
+
+            document.getElementById('sparqlResults').style.display = 'none';
+            document.getElementById('sparqlError').style.display = 'none';
+
+            const executeBtn = event.target;
+            executeBtn.disabled = true;
+            executeBtn.textContent = '⏳ Esecuzione...';
+
+            try {
+                const response = await fetch('/api/sparql/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: query })
+                });
+                const data = await response.json();
+                if (data.status === 'success') {
+                    lastQueryResults = data;
+                    displaySparqlResults(data);
+                } else {
+                    throw new Error(data.message);
+                }
+            } catch (error) {
+                const errorEl = document.getElementById('sparqlError');
+                errorEl.textContent = '❌ Errore: ' + error.message;
+                errorEl.style.display = 'block';
+                console.error('SPARQL error:', error);
+            } finally {
+                executeBtn.disabled = false;
+                executeBtn.textContent = '▶️ Esegui Query';
+            }
+        }
+
+        function displaySparqlResults(data) {
+            const resultsDiv = document.getElementById('sparqlResults');
+            const countSpan = document.getElementById('resultCount');
+            const headerEl = document.getElementById('resultsHeader');
+            const bodyEl = document.getElementById('resultsBody');
+
+            countSpan.textContent = data.count;
+
+            let headerHTML = '<tr>';
+            data.columns.forEach(col => {
+                headerHTML += `<th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">${col}</th>`;
+            });
+            headerHTML += '</tr>';
+            headerEl.innerHTML = headerHTML;
+
+            let bodyHTML = '';
+            data.results.forEach((row, rowIndex) => {
+                bodyHTML += `<tr style="background: ${rowIndex % 2 === 0 ? '#fff' : '#f8f9fa'};">`;
+                data.columns.forEach(col => {
+                    const value = row[col] || '';
+                    const displayValue = value.length > 100 ? value.substring(0, 97) + '...' : value;
+                    bodyHTML += `<td style="padding: 10px; border-bottom: 1px solid #e0e0e0;" title="${value}">${displayValue}</td>`;
+                });
+                bodyHTML += '</tr>';
+            });
+            bodyEl.innerHTML = bodyHTML;
+            resultsDiv.style.display = 'block';
+        }
+
+        function exportResultsCSV() {
+            if (!lastQueryResults) return;
+            let csv = lastQueryResults.columns.join(';') + '\n';
+            lastQueryResults.results.forEach(row => {
+                const values = lastQueryResults.columns.map(col => {
+                    const val = row[col] || '';
+                    return val.includes(';') ? `"${val}"` : val;
+                });
+                csv += values.join(';') + '\n';
+            });
+            downloadFile(csv, 'sparql_results.csv', 'text/csv');
+        }
+
+        function exportResultsJSON() {
+            if (!lastQueryResults) return;
+            const json = JSON.stringify(lastQueryResults.results, null, 2);
+            downloadFile(json, 'sparql_results.json', 'application/json');
+        }
+
+        function loadResultsIntoApp() {
+            if (!lastQueryResults || !lastQueryResults.results || lastQueryResults.results.length === 0) {
+                alert('⚠️ Nessun risultato da caricare!');
+                return;
+            }
+
+            const columns = lastQueryResults.columns;
+            const results = lastQueryResults.results;
+
+            console.log('Loading SPARQL results into app:', results);
+            console.log('Available columns:', columns);
+
+            // Identifica il tipo di dati dai nomi delle colonne
+            const hasGroupColumns = columns.some(col =>
+                col.toLowerCase().includes('group') &&
+                !col.toLowerCase().includes('question')
+            );
+            const hasQuestionColumns = columns.some(col =>
+                col.toLowerCase().includes('question')
+            );
+
+            let loadedGroups = [];
+            let loadedQuestions = [];
+
+            // CASO 1: Query restituisce gruppi
+            if (hasGroupColumns && !hasQuestionColumns) {
+                loadedGroups = parseGroupsFromResults(results, columns);
+                showStatus(`✅ Caricati ${loadedGroups.length} gruppi dalla query SPARQL`, 'success');
+            }
+            // CASO 2: Query restituisce domande
+            else if (hasQuestionColumns && !hasGroupColumns) {
+                loadedQuestions = parseQuestionsFromResults(results, columns);
+                showStatus(`✅ Caricate ${loadedQuestions.length} domande dalla query SPARQL`, 'success');
+            }
+            // CASO 3: Query restituisce sia gruppi che domande
+            else if (hasGroupColumns && hasQuestionColumns) {
+                const parsed = parseGroupsAndQuestionsFromResults(results, columns);
+                loadedGroups = parsed.groups;
+                loadedQuestions = parsed.questions;
+                showStatus(`✅ Caricati ${loadedGroups.length} gruppi e ${loadedQuestions.length} domande dalla query SPARQL`, 'success');
+            }
+            // CASO 4: Tipo non riconosciuto
+            else {
+                alert('⚠️ Impossibile determinare il tipo di dati dalla query.\n\nAssicurati che la query restituisca colonne con nomi come:\n- "group", "groupId", "groupName" per i gruppi\n- "question", "questionId", "questionText" per le domande');
+                return;
+            }
+
+            // Sostituisci i dati esistenti con quelli dalla query
+            if (loadedGroups.length > 0) {
+                allGroups = loadedGroups;
+            }
+            if (loadedQuestions.length > 0) {
+                allQuestions = loadedQuestions;
+            }
+
+            // Aggiorna la visualizzazione
+            displayItems();
+
+            // Chiudi il modal
+            closeSparqlModal();
+
+            // Mostra messaggio di conferma
+            const totalQuestionsInGroups = allGroups.reduce((sum, g) => sum + (g.questions ? g.questions.length : 0), 0);
+            alert(`✅ Dati caricati con successo!\n\n📁 Gruppi: ${allGroups.length}\n❓ Domande totali: ${allQuestions.length}\n└─ Domande nei gruppi: ${totalQuestionsInGroups}`);
+        }
+
+        function parseGroupsFromResults(results, columns) {
+            // Trova le colonne chiave
+            const groupCol = columns.find(c => c === 'group' || c.toLowerCase().includes('groupuri'));
+            const groupIdCol = columns.find(c => c.toLowerCase().includes('groupid') || c === 'id');
+            const groupNameCol = columns.find(c => c.toLowerCase().includes('groupname') || c === 'name');
+            const groupDescCol = columns.find(c => c.toLowerCase().includes('description') || c.toLowerCase().includes('desc'));
+
+            if (!groupCol) {
+                console.error('No group column found in results');
+                return [];
+            }
+
+            const groups = [];
+            const groupMap = new Map();
+
+            results.forEach(row => {
+                const uri = row[groupCol];
+                if (!uri || groupMap.has(uri)) return;
+
+                const group = {
+                    uri: uri,
+                    id: row[groupIdCol] || `G${groups.length + 1}`,
+                    name: row[groupNameCol] || 'Gruppo senza nome',
+                    description: row[groupDescCol] || '',
+                    type: 'group',
+                    questions: []
+                };
+
+                groups.push(group);
+                groupMap.set(uri, group);
+            });
+
+            console.log('Parsed groups:', groups);
+            return groups;
+        }
+
+        function parseQuestionsFromResults(results, columns) {
+            // Trova le colonne chiave
+            const questionCol = columns.find(c => c === 'question' || c.toLowerCase().includes('questionuri'));
+            const questionIdCol = columns.find(c => c.toLowerCase().includes('questionid') || c === 'id');
+            const questionTextCol = columns.find(c => c.toLowerCase().includes('questiontext') || c === 'text');
+            const variableCol = columns.find(c => c.toLowerCase().includes('variable') || c.toLowerCase().includes('cod'));
+            const typeCol = columns.find(c => c.toLowerCase().includes('type') && c.toLowerCase().includes('question'));
+            const orderCol = columns.find(c => c.toLowerCase().includes('order'));
+
+            if (!questionCol) {
+                console.error('No question column found in results');
+                return [];
+            }
+
+            const questions = [];
+            const questionMap = new Map();
+
+            results.forEach(row => {
+                const uri = row[questionCol];
+                if (!uri || questionMap.has(uri)) return;
+
+                const question = {
+                    uri: uri,
+                    id: row[questionIdCol] || `Q${questions.length + 1}`,
+                    text: row[questionTextCol] || 'Domanda senza testo',
+                    variableCod: row[variableCol] || '',
+                    questionType: row[typeCol] || 'L',
+                    order: row[orderCol] || '0',
+                    type: 'question'
+                };
+
+                questions.push(question);
+                questionMap.set(uri, question);
+            });
+
+            console.log('Parsed questions:', questions);
+            return questions;
+        }
+
+        function parseGroupsAndQuestionsFromResults(results, columns) {
+            // Trova colonne per gruppi
+            const groupCol = columns.find(c => c === 'group' || (c.toLowerCase().includes('group') && c.toLowerCase().includes('uri')));
+            const groupIdCol = columns.find(c => c.toLowerCase().includes('groupid'));
+            const groupNameCol = columns.find(c => c.toLowerCase().includes('groupname'));
+            const groupDescCol = columns.find(c => c.toLowerCase().includes('groupdesc'));
+
+            // Trova colonne per domande
+            const questionCol = columns.find(c => c === 'question' || (c.toLowerCase().includes('question') && c.toLowerCase().includes('uri')));
+            const questionIdCol = columns.find(c => c.toLowerCase().includes('questionid'));
+            const questionTextCol = columns.find(c => c.toLowerCase().includes('questiontext'));
+            const variableCol = columns.find(c => c.toLowerCase().includes('variable'));
+            const typeCol = columns.find(c => c.toLowerCase().includes('questiontype'));
+            const orderCol = columns.find(c => c.toLowerCase().includes('order'));
+
+            const groupMap = new Map();
+            const questionMap = new Map();
+
+            results.forEach(row => {
+                // Parse gruppo
+                if (groupCol && row[groupCol]) {
+                    const groupUri = row[groupCol];
+                    if (!groupMap.has(groupUri)) {
+                        const group = {
+                            uri: groupUri,
+                            id: row[groupIdCol] || `G${groupMap.size + 1}`,
+                            name: row[groupNameCol] || 'Gruppo senza nome',
+                            description: row[groupDescCol] || '',
+                            type: 'group',
+                            questions: []
+                        };
+                        groupMap.set(groupUri, group);
+                    }
+
+                    // Parse domanda e collegala al gruppo
+                    if (questionCol && row[questionCol]) {
+                        const questionUri = row[questionCol];
+                        if (!questionMap.has(questionUri)) {
+                            const question = {
+                                uri: questionUri,
+                                id: row[questionIdCol] || `Q${questionMap.size + 1}`,
+                                text: row[questionTextCol] || 'Domanda senza testo',
+                                variableCod: row[variableCol] || '',
+                                questionType: row[typeCol] || 'L',
+                                order: row[orderCol] || '0',
+                                groupUri: groupUri,
+                                type: 'question'
+                            };
+
+                            questionMap.set(questionUri, question);
+                            groupMap.get(groupUri).questions.push(question);
+                        }
+                    }
+                }
+            });
+
+            const groups = Array.from(groupMap.values());
+            const questions = Array.from(questionMap.values());
+
+            console.log('Parsed groups with questions:', groups);
+            console.log('Parsed questions:', questions);
+
+            return { groups, questions };
+        }
+
+        function downloadFile(content, filename, mimeType) {
+            const blob = new Blob([content], { type: mimeType });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function showCreateSurveyModal() {
+            if (selectedGroups.length === 0 && selectedQuestions.length === 0) {
+                alert('⚠️ Seleziona almeno un gruppo o una domanda prima di creare la survey!');
+                return;
+            }
+            document.getElementById('modalSelectedCount').textContent =
+                `${selectedGroups.length} gruppi, ${selectedQuestions.length} domande`;
+            document.getElementById('createSurveyModal').style.display = 'block';
+        }
+
+        function closeCreateSurveyModal() {
+            document.getElementById('createSurveyModal').style.display = 'none';
+        }
+
+        async function createSurveyOnLimeSurvey() {
+            const title = document.getElementById('surveyTitle').value;
+            const url = document.getElementById('limesurveyUrl').value;
+            const username = document.getElementById('limesurveyUsername').value;
+            const password = document.getElementById('limesurveyPassword').value;
+
+            if (!title) {
+                alert('⚠️ Inserisci un nome per la survey!');
+                return;
+            }
+
+            showStatus('🚀 Creazione survey su LimeSurvey...', 'info');
+            closeCreateSurveyModal();
+
+            try {
+                await fetch('/api/limesurvey/config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url, username, password })
+                });
+
+                const response = await fetch('/api/limesurvey/create', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        title: title,
+                        groups: selectedGroups,
+                        questions: selectedQuestions
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    showStatus('✅ Survey creata con successo!', 'success');
+                    alert(`✅ Survey "${title}" creata!\n\nID: ${data.survey_id}\n\nURL: ${data.url}`);
+                    window.open(data.url, '_blank');
+                } else {
+                    throw new Error(data.message);
+                }
+            } catch (error) {
+                showStatus('❌ Errore: ' + error.message, 'error');
+                alert('❌ Errore nella creazione della survey:\n\n' + error.message);
+            }
+        }
+
+        window.onclick = function(event) {
+            const createModal = document.getElementById('createSurveyModal');
+            const sparqlModal = document.getElementById('sparqlModal');
+            const editTextModal = document.getElementById('editTextModal');
+            const importLsqModal = document.getElementById('importLsqModal');
+
+            if (event.target == createModal) {
+                closeCreateSurveyModal();
+            }
+            if (event.target == sparqlModal) {
+                closeSparqlModal();
+            }
+            if (event.target == editTextModal) {
+                closeEditTextModal();
+            }
+            if (event.target == importLsqModal) {
+                closeImportLsqModal();
+            }
+        }
+
+        async function testConnection() {
+            const url = document.getElementById('graphdbUrl').value;
+            const repo = document.getElementById('repository').value;
+            showStatus('🧪 Test connessione...', 'info');
+
+            try {
+                await fetch('/api/config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ graphdb_url: url, repository: repo })
+                });
+
+                const response = await fetch('/api/test');
+                const data = await response.json();
+
+                if (data.status === 'error') {
+                    showStatus('❌ ' + data.message + '\n💡 ' + (data.help || ''), 'error');
+                    console.error('Connection test failed:', data);
+                    return;
+                }
+
+                console.log('Connection test results:', data);
+
+                let message = `✅ Connesso!\n`;
+                message += `📊 Triple totali: ${data.total_triples}\n`;
+                message += `📦 Classi trovate: ${data.classes.length}\n\n`;
+
+                if (data.classes.length > 0) {
+                    message += `Top classi:\n`;
+                    data.classes.slice(0, 5).forEach(c => {
+                        const className = c.class.split('/').pop().split('#').pop();
+                        message += `  • ${className}: ${c.count} istanze\n`;
+                    });
+                }
+
+                alert(message);
+                showStatus('✅ Test completato - Vedi console per dettagli', 'success');
+            } catch (error) {
+                showStatus('❌ Errore connessione: ' + error.message, 'error');
+                console.error('Connection error:', error);
+            }
+        }
+
+        async function connectToGraphDB() {
+            const url = document.getElementById('graphdbUrl').value;
+            const repo = document.getElementById('repository').value;
+            showStatus('Caricamento dati da GraphDB...', 'info');
+
+            try {
+                await fetch('/api/config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ graphdb_url: url, repository: repo })
+                });
+
+                const groupsResp = await fetch('/api/groups');
+                const groupsData = await groupsResp.json();
+
+                if (groupsData.status === 'error') {
+                    throw new Error(groupsData.message);
+                }
+
+                allGroups = groupsData.groups;
+                console.log('✓ Loaded groups:', allGroups);
+
+                allGroups.forEach((g, idx) => {
+                    console.log(`Group ${idx}: ${g.name}, Questions: ${g.questions ? g.questions.length : 0}`, g.questions);
+                });
+
+                const questionsResp = await fetch('/api/questions');
+                const questionsData = await questionsResp.json();
+
+                if (questionsData.status === 'error') {
+                    throw new Error(questionsData.message);
+                }
+
+                allQuestions = questionsData.questions;
+                console.log('✓ Loaded questions:', allQuestions);
+
+                if (allGroups.length === 0 && allQuestions.length === 0) {
+                    showStatus('⚠️ Nessun dato trovato! Il repository è vuoto o usa namespace diversi.', 'error');
+                    document.getElementById('itemsList').innerHTML = `
+                        <div class="empty-state">
+                            <div class="empty-state-icon">⚠️</div>
+                            <h4 style="color: #dc3545; margin-bottom: 10px;">Repository vuoto o namespace errati</h4>
+                            <p style="text-align: left; padding: 0 20px;">
+                                <strong>Cosa verificare:</strong><br><br>
+                                1. Il repository contiene dati?<br>
+                                2. I dati usano il namespace:<br>
+                                   <code style="background: #f0f0f0; padding: 2px 5px;">https://w3id.org/fossr/ontology/limesurvey/</code><br>
+                                3. Ci sono istanze di:<br>
+                                   • <code>ns1:QuestionGroup</code><br>
+                                   • <code>ls:Question</code><br><br>
+                                <strong>Usa "Test Connessione" per diagnosticare</strong>
+                            </p>
+                        </div>
+                    `;
+                } else {
+                    displayItems();
+                    const totalQuestionsInGroups = allGroups.reduce((sum, g) => sum + (g.questions ? g.questions.length : 0), 0);
+                    showStatus(`✅ Caricati ${allGroups.length} gruppi (${totalQuestionsInGroups} domande collegate) e ${allQuestions.length} domande totali`, 'success');
+                }
+            } catch (error) {
+                showStatus('❌ Errore: ' + error.message, 'error');
+                console.error('Load error:', error);
+            }
+        }
+
+        function displayItems() {
+            const container = document.getElementById('itemsList');
+            container.innerHTML = '';
+
+            allGroups.forEach((group, groupIndex) => {
+                const el = document.createElement('div');
+                el.className = 'group-item';
+                el.id = `group-${group.uri}`;
+                const hasQuestions = group.questions && group.questions.length > 0;
+
+                el.innerHTML = `
+                    <div class="item-header">
+                        <div style="display: flex; align-items: center; flex: 1;">
+                            ${hasQuestions ? `<span class="expand-icon" id="expand-${groupIndex}" onclick="toggleGroupExpand(event, ${groupIndex})">▶</span>` : ''}
+                            <div class="item-title" id="group-title-${groupIndex}">${group.name}</div>
+                            <span class="edit-icon" onclick="editGroupTitle(event, ${groupIndex})" title="Modifica nome gruppo">✏️</span>
+                            <span class="item-badge">ID ${group.id}</span>
+                            ${hasQuestions ? `<span class="question-count">${group.questions.length} Q</span>` : ''}
+                        </div>
+                    </div>
+                    <div class="item-description" id="group-desc-${groupIndex}">${group.description || 'Nessuna descrizione'}</div>
+                    <span class="edit-icon" onclick="editGroupDescription(event, ${groupIndex})" title="Modifica descrizione" style="margin-left: 10px; font-size: 0.85em;">✏️ desc</span>
+                    <div id="questions-container-${groupIndex}" style="display: none; margin-top: 10px;"></div>
+                `;
+
+                el.addEventListener('click', (e) => {
+                    if (!e.target.classList.contains('expand-icon') &&
+                        !e.target.classList.contains('edit-icon') &&
+                        !e.target.closest('.nested-question') &&
+                        !e.target.closest('input')) {
+                        toggleGroup(group);
+                    }
+                });
+
+                container.appendChild(el);
+
+                if (hasQuestions) {
+                    const questionsContainer = document.getElementById(`questions-container-${groupIndex}`);
+                    group.questions.forEach((question, qIndex) => {
+                        const qEl = document.createElement('div');
+                        qEl.className = 'nested-question';
+                        qEl.id = `question-${question.uri}`;
+                        qEl.innerHTML = `
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div style="flex: 1;">
+                                    <strong>Q${question.id}:</strong>
+                                    <span id="question-text-${groupIndex}-${qIndex}" style="cursor: pointer;" onclick="editQuestionText(event, ${groupIndex}, ${qIndex})" title="Clicca per modificare">${question.text.substring(0, 60)}...</span>
+                                    <span class="edit-icon" onclick="editQuestionText(event, ${groupIndex}, ${qIndex})" title="Modifica testo domanda">✏️</span>
+                                </div>
+                                <div>
+                                    <span style="font-size: 0.8em; color: #999;">${question.variableCod}</span>
+                                </div>
+                            </div>
+                        `;
+
+                        qEl.addEventListener('click', (e) => {
+                            if (!e.target.classList.contains('edit-icon') &&
+                                !e.target.id.includes('question-text-') &&
+                                !e.target.closest('input')) {
+                                e.stopPropagation();
+                                toggleQuestion(question);
+                            }
+                        });
+
+                        questionsContainer.appendChild(qEl);
+                    });
+                }
+            });
+
+            const orphanQuestions = allQuestions.filter(q =>
+                !allGroups.some(g => g.questions && g.questions.some(gq => gq.uri === q.uri))
+            );
+
+            if (orphanQuestions.length > 0) {
+                const separator = document.createElement('div');
+                separator.style.padding = '10px';
+                separator.style.color = '#999';
+                separator.style.fontSize = '0.9em';
+                separator.innerHTML = '<strong>Domande senza gruppo:</strong>';
+                container.appendChild(separator);
+
+                orphanQuestions.forEach(q => {
+                    const el = document.createElement('div');
+                    el.className = 'question-item';
+                    el.innerHTML = `
+                        <div class="item-header">
+                            <div class="item-title" style="cursor: pointer;" onclick="editOrphanQuestionText(event, '${q.uri}')" title="Clicca per modificare">${q.text.substring(0, 50)}...</div>
+                            <span class="edit-icon" onclick="editOrphanQuestionText(event, '${q.uri}')" title="Modifica testo">✏️</span>
+                            <div class="item-badge">Q${q.id}</div>
+                        </div>
+                        <div class="item-meta">
+                            <span>🏷️ ${q.variableCod}</span>
+                        </div>
+                    `;
+
+                    el.addEventListener('click', (e) => {
+                        if (!e.target.classList.contains('edit-icon') &&
+                            !e.target.classList.contains('item-title') &&
+                            !e.target.closest('input')) {
+                            toggleQuestion(q);
+                        }
+                    });
+
+                    container.appendChild(el);
+                });
+            }
+        }
+
+        function toggleGroupExpand(event, groupIndex) {
+            event.stopPropagation();
+            const icon = document.getElementById(`expand-${groupIndex}`);
+            const container = document.getElementById(`questions-container-${groupIndex}`);
+            const groupEl = document.getElementById(`group-${allGroups[groupIndex].uri}`);
+
+            if (!container) {
+                console.error('Container not found for group', groupIndex);
+                return;
+            }
+
+            const isExpanded = container.style.display !== 'none';
+
+            if (isExpanded) {
+                container.style.display = 'none';
+                icon.classList.remove('expanded');
+                groupEl.classList.remove('expanded');
+                icon.textContent = '▶';
+            } else {
+                container.style.display = 'block';
+                container.classList.add('visible');
+                icon.classList.add('expanded');
+                groupEl.classList.add('expanded');
+                icon.textContent = '▼';
+            }
+        }
+
+        function editGroupTitle(event, groupIndex) {
+            event.stopPropagation();
+            const group = allGroups[groupIndex];
+            const titleEl = document.getElementById(`group-title-${groupIndex}`);
+            const currentTitle = group.name;
+
+            titleEl.innerHTML = `
+                <input type="text" class="inline-edit" id="edit-group-title-${groupIndex}"
+                       value="${currentTitle}" placeholder="Nome gruppo"
+                       style="display: inline-block; width: 200px; margin: 0;">
+                <button class="btn-save" onclick="saveGroupTitle(${groupIndex})" style="margin-left: 5px;">💾</button>
+                <button class="btn-cancel-edit" onclick="cancelGroupTitleEdit(${groupIndex})">✕</button>
+            `;
+
+            document.getElementById(`edit-group-title-${groupIndex}`).focus();
+            document.getElementById(`edit-group-title-${groupIndex}`).select();
+        }
+
+        function saveGroupTitle(groupIndex) {
+            const newTitle = document.getElementById(`edit-group-title-${groupIndex}`).value;
+            if (newTitle.trim() === '') {
+                alert('⚠️ Il nome del gruppo non può essere vuoto!');
+                return;
+            }
+
+            allGroups[groupIndex].name = newTitle.trim();
+
+            // Update in selected groups if present
+            const selectedIndex = selectedGroups.findIndex(g => g.uri === allGroups[groupIndex].uri);
+            if (selectedIndex > -1) {
+                selectedGroups[selectedIndex].name = newTitle.trim();
+            }
+
+            displayItems();
+            updateUI();
+            showStatus('✅ Nome gruppo modificato', 'success');
+        }
+
+        function cancelGroupTitleEdit(groupIndex) {
+            displayItems();
+        }
+
+        function editGroupDescription(event, groupIndex) {
+            event.stopPropagation();
+            const group = allGroups[groupIndex];
+
+            // Usa il modal per descrizioni
+            openEditTextModal(
+                'Modifica Descrizione Gruppo',
+                'Descrizione:',
+                group.description || '',
+                (newText) => {
+                    allGroups[groupIndex].description = newText;
+
+                    // Update in selected groups if present
+                    const selectedIndex = selectedGroups.findIndex(g => g.uri === allGroups[groupIndex].uri);
+                    if (selectedIndex > -1) {
+                        selectedGroups[selectedIndex].description = newText;
+                    }
+
+                    displayItems();
+                    updateUI();
+                    showStatus('✅ Descrizione gruppo modificata', 'success');
+                }
+            );
+        }
+
+        function cancelGroupDescEdit(groupIndex) {
+            displayItems();
+        }
+
+        function editQuestionText(event, groupIndex, qIndex) {
+            event.stopPropagation();
+            const question = allGroups[groupIndex].questions[qIndex];
+
+            // Usa il modal per testi lunghi
+            openEditTextModal(
+                'Modifica Testo Domanda',
+                'Testo domanda:',
+                question.text,
+                (newText) => {
+                    if (newText.trim() === '') {
+                        alert('⚠️ Il testo della domanda non può essere vuoto!');
+                        return false;
+                    }
+
+                    allGroups[groupIndex].questions[qIndex].text = newText.trim();
+
+                    // Update in allQuestions
+                    const qUri = allGroups[groupIndex].questions[qIndex].uri;
+                    const globalIndex = allQuestions.findIndex(q => q.uri === qUri);
+                    if (globalIndex > -1) {
+                        allQuestions[globalIndex].text = newText.trim();
+                    }
+
+                    // Update in selected questions
+                    const selectedIndex = selectedQuestions.findIndex(q => q.uri === qUri);
+                    if (selectedIndex > -1) {
+                        selectedQuestions[selectedIndex].text = newText.trim();
+                    }
+
+                    displayItems();
+                    updateUI();
+                    showStatus('✅ Testo domanda modificato', 'success');
+                    return true;
+                }
+            );
+        }
+
+        function saveQuestionText(groupIndex, qIndex) {
+            const newText = document.getElementById(`edit-question-${groupIndex}-${qIndex}`).value;
+
+            if (newText.trim() === '') {
+                alert('⚠️ Il testo della domanda non può essere vuoto!');
+                return;
+            }
+
+            allGroups[groupIndex].questions[qIndex].text = newText.trim();
+
+            // Update in allQuestions
+            const qUri = allGroups[groupIndex].questions[qIndex].uri;
+            const globalIndex = allQuestions.findIndex(q => q.uri === qUri);
+            if (globalIndex > -1) {
+                allQuestions[globalIndex].text = newText.trim();
+            }
+
+            // Update in selected questions
+            const selectedIndex = selectedQuestions.findIndex(q => q.uri === qUri);
+            if (selectedIndex > -1) {
+                selectedQuestions[selectedIndex].text = newText.trim();
+            }
+
+            displayItems();
+            updateUI();
+            showStatus('✅ Testo domanda modificato', 'success');
+        }
+
+        function cancelQuestionEdit(groupIndex, qIndex) {
+            displayItems();
+        }
+
+        function editOrphanQuestionText(event, questionUri) {
+            event.stopPropagation();
+
+            const question = allQuestions.find(q => q.uri === questionUri);
+            if (!question) return;
+
+            // Usa il modal anche per orphan questions
+            openEditTextModal(
+                'Modifica Testo Domanda',
+                'Testo domanda:',
+                question.text,
+                (newText) => {
+                    if (newText.trim() === '') {
+                        alert('⚠️ Il testo della domanda non può essere vuoto!');
+                        return false;
+                    }
+
+                    question.text = newText.trim();
+
+                    // Update in selected questions if present
+                    const selectedIndex = selectedQuestions.findIndex(q => q.uri === questionUri);
+                    if (selectedIndex > -1) {
+                        selectedQuestions[selectedIndex].text = newText.trim();
+                    }
+
+                    displayItems();
+                    updateUI();
+                    showStatus('✅ Testo domanda modificato', 'success');
+                    return true;
+                }
+            );
+        }
+
+        // === EDIT TEXT MODAL FUNCTIONS ===
+
+        let editTextCallback = null;
+
+        function openEditTextModal(title, label, currentText, callback) {
+            document.getElementById('editTextModalTitle').textContent = title;
+            document.getElementById('editTextLabel').textContent = label;
+            document.getElementById('editTextArea').value = currentText;
+            updateCharCount();
+
+            editTextCallback = callback;
+
+            document.getElementById('editTextModal').style.display = 'block';
+            document.getElementById('editTextArea').focus();
+        }
+
+        function closeEditTextModal() {
+            document.getElementById('editTextModal').style.display = 'none';
+            editTextCallback = null;
+        }
+
+        function saveEditText() {
+            const newText = document.getElementById('editTextArea').value;
+
+            if (editTextCallback) {
+                const result = editTextCallback(newText);
+                // Se callback ritorna false, non chiudere il modal
+                if (result !== false) {
+                    closeEditTextModal();
+                }
+            } else {
+                closeEditTextModal();
+            }
+        }
+
+        function updateCharCount() {
+            const textarea = document.getElementById('editTextArea');
+            const count = document.getElementById('editTextCharCount');
+            if (textarea && count) {
+                count.textContent = textarea.value.length;
+            }
+        }
+
+        // Character count update on typing
+        document.addEventListener('DOMContentLoaded', function() {
+            const textarea = document.getElementById('editTextArea');
+            if (textarea) {
+                textarea.addEventListener('input', updateCharCount);
+            }
+        });
+
+        function toggleGroup(group) {
+            const index = selectedGroups.findIndex(g => g.uri === group.uri);
+            if (index > -1) {
+                selectedGroups.splice(index, 1);
+                selectedQuestions.forEach(q => {
+                    if (q.groupUri === group.uri) {
+                        delete q.groupUri;
+                    }
+                });
+            } else {
+                group.order = selectedGroups.length + 1;
+                selectedGroups.push(group);
+                if (group.questions && group.questions.length > 0) {
+                    group.questions.forEach(q => {
+                        if (!selectedQuestions.find(sq => sq.uri === q.uri)) {
+                            q.order = selectedQuestions.length + 1;
+                            q.groupUri = group.uri;
+                            selectedQuestions.push(q);
+                        }
+                    });
+                }
+            }
+            updateUI();
+        }
+
+        function toggleQuestion(question) {
+            const index = selectedQuestions.findIndex(q => q.uri === question.uri);
+            if (index > -1) {
+                selectedQuestions.splice(index, 1);
+            } else {
+                question.order = selectedQuestions.length + 1;
+                selectedQuestions.push(question);
+            }
+            updateUI();
+        }
+
+        function updateUI() {
+            allGroups.forEach(group => {
+                const groupEl = document.getElementById(`group-${group.uri}`);
+                if (groupEl) {
+                    if (selectedGroups.find(g => g.uri === group.uri)) {
+                        groupEl.classList.add('selected');
+                    } else {
+                        groupEl.classList.remove('selected');
+                    }
+                }
+
+                if (group.questions) {
+                    group.questions.forEach(q => {
+                        const qEl = document.getElementById(`question-${q.uri}`);
+                        if (qEl) {
+                            if (selectedQuestions.find(sq => sq.uri === q.uri)) {
+                                qEl.classList.add('selected');
+                            } else {
+                                qEl.classList.remove('selected');
+                            }
+                        }
+                    });
+                }
+            });
+
+            updateSelectedChips();
+            updatePreview();
+            updateExports();
+        }
+
+        function updateSelectedChips() {
+            const container = document.getElementById('selectedItems');
+            const chips = document.getElementById('selectedChips');
+
+            if (selectedGroups.length === 0 && selectedQuestions.length === 0) {
+                container.style.display = 'none';
+                return;
+            }
+
+            container.style.display = 'block';
+            chips.innerHTML = '';
+
+            selectedGroups.forEach(g => {
+                const groupChip = document.createElement('span');
+                groupChip.className = 'selected-chip';
+                groupChip.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                groupChip.style.color = 'white';
+                groupChip.style.fontWeight = 'bold';
+                groupChip.textContent = `📁 ${g.name}`;
+                chips.appendChild(groupChip);
+
+                const groupQuestions = selectedQuestions.filter(q => q.groupUri === g.uri);
+                groupQuestions.forEach(q => {
+                    const qChip = document.createElement('span');
+                    qChip.className = 'selected-chip';
+                    qChip.style.background = 'white';
+                    qChip.style.border = '2px solid #764ba2';
+                    qChip.style.color = '#764ba2';
+                    qChip.style.marginLeft = '20px';
+                    qChip.textContent = `└─ Q${q.id}`;
+                    chips.appendChild(qChip);
+                });
+            });
+
+            const standaloneQuestions = selectedQuestions.filter(q =>
+                !q.groupUri || !selectedGroups.find(g => g.uri === q.groupUri)
+            );
+
+            if (standaloneQuestions.length > 0) {
+                const separator = document.createElement('div');
+                separator.style.width = '100%';
+                separator.style.borderTop = '1px dashed #ccc';
+                separator.style.margin = '8px 0';
+                chips.appendChild(separator);
+
+                const standaloneLabel = document.createElement('span');
+                standaloneLabel.className = 'selected-chip';
+                standaloneLabel.style.background = '#ffc107';
+                standaloneLabel.style.color = '#856404';
+                standaloneLabel.style.fontWeight = 'bold';
+                standaloneLabel.textContent = '⚠️ Senza gruppo';
+                chips.appendChild(standaloneLabel);
+
+                standaloneQuestions.forEach(q => {
+                    const chip = document.createElement('span');
+                    chip.className = 'selected-chip';
+                    chip.style.background = 'white';
+                    chip.style.border = '2px solid #ffc107';
+                    chip.style.color = '#856404';
+                    chip.textContent = `❓ Q${q.id}`;
+                    chips.appendChild(chip);
+                });
+            }
+        }
+
+        function updatePreview() {
+            const container = document.getElementById('previewContent');
+
+            if (selectedGroups.length === 0 && selectedQuestions.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📝</div>
+                        <p>Seleziona gruppi o domande</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '<div id="sortableContainer">';
+
+            selectedGroups.forEach((group, groupIndex) => {
+                const groupQuestions = selectedQuestions.filter(q => q.groupUri === group.uri);
+                const isExpanded = group.previewExpanded !== false;
+
+                html += `
+                    <div class="preview-group draggable" draggable="true" data-type="group" data-uri="${group.uri}" data-index="${groupIndex}">
+                        <div class="preview-group-header">
+                            <div style="display: flex; align-items: center;">
+                                <span class="drag-handle">⋮⋮</span>
+                                ${groupQuestions.length > 0 ? `
+                                    <span class="expand-icon ${isExpanded ? 'expanded' : ''}"
+                                          id="preview-expand-${groupIndex}"
+                                          onclick="togglePreviewGroupExpand(event, '${group.uri}')"
+                                          style="cursor: pointer; margin-right: 8px; transition: transform 0.3s; display: inline-block; font-weight: bold; color: #667eea;">
+                                        ${isExpanded ? '▼' : '▶'}
+                                    </span>
+                                ` : ''}
+                                <div class="preview-group-title">📁 ${group.name}</div>
+                                <span class="order-badge">#${group.order || groupIndex + 1}</span>
+                                ${groupQuestions.length > 0 ? `<span class="question-count">${groupQuestions.length} Q</span>` : ''}
+                            </div>
+                            <button class="btn-remove" onclick="removeGroup('${group.uri}')">✕</button>
+                        </div>
+                        <p style="color: #666; margin-bottom: 10px;">${group.description}</p>
+
+                        <div class="group-questions-container"
+                             data-group-uri="${group.uri}"
+                             id="preview-questions-${groupIndex}"
+                             style="margin-left: 20px; margin-top: 10px; display: ${isExpanded ? 'block' : 'none'};">
+                `;
+
+                if (groupQuestions.length === 0) {
+                    html += `
+                        <div class="drop-zone" data-group-uri="${group.uri}" style="display: block; opacity: 0.5;">
+                            📥 Trascina qui le domande per aggiungerle a questo gruppo
+                        </div>
+                    `;
+                } else {
+                    groupQuestions.forEach((q, qIndex) => {
+                        html += `
+                            <div class="preview-question draggable" draggable="true" data-type="question" data-uri="${q.uri}" data-group-uri="${group.uri}" data-index="${qIndex}">
+                                <div style="display: flex; justify-content: space-between; align-items: start;">
+                                    <div style="display: flex; align-items: start; flex: 1;">
+                                        <span class="drag-handle">⋮⋮</span>
+                                        <div>
+                                            <div class="preview-question-text"><strong>Q${q.id}.</strong> ${q.text}</div>
+                                            <div style="color: #999; font-size: 0.85em; margin-top: 5px;">
+                                                Variable: ${q.variableCod}
+                                                <span class="order-badge">#${q.order || qIndex + 1}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn-remove" onclick="removeQuestion('${q.uri}')">✕</button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+
+            const standaloneQuestions = selectedQuestions.filter(q => !q.groupUri || !selectedGroups.find(g => g.uri === q.groupUri));
+
+            if (standaloneQuestions.length > 0) {
+                html += `
+                    <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border-radius: 10px; border-left: 4px solid #ffc107;">
+                        <h4 style="color: #856404; margin-bottom: 10px;">⚠️ Domande senza gruppo</h4>
+                `;
+
+                standaloneQuestions.forEach((q, index) => {
+                    html += `
+                        <div class="preview-question draggable" draggable="true" data-type="question" data-uri="${q.uri}" data-index="${index}">
+                            <div style="display: flex; justify-content: space-between; align-items: start;">
+                                <div style="display: flex; align-items: start; flex: 1;">
+                                    <span class="drag-handle">⋮⋮</span>
+                                    <div>
+                                        <div class="preview-question-text"><strong>Q${q.id}.</strong> ${q.text}</div>
+                                        <div style="color: #999; font-size: 0.85em; margin-top: 5px;">
+                                            Variable: ${q.variableCod}
+                                            <span class="order-badge">#${q.order || index + 1}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn-remove" onclick="removeQuestion('${q.uri}')">✕</button>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `</div>`;
+            }
+
+            html += '</div>';
+            container.innerHTML = html;
+            enableDragAndDrop();
+        }
+
+        function togglePreviewGroupExpand(event, groupUri) {
+            event.stopPropagation();
+            const group = selectedGroups.find(g => g.uri === groupUri);
+            if (!group) return;
+            group.previewExpanded = group.previewExpanded === false ? true : false;
+            updatePreview();
+        }
+
+        function enableDragAndDrop() {
+            const draggables = document.querySelectorAll('.draggable');
+            const dropZones = document.querySelectorAll('.drop-zone');
+
+            draggables.forEach(draggable => {
+                draggable.addEventListener('dragstart', handleDragStart);
+                draggable.addEventListener('dragend', handleDragEnd);
+                draggable.addEventListener('dragover', handleDragOver);
+                draggable.addEventListener('drop', handleDrop);
+                draggable.addEventListener('dragenter', handleDragEnter);
+                draggable.addEventListener('dragleave', handleDragLeave);
+            });
+
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', handleDragOver);
+                zone.addEventListener('drop', handleDropInZone);
+                zone.addEventListener('dragenter', function(e) {
+                    this.style.background = '#c3f0c3';
+                    this.style.borderColor = '#28a745';
+                });
+                zone.addEventListener('dragleave', function(e) {
+                    this.style.background = '#e8f5e9';
+                    this.style.borderColor = '#28a745';
+                });
+            });
+        }
+
+        function handleDragStart(e) {
+            draggedElement = this;
+            this.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/html', this.innerHTML);
+        }
+
+        function handleDragEnd(e) {
+            this.classList.remove('dragging');
+            document.querySelectorAll('.draggable').forEach(el => {
+                el.style.borderTop = '';
+                el.style.borderBottom = '';
+            });
+        }
+
+        function handleDragOver(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+            e.dataTransfer.dropEffect = 'move';
+            return false;
+        }
+
+        function handleDragEnter(e) {
+            if (this !== draggedElement) {
+                this.style.borderTop = '3px solid #667eea';
+            }
+        }
+
+        function handleDragLeave(e) {
+            this.style.borderTop = '';
+        }
+
+        function handleDrop(e) {
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            }
+
+            if (!draggedElement || draggedElement === this) {
+                return false;
+            }
+
+            const draggedType = draggedElement.dataset.type;
+            const draggedUri = draggedElement.dataset.uri;
+            const targetType = this.dataset.type;
+            const targetUri = this.dataset.uri;
+
+            if (draggedType === 'group' && targetType === 'group') {
+                const draggedIndex = selectedGroups.findIndex(g => g.uri === draggedUri);
+                const targetIndex = selectedGroups.findIndex(g => g.uri === targetUri);
+                const [removed] = selectedGroups.splice(draggedIndex, 1);
+                selectedGroups.splice(targetIndex, 0, removed);
+                selectedGroups.forEach((g, idx) => g.order = idx + 1);
+            }
+            else if (draggedType === 'question' && targetType === 'question') {
+                const draggedIndex = selectedQuestions.findIndex(q => q.uri === draggedUri);
+                const targetIndex = selectedQuestions.findIndex(q => q.uri === targetUri);
+                const targetGroupUri = this.dataset.groupUri;
+                const [removed] = selectedQuestions.splice(draggedIndex, 1);
+                selectedQuestions.splice(targetIndex, 0, removed);
+                if (targetGroupUri) {
+                    removed.groupUri = targetGroupUri;
+                } else {
+                    delete removed.groupUri;
+                }
+                selectedQuestions.forEach((q, idx) => q.order = idx + 1);
+            }
+            else if (draggedType === 'question' && targetType === 'group') {
+                const question = selectedQuestions.find(q => q.uri === draggedUri);
+                if (question) {
+                    question.groupUri = targetUri;
+                }
+            }
+
+            updateUI();
+            return false;
+        }
+
+        function handleDropInZone(e) {
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            }
+
+            const groupUri = this.dataset.groupUri;
+            const draggedType = draggedElement.dataset.type;
+            const draggedUri = draggedElement.dataset.uri;
+
+            if (draggedType === 'question') {
+                const question = selectedQuestions.find(q => q.uri === draggedUri);
+                if (question) {
+                    question.groupUri = groupUri;
+                    updateUI();
+                }
+            }
+
+            return false;
+        }
+
+        async function updateExports() {
+            const data = {
+                groups: selectedGroups,
+                questions: selectedQuestions
+            };
+
+            const jsonResp = await fetch('/api/export/json', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const jsonData = await jsonResp.json();
+            document.getElementById('jsonOutput').textContent = jsonData.data;
+
+            const csvResp = await fetch('/api/export/csv', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const csvData = await csvResp.json();
+            document.getElementById('csvOutput').textContent = csvData.data;
+        }
+
+        function removeGroup(uri) {
+            selectedGroups = selectedGroups.filter(g => g.uri !== uri);
+            updateUI();
+        }
+
+        function removeQuestion(uri) {
+            selectedQuestions = selectedQuestions.filter(q => q.uri !== uri);
+            updateUI();
+        }
+
+        function clearSelection() {
+            selectedGroups = [];
+            selectedQuestions = [];
+            updateUI();
+            showStatus('✅ Selezione cancellata', 'success');
+        }
+
+        function selectAllGroups() {
+            selectedGroups = [...allGroups];
+            updateUI();
+            showStatus(`✅ Selezionati ${allGroups.length} gruppi`, 'success');
+        }
+
+        async function exportSurvey() {
+            if (selectedGroups.length === 0 && selectedQuestions.length === 0) {
+                showStatus('⚠️ Seleziona almeno un elemento', 'error');
+                return;
+            }
+
+            const data = {
+                groups: selectedGroups,
+                questions: selectedQuestions
+            };
+
+            const jsonResp = await fetch('/api/download/json', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const jsonBlob = await jsonResp.blob();
+            downloadBlob(jsonBlob, 'survey_export.json');
+
+            const csvResp = await fetch('/api/download/csv', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const csvBlob = await csvResp.blob();
+            downloadBlob(csvBlob, 'survey_export.csv');
+
+            showStatus('✅ Export completato!', 'success');
+        }
+
+        function downloadBlob(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function filterItems() {
+            const search = document.getElementById('searchBox').value.toLowerCase().trim();
+
+            if (search === '') {
+                document.querySelectorAll('.group-item, .question-item').forEach(el => {
+                    el.style.display = 'block';
+                });
+                return;
+            }
+
+            document.querySelectorAll('.group-item').forEach((el, index) => {
+                if (index < allGroups.length) {
+                    const group = allGroups[index];
+                    const searchableText = `${group.name} ${group.description} ${group.id}`.toLowerCase();
+                    el.style.display = searchableText.includes(search) ? 'block' : 'none';
+                }
+            });
+
+            document.querySelectorAll('.question-item').forEach((el, index) => {
+                if (index < allQuestions.length) {
+                    const question = allQuestions[index];
+                    const searchableText = `${question.text} ${question.variableCod} ${question.id}`.toLowerCase();
+                    el.style.display = searchableText.includes(search) ? 'block' : 'none';
+                }
+            });
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById(tab).classList.add('active');
+        }
+
+        function showStatus(message, type) {
+            const el = document.getElementById('statusMessage');
+            el.textContent = message;
+            el.className = `status-message ${type}`;
+            el.style.display = 'block';
+            setTimeout(() => el.style.display = 'none', 5000);
+        }
+
+        // === IMPORT .lsq FUNCTIONS ===
+
+        function showImportLsqModal() {
+            // Popola dropdown gruppi
+            const select = document.getElementById('lsqTargetGroup');
+            select.innerHTML = '<option value="">-- Seleziona gruppo --</option>';
+
+            selectedGroups.forEach(g => {
+                const option = document.createElement('option');
+                option.value = JSON.stringify({uri: g.uri, name: g.name});
+                option.textContent = `📁 ${g.name}`;
+                select.appendChild(option);
+            });
+
+            if (selectedGroups.length === 0) {
+                select.innerHTML = '<option value="">⚠️ Seleziona prima almeno un gruppo</option>';
+                document.getElementById('importLsqBtn').disabled = true;
+            } else {
+                document.getElementById('importLsqBtn').disabled = false;
+            }
+
+            // Reset file input
+            document.getElementById('lsqFileInput').value = '';
+            document.getElementById('lsqFilesList').style.display = 'none';
+            document.getElementById('lsqImportStatus').style.display = 'none';
+
+            document.getElementById('importLsqModal').style.display = 'block';
+        }
+
+        function closeImportLsqModal() {
+            document.getElementById('importLsqModal').style.display = 'none';
+        }
+
+        // Event listener per visualizzare file selezionati
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.getElementById('lsqFileInput');
+            if (fileInput) {
+                fileInput.addEventListener('change', function(e) {
+                    const files = e.target.files;
+                    const listDiv = document.getElementById('lsqFilesList');
+                    const contentDiv = document.getElementById('lsqFilesContent');
+
+                    if (files.length > 0) {
+                        listDiv.style.display = 'block';
+                        contentDiv.innerHTML = '';
+
+                        Array.from(files).forEach(file => {
+                            const fileItem = document.createElement('div');
+                            fileItem.style.padding = '8px';
+                            fileItem.style.background = '#f0f0f0';
+                            fileItem.style.borderRadius = '5px';
+                            fileItem.style.marginBottom = '5px';
+                            fileItem.innerHTML = `📄 ${file.name} <span style="color: #999;">(${(file.size / 1024).toFixed(1)} KB)</span>`;
+                            contentDiv.appendChild(fileItem);
+                        });
+                    } else {
+                        listDiv.style.display = 'none';
+                    }
+                });
+            }
+        });
+
+        async function importLsqFiles() {
+            const fileInput = document.getElementById('lsqFileInput');
+            const targetGroupSelect = document.getElementById('lsqTargetGroup');
+            const statusDiv = document.getElementById('lsqImportStatus');
+            const importBtn = document.getElementById('importLsqBtn');
+
+            const files = fileInput.files;
+            const targetGroupJson = targetGroupSelect.value;
+
+            if (files.length === 0) {
+                alert('⚠️ Seleziona almeno un file .lsq!');
+                return;
+            }
+
+            if (!targetGroupJson) {
+                alert('⚠️ Seleziona un gruppo di destinazione!');
+                return;
+            }
+
+            const targetGroup = JSON.parse(targetGroupJson);
+
+            // Chiedi conferma
+            const confirmMsg = `Vuoi importare ${files.length} domanda/e nel gruppo "${targetGroup.name}"?\n\nLe domande verranno aggiunte al gruppo selezionato.`;
+            if (!confirm(confirmMsg)) {
+                return;
+            }
+
+            importBtn.disabled = true;
+            importBtn.textContent = '⏳ Importazione...';
+
+            statusDiv.className = 'status-message info';
+            statusDiv.textContent = `📤 Importazione di ${files.length} file in corso...`;
+            statusDiv.style.display = 'block';
+
+            let successCount = 0;
+            let errorCount = 0;
+            const errors = [];
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+
+                try {
+                    statusDiv.textContent = `📤 Importazione ${i + 1}/${files.length}: ${file.name}...`;
+
+                    // Leggi file come testo
+                    const fileContent = await readFileAsText(file);
+
+                    // Converti in Base64
+                    const base64Content = btoa(unescape(encodeURIComponent(fileContent)));
+
+                    // Chiama API per importare
+                    const result = await importSingleLsqQuestion(
+                        targetGroup.uri,
+                        targetGroup.name,
+                        base64Content,
+                        file.name
+                    );
+
+                    if (result.success) {
+                        successCount++;
+                    } else {
+                        errorCount++;
+                        errors.push(`${file.name}: ${result.error}`);
+                    }
+
+                } catch (error) {
+                    errorCount++;
+                    errors.push(`${file.name}: ${error.message}`);
+                    console.error(`Error importing ${file.name}:`, error);
+                }
+            }
+
+            // Mostra risultato finale
+            if (errorCount === 0) {
+                statusDiv.className = 'status-message success';
+                statusDiv.textContent = `✅ ${successCount} domanda/e importata/e con successo!`;
+
+                // Ricarica dati da GraphDB per vedere le nuove domande
+                setTimeout(() => {
+                    closeImportLsqModal();
+                    connectToGraphDB();
+                }, 2000);
+            } else {
+                statusDiv.className = 'status-message error';
+                statusDiv.innerHTML = `⚠️ Importazione completata con errori:<br>✅ Successi: ${successCount}<br>❌ Errori: ${errorCount}<br><br>${errors.join('<br>')}`;
+            }
+
+            importBtn.disabled = false;
+            importBtn.textContent = '📤 Importa Domande';
+        }
+
+        function readFileAsText(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = (e) => resolve(e.target.result);
+                reader.onerror = (e) => reject(new Error('Errore lettura file'));
+                reader.readAsText(file);
+            });
+        }
+
+        async function importSingleLsqQuestion(groupUri, groupName, base64Data, fileName) {
+            try {
+                // Qui dovresti chiamare il backend che a sua volta chiama import_question di LimeSurvey
+                // Per ora simulo l'import creando una domanda nel gruppo
+
+                const response = await fetch('/api/limesurvey/import_question', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        groupUri: groupUri,
+                        base64Data: base64Data,
+                        fileName: fileName
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    return { success: true };
+                } else {
+                    return { success: false, error: data.message || 'Errore sconosciuto' };
+                }
+
+            } catch (error) {
+                return { success: false, error: error.message };
+            }
+        }
+    </script>
+</body>
+</html>

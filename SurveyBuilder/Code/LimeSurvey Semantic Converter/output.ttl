@@ -1,0 +1,1854 @@
+@prefix ns1: <https://w3id.org/fossr/ontology/limesurvey/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/limesurvey/question_397> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_397> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_397> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_397> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVer01> .
+
+<http://example.org/limesurvey/question_398> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_398> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_398> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_398> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVer02> .
+
+<http://example.org/limesurvey/question_399> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_399> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_399> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_399> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_Q> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVer02x1> .
+
+<http://example.org/limesurvey/question_400> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_400> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_400> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_400> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_D> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVer03x1> .
+
+<http://example.org/limesurvey/question_401> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_401> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_401> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_401> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe01> .
+
+<http://example.org/limesurvey/question_402> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_402> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_402> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_402> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_N> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe02> .
+
+<http://example.org/limesurvey/question_403> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_403> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_403> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_403> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe03> .
+
+<http://example.org/limesurvey/question_404> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_404> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_404> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_404> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_Q> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe03x1> .
+
+<http://example.org/limesurvey/question_405> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_405> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_405> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_405> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe03x2> .
+
+<http://example.org/limesurvey/question_406> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_406> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_406> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_406> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe04> .
+
+<http://example.org/limesurvey/question_407> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_407> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_407> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_407> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_N> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe05> .
+
+<http://example.org/limesurvey/question_408> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_408> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_408> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_408> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe06> .
+
+<http://example.org/limesurvey/question_409> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_409> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_409> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_409> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_%21> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe06x1> .
+
+<http://example.org/limesurvey/question_410> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_410> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_410> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_410> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe07> .
+
+<http://example.org/limesurvey/question_411> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_411> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_411> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_411> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_%21> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe07x1> .
+
+<http://example.org/limesurvey/question_412> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_412> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_412> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_412> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe08> .
+
+<http://example.org/limesurvey/question_413> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_413> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_413> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_413> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe09> .
+
+<http://example.org/limesurvey/question_414> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_414> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_414> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_414> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_%21> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe08x1> .
+
+<http://example.org/limesurvey/question_415> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_415> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_415> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_415> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_%21> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe09x1> .
+
+<http://example.org/limesurvey/question_416> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_416> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_416> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_416> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_%3B> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe10> .
+
+<http://example.org/limesurvey/question_417> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_417> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_417> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_417> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe11> .
+
+<http://example.org/limesurvey/question_418> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_418> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_418> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_418> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe12> .
+
+<http://example.org/limesurvey/question_419> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_419> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_419> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_419> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe13> .
+
+<http://example.org/limesurvey/question_420> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_420> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_420> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_420> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe13x1> .
+
+<http://example.org/limesurvey/question_421> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_421> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_421> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_421> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01> .
+
+<http://example.org/limesurvey/question_422> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_422> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_422> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_422> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_M> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x2> .
+
+<http://example.org/limesurvey/question_423> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_423> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_423> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_423> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x1> .
+
+<http://example.org/limesurvey/question_424> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_424> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_424> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_424> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_M> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x3> .
+
+<http://example.org/limesurvey/question_425> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_425> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_425> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_425> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x4> .
+
+<http://example.org/limesurvey/question_426> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_426> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_426> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_426> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE02> .
+
+<http://example.org/limesurvey/question_427> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_427> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_427> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_427> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE03> .
+
+<http://example.org/limesurvey/question_428> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_428> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_428> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_428> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE04> .
+
+<http://example.org/limesurvey/question_429> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_429> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_429> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_429> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_M> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE04x1> .
+
+<http://example.org/limesurvey/question_430> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_430> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_430> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_430> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE05> .
+
+<http://example.org/limesurvey/question_431> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_431> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_431> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_431> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea01> .
+
+<http://example.org/limesurvey/question_432> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_432> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_432> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_432> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea02> .
+
+<http://example.org/limesurvey/question_433> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_433> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_433> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_433> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea03> .
+
+<http://example.org/limesurvey/question_434> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_434> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_434> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_434> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea04> .
+
+<http://example.org/limesurvey/question_435> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_435> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_34> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_435> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_435> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RPIn01> .
+
+<http://example.org/limesurvey/question_436> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_436> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_34> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_436> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_436> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RPIn02> .
+
+<http://example.org/limesurvey/question_437> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_437> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_437> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_437> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal01> .
+
+<http://example.org/limesurvey/question_438> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_438> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_438> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_438> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal02> .
+
+<http://example.org/limesurvey/question_439> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_439> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_439> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_439> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_M> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03> .
+
+<http://example.org/limesurvey/question_440> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_440> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_440> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_440> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru01> .
+
+<http://example.org/limesurvey/question_441> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_441> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_441> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_441> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru02> .
+
+<http://example.org/limesurvey/question_442> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_442> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_442> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_442> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru03> .
+
+<http://example.org/limesurvey/question_443> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_443> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_37> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_443> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_443> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RPOr01> .
+
+<http://example.org/limesurvey/question_444> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_444> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_37> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_444> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_444> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RPOr02> .
+
+<http://example.org/limesurvey/question_445> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_445> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_38> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_445> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_445> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSAt01> .
+
+<http://example.org/limesurvey/question_446> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_446> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_38> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_446> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_446> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSAt02> .
+
+<http://example.org/limesurvey/question_447> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_447> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_39> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_447> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_447> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RRec01> .
+
+<http://example.org/limesurvey/question_448> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_448> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_39> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_448> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_448> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RRec01x2> .
+
+<http://example.org/limesurvey/question_449> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_449> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_40> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_449> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_449> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_X> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_V0000> .
+
+<http://example.org/limesurvey/question_450> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_450> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_39> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_450> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_450> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_Q> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RRec02> .
+
+<http://example.org/limesurvey/question_451> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_451> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_39> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_451> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_451> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RRec01x3> .
+
+<http://example.org/limesurvey/question_452> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_452> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_39> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_452> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_452> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RRec01x4> .
+
+<http://example.org/limesurvey/question_453> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_453> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_40> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_453> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_453> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_X> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_V0001> .
+
+<http://example.org/limesurvey/question_454> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_454> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_454> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_454> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_Q> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVer01x1> .
+
+<http://example.org/limesurvey/question_455> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_455> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_455> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_455> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVer04> .
+
+<http://example.org/limesurvey/question_456> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_456> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_456> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_456> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVer03> .
+
+<http://example.org/limesurvey/question_457> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_457> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_39> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_457> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_457> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_X> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_V1001x1> .
+
+<http://example.org/limesurvey/question_458> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_458> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_458> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_458> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_Q> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVer02x2> .
+
+<http://example.org/limesurvey/question_459> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_459> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_459> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_459> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVer02x3> .
+
+<http://example.org/limesurvey/question_460> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_460> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_460> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_460> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_Q> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVer02x4> .
+
+<http://example.org/limesurvey/question_461> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_461> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_461> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_461> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_N> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe02x1> .
+
+<http://example.org/limesurvey/question_462> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_462> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_39> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_462> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_462> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RRec01x5> .
+
+<http://example.org/limesurvey/question_463> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_463> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_41> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_463> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_463> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_M> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_CONSENT> .
+
+<http://example.org/limesurvey/question_464> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_464> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_42> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_464> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_464> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_M> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_CONSENTREC> .
+
+<http://example.org/limesurvey/question_465> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_465> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_42> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_465> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_465> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_M> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_CONSENTREC01> .
+
+<http://example.org/limesurvey/question_466> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_466> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_466> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_466> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea02Esp1> .
+
+<http://example.org/limesurvey/question_467> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_467> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_467> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_467> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea02Esp2> .
+
+<http://example.org/limesurvey/question_468> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_468> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_468> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_468> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea02Esp3> .
+
+<http://example.org/limesurvey/question_469> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_469> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_469> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_469> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru01Esp1> .
+
+<http://example.org/limesurvey/question_470> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_470> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_470> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_470> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru01Esp2> .
+
+<http://example.org/limesurvey/question_471> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_471> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_471> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_471> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_F> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru01Esp3> .
+
+<http://example.org/limesurvey/question_472> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_472> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_472> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_472> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe11Esp1> .
+
+<http://example.org/limesurvey/question_473> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_473> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_473> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_473> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe11Esp2> .
+
+<http://example.org/limesurvey/question_474> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_474> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_474> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_474> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe11Esp3> .
+
+<http://example.org/limesurvey/question_475> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_475> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_475> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_475> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea02Esp3b> .
+
+<http://example.org/limesurvey/question_476> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_476> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_476> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_476> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru01Esp3b> .
+
+<http://example.org/limesurvey/question_477> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_477> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_477> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_477> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSDe11Esp3B> .
+
+<http://example.org/limesurvey/question_478> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_478> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_39> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_478> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_478> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_L> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RRec01x3bis> .
+
+<http://example.org/limesurvey/question_479> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_479> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_39> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_479> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_479> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_S> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RRec01x3tris> .
+
+<http://example.org/limesurvey/question_480> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_480> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_480> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_480> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_IND> .
+
+<http://example.org/limesurvey/question_481> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_481> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_481> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_481> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_CAP> .
+
+<http://example.org/limesurvey/question_482> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_482> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_482> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_482> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ001> .
+
+<http://example.org/limesurvey/question_483> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_483> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_483> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_483> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ002> .
+
+<http://example.org/limesurvey/question_484> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_484> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_484> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_484> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ003> .
+
+<http://example.org/limesurvey/question_485> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_485> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_485> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_485> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ004> .
+
+<http://example.org/limesurvey/question_486> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_486> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_486> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_486> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ005> .
+
+<http://example.org/limesurvey/question_487> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_487> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_487> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_487> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ006> .
+
+<http://example.org/limesurvey/question_488> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_488> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_488> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_488> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ001> .
+
+<http://example.org/limesurvey/question_489> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_489> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_489> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_489> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ002> .
+
+<http://example.org/limesurvey/question_490> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_490> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_490> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_490> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ003> .
+
+<http://example.org/limesurvey/question_491> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_491> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_491> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_491> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ004> .
+
+<http://example.org/limesurvey/question_492> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_492> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_492> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_492> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ005> .
+
+<http://example.org/limesurvey/question_493> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_493> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_493> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_493> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x401> .
+
+<http://example.org/limesurvey/question_494> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_494> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_494> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_494> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x402> .
+
+<http://example.org/limesurvey/question_495> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_495> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_495> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_495> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x403> .
+
+<http://example.org/limesurvey/question_496> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_496> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_496> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_496> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x404> .
+
+<http://example.org/limesurvey/question_497> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_497> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_497> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_497> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x405> .
+
+<http://example.org/limesurvey/question_498> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_498> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_498> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_498> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x406> .
+
+<http://example.org/limesurvey/question_499> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_499> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_499> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_499> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x407> .
+
+<http://example.org/limesurvey/question_500> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_500> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_500> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_500> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x408> .
+
+<http://example.org/limesurvey/question_501> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_501> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_501> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_501> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x409> .
+
+<http://example.org/limesurvey/question_502> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_502> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_502> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_502> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE01x410> .
+
+<http://example.org/limesurvey/question_503> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_503> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_503> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_503> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE02x1> .
+
+<http://example.org/limesurvey/question_504> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_504> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_504> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_504> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE02x2> .
+
+<http://example.org/limesurvey/question_505> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_505> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_505> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_505> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE02x3> .
+
+<http://example.org/limesurvey/question_506> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_506> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_506> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_506> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RITE02x4> .
+
+<http://example.org/limesurvey/question_507> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_507> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_507> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_507> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ001> .
+
+<http://example.org/limesurvey/question_508> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_508> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_508> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_508> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ002> .
+
+<http://example.org/limesurvey/question_509> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_509> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_509> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_509> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ003> .
+
+<http://example.org/limesurvey/question_510> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_510> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_510> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_510> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ004> .
+
+<http://example.org/limesurvey/question_511> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_511> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_511> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_511> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ005> .
+
+<http://example.org/limesurvey/question_512> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_512> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_512> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_512> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ007> .
+
+<http://example.org/limesurvey/question_513> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_513> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_513> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_513> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea01x1> .
+
+<http://example.org/limesurvey/question_514> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_514> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_514> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_514> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea02> .
+
+<http://example.org/limesurvey/question_515> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_515> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_515> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_515> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea03x1> .
+
+<http://example.org/limesurvey/question_516> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_516> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_516> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_516> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea03x2> .
+
+<http://example.org/limesurvey/question_517> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_517> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_517> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_517> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea03x3> .
+
+<http://example.org/limesurvey/question_518> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_518> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_518> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_518> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea03x4> .
+
+<http://example.org/limesurvey/question_519> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_519> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_34> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_519> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_519> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RPIn01x1> .
+
+<http://example.org/limesurvey/question_520> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_520> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_34> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_520> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_520> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RPIn01x2> .
+
+<http://example.org/limesurvey/question_521> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_521> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_34> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_521> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_521> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RPIn01x3> .
+
+<http://example.org/limesurvey/question_522> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_522> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_34> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_522> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_522> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RPIn01x4> .
+
+<http://example.org/limesurvey/question_523> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_523> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_34> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_523> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_523> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RPIn01x6> .
+
+<http://example.org/limesurvey/question_524> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_524> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_524> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_524> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal01x1> .
+
+<http://example.org/limesurvey/question_525> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_525> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_525> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_525> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal01x2> .
+
+<http://example.org/limesurvey/question_526> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_526> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_526> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_526> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal01x3> .
+
+<http://example.org/limesurvey/question_527> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_527> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_527> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_527> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal01x4> .
+
+<http://example.org/limesurvey/question_528> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_528> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_528> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_528> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal02x1> .
+
+<http://example.org/limesurvey/question_529> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_529> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_529> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_529> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal02x2> .
+
+<http://example.org/limesurvey/question_530> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_530> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_530> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_530> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal02x3> .
+
+<http://example.org/limesurvey/question_531> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_531> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_531> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_531> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal02x4> .
+
+<http://example.org/limesurvey/question_532> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_532> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_532> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_532> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ001> .
+
+<http://example.org/limesurvey/question_533> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_533> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_533> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_533> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru02x1> .
+
+<http://example.org/limesurvey/question_534> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_534> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_534> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_534> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru02x2> .
+
+<http://example.org/limesurvey/question_535> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_535> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_535> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_535> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru02x3> .
+
+<http://example.org/limesurvey/question_536> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_536> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_536> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_536> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru02x4> .
+
+<http://example.org/limesurvey/question_537> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_537> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_537> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_537> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru02x5> .
+
+<http://example.org/limesurvey/question_538> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_538> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_538> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_538> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RTru02x6> .
+
+<http://example.org/limesurvey/question_539> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_539> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_539> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_539> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ001> .
+
+<http://example.org/limesurvey/question_540> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_540> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_37> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_540> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_540> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ001> .
+
+<http://example.org/limesurvey/question_541> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_541> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_38> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_541> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_541> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSAt01x1> .
+
+<http://example.org/limesurvey/question_542> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_542> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_38> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_542> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_542> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSAt01x2> .
+
+<http://example.org/limesurvey/question_543> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_543> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_38> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_543> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_543> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSAt01x3> .
+
+<http://example.org/limesurvey/question_544> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_544> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_38> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_544> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_544> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSAt01x4> .
+
+<http://example.org/limesurvey/question_545> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_545> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_38> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_545> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_545> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSAt01x5> .
+
+<http://example.org/limesurvey/question_546> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_546> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_38> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_546> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_546> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSAt01x6> .
+
+<http://example.org/limesurvey/question_547> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_547> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_38> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_547> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_547> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSAt02x1> .
+
+<http://example.org/limesurvey/question_548> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_548> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_38> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_548> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_548> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSAt02x2> .
+
+<http://example.org/limesurvey/question_549> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_549> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_38> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_549> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_549> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSAt02x3> .
+
+<http://example.org/limesurvey/question_550> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_550> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_38> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_550> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_550> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RSAt02x4> .
+
+<http://example.org/limesurvey/question_551> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_551> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_39> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_551> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_551> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RRec02x1> .
+
+<http://example.org/limesurvey/question_552> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_552> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_39> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_552> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_552> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RRec02x2> .
+
+<http://example.org/limesurvey/question_553> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_553> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_553> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_553> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_PRIN> .
+
+<http://example.org/limesurvey/question_554> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_554> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_554> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_554> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_LING> .
+
+<http://example.org/limesurvey/question_555> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_555> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_555> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_555> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SECO> .
+
+<http://example.org/limesurvey/question_556> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_556> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_556> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_556> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03x1> .
+
+<http://example.org/limesurvey/question_557> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_557> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_557> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_557> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03x2> .
+
+<http://example.org/limesurvey/question_558> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_558> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_558> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_558> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03x3> .
+
+<http://example.org/limesurvey/question_559> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_559> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_559> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_559> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03x4> .
+
+<http://example.org/limesurvey/question_560> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_560> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_560> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_560> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03x5> .
+
+<http://example.org/limesurvey/question_561> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_561> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_561> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_561> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03x6> .
+
+<http://example.org/limesurvey/question_562> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_562> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_562> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_562> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03x7> .
+
+<http://example.org/limesurvey/question_563> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_563> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_563> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_563> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03x8> .
+
+<http://example.org/limesurvey/question_564> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_564> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_564> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_564> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03x9> .
+
+<http://example.org/limesurvey/question_565> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_565> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_565> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_565> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03x10> .
+
+<http://example.org/limesurvey/question_566> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_566> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_566> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_566> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03x11> .
+
+<http://example.org/limesurvey/question_567> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_567> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_567> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_567> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03x12> .
+
+<http://example.org/limesurvey/question_568> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_568> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_568> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_568> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03xNS> .
+
+<http://example.org/limesurvey/question_569> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_569> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_35> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_569> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_569> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RVal03xNR> .
+
+<http://example.org/limesurvey/question_570> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_570> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_570> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_570> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_Nome> .
+
+<http://example.org/limesurvey/question_571> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_571> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_571> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_571> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_Cognome> .
+
+<http://example.org/limesurvey/question_572> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_572> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_32> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_572> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_572> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ006> .
+
+<http://example.org/limesurvey/question_573> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_573> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_34> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_573> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_573> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RPIn01x5> .
+
+<http://example.org/limesurvey/question_574> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_574> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_574> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_574> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_IND> .
+
+<http://example.org/limesurvey/question_575> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_575> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_575> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_575> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_CAP> .
+
+<http://example.org/limesurvey/question_576> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_576> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_576> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_576> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_COM> .
+
+<http://example.org/limesurvey/question_578> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_578> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_578> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_578> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_TXT> .
+
+<http://example.org/limesurvey/question_579> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_579> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_41> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_579> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_579> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ001> .
+
+<http://example.org/limesurvey/question_580> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_580> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_42> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_580> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_580> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ001> .
+
+<http://example.org/limesurvey/question_581> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_581> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_42> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_581> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_581> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ001> .
+
+<http://example.org/limesurvey/question_582> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_582> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_582> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_582> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea02> .
+
+<http://example.org/limesurvey/question_583> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_583> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_583> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_583> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea02> .
+
+<http://example.org/limesurvey/question_584> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_584> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_33> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_584> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_584> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_RHea02> .
+
+<http://example.org/limesurvey/question_585> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_585> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_585> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_585> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ001> .
+
+<http://example.org/limesurvey/question_586> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_586> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_586> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_586> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ001> .
+
+<http://example.org/limesurvey/question_587> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_587> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_36> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_587> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_587> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_SQ001> .
+
+<http://example.org/limesurvey/question_588> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_588> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_588> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_588> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_COM> .
+
+<http://example.org/limesurvey/question_589> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_589> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_589> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_589> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_CMP> .
+
+<http://example.org/limesurvey/question_590> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_590> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_30> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_590> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_590> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_CMP> .
+
+<http://example.org/limesurvey/question_785> a ns1:Question ;
+    ns1:hasContent <http://example.org/limesurvey/content_question_785> ;
+    ns1:hasGroup <http://example.org/limesurvey/group_31> ;
+    ns1:hasId <http://example.org/limesurvey/identifier_question_785> ;
+    ns1:hasName <http://example.org/limesurvey/name_question_785> ;
+    ns1:hasSurveyId <http://example.org/limesurvey/identifier_survey_694511> ;
+    ns1:hasType <http://example.org/limesurvey/questiontype_T> ;
+    ns1:hasVariable <http://example.org/limesurvey/variable_COD> .
+
+<http://example.org/limesurvey/content_question_397> a ns1:Content .
+
+<http://example.org/limesurvey/content_question_463> a ns1:Content .
+
+<http://example.org/limesurvey/content_question_480> a ns1:Content .
+
+<http://example.org/limesurvey/content_question_481> a ns1:Content .
+
+<http://example.org/limesurvey/content_question_570> a ns1:Content .
+
+<http://example.org/limesurvey/content_question_571> a ns1:Content .
+
+<http://example.org/limesurvey/content_question_574> a ns1:Content .
+
+<http://example.org/limesurvey/content_question_579> a ns1:Content .
+
+<http://example.org/limesurvey/content_question_588> a ns1:Content .
+
+<http://example.org/limesurvey/identifier_question_397> a ns1:Identifier ;
+    ns1:id "397"^^xsd:int .
+
+<http://example.org/limesurvey/identifier_question_463> a ns1:Identifier ;
+    ns1:id "463"^^xsd:int .
+
+<http://example.org/limesurvey/identifier_question_480> a ns1:Identifier ;
+    ns1:id "480"^^xsd:int .
+
+<http://example.org/limesurvey/identifier_question_481> a ns1:Identifier ;
+    ns1:id "481"^^xsd:int .
+
+<http://example.org/limesurvey/identifier_question_570> a ns1:Identifier ;
+    ns1:id "570"^^xsd:int .
+
+<http://example.org/limesurvey/identifier_question_571> a ns1:Identifier ;
+    ns1:id "571"^^xsd:int .
+
+<http://example.org/limesurvey/identifier_question_574> a ns1:Identifier ;
+    ns1:id "574"^^xsd:int .
+
+<http://example.org/limesurvey/identifier_question_579> a ns1:Identifier ;
+    ns1:id "579"^^xsd:int .
+
+<http://example.org/limesurvey/identifier_question_588> a ns1:Identifier ;
+    ns1:id "588"^^xsd:int .
+
+<http://example.org/limesurvey/name_question_397> a ns1:Name ;
+    ns1:nameText "RVer01" .
+
+<http://example.org/limesurvey/name_question_463> a ns1:Name ;
+    ns1:nameText "CONSENT" .
+
+<http://example.org/limesurvey/name_question_480> a ns1:Name ;
+    ns1:nameText "IND" .
+
+<http://example.org/limesurvey/name_question_481> a ns1:Name ;
+    ns1:nameText "CAP" .
+
+<http://example.org/limesurvey/name_question_570> a ns1:Name ;
+    ns1:nameText "Nome" .
+
+<http://example.org/limesurvey/name_question_571> a ns1:Name ;
+    ns1:nameText "Cognome" .
+
+<http://example.org/limesurvey/name_question_574> a ns1:Name ;
+    ns1:nameText "IND" .
+
+<http://example.org/limesurvey/name_question_579> a ns1:Name ;
+    ns1:nameText "SQ001" .
+
+<http://example.org/limesurvey/name_question_588> a ns1:Name ;
+    ns1:nameText "COM" .
+
+<http://example.org/limesurvey/variable_CONSENT> a ns1:Variable ;
+    ns1:variableCod "CONSENT" .
+
+<http://example.org/limesurvey/variable_Cognome> a ns1:Variable ;
+    ns1:variableCod "Cognome" .
+
+<http://example.org/limesurvey/variable_Nome> a ns1:Variable ;
+    ns1:variableCod "Nome" .
+
+<http://example.org/limesurvey/variable_RVer01> a ns1:Variable ;
+    ns1:variableCod "RVer01" .
+
+<http://example.org/limesurvey/variable_CAP> a ns1:Variable ;
+    ns1:variableCod "CAP" .
+
+<http://example.org/limesurvey/variable_COM> a ns1:Variable ;
+    ns1:variableCod "COM" .
+
+<http://example.org/limesurvey/variable_IND> a ns1:Variable ;
+    ns1:variableCod "IND" .
+
+<http://example.org/limesurvey/questiontype_M> a ns1:QuestionType .
+
+<http://example.org/limesurvey/variable_SQ001> a ns1:Variable ;
+    ns1:variableCod "SQ001" .
+
+<http://example.org/limesurvey/questiontype_L> a ns1:QuestionType .
+
+<http://example.org/limesurvey/questiontype_T> a ns1:QuestionType .
+
+<http://example.org/limesurvey/identifier_survey_694511> a ns1:Identifier ;
+    ns1:id "694511"^^xsd:int .
+

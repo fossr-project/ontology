@@ -1,0 +1,2999 @@
+@prefix ls: <https://w3id.org/fossr/ontology/limesurvey/> .
+@prefix data: <https://w3id.org/fossr/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# ============================================
+# SURVEY
+# ============================================
+
+data:survey_001 a ls:Survey ;
+    ls:hasSurveyId data:id_survey_001 .
+
+data:id_survey_001 a ls:Identifier ;
+    ls:id 1 .
+
+# ============================================
+# QUESTION GROUPS
+# ============================================
+
+# Group 1 - General Information
+data:group_001 a ls:QuestionGroup ;
+    ls:hasId data:id_group_001 ;
+    ls:hasName data:name_group_001 ;
+    ls:hasContent data:content_group_001 .
+
+data:id_group_001 a ls:Identifier ;
+    ls:id 1 .
+
+data:name_group_001 a ls:Name ;
+    ls:nameText "General Information" .
+
+data:content_group_001 a ls:Content ;
+    ls:text "General information about the researcher" .
+
+# Group 2 - Archiving Research Data
+data:group_002 a ls:QuestionGroup ;
+    ls:hasId data:id_group_002 ;
+    ls:hasName data:name_group_002 ;
+    ls:hasContent data:content_group_002 .
+
+data:id_group_002 a ls:Identifier ;
+    ls:id 2 .
+
+data:name_group_002 a ls:Name ;
+    ls:nameText "Archiving Research Data" .
+
+data:content_group_002 a ls:Content ;
+    ls:text "Research data refers to all original data which you collected in the course of your research" .
+
+# Group 3 - Documentation and Metadata
+data:group_003 a ls:QuestionGroup ;
+    ls:hasId data:id_group_003 ;
+    ls:hasName data:name_group_003 ;
+    ls:hasContent data:content_group_003 .
+
+data:id_group_003 a ls:Identifier ;
+    ls:id 3 .
+
+data:name_group_003 a ls:Name ;
+    ls:nameText "Documentation and Metadata" .
+
+data:content_group_003 a ls:Content ;
+    ls:text "Documentation and metadata standards" .
+
+# Group 4 - Re-Use of Research Data
+data:group_004 a ls:QuestionGroup ;
+    ls:hasId data:id_group_004 ;
+    ls:hasName data:name_group_004 ;
+    ls:hasContent data:content_group_004 .
+
+data:id_group_004 a ls:Identifier ;
+    ls:id 4 .
+
+data:name_group_004 a ls:Name ;
+    ls:nameText "Re-Use of Research Data" .
+
+data:content_group_004 a ls:Content ;
+    ls:text "Re-using research data for new studies" .
+
+# Group 5 - Tools and Software
+data:group_005 a ls:QuestionGroup ;
+    ls:hasId data:id_group_005 ;
+    ls:hasName data:name_group_005 ;
+    ls:hasContent data:content_group_005 .
+
+data:id_group_005 a ls:Identifier ;
+    ls:id 5 .
+
+data:name_group_005 a ls:Name ;
+    ls:nameText "Tools and Software" .
+
+data:content_group_005 a ls:Content ;
+    ls:text "Software and tools used in research" .
+
+# Group 6 - Legal Aspects
+data:group_006 a ls:QuestionGroup ;
+    ls:hasId data:id_group_006 ;
+    ls:hasName data:name_group_006 ;
+    ls:hasContent data:content_group_006 .
+
+data:id_group_006 a ls:Identifier ;
+    ls:id 6 .
+
+data:name_group_006 a ls:Name ;
+    ls:nameText "Legal Aspects" .
+
+data:content_group_006 a ls:Content ;
+    ls:text "Legal and ethical aspects of data management" .
+
+# ============================================
+# QUESTION TYPES
+# ============================================
+
+data:type_S a ls:QuestionType ;
+    ls:code "S" .  # Short text
+
+data:type_L a ls:QuestionType ;
+    ls:code "L" .  # List (Radio)
+
+data:type_M a ls:QuestionType ;
+    ls:code "M" .  # Multiple choice
+
+# ============================================
+# GROUP 1 - GENERAL INFORMATION QUESTIONS
+# ============================================
+
+# Q1 - Your title
+data:question_001 a ls:Question ;
+    ls:hasId data:id_question_001 ;
+    ls:hasGroup data:group_001 ;
+    ls:hasType data:type_S ;
+    ls:hasVariable data:var_001 ;
+    ls:hasContent data:content_question_001 ;
+    ls:hasComponentAttribute data:attr_mandatory_001, data:attr_order_001 .
+
+data:id_question_001 a ls:Identifier ;
+    ls:id 1 .
+
+data:var_001 a ls:Variable ;
+    ls:variableCod "Q001title" .
+
+data:content_question_001 a ls:Content ;
+    ls:text "Your title (researcher, professor, doctoral student, post-doc…):" .
+
+data:attr_mandatory_001 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_001 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+# Q2 - Your institution
+data:question_002 a ls:Question ;
+    ls:hasId data:id_question_002 ;
+    ls:hasGroup data:group_001 ;
+    ls:hasType data:type_S ;
+    ls:hasVariable data:var_002 ;
+    ls:hasContent data:content_question_002 ;
+    ls:hasComponentAttribute data:attr_mandatory_002, data:attr_order_002 .
+
+data:id_question_002 a ls:Identifier ;
+    ls:id 2 .
+
+data:var_002 a ls:Variable ;
+    ls:variableCod "Q002institution" .
+
+data:content_question_002 a ls:Content ;
+    ls:text "Your institution and your research group / project / institute:" .
+
+data:attr_mandatory_002 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_002 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+# ============================================
+# GROUP 2 - ARCHIVING RESEARCH DATA QUESTIONS
+# ============================================
+
+# Q3 - Do you archive your research data?
+data:question_003 a ls:Question ;
+    ls:hasId data:id_question_003 ;
+    ls:hasGroup data:group_002 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_003 ;
+    ls:hasContent data:content_question_003 ;
+    ls:hasComponentAttribute data:attr_mandatory_003, data:attr_order_003 ;
+    ls:hasSubquestion data:subquestion_001, data:subquestion_002, data:subquestion_003, data:subquestion_004 .
+
+data:id_question_003 a ls:Identifier ;
+    ls:id 3 .
+
+data:var_003 a ls:Variable ;
+    ls:variableCod "Q003archive" .
+
+data:content_question_003 a ls:Content ;
+    ls:text "Do you archive your research data?" .
+
+data:attr_mandatory_003 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_003 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_001 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_001 ;
+    ls:hasContent data:content_sub_001 ;
+    ls:hasSubAttribute data:attr_suborder_001 .
+
+data:var_sub_001 a ls:Variable ;
+    ls:variableCod "Q003always" .
+
+data:content_sub_001 a ls:Content ;
+    ls:text "Always" .
+
+data:attr_suborder_001 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_002 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_002 ;
+    ls:hasContent data:content_sub_002 ;
+    ls:hasSubAttribute data:attr_suborder_002 .
+
+data:var_sub_002 a ls:Variable ;
+    ls:variableCod "Q003sometimes" .
+
+data:content_sub_002 a ls:Content ;
+    ls:text "Sometimes" .
+
+data:attr_suborder_002 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_003 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_003 ;
+    ls:hasContent data:content_sub_003 ;
+    ls:hasSubAttribute data:attr_suborder_003 .
+
+data:var_sub_003 a ls:Variable ;
+    ls:variableCod "Q003never" .
+
+data:content_sub_003 a ls:Content ;
+    ls:text "Never" .
+
+data:attr_suborder_003 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_004 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_004 ;
+    ls:hasContent data:content_sub_004 ;
+    ls:hasSubAttribute data:attr_suborder_004 .
+
+data:var_sub_004 a ls:Variable ;
+    ls:variableCod "Q003otherperson" .
+
+data:content_sub_004 a ls:Content ;
+    ls:text "This is the task of another person (Who?):" .
+
+data:attr_suborder_004 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+# Q4 - What type(s) of media?
+data:question_004 a ls:Question ;
+    ls:hasId data:id_question_004 ;
+    ls:hasGroup data:group_002 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_004 ;
+    ls:hasContent data:content_question_004 ;
+    ls:hasComponentAttribute data:attr_mandatory_004, data:attr_order_004 ;
+    ls:hasSubquestion data:subquestion_005, data:subquestion_006, data:subquestion_007, data:subquestion_008, data:subquestion_009 .
+
+data:id_question_004 a ls:Identifier ;
+    ls:id 4 .
+
+data:var_004 a ls:Variable ;
+    ls:variableCod "Q004media" .
+
+data:content_question_004 a ls:Content ;
+    ls:text "What type(s) of media is/are used in the course of your research for archiving your research data? (You may choose more than one answer.)" .
+
+data:attr_mandatory_004 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_004 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_005 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_005 ;
+    ls:hasContent data:content_sub_005 ;
+    ls:hasSubAttribute data:attr_suborder_005 .
+
+data:var_sub_005 a ls:Variable ;
+    ls:variableCod "Q004university" .
+
+data:content_sub_005 a ls:Content ;
+    ls:text "On a server of my university" .
+
+data:attr_suborder_005 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_006 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_006 ;
+    ls:hasContent data:content_sub_006 ;
+    ls:hasSubAttribute data:attr_suborder_006 .
+
+data:var_sub_006 a ls:Variable ;
+    ls:variableCod "Q004researchcenter" .
+
+data:content_sub_006 a ls:Content ;
+    ls:text "On a server of my research center" .
+
+data:attr_suborder_006 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_007 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_007 ;
+    ls:hasContent data:content_sub_007 ;
+    ls:hasSubAttribute data:attr_suborder_007 .
+
+data:var_sub_007 a ls:Variable ;
+    ls:variableCod "Q004personal" .
+
+data:content_sub_007 a ls:Content ;
+    ls:text "On a personal storage device (PC, flash drive, external drive, personal server…)" .
+
+data:attr_suborder_007 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_008 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_008 ;
+    ls:hasContent data:content_sub_008 ;
+    ls:hasSubAttribute data:attr_suborder_008 .
+
+data:var_sub_008 a ls:Variable ;
+    ls:variableCod "Q004platform" .
+
+data:content_sub_008 a ls:Content ;
+    ls:text "On a dedicated platform (GESIS, Réseau Quetelet, Figshare…)" .
+
+data:attr_suborder_008 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_009 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_009 ;
+    ls:hasContent data:content_sub_009 ;
+    ls:hasSubAttribute data:attr_suborder_009 .
+
+data:var_sub_009 a ls:Variable ;
+    ls:variableCod "Q004dontknow" .
+
+data:content_sub_009 a ls:Content ;
+    ls:text "I don't know" .
+
+data:attr_suborder_009 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+# Q5 - Archive all research data?
+data:question_005 a ls:Question ;
+    ls:hasId data:id_question_005 ;
+    ls:hasGroup data:group_002 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_005 ;
+    ls:hasContent data:content_question_005 ;
+    ls:hasComponentAttribute data:attr_mandatory_005, data:attr_order_005 ;
+    ls:hasSubquestion data:subquestion_010, data:subquestion_011_q5, data:subquestion_012_q5 .
+
+data:id_question_005 a ls:Identifier ;
+    ls:id 5 .
+
+data:var_005 a ls:Variable ;
+    ls:variableCod "Q005alldata" .
+
+data:content_question_005 a ls:Content ;
+    ls:text "If you archive your research data yourself or if you partake in this operation, do you proceed accordingly for all of the research data that you handle?" .
+
+data:attr_mandatory_005 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_005 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_010 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_010 ;
+    ls:hasContent data:content_sub_010 ;
+    ls:hasSubAttribute data:attr_suborder_010 .
+
+data:var_sub_010 a ls:Variable ;
+    ls:variableCod "Q005all" .
+
+data:content_sub_010 a ls:Content ;
+    ls:text "All of them" .
+
+data:attr_suborder_010 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_011_q5 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_011_q5 ;
+    ls:hasContent data:content_sub_011_q5 ;
+    ls:hasSubAttribute data:attr_suborder_011_q5 .
+
+data:var_sub_011_q5 a ls:Variable ;
+    ls:variableCod "Q005some" .
+
+data:content_sub_011_q5 a ls:Content ;
+    ls:text "Some of them" .
+
+data:attr_suborder_011_q5 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_012_q5 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_012_q5 ;
+    ls:hasContent data:content_sub_012_q5 ;
+    ls:hasSubAttribute data:attr_suborder_012_q5 .
+
+data:var_sub_012_q5 a ls:Variable ;
+    ls:variableCod "Q005none" .
+
+data:content_sub_012_q5 a ls:Content ;
+    ls:text "None of them" .
+
+data:attr_suborder_012_q5 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+# Q6 - Institutional requirements
+data:question_006 a ls:Question ;
+    ls:hasId data:id_question_006 ;
+    ls:hasGroup data:group_002 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_006 ;
+    ls:hasContent data:content_question_006 ;
+    ls:hasComponentAttribute data:attr_mandatory_006, data:attr_order_006 ;
+    ls:hasSubquestion data:subquestion_013_q6, data:subquestion_014_q6, data:subquestion_015_q6, data:subquestion_016_q6, data:subquestion_017_q6 .
+
+data:id_question_006 a ls:Identifier ;
+    ls:id 6 .
+
+data:var_006 a ls:Variable ;
+    ls:variableCod "Q006required" .
+
+data:content_question_006 a ls:Content ;
+    ls:text "Is the preservation of the research data required from you by your institution?" .
+
+data:attr_mandatory_006 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_006 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+data:subquestion_013_q6 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_013_q6 ;
+    ls:hasContent data:content_sub_013_q6 ;
+    ls:hasSubAttribute data:attr_suborder_013_q6 .
+
+data:var_sub_013_q6 a ls:Variable ;
+    ls:variableCod "Q006unidemands" .
+
+data:content_sub_013_q6 a ls:Content ;
+    ls:text "My university demands it" .
+
+data:attr_suborder_013_q6 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_014_q6 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_014_q6 ;
+    ls:hasContent data:content_sub_014_q6 ;
+    ls:hasSubAttribute data:attr_suborder_014_q6 .
+
+data:var_sub_014_q6 a ls:Variable ;
+    ls:variableCod "Q006unrecommends" .
+
+data:content_sub_014_q6 a ls:Content ;
+    ls:text "My university recommends it" .
+
+data:attr_suborder_014_q6 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_015_q6 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_015_q6 ;
+    ls:hasContent data:content_sub_015_q6 ;
+    ls:hasSubAttribute data:attr_suborder_015_q6 .
+
+data:var_sub_015_q6 a ls:Variable ;
+    ls:variableCod "Q006centerdemands" .
+
+data:content_sub_015_q6 a ls:Content ;
+    ls:text "My research center demands it" .
+
+data:attr_suborder_015_q6 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_016_q6 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_016_q6 ;
+    ls:hasContent data:content_sub_016_q6 ;
+    ls:hasSubAttribute data:attr_suborder_016_q6 .
+
+data:var_sub_016_q6 a ls:Variable ;
+    ls:variableCod "Q006centerrecommends" .
+
+data:content_sub_016_q6 a ls:Content ;
+    ls:text "My research center recommends it" .
+
+data:attr_suborder_016_q6 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_017_q6 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_017_q6 ;
+    ls:hasContent data:content_sub_017_q6 ;
+    ls:hasSubAttribute data:attr_suborder_017_q6 .
+
+data:var_sub_017_q6 a ls:Variable ;
+    ls:variableCod "Q006noguidelines" .
+
+data:content_sub_017_q6 a ls:Content ;
+    ls:text "There are no particular guidelines regarding the preservation of the research data at my workplace" .
+
+data:attr_suborder_017_q6 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+# Q7 - When did preservation become practice?
+data:question_007 a ls:Question ;
+    ls:hasId data:id_question_007 ;
+    ls:hasGroup data:group_002 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_007 ;
+    ls:hasContent data:content_question_007 ;
+    ls:hasComponentAttribute data:attr_mandatory_007, data:attr_order_007 ;
+    ls:hasSubquestion data:subquestion_018_q7, data:subquestion_019_q7, data:subquestion_020_q7 .
+
+data:id_question_007 a ls:Identifier ;
+    ls:id 7 .
+
+data:var_007 a ls:Variable ;
+    ls:variableCod "Q007when" .
+
+data:content_question_007 a ls:Content ;
+    ls:text "Do you know when the preservation of research data became a practice in your institution?" .
+
+data:attr_mandatory_007 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_007 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "5" .
+
+data:subquestion_018_q7 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_018_q7 ;
+    ls:hasContent data:content_sub_018_q7 ;
+    ls:hasSubAttribute data:attr_suborder_018_q7 .
+
+data:var_sub_018_q7 a ls:Variable ;
+    ls:variableCod "Q007since" .
+
+data:content_sub_018_q7 a ls:Content ;
+    ls:text "Since (year)" .
+
+data:attr_suborder_018_q7 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_019_q7 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_019_q7 ;
+    ls:hasContent data:content_sub_019_q7 ;
+    ls:hasSubAttribute data:attr_suborder_019_q7 .
+
+data:var_sub_019_q7 a ls:Variable ;
+    ls:variableCod "Q007dontknow" .
+
+data:content_sub_019_q7 a ls:Content ;
+    ls:text "I don't know" .
+
+data:attr_suborder_019_q7 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_020_q7 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_020_q7 ;
+    ls:hasContent data:content_sub_020_q7 ;
+    ls:hasSubAttribute data:attr_suborder_020_q7 .
+
+data:var_sub_020_q7 a ls:Variable ;
+    ls:variableCod "Q007notcommon" .
+
+data:content_sub_020_q7 a ls:Content ;
+    ls:text "It's not common practice at my institution" .
+
+data:attr_suborder_020_q7 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+# Q8 - Work with librarian?
+data:question_008 a ls:Question ;
+    ls:hasId data:id_question_008 ;
+    ls:hasGroup data:group_002 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_008 ;
+    ls:hasContent data:content_question_008 ;
+    ls:hasComponentAttribute data:attr_mandatory_008, data:attr_order_008 ;
+    ls:hasSubquestion data:subquestion_021_q8, data:subquestion_022_q8 .
+
+data:id_question_008 a ls:Identifier ;
+    ls:id 8 .
+
+data:var_008 a ls:Variable ;
+    ls:variableCod "Q008librarian" .
+
+data:content_question_008 a ls:Content ;
+    ls:text "Do you work with your local academic librarian(s) for the preservation of your research data?" .
+
+data:attr_mandatory_008 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_008 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "6" .
+
+data:subquestion_021_q8 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_021_q8 ;
+    ls:hasContent data:content_sub_021_q8 ;
+    ls:hasSubAttribute data:attr_suborder_021_q8 .
+
+data:var_sub_021_q8 a ls:Variable ;
+    ls:variableCod "Q008yes" .
+
+data:content_sub_021_q8 a ls:Content ;
+    ls:text "Yes" .
+
+data:attr_suborder_021_q8 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_022_q8 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_022_q8 ;
+    ls:hasContent data:content_sub_022_q8 ;
+    ls:hasSubAttribute data:attr_suborder_022_q8 .
+
+data:var_sub_022_q8 a ls:Variable ;
+    ls:variableCod "Q008no" .
+
+data:content_sub_022_q8 a ls:Content ;
+    ls:text "No" .
+
+data:attr_suborder_022_q8 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+# Q9 - Work with librarian?
+data:question_008 a ls:Question ;
+    ls:hasId data:id_question_009 ;
+    ls:hasGroup data:group_002 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_009 ;
+    ls:hasContent data:content_question_009 ;
+    ls:hasComponentAttribute data:attr_mandatory_009, data:attr_order_009 ;
+    ls:hasSubquestion data:subquestion_021_q9, data:subquestion_022_q9 .
+
+data:id_question_009 a ls:Identifier ;
+    ls:id 9 .
+
+data:var_009 a ls:Variable ;
+    ls:variableCod "Q009librarian" .
+
+data:content_question_009 a ls:Content ;
+    ls:text "Do you work with your local academic archivist(s) for the preservation of your research data?" .
+
+data:attr_mandatory_009 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_009 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "7" .
+
+data:subquestion_021_q9 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_021_q9 ;
+    ls:hasContent data:content_sub_021_q9 ;
+    ls:hasSubAttribute data:attr_suborder_021_q9 .
+
+data:var_sub_021_q9 a ls:Variable ;
+    ls:variableCod "Q009yes" .
+
+data:content_sub_021_q9 a ls:Content ;
+    ls:text "Yes" .
+
+data:attr_suborder_021_q9 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_022_q9 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_022_q9 ;
+    ls:hasContent data:content_sub_022_q9 ;
+    ls:hasSubAttribute data:attr_suborder_022_q9 .
+
+data:var_sub_022_q9 a ls:Variable ;
+    ls:variableCod "Q009no" .
+
+data:content_sub_022_q9 a ls:Content ;
+    ls:text "No" .
+
+data:attr_suborder_022_q9 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+# Q34 - DMPs
+data:question_0034 a ls:Question ;
+    ls:hasId data:id_question_0034 ;
+    ls:hasGroup data:group_002 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_0034 ;
+    ls:hasContent data:content_question_0034 ;
+    ls:hasComponentAttribute data:attr_mandatory_0034, data:attr_order_0034 ;
+    ls:hasSubquestion data:subquestion_021_q34, data:subquestion_022_q34 .
+
+data:id_question_0010 a ls:Identifier ;
+    ls:id 10 .
+
+data:var_0034 a ls:Variable ;
+    ls:variableCod "Q0034DMP" .
+
+data:content_question_0034 a ls:Content ;
+    ls:text "Have you ever heard about data management plans (DMPs)?" .
+
+data:attr_mandatory_0034 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_0034 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "8" .
+
+data:subquestion_021_q34 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_021_q34 ;
+    ls:hasContent data:content_sub_021_q34 ;
+    ls:hasSubAttribute data:attr_suborder_021_q34 .
+
+data:var_sub_021_q34 a ls:Variable ;
+    ls:variableCod "Q0034yes" .
+
+data:content_sub_021_q34 a ls:Content ;
+    ls:text "Yes" .
+
+data:attr_suborder_021_q34 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_022_q34 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_022_q34 ;
+    ls:hasContent data:content_sub_022_q34 ;
+    ls:hasSubAttribute data:attr_suborder_022_q34 .
+
+data:var_sub_022_q34 a ls:Variable ;
+    ls:variableCod "Q0034no" .
+
+data:content_sub_022_q34 a ls:Content ;
+    ls:text "No" .
+
+data:attr_suborder_022_q34 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+
+# ============================================
+# GROUP 2 - ARCHIVING RESEARCH DATA QUESTIONS
+# ============================================
+
+# Q10 - Have you ever heard about DDI?
+data:question_010_ddi a ls:Question ;
+    ls:hasId data:id_question_001_ddi ;
+    ls:hasGroup data:group_003 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_010_ddi ;
+    ls:hasContent data:content_question_010_ddi ;
+    ls:hasComponentAttribute data:attr_mandatory_010_ddi, data:attr_order_010_ddi ;
+    ls:hasAnswerOption data:answer_010_ddi_yes, data:answer_010_ddi_no .
+
+data:id_question_010_ddi a ls:Identifier ;
+    ls:id 1 .
+
+data:var_010_ddi a ls:Variable ;
+    ls:variableCod "Q010ddi" .
+
+data:content_question_019_ddi a ls:Content ;
+    ls:text "Have you ever heard about the Data Documentation Initiative (DDI) standard?" .
+
+data:attr_mandatory_010_ddi a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_010_ddi a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:answer_010_ddi_yes a ls:AnswerOption ;
+    ls:hasAnswerCode data:code_010_ddi_yes ;
+    ls:hasAnswerContent data:content_010_ddi_yes ;
+    ls:hasAnswerAttribute data:attr_answer_order_010_ddi_yes .
+
+data:code_010_ddi_yes a ls:AnswerCode ;
+    ls:code "Y" .
+
+data:content_010_ddi_yes a ls:Content ;
+    ls:text "Yes" .
+
+data:attr_answer_order_010_ddi_yes a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_010_ddi_no a ls:AnswerOption ;
+    ls:hasAnswerCode data:code_010_ddi_no ;
+    ls:hasAnswerContent data:content_010_ddi_no ;
+    ls:hasAnswerAttribute data:attr_answer_order_010_ddi_no .
+
+data:code_010_ddi_no a ls:AnswerCode ;
+    ls:code "N" .
+
+data:content_010_ddi_no a ls:Content ;
+    ls:text "No" .
+
+data:attr_answer_order_010_ddi_no a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+# Q12 - Are you using DDI?
+data:question_012_ddi a ls:Question ;
+    ls:hasId data:id_question_012_ddi ;
+    ls:hasGroup data:group_003 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_012_ddi ;
+    ls:hasContent data:content_question_012_ddi ;
+    ls:hasComponentAttribute data:attr_mandatory_012_ddi, data:attr_order_012_ddi, data:attr_relevance_012_ddi ;
+    ls:hasAnswerOption data:answer_012_ddi_current, data:answer_012_ddi_past, data:answer_012_ddi_theoretical .
+
+data:id_question_012_ddi a ls:Identifier ;
+    ls:id 12 .
+
+data:var_012_ddi a ls:Variable ;
+    ls:variableCod "Q012ddiuse" .
+
+data:content_question_012_ddi a ls:Content ;
+    ls:text "Are you currently using it, or did you use it at some point in the past?" .
+
+data:attr_mandatory_012_ddi a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_012_ddi a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:attr_relevance_012_ddi a ls:ComponentAttribute ;
+    ls:componentName "relevance" ;
+    ls:componentValue "code_010_ddi_yes=='Y'" .
+
+data:answer_012_ddi_current a ls:AnswerOption ;
+    ls:hasAnswerCode data:code_012_ddi_current ;
+    ls:hasAnswerContent data:content_012_ddi_current ;
+    ls:hasAnswerAttribute data:attr_answer_order_012_ddi_current .
+
+data:code_001_ddi_current a ls:AnswerCode ;
+    ls:code "C" .
+
+data:content_012_ddi_current a ls:Content ;
+    ls:text "I'm currently using it" .
+
+data:attr_answer_order_012_ddi_current a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_012_ddi_past a ls:AnswerOption ;
+    ls:hasAnswerCode data:code_012_ddi_past ;
+    ls:hasAnswerContent data:content_012_ddi_past ;
+    ls:hasAnswerAttribute data:attr_answer_order_012_ddi_past .
+
+data:code_012_ddi_past a ls:AnswerCode ;
+    ls:code "P" .
+
+data:content_012_ddi_past a ls:Content ;
+    ls:text "I used it at some point in the past" .
+
+data:attr_answer_order_012_ddi_past a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+data:answer_012_ddi_theoretical a ls:AnswerOption ;
+    ls:hasAnswerCode data:code_012_ddi_theoretical ;
+    ls:hasAnswerContent data:content_012_ddi_theoretical ;
+    ls:hasAnswerAttribute data:attr_answer_order_012_ddi_theoretical .
+
+data:code_012_ddi_theoretical a ls:AnswerCode ;
+    ls:code "T" .
+
+data:content_012_ddi_theoretical a ls:Content ;
+    ls:text "I've never used it but I have a theoretical knowledge of it" .
+
+data:attr_answer_order_012_ddi_theoretical a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "3" .
+
+
+# Q13 - What kind of metadata?
+data:question_013 a ls:Question ;
+    ls:hasId data:id_question_013 ;
+    ls:hasGroup data:group_003 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_013 ;
+    ls:hasContent data:content_question_013 ;
+    ls:hasComponentAttribute data:attr_mandatory_013, data:attr_order_013, data:attr_relevance_013 ;
+    ls:hasSubquestion data:subquestion_015, data:subquestion_016, data:subquestion_017, data:subquestion_018, data:subquestion_019, data:subquestion_020, data:subquestion_021 .
+
+data:id_question_013 a ls:Identifier ;
+    ls:id 13 .
+
+data:var_013 a ls:Variable ;
+    ls:variableCod "Q013metadata" .
+
+data:content_question_013 a ls:Content ;
+    ls:text "What kind of metadata do you supplement your research data with and what aspects do they bear upon? (More than one answer is possible. If you wish, you may send us an example of a metadata file that you created in the course of your research.)" .
+
+data:attr_mandatory_013 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_013 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+data:attr_relevance_013 a ls:ComponentAttribute ;
+    ls:componentName "relevance" ;
+    ls:componentValue "Q010_ddi=='N'" .
+
+data:subquestion_015 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_015 ;
+    ls:hasContent data:content_sub_015 ;
+    ls:hasSubAttribute data:attr_suborder_015 .
+
+data:var_sub_015 a ls:Variable ;
+    ls:variableCod "Q013dublincore" .
+
+data:content_sub_015 a ls:Content ;
+    ls:text "Dublin Core" .
+
+data:attr_suborder_015 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_016 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_016 ;
+    ls:hasContent data:content_sub_016 ;
+    ls:hasSubAttribute data:attr_suborder_016 .
+
+data:var_sub_016 a ls:Variable ;
+    ls:variableCod "Q013nesstar" .
+
+data:content_sub_016 a ls:Content ;
+    ls:text "Nesstar" .
+
+data:attr_suborder_016 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_017 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_017 ;
+    ls:hasContent data:content_sub_017 ;
+    ls:hasSubAttribute data:attr_suborder_017 .
+
+data:var_sub_017 a ls:Variable ;
+    ls:variableCod "Q013mods" .
+
+data:content_sub_017 a ls:Content ;
+    ls:text "MODS" .
+
+data:attr_suborder_017 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_018 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_018 ;
+    ls:hasContent data:content_sub_018 ;
+    ls:hasSubAttribute data:attr_suborder_018 .
+
+data:var_sub_018 a ls:Variable ;
+    ls:variableCod "Q013dataverse" .
+
+data:content_sub_018 a ls:Content ;
+    ls:text "Dataverse" .
+
+data:attr_suborder_018 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_019 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_019 ;
+    ls:hasContent data:content_sub_019 ;
+    ls:hasSubAttribute data:attr_suborder_019 .
+
+data:var_sub_019 a ls:Variable ;
+    ls:variableCod "Q013mets" .
+
+data:content_sub_019 a ls:Content ;
+    ls:text "METS" .
+
+data:attr_suborder_019 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+data:subquestion_020 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_020 ;
+    ls:hasContent data:content_sub_020 ;
+    ls:hasSubAttribute data:attr_suborder_020 .
+
+data:var_sub_020 a ls:Variable ;
+    ls:variableCod "Q013vtz" .
+
+data:content_sub_020 a ls:Content ;
+    ls:text "VTZ" .
+
+data:attr_suborder_020 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "5" .
+
+data:subquestion_021 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_021 ;
+    ls:hasContent data:content_sub_021 ;
+    ls:hasSubAttribute data:attr_suborder_021 .
+
+data:var_sub_021 a ls:Variable ;
+    ls:variableCod "Q013other" .
+
+data:content_sub_021 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_021 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "6" .
+
+# ============================================
+# GROUP 4 - RE-USE OF RESEARCH DATA QUESTIONS
+# ============================================
+
+# Q14 - Overview of survey data?
+data:question_014 a ls:Question ;
+    ls:hasId data:id_question_014 ;
+    ls:hasGroup data:group_004 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_014 ;
+    ls:hasContent data:content_question_014 ;
+    ls:hasComponentAttribute data:attr_mandatory_014, data:attr_order_014 ;
+    ls:hasAnswerOption data:answer_019, data:answer_020 .
+
+data:id_question_014 a ls:Identifier ;
+    ls:id 14 .
+
+data:var_014 a ls:Variable ;
+    ls:variableCod "Q014survey_data" .
+
+data:content_question_014 a ls:Content ;
+    ls:text "Do you have a good overview of the already existing, re-usable survey data produced in Belgium in your research area that you may request access to?" .
+
+data:attr_mandatory_014 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_014 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:answer_019 a ls:AnswerOption ;
+    ls:componentValue "Y" ;
+    ls:hasContent data:content_answer_019 ;
+    ls:hasComponentAttribute data:attr_sortorder_019 .
+
+data:content_answer_019 a ls:Content ;
+    ls:text "Yes" .
+
+data:attr_sortorder_019 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_020 a ls:AnswerOption ;
+    ls:componentValue "N" ;
+    ls:hasContent data:content_answer_020 ;
+    ls:hasComponentAttribute data:attr_sortorder_020 .
+
+data:content_answer_020 a ls:Content ;
+    ls:text "No" .
+
+data:attr_sortorder_020 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+# Q15 - Overview of administrative data?
+data:question_015 a ls:Question ;
+    ls:hasId data:id_question_015 ;
+    ls:hasGroup data:group_004 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_015 ;
+    ls:hasContent data:content_question_015 ;
+    ls:hasComponentAttribute data:attr_mandatory_015, data:attr_order_015 ;
+    ls:hasAnswerOption data:answer_021, data:answer_022 .
+
+data:id_question_015 a ls:Identifier ;
+    ls:id 15 .
+
+data:var_015 a ls:Variable ;
+    ls:variableCod "Q015admindata" .
+
+data:content_question_015 a ls:Content ;
+    ls:text "Do you have a good overview of the already existing, re-usable administrative data (e.g. data produced by government offices for statistics or civil registry data) produced in Belgium in your research area that you may request access to?" .
+
+data:attr_mandatory_015 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_015 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:answer_021 a ls:AnswerOption ;
+    ls:componentValue "Y" ;
+    ls:hasContent data:content_answer_021 ;
+    ls:hasComponentAttribute data:attr_sortorder_021 .
+
+data:content_answer_021 a ls:Content ;
+    ls:text "Yes" .
+
+data:attr_sortorder_021 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_022 a ls:AnswerOption ;
+    ls:componentValue "N" ;
+    ls:hasContent data:content_answer_022 ;
+    ls:hasComponentAttribute data:attr_sortorder_022 .
+
+data:content_answer_022 a ls:Content ;
+    ls:text "No" .
+
+data:attr_sortorder_022 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+# Q16 - Do you re-use research data?
+data:question_016 a ls:Question ;
+    ls:hasId data:id_question_016 ;
+    ls:hasGroup data:group_004 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_016 ;
+    ls:hasContent data:content_question_016 ;
+    ls:hasComponentAttribute data:attr_mandatory_016, data:attr_order_016 ;
+    ls:hasAnswerOption data:answer_023, data:answer_024 .
+
+data:id_question_016 a ls:Identifier ;
+    ls:id 16 .
+
+data:var_016 a ls:Variable ;
+    ls:variableCod "Q016reuse" .
+
+data:content_question_016 a ls:Content ;
+    ls:text "Do you often have occasion to re-use research data, whether published or unpublished, for your own research?" .
+
+data:attr_mandatory_016 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_016 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:answer_023 a ls:AnswerOption ;
+    ls:componentValue "Y" ;
+    ls:hasContent data:content_answer_023 ;
+    ls:hasComponentAttribute data:attr_sortorder_023 .
+
+data:content_answer_023 a ls:Content ;
+    ls:text "Yes" .
+
+data:attr_sortorder_023 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_024 a ls:AnswerOption ;
+    ls:componentValue "N" ;
+    ls:hasContent data:content_answer_024 ;
+    ls:hasComponentAttribute data:attr_sortorder_024 .
+
+data:content_answer_024 a ls:Content ;
+    ls:text "No" .
+
+data:attr_sortorder_024 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+# Q17 - How easy to access data?
+data:question_017 a ls:Question ;
+    ls:hasId data:id_question_017 ;
+    ls:hasGroup data:group_004 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_017 ;
+    ls:hasContent data:content_question_017 ;
+    ls:hasComponentAttribute data:attr_mandatory_017, data:attr_order_017 ;
+    ls:hasAnswerOption data:answer_025, data:answer_026, data:answer_027, data:answer_028, data:answer_029, data:answer_030 .
+
+data:id_question_017 a ls:Identifier ;
+    ls:id 17 .
+
+data:var_017 a ls:Variable ;
+    ls:variableCod "Q017accessease" .
+
+data:content_question_017 a ls:Content ;
+    ls:text "How easy is it for you to access and re-use published or unpublished data that do not originate from your own research institution?" .
+
+data:attr_mandatory_017 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_017 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+data:answer_025 a ls:AnswerOption ;
+    ls:componentValue "1" ;
+    ls:hasContent data:content_answer_025 ;
+    ls:hasComponentAttribute data:attr_sortorder_025 .
+
+data:content_answer_025 a ls:Content ;
+    ls:text "Very easy" .
+
+data:attr_sortorder_025 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_026 a ls:AnswerOption ;
+    ls:componentValue "2" ;
+    ls:hasContent data:content_answer_026 ;
+    ls:hasComponentAttribute data:attr_sortorder_026 .
+
+data:content_answer_026 a ls:Content ;
+    ls:text "Easy" .
+
+data:attr_sortorder_026 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+data:answer_027 a ls:AnswerOption ;
+    ls:componentValue "3" ;
+    ls:hasContent data:content_answer_027 ;
+    ls:hasComponentAttribute data:attr_sortorder_027 .
+
+data:content_answer_027 a ls:Content ;
+    ls:text "Moderately easy" .
+
+data:attr_sortorder_027 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "3" .
+
+data:answer_028 a ls:AnswerOption ;
+    ls:componentValue "4" ;
+    ls:hasContent data:content_answer_028 ;
+    ls:hasComponentAttribute data:attr_sortorder_028 .
+
+data:content_answer_028 a ls:Content ;
+    ls:text "Difficult" .
+
+data:attr_sortorder_028 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "4" .
+
+data:answer_029 a ls:AnswerOption ;
+    ls:componentValue "5" ;
+    ls:hasContent data:content_answer_029 ;
+    ls:hasComponentAttribute data:attr_sortorder_029 .
+
+data:content_answer_029 a ls:Content ;
+    ls:text "Very difficult" .
+
+data:attr_sortorder_029 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "5" .
+
+data:answer_030 a ls:AnswerOption ;
+    ls:componentValue "6" ;
+    ls:hasContent data:content_answer_030 ;
+    ls:hasComponentAttribute data:attr_sortorder_030 .
+
+data:content_answer_030 a ls:Content ;
+    ls:text "I never use data collected by other research centers" .
+
+data:attr_sortorder_030 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "6" .
+
+# Q18 - What makes it difficult?
+data:question_018 a ls:Question ;
+    ls:hasId data:id_question_018 ;
+    ls:hasGroup data:group_004 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_018 ;
+    ls:hasContent data:content_question_018 ;
+    ls:hasComponentAttribute data:attr_mandatory_018, data:attr_order_018, data:attr_relevance_018 ;
+    ls:hasSubquestion data:subquestion_022, data:subquestion_023, data:subquestion_024, data:subquestion_025, data:subquestion_026 .
+
+data:id_question_018 a ls:Identifier ;
+    ls:id 18 .
+
+data:var_018 a ls:Variable ;
+    ls:variableCod "Q018difficulties" .
+
+data:content_question_018 a ls:Content ;
+    ls:text "What makes it difficult for you to access and re-use data produced by another research institution than yours? (You may choose more than one answer.)" .
+
+data:attr_mandatory_018 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_018 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "5" .
+
+data:attr_relevance_018 a ls:ComponentAttribute ;
+    ls:componentName "relevance" ;
+    ls:componentValue "Q017_access_ease=='3' || Q017_access_ease=='4' || Q017_access_ease=='5'" .
+
+data:subquestion_022 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_022 ;
+    ls:hasContent data:content_sub_022 ;
+    ls:hasSubAttribute data:attr_suborder_022 .
+
+data:var_sub_022 a ls:Variable ;
+    ls:variableCod "Q018dontknowwhere" .
+
+data:content_sub_022 a ls:Content ;
+    ls:text "I don't know where to find such data" .
+
+data:attr_suborder_022 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_023 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_023 ;
+    ls:hasContent data:content_sub_023 ;
+    ls:hasSubAttribute data:attr_suborder_023 .
+
+data:var_sub_023 a ls:Variable ;
+    ls:variableCod "Q018authorsnoshare" .
+
+data:content_sub_023 a ls:Content ;
+    ls:text "The authors of the data do not wish to share them" .
+
+data:attr_suborder_023 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_024 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_024 ;
+    ls:hasContent data:content_sub_024 ;
+    ls:hasSubAttribute data:attr_suborder_024 .
+
+data:var_sub_024 a ls:Variable ;
+    ls:variableCod "Q018formatswork" .
+
+data:content_sub_024 a ls:Content ;
+    ls:text "The media, formats or metadata that support the data are such that I would need to do a lot of extra work to become able to re-use them" .
+
+data:attr_suborder_024 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_025 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_025 ;
+    ls:hasContent data:content_sub_025 ;
+    ls:hasSubAttribute data:attr_suborder_025 .
+
+data:var_sub_025 a ls:Variable ;
+    ls:variableCod "Q018legalreasons" .
+
+data:content_sub_025 a ls:Content ;
+    ls:text "I can't re-use certain data for legal reasons" .
+
+data:attr_suborder_025 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_026 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_026 ;
+    ls:hasContent data:content_sub_026 ;
+    ls:hasSubAttribute data:attr_suborder_026 .
+
+data:var_sub_026 a ls:Variable ;
+    ls:variableCod "Q018other" .
+
+data:content_sub_026 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_026 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+# ============================================
+# GROUP 5 - TOOLS AND SOFTWARE QUESTIONS
+# ============================================
+
+# Q19 - Software for documentation
+data:question_019 a ls:Question ;
+    ls:hasId data:id_question_019 ;
+    ls:hasGroup data:group_005 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_019 ;
+    ls:hasContent data:content_question_019 ;
+    ls:hasComponentAttribute data:attr_mandatory_019, data:attr_order_019 ;
+    ls:hasSubquestion data:subquestion_027, data:subquestion_028, data:subquestion_029, data:subquestion_030, data:subquestion_031 .
+
+data:id_question_019 a ls:Identifier ;
+    ls:id 19 .
+
+data:var_019 a ls:Variable ;
+    ls:variableCod "Q019docsoftware" .
+
+data:content_question_019 a ls:Content ;
+    ls:text "What types of software do you rely on to document your research and create your datasets? (You may choose more than one answer.)" .
+
+data:attr_mandatory_019 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_019 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_027 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_027 ;
+    ls:hasContent data:content_sub_027 ;
+    ls:hasSubAttribute data:attr_suborder_027 .
+
+data:var_sub_027 a ls:Variable ;
+    ls:variableCod "Q019nesstar" .
+
+data:content_sub_027 a ls:Content ;
+    ls:text "Nesstar Publisher" .
+
+data:attr_suborder_027 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_028 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_028 ;
+    ls:hasContent data:content_sub_028 ;
+    ls:hasSubAttribute data:attr_suborder_028 .
+
+data:var_sub_028 a ls:Variable ;
+    ls:variableCod "Q019dataverse" .
+
+data:content_sub_028 a ls:Content ;
+    ls:text "Dataverse" .
+
+data:attr_suborder_028 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_029 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_029 ;
+    ls:hasContent data:content_sub_029 ;
+    ls:hasSubAttribute data:attr_suborder_029 .
+
+data:var_sub_029 a ls:Variable ;
+    ls:variableCod "Q019homemade" .
+
+data:content_sub_029 a ls:Content ;
+    ls:text "Home-made software application(s)" .
+
+data:attr_suborder_029 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_030 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_030 ;
+    ls:hasContent data:content_sub_030 ;
+    ls:hasSubAttribute data:attr_suborder_030 .
+
+data:var_sub_030 a ls:Variable ;
+    ls:variableCod "Q019none" .
+
+data:content_sub_030 a ls:Content ;
+    ls:text "I don't use such software" .
+
+data:attr_suborder_030 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_031 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_031 ;
+    ls:hasContent data:content_sub_031 ;
+    ls:hasSubAttribute data:attr_suborder_031 .
+
+data:var_sub_031 a ls:Variable ;
+    ls:variableCod "Q019_other" .
+
+data:content_sub_031 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_031 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+# Q20 - Tools for data analysis
+data:question_020 a ls:Question ;
+    ls:hasId data:id_question_020 ;
+    ls:hasGroup data:group_005 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_020 ;
+    ls:hasContent data:content_question_020 ;
+    ls:hasComponentAttribute data:attr_mandatory_020, data:attr_order_020 ;
+    ls:hasSubquestion data:subquestion_032, data:subquestion_033, data:subquestion_034, data:subquestion_035, data:subquestion_036, data:subquestion_037, data:subquestion_038, data:subquestion_039, data:subquestion_040 .
+
+data:id_question_020 a ls:Identifier ;
+    ls:id 20 .
+
+data:var_020 a ls:Variable ;
+    ls:variableCod "Q020analysistools" .
+
+data:content_question_020 a ls:Content ;
+    ls:text "Do you use any of the following tools for data analysis? (You may choose more than one answer.)" .
+
+data:attr_mandatory_020 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_020 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_032 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_032 ;
+    ls:hasContent data:content_sub_032 ;
+    ls:hasSubAttribute data:attr_suborder_032 .
+
+data:var_sub_032 a ls:Variable ;
+    ls:variableCod "Q020spss" .
+
+data:content_sub_032 a ls:Content ;
+    ls:text "IBM SPSS" .
+
+data:attr_suborder_032 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_033 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_033 ;
+    ls:hasContent data:content_sub_033 ;
+    ls:hasSubAttribute data:attr_suborder_033 .
+
+data:var_sub_033 a ls:Variable ;
+    ls:variableCod "Q020r" .
+
+data:content_sub_033 a ls:Content ;
+    ls:text "R" .
+
+data:attr_suborder_033 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_034 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_034 ;
+    ls:hasContent data:content_sub_034 ;
+    ls:hasSubAttribute data:attr_suborder_034 .
+
+data:var_sub_034 a ls:Variable ;
+    ls:variableCod "Q020sas" .
+
+data:content_sub_034 a ls:Content ;
+    ls:text "SAS Business Intelligence" .
+
+data:attr_suborder_034 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_035 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_035 ;
+    ls:hasContent data:content_sub_035 ;
+    ls:hasSubAttribute data:attr_suborder_035 .
+
+data:var_sub_035 a ls:Variable ;
+    ls:variableCod "Q020stata" .
+
+data:content_sub_035 a ls:Content ;
+    ls:text "Stata" .
+
+data:attr_suborder_035 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_036 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_036 ;
+    ls:hasContent data:content_sub_036 ;
+    ls:hasSubAttribute data:attr_suborder_036 .
+
+data:var_sub_036 a ls:Variable ;
+    ls:variableCod "Q020nvivo" .
+
+data:content_sub_036 a ls:Content ;
+    ls:text "Nvivo" .
+
+data:attr_suborder_036 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+data:subquestion_037 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_037 ;
+    ls:hasContent data:content_sub_037 ;
+    ls:hasSubAttribute data:attr_suborder_037 .
+
+data:var_sub_037 a ls:Variable ;
+    ls:variableCod "Q020pspp" .
+
+data:content_sub_037 a ls:Content ;
+    ls:text "GNU PSPP" .
+
+data:attr_suborder_037 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "5" .
+
+data:subquestion_038 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_038 ;
+    ls:hasContent data:content_sub_038 ;
+    ls:hasSubAttribute data:attr_suborder_038 .
+
+data:var_sub_038 a ls:Variable ;
+    ls:variableCod "Q020jasp" .
+
+data:content_sub_038 a ls:Content ;
+    ls:text "JASP" .
+
+data:attr_suborder_038 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "6" .
+
+data:subquestion_039 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_039 ;
+    ls:hasContent data:content_sub_039 ;
+    ls:hasSubAttribute data:attr_suborder_039 .
+
+data:var_sub_039 a ls:Variable ;
+    ls:variableCod "Q020none" .
+
+data:content_sub_039 a ls:Content ;
+    ls:text "I don't use such software" .
+
+data:attr_suborder_039 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "7" .
+
+data:subquestion_040 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_040 ;
+    ls:hasContent data:content_sub_040 ;
+    ls:hasSubAttribute data:attr_suborder_040 .
+
+data:var_sub_040 a ls:Variable ;
+    ls:variableCod "Q020other" .
+
+data:content_sub_040 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_040 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "8" .
+
+# Q21 - Word processors
+data:question_021 a ls:Question ;
+    ls:hasId data:id_question_021 ;
+    ls:hasGroup data:group_005 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_021 ;
+    ls:hasContent data:content_question_021 ;
+    ls:hasComponentAttribute data:attr_mandatory_021, data:attr_order_021 ;
+    ls:hasSubquestion data:subquestion_041, data:subquestion_042, data:subquestion_043, data:subquestion_044, data:subquestion_045, data:subquestion_046, data:subquestion_047 .
+
+data:id_question_021 a ls:Identifier ;
+    ls:id 21 .
+
+data:var_021 a ls:Variable ;
+    ls:variableCod "Q021wordprocessors" .
+
+data:content_question_021 a ls:Content ;
+    ls:text "Do you use word processors? (You may choose more than one answer.)" .
+
+data:attr_mandatory_021 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_021 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_041 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_041 ;
+    ls:hasContent data:content_sub_041 ;
+    ls:hasSubAttribute data:attr_suborder_041 .
+
+data:var_sub_041 a ls:Variable ;
+    ls:variableCod "Q021msword" .
+
+data:content_sub_041 a ls:Content ;
+    ls:text "Microsoft Word" .
+
+data:attr_suborder_041 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_042 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_042 ;
+    ls:hasContent data:content_sub_042 ;
+    ls:hasSubAttribute data:attr_suborder_042 .
+
+data:var_sub_042 a ls:Variable ;
+    ls:variableCod "Q021libreoffice" .
+
+data:content_sub_042 a ls:Content ;
+    ls:text "Open Office / LibreOffice Writer" .
+
+data:attr_suborder_042 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_043 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_043 ;
+    ls:hasContent data:content_sub_043 ;
+    ls:hasSubAttribute data:attr_suborder_043 .
+
+data:var_sub_043 a ls:Variable ;
+    ls:variableCod "Q021macvim" .
+
+data:content_sub_043 a ls:Content ;
+    ls:text "MacVim" .
+
+data:attr_suborder_043 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_044 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_044 ;
+    ls:hasContent data:content_sub_044 ;
+    ls:hasSubAttribute data:attr_suborder_044 .
+
+data:var_sub_044 a ls:Variable ;
+    ls:variableCod "Q021latex" .
+
+data:content_sub_044 a ls:Content ;
+    ls:text "LaTeX" .
+
+data:attr_suborder_044 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_045 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_045 ;
+    ls:hasContent data:content_sub_045 ;
+    ls:hasSubAttribute data:attr_suborder_045 .
+
+data:var_sub_045 a ls:Variable ;
+    ls:variableCod "Q021googledocs" .
+
+data:content_sub_045 a ls:Content ;
+    ls:text "Google Docs" .
+
+data:attr_suborder_045 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+data:subquestion_046 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_046 ;
+    ls:hasContent data:content_sub_046 ;
+    ls:hasSubAttribute data:attr_suborder_046 .
+
+data:var_sub_046 a ls:Variable ;
+    ls:variableCod "Q021none" .
+
+data:content_sub_046 a ls:Content ;
+    ls:text "I don't use such software" .
+
+data:attr_suborder_046 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "5" .
+
+data:subquestion_047 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_047 ;
+    ls:hasContent data:content_sub_047 ;
+    ls:hasSubAttribute data:attr_suborder_047 .
+
+data:var_sub_047 a ls:Variable ;
+    ls:variableCod "Q021other" .
+
+data:content_sub_047 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_047 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "6" .
+
+# Q22 - Spreadsheet software
+data:question_022 a ls:Question ;
+    ls:hasId data:id_question_022 ;
+    ls:hasGroup data:group_005 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_022 ;
+    ls:hasContent data:content_question_022 ;
+    ls:hasComponentAttribute data:attr_mandatory_022, data:attr_order_022 ;
+    ls:hasSubquestion data:subquestion_048, data:subquestion_049, data:subquestion_050, data:subquestion_051, data:subquestion_052 .
+
+data:id_question_022 a ls:Identifier ;
+    ls:id 22 .
+
+data:var_022 a ls:Variable ;
+    ls:variableCod "Q022spreadsheet" .
+
+data:content_question_022 a ls:Content ;
+    ls:text "Do you use spreadsheet software? (You may choose more than one answer.)" .
+
+data:attr_mandatory_022 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_022 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+data:subquestion_048 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_048 ;
+    ls:hasContent data:content_sub_048 ;
+    ls:hasSubAttribute data:attr_suborder_048 .
+
+data:var_sub_048 a ls:Variable ;
+    ls:variableCod "Q022excel" .
+
+data:content_sub_048 a ls:Content ;
+    ls:text "Microsoft Excel" .
+
+data:attr_suborder_048 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_049 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_049 ;
+    ls:hasContent data:content_sub_049 ;
+    ls:hasSubAttribute data:attr_suborder_049 .
+
+data:var_sub_049 a ls:Variable ;
+    ls:variableCod "Q022librecalc" .
+
+data:content_sub_049 a ls:Content ;
+    ls:text "Open Office / LibreOffice Calc" .
+
+data:attr_suborder_049 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_050 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_050 ;
+    ls:hasContent data:content_sub_050 ;
+    ls:hasSubAttribute data:attr_suborder_050 .
+
+data:var_sub_050 a ls:Variable ;
+    ls:variableCod "Q022googlesheets" .
+
+data:content_sub_050 a ls:Content ;
+    ls:text "Google Sheets" .
+
+data:attr_suborder_050 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_051 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_051 ;
+    ls:hasContent data:content_sub_051 ;
+    ls:hasSubAttribute data:attr_suborder_051 .
+
+data:var_sub_051 a ls:Variable ;
+    ls:variableCod "Q022none" .
+
+data:content_sub_051 a ls:Content ;
+    ls:text "I don't use such software" .
+
+data:attr_suborder_051 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_052 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_052 ;
+    ls:hasContent data:content_sub_052 ;
+    ls:hasSubAttribute data:attr_suborder_052 .
+
+data:var_sub_052 a ls:Variable ;
+    ls:variableCod "Q022other" .
+
+data:content_sub_052 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_052 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+# Q23 - Programs for presentation and conceptual models
+data:question_023 a ls:Question ;
+    ls:hasId data:id_question_023 ;
+    ls:hasGroup data:group_005 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_023 ;
+    ls:hasContent data:content_question_023 ;
+    ls:hasComponentAttribute data:attr_mandatory_023, data:attr_order_023 ;
+    ls:hasSubquestion data:subquestion_053, data:subquestion_054, data:subquestion_055, data:subquestion_056, data:subquestion_057, data:subquestion_058 .
+
+data:id_question_023 a ls:Identifier ;
+    ls:id 23 .
+
+data:var_023 a ls:Variable ;
+    ls:variableCod "Q023presentation" .
+
+data:content_question_023 a ls:Content ;
+    ls:text "Do you use programs for presentation and conceptual models? (You may choose more than one answer.)" .
+
+data:attr_mandatory_023 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_023 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "5" .
+
+data:subquestion_053 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_053 ;
+    ls:hasContent data:content_sub_053 ;
+    ls:hasSubAttribute data:attr_suborder_053 .
+
+data:var_sub_053 a ls:Variable ;
+    ls:variableCod "Q023dataviz" .
+
+data:content_sub_053 a ls:Content ;
+    ls:text "DataViz" .
+
+data:attr_suborder_053 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_054 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_054 ;
+    ls:hasContent data:content_sub_054 ;
+    ls:hasSubAttribute data:attr_suborder_054 .
+
+data:var_sub_054 a ls:Variable ;
+    ls:variableCod "Q023excel" .
+
+data:content_sub_054 a ls:Content ;
+    ls:text "Microsoft Excel" .
+
+data:attr_suborder_054 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_055 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_055 ;
+    ls:hasContent data:content_sub_055 ;
+    ls:hasSubAttribute data:attr_suborder_055 .
+
+data:var_sub_055 a ls:Variable ;
+    ls:variableCod "Q023yed" .
+
+data:content_sub_055 a ls:Content ;
+    ls:text "yEd Graph Editor" .
+
+data:attr_suborder_055 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_056 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_056 ;
+    ls:hasContent data:content_sub_056 ;
+    ls:hasSubAttribute data:attr_suborder_056 .
+
+data:var_sub_056 a ls:Variable ;
+    ls:variableCod "Q023powerpoint" .
+
+data:content_sub_056 a ls:Content ;
+    ls:text "Microsoft PowerPoint" .
+
+data:attr_suborder_056 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_057 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_057 ;
+    ls:hasContent data:content_sub_057 ;
+    ls:hasSubAttribute data:attr_suborder_057 .
+
+data:var_sub_057 a ls:Variable ;
+    ls:variableCod "Q023none" .
+
+data:content_sub_057 a ls:Content ;
+    ls:text "I don't use such software" .
+
+data:attr_suborder_057 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+data:subquestion_058 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_058 ;
+    ls:hasContent data:content_sub_058 ;
+    ls:hasSubAttribute data:attr_suborder_058 .
+
+data:var_sub_058 a ls:Variable ;
+    ls:variableCod "Q023other" .
+
+data:content_sub_058 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_058 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "5" .
+
+# Q24 - Vector graphics software
+data:question_024 a ls:Question ;
+    ls:hasId data:id_question_024 ;
+    ls:hasGroup data:group_005 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_024 ;
+    ls:hasContent data:content_question_024 ;
+    ls:hasComponentAttribute data:attr_mandatory_024, data:attr_order_024 ;
+    ls:hasSubquestion data:subquestion_059, data:subquestion_060, data:subquestion_061, data:subquestion_062 .
+
+data:id_question_024 a ls:Identifier ;
+    ls:id 24 .
+
+data:var_024 a ls:Variable ;
+    ls:variableCod "Q024vectorgraphics" .
+
+data:content_question_024 a ls:Content ;
+    ls:text "Do you use software for making vector graphics? (You may choose more than one answer.)" .
+
+data:attr_mandatory_024 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_024 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "6" .
+
+data:subquestion_059 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_059 ;
+    ls:hasContent data:content_sub_059 ;
+    ls:hasSubAttribute data:attr_suborder_059 .
+
+data:var_sub_059 a ls:Variable ;
+    ls:variableCod "Q024visio" .
+
+data:content_sub_059 a ls:Content ;
+    ls:text "Microsoft Visio" .
+
+data:attr_suborder_059 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_060 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_060 ;
+    ls:hasContent data:content_sub_060 ;
+    ls:hasSubAttribute data:attr_suborder_060 .
+
+data:var_sub_060 a ls:Variable ;
+    ls:variableCod "Q024_libre_draw" .
+
+data:content_sub_060 a ls:Content ;
+    ls:text "Open Office / LibreOffice Draw" .
+
+data:attr_suborder_060 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_061 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_061 ;
+    ls:hasContent data:content_sub_061 ;
+    ls:hasSubAttribute data:attr_suborder_061 .
+
+data:var_sub_061 a ls:Variable ;
+    ls:variableCod "Q024none" .
+
+data:content_sub_061 a ls:Content ;
+    ls:text "I don't use such software" .
+
+data:attr_suborder_061 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_062 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_062 ;
+    ls:hasContent data:content_sub_062 ;
+    ls:hasSubAttribute data:attr_suborder_062 .
+
+data:var_sub_062 a ls:Variable ;
+    ls:variableCod "Q024other" .
+
+data:content_sub_062 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_062 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+# Q25 - Software for mathematical formulae
+data:question_025 a ls:Question ;
+    ls:hasId data:id_question_025 ;
+    ls:hasGroup data:group_005 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_025 ;
+    ls:hasContent data:content_question_025 ;
+    ls:hasComponentAttribute data:attr_mandatory_025, data:attr_order_025 ;
+    ls:hasSubquestion data:subquestion_063, data:subquestion_064, data:subquestion_065, data:subquestion_066 .
+
+data:id_question_025 a ls:Identifier ;
+    ls:id 25 .
+
+data:var_025 a ls:Variable ;
+    ls:variableCod "Q025mathformulae" .
+
+data:content_question_025 a ls:Content ;
+    ls:text "Do you use software for mathematical formulae? (You may choose more than one answer.)" .
+
+data:attr_mandatory_025 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_025 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "7" .
+
+data:subquestion_063 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_063 ;
+    ls:hasContent data:content_sub_063 ;
+    ls:hasSubAttribute data:attr_suborder_063 .
+
+data:var_sub_063 a ls:Variable ;
+    ls:variableCod "Q025latex" .
+
+data:content_sub_063 a ls:Content ;
+    ls:text "LaTeX" .
+
+data:attr_suborder_063 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_064 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_064 ;
+    ls:hasContent data:content_sub_064 ;
+    ls:hasSubAttribute data:attr_suborder_064 .
+
+data:var_sub_064 a ls:Variable ;
+    ls:variableCod "Q025libremath" .
+
+data:content_sub_064 a ls:Content ;
+    ls:text "Open Office / LibreOffice Math" .
+
+data:attr_suborder_064 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_065 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_065 ;
+    ls:hasContent data:content_sub_065 ;
+    ls:hasSubAttribute data:attr_suborder_065 .
+
+data:var_sub_065 a ls:Variable ;
+    ls:variableCod "Q025none" .
+
+data:content_sub_065 a ls:Content ;
+    ls:text "I don't use such software" .
+
+data:attr_suborder_065 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_066 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_066 ;
+    ls:hasContent data:content_sub_066 ;
+    ls:hasSubAttribute data:attr_suborder_066 .
+
+data:var_sub_066 a ls:Variable ;
+    ls:variableCod "Q025other" .
+
+data:content_sub_066 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_066 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+# Q26 - Note-taking programs
+data:question_026 a ls:Question ;
+    ls:hasId data:id_question_026 ;
+    ls:hasGroup data:group_005 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_026 ;
+    ls:hasContent data:content_question_026 ;
+    ls:hasComponentAttribute data:attr_mandatory_026, data:attr_order_026 ;
+    ls:hasSubquestion data:subquestion_067, data:subquestion_068, data:subquestion_069, data:subquestion_070, data:subquestion_071 .
+
+data:id_question_026 a ls:Identifier ;
+    ls:id 26 .
+
+data:var_026 a ls:Variable ;
+    ls:variableCod "Q026notetaking" .
+
+data:content_question_026 a ls:Content ;
+    ls:text "Do you use note-taking programs? (You may choose more than one answer.)" .
+
+data:attr_mandatory_026 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_026 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "8" .
+
+data:subquestion_067 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_067 ;
+    ls:hasContent data:content_sub_067 ;
+    ls:hasSubAttribute data:attr_suborder_067 .
+
+data:var_sub_067 a ls:Variable ;
+    ls:variableCod "Q026onenote" .
+
+data:content_sub_067 a ls:Content ;
+    ls:text "Microsoft OneNote" .
+
+data:attr_suborder_067 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_068 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_068 ;
+    ls:hasContent data:content_sub_068 ;
+    ls:hasSubAttribute data:attr_suborder_068 .
+
+data:var_sub_068 a ls:Variable ;
+    ls:variableCod "Q026applenotes" .
+
+data:content_sub_068 a ls:Content ;
+    ls:text "Apple Notes" .
+
+data:attr_suborder_068 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_069 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_069 ;
+    ls:hasContent data:content_sub_069 ;
+    ls:hasSubAttribute data:attr_suborder_069 .
+
+data:var_sub_069 a ls:Variable ;
+    ls:variableCod "Q026googlekeep" .
+
+data:content_sub_069 a ls:Content ;
+    ls:text "Google Keep" .
+
+data:attr_suborder_069 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_070 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_070 ;
+    ls:hasContent data:content_sub_070 ;
+    ls:hasSubAttribute data:attr_suborder_070 .
+
+data:var_sub_070 a ls:Variable ;
+    ls:variableCod "Q026none" .
+
+data:content_sub_070 a ls:Content ;
+    ls:text "I don't use such software" .
+
+data:attr_suborder_070 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_071 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_071 ;
+    ls:hasContent data:content_sub_071 ;
+    ls:hasSubAttribute data:attr_suborder_071 .
+
+data:var_sub_071 a ls:Variable ;
+    ls:variableCod "Q026other" .
+
+data:content_sub_071 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_071 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+# ============================================
+# GROUP 6 - LEGAL ASPECTS QUESTIONS
+# ============================================
+
+# Q27 - Who is the owner of the datasets?
+data:question_027 a ls:Question ;
+    ls:hasId data:id_question_027 ;
+    ls:hasGroup data:group_006 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_027 ;
+    ls:hasContent data:content_question_027 ;
+    ls:hasComponentAttribute data:attr_mandatory_027, data:attr_order_027 ;
+    ls:hasSubquestion data:subquestion_072, data:subquestion_073, data:subquestion_074, data:subquestion_075, data:subquestion_076, data:subquestion_077, data:subquestion_078, data:subquestion_079 .
+
+data:id_question_027 a ls:Identifier ;
+    ls:id 27 .
+
+data:var_027 a ls:Variable ;
+    ls:variableCod "Q027datasetowner" .
+
+data:content_question_027 a ls:Content ;
+    ls:text "Do you know who is the owner of the datasets that were put together during your research projects? (You may choose more than one answer.)" .
+
+data:attr_mandatory_027 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_027 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_072 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_072 ;
+    ls:hasContent data:content_sub_072 ;
+    ls:hasSubAttribute data:attr_suborder_072 .
+
+data:var_sub_072 a ls:Variable ;
+    ls:variableCod "Q027me" .
+
+data:content_sub_072 a ls:Content ;
+    ls:text "Me" .
+
+data:attr_suborder_072 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_073 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_073 ;
+    ls:hasContent data:content_sub_073 ;
+    ls:hasSubAttribute data:attr_suborder_073 .
+
+data:var_sub_073 a ls:Variable ;
+    ls:variableCod "Q027mecolleagues" .
+
+data:content_sub_073 a ls:Content ;
+    ls:text "Me and my colleagues" .
+
+data:attr_suborder_073 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_074 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_074 ;
+    ls:hasContent data:content_sub_074 ;
+    ls:hasSubAttribute data:attr_suborder_074 .
+
+data:var_sub_074 a ls:Variable ;
+    ls:variableCod "Q027meinstitution" .
+
+data:content_sub_074 a ls:Content ;
+    ls:text "Me (and my colleagues) and my institution" .
+
+data:attr_suborder_074 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_075 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_075 ;
+    ls:hasContent data:content_sub_075 ;
+    ls:hasSubAttribute data:attr_suborder_075 .
+
+data:var_sub_075 a ls:Variable ;
+    ls:variableCod "Q027institutioncontract" .
+
+data:content_sub_075 a ls:Content ;
+    ls:text "My institution by means of a transfer of rights specified in my contract of employment" .
+
+data:attr_suborder_075 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_076 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_076 ;
+    ls:hasContent data:content_sub_076 ;
+    ls:hasSubAttribute data:attr_suborder_076 .
+
+data:var_sub_076 a ls:Variable ;
+    ls:variableCod "Q027institutionrank" .
+
+data:content_sub_076 a ls:Content ;
+    ls:text "My institution by means of a transfer of rights via my academic rank" .
+
+data:attr_suborder_076 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+data:subquestion_077 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_077 ;
+    ls:hasContent data:content_sub_077 ;
+    ls:hasSubAttribute data:attr_suborder_077 .
+
+data:var_sub_077 a ls:Variable ;
+    ls:variableCod "Q027institution_separate" .
+
+data:content_sub_077 a ls:Content ;
+    ls:text "My institution by means of a transfer of rights specified in a separate contract" .
+
+data:attr_suborder_077 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "5" .
+
+data:subquestion_078 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_078 ;
+    ls:hasContent data:content_sub_078 ;
+    ls:hasSubAttribute data:attr_suborder_078 .
+
+data:var_sub_078 a ls:Variable ;
+    ls:variableCod "Q027notsure" .
+
+data:content_sub_078 a ls:Content ;
+    ls:text "I'm not sure" .
+
+data:attr_suborder_078 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "6" .
+
+data:subquestion_079 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_079 ;
+    ls:hasContent data:content_sub_079 ;
+    ls:hasSubAttribute data:attr_suborder_079 .
+
+data:var_sub_079 a ls:Variable ;
+    ls:variableCod "Q027other" .
+
+data:content_sub_079 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_079 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "7" .
+
+# Q28 - To what extent are you required to anonymize?
+data:question_028 a ls:Question ;
+    ls:hasId data:id_question_028 ;
+    ls:hasGroup data:group_006 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_028 ;
+    ls:hasContent data:content_question_028 ;
+    ls:hasComponentAttribute data:attr_mandatory_028, data:attr_order_028 ;
+    ls:hasSubquestion data:subquestion_080, data:subquestion_081, data:subquestion_082 .
+
+data:id_question_028 a ls:Identifier ;
+    ls:id 28 .
+
+data:var_028 a ls:Variable ;
+    ls:variableCod "Q028anonymize_extent" .
+
+data:content_question_028 a ls:Content ;
+    ls:text "To what extent are you required to anonymize the data that you collect?" .
+
+data:attr_mandatory_028 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_028 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_080 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_080 ;
+    ls:hasContent data:content_sub_080 ;
+    ls:hasSubAttribute data:attr_suborder_080 .
+
+data:var_sub_080 a ls:Variable ;
+    ls:variableCod "Q028fullyanonymized" .
+
+data:content_sub_080 a ls:Content ;
+    ls:text "Data must be fully anonymized" .
+
+data:attr_suborder_080 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_081 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_081 ;
+    ls:hasContent data:content_sub_081 ;
+    ls:hasSubAttribute data:attr_suborder_081 .
+
+data:var_sub_081 a ls:Variable ;
+    ls:variableCod "Q028asmuchaspossible" .
+
+data:content_sub_081 a ls:Content ;
+    ls:text "Data must be anonymized as much as possible" .
+
+data:attr_suborder_081 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_082 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_082 ;
+    ls:hasContent data:content_sub_082 ;
+    ls:hasSubAttribute data:attr_suborder_082 .
+
+data:var_sub_082 a ls:Variable ;
+    ls:variableCod "Q028other" .
+
+data:content_sub_082 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_082 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+# Q29 - Do you anonymize your data by yourself?
+data:question_029 a ls:Question ;
+    ls:hasId data:id_question_029 ;
+    ls:hasGroup data:group_006 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_029 ;
+    ls:hasContent data:content_question_029 ;
+    ls:hasComponentAttribute data:attr_mandatory_029, data:attr_order_029 ;
+    ls:hasAnswerOption data:answer_031, data:answer_032 .
+
+data:id_question_029 a ls:Identifier ;
+    ls:id 29 .
+
+data:var_029 a ls:Variable ;
+    ls:variableCod "Q029doanonymize" .
+
+data:content_question_029 a ls:Content ;
+    ls:text "Do you anonymize your data by yourself?" .
+
+data:attr_mandatory_029 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_029 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:answer_031 a ls:AnswerOption ;
+    ls:componentValue "Y" ;
+    ls:hasContent data:content_answer_031 ;
+    ls:hasComponentAttribute data:attr_sortorder_031 .
+
+data:content_answer_031 a ls:Content ;
+    ls:text "Yes" .
+
+data:attr_sortorder_031 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_032 a ls:AnswerOption ;
+    ls:componentValue "N" ;
+    ls:hasContent data:content_answer_032 ;
+    ls:hasComponentAttribute data:attr_sortorder_032 .
+
+data:content_answer_032 a ls:Content ;
+    ls:text "No" .
+
+data:attr_sortorder_032 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+# Q30 - IF YES (29) - Which anonymization techniques?
+data:question_030 a ls:Question ;
+    ls:hasId data:id_question_030 ;
+    ls:hasGroup data:group_006 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_030 ;
+    ls:hasContent data:content_question_030 ;
+    ls:hasComponentAttribute data:attr_mandatory_030, data:attr_order_030, data:attr_relevance_030 ;
+    ls:hasSubquestion data:subquestion_083, data:subquestion_084, data:subquestion_085, data:subquestion_086, data:subquestion_087, data:subquestion_088, data:subquestion_089, data:subquestion_090 .
+
+data:id_question_030 a ls:Identifier ;
+    ls:id 30 .
+
+data:var_030 a ls:Variable ;
+    ls:variableCod "Q030anonymizationtechniques" .
+
+data:content_question_030 a ls:Content ;
+    ls:text "Which anonymization techniques do you use? (You may choose more than one answer.)" .
+
+data:attr_mandatory_030 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_030 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+data:attr_relevance_030 a ls:ComponentAttribute ;
+    ls:componentName "relevance" ;
+    ls:componentValue "Q029_do_anonymize=='Y'" .
+
+data:subquestion_083 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_083 ;
+    ls:hasContent data:content_sub_083 ;
+    ls:hasSubAttribute data:attr_suborder_083 .
+
+data:var_sub_083 a ls:Variable ;
+    ls:variableCod "Q030pseudonymization" .
+
+data:content_sub_083 a ls:Content ;
+    ls:text "Pseudonymization" .
+
+data:attr_suborder_083 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_084 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_084 ;
+    ls:hasContent data:content_sub_084 ;
+    ls:hasSubAttribute data:attr_suborder_084 .
+
+data:var_sub_084 a ls:Variable ;
+    ls:variableCod "Q030noiseaddition" .
+
+data:content_sub_084 a ls:Content ;
+    ls:text "Noise addition" .
+
+data:attr_suborder_084 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_085 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_085 ;
+    ls:hasContent data:content_sub_085 ;
+    ls:hasSubAttribute data:attr_suborder_085 .
+
+data:var_sub_085 a ls:Variable ;
+    ls:variableCod "Q030substitution" .
+
+data:content_sub_085 a ls:Content ;
+    ls:text "Substitution" .
+
+data:attr_suborder_085 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_086 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_086 ;
+    ls:hasContent data:content_sub_086 ;
+    ls:hasSubAttribute data:attr_suborder_086 .
+
+data:var_sub_086 a ls:Variable ;
+    ls:variableCod "Q030aggregation" .
+
+data:content_sub_086 a ls:Content ;
+    ls:text "Aggregation or k-anonymity" .
+
+data:attr_suborder_086 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_087 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_087 ;
+    ls:hasContent data:content_sub_087 ;
+    ls:hasSubAttribute data:attr_suborder_087 .
+
+data:var_sub_087 a ls:Variable ;
+    ls:variableCod "Q030diversity" .
+
+data:content_sub_087 a ls:Content ;
+    ls:text "L-diversity" .
+
+data:attr_suborder_087 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+data:subquestion_088 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_088 ;
+    ls:hasContent data:content_sub_088 ;
+    ls:hasSubAttribute data:attr_suborder_088 .
+
+data:var_sub_088 a ls:Variable ;
+    ls:variableCod "Q030differentialprivacy" .
+
+data:content_sub_088 a ls:Content ;
+    ls:text "Differential privacy" .
+
+data:attr_suborder_088 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "5" .
+
+data:subquestion_089 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_089 ;
+    ls:hasContent data:content_sub_089 ;
+    ls:hasSubAttribute data:attr_suborder_089 .
+
+data:var_sub_089 a ls:Variable ;
+    ls:variableCod "Q030hashing" .
+
+data:content_sub_089 a ls:Content ;
+    ls:text "Hashing / Tokenization" .
+
+data:attr_suborder_089 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "6" .
+
+data:subquestion_090 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_090 ;
+    ls:hasContent data:content_sub_090 ;
+    ls:hasSubAttribute data:attr_suborder_090 .
+
+data:var_sub_090 a ls:Variable ;
+    ls:variableCod "Q030other" .
+
+data:content_sub_090 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_090 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "7" .
+
+# Q31 - IF NO (29) - Who is responsible?
+data:question_031 a ls:Question ;
+    ls:hasId data:id_question_031 ;
+    ls:hasGroup data:group_006 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_031 ;
+    ls:hasContent data:content_question_031 ;
+    ls:hasComponentAttribute data:attr_mandatory_031, data:attr_order_031, data:attr_relevance_031 ;
+    ls:hasAnswerOption data:answer_033, data:answer_034 .
+
+data:id_question_031 a ls:Identifier ;
+    ls:id 31 .
+
+data:var_031 a ls:Variable ;
+    ls:variableCod "Q031whoresponsible" .
+
+data:content_question_031 a ls:Content ;
+    ls:text "Do you know who is responsible for the anonymization of your data?" .
+
+data:attr_mandatory_031 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_031 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "5" .
+
+data:attr_relevance_031 a ls:ComponentAttribute ;
+    ls:componentName "relevance" ;
+    ls:componentValue "Q029_do_anonymize=='N'" .
+
+data:answer_033 a ls:AnswerOption ;
+    ls:componentValue "Y" ;
+    ls:hasContent data:content_answer_033 ;
+    ls:hasComponentAttribute data:attr_sortorder_033 .
+
+data:content_answer_033 a ls:Content ;
+    ls:text "Yes (Please specify):" .
+
+data:attr_sortorder_033 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_034 a ls:AnswerOption ;
+    ls:componentValue "N" ;
+    ls:hasContent data:content_answer_034 ;
+    ls:hasComponentAttribute data:attr_sortorder_034 .
+
+data:content_answer_034 a ls:Content ;
+    ls:text "No" .
+
+data:attr_sortorder_034 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+# Q32 - Consent requirement
+data:question_032 a ls:Question ;
+    ls:hasId data:id_question_032 ;
+    ls:hasGroup data:group_006 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_032 ;
+    ls:hasContent data:content_question_032 ;
+    ls:hasComponentAttribute data:attr_mandatory_032, data:attr_order_032 ;
+    ls:hasSubquestion data:subquestion_091, data:subquestion_092, data:subquestion_093, data:subquestion_094, data:subquestion_095 .
+
+data:id_question_032 a ls:Identifier ;
+    ls:id 32 .
+
+data:var_032 a ls:Variable ;
+    ls:variableCod "Q032consentrequirement" .
+
+data:content_question_032 a ls:Content ;
+    ls:text "To what extent are you required to secure the consent of your respondents regarding the use of their personal data?" .
+
+data:attr_mandatory_032 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_032 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "6" .
+
+data:subquestion_091 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_091 ;
+    ls:hasContent data:content_sub_091 ;
+    ls:hasSubAttribute data:attr_suborder_091 .
+
+data:var_sub_091 a ls:Variable ;
+    ls:variableCod "Q032consentbefore" .
+
+data:content_sub_091 a ls:Content ;
+    ls:text "Consent must be secured even before the survey begins" .
+
+data:attr_suborder_091 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_092 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_092 ;
+    ls:hasContent data:content_sub_092 ;
+    ls:hasSubAttribute data:attr_suborder_092 .
+
+data:var_sub_092 a ls:Variable ;
+    ls:variableCod "Q032consentduring" .
+
+data:content_sub_092 a ls:Content ;
+    ls:text "Consent must be secured at some point during the survey" .
+
+data:attr_suborder_092 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_093 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_093 ;
+    ls:hasContent data:content_sub_093 ;
+    ls:hasSubAttribute data:attr_suborder_093 .
+
+data:var_sub_093 a ls:Variable ;
+    ls:variableCod "Q032consentnotrequired" .
+
+data:content_sub_093 a ls:Content ;
+    ls:text "Consent is not explicitly required" .
+
+data:attr_suborder_093 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_094 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_094 ;
+    ls:hasContent data:content_sub_094 ;
+    ls:hasSubAttribute data:attr_suborder_094 .
+
+data:var_sub_094 a ls:Variable ;
+    ls:variableCod "Q032nopersonaldata" .
+
+data:content_sub_094 a ls:Content ;
+    ls:text "I do not use personal data" .
+
+data:attr_suborder_094 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+data:subquestion_095 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_095 ;
+    ls:hasContent data:content_sub_095 ;
+    ls:hasSubAttribute data:attr_suborder_095 .
+
+data:var_sub_095 a ls:Variable ;
+    ls:variableCod "Q032other" .
+
+data:content_sub_095 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_095 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+# Q33 - Codes of conduct
+data:question_033 a ls:Question ;
+    ls:hasId data:id_question_033 ;
+    ls:hasGroup data:group_006 ;
+    ls:hasType data:type_M ;
+    ls:hasVariable data:var_033 ;
+    ls:hasContent data:content_question_033 ;
+    ls:hasComponentAttribute data:attr_mandatory_033, data:attr_order_033 ;
+    ls:hasSubquestion data:subquestion_096, data:subquestion_097, data:subquestion_098, data:subquestion_099 .
+
+data:id_question_033 a ls:Identifier ;
+    ls:id 33 .
+
+data:var_033 a ls:Variable ;
+    ls:variableCod "Q033codesofconduct" .
+
+data:content_question_033 a ls:Content ;
+    ls:text "Are you required to follow codes of conduct that are specific to your research group for the handling of personal data?" .
+
+data:attr_mandatory_033 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_033 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "7" .
+
+data:subquestion_096 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_096 ;
+    ls:hasContent data:content_sub_096 ;
+    ls:hasSubAttribute data:attr_suborder_096 .
+
+data:var_sub_096 a ls:Variable ;
+    ls:variableCod "Q033yes" .
+
+data:content_sub_096 a ls:Content ;
+    ls:text "Yes" .
+
+data:attr_suborder_096 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "0" .
+
+data:subquestion_097 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_097 ;
+    ls:hasContent data:content_sub_097 ;
+    ls:hasSubAttribute data:attr_suborder_097 .
+
+data:var_sub_097 a ls:Variable ;
+    ls:variableCod "Q033no" .
+
+data:content_sub_097 a ls:Content ;
+    ls:text "No" .
+
+data:attr_suborder_097 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+data:subquestion_098 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_098 ;
+    ls:hasContent data:content_sub_098 ;
+    ls:hasSubAttribute data:attr_suborder_098 .
+
+data:var_sub_098 a ls:Variable ;
+    ls:variableCod "Q033nosuchcodes" .
+
+data:content_sub_098 a ls:Content ;
+    ls:text "There are no such codes in my research group yet" .
+
+data:attr_suborder_098 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+data:subquestion_099 a ls:Subquestion ;
+    ls:hasVariable data:var_sub_099 ;
+    ls:hasContent data:content_sub_099 ;
+    ls:hasSubAttribute data:attr_suborder_099 .
+
+data:var_sub_099 a ls:Variable ;
+    ls:variableCod "Q033other" .
+
+data:content_sub_099 a ls:Content ;
+    ls:text "Other (Please specify)" .
+
+data:attr_suborder_099 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+
+
+# ============================================
+# SURVEY - Research Data Management Survey
+# ============================================
+
+data:survey_001 a ls:Survey ;
+    ls:hasSurveyId data:id_survey_001 ;
+    ls:hasQuestionGroup data:group_001, data:group_002, data:group_003, data:group_004, data:group_005, data:group_006 .
+
+

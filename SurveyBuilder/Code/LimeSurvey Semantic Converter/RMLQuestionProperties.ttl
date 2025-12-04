@@ -1,0 +1,443 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix ls: <https://w3id.org/fossr/ontology/limesurvey/>.
+@prefix data: <https://w3id.org/fossr/data/limesurvey/>.
+
+
+
+
+# =====================================================
+# DEFAULT VALUE (se presente)
+# =====================================================
+<#DefaultValueMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_1_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/defaultvalue/{qid}";
+    rr:class ls:DefaultValue
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:defaultValueContent;
+    rr:objectMap [
+      rml:reference "defaultvalue";
+      rr:datatype xsd:string
+    ]
+  ].
+
+# =====================================================
+# QUESTION -> DEFAULT VALUE (hasDefaultValue)
+# =====================================================
+<#QuestionDefaultValueMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_1_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/question/{qid}"
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:hasDefaultValue;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/limesurvey/defaultvalue/{qid}"
+    ]
+  ].
+
+# =====================================================
+# SUBQUESTION (dal file _2)
+# =====================================================
+<#SubquestionMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_2_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/question/{sub_id}";
+    rr:class ls:Question
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:questionId;
+    rr:objectMap [
+      rml:reference "sub_id";
+      rr:datatype xsd:integer
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:questionTitle;
+    rr:objectMap [
+      rml:reference "title";
+      rr:datatype xsd:string
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:questionText;
+    rr:objectMap [
+      rml:reference "question";
+      rr:datatype xsd:string
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "question";
+      rr:datatype xsd:string
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:parentQuestionId;
+    rr:objectMap [
+      rml:reference "qid";
+      rr:datatype xsd:integer
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:scaleId;
+    rr:objectMap [
+      rml:reference "scale_id";
+      rr:datatype xsd:integer
+    ]
+  ].
+
+# =====================================================
+# PARENT QUESTION -> SUBQUESTION (hasParentQuestion)
+# =====================================================
+<#ParentSubquestionRelationMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_2_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/question/{sub_id}"
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:hasParentQuestion;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/limesurvey/question/{qid}"
+    ]
+  ].
+
+# =====================================================
+# SUBQUESTION ALTERNATIVE (dal file _3)
+# Aggiorna le Question esistenti con code e text dal file _3
+# Questo può essere una rappresentazione alternativa dello stesso dato
+# =====================================================
+<#SubquestionAlternativeMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_3_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/subquestion/{qid}_{code}";
+    rr:class ls:Question
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:questionTitle;
+    rr:objectMap [
+      rml:reference "code";
+      rr:datatype xsd:string
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:questionText;
+    rr:objectMap [
+      rml:reference "text";
+      rr:datatype xsd:string
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "text";
+      rr:datatype xsd:string
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:parentQuestionId;
+    rr:objectMap [
+      rml:reference "parent_qid";
+      rr:datatype xsd:integer
+    ]
+  ].
+
+# =====================================================
+# PARENT QUESTION -> SUBQUESTION (dal file _3)
+# =====================================================
+<#ParentSubquestionFromFile3Map> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_3_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/subquestion/{qid}_{code}"
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:hasParentQuestion;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/limesurvey/question/{qid}"
+    ]
+  ].
+
+
+# =====================================================
+# QUESTION ATTRIBUTE (dal file _4)
+# =====================================================
+<#QuestionAttributeMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_4_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/questionattribute/{qid}";
+    rr:class ls:QuestionAttribute
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:attributeCssClass;
+    rr:objectMap [
+      rml:reference "value";
+      rr:datatype xsd:string
+    ]
+  ].
+
+# =====================================================
+# QUESTION -> ATTRIBUTE (hasAttribute)
+# =====================================================
+<#QuestionAttributeRelationMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_4_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/question/{qid}"
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:hasAttribute;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/limesurvey/questionattribute/{qid}"
+    ]
+  ].
+
+# =====================================================
+# QUESTION ATTRIBUTE LANG (dal file _5)
+# =====================================================
+<#QuestionAttributeLangMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_5_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/questionattributelang/{qid}";
+    rr:class ls:QuestionAttributeLang
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:attributeLangEmValidationQTip;
+    rr:objectMap [
+      rml:reference "value";
+      rr:datatype xsd:string
+    ]
+  ].
+
+# =====================================================
+# QUESTION -> ATTRIBUTE LANG (hasAttributeLang)
+# =====================================================
+<#QuestionAttributeLangRelationMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_5_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/question/{qid}"
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:hasAttributeLang;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/limesurvey/questionattributelang/{qid}"
+    ]
+  ].
+
+# =====================================================
+# SURVEY (riferimento)
+# =====================================================
+<#SurveyRefMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_1_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/survey/{sid}";
+    rr:class ls:Survey
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:surveyId;
+    rr:objectMap [
+      rml:reference "sid";
+      rr:datatype xsd:int
+    ]
+  ].
+
+# =====================================================
+# QUESTION GROUP (riferimento)
+# =====================================================
+<#QuestionGroupRefMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_1_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/group/{gid}";
+    rr:class ls:QuestionGroup
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:groupId;
+    rr:objectMap [
+      rml:reference "gid";
+      rr:datatype xsd:integer
+    ]
+  ].
+
+
+
+
+# =====================================================
+# ANSWER OPTION
+# =====================================================
+<#AnswerOptionMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_6_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/answeroption/{qid}_{ao_code}";
+    rr:class ls:AnswerOption
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:answerCode;
+    rr:objectMap [
+      rml:reference "ao_code";
+      rr:datatype xsd:string
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:answerText;
+    rr:objectMap [
+      rml:reference "answer";
+      rr:datatype xsd:string
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "answer";
+      rr:datatype xsd:string
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:assessmentValue;
+    rr:objectMap [
+      rml:reference "assessment_value";
+      rr:datatype xsd:integer
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:answerScaleId;
+    rr:objectMap [
+      rml:reference "scale_id";
+      rr:datatype xsd:integer
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:answerOrder;
+    rr:objectMap [
+      rml:reference "order";
+      rr:datatype xsd:integer
+    ]
+  ].
+
+# =====================================================
+# QUESTION -> ANSWER OPTION (hasAnswerOption)
+# =====================================================
+<#QuestionAnswerOptionMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_6_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/question/{qid}"
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:hasAnswerOption;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/limesurvey/answeroption/{qid}_{ao_code}"
+    ]
+  ].
+
+# =====================================================
+# SURVEY (riferimento)
+# =====================================================
+<#SurveyRefMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_6_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/survey/{sid}";
+    rr:class ls:Survey
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:surveyId;
+    rr:objectMap [
+      rml:reference "sid";
+      rr:datatype xsd:int
+    ]
+  ].
+
+# =====================================================
+# QUESTION GROUP (riferimento)
+# =====================================================
+<#QuestionGroupRefMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_6_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/group/{gid}";
+    rr:class ls:QuestionGroup
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:groupId;
+    rr:objectMap [
+      rml:reference "gid";
+      rr:datatype xsd:integer
+    ]
+  ].
+
+# =====================================================
+# QUESTION
+# Questo assicura che la Question esista anche se non nel CSV delle domande
+# =====================================================
+<#QuestionRefMap> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "export_all_question_properties_survey_694511_6_20251107_075713.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/limesurvey/question/{qid}";
+    rr:class ls:Question
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:questionId;
+    rr:objectMap [
+      rml:reference "qid";
+      rr:datatype xsd:integer
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate ls:parentQuestionId;
+    rr:objectMap [
+      rml:reference "parent_qid";
+      rr:datatype xsd:integer
+    ]
+  ].

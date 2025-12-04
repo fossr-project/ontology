@@ -1,0 +1,3227 @@
+@prefix ns1: <https://w3id.org/fossr/ontology/limesurvey/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/fossr/data/question_397> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_397_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_397_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVer01> .
+
+<https://w3id.org/fossr/data/question_398> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_398_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_398_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVer02> .
+
+<https://w3id.org/fossr/data/question_399> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_399_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_399_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_Q> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVer02x1> .
+
+<https://w3id.org/fossr/data/question_400> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_400_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_400_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_D> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVer03x1> .
+
+<https://w3id.org/fossr/data/question_401> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_401_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_401_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe01> .
+
+<https://w3id.org/fossr/data/question_402> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_402_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_402_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_N> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe02> .
+
+<https://w3id.org/fossr/data/question_403> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_403_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_403_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe03> .
+
+<https://w3id.org/fossr/data/question_404> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_404_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_404_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_Q> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe03x1> .
+
+<https://w3id.org/fossr/data/question_405> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_405_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_405_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe03x2> .
+
+<https://w3id.org/fossr/data/question_406> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_406_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_406_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe04> .
+
+<https://w3id.org/fossr/data/question_407> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_407_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_407_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_N> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe05> .
+
+<https://w3id.org/fossr/data/question_408> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_408_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_408_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe06> .
+
+<https://w3id.org/fossr/data/question_409> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_409_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_409_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_%21> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe06x1> .
+
+<https://w3id.org/fossr/data/question_410> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_410_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_410_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe07> .
+
+<https://w3id.org/fossr/data/question_411> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_411_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_411_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_%21> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe07x1> .
+
+<https://w3id.org/fossr/data/question_412> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_412_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_412_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe08> .
+
+<https://w3id.org/fossr/data/question_413> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_413_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_413_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe09> .
+
+<https://w3id.org/fossr/data/question_414> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_414_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_414_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_%21> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe08x1> .
+
+<https://w3id.org/fossr/data/question_415> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_415_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_415_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_%21> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe09x1> .
+
+<https://w3id.org/fossr/data/question_416> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_416_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_416_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_%3B> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe10> .
+
+<https://w3id.org/fossr/data/question_417> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_417_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_417_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe11> .
+
+<https://w3id.org/fossr/data/question_418> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_418_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_418_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe12> .
+
+<https://w3id.org/fossr/data/question_419> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_419_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_419_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe13> .
+
+<https://w3id.org/fossr/data/question_420> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_420_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_420_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe13x1> .
+
+<https://w3id.org/fossr/data/question_421> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_421_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_421_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01> .
+
+<https://w3id.org/fossr/data/question_422> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_422_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_422_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_M> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x2> .
+
+<https://w3id.org/fossr/data/question_423> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_423_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_423_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x1> .
+
+<https://w3id.org/fossr/data/question_424> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_424_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_424_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_M> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x3> .
+
+<https://w3id.org/fossr/data/question_425> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_425_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_425_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x4> .
+
+<https://w3id.org/fossr/data/question_426> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_426_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_426_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE02> .
+
+<https://w3id.org/fossr/data/question_427> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_427_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_427_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE03> .
+
+<https://w3id.org/fossr/data/question_428> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_428_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_428_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE04> .
+
+<https://w3id.org/fossr/data/question_429> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_429_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_429_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_M> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE04x1> .
+
+<https://w3id.org/fossr/data/question_430> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_430_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_430_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE05> .
+
+<https://w3id.org/fossr/data/question_431> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_431_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_431_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea01> .
+
+<https://w3id.org/fossr/data/question_432> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_432_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_432_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea02> .
+
+<https://w3id.org/fossr/data/question_433> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_433_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_433_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea03> .
+
+<https://w3id.org/fossr/data/question_434> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_434_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_434_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea04> .
+
+<https://w3id.org/fossr/data/question_435> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_435_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_34> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_435_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RPIn01> .
+
+<https://w3id.org/fossr/data/question_436> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_436_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_34> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_436_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RPIn02> .
+
+<https://w3id.org/fossr/data/question_437> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_437_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_437_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal01> .
+
+<https://w3id.org/fossr/data/question_438> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_438_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_438_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal02> .
+
+<https://w3id.org/fossr/data/question_439> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_439_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_439_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_M> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03> .
+
+<https://w3id.org/fossr/data/question_440> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_440_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_440_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru01> .
+
+<https://w3id.org/fossr/data/question_441> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_441_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_441_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru02> .
+
+<https://w3id.org/fossr/data/question_442> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_442_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_442_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru03> .
+
+<https://w3id.org/fossr/data/question_443> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_443_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_37> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_443_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RPOr01> .
+
+<https://w3id.org/fossr/data/question_444> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_444_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_37> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_444_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RPOr02> .
+
+<https://w3id.org/fossr/data/question_445> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_445_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_38> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_445_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSAt01> .
+
+<https://w3id.org/fossr/data/question_446> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_446_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_38> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_446_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSAt02> .
+
+<https://w3id.org/fossr/data/question_447> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_447_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_39> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_447_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RRec01> .
+
+<https://w3id.org/fossr/data/question_448> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_448_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_39> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_448_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RRec01x2> .
+
+<https://w3id.org/fossr/data/question_449> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_449_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_40> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_449_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_X> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_V0000> .
+
+<https://w3id.org/fossr/data/question_450> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_450_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_39> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_450_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_Q> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RRec02> .
+
+<https://w3id.org/fossr/data/question_451> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_451_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_39> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_451_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RRec01x3> .
+
+<https://w3id.org/fossr/data/question_452> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_452_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_39> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_452_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RRec01x4> .
+
+<https://w3id.org/fossr/data/question_453> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_453_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_40> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_453_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_X> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_V0001> .
+
+<https://w3id.org/fossr/data/question_454> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_454_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_454_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_Q> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVer01x1> .
+
+<https://w3id.org/fossr/data/question_455> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_455_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_455_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVer04> .
+
+<https://w3id.org/fossr/data/question_456> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_456_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_456_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVer03> .
+
+<https://w3id.org/fossr/data/question_457> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_457_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_39> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_457_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_X> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_V1001x1> .
+
+<https://w3id.org/fossr/data/question_458> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_458_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_458_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_Q> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVer02x2> .
+
+<https://w3id.org/fossr/data/question_459> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_459_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_459_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVer02x3> .
+
+<https://w3id.org/fossr/data/question_460> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_460_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_460_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_Q> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVer02x4> .
+
+<https://w3id.org/fossr/data/question_461> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_461_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_461_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_N> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe02x1> .
+
+<https://w3id.org/fossr/data/question_462> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_462_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_39> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_462_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RRec01x5> .
+
+<https://w3id.org/fossr/data/question_463> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_463_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_41> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_463_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_M> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_CONSENT> .
+
+<https://w3id.org/fossr/data/question_464> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_464_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_42> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_464_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_M> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_CONSENTREC> .
+
+<https://w3id.org/fossr/data/question_465> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_465_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_42> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_465_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_M> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_CONSENTREC01> .
+
+<https://w3id.org/fossr/data/question_466> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_466_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_466_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea02Esp1> .
+
+<https://w3id.org/fossr/data/question_467> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_467_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_467_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea02Esp2> .
+
+<https://w3id.org/fossr/data/question_468> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_468_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_468_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea02Esp3> .
+
+<https://w3id.org/fossr/data/question_469> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_469_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_469_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru01Esp1> .
+
+<https://w3id.org/fossr/data/question_470> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_470_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_470_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru01Esp2> .
+
+<https://w3id.org/fossr/data/question_471> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_471_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_471_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_F> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru01Esp3> .
+
+<https://w3id.org/fossr/data/question_472> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_472_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_472_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe11Esp1> .
+
+<https://w3id.org/fossr/data/question_473> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_473_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_473_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe11Esp2> .
+
+<https://w3id.org/fossr/data/question_474> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_474_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_474_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe11Esp3> .
+
+<https://w3id.org/fossr/data/question_475> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_475_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_475_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea02Esp3b> .
+
+<https://w3id.org/fossr/data/question_476> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_476_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_476_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru01Esp3b> .
+
+<https://w3id.org/fossr/data/question_477> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_477_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_477_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSDe11Esp3B> .
+
+<https://w3id.org/fossr/data/question_478> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_478_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_39> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_478_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_L> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RRec01x3bis> .
+
+<https://w3id.org/fossr/data/question_479> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_479_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_39> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_479_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_S> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RRec01x3tris> .
+
+<https://w3id.org/fossr/data/question_480> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_480_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_480_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_IND> .
+
+<https://w3id.org/fossr/data/question_481> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_481_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_481_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_CAP> .
+
+<https://w3id.org/fossr/data/question_482> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_482_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_482_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ001> .
+
+<https://w3id.org/fossr/data/question_483> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_483_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_483_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ002> .
+
+<https://w3id.org/fossr/data/question_484> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_484_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_484_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ003> .
+
+<https://w3id.org/fossr/data/question_485> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_485_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_485_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ004> .
+
+<https://w3id.org/fossr/data/question_486> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_486_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_486_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ005> .
+
+<https://w3id.org/fossr/data/question_487> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_487_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_487_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ006> .
+
+<https://w3id.org/fossr/data/question_488> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_488_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_488_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ001> .
+
+<https://w3id.org/fossr/data/question_489> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_489_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_489_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ002> .
+
+<https://w3id.org/fossr/data/question_490> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_490_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_490_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ003> .
+
+<https://w3id.org/fossr/data/question_491> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_491_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_491_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ004> .
+
+<https://w3id.org/fossr/data/question_492> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_492_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_492_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ005> .
+
+<https://w3id.org/fossr/data/question_493> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_493_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_493_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x401> .
+
+<https://w3id.org/fossr/data/question_494> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_494_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_494_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x402> .
+
+<https://w3id.org/fossr/data/question_495> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_495_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_495_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x403> .
+
+<https://w3id.org/fossr/data/question_496> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_496_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_496_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x404> .
+
+<https://w3id.org/fossr/data/question_497> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_497_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_497_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x405> .
+
+<https://w3id.org/fossr/data/question_498> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_498_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_498_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x406> .
+
+<https://w3id.org/fossr/data/question_499> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_499_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_499_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x407> .
+
+<https://w3id.org/fossr/data/question_500> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_500_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_500_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x408> .
+
+<https://w3id.org/fossr/data/question_501> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_501_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_501_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x409> .
+
+<https://w3id.org/fossr/data/question_502> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_502_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_502_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE01x410> .
+
+<https://w3id.org/fossr/data/question_503> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_503_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_503_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE02x1> .
+
+<https://w3id.org/fossr/data/question_504> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_504_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_504_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE02x2> .
+
+<https://w3id.org/fossr/data/question_505> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_505_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_505_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE02x3> .
+
+<https://w3id.org/fossr/data/question_506> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_506_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_506_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RITE02x4> .
+
+<https://w3id.org/fossr/data/question_507> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_507_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_507_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ001> .
+
+<https://w3id.org/fossr/data/question_508> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_508_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_508_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ002> .
+
+<https://w3id.org/fossr/data/question_509> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_509_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_509_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ003> .
+
+<https://w3id.org/fossr/data/question_510> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_510_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_510_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ004> .
+
+<https://w3id.org/fossr/data/question_511> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_511_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_511_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ005> .
+
+<https://w3id.org/fossr/data/question_512> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_512_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_512_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ007> .
+
+<https://w3id.org/fossr/data/question_513> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_513_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_513_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea01x1> .
+
+<https://w3id.org/fossr/data/question_514> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_514_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_514_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea02> .
+
+<https://w3id.org/fossr/data/question_515> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_515_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_515_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea03x1> .
+
+<https://w3id.org/fossr/data/question_516> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_516_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_516_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea03x2> .
+
+<https://w3id.org/fossr/data/question_517> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_517_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_517_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea03x3> .
+
+<https://w3id.org/fossr/data/question_518> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_518_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_518_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea03x4> .
+
+<https://w3id.org/fossr/data/question_519> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_519_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_34> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_519_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RPIn01x1> .
+
+<https://w3id.org/fossr/data/question_520> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_520_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_34> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_520_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RPIn01x2> .
+
+<https://w3id.org/fossr/data/question_521> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_521_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_34> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_521_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RPIn01x3> .
+
+<https://w3id.org/fossr/data/question_522> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_522_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_34> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_522_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RPIn01x4> .
+
+<https://w3id.org/fossr/data/question_523> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_523_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_34> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_523_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RPIn01x6> .
+
+<https://w3id.org/fossr/data/question_524> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_524_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_524_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal01x1> .
+
+<https://w3id.org/fossr/data/question_525> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_525_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_525_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal01x2> .
+
+<https://w3id.org/fossr/data/question_526> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_526_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_526_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal01x3> .
+
+<https://w3id.org/fossr/data/question_527> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_527_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_527_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal01x4> .
+
+<https://w3id.org/fossr/data/question_528> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_528_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_528_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal02x1> .
+
+<https://w3id.org/fossr/data/question_529> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_529_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_529_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal02x2> .
+
+<https://w3id.org/fossr/data/question_530> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_530_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_530_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal02x3> .
+
+<https://w3id.org/fossr/data/question_531> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_531_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_531_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal02x4> .
+
+<https://w3id.org/fossr/data/question_532> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_532_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_532_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ001> .
+
+<https://w3id.org/fossr/data/question_533> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_533_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_533_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru02x1> .
+
+<https://w3id.org/fossr/data/question_534> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_534_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_534_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru02x2> .
+
+<https://w3id.org/fossr/data/question_535> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_535_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_535_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru02x3> .
+
+<https://w3id.org/fossr/data/question_536> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_536_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_536_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru02x4> .
+
+<https://w3id.org/fossr/data/question_537> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_537_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_537_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru02x5> .
+
+<https://w3id.org/fossr/data/question_538> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_538_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_538_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RTru02x6> .
+
+<https://w3id.org/fossr/data/question_539> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_539_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_539_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ001> .
+
+<https://w3id.org/fossr/data/question_540> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_540_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_37> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_540_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ001> .
+
+<https://w3id.org/fossr/data/question_541> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_541_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_38> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_541_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSAt01x1> .
+
+<https://w3id.org/fossr/data/question_542> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_542_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_38> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_542_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSAt01x2> .
+
+<https://w3id.org/fossr/data/question_543> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_543_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_38> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_543_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSAt01x3> .
+
+<https://w3id.org/fossr/data/question_544> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_544_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_38> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_544_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSAt01x4> .
+
+<https://w3id.org/fossr/data/question_545> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_545_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_38> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_545_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSAt01x5> .
+
+<https://w3id.org/fossr/data/question_546> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_546_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_38> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_546_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSAt01x6> .
+
+<https://w3id.org/fossr/data/question_547> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_547_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_38> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_547_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSAt02x1> .
+
+<https://w3id.org/fossr/data/question_548> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_548_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_38> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_548_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSAt02x2> .
+
+<https://w3id.org/fossr/data/question_549> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_549_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_38> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_549_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSAt02x3> .
+
+<https://w3id.org/fossr/data/question_550> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_550_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_38> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_550_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RSAt02x4> .
+
+<https://w3id.org/fossr/data/question_551> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_551_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_39> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_551_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RRec02x1> .
+
+<https://w3id.org/fossr/data/question_552> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_552_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_39> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_552_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RRec02x2> .
+
+<https://w3id.org/fossr/data/question_553> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_553_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_553_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_PRIN> .
+
+<https://w3id.org/fossr/data/question_554> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_554_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_554_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_LING> .
+
+<https://w3id.org/fossr/data/question_555> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_555_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_555_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SECO> .
+
+<https://w3id.org/fossr/data/question_556> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_556_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_556_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03x1> .
+
+<https://w3id.org/fossr/data/question_557> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_557_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_557_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03x2> .
+
+<https://w3id.org/fossr/data/question_558> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_558_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_558_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03x3> .
+
+<https://w3id.org/fossr/data/question_559> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_559_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_559_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03x4> .
+
+<https://w3id.org/fossr/data/question_560> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_560_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_560_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03x5> .
+
+<https://w3id.org/fossr/data/question_561> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_561_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_561_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03x6> .
+
+<https://w3id.org/fossr/data/question_562> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_562_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_562_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03x7> .
+
+<https://w3id.org/fossr/data/question_563> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_563_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_563_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03x8> .
+
+<https://w3id.org/fossr/data/question_564> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_564_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_564_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03x9> .
+
+<https://w3id.org/fossr/data/question_565> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_565_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_565_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03x10> .
+
+<https://w3id.org/fossr/data/question_566> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_566_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_566_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03x11> .
+
+<https://w3id.org/fossr/data/question_567> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_567_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_567_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03x12> .
+
+<https://w3id.org/fossr/data/question_568> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_568_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_568_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03xNS> .
+
+<https://w3id.org/fossr/data/question_569> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_569_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_35> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_569_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RVal03xNR> .
+
+<https://w3id.org/fossr/data/question_570> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_570_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_570_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_Nome> .
+
+<https://w3id.org/fossr/data/question_571> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_571_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_571_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_Cognome> .
+
+<https://w3id.org/fossr/data/question_572> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_572_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_32> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_572_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ006> .
+
+<https://w3id.org/fossr/data/question_573> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_573_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_34> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_573_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RPIn01x5> .
+
+<https://w3id.org/fossr/data/question_574> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_574_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_574_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_IND> .
+
+<https://w3id.org/fossr/data/question_575> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_575_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_575_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_CAP> .
+
+<https://w3id.org/fossr/data/question_576> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_576_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_576_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_COM> .
+
+<https://w3id.org/fossr/data/question_578> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_578_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_578_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_TXT> .
+
+<https://w3id.org/fossr/data/question_579> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_579_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_41> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_579_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ001> .
+
+<https://w3id.org/fossr/data/question_580> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_580_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_42> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_580_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ001> .
+
+<https://w3id.org/fossr/data/question_581> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_581_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_42> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_581_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ001> .
+
+<https://w3id.org/fossr/data/question_582> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_582_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_582_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea02> .
+
+<https://w3id.org/fossr/data/question_583> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_583_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_583_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea02> .
+
+<https://w3id.org/fossr/data/question_584> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_584_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_33> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_584_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_RHea02> .
+
+<https://w3id.org/fossr/data/question_585> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_585_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_585_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ001> .
+
+<https://w3id.org/fossr/data/question_586> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_586_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_586_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ001> .
+
+<https://w3id.org/fossr/data/question_587> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_587_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_36> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_587_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_SQ001> .
+
+<https://w3id.org/fossr/data/question_588> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_588_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_588_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_COM> .
+
+<https://w3id.org/fossr/data/question_589> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_589_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_589_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_CMP> .
+
+<https://w3id.org/fossr/data/question_590> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_590_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_30> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_590_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_CMP> .
+
+<https://w3id.org/fossr/data/question_785> a ns1:Question ;
+    ns1:hasContent <https://w3id.org/fossr/data/question_785_content> ;
+    ns1:hasGroup <https://w3id.org/fossr/data/questionGroup_31> ;
+    ns1:hasId <https://w3id.org/fossr/data/question_785_identifier> ;
+    ns1:hasType <https://w3id.org/fossr/data/questionType_T> ;
+    ns1:hasVariable <https://w3id.org/fossr/data/variable_COD> .
+
+<https://w3id.org/fossr/data/questionType_%3B> a ns1:QuestionType ;
+    ns1:code ";" .
+
+<https://w3id.org/fossr/data/questionType_D> a ns1:QuestionType ;
+    ns1:code "D" .
+
+<https://w3id.org/fossr/data/questionType_S> a ns1:QuestionType ;
+    ns1:code "S" .
+
+<https://w3id.org/fossr/data/question_397_content> a ns1:Content ;
+    ns1:text """<p>Conferma che il suo nome è:</p>\r
+\r
+<p>Nome: <b>{TOKEN:FIRSTNAME} </b></p>\r
+\r
+<p>Cognome: <b>{TOKEN:LASTNAME}</b></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_397_identifier> a ns1:Identifier ;
+    ns1:id "397"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_398_content> a ns1:Content ;
+    ns1:text """<p>Lei risiede al seguente indirizzo?</p>\r
+\r
+<p>Via e numero civico: <strong>{TOKEN:ATTRIBUTE_3}</strong></p>\r
+\r
+<p>CAP: <strong>{TOKEN:ATTRIBUTE_4}</strong></p>\r
+\r
+<p>Comune: <strong>{TOKEN:ATTRIBUTE_8}</strong></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_398_identifier> a ns1:Identifier ;
+    ns1:id "398"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_399_content> a ns1:Content ;
+    ns1:text """<p>Qual è il suo indirizzo di residenza?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_399_identifier> a ns1:Identifier ;
+    ns1:id "399"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_400_content> a ns1:Content ;
+    ns1:text """<p>Qual è la sua data di nascita?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_400_identifier> a ns1:Identifier ;
+    ns1:id "400"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_401_content> a ns1:Content ;
+    ns1:text """<p>Questa domanda si riferisce al suo stato civile, indipendentemente dalla persona con cui vive in questo momento. Quale categoria riportata di seguito descrive il suo attuale stato civile?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_401_identifier> a ns1:Identifier ;
+    ns1:id "401"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_402_content> a ns1:Content ;
+    ns1:text "Compresi Lei ed eventuali bambini, quante persone vivono regolarmente nella casa in cui abita attualmente?" .
+
+<https://w3id.org/fossr/data/question_402_identifier> a ns1:Identifier ;
+    ns1:id "402"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_403_content> a ns1:Content ;
+    ns1:text "Quale delle seguenti alternative descrive meglio la condizione lavorativa in cui Lei si trovava la settimana scorsa?" .
+
+<https://w3id.org/fossr/data/question_403_identifier> a ns1:Identifier ;
+    ns1:id "403"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_404_content> a ns1:Content ;
+    ns1:text """<p>In particolare, quale professione svolge? Può scrivere direttamente la sua professione, scegliendo quella più adeguata tra quelle suggerite.</p>\r
+\r
+<p>Nel caso in cui svolga più attività lavorative, faccia sempre riferimento alla principale e indichi nel modo più dettagliato possibile qual è il lavoro, la professione o il mestiere svolto.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_404_identifier> a ns1:Identifier ;
+    ns1:id "404"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_405_content> a ns1:Content ;
+    ns1:text """<p>Il settore in cui lavora è pubblico o privato?</p>\r
+\r
+<p><em>Se è un lavoratore dipendente, faccia riferimento all'ente o all'organizzazione con cui ha stipulato il contratto. Se è un lavoratore autonomo, indichi “privato” come risposta.</em></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_405_identifier> a ns1:Identifier ;
+    ns1:id "405"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_406_content> a ns1:Content ;
+    ns1:text """<p>Qual è il titolo di studio più elevato che ha conseguito tra quelli elencati?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_406_identifier> a ns1:Identifier ;
+    ns1:id "406"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_407_content> a ns1:Content ;
+    ns1:text """<p>Complessivamente, per quanti anni ha studiato a tempo pieno?</p>\r
+\r
+<p><em>Consideri gli anni dedicati allo studio dalla prima elementare sino ad eventuali corsi universitari o post universitari.</em></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_407_identifier> a ns1:Identifier ;
+    ns1:id "407"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_408_content> a ns1:Content ;
+    ns1:text """<p>Indichi qual è la sua cittadinanza:</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_408_identifier> a ns1:Identifier ;
+    ns1:id "408"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_409_content> a ns1:Content ;
+    ns1:text """<p>Di quale Paese è cittadina/o?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_409_identifier> a ns1:Identifier ;
+    ns1:id "409"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_410_content> a ns1:Content ;
+    ns1:text """<p>Lei è nata/o in Italia?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_410_identifier> a ns1:Identifier ;
+    ns1:id "410"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_411_content> a ns1:Content ;
+    ns1:text """<p>In che Paese è nata/o?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_411_identifier> a ns1:Identifier ;
+    ns1:id "411"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_412_content> a ns1:Content ;
+    ns1:text """<p>Suo padre è nato in Italia?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_412_identifier> a ns1:Identifier ;
+    ns1:id "412"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_413_content> a ns1:Content ;
+    ns1:text """<p>Sua madre è nata in Italia?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_413_identifier> a ns1:Identifier ;
+    ns1:id "413"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_414_content> a ns1:Content ;
+    ns1:text """<p>In che Paese è nato suo padre?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_414_identifier> a ns1:Identifier ;
+    ns1:id "414"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_415_content> a ns1:Content ;
+    ns1:text """<p>In che Paese è nata Sua madre?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_415_identifier> a ns1:Identifier ;
+    ns1:id "415"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_416_content> a ns1:Content ;
+    ns1:text """<p>Quale lingua o lingue usa principalmente in casa? Indichi al massimo due lingue.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_416_identifier> a ns1:Identifier ;
+    ns1:id "416"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_417_content> a ns1:Content ;
+    ns1:text """<p>Quale delle seguenti frasi descrive meglio il suo modo di vedere la situazione della sua famiglia rispetto al reddito che avete attualmente a disposizione?</p>\r
+\r
+<p><em>Faccia riferimento alle persone che vivono regolarmente nella sua casa come membri della famiglia.</em></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_417_identifier> a ns1:Identifier ;
+    ns1:id "417"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_418_content> a ns1:Content ;
+    ns1:text """<p>La casa dove risiede abitualmente è:</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_418_identifier> a ns1:Identifier ;
+    ns1:id "418"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_419_content> a ns1:Content ;
+    ns1:text """<p>Lei si considera appartenente ad una particolare religione o confessione religiosa?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_419_identifier> a ns1:Identifier ;
+    ns1:id "419"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_420_content> a ns1:Content ;
+    ns1:text """<p>Quale?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_420_identifier> a ns1:Identifier ;
+    ns1:id "420"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_421_content> a ns1:Content ;
+    ns1:text """<p>Lei ha accesso ad Internet?</p>\r
+\r
+<p><em>Consideri anche l’invio di e-mail, messaggi istantanei (es. WhatsApp, Messenger), film/serie TV, intrattenimento o eventi sportivi in streaming (es. Netflix, Disney+, DAZN), giochi online, servizi bancari online, ecc. su un qualsiasi dispositivo, computer fisso o portatile, tablet, smartphone, smart device, ecc.</em></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_421_identifier> a ns1:Identifier ;
+    ns1:id "421"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_422_content> a ns1:Content ;
+    ns1:text """<p>Immagini di voler accedere a Internet. In quale di questi luoghi sarebbe in grado di farlo? Indichi tutte le risposte pertinenti.</p>\r
+<style type="text/css">.question-container.sq001 {\r
+    border-left: #64d8f1 0.5rem solid;\r
+  }\r
+  .question-container.sq002 {\r
+    border-left: #c48fdd 0.5rem solid;\r
+  }\r
+  .question-container.sq003 {\r
+    border-left: #88db71 0.5rem solid;\r
+  }\r
+  .question-container.sq004 {\r
+    border-left: #b4507a 0.5rem solid;\r
+  }\r
+  .question-container.sq005 {\r
+    border-left: #123456 0.5rem solid;\r
+  }\r
+  .question-container.sq006 {\r
+    border-left: #cea106 0.5rem solid;\r
+  }\r
+</style>\r
+""" .
+
+<https://w3id.org/fossr/data/question_422_identifier> a ns1:Identifier ;
+    ns1:id "422"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_423_content> a ns1:Content ;
+    ns1:text """<p>Indichi con che frequenza utilizza Internet:</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_423_identifier> a ns1:Identifier ;
+    ns1:id "423"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_424_content> a ns1:Content ;
+    ns1:text """<p>Con quale tipo di dispositivo si connette ad Internet? Indichi tutte le risposte pertinenti.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_424_identifier> a ns1:Identifier ;
+    ns1:id "424"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_425_content> a ns1:Content ;
+    ns1:text """<p>Negli ultimi tre mesi ha utilizzato Internet per:</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_425_identifier> a ns1:Identifier ;
+    ns1:id "425"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_426_content> a ns1:Content ;
+    ns1:text """<p>Negli ultimi tre mesi ha utilizzato un computer (o un altro dispositivo informatico) per:</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_426_identifier> a ns1:Identifier ;
+    ns1:id "426"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_427_content> a ns1:Content ;
+    ns1:text """<p>Se avesse bisogno di aiuto, ci sarebbe qualcuno che potrebbe aiutarla ad usare Internet?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_427_identifier> a ns1:Identifier ;
+    ns1:id "427"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_428_content> a ns1:Content ;
+    ns1:text """<p>Ha cercato o chiesto aiuto per usare Internet negli ultimi tre mesi?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_428_identifier> a ns1:Identifier ;
+    ns1:id "428"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_429_content> a ns1:Content ;
+    ns1:text """<p>Chi le ha prestato aiuto? Indichi tutte le risposte pertinenti.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_429_identifier> a ns1:Identifier ;
+    ns1:id "429"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_430_content> a ns1:Content ;
+    ns1:text """<p>Ha aiutato qualcuno ad usare Internet negli ultimi tre mesi?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_430_identifier> a ns1:Identifier ;
+    ns1:id "430"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_431_content> a ns1:Content ;
+    ns1:text """<p>Nell’insieme quanto si ritiene felice? Per favore usi la seguente scala.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_431_identifier> a ns1:Identifier ;
+    ns1:id "431"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_432_content> a ns1:Content ;
+    ns1:text """<p>Complessivamente, quanto è soddisfatta/o della sua vita attuale? Risponda usando la seguente scala, dove 0 significa “assolutamente insoddisfatta/o” e 10 “assolutamente soddisfatta/o”.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_432_identifier> a ns1:Identifier ;
+    ns1:id "432"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_433_content> a ns1:Content ;
+    ns1:text """<p>Nell'ultima settimana, quanto spesso le è capitato di:</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_433_identifier> a ns1:Identifier ;
+    ns1:id "433"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_434_content> a ns1:Content ;
+    ns1:text """<p>Attualmente, come è in generale la sua salute? La definirebbe:</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_434_identifier> a ns1:Identifier ;
+    ns1:id "434"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_435_content> a ns1:Content ;
+    ns1:text """<p>Quanto spesso segue le notizie di attualità e politica sui seguenti media...</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_435_identifier> a ns1:Identifier ;
+    ns1:id "435"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_436_content> a ns1:Content ;
+    ns1:text """<p>In che misura Lei direbbe di essere interessata/o alla politica?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_436_identifier> a ns1:Identifier ;
+    ns1:id "436"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_437_content> a ns1:Content ;
+    ns1:text """<p>Usando la seguente scala indichi, per favore, quanto per Lei i seguenti comportamenti sono giustificati. Lei ritiene che non possano essere mai giustificati, siano sempre giustificati oppure qualcosa di intermedio secondo le circostanze?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_437_identifier> a ns1:Identifier ;
+    ns1:id "437"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_438_content> a ns1:Content ;
+    ns1:text """<p>Indichi se è d'accordo o in disaccordo rispetto a ciascuna delle seguenti affermazioni.</p>\r
+\r
+<p>Lei è molto d'accordo, d'accordo, in disaccordo o molto in disaccordo?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_438_identifier> a ns1:Identifier ;
+    ns1:id "438"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_439_content> a ns1:Content ;
+    ns1:text """<p>Questo è un elenco di atteggiamenti e comportamenti che i/le figli/e possono essere incoraggiati/e a imparare in famiglia. Quale o quali di essi Lei considera particolarmente importante/i? La prego di sceglierne non più di cinque.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_439_identifier> a ns1:Identifier ;
+    ns1:id "439"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_440_content> a ns1:Content ;
+    ns1:text """<p>In generale, Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti? Risponda, per favore, usando una scala da 0 a 10, dove 0 rappresenta la necessità di essere diffidenti e 10 rappresenta la possibilità di fidarsi.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_440_identifier> a ns1:Identifier ;
+    ns1:id "440"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_441_content> a ns1:Content ;
+    ns1:text """<p>Su una scala da 0 a 10, dove 0 corrisponde a un'assoluta mancanza di fiducia nell'istituzione e 10 a una totale fiducia, qual è il grado di fiducia che Lei personalmente ripone nelle seguenti istituzioni?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_441_identifier> a ns1:Identifier ;
+    ns1:id "441"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_442_content> a ns1:Content ;
+    ns1:text """<p>In generale, direbbe che il mondo è migliore o peggiore per via della scienza e della tecnologia? La prego di indicare la sua posizione su questa scala, in cui 0 significa che il mondo è "molto peggiore" e 10 significa che è “molto migliore”.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_442_identifier> a ns1:Identifier ;
+    ns1:id "442"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_443_content> a ns1:Content ;
+    ns1:text """<p>In politica, a volte si parla di "sinistra" e di "destra". In una scala da 0 a 10, dove 0 rappresenta la sinistra e 10 rappresenta la destra dove si collocherebbe?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_443_identifier> a ns1:Identifier ;
+    ns1:id "443"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_444_content> a ns1:Content ;
+    ns1:text """<p>Secondo Lei il fatto che l’Italia appartenga all’Unione Europea è un bene, un male, o né un bene né un male?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_444_identifier> a ns1:Identifier ;
+    ns1:id "444"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_445_content> a ns1:Content ;
+    ns1:text """<p>Usando la seguente scala, indichi per favore in quale misura Lei è d’accordo o in disaccordo con ciascuna delle seguenti affermazioni.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_445_identifier> a ns1:Identifier ;
+    ns1:id "445"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_446_content> a ns1:Content ;
+    ns1:text """<p>L'intervista sta per concludersi. Ci piacerebbe sapere la sua impressione generale nel completare questa intervista. Le verranno presentati due aggettivi opposti per descrivere l'intervista. Utilizzi una delle faccine riportate qui sotto per indicare quale dei due aggettivi si adatta meglio alla sua impressione generale.</p>\r
+\r
+<p>È possibile selezionare solo una risposta per ogni riga.</p>\r
+\r
+<p>In generale, ha trovato l’intervista:</p>\r
+<style type="text/css">#question{QID} > div.answer-container.col-12 > div > table > thead > tr.ls-heading {\r
+    font-size: xx-large;\r
+  }\r
+</style>\r
+""" .
+
+<https://w3id.org/fossr/data/question_446_identifier> a ns1:Identifier ;
+    ns1:id "446"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_447_content> a ns1:Content ;
+    ns1:text """<p>Il questionario è giunto al termine. Ci auguriamo che voglia partecipare all'indagine IOPP!</p>\r
+\r
+<p>Partecipando a IOPP, potrà esprimere la sua opinione su vari argomenti e permettere ad altre persone come Lei di essere ascoltate. Questo è infatti l'unico modo per sapere cosa considerino importante le persone simili a Lei, in termini di età, livello di istruzione, reddito, ecc. Come membro del panel IOPP aiuterà ricercatori e scienziati a conoscere meglio la società italiana. Ogni 2-3 mesi riceverà un questionario da compilare online sulla sua app IOPP o sul sito! Naturalmente la partecipazione è volontaria e potrà essere interrotta in ogni momento. Ricordi che al momento dell'adesione maturerà un iniziale omaggio del valore di 15€ che si andrà progressivamente cumulando alla compilazione dei singoli questionari per un valore massimo di ulteriori 10€ per il suo primo anno di partecipazione. Potrà ritirare il corrispettivo del punteggio guadagnato al termine di ogni ciclo di somministrazioni.</p>\r
+\r
+<p>Desidera registrarsi al panel IOPP?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_447_identifier> a ns1:Identifier ;
+    ns1:id "447"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_448_content> a ns1:Content ;
+    ns1:text """<p>Qual è il motivo principale per cui non desidera partecipare al panel?</p>\r
+\r
+<div class="d-none m-3 px-5" id="btn_{QID}_AO01_text">Partecipare al panel IOPP non richiede molto tempo: al massimo 20 minuti per intervista. Il vantaggio di completare i questionari online (tramite internet) è che può scegliere quando farlo.<br />Avrà a disposizione quasi un mese per completare ogni questionario. Potrà anche scegliere di interrompere a metà un questionario e continuare la compilazione in un secondo momento. In questo caso, potrà riprendere da dove ha lasciato.<br />Sarà anche possibile saltare un mese se lo desidera, o completare alcuni ma non tutti i questionari in un dato mese.</div>\r
+\r
+<div class="d-none m-3 px-5" id="btn_{QID}_AO02_text">IOPP è stato appositamente costruito per monitorare la popolazione per un lungo periodo di tempo, per ottenere un'immagine precisa degli sviluppi nella società nel corso degli anni. Per questo auspichiamo che deciderà di partecipare per un lungo periodo. Tuttavia, potrà anche semplicemente provare l’app IOPP o il sito per un po'. Se non le piacerà, potrà annullare l’iscrizione in qualsiasi momento e gratuitamente. La partecipazione è completamente volontaria e si può decidere di non partecipare più all’indagine quando si vuole.</div>\r
+\r
+<div class="d-none m-3 px-5" id="btn_{QID}_AO03_text">Per avere una buona panoramica della società italiana è importante che il panel IOPP includa persone appartenenti a tutti gli strati sociali. Il panel è infatti composto da giovani, persone di mezza età e anche da anziani.<br />Gli anziani rappresentano una fascia molto importante della società italiana.</div>\r
+\r
+<div class="d-none m-3 px-5" id="btn_{QID}_AO04_text">Sia il sito che l’app sono costruiti per essere fruibili anche da persone con una disabilità visiva (come ipovisione) e sono adattabili a strumenti che utilizza nella sua quotidianità come tablet, smartphone o altro. In ogni caso avrà sempre a disposizione un numero verde per ottenere tutto l'aiuto e il supporto di cui avrà bisogno.<br />Qualora fosse necessario abbiamo pensato anche a un modo alternativo per permetterle di partecipare alla ricerca. Se deciderà di partecipare all'indagine, le faremo avere il questionario via posta. Questa alternativa è completamente gratuita.<br />Può anche scegliere di fare una prova e se deciderà che questa modalità di partecipazione non è adatta alle sue esigenze, potrà cancellarsi dal panel in qualsiasi momento gratuitamente.</div>\r
+\r
+<div class="d-none m-3 px-5" id="btn_{QID}_AO05_text">Avrà sempre a disposizione un numero verde per ottenere tutto l'aiuto e il supporto di cui avrà bisogno. Per ottenere una buona fotografia della società italiana, è importante infatti che l’indagine IOPP includa anche persone che non hanno una buona capacità di utilizzare un computer.<br />Qualora fosse necessario abbiamo pensato anche a un modo alternativo per permetterle di partecipare alla ricerca. Se deciderà di partecipare all’indagine, le faremo avere il questionario via posta. Questa alternativa è completamente gratuita.<br />Può anche scegliere di fare una prova e se deciderà che questa modalità di partecipazione non le piace, potrà cancellarsi dal panel in qualsiasi momento gratuitamente.</div>\r
+\r
+<div class="d-none m-3 px-5" id="btn_{QID}_AO06_text">Per ottenere una buona fotografia della società italiana, è importante che l’indagine IOPP includa anche persone che attualmente non possiedono un computer o una connessione Internet. Abbiamo pensato ad un modo alternativo per permetterle di partecipare alla ricerca.<br />Infatti, se deciderà di partecipare all’indagine, le faremo avere il questionario via posta. Questa alternativa è completamente gratuita.<br />Può anche scegliere di fare una prova e se deciderà che questa modalità di partecipazione non le piace, potrà cancellarsi dal panel in qualsiasi momento gratuitamente.</div>\r
+\r
+<div class="d-none m-3 px-5" id="btn_{QID}_AO07_text">La protezione dei dati è molto importante per il panel IOPP. Ci assicuriamo che i vostri dati siano adeguatamente protetti in conformità con il Regolamento Generale sulla Protezione dei Dati (GDPR). Le vostre risposte ci arriveranno in forma anonima, senza cioè includere i suoi dati personali. Questo garantirà che la sua privacy rimanga sempre protetta. Nessuna organizzazione avrà accesso ai suoi dati personali (nome, indirizzo, numero di telefono ed indirizzo e-mail) senza il suo permesso. I suoi dati personali saranno utilizzati esclusivamente a fini di ricerca scientifica e non li useremo mai per pubblicità, spam (messaggi e-mail pubblicitari non sollecitati), vendite telefoniche e altri scopi commerciali.<br />Inoltre, senza il suo permesso nessuna organizzazione potrà accedere ai suoi dati amministrativi (nome, indirizzo, numero di telefono ed indirizzo e-mail).</div>\r
+\r
+<div class="d-none m-3 px-5" id="btn_{QID}_AO08_text">La protezione dei dati è molto importante per il panel IOPP. Ci assicuriamo che i vostri dati siano adeguatamente protetti in conformità con il Regolamento Generale sulla Protezione dei Dati (GDPR). Le vostre risposte ci arriveranno in forma anonima, senza cioè includere i suoi dati personali. Questo garantirà che la sua privacy rimanga sempre protetta. Nessuna organizzazione avrà accesso ai suoi dati personali (nome, indirizzo, numero di telefono ed indirizzo e-mail) senza il suo permesso. I suoi dati personali saranno utilizzati esclusivamente a fini di ricerca scientifica e non li useremo mai per pubblicità, spam (messaggi e-mail pubblicitari non sollecitati), vendite telefoniche e altri scopi commerciali.<br />Inoltre, senza il suo permesso nessuna organizzazione potrà accedere ai suoi dati amministrativi (nome, indirizzo, numero di telefono ed indirizzo e-mail).</div>\r
+\r
+<div class="d-none m-3 px-5" id="btn_{QID}_AO09_text">Capiamo che il valore della ricerca e specialmente di quella basata su indagini campionarie condotte online non sia sempre evidente e che potrebbe desiderare di non partecipare per principio.<br />Tuttavia, partecipando, potrà dare voce a persone come Lei. Potrà far sentire la sua opinione e, con essa, quella di molti altri membri della società italiana che la pensano come Lei. Alla luce di ciò, speriamo che decida di partecipare per aiutarci ad avere un’immagine completa della società italiana aiutando così sia la scienza sia la società a progredire.</div>\r
+\r
+<div class="d-none m-3 px-5" id="btn_{QID}_AO10_text">Capiamo che il valore della ricerca e specialmente di quella basata su indagini campionarie condotte online non sia sempre evidente e che potrebbe desiderare di non partecipare per principio.<br />Tuttavia, partecipando, darà voce a persone come Lei. Potrà far sentire la sua opinione e, con essa, quella di molti altri membri della società italiana che la pensano come Lei. Alla luce di ciò, speriamo che decida di partecipare per aiutarci ad avere un’immagine completa della società italiana aiutando così sia la scienza sia la società a progredire.</div>\r
+""" .
+
+<https://w3id.org/fossr/data/question_448_identifier> a ns1:Identifier ;
+    ns1:id "448"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_449_content> a ns1:Content ;
+    ns1:text "<span style=\"font-size:11.0pt\"><span style=\"line-height:115%\"><span style=\"font-family:&quot;Segoe UI&quot;,sans-serif\">Lavoriamo con una selezione predeterminata di individui. Purtroppo, Lei non rientra nel nostro campione. Tuttavia, desideriamo ringraziarla per il suo interesse.</span></span></span>" .
+
+<https://w3id.org/fossr/data/question_449_identifier> a ns1:Identifier ;
+    ns1:id "449"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_450_content> a ns1:Content ;
+    ns1:text """<p style="text-align:justify">Grazie! Siamo lieti che Lei abbia accettato di partecipare al panel IOPP. A breve riceverà una lettera e un'e-mail con i dati di accesso per poter iniziare a compilare i questionari dell’indagine IOPP e ricevere i suoi buoni regalo! Abbiamo bisogno di alcuni dettagli per assicurarci che la lettera e l’e-mail vengano inviate all'indirizzo corretto.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_450_identifier> a ns1:Identifier ;
+    ns1:id "450"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_451_content> a ns1:Content ;
+    ns1:text """<p>Ora ha cambiato idea? Desidera registrarsi al panel IOPP?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_451_identifier> a ns1:Identifier ;
+    ns1:id "451"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_452_content> a ns1:Content ;
+    ns1:text """<p>Desidera registrarsi al panel IOPP con una modalità alternativa?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_452_identifier> a ns1:Identifier ;
+    ns1:id "452"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_453_content> a ns1:Content ;
+    ns1:text "<span style=\"font-size:11.0pt\"><span style=\"line-height:115%\"><span style=\"font-family:&quot;Segoe UI&quot;,sans-serif\">La registrazione per il panel IOPP è permessa solo agli individui tra i 18 e i 74 anni. Tuttavia, desideriamo ringraziarla per il suo interesse.</span></span></span>" .
+
+<https://w3id.org/fossr/data/question_453_identifier> a ns1:Identifier ;
+    ns1:id "453"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_454_content> a ns1:Content ;
+    ns1:text "Lei è..." .
+
+<https://w3id.org/fossr/data/question_454_identifier> a ns1:Identifier ;
+    ns1:id "454"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_455_content> a ns1:Content ;
+    ns1:text """<p>Conferma che Lei è: <b>{if(TOKEN:ATTRIBUTE_1=="F","Femmina",if(TOKEN:ATTRIBUTE_1=="M","Maschio"))}</b></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_455_identifier> a ns1:Identifier ;
+    ns1:id "455"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_456_content> a ns1:Content ;
+    ns1:text """<p>La sua data di nascita è la seguente?<strong> {TOKEN:ATTRIBUTE_2}</strong></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_456_identifier> a ns1:Identifier ;
+    ns1:id "456"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_457_content> a ns1:Content ;
+    ns1:text """<p><strong>In caso di ulteriori domande si prega di contattare il numero verde: <span style="color:#16a085;">800 952122</span>. </strong></p>\r
+\r
+<p><strong>Il personale IOPP sarà lieto di assisterla.</strong></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_457_identifier> a ns1:Identifier ;
+    ns1:id "457"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_458_content> a ns1:Content ;
+    ns1:text "Qual è il suo Comune di residenza?" .
+
+<https://w3id.org/fossr/data/question_458_identifier> a ns1:Identifier ;
+    ns1:id "458"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_459_content> a ns1:Content ;
+    ns1:text """<p>L'indirizzo di residenza è lo stesso in cui dimora la maggior parte dell'anno?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_459_identifier> a ns1:Identifier ;
+    ns1:id "459"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_460_content> a ns1:Content ;
+    ns1:text "Qual è l'indirizzo in cui dimora abitualmente?" .
+
+<https://w3id.org/fossr/data/question_460_identifier> a ns1:Identifier ;
+    ns1:id "460"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_461_content> a ns1:Content ;
+    ns1:text """<p>Di questi indichi quanti sono figli suoi, adottati o affiliati. Se non ha figli, indichi 0 come risposta.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_461_identifier> a ns1:Identifier ;
+    ns1:id "461"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_462_content> a ns1:Content ;
+    ns1:text """<p>A quale indirizzo desidera ricevere i questionari IOPP?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_462_identifier> a ns1:Identifier ;
+    ns1:id "462"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_463_content> a ns1:Content ;
+    ns1:text """<p>Dichiaro di aver preso visione del foglio informativo e dell’informativa sulla privacy per il trattamento dati per l’indagine di reclutamento IOPP. Confermo di aver trovato le informazioni fornite esaurienti e comprensibili.</p>\r
+\r
+<p>In particolare, dichiaro di essere stata/o informata/o che i dati raccolti per l’indagine di reclutamento IOPP saranno trattati dal Consiglio Nazionale delle Ricerche – Istituto di Ricerche sulla Popolazione e le Politiche Sociali (CNR-IRPPS).</p>\r
+\r
+<p>Dichiaro di aver compreso i rischi e i benefici, sia diretti che indiretti, che possono derivare dalla mia partecipazione all’indagine. Sono stata/o informata/o delle misure di tutela della riservatezza delle e dei partecipanti e delle procedure per la protezione dei dati personali in conformità alle normative vigenti, inclusi il Regolamento Generale sulla Protezione dei Dati (GDPR) dell’Unione Europea e altre leggi applicabili. Sono consapevole che i miei dati personali saranno trattati esclusivamente per scopi di ricerca scientifica.</p>\r
+\r
+<p>Acconsento volontariamente al trattamento dei dati personali per l’indagine di reclutamento IOPP.</p>\r
+\r
+<p>Dichiaro infine di avere almeno 18 anni e di essere legalmente capace di fornire il mio consenso alla partecipazione a questa indagine di ricerca. Altresì, sono stata/o informata/o delle modalità con cui revocare il consenso e ho individuato nel Direttore del CNR-IRPPS la persona a cui rivolgermi in caso di dubbi ovvero per chiedere la rettifica, la limitazione o la cancellazione del presente trattamento.</p>\r
+\r
+<p>Titolare del trattamento dati: Direttore del CNR-IRPPS<br />Indirizzo email: <a href="mailto:direttore@irpps.cnr.it">direttore@irpps.cnr.it</a></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_463_identifier> a ns1:Identifier ;
+    ns1:id "463"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_464_content> a ns1:Content ;
+    ns1:text "<a href=\"/limesurvey/upload/surveys/694511/files/IOPP_Informativa%20trattamento%20dati%20ingaggio.pdf\" target=\"_blank\">Clicca qui per scaricare l'Informativa sulla Privacy per l'iscrizione al panel.</a>" .
+
+<https://w3id.org/fossr/data/question_464_identifier> a ns1:Identifier ;
+    ns1:id "464"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_465_content> a ns1:Content ;
+    ns1:text """<p>Dichiaro di aver preso visione del foglio informativo e dell’informativa sulla privacy per il trattamento dati per l'ingaggio dei panelisti IOPP. Confermo di aver trovato le informazioni fornite esaurienti e comprensibili.</p>\r
+\r
+<p>In particolare, dichiaro di essere stata/o informata/o che i dati raccolti per l’ingaggio dei panelisti IOPP saranno trattati dal Consiglio Nazionale delle Ricerche – Istituto di Ricerche sulla Popolazione e le Politiche Sociali (CNR-IRPPS).</p>\r
+\r
+<p>Dichiaro di aver compreso i rischi e i benefici, sia diretti che indiretti, che possono derivare dalla mia iscrizione al panel. Sono stata/o informata/o delle misure di tutela della riservatezza delle e dei partecipanti e delle procedure per la protezione dei dati personali in conformità alle normative vigenti, inclusi il Regolamento Generale sulla Protezione dei Dati (GDPR) dell’Unione Europea e altre leggi applicabili. Sono consapevole che i miei dati personali saranno trattati esclusivamente per scopi di ricerca scientifica.</p>\r
+\r
+<p>Acconsento volontariamente al trattamento dei dati personali per l'ingaggio dei panelisti IOPP.</p>\r
+\r
+<p>Dichiaro infine di avere almeno 18 anni e di essere legalmente capace di fornire il mio consenso alla partecipazione a questa indagine di ricerca. Altresì, sono stata/o informata/o delle modalità con cui revocare il consenso e ho individuato nel Direttore del CNR-IRPPS la persona a cui rivolgermi in caso di dubbi ovvero per chiedere la rettifica, la limitazione o la cancellazione del presente trattamento.</p>\r
+\r
+<p>Titolare del trattamento dati: Direttore del CNR-IRPPS<br />Indirizzo email: <a href="mailto:direttore@irpps.cnr.it">direttore@irpps.cnr.it</a></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_465_identifier> a ns1:Identifier ;
+    ns1:id "465"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_466_content> a ns1:Content ;
+    ns1:text "Complessivamente, quanto è soddisfatta/o della sua vita attuale? Risponda usando la seguente scala, dove 0 significa “assolutamente insoddisfatta/o” e 10 “assolutamente soddisfatta/o”." .
+
+<https://w3id.org/fossr/data/question_466_identifier> a ns1:Identifier ;
+    ns1:id "466"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_467_content> a ns1:Content ;
+    ns1:text "Complessivamente, quanto è soddisfatta/o della sua vita attuale? Risponda usando la seguente scala, dove 0 significa “assolutamente insoddisfatta/o” e 10 “assolutamente soddisfatta/o”." .
+
+<https://w3id.org/fossr/data/question_467_identifier> a ns1:Identifier ;
+    ns1:id "467"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_468_content> a ns1:Content ;
+    ns1:text "Complessivamente, quanto è soddisfatta/o della sua vita attuale? Risponda usando la seguente scala, dove 0 significa “assolutamente insoddisfatta/o” e 10 “assolutamente soddisfatta/o”." .
+
+<https://w3id.org/fossr/data/question_468_identifier> a ns1:Identifier ;
+    ns1:id "468"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_469_content> a ns1:Content ;
+    ns1:text """<p>In generale, Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti? Risponda, per favore, usando una scala da 0 a 10, dove 0 rappresenta la necessità di essere diffidenti e 10 rappresenta la possibilità di fidarsi.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_469_identifier> a ns1:Identifier ;
+    ns1:id "469"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_470_content> a ns1:Content ;
+    ns1:text """<p>In generale, Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti? Risponda, per favore, usando una scala da 0 a 10, dove 0 rappresenta la necessità di essere diffidenti e 10 rappresenta la possibilità di fidarsi.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_470_identifier> a ns1:Identifier ;
+    ns1:id "470"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_471_content> a ns1:Content ;
+    ns1:text """<p>In generale, Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti? Risponda, per favore, usando una scala da 0 a 10, dove 0 rappresenta la necessità di essere diffidenti e 10 rappresenta la possibilità di fidarsi.</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_471_identifier> a ns1:Identifier ;
+    ns1:id "471"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_472_content> a ns1:Content ;
+    ns1:text """<p>Quale delle seguenti frasi descrive meglio il suo modo di vedere la situazione della sua famiglia rispetto al reddito che avete attualmente a disposizione?</p>\r
+\r
+<p><em>Faccia riferimento alle persone che vivono regolarmente nella sua casa come membri della famiglia.</em></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_472_identifier> a ns1:Identifier ;
+    ns1:id "472"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_473_content> a ns1:Content ;
+    ns1:text """<p>Quale delle seguenti frasi descrive meglio il suo modo di vedere la situazione della sua famiglia rispetto al reddito che avete attualmente a disposizione?</p>\r
+\r
+<p><em>Faccia riferimento alle persone che vivono regolarmente nella sua casa come membri della famiglia.</em></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_473_identifier> a ns1:Identifier ;
+    ns1:id "473"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_474_content> a ns1:Content ;
+    ns1:text """<p>Quale delle seguenti frasi descrive meglio il suo modo di vedere la situazione della sua famiglia rispetto al reddito che avete attualmente a disposizione?</p>\r
+\r
+<p><em>Faccia riferimento alle persone che vivono regolarmente nella sua casa come membri della famiglia.</em></p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_474_identifier> a ns1:Identifier ;
+    ns1:id "474"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_475_content> a ns1:Content ;
+    ns1:text "Lei ha lasciato senza risposta questa domanda. Potrebbe dirci perché non ha risposto?" .
+
+<https://w3id.org/fossr/data/question_475_identifier> a ns1:Identifier ;
+    ns1:id "475"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_476_content> a ns1:Content ;
+    ns1:text "Lei ha lasciato senza risposta questa domanda. Potrebbe dirci perché non ha risposto?" .
+
+<https://w3id.org/fossr/data/question_476_identifier> a ns1:Identifier ;
+    ns1:id "476"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_477_content> a ns1:Content ;
+    ns1:text "Lei ha lasciato senza risposta questa domanda. Potrebbe dirci perché non ha risposto?" .
+
+<https://w3id.org/fossr/data/question_477_identifier> a ns1:Identifier ;
+    ns1:id "477"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_478_content> a ns1:Content ;
+    ns1:text """<p>La sua partecipazione al panel IOPP è un contributo prezioso per la ricerca sociale. Al momento ha indicato di non voler aderire all’indagine, ma ci farebbe piacere offrirle ulteriori informazioni sui benefici e sull’importanza della partecipazione.</p>\r
+\r
+<p>Sarebbe disponibile a essere contattato per approfondire questi aspetti?</p>\r
+""" .
+
+<https://w3id.org/fossr/data/question_478_identifier> a ns1:Identifier ;
+    ns1:id "478"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_479_content> a ns1:Content ;
+    ns1:text "La ringraziamo per la disponibilità! Potrebbe indicarci un numero di telefono a cui possiamo contattarla per fornirle maggiori informazioni?" .
+
+<https://w3id.org/fossr/data/question_479_identifier> a ns1:Identifier ;
+    ns1:id "479"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_480_content> a ns1:Content ;
+    ns1:text "Via e numero civico:" .
+
+<https://w3id.org/fossr/data/question_480_identifier> a ns1:Identifier ;
+    ns1:id "480"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_481_content> a ns1:Content ;
+    ns1:text "CAP:" .
+
+<https://w3id.org/fossr/data/question_481_identifier> a ns1:Identifier ;
+    ns1:id "481"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_482_content> a ns1:Content ;
+    ns1:text "A casa" .
+
+<https://w3id.org/fossr/data/question_482_identifier> a ns1:Identifier ;
+    ns1:id "482"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_483_content> a ns1:Content ;
+    ns1:text "Sul posto di lavoro" .
+
+<https://w3id.org/fossr/data/question_483_identifier> a ns1:Identifier ;
+    ns1:id "483"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_484_content> a ns1:Content ;
+    ns1:text "Per strada" .
+
+<https://w3id.org/fossr/data/question_484_identifier> a ns1:Identifier ;
+    ns1:id "484"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_485_content> a ns1:Content ;
+    ns1:text "In qualche altro luogo (come bar, centri commerciali, casa di amici, Internet point)" .
+
+<https://w3id.org/fossr/data/question_485_identifier> a ns1:Identifier ;
+    ns1:id "485"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_486_content> a ns1:Content ;
+    ns1:text "In biblioteca, scuola, o università" .
+
+<https://w3id.org/fossr/data/question_486_identifier> a ns1:Identifier ;
+    ns1:id "486"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_487_content> a ns1:Content ;
+    ns1:text "Nessuna delle opzioni precedenti" .
+
+<https://w3id.org/fossr/data/question_487_identifier> a ns1:Identifier ;
+    ns1:id "487"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_488_content> a ns1:Content ;
+    ns1:text "Smartphone " .
+
+<https://w3id.org/fossr/data/question_488_identifier> a ns1:Identifier ;
+    ns1:id "488"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_489_content> a ns1:Content ;
+    ns1:text "Tablet" .
+
+<https://w3id.org/fossr/data/question_489_identifier> a ns1:Identifier ;
+    ns1:id "489"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_490_content> a ns1:Content ;
+    ns1:text "Computer fisso o portatile" .
+
+<https://w3id.org/fossr/data/question_490_identifier> a ns1:Identifier ;
+    ns1:id "490"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_491_content> a ns1:Content ;
+    ns1:text "Consolle (es. Xbox, PlayStation, ecc.)" .
+
+<https://w3id.org/fossr/data/question_491_identifier> a ns1:Identifier ;
+    ns1:id "491"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_492_content> a ns1:Content ;
+    ns1:text "Smart TV" .
+
+<https://w3id.org/fossr/data/question_492_identifier> a ns1:Identifier ;
+    ns1:id "492"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_493_content> a ns1:Content ;
+    ns1:text "Usare servizi di messaggeria istantanea (es. WhatsApp, Skype, Viber, Messenger, Snapchat)" .
+
+<https://w3id.org/fossr/data/question_493_identifier> a ns1:Identifier ;
+    ns1:id "493"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_494_content> a ns1:Content ;
+    ns1:text "Spedire o ricevere e-mail" .
+
+<https://w3id.org/fossr/data/question_494_identifier> a ns1:Identifier ;
+    ns1:id "494"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_495_content> a ns1:Content ;
+    ns1:text "Effettuare chiamate o video chiamate via Internet (es. WhatsApp, Zoom, Facetime, Skype, Messenger, Viber, Snapchat, MS Teams, Webex, Google Meet, ecc.)" .
+
+<https://w3id.org/fossr/data/question_495_identifier> a ns1:Identifier ;
+    ns1:id "495"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_496_content> a ns1:Content ;
+    ns1:text "Guardare video da servizi di condivisione (es. YouTube, Instagram, TikTok)" .
+
+<https://w3id.org/fossr/data/question_496_identifier> a ns1:Identifier ;
+    ns1:id "496"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_497_content> a ns1:Content ;
+    ns1:text "Leggere giornali, informazioni, riviste online" .
+
+<https://w3id.org/fossr/data/question_497_identifier> a ns1:Identifier ;
+    ns1:id "497"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_498_content> a ns1:Content ;
+    ns1:text "Usare servizi bancari (incluso mobile banking)" .
+
+<https://w3id.org/fossr/data/question_498_identifier> a ns1:Identifier ;
+    ns1:id "498"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_499_content> a ns1:Content ;
+    ns1:text "Guardare film o serie TV in streaming da servizi commerciali (es. Netflix, Disney+, DAZN, Sky, Amazon Prime, lnfinity, NowTv, HBO MAX, ecc.)" .
+
+<https://w3id.org/fossr/data/question_499_identifier> a ns1:Identifier ;
+    ns1:id "499"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_500_content> a ns1:Content ;
+    ns1:text "Guardare programmi televisivi in streaming, in diretta o in differita da emittenti televisive (es. Rai, Mediaset, ecc.)" .
+
+<https://w3id.org/fossr/data/question_500_identifier> a ns1:Identifier ;
+    ns1:id "500"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_501_content> a ns1:Content ;
+    ns1:text "Accedere al fascicolo sanitario elettronico o a cartelle cliniche elettroniche" .
+
+<https://w3id.org/fossr/data/question_501_identifier> a ns1:Identifier ;
+    ns1:id "501"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_502_content> a ns1:Content ;
+    ns1:text "Vendere merci o servizi attraverso siti web o app (es. eBay, Facebook Marketplace, Subito, ecc.)" .
+
+<https://w3id.org/fossr/data/question_502_identifier> a ns1:Identifier ;
+    ns1:id "502"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_503_content> a ns1:Content ;
+    ns1:text "Stampare un documento" .
+
+<https://w3id.org/fossr/data/question_503_identifier> a ns1:Identifier ;
+    ns1:id "503"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_504_content> a ns1:Content ;
+    ns1:text "Installare o disinstallare un programma/app" .
+
+<https://w3id.org/fossr/data/question_504_identifier> a ns1:Identifier ;
+    ns1:id "504"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_505_content> a ns1:Content ;
+    ns1:text "Cambiare una password" .
+
+<https://w3id.org/fossr/data/question_505_identifier> a ns1:Identifier ;
+    ns1:id "505"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_506_content> a ns1:Content ;
+    ns1:text "Creare o modificare un file (es. un documento Word, un’immagine, ecc.)" .
+
+<https://w3id.org/fossr/data/question_506_identifier> a ns1:Identifier ;
+    ns1:id "506"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_507_content> a ns1:Content ;
+    ns1:text "Un/a familiare" .
+
+<https://w3id.org/fossr/data/question_507_identifier> a ns1:Identifier ;
+    ns1:id "507"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_508_content> a ns1:Content ;
+    ns1:text "Un/a amico/a" .
+
+<https://w3id.org/fossr/data/question_508_identifier> a ns1:Identifier ;
+    ns1:id "508"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_509_content> a ns1:Content ;
+    ns1:text "Un/a collega" .
+
+<https://w3id.org/fossr/data/question_509_identifier> a ns1:Identifier ;
+    ns1:id "509"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_510_content> a ns1:Content ;
+    ns1:text "Un/a vicino/a di casa" .
+
+<https://w3id.org/fossr/data/question_510_identifier> a ns1:Identifier ;
+    ns1:id "510"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_511_content> a ns1:Content ;
+    ns1:text "Un impiegato di call center/numero verde" .
+
+<https://w3id.org/fossr/data/question_511_identifier> a ns1:Identifier ;
+    ns1:id "511"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_512_content> a ns1:Content ;
+    ns1:text "Non so/Non ricordo" .
+
+<https://w3id.org/fossr/data/question_512_identifier> a ns1:Identifier ;
+    ns1:id "512"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_513_content> a ns1:Content ;
+    ns1:text "Nell’insieme quanto si ritiene felice? Per rispondere utilizzi questa scala dove 0 corrisponde a “del tutto infelice” e 10 a “del tutto felice”." .
+
+<https://w3id.org/fossr/data/question_513_identifier> a ns1:Identifier ;
+    ns1:id "513"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_514_content> a ns1:Content ;
+    ns1:text "Nell’insieme quanto si ritiene felice? Per rispondere utilizzi questa scala dove 0 corrisponde a “del tutto infelice” e 10 a “del tutto felice”." .
+
+<https://w3id.org/fossr/data/question_514_identifier> a ns1:Identifier ;
+    ns1:id "514"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_515_content> a ns1:Content ;
+    ns1:text "Sentirsi nervosa/o, ansiosa/o o agitata/o" .
+
+<https://w3id.org/fossr/data/question_515_identifier> a ns1:Identifier ;
+    ns1:id "515"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_516_content> a ns1:Content ;
+    ns1:text "Sentirsi depressa/o" .
+
+<https://w3id.org/fossr/data/question_516_identifier> a ns1:Identifier ;
+    ns1:id "516"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_517_content> a ns1:Content ;
+    ns1:text "Sentirsi sola/o" .
+
+<https://w3id.org/fossr/data/question_517_identifier> a ns1:Identifier ;
+    ns1:id "517"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_518_content> a ns1:Content ;
+    ns1:text "Sentirsi ottimista per il futuro" .
+
+<https://w3id.org/fossr/data/question_518_identifier> a ns1:Identifier ;
+    ns1:id "518"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_519_content> a ns1:Content ;
+    ns1:text "... in televisione " .
+
+<https://w3id.org/fossr/data/question_519_identifier> a ns1:Identifier ;
+    ns1:id "519"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_520_content> a ns1:Content ;
+    ns1:text "... alla radio" .
+
+<https://w3id.org/fossr/data/question_520_identifier> a ns1:Identifier ;
+    ns1:id "520"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_521_content> a ns1:Content ;
+    ns1:text "... sui quotidiani cartacei" .
+
+<https://w3id.org/fossr/data/question_521_identifier> a ns1:Identifier ;
+    ns1:id "521"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_522_content> a ns1:Content ;
+    ns1:text "... sui quotidiani online" .
+
+<https://w3id.org/fossr/data/question_522_identifier> a ns1:Identifier ;
+    ns1:id "522"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_523_content> a ns1:Content ;
+    ns1:text "... sui social media" .
+
+<https://w3id.org/fossr/data/question_523_identifier> a ns1:Identifier ;
+    ns1:id "523"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_524_content> a ns1:Content ;
+    ns1:text "L’aborto" .
+
+<https://w3id.org/fossr/data/question_524_identifier> a ns1:Identifier ;
+    ns1:id "524"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_525_content> a ns1:Content ;
+    ns1:text "L'eutanasia (porre fine alla vita di una persona affetta da una malattia inguaribile)" .
+
+<https://w3id.org/fossr/data/question_525_identifier> a ns1:Identifier ;
+    ns1:id "525"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_526_content> a ns1:Content ;
+    ns1:text "Il suicidio" .
+
+<https://w3id.org/fossr/data/question_526_identifier> a ns1:Identifier ;
+    ns1:id "526"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_527_content> a ns1:Content ;
+    ns1:text "Gestazione per altri (portare avanti una gravidanza per un’altra persona o per una coppia)" .
+
+<https://w3id.org/fossr/data/question_527_identifier> a ns1:Identifier ;
+    ns1:id "527"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_528_content> a ns1:Content ;
+    ns1:text "È probabile che un bambino in età pre-scolare soffra se sua madre lavora" .
+
+<https://w3id.org/fossr/data/question_528_identifier> a ns1:Identifier ;
+    ns1:id "528"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_529_content> a ns1:Content ;
+    ns1:text "Va bene lavorare, ma ciò che la maggior parte delle donne vuole veramente è una casa e dei figli" .
+
+<https://w3id.org/fossr/data/question_529_identifier> a ns1:Identifier ;
+    ns1:id "529"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_530_content> a ns1:Content ;
+    ns1:text "Un padre che lavora dovrebbe usufruire del congedo parentale per prendersi cura dei suoi figli" .
+
+<https://w3id.org/fossr/data/question_530_identifier> a ns1:Identifier ;
+    ns1:id "530"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_531_content> a ns1:Content ;
+    ns1:text "Uomini e donne devono contribuire equamente nel prendersi cura dei propri figli" .
+
+<https://w3id.org/fossr/data/question_531_identifier> a ns1:Identifier ;
+    ns1:id "531"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_532_content> a ns1:Content ;
+    ns1:text "Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti? Indichi la sua opinione utilizzando una scala da 0 a 10, dove 0 rappresenta la necessità di essere diffidenti e 10 rappresenta la possibilità di fidarsi." .
+
+<https://w3id.org/fossr/data/question_532_identifier> a ns1:Identifier ;
+    ns1:id "532"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_533_content> a ns1:Content ;
+    ns1:text "Il Parlamento italiano" .
+
+<https://w3id.org/fossr/data/question_533_identifier> a ns1:Identifier ;
+    ns1:id "533"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_534_content> a ns1:Content ;
+    ns1:text "La Magistratura" .
+
+<https://w3id.org/fossr/data/question_534_identifier> a ns1:Identifier ;
+    ns1:id "534"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_535_content> a ns1:Content ;
+    ns1:text "La Polizia" .
+
+<https://w3id.org/fossr/data/question_535_identifier> a ns1:Identifier ;
+    ns1:id "535"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_536_content> a ns1:Content ;
+    ns1:text "I politici" .
+
+<https://w3id.org/fossr/data/question_536_identifier> a ns1:Identifier ;
+    ns1:id "536"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_537_content> a ns1:Content ;
+    ns1:text "I partiti politici" .
+
+<https://w3id.org/fossr/data/question_537_identifier> a ns1:Identifier ;
+    ns1:id "537"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_538_content> a ns1:Content ;
+    ns1:text "Il Parlamento europeo" .
+
+<https://w3id.org/fossr/data/question_538_identifier> a ns1:Identifier ;
+    ns1:id "538"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_539_content> a ns1:Content ;
+    ns1:text "In generale, direbbe che il mondo è migliore o peggiore per via della scienza e della tecnologia? Indichi la Sua posizione utilizzando questa scala, in cui 0 significa che il mondo è \"Molto peggiore\" e 10 che il mondo è “Molto migliore”" .
+
+<https://w3id.org/fossr/data/question_539_identifier> a ns1:Identifier ;
+    ns1:id "539"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_540_content> a ns1:Content ;
+    ns1:text "In politica, a volte si parla di \"sinistra\" e di \"destra\". Dove si collocherebbe in una scala da 0 a 10, dove 0 rappresenta la sinistra e 10 rappresenta la destra?" .
+
+<https://w3id.org/fossr/data/question_540_identifier> a ns1:Identifier ;
+    ns1:id "540"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_541_content> a ns1:Content ;
+    ns1:text "Trovo piacevole rispondere ai questionari, sia per iscritto sia via Internet" .
+
+<https://w3id.org/fossr/data/question_541_identifier> a ns1:Identifier ;
+    ns1:id "541"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_542_content> a ns1:Content ;
+    ns1:text "Trovo piacevole essere intervistata/o per una ricerca" .
+
+<https://w3id.org/fossr/data/question_542_identifier> a ns1:Identifier ;
+    ns1:id "542"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_543_content> a ns1:Content ;
+    ns1:text "Le indagini demoscopiche sono importanti per la società" .
+
+<https://w3id.org/fossr/data/question_543_identifier> a ns1:Identifier ;
+    ns1:id "543"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_544_content> a ns1:Content ;
+    ns1:text "Con i dati provenienti da indagini demoscopiche, si possono ottenere molte informazioni utili" .
+
+<https://w3id.org/fossr/data/question_544_identifier> a ns1:Identifier ;
+    ns1:id "544"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_545_content> a ns1:Content ;
+    ns1:text "Le indagini demoscopiche violano la privacy" .
+
+<https://w3id.org/fossr/data/question_545_identifier> a ns1:Identifier ;
+    ns1:id "545"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_546_content> a ns1:Content ;
+    ns1:text "Trovo faticoso rispondere a/compilare un questionario" .
+
+<https://w3id.org/fossr/data/question_546_identifier> a ns1:Identifier ;
+    ns1:id "546"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_547_content> a ns1:Content ;
+    ns1:text "Noiosa" .
+
+<https://w3id.org/fossr/data/question_547_identifier> a ns1:Identifier ;
+    ns1:id "547"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_548_content> a ns1:Content ;
+    ns1:text "Difficile" .
+
+<https://w3id.org/fossr/data/question_548_identifier> a ns1:Identifier ;
+    ns1:id "548"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_549_content> a ns1:Content ;
+    ns1:text "Sgradevole/Spiacevole" .
+
+<https://w3id.org/fossr/data/question_549_identifier> a ns1:Identifier ;
+    ns1:id "549"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_550_content> a ns1:Content ;
+    ns1:text "Lunga" .
+
+<https://w3id.org/fossr/data/question_550_identifier> a ns1:Identifier ;
+    ns1:id "550"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_551_content> a ns1:Content ;
+    ns1:text "Indirizzo e-mail" .
+
+<https://w3id.org/fossr/data/question_551_identifier> a ns1:Identifier ;
+    ns1:id "551"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_552_content> a ns1:Content ;
+    ns1:text "Numero di telefonia mobile" .
+
+<https://w3id.org/fossr/data/question_552_identifier> a ns1:Identifier ;
+    ns1:id "552"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_553_content> a ns1:Content ;
+    ns1:text "Lingua principale" .
+
+<https://w3id.org/fossr/data/question_553_identifier> a ns1:Identifier ;
+    ns1:id "553"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_554_content> a ns1:Content ;
+    ns1:text "Lingua" .
+
+<https://w3id.org/fossr/data/question_554_identifier> a ns1:Identifier ;
+    ns1:id "554"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_555_content> a ns1:Content ;
+    ns1:text "Lingua secondaria" .
+
+<https://w3id.org/fossr/data/question_555_identifier> a ns1:Identifier ;
+    ns1:id "555"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_556_content> a ns1:Content ;
+    ns1:text "Buone maniere" .
+
+<https://w3id.org/fossr/data/question_556_identifier> a ns1:Identifier ;
+    ns1:id "556"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_557_content> a ns1:Content ;
+    ns1:text "Indipendenza" .
+
+<https://w3id.org/fossr/data/question_557_identifier> a ns1:Identifier ;
+    ns1:id "557"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_558_content> a ns1:Content ;
+    ns1:text "Capacità di lavorare sodo" .
+
+<https://w3id.org/fossr/data/question_558_identifier> a ns1:Identifier ;
+    ns1:id "558"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_559_content> a ns1:Content ;
+    ns1:text "Senso di responsabilità" .
+
+<https://w3id.org/fossr/data/question_559_identifier> a ns1:Identifier ;
+    ns1:id "559"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_560_content> a ns1:Content ;
+    ns1:text "Immaginazione" .
+
+<https://w3id.org/fossr/data/question_560_identifier> a ns1:Identifier ;
+    ns1:id "560"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_561_content> a ns1:Content ;
+    ns1:text "Rispetto degli altri" .
+
+<https://w3id.org/fossr/data/question_561_identifier> a ns1:Identifier ;
+    ns1:id "561"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_562_content> a ns1:Content ;
+    ns1:text "Tolleranza" .
+
+<https://w3id.org/fossr/data/question_562_identifier> a ns1:Identifier ;
+    ns1:id "562"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_563_content> a ns1:Content ;
+    ns1:text "Far economia, capacità di risparmiare denaro e cose" .
+
+<https://w3id.org/fossr/data/question_563_identifier> a ns1:Identifier ;
+    ns1:id "563"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_564_content> a ns1:Content ;
+    ns1:text "Determinazione, perseveranza" .
+
+<https://w3id.org/fossr/data/question_564_identifier> a ns1:Identifier ;
+    ns1:id "564"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_565_content> a ns1:Content ;
+    ns1:text "Fede religiosa" .
+
+<https://w3id.org/fossr/data/question_565_identifier> a ns1:Identifier ;
+    ns1:id "565"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_566_content> a ns1:Content ;
+    ns1:text "Altruismo" .
+
+<https://w3id.org/fossr/data/question_566_identifier> a ns1:Identifier ;
+    ns1:id "566"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_567_content> a ns1:Content ;
+    ns1:text "Obbedienza" .
+
+<https://w3id.org/fossr/data/question_567_identifier> a ns1:Identifier ;
+    ns1:id "567"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_568_content> a ns1:Content ;
+    ns1:text "Non so" .
+
+<https://w3id.org/fossr/data/question_568_identifier> a ns1:Identifier ;
+    ns1:id "568"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_569_content> a ns1:Content ;
+    ns1:text "Preferisco non rispondere" .
+
+<https://w3id.org/fossr/data/question_569_identifier> a ns1:Identifier ;
+    ns1:id "569"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_570_content> a ns1:Content ;
+    ns1:text "Nome:" .
+
+<https://w3id.org/fossr/data/question_570_identifier> a ns1:Identifier ;
+    ns1:id "570"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_571_content> a ns1:Content ;
+    ns1:text "Cognome:" .
+
+<https://w3id.org/fossr/data/question_571_identifier> a ns1:Identifier ;
+    ns1:id "571"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_572_content> a ns1:Content ;
+    ns1:text "Assistenza professionale presso il proprio domicilio" .
+
+<https://w3id.org/fossr/data/question_572_identifier> a ns1:Identifier ;
+    ns1:id "572"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_573_content> a ns1:Content ;
+    ns1:text "... sui siti di informazione" .
+
+<https://w3id.org/fossr/data/question_573_identifier> a ns1:Identifier ;
+    ns1:id "573"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_574_content> a ns1:Content ;
+    ns1:text "Via e numero civico:" .
+
+<https://w3id.org/fossr/data/question_574_identifier> a ns1:Identifier ;
+    ns1:id "574"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_575_content> a ns1:Content ;
+    ns1:text "CAP:" .
+
+<https://w3id.org/fossr/data/question_575_identifier> a ns1:Identifier ;
+    ns1:id "575"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_576_content> a ns1:Content ;
+    ns1:text "Comune:" .
+
+<https://w3id.org/fossr/data/question_576_identifier> a ns1:Identifier ;
+    ns1:id "576"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_578_content> a ns1:Content ;
+    ns1:text "Testo" .
+
+<https://w3id.org/fossr/data/question_578_identifier> a ns1:Identifier ;
+    ns1:id "578"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_579_content> a ns1:Content ;
+    ns1:text "Dichiaro di aver preso visione del Modulo di Consenso e acconsento a partecipare all'indagine." .
+
+<https://w3id.org/fossr/data/question_579_identifier> a ns1:Identifier ;
+    ns1:id "579"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_580_content> a ns1:Content ;
+    ns1:text "Dichiaro di aver preso visione del Modulo di Consenso e acconsento a partecipare all'indagine." .
+
+<https://w3id.org/fossr/data/question_580_identifier> a ns1:Identifier ;
+    ns1:id "580"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_581_content> a ns1:Content ;
+    ns1:text "Dichiaro di aver preso visione dell'Informativa sulla Privacy e autorizzo il trattamento dei miei dati personali." .
+
+<https://w3id.org/fossr/data/question_581_identifier> a ns1:Identifier ;
+    ns1:id "581"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_582_content> a ns1:Content ;
+    ns1:text "Nell’insieme quanto si ritiene felice? Per rispondere utilizzi questa scala dove 0 corrisponde a “del tutto infelice” e 10 a “del tutto felice”." .
+
+<https://w3id.org/fossr/data/question_582_identifier> a ns1:Identifier ;
+    ns1:id "582"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_583_content> a ns1:Content ;
+    ns1:text "Nell’insieme quanto si ritiene felice? Per rispondere utilizzi questa scala dove 0 corrisponde a “del tutto infelice” e 10 a “del tutto felice”." .
+
+<https://w3id.org/fossr/data/question_583_identifier> a ns1:Identifier ;
+    ns1:id "583"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_584_content> a ns1:Content ;
+    ns1:text "Nell’insieme quanto si ritiene felice? Per rispondere utilizzi questa scala dove 0 corrisponde a “del tutto infelice” e 10 a “del tutto felice”." .
+
+<https://w3id.org/fossr/data/question_584_identifier> a ns1:Identifier ;
+    ns1:id "584"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_585_content> a ns1:Content ;
+    ns1:text "Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti? Indichi la sua opinione utilizzando una scala da 0 a 10, dove 0 rappresenta la necessità di essere diffidenti e 10 rappresenta la possibilità di fidarsi." .
+
+<https://w3id.org/fossr/data/question_585_identifier> a ns1:Identifier ;
+    ns1:id "585"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_586_content> a ns1:Content ;
+    ns1:text "Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti? Indichi la sua opinione utilizzando una scala da 0 a 10, dove 0 rappresenta la necessità di essere diffidenti e 10 rappresenta la possibilità di fidarsi." .
+
+<https://w3id.org/fossr/data/question_586_identifier> a ns1:Identifier ;
+    ns1:id "586"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_587_content> a ns1:Content ;
+    ns1:text "Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti? Indichi la sua opinione utilizzando una scala da 0 a 10, dove 0 rappresenta la necessità di essere diffidenti e 10 rappresenta la possibilità di fidarsi." .
+
+<https://w3id.org/fossr/data/question_587_identifier> a ns1:Identifier ;
+    ns1:id "587"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_588_content> a ns1:Content ;
+    ns1:text "Comune" .
+
+<https://w3id.org/fossr/data/question_588_identifier> a ns1:Identifier ;
+    ns1:id "588"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_589_content> a ns1:Content ;
+    ns1:text "Campione" .
+
+<https://w3id.org/fossr/data/question_589_identifier> a ns1:Identifier ;
+    ns1:id "589"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_590_content> a ns1:Content ;
+    ns1:text "Campione" .
+
+<https://w3id.org/fossr/data/question_590_identifier> a ns1:Identifier ;
+    ns1:id "590"^^xsd:int .
+
+<https://w3id.org/fossr/data/question_785_content> a ns1:Content ;
+    ns1:text "Codice" .
+
+<https://w3id.org/fossr/data/question_785_identifier> a ns1:Identifier ;
+    ns1:id "785"^^xsd:int .
+
+<https://w3id.org/fossr/data/variable_COD> a ns1:Variable ;
+    ns1:variableCod "COD" .
+
+<https://w3id.org/fossr/data/variable_CONSENT> a ns1:Variable ;
+    ns1:variableCod "CONSENT" .
+
+<https://w3id.org/fossr/data/variable_CONSENTREC> a ns1:Variable ;
+    ns1:variableCod "CONSENTREC" .
+
+<https://w3id.org/fossr/data/variable_CONSENTREC01> a ns1:Variable ;
+    ns1:variableCod "CONSENTREC01" .
+
+<https://w3id.org/fossr/data/variable_Cognome> a ns1:Variable ;
+    ns1:variableCod "Cognome" .
+
+<https://w3id.org/fossr/data/variable_LING> a ns1:Variable ;
+    ns1:variableCod "LING" .
+
+<https://w3id.org/fossr/data/variable_Nome> a ns1:Variable ;
+    ns1:variableCod "Nome" .
+
+<https://w3id.org/fossr/data/variable_PRIN> a ns1:Variable ;
+    ns1:variableCod "PRIN" .
+
+<https://w3id.org/fossr/data/variable_RHea01> a ns1:Variable ;
+    ns1:variableCod "RHea01" .
+
+<https://w3id.org/fossr/data/variable_RHea01x1> a ns1:Variable ;
+    ns1:variableCod "RHea01x1" .
+
+<https://w3id.org/fossr/data/variable_RHea02Esp1> a ns1:Variable ;
+    ns1:variableCod "RHea02Esp1" .
+
+<https://w3id.org/fossr/data/variable_RHea02Esp2> a ns1:Variable ;
+    ns1:variableCod "RHea02Esp2" .
+
+<https://w3id.org/fossr/data/variable_RHea02Esp3> a ns1:Variable ;
+    ns1:variableCod "RHea02Esp3" .
+
+<https://w3id.org/fossr/data/variable_RHea02Esp3b> a ns1:Variable ;
+    ns1:variableCod "RHea02Esp3b" .
+
+<https://w3id.org/fossr/data/variable_RHea03> a ns1:Variable ;
+    ns1:variableCod "RHea03" .
+
+<https://w3id.org/fossr/data/variable_RHea03x1> a ns1:Variable ;
+    ns1:variableCod "RHea03x1" .
+
+<https://w3id.org/fossr/data/variable_RHea03x2> a ns1:Variable ;
+    ns1:variableCod "RHea03x2" .
+
+<https://w3id.org/fossr/data/variable_RHea03x3> a ns1:Variable ;
+    ns1:variableCod "RHea03x3" .
+
+<https://w3id.org/fossr/data/variable_RHea03x4> a ns1:Variable ;
+    ns1:variableCod "RHea03x4" .
+
+<https://w3id.org/fossr/data/variable_RHea04> a ns1:Variable ;
+    ns1:variableCod "RHea04" .
+
+<https://w3id.org/fossr/data/variable_RITE01> a ns1:Variable ;
+    ns1:variableCod "RITE01" .
+
+<https://w3id.org/fossr/data/variable_RITE01x1> a ns1:Variable ;
+    ns1:variableCod "RITE01x1" .
+
+<https://w3id.org/fossr/data/variable_RITE01x2> a ns1:Variable ;
+    ns1:variableCod "RITE01x2" .
+
+<https://w3id.org/fossr/data/variable_RITE01x3> a ns1:Variable ;
+    ns1:variableCod "RITE01x3" .
+
+<https://w3id.org/fossr/data/variable_RITE01x4> a ns1:Variable ;
+    ns1:variableCod "RITE01x4" .
+
+<https://w3id.org/fossr/data/variable_RITE01x401> a ns1:Variable ;
+    ns1:variableCod "RITE01x401" .
+
+<https://w3id.org/fossr/data/variable_RITE01x402> a ns1:Variable ;
+    ns1:variableCod "RITE01x402" .
+
+<https://w3id.org/fossr/data/variable_RITE01x403> a ns1:Variable ;
+    ns1:variableCod "RITE01x403" .
+
+<https://w3id.org/fossr/data/variable_RITE01x404> a ns1:Variable ;
+    ns1:variableCod "RITE01x404" .
+
+<https://w3id.org/fossr/data/variable_RITE01x405> a ns1:Variable ;
+    ns1:variableCod "RITE01x405" .
+
+<https://w3id.org/fossr/data/variable_RITE01x406> a ns1:Variable ;
+    ns1:variableCod "RITE01x406" .
+
+<https://w3id.org/fossr/data/variable_RITE01x407> a ns1:Variable ;
+    ns1:variableCod "RITE01x407" .
+
+<https://w3id.org/fossr/data/variable_RITE01x408> a ns1:Variable ;
+    ns1:variableCod "RITE01x408" .
+
+<https://w3id.org/fossr/data/variable_RITE01x409> a ns1:Variable ;
+    ns1:variableCod "RITE01x409" .
+
+<https://w3id.org/fossr/data/variable_RITE01x410> a ns1:Variable ;
+    ns1:variableCod "RITE01x410" .
+
+<https://w3id.org/fossr/data/variable_RITE02> a ns1:Variable ;
+    ns1:variableCod "RITE02" .
+
+<https://w3id.org/fossr/data/variable_RITE02x1> a ns1:Variable ;
+    ns1:variableCod "RITE02x1" .
+
+<https://w3id.org/fossr/data/variable_RITE02x2> a ns1:Variable ;
+    ns1:variableCod "RITE02x2" .
+
+<https://w3id.org/fossr/data/variable_RITE02x3> a ns1:Variable ;
+    ns1:variableCod "RITE02x3" .
+
+<https://w3id.org/fossr/data/variable_RITE02x4> a ns1:Variable ;
+    ns1:variableCod "RITE02x4" .
+
+<https://w3id.org/fossr/data/variable_RITE03> a ns1:Variable ;
+    ns1:variableCod "RITE03" .
+
+<https://w3id.org/fossr/data/variable_RITE04> a ns1:Variable ;
+    ns1:variableCod "RITE04" .
+
+<https://w3id.org/fossr/data/variable_RITE04x1> a ns1:Variable ;
+    ns1:variableCod "RITE04x1" .
+
+<https://w3id.org/fossr/data/variable_RITE05> a ns1:Variable ;
+    ns1:variableCod "RITE05" .
+
+<https://w3id.org/fossr/data/variable_RPIn01> a ns1:Variable ;
+    ns1:variableCod "RPIn01" .
+
+<https://w3id.org/fossr/data/variable_RPIn01x1> a ns1:Variable ;
+    ns1:variableCod "RPIn01x1" .
+
+<https://w3id.org/fossr/data/variable_RPIn01x2> a ns1:Variable ;
+    ns1:variableCod "RPIn01x2" .
+
+<https://w3id.org/fossr/data/variable_RPIn01x3> a ns1:Variable ;
+    ns1:variableCod "RPIn01x3" .
+
+<https://w3id.org/fossr/data/variable_RPIn01x4> a ns1:Variable ;
+    ns1:variableCod "RPIn01x4" .
+
+<https://w3id.org/fossr/data/variable_RPIn01x5> a ns1:Variable ;
+    ns1:variableCod "RPIn01x5" .
+
+<https://w3id.org/fossr/data/variable_RPIn01x6> a ns1:Variable ;
+    ns1:variableCod "RPIn01x6" .
+
+<https://w3id.org/fossr/data/variable_RPIn02> a ns1:Variable ;
+    ns1:variableCod "RPIn02" .
+
+<https://w3id.org/fossr/data/variable_RPOr01> a ns1:Variable ;
+    ns1:variableCod "RPOr01" .
+
+<https://w3id.org/fossr/data/variable_RPOr02> a ns1:Variable ;
+    ns1:variableCod "RPOr02" .
+
+<https://w3id.org/fossr/data/variable_RRec01> a ns1:Variable ;
+    ns1:variableCod "RRec01" .
+
+<https://w3id.org/fossr/data/variable_RRec01x2> a ns1:Variable ;
+    ns1:variableCod "RRec01x2" .
+
+<https://w3id.org/fossr/data/variable_RRec01x3> a ns1:Variable ;
+    ns1:variableCod "RRec01x3" .
+
+<https://w3id.org/fossr/data/variable_RRec01x3bis> a ns1:Variable ;
+    ns1:variableCod "RRec01x3bis" .
+
+<https://w3id.org/fossr/data/variable_RRec01x3tris> a ns1:Variable ;
+    ns1:variableCod "RRec01x3tris" .
+
+<https://w3id.org/fossr/data/variable_RRec01x4> a ns1:Variable ;
+    ns1:variableCod "RRec01x4" .
+
+<https://w3id.org/fossr/data/variable_RRec01x5> a ns1:Variable ;
+    ns1:variableCod "RRec01x5" .
+
+<https://w3id.org/fossr/data/variable_RRec02> a ns1:Variable ;
+    ns1:variableCod "RRec02" .
+
+<https://w3id.org/fossr/data/variable_RRec02x1> a ns1:Variable ;
+    ns1:variableCod "RRec02x1" .
+
+<https://w3id.org/fossr/data/variable_RRec02x2> a ns1:Variable ;
+    ns1:variableCod "RRec02x2" .
+
+<https://w3id.org/fossr/data/variable_RSAt01> a ns1:Variable ;
+    ns1:variableCod "RSAt01" .
+
+<https://w3id.org/fossr/data/variable_RSAt01x1> a ns1:Variable ;
+    ns1:variableCod "RSAt01x1" .
+
+<https://w3id.org/fossr/data/variable_RSAt01x2> a ns1:Variable ;
+    ns1:variableCod "RSAt01x2" .
+
+<https://w3id.org/fossr/data/variable_RSAt01x3> a ns1:Variable ;
+    ns1:variableCod "RSAt01x3" .
+
+<https://w3id.org/fossr/data/variable_RSAt01x4> a ns1:Variable ;
+    ns1:variableCod "RSAt01x4" .
+
+<https://w3id.org/fossr/data/variable_RSAt01x5> a ns1:Variable ;
+    ns1:variableCod "RSAt01x5" .
+
+<https://w3id.org/fossr/data/variable_RSAt01x6> a ns1:Variable ;
+    ns1:variableCod "RSAt01x6" .
+
+<https://w3id.org/fossr/data/variable_RSAt02> a ns1:Variable ;
+    ns1:variableCod "RSAt02" .
+
+<https://w3id.org/fossr/data/variable_RSAt02x1> a ns1:Variable ;
+    ns1:variableCod "RSAt02x1" .
+
+<https://w3id.org/fossr/data/variable_RSAt02x2> a ns1:Variable ;
+    ns1:variableCod "RSAt02x2" .
+
+<https://w3id.org/fossr/data/variable_RSAt02x3> a ns1:Variable ;
+    ns1:variableCod "RSAt02x3" .
+
+<https://w3id.org/fossr/data/variable_RSAt02x4> a ns1:Variable ;
+    ns1:variableCod "RSAt02x4" .
+
+<https://w3id.org/fossr/data/variable_RSDe01> a ns1:Variable ;
+    ns1:variableCod "RSDe01" .
+
+<https://w3id.org/fossr/data/variable_RSDe02> a ns1:Variable ;
+    ns1:variableCod "RSDe02" .
+
+<https://w3id.org/fossr/data/variable_RSDe02x1> a ns1:Variable ;
+    ns1:variableCod "RSDe02x1" .
+
+<https://w3id.org/fossr/data/variable_RSDe03> a ns1:Variable ;
+    ns1:variableCod "RSDe03" .
+
+<https://w3id.org/fossr/data/variable_RSDe03x1> a ns1:Variable ;
+    ns1:variableCod "RSDe03x1" .
+
+<https://w3id.org/fossr/data/variable_RSDe03x2> a ns1:Variable ;
+    ns1:variableCod "RSDe03x2" .
+
+<https://w3id.org/fossr/data/variable_RSDe04> a ns1:Variable ;
+    ns1:variableCod "RSDe04" .
+
+<https://w3id.org/fossr/data/variable_RSDe05> a ns1:Variable ;
+    ns1:variableCod "RSDe05" .
+
+<https://w3id.org/fossr/data/variable_RSDe06> a ns1:Variable ;
+    ns1:variableCod "RSDe06" .
+
+<https://w3id.org/fossr/data/variable_RSDe06x1> a ns1:Variable ;
+    ns1:variableCod "RSDe06x1" .
+
+<https://w3id.org/fossr/data/variable_RSDe07> a ns1:Variable ;
+    ns1:variableCod "RSDe07" .
+
+<https://w3id.org/fossr/data/variable_RSDe07x1> a ns1:Variable ;
+    ns1:variableCod "RSDe07x1" .
+
+<https://w3id.org/fossr/data/variable_RSDe08> a ns1:Variable ;
+    ns1:variableCod "RSDe08" .
+
+<https://w3id.org/fossr/data/variable_RSDe08x1> a ns1:Variable ;
+    ns1:variableCod "RSDe08x1" .
+
+<https://w3id.org/fossr/data/variable_RSDe09> a ns1:Variable ;
+    ns1:variableCod "RSDe09" .
+
+<https://w3id.org/fossr/data/variable_RSDe09x1> a ns1:Variable ;
+    ns1:variableCod "RSDe09x1" .
+
+<https://w3id.org/fossr/data/variable_RSDe10> a ns1:Variable ;
+    ns1:variableCod "RSDe10" .
+
+<https://w3id.org/fossr/data/variable_RSDe11> a ns1:Variable ;
+    ns1:variableCod "RSDe11" .
+
+<https://w3id.org/fossr/data/variable_RSDe11Esp1> a ns1:Variable ;
+    ns1:variableCod "RSDe11Esp1" .
+
+<https://w3id.org/fossr/data/variable_RSDe11Esp2> a ns1:Variable ;
+    ns1:variableCod "RSDe11Esp2" .
+
+<https://w3id.org/fossr/data/variable_RSDe11Esp3> a ns1:Variable ;
+    ns1:variableCod "RSDe11Esp3" .
+
+<https://w3id.org/fossr/data/variable_RSDe11Esp3B> a ns1:Variable ;
+    ns1:variableCod "RSDe11Esp3B" .
+
+<https://w3id.org/fossr/data/variable_RSDe12> a ns1:Variable ;
+    ns1:variableCod "RSDe12" .
+
+<https://w3id.org/fossr/data/variable_RSDe13> a ns1:Variable ;
+    ns1:variableCod "RSDe13" .
+
+<https://w3id.org/fossr/data/variable_RSDe13x1> a ns1:Variable ;
+    ns1:variableCod "RSDe13x1" .
+
+<https://w3id.org/fossr/data/variable_RTru01> a ns1:Variable ;
+    ns1:variableCod "RTru01" .
+
+<https://w3id.org/fossr/data/variable_RTru01Esp1> a ns1:Variable ;
+    ns1:variableCod "RTru01Esp1" .
+
+<https://w3id.org/fossr/data/variable_RTru01Esp2> a ns1:Variable ;
+    ns1:variableCod "RTru01Esp2" .
+
+<https://w3id.org/fossr/data/variable_RTru01Esp3> a ns1:Variable ;
+    ns1:variableCod "RTru01Esp3" .
+
+<https://w3id.org/fossr/data/variable_RTru01Esp3b> a ns1:Variable ;
+    ns1:variableCod "RTru01Esp3b" .
+
+<https://w3id.org/fossr/data/variable_RTru02> a ns1:Variable ;
+    ns1:variableCod "RTru02" .
+
+<https://w3id.org/fossr/data/variable_RTru02x1> a ns1:Variable ;
+    ns1:variableCod "RTru02x1" .
+
+<https://w3id.org/fossr/data/variable_RTru02x2> a ns1:Variable ;
+    ns1:variableCod "RTru02x2" .
+
+<https://w3id.org/fossr/data/variable_RTru02x3> a ns1:Variable ;
+    ns1:variableCod "RTru02x3" .
+
+<https://w3id.org/fossr/data/variable_RTru02x4> a ns1:Variable ;
+    ns1:variableCod "RTru02x4" .
+
+<https://w3id.org/fossr/data/variable_RTru02x5> a ns1:Variable ;
+    ns1:variableCod "RTru02x5" .
+
+<https://w3id.org/fossr/data/variable_RTru02x6> a ns1:Variable ;
+    ns1:variableCod "RTru02x6" .
+
+<https://w3id.org/fossr/data/variable_RTru03> a ns1:Variable ;
+    ns1:variableCod "RTru03" .
+
+<https://w3id.org/fossr/data/variable_RVal01> a ns1:Variable ;
+    ns1:variableCod "RVal01" .
+
+<https://w3id.org/fossr/data/variable_RVal01x1> a ns1:Variable ;
+    ns1:variableCod "RVal01x1" .
+
+<https://w3id.org/fossr/data/variable_RVal01x2> a ns1:Variable ;
+    ns1:variableCod "RVal01x2" .
+
+<https://w3id.org/fossr/data/variable_RVal01x3> a ns1:Variable ;
+    ns1:variableCod "RVal01x3" .
+
+<https://w3id.org/fossr/data/variable_RVal01x4> a ns1:Variable ;
+    ns1:variableCod "RVal01x4" .
+
+<https://w3id.org/fossr/data/variable_RVal02> a ns1:Variable ;
+    ns1:variableCod "RVal02" .
+
+<https://w3id.org/fossr/data/variable_RVal02x1> a ns1:Variable ;
+    ns1:variableCod "RVal02x1" .
+
+<https://w3id.org/fossr/data/variable_RVal02x2> a ns1:Variable ;
+    ns1:variableCod "RVal02x2" .
+
+<https://w3id.org/fossr/data/variable_RVal02x3> a ns1:Variable ;
+    ns1:variableCod "RVal02x3" .
+
+<https://w3id.org/fossr/data/variable_RVal02x4> a ns1:Variable ;
+    ns1:variableCod "RVal02x4" .
+
+<https://w3id.org/fossr/data/variable_RVal03> a ns1:Variable ;
+    ns1:variableCod "RVal03" .
+
+<https://w3id.org/fossr/data/variable_RVal03x1> a ns1:Variable ;
+    ns1:variableCod "RVal03x1" .
+
+<https://w3id.org/fossr/data/variable_RVal03x10> a ns1:Variable ;
+    ns1:variableCod "RVal03x10" .
+
+<https://w3id.org/fossr/data/variable_RVal03x11> a ns1:Variable ;
+    ns1:variableCod "RVal03x11" .
+
+<https://w3id.org/fossr/data/variable_RVal03x12> a ns1:Variable ;
+    ns1:variableCod "RVal03x12" .
+
+<https://w3id.org/fossr/data/variable_RVal03x2> a ns1:Variable ;
+    ns1:variableCod "RVal03x2" .
+
+<https://w3id.org/fossr/data/variable_RVal03x3> a ns1:Variable ;
+    ns1:variableCod "RVal03x3" .
+
+<https://w3id.org/fossr/data/variable_RVal03x4> a ns1:Variable ;
+    ns1:variableCod "RVal03x4" .
+
+<https://w3id.org/fossr/data/variable_RVal03x5> a ns1:Variable ;
+    ns1:variableCod "RVal03x5" .
+
+<https://w3id.org/fossr/data/variable_RVal03x6> a ns1:Variable ;
+    ns1:variableCod "RVal03x6" .
+
+<https://w3id.org/fossr/data/variable_RVal03x7> a ns1:Variable ;
+    ns1:variableCod "RVal03x7" .
+
+<https://w3id.org/fossr/data/variable_RVal03x8> a ns1:Variable ;
+    ns1:variableCod "RVal03x8" .
+
+<https://w3id.org/fossr/data/variable_RVal03x9> a ns1:Variable ;
+    ns1:variableCod "RVal03x9" .
+
+<https://w3id.org/fossr/data/variable_RVal03xNR> a ns1:Variable ;
+    ns1:variableCod "RVal03xNR" .
+
+<https://w3id.org/fossr/data/variable_RVal03xNS> a ns1:Variable ;
+    ns1:variableCod "RVal03xNS" .
+
+<https://w3id.org/fossr/data/variable_RVer01> a ns1:Variable ;
+    ns1:variableCod "RVer01" .
+
+<https://w3id.org/fossr/data/variable_RVer01x1> a ns1:Variable ;
+    ns1:variableCod "RVer01x1" .
+
+<https://w3id.org/fossr/data/variable_RVer02> a ns1:Variable ;
+    ns1:variableCod "RVer02" .
+
+<https://w3id.org/fossr/data/variable_RVer02x1> a ns1:Variable ;
+    ns1:variableCod "RVer02x1" .
+
+<https://w3id.org/fossr/data/variable_RVer02x2> a ns1:Variable ;
+    ns1:variableCod "RVer02x2" .
+
+<https://w3id.org/fossr/data/variable_RVer02x3> a ns1:Variable ;
+    ns1:variableCod "RVer02x3" .
+
+<https://w3id.org/fossr/data/variable_RVer02x4> a ns1:Variable ;
+    ns1:variableCod "RVer02x4" .
+
+<https://w3id.org/fossr/data/variable_RVer03> a ns1:Variable ;
+    ns1:variableCod "RVer03" .
+
+<https://w3id.org/fossr/data/variable_RVer03x1> a ns1:Variable ;
+    ns1:variableCod "RVer03x1" .
+
+<https://w3id.org/fossr/data/variable_RVer04> a ns1:Variable ;
+    ns1:variableCod "RVer04" .
+
+<https://w3id.org/fossr/data/variable_SECO> a ns1:Variable ;
+    ns1:variableCod "SECO" .
+
+<https://w3id.org/fossr/data/variable_SQ007> a ns1:Variable ;
+    ns1:variableCod "SQ007" .
+
+<https://w3id.org/fossr/data/variable_TXT> a ns1:Variable ;
+    ns1:variableCod "TXT" .
+
+<https://w3id.org/fossr/data/variable_V0000> a ns1:Variable ;
+    ns1:variableCod "V0000" .
+
+<https://w3id.org/fossr/data/variable_V0001> a ns1:Variable ;
+    ns1:variableCod "V0001" .
+
+<https://w3id.org/fossr/data/variable_V1001x1> a ns1:Variable ;
+    ns1:variableCod "V1001x1" .
+
+<https://w3id.org/fossr/data/variable_CAP> a ns1:Variable ;
+    ns1:variableCod "CAP" .
+
+<https://w3id.org/fossr/data/variable_CMP> a ns1:Variable ;
+    ns1:variableCod "CMP" .
+
+<https://w3id.org/fossr/data/variable_COM> a ns1:Variable ;
+    ns1:variableCod "COM" .
+
+<https://w3id.org/fossr/data/variable_IND> a ns1:Variable ;
+    ns1:variableCod "IND" .
+
+<https://w3id.org/fossr/data/variable_SQ006> a ns1:Variable ;
+    ns1:variableCod "SQ006" .
+
+<https://w3id.org/fossr/data/questionType_N> a ns1:QuestionType ;
+    ns1:code "N" .
+
+<https://w3id.org/fossr/data/questionType_X> a ns1:QuestionType ;
+    ns1:code "X" .
+
+<https://w3id.org/fossr/data/variable_SQ002> a ns1:Variable ;
+    ns1:variableCod "SQ002" .
+
+<https://w3id.org/fossr/data/variable_SQ003> a ns1:Variable ;
+    ns1:variableCod "SQ003" .
+
+<https://w3id.org/fossr/data/variable_SQ004> a ns1:Variable ;
+    ns1:variableCod "SQ004" .
+
+<https://w3id.org/fossr/data/variable_SQ005> a ns1:Variable ;
+    ns1:variableCod "SQ005" .
+
+<https://w3id.org/fossr/data/questionType_%21> a ns1:QuestionType ;
+    ns1:code "!" .
+
+<https://w3id.org/fossr/data/variable_RHea02> a ns1:Variable ;
+    ns1:variableCod "RHea02" .
+
+<https://w3id.org/fossr/data/questionType_Q> a ns1:QuestionType ;
+    ns1:code "Q" .
+
+<https://w3id.org/fossr/data/questionType_M> a ns1:QuestionType ;
+    ns1:code "M" .
+
+<https://w3id.org/fossr/data/variable_SQ001> a ns1:Variable ;
+    ns1:variableCod "SQ001" .
+
+<https://w3id.org/fossr/data/questionType_F> a ns1:QuestionType ;
+    ns1:code "F" .
+
+<https://w3id.org/fossr/data/questionType_L> a ns1:QuestionType ;
+    ns1:code "L" .
+
+<https://w3id.org/fossr/data/questionType_T> a ns1:QuestionType ;
+    ns1:code "T" .
+

@@ -1,0 +1,1066 @@
+@prefix ls: <https://w3id.org/fossr/ontology/limesurvey/> .
+@prefix data: <https://w3id.org/fossr/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+
+# ============================================
+# GROUP 7 - LOUVAIN-LA-NEUVE SCHOOL SURVEY
+# ============================================
+
+data:group_007 a ls:QuestionGroup ;
+    ls:hasId data:id_group_007 ;
+    ls:hasName data:name_group_007 ;
+    ls:hasContent data:content_group_007 .
+
+data:id_group_007 a ls:Identifier ;
+    ls:id 7 .
+
+data:name_group_007 a ls:Name ;
+    ls:nameText "Enquête dans les écoles de Louvain-la-Neuve" .
+
+data:content_group_007 a ls:Content ;
+    ls:text "Survey about school choice in Louvain-la-Neuve" .
+
+# ============================================
+# QUESTION TYPE - Numeric
+# ============================================
+
+data:type_N a ls:QuestionType ;
+    ls:code "N" .  # Numeric
+
+# ============================================
+# Q34 - School name
+# ============================================
+
+data:question_034 a ls:Question ;
+    ls:hasId data:id_question_034 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_S ;
+    ls:hasVariable data:var_034 ;
+    ls:hasContent data:content_question_034 ;
+    ls:hasComponentAttribute data:attr_mandatory_034, data:attr_order_034 .
+
+data:id_question_034 a ls:Identifier ;
+    ls:id 34 .
+
+data:var_034 a ls:Variable ;
+    ls:variableCod "Ecole" .
+
+data:content_question_034 a ls:Content ;
+    ls:text "Nom de l'école fréquentée par l'enfant" .
+
+data:attr_mandatory_034 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_034 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "1" .
+
+# ============================================
+# Q35 - Number of children
+# ============================================
+
+data:question_035 a ls:Question ;
+    ls:hasId data:id_question_035 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_N ;
+    ls:hasVariable data:var_035 ;
+    ls:hasContent data:content_question_035 ;
+    ls:hasComponentAttribute data:attr_mandatory_035, data:attr_order_035 .
+
+data:id_question_035 a ls:Identifier ;
+    ls:id 35 .
+
+data:var_035 a ls:Variable ;
+    ls:variableCod "NB1" .
+
+data:content_question_035 a ls:Content ;
+    ls:text "Combien d'enfants avez-vous ?" .
+
+data:attr_mandatory_035 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_035 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "2" .
+
+# ============================================
+# Q36 - Number of children in kindergarten/primary
+# ============================================
+
+data:question_036 a ls:Question ;
+    ls:hasId data:id_question_036 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_N ;
+    ls:hasVariable data:var_036 ;
+    ls:hasContent data:content_question_036 ;
+    ls:hasComponentAttribute data:attr_mandatory_036, data:attr_order_036 .
+
+data:id_question_036 a ls:Identifier ;
+    ls:id 36 .
+
+data:var_036 a ls:Variable ;
+    ls:variableCod "NB2" .
+
+data:content_question_036 a ls:Content ;
+    ls:text "Parmi vos enfants, combien sont en maternelle ou en primaire ?" .
+
+data:attr_mandatory_036 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_036 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "3" .
+
+# ============================================
+# Q37 - Number of children in this school
+# ============================================
+
+data:question_037 a ls:Question ;
+    ls:hasId data:id_question_037 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_N ;
+    ls:hasVariable data:var_037 ;
+    ls:hasContent data:content_question_037 ;
+    ls:hasComponentAttribute data:attr_mandatory_037, data:attr_order_037 .
+
+data:id_question_037 a ls:Identifier ;
+    ls:id 37 .
+
+data:var_037 a ls:Variable ;
+    ls:variableCod "NB3" .
+
+data:content_question_037 a ls:Content ;
+    ls:text "Parmi vos enfants, combien sont inscrits dans cet établissement ?" .
+
+data:attr_mandatory_037 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_037 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "4" .
+
+# ============================================
+# Q38-Q41 - Age of children (age1-age4)
+# ============================================
+
+data:question_038 a ls:Question ;
+    ls:hasId data:id_question_038 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_N ;
+    ls:hasVariable data:var_038 ;
+    ls:hasContent data:content_question_038 ;
+    ls:hasComponentAttribute data:attr_mandatory_038, data:attr_order_038 .
+
+data:id_question_038 a ls:Identifier ;
+    ls:id 38 .
+
+data:var_038 a ls:Variable ;
+    ls:variableCod "age1" .
+
+data:content_question_038 a ls:Content ;
+    ls:text "Quel est l'âge de l'enfant ?" .
+
+data:attr_mandatory_038 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_038 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "5" .
+
+data:question_039 a ls:Question ;
+    ls:hasId data:id_question_039 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_N ;
+    ls:hasVariable data:var_039 ;
+    ls:hasContent data:content_question_039 ;
+    ls:hasComponentAttribute data:attr_mandatory_039, data:attr_order_039 .
+
+data:id_question_039 a ls:Identifier ;
+    ls:id 39 .
+
+data:var_039 a ls:Variable ;
+    ls:variableCod "age2" .
+
+data:content_question_039 a ls:Content ;
+    ls:text "Quel est l'âge de l'enfant ?" .
+
+data:attr_mandatory_039 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_039 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "6" .
+
+data:question_040 a ls:Question ;
+    ls:hasId data:id_question_040 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_N ;
+    ls:hasVariable data:var_040 ;
+    ls:hasContent data:content_question_040 ;
+    ls:hasComponentAttribute data:attr_mandatory_040, data:attr_order_040 .
+
+data:id_question_040 a ls:Identifier ;
+    ls:id 40 .
+
+data:var_040 a ls:Variable ;
+    ls:variableCod "age3" .
+
+data:content_question_040 a ls:Content ;
+    ls:text "Quel est l'âge de l'enfant ?" .
+
+data:attr_mandatory_040 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_040 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "7" .
+
+data:question_041 a ls:Question ;
+    ls:hasId data:id_question_041 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_N ;
+    ls:hasVariable data:var_041 ;
+    ls:hasContent data:content_question_041 ;
+    ls:hasComponentAttribute data:attr_mandatory_041, data:attr_order_041 .
+
+data:id_question_041 a ls:Identifier ;
+    ls:id 41 .
+
+data:var_041 a ls:Variable ;
+    ls:variableCod "age4" .
+
+data:content_question_041 a ls:Content ;
+    ls:text "Quel est l'âge de l'enfant ?" .
+
+data:attr_mandatory_041 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_041 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "8" .
+
+# ============================================
+# Q42-Q46 - Class year (classe1-classe5)
+# ============================================
+
+data:question_042 a ls:Question ;
+    ls:hasId data:id_question_042 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_042 ;
+    ls:hasContent data:content_question_042 ;
+    ls:hasComponentAttribute data:attr_mandatory_042, data:attr_order_042 ;
+    ls:hasAnswerOption data:answer_classe_001, data:answer_classe_002, data:answer_classe_003, data:answer_classe_004, data:answer_classe_005, data:answer_classe_006, data:answer_classe_007, data:answer_classe_008, data:answer_classe_009 .
+
+data:id_question_042 a ls:Identifier ;
+    ls:id 42 .
+
+data:var_042 a ls:Variable ;
+    ls:variableCod "classe1" .
+
+data:content_question_042 a ls:Content ;
+    ls:text "En quelle année est-il inscrit ?" .
+
+data:attr_mandatory_042 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_042 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "9" .
+
+# Answer options for classe questions
+data:answer_classe_001 a ls:AnswerOption ;
+    ls:componentValue "1" ;
+    ls:hasContent data:content_answer_classe_001 ;
+    ls:hasComponentAttribute data:attr_sortorder_classe_001 .
+
+data:content_answer_classe_001 a ls:Content ;
+    ls:text "1ère maternelle/classe d'accueil" .
+
+data:attr_sortorder_classe_001 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_classe_002 a ls:AnswerOption ;
+    ls:componentValue "2" ;
+    ls:hasContent data:content_answer_classe_002 ;
+    ls:hasComponentAttribute data:attr_sortorder_classe_002 .
+
+data:content_answer_classe_002 a ls:Content ;
+    ls:text "2ème maternelle" .
+
+data:attr_sortorder_classe_002 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+data:answer_classe_003 a ls:AnswerOption ;
+    ls:componentValue "3" ;
+    ls:hasContent data:content_answer_classe_003 ;
+    ls:hasComponentAttribute data:attr_sortorder_classe_003 .
+
+data:content_answer_classe_003 a ls:Content ;
+    ls:text "3ème maternelle" .
+
+data:attr_sortorder_classe_003 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "3" .
+
+data:answer_classe_004 a ls:AnswerOption ;
+    ls:componentValue "4" ;
+    ls:hasContent data:content_answer_classe_004 ;
+    ls:hasComponentAttribute data:attr_sortorder_classe_004 .
+
+data:content_answer_classe_004 a ls:Content ;
+    ls:text "1ère primaire" .
+
+data:attr_sortorder_classe_004 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "4" .
+
+data:answer_classe_005 a ls:AnswerOption ;
+    ls:componentValue "5" ;
+    ls:hasContent data:content_answer_classe_005 ;
+    ls:hasComponentAttribute data:attr_sortorder_classe_005 .
+
+data:content_answer_classe_005 a ls:Content ;
+    ls:text "2ème primaire" .
+
+data:attr_sortorder_classe_005 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "5" .
+
+data:answer_classe_006 a ls:AnswerOption ;
+    ls:componentValue "6" ;
+    ls:hasContent data:content_answer_classe_006 ;
+    ls:hasComponentAttribute data:attr_sortorder_classe_006 .
+
+data:content_answer_classe_006 a ls:Content ;
+    ls:text "3ème primaire" .
+
+data:attr_sortorder_classe_006 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "6" .
+
+data:answer_classe_007 a ls:AnswerOption ;
+    ls:componentValue "7" ;
+    ls:hasContent data:content_answer_classe_007 ;
+    ls:hasComponentAttribute data:attr_sortorder_classe_007 .
+
+data:content_answer_classe_007 a ls:Content ;
+    ls:text "4ème primaire" .
+
+data:attr_sortorder_classe_007 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "7" .
+
+data:answer_classe_008 a ls:AnswerOption ;
+    ls:componentValue "8" ;
+    ls:hasContent data:content_answer_classe_008 ;
+    ls:hasComponentAttribute data:attr_sortorder_classe_008 .
+
+data:content_answer_classe_008 a ls:Content ;
+    ls:text "5ème primaire" .
+
+data:attr_sortorder_classe_008 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "8" .
+
+data:answer_classe_009 a ls:AnswerOption ;
+    ls:componentValue "9" ;
+    ls:hasContent data:content_answer_classe_009 ;
+    ls:hasComponentAttribute data:attr_sortorder_classe_009 .
+
+data:content_answer_classe_009 a ls:Content ;
+    ls:text "6ème primaire" .
+
+data:attr_sortorder_classe_009 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "9" .
+
+# Q43 - classe2
+data:question_043 a ls:Question ;
+    ls:hasId data:id_question_043 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_043 ;
+    ls:hasContent data:content_question_043 ;
+    ls:hasComponentAttribute data:attr_mandatory_043, data:attr_order_043 ;
+    ls:hasAnswerOption data:answer_classe_001, data:answer_classe_002, data:answer_classe_003, data:answer_classe_004, data:answer_classe_005, data:answer_classe_006, data:answer_classe_007, data:answer_classe_008, data:answer_classe_009 .
+
+data:id_question_043 a ls:Identifier ;
+    ls:id 43 .
+
+data:var_043 a ls:Variable ;
+    ls:variableCod "classe2" .
+
+data:content_question_043 a ls:Content ;
+    ls:text "En quelle année est-il inscrit ?" .
+
+data:attr_mandatory_043 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_043 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "10" .
+
+# Q44 - classe3
+data:question_044 a ls:Question ;
+    ls:hasId data:id_question_044 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_044 ;
+    ls:hasContent data:content_question_044 ;
+    ls:hasComponentAttribute data:attr_mandatory_044, data:attr_order_044 ;
+    ls:hasAnswerOption data:answer_classe_001, data:answer_classe_002, data:answer_classe_003, data:answer_classe_004, data:answer_classe_005, data:answer_classe_006, data:answer_classe_007, data:answer_classe_008, data:answer_classe_009 .
+
+data:id_question_044 a ls:Identifier ;
+    ls:id 44 .
+
+data:var_044 a ls:Variable ;
+    ls:variableCod "classe3" .
+
+data:content_question_044 a ls:Content ;
+    ls:text "En quelle année est-il inscrit ?" .
+
+data:attr_mandatory_044 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_044 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "11" .
+
+# Q45 - classe4
+data:question_045 a ls:Question ;
+    ls:hasId data:id_question_045 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_045 ;
+    ls:hasContent data:content_question_045 ;
+    ls:hasComponentAttribute data:attr_mandatory_045, data:attr_order_045 ;
+    ls:hasAnswerOption data:answer_classe_001, data:answer_classe_002, data:answer_classe_003, data:answer_classe_004, data:answer_classe_005, data:answer_classe_006, data:answer_classe_007, data:answer_classe_008, data:answer_classe_009 .
+
+data:id_question_045 a ls:Identifier ;
+    ls:id 45 .
+
+data:var_045 a ls:Variable ;
+    ls:variableCod "classe4" .
+
+data:content_question_045 a ls:Content ;
+    ls:text "En quelle année est-il inscrit ?" .
+
+data:attr_mandatory_045 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_045 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "12" .
+
+# Q46 - classe5
+data:question_046 a ls:Question ;
+    ls:hasId data:id_question_046 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_046 ;
+    ls:hasContent data:content_question_046 ;
+    ls:hasComponentAttribute data:attr_mandatory_046, data:attr_order_046 ;
+    ls:hasAnswerOption data:answer_classe_001, data:answer_classe_002, data:answer_classe_003, data:answer_classe_004, data:answer_classe_005, data:answer_classe_006, data:answer_classe_007, data:answer_classe_008, data:answer_classe_009 .
+
+data:id_question_046 a ls:Identifier ;
+    ls:id 46 .
+
+data:var_046 a ls:Variable ;
+    ls:variableCod "classe5" .
+
+data:content_question_046 a ls:Content ;
+    ls:text "En quelle année est-il inscrit ?" .
+
+data:attr_mandatory_046 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_046 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "13" .
+
+# ============================================
+# Q47 - RESIDENCE1 - Parent lives in Louvain-la-Neuve?
+# ============================================
+
+data:question_047 a ls:Question ;
+    ls:hasId data:id_question_047 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_047 ;
+    ls:hasContent data:content_question_047 ;
+    ls:hasComponentAttribute data:attr_mandatory_047, data:attr_order_047 ;
+    ls:hasAnswerOption data:answer_residence_001, data:answer_residence_002 .
+
+data:id_question_047 a ls:Identifier ;
+    ls:id 47 .
+
+data:var_047 a ls:Variable ;
+    ls:variableCod "RESIDENCE1" .
+
+data:content_question_047 a ls:Content ;
+    ls:text "L'un des parents du ou des enfants réside-t-il à Louvain-la-Neuve?" .
+
+data:attr_mandatory_047 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_047 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "14" .
+
+data:answer_residence_001 a ls:AnswerOption ;
+    ls:componentValue "1" ;
+    ls:hasContent data:content_answer_residence_001 ;
+    ls:hasComponentAttribute data:attr_sortorder_residence_001 .
+
+data:content_answer_residence_001 a ls:Content ;
+    ls:text "oui" .
+
+data:attr_sortorder_residence_001 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_residence_002 a ls:AnswerOption ;
+    ls:componentValue "2" ;
+    ls:hasContent data:content_answer_residence_002 ;
+    ls:hasComponentAttribute data:attr_sortorder_residence_002 .
+
+data:content_answer_residence_002 a ls:Content ;
+    ls:text "non" .
+
+data:attr_sortorder_residence_002 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+# ============================================
+# Q48 - RESIDENCE2 - Commune of residence (if not LLN)
+# ============================================
+
+data:question_048 a ls:Question ;
+    ls:hasId data:id_question_048 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_S ;
+    ls:hasVariable data:var_048 ;
+    ls:hasContent data:content_question_048 ;
+    ls:hasComponentAttribute data:attr_mandatory_048, data:attr_order_048, data:attr_relevance_048 .
+
+data:id_question_048 a ls:Identifier ;
+    ls:id 48 .
+
+data:var_048 a ls:Variable ;
+    ls:variableCod "RESIDENCE2" .
+
+data:content_question_048 a ls:Content ;
+    ls:text "Si non, quelle est votre commune de résidence ?" .
+
+data:attr_mandatory_048 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_048 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "15" .
+
+data:attr_relevance_048 a ls:ComponentAttribute ;
+    ls:componentName "relevance" ;
+    ls:componentValue "RESIDENCE1=='2'" .
+
+# ============================================
+# Q49 - Travail - Parent works in Louvain-la-Neuve?
+# ============================================
+
+data:question_049 a ls:Question ;
+    ls:hasId data:id_question_049 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_049 ;
+    ls:hasContent data:content_question_049 ;
+    ls:hasComponentAttribute data:attr_mandatory_049, data:attr_order_049 ;
+    ls:hasAnswerOption data:answer_travail_001, data:answer_travail_002 .
+
+data:id_question_049 a ls:Identifier ;
+    ls:id 49 .
+
+data:var_049 a ls:Variable ;
+    ls:variableCod "Travail" .
+
+data:content_question_049 a ls:Content ;
+    ls:text "L'un des parents du ou des enfants travaille-t-il à Louvain-la-Neuve?" .
+
+data:attr_mandatory_049 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_049 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "16" .
+
+data:answer_travail_001 a ls:AnswerOption ;
+    ls:componentValue "1" ;
+    ls:hasContent data:content_answer_travail_001 ;
+    ls:hasComponentAttribute data:attr_sortorder_travail_001 .
+
+data:content_answer_travail_001 a ls:Content ;
+    ls:text "oui" .
+
+data:attr_sortorder_travail_001 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_travail_002 a ls:AnswerOption ;
+    ls:componentValue "2" ;
+    ls:hasContent data:content_answer_travail_002 ;
+    ls:hasComponentAttribute data:attr_sortorder_travail_002 .
+
+data:content_answer_travail_002 a ls:Content ;
+    ls:text "non" .
+
+data:attr_sortorder_travail_002 a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+# ============================================
+# Q50 - Travail2 - Nearest work commune
+# ============================================
+
+data:question_050 a ls:Question ;
+    ls:hasId data:id_question_050 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_S ;
+    ls:hasVariable data:var_050 ;
+    ls:hasContent data:content_question_050 ;
+    ls:hasComponentAttribute data:attr_mandatory_050, data:attr_order_050, data:attr_relevance_050 .
+
+data:id_question_050 a ls:Identifier ;
+    ls:id 50 .
+
+data:var_050 a ls:Variable ;
+    ls:variableCod "Travail2" .
+
+data:content_question_050 a ls:Content ;
+    ls:text "Si aucun des deux ne travaille à Louvain-la-Neuve, indiquez le nom de la commune de celui qui travaille le plus près de Louvain-la-Neuve." .
+
+data:attr_mandatory_050 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_050 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "17" .
+
+data:attr_relevance_050 a ls:ComponentAttribute ;
+    ls:componentName "relevance" ;
+    ls:componentValue "Travail=='2'" .
+
+# ============================================
+# Q51-Q62 - Reasons for choosing Louvain-la-Neuve school
+# ============================================
+
+# Q51 - Choix_1 - I work in LLN
+data:question_051 a ls:Question ;
+    ls:hasId data:id_question_051 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_051 ;
+    ls:hasContent data:content_question_051 ;
+    ls:hasComponentAttribute data:attr_mandatory_051, data:attr_order_051 ;
+    ls:hasAnswerOption data:answer_choix_non, data:answer_choix_oui .
+
+data:id_question_051 a ls:Identifier ;
+    ls:id 51 .
+
+data:var_051 a ls:Variable ;
+    ls:variableCod "Choix1" .
+
+data:content_question_051 a ls:Content ;
+    ls:text "Pour quelle(s) raison(s) avez-vous choisi une école de Louvain-la-Neuve ? - Je travaille à Louvain-la-Neuve" .
+
+data:attr_mandatory_051 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_051 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "18" .
+
+# Shared answer options for all Choix questions
+data:answer_choix_non a ls:AnswerOption ;
+    ls:componentValue "0" ;
+    ls:hasContent data:content_answer_choix_non ;
+    ls:hasComponentAttribute data:attr_sortorder_choix_non .
+
+data:content_answer_choix_non a ls:Content ;
+    ls:text "non" .
+
+data:attr_sortorder_choix_non a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "1" .
+
+data:answer_choix_oui a ls:AnswerOption ;
+    ls:componentValue "1" ;
+    ls:hasContent data:content_answer_choix_oui ;
+    ls:hasComponentAttribute data:attr_sortorder_choix_oui .
+
+data:content_answer_choix_oui a ls:Content ;
+    ls:text "oui" .
+
+data:attr_sortorder_choix_oui a ls:ComponentAttribute ;
+    ls:componentName "sortorder" ;
+    ls:componentValue "2" .
+
+# Q52 - Choix_2 - Other parent works in LLN
+data:question_052 a ls:Question ;
+    ls:hasId data:id_question_052 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_052 ;
+    ls:hasContent data:content_question_052 ;
+    ls:hasComponentAttribute data:attr_mandatory_052, data:attr_order_052 ;
+    ls:hasAnswerOption data:answer_choix_non, data:answer_choix_oui .
+
+data:id_question_052 a ls:Identifier ;
+    ls:id 52 .
+
+data:var_052 a ls:Variable ;
+    ls:variableCod "Choix2" .
+
+data:content_question_052 a ls:Content ;
+    ls:text "Pour quelle(s) raison(s) avez-vous choisi une école de Louvain-la-Neuve ? - L'autre parent travaille à Louvain-la-Neuve" .
+
+data:attr_mandatory_052 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_052 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "19" .
+
+# Q53 - Choix_3 - Worked in LLN when started school
+data:question_053 a ls:Question ;
+    ls:hasId data:id_question_053 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_053 ;
+    ls:hasContent data:content_question_053 ;
+    ls:hasComponentAttribute data:attr_mandatory_053, data:attr_order_053 ;
+    ls:hasAnswerOption data:answer_choix_non, data:answer_choix_oui .
+
+data:id_question_053 a ls:Identifier ;
+    ls:id 53 .
+
+data:var_053 a ls:Variable ;
+    ls:variableCod "Choix3" .
+
+data:content_question_053 a ls:Content ;
+    ls:text "Pour quelle(s) raison(s) avez-vous choisi une école de Louvain-la-Neuve ? - Quand lui ou l'un de ses aînés a commencé sa scolarité, je/l'autre parent travaillais à Louvain-la-Neuve" .
+
+data:attr_mandatory_053 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_053 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "20" .
+
+# Q54 - Choix_4 - I live in LLN
+data:question_054 a ls:Question ;
+    ls:hasId data:id_question_054 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_054 ;
+    ls:hasContent data:content_question_054 ;
+    ls:hasComponentAttribute data:attr_mandatory_054, data:attr_order_054 ;
+    ls:hasAnswerOption data:answer_choix_non, data:answer_choix_oui .
+
+data:id_question_054 a ls:Identifier ;
+    ls:id 54 .
+
+data:var_054 a ls:Variable ;
+    ls:variableCod "Choix4" .
+
+data:content_question_054 a ls:Content ;
+    ls:text "Pour quelle(s) raison(s) avez-vous choisi une école de Louvain-la-Neuve ? - Je vis à Louvain-la-Neuve" .
+
+data:attr_mandatory_054 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_054 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "21" .
+
+# Q55 - Choix_5 - Other parent lives in LLN
+data:question_055 a ls:Question ;
+    ls:hasId data:id_question_055 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_055 ;
+    ls:hasContent data:content_question_055 ;
+    ls:hasComponentAttribute data:attr_mandatory_055, data:attr_order_055 ;
+    ls:hasAnswerOption data:answer_choix_non, data:answer_choix_oui .
+
+data:id_question_055 a ls:Identifier ;
+    ls:id 55 .
+
+data:var_055 a ls:Variable ;
+    ls:variableCod "Choix5" .
+
+data:content_question_055 a ls:Content ;
+    ls:text "Pour quelle(s) raison(s) avez-vous choisi une école de Louvain-la-Neuve ? - L'autre parent vit à Louvain-la-Neuve" .
+
+data:attr_mandatory_055 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_055 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "22" .
+
+# Q56 - Choix_6 - Lived in LLN when started school
+data:question_056 a ls:Question ;
+    ls:hasId data:id_question_056 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_056 ;
+    ls:hasContent data:content_question_056 ;
+    ls:hasComponentAttribute data:attr_mandatory_056, data:attr_order_056 ;
+    ls:hasAnswerOption data:answer_choix_non, data:answer_choix_oui .
+
+data:id_question_056 a ls:Identifier ;
+    ls:id 56 .
+
+data:var_056 a ls:Variable ;
+    ls:variableCod "Choix6" .
+
+data:content_question_056 a ls:Content ;
+    ls:text "Pour quelle(s) raison(s) avez-vous choisi une école de Louvain-la-Neuve ? - Quand lui ou l'un de ses aînés a commencé sa scolarité, je vivais à Louvain-la-Neuve" .
+
+data:attr_mandatory_056 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_056 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "23" .
+
+# Q57 - Choix_7 - I work near LLN
+data:question_057 a ls:Question ;
+    ls:hasId data:id_question_057 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_057 ;
+    ls:hasContent data:content_question_057 ;
+    ls:hasComponentAttribute data:attr_mandatory_057, data:attr_order_057 ;
+    ls:hasAnswerOption data:answer_choix_non, data:answer_choix_oui .
+
+data:id_question_057 a ls:Identifier ;
+    ls:id 57 .
+
+data:var_057 a ls:Variable ;
+    ls:variableCod "Choix7" .
+
+data:content_question_057 a ls:Content ;
+    ls:text "Pour quelle(s) raison(s) avez-vous choisi une école de Louvain-la-Neuve ? - Je travaille près de Louvain-la-Neuve" .
+
+data:attr_mandatory_057 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_057 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "24" .
+
+# Q58 - Choix_8 - Other parent works near LLN
+data:question_058 a ls:Question ;
+    ls:hasId data:id_question_058 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_058 ;
+    ls:hasContent data:content_question_058 ;
+    ls:hasComponentAttribute data:attr_mandatory_058, data:attr_order_058 ;
+    ls:hasAnswerOption data:answer_choix_non, data:answer_choix_oui .
+
+data:id_question_058 a ls:Identifier ;
+    ls:id 58 .
+
+data:var_058 a ls:Variable ;
+    ls:variableCod "Choix8" .
+
+data:content_question_058 a ls:Content ;
+    ls:text "Pour quelle(s) raison(s) avez-vous choisi une école de Louvain-la-Neuve ? - L'autre parent travaille près de Louvain-la-Neuve" .
+
+data:attr_mandatory_058 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_058 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "25" .
+
+# Q59 - Choix_9 - Chose for the project
+data:question_059 a ls:Question ;
+    ls:hasId data:id_question_059 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_059 ;
+    ls:hasContent data:content_question_059 ;
+    ls:hasComponentAttribute data:attr_mandatory_059, data:attr_order_059 ;
+    ls:hasAnswerOption data:answer_choix_non, data:answer_choix_oui .
+
+data:id_question_059 a ls:Identifier ;
+    ls:id 59 .
+
+data:var_059 a ls:Variable ;
+    ls:variableCod "Choix9" .
+
+data:content_question_059 a ls:Content ;
+    ls:text "Pour quelle(s) raison(s) avez-vous choisi une école de Louvain-la-Neuve ? - J'ai (nous avons) choisi cette école pour le projet proposé" .
+
+data:attr_mandatory_059 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_059 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "26" .
+
+# Q60 - Choix_10 - Chose for the type of teaching
+data:question_060 a ls:Question ;
+    ls:hasId data:id_question_060 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_060 ;
+    ls:hasContent data:content_question_060 ;
+    ls:hasComponentAttribute data:attr_mandatory_060, data:attr_order_060 ;
+    ls:hasAnswerOption data:answer_choix_non, data:answer_choix_oui .
+
+data:id_question_060 a ls:Identifier ;
+    ls:id 60 .
+
+data:var_060 a ls:Variable ;
+    ls:variableCod "Choix10" .
+
+data:content_question_060 a ls:Content ;
+    ls:text "Pour quelle(s) raison(s) avez-vous choisi une école de Louvain-la-Neuve ? - J'ai (nous avons) choisi cette école pour le type d'enseignement proposé" .
+
+data:attr_mandatory_060 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_060 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "27" .
+
+# Q61 - Choix_11 - School was recommended
+data:question_061 a ls:Question ;
+    ls:hasId data:id_question_061 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_L ;
+    ls:hasVariable data:var_061 ;
+    ls:hasContent data:content_question_061 ;
+    ls:hasComponentAttribute data:attr_mandatory_061, data:attr_order_061 ;
+    ls:hasAnswerOption data:answer_choix_non, data:answer_choix_oui .
+
+data:id_question_061 a ls:Identifier ;
+    ls:id 61 .
+
+data:var_061 a ls:Variable ;
+    ls:variableCod "Choix11" .
+
+data:content_question_061 a ls:Content ;
+    ls:text "Pour quelle(s) raison(s) avez-vous choisi une école de Louvain-la-Neuve ? - J'ai (nous avons) choisi cette école parce qu'on me l'a recommandée" .
+
+data:attr_mandatory_061 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_061 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "28" .
+
+# Q62 - Choix_12 - Other reason (text)
+data:question_062 a ls:Question ;
+    ls:hasId data:id_question_062 ;
+    ls:hasGroup data:group_007 ;
+    ls:hasType data:type_S ;
+    ls:hasVariable data:var_062 ;
+    ls:hasContent data:content_question_062 ;
+    ls:hasComponentAttribute data:attr_mandatory_062, data:attr_order_062 .
+
+data:id_question_062 a ls:Identifier ;
+    ls:id 62 .
+
+data:var_062 a ls:Variable ;
+    ls:variableCod "Choix12" .
+
+data:content_question_062 a ls:Content ;
+    ls:text "Pour quelle(s) raison(s) avez-vous choisi une école de Louvain-la-Neuve ? - Autre" .
+
+data:attr_mandatory_062 a ls:ComponentAttribute ;
+    ls:componentName "mandatory" ;
+    ls:componentValue "N" .
+
+data:attr_order_062 a ls:ComponentAttribute ;
+    ls:componentName "question_order" ;
+    ls:componentValue "29" .
+
+
+
+# ============================================
+# SURVEY 2 - Louvain-la-Neuve School Survey
+# ============================================
+
+data:survey_002 a ls:Survey ;
+    ls:hasSurveyId data:id_survey_002 ;
+    ls:hasQuestionGroup data:group_007 ;
+    ls:hasName data:name_survey_002 ;
+    ls:hasContent data:content_survey_002 .
+
+data:id_survey_002 a ls:Identifier ;
+    ls:id 2 .
+
+data:name_survey_002 a ls:Name ;
+    ls:nameText "Enquête écoles Louvain-la-Neuve" .
+
+data:content_survey_002 a ls:Content ;
+    ls:text "Enquête sur le choix des écoles à Louvain-la-Neuve" .
+#============================================
+# SURVEY - Louvain-la-Neuve School Survey
+# ============================================
+
+data:survey_002 a ls:Survey ;
+    ls:hasSurveyId data:id_survey_002 ;
+    ls:hasQuestionGroup data:group_007 .
+
+data:id_survey_002 a ls:Identifier ;
+    ls:id 2 .
+
+data:survey_002 a ls:Survey ;
+    ls:hasName data:name_survey_002 ;
+    ls:hasContent data:content_survey_002 .
+
+data:name_survey_002 a ls:Name ;
+    ls:nameText "Enquête écoles Louvain-la-Neuve" .
+
+data:content_survey_002 a ls:Content ;
+    ls:text "Enquête sur le choix des écoles à Louvain-la-Neuve" .

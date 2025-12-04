@@ -1,0 +1,902 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix ls: <https://w3id.org/fossr/ontology/limesurvey/> .
+@prefix ex: <http://example.org/limesurvey/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================
+# MAPPING PRINCIPALE DELLA QUESTION DA JSON
+# ============================================
+<#QuestionMapping>
+  rml:logicalSource [
+    rml:source "questions_normalized.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/question_{qid}" ;
+    rr:class ls:Question
+  ] ;
+
+  # ID della Question
+  rr:predicateObjectMap [
+    rr:predicate ls:hasId ;
+    rr:objectMap [
+      rr:parentTriplesMap <#QuestionIdMapping>
+    ]
+  ] ;
+
+  # Survey ID
+  rr:predicateObjectMap [
+    rr:predicate ls:hasSurveyId ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SurveyIdMapping>
+    ]
+  ] ;
+
+  # Group della Question
+  rr:predicateObjectMap [
+    rr:predicate ls:hasGroup ;
+    rr:objectMap [
+      rr:template "http://example.org/limesurvey/group_{gid}"
+    ]
+  ] ;
+
+  # Question Type
+  rr:predicateObjectMap [
+    rr:predicate ls:hasType ;
+    rr:objectMap [
+      rr:parentTriplesMap <#QuestionTypeMapping>
+    ]
+  ] ;
+
+  # Variable (title)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasVariable ;
+    rr:objectMap [
+      rr:parentTriplesMap <#VariableMapping>
+    ]
+  ] ;
+
+  # Name della Question
+  rr:predicateObjectMap [
+    rr:predicate ls:hasName ;
+    rr:objectMap [
+      rr:parentTriplesMap <#QuestionNameMapping>
+    ]
+  ] ;
+
+  # Content (testo della domanda)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasContent ;
+    rr:objectMap [
+      rr:parentTriplesMap <#QuestionContentMapping>
+    ]
+  ] ;
+
+  # Component Attributes base
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AttributeOtherMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AttributeMandatoryMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AttributeEncryptedMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AttributeQuestionOrderMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AttributeScaleIdMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AttributeSameDefaultMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AttributeRelevanceMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AttributeQuestionThemeMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AttributeModuleNameMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AttributeSameScriptMapping>
+    ]
+  ] .
+
+# ============================================
+# MAPPING SUBQUESTIONS DA JSON
+# ============================================
+<#SubQuestionMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].subquestions[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/question_{@.qid}" ;
+    rr:class ls:Question
+  ] ;
+
+  # Parent Question
+  rr:predicateObjectMap [
+    rr:predicate ls:hasParentQuestion ;
+    rr:objectMap [
+      rr:template "http://example.org/limesurvey/question_{@.parent_qid}" ;
+      rr:termType rr:IRI
+    ]
+  ] ;
+
+  # ID della SubQuestion
+  rr:predicateObjectMap [
+    rr:predicate ls:hasId ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionIdMapping>
+    ]
+  ] ;
+
+  # Variable (title)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasVariable ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionVariableMapping>
+    ]
+  ] ;
+
+  # Name
+  rr:predicateObjectMap [
+    rr:predicate ls:hasName ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionNameMapping>
+    ]
+  ] ;
+
+  # Content
+  rr:predicateObjectMap [
+    rr:predicate ls:hasContent ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionContentMapping>
+    ]
+  ] ;
+
+  # Scale ID
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#SubQuestionScaleIdMapping>
+    ]
+  ] .
+
+# ============================================
+# MAPPING ANSWER OPTIONS DA JSON
+# ============================================
+<#AnswerOptionMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].answeroptions[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/answer_{@.parent_qid}_{@.code}" ;
+    rr:class ls:AnswerOption
+  ] ;
+
+  # Collegamento alla Question
+  rr:predicateObjectMap [
+    rr:predicate ls:hasAnswerOption ;
+    rr:objectMap [
+      rr:template "http://example.org/limesurvey/question_{@.parent_qid}" ;
+      rr:termType rr:IRI
+    ] ;
+    rr:inverseProperty rr:predicate
+  ] ;
+
+  # Component Value (code)
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "code"
+    ]
+  ] ;
+
+  # Content (answer text)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasContent ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AnswerContentMapping>
+    ]
+  ] ;
+
+  # Attributes
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AnswerAttributeOrderMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AnswerAttributeAssessmentMapping>
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AnswerAttributeScaleIdMapping>
+    ]
+  ] .
+
+# ============================================
+# MAPPING ATTRIBUTES DA JSON (oggetto attributes)
+# ============================================
+<#QuestionAttributesMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].attributes[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/question_{@.parent_qid}_{@.name}" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  # Collegamento alla Question
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:template "http://example.org/limesurvey/question_{@.parent_qid}" ;
+      rr:termType rr:IRI
+    ] ;
+    rr:inverseProperty rr:predicate
+  ] ;
+
+  # Nome attributo
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rml:reference "name"
+    ]
+  ] ;
+
+  # Valore attributo
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "value"
+    ]
+  ] .
+
+# ============================================
+# ENTITÀ SUPPORTO - QUESTION
+# ============================================
+
+<#QuestionIdMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/identifier_question_{qid}" ;
+    rr:class ls:Identifier
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:id ;
+    rr:objectMap [
+      rml:reference "qid" ;
+      rr:datatype xsd:int
+    ]
+  ] .
+
+<#SurveyIdMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/identifier_survey_{sid}" ;
+    rr:class ls:Identifier
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:id ;
+    rr:objectMap [
+      rml:reference "sid" ;
+      rr:datatype xsd:int
+    ]
+  ] .
+
+<#QuestionTypeMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/questiontype_{type}" ;
+    rr:class ls:QuestionType
+  ] .
+
+<#VariableMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/variable_{title}" ;
+    rr:class ls:Variable
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:variableCod ;
+    rr:objectMap [
+      rml:reference "title"
+    ]
+  ] .
+
+<#QuestionNameMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/name_question_{qid}" ;
+    rr:class ls:Name
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:nameText ;
+    rr:objectMap [
+      rml:reference "title"
+    ]
+  ] .
+
+<#QuestionContentMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/content_question_{qid}" ;
+    rr:class ls:Content
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:text ;
+    rr:objectMap [
+      rml:reference "question_text"
+    ]
+  ] .
+
+# ============================================
+# ENTITÀ SUPPORTO - SUBQUESTIONS
+# ============================================
+
+<#SubQuestionIdMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].subquestions[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/identifier_question_{qid}" ;
+    rr:class ls:Identifier
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:id ;
+    rr:objectMap [
+      rml:reference "qid" ;
+      rr:datatype xsd:int
+    ]
+  ] .
+
+<#SubQuestionVariableMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].subquestions[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/variable_{title}" ;
+    rr:class ls:Variable
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:variableCod ;
+    rr:objectMap [
+      rml:reference "title"
+    ]
+  ] .
+
+<#SubQuestionNameMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].subquestions[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/name_question_{qid}" ;
+    rr:class ls:Name
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:nameText ;
+    rr:objectMap [
+      rml:reference "title"
+    ]
+  ] .
+
+<#SubQuestionContentMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].subquestions[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/content_question_{qid}" ;
+    rr:class ls:Content
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:text ;
+    rr:objectMap [
+      rml:reference "question"
+    ]
+  ] .
+
+<#SubQuestionScaleIdMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].subquestions[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/subquestion/{qid}/scale_id" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "scale_id"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "scale_id"
+    ]
+  ] .
+
+# ============================================
+# ENTITÀ SUPPORTO - ANSWER OPTIONS
+# ============================================
+
+<#AnswerContentMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].answeroptions[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/content/answer/{@.parent_qid}_{@.code}" ;
+    rr:class ls:Content
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:text ;
+    rr:objectMap [
+      rml:reference "answer"
+    ]
+  ] .
+
+<#AnswerAttributeOrderMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].answeroptions[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/answer/{@.parent_qid}_{@.code}/order" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "order"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "order"
+    ]
+  ] .
+
+<#AnswerAttributeAssessmentMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].answeroptions[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute/answer/{@.parent_qid}_{@.code}/assessment_value" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "assessment_value"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "assessment_value"
+    ]
+  ] .
+
+<#AnswerAttributeScaleIdMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].answeroptions[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute_answer_{@.parent_qid}_{@.code}_scale_id" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "scale_id"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "scale_id"
+    ]
+  ] .
+
+# ============================================
+# COMPONENT ATTRIBUTES BASE - QUESTION
+# ============================================
+
+<#AttributeOtherMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute_question_{qid}_other" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "other"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "other"
+    ]
+  ] .
+
+<#AttributeMandatoryMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute_question_{qid}_mandatory" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "mandatory"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "mandatory"
+    ]
+  ] .
+
+<#AttributeEncryptedMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute_question_{qid}_encrypted" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "encrypted"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "encrypted"
+    ]
+  ] .
+
+<#AttributeQuestionOrderMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute_question_{qid}_question_order" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "question_order"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "question_order"
+    ]
+  ] .
+
+<#AttributeScaleIdMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute_question_{qid}_scale_id" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "scale_id"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "scale_id"
+    ]
+  ] .
+
+<#AttributeSameDefaultMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute_question_{qid}_same_default" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "same_default"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "same_default"
+    ]
+  ] .
+
+<#AttributeRelevanceMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute_question_{qid}_relevance" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "relevance"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "relevance"
+    ]
+  ] .
+
+<#AttributeQuestionThemeMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute_question_{qid}_question_theme_name" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "question_theme_name"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "question_theme_name"
+    ]
+  ] .
+
+<#AttributeModuleNameMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute_question_{qid}_modulename" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "modulename"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "modulename"
+    ]
+  ] .
+
+<#AttributeSameScriptMapping>
+  rml:logicalSource [
+    rml:source "questions.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*]"
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://example.org/limesurvey/attribute_question_{qid}_same_script" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "same_script"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "same_script"
+    ]
+  ] .
