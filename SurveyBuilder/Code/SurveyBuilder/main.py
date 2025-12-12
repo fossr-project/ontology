@@ -21,13 +21,395 @@ CORS(app)
 
 # Configurazione GraphDB
 GRAPHDB_URL = "http://localhost:7200"
-REPOSITORY = "limesurvey"
+REPOSITORY = "test_repo"
 
 # Configurazione LimeSurvey
-LIMESURVEY_URL = "http://localhost:8080/index.php/admin/remotecontrol"
-LIMESURVEY_USERNAME = "admin"
-LIMESURVEY_PASSWORD = "password"
+LIMESURVEY_URL = "http://localhost/limesurvey/index.php/admin/remotecontrol"
+LIMESURVEY_USERNAME = "sara"
+LIMESURVEY_PASSWORD = "sara"
 
+
+
+# Generatore XML .lsq
+#Genera file .lsq XML da dati completi della question
+# ============================================
+# NUOVO: Generatore .lsq XML
+# ============================================
+
+def generate_lsq_xml(question_data: Dict) -> str:
+    """
+    Genera file .lsq XML completo da dati GraphDB
+    CORRETTO: rispetta validazione rigorosa di LimeSurvey
+    """
+
+    print(f"DEBUG: Generating .lsq XML for question {question_data.get('qid', 'unknown')}")
+
+    root = ET.Element("document")
+    ET.SubElement(root, "LimeSurveyDocType").text = "Question"
+    ET.SubElement(root, "DBVersion").text = "623"
+
+    # Languages
+    languages = ET.SubElement(root, "languages")
+    ET.SubElement(languages, "language").text = "it"
+
+    # ===== QUESTIONS (main question) =====
+    questions_elem = ET.SubElement(root, "questions")
+    fields_elem = ET.SubElement(questions_elem, "fields")
+
+    field_names = ["qid", "parent_qid", "sid", "gid", "type", "title", "preg", "other",
+                   "mandatory", "encrypted", "question_order", "scale_id", "same_default",
+                   "relevance", "question_theme_name", "modulename", "same_script"]
+
+    for fname in field_names:
+        ET.SubElement(fields_elem, "fieldname").text = fname
+
+    rows_elem = ET.SubElement(questions_elem, "rows")
+    row_elem = ET.SubElement(rows_elem, "row")
+
+    # IMPORTANTE: NON usare CDATA in modo manuale, ET lo gestisce
+    attrs = question_data.get('attributes', {})
+
+    # QID - può essere vuoto per auto-generazione
+    qid_elem = ET.SubElement(row_elem, "qid")
+    qid_elem.text = ""  # Lascia vuoto per auto-generazione
+
+    # Parent QID - DEVE essere 0 (numero, non stringa)
+    parent_qid_elem = ET.SubElement(row_elem, "parent_qid")
+    parent_qid_elem.text = "0"
+
+    # SID - lascia vuoto, verrà assegnato da LimeSurvey
+    sid_elem = ET.SubElement(row_elem, "sid")
+    sid_elem.text = ""
+
+    # GID - lascia vuoto, verrà assegnato da LimeSurvey
+    gid_elem = ET.SubElement(row_elem, "gid")
+    gid_elem.text = ""
+
+    # TYPE - MAX 1 CARATTERE! Importantissimo
+    question_type = question_data.get('type', 'T')
+    if len(question_type) > 1:
+        question_type = question_type[0]  # Prendi solo primo carattere
+    type_elem = ET.SubElement(row_elem, "type")
+    type_elem.text = question_type
+
+    # TITLE (variableCod)
+    title = question_data.get('title', 'Q1')
+    # Valida: deve iniziare con lettera, solo alfanumerici
+    import re
+    if not re.match(r'^[a-zA-Z][a-zA-Z0-9_]*$', title):
+        title = 'Q' + re.sub(r'[^a-zA-Z0-9_]', '', title)
+        if not title[0].isalpha():
+            title = 'Q' + title
+    title_elem = ET.SubElement(row_elem, "title")
+    title_elem.text = title
+
+    # PREG - vuoto
+    preg_elem = ET.SubElement(row_elem, "preg")
+
+    # OTHER - DEVE essere Y o N (non "N" con CDATA)
+    other_elem = ET.SubElement(row_elem, "other")
+    other_elem.text = "N"
+
+    # MANDATORY - DEVE essere Y o N
+    mandatory = attrs.get('mandatory', 'N')
+    if mandatory not in ['Y', 'N']:
+        mandatory = 'Y' if mandatory == '1' else 'N'
+    mandatory_elem = ET.SubElement(row_elem, "mandatory")
+    mandatory_elem.text = mandatory
+
+    # ENCRYPTED - DEVE essere Y o N
+    encrypted_elem = ET.SubElement(row_elem, "encrypted")
+    encrypted_elem.text = "N"
+
+    # QUESTION_ORDER - numero
+    question_order = attrs.get('question_order', '1')
+    question_order_elem = ET.SubElement(row_elem, "question_order")
+    question_order_elem.text = str(question_order)
+
+    # SCALE_ID - DEVE essere numero
+    scale_id_elem = ET.SubElement(row_elem, "scale_id")
+    scale_id_elem.text = "0"
+
+    # SAME_DEFAULT - DEVE essere 0 o 1 (numero)
+    same_default_elem = ET.SubElement(row_elem, "same_default")
+    same_default_elem.text = "0"
+
+    # RELEVANCE
+    relevance = attrs.get('relevance', '1')
+    relevance_elem = ET.SubElement(row_elem, "relevance")
+    relevance_elem.text = str(relevance)
+
+    # QUESTION_THEME_NAME
+    question_theme = attrs.get('question_theme_name', '')
+    theme_elem = ET.SubElement(row_elem, "question_theme_name")
+    theme_elem.text = question_theme if question_theme else ""
+
+    # MODULENAME - vuoto
+    module_elem = ET.SubElement(row_elem, "modulename")
+
+    # SAME_SCRIPT - DEVE essere 0 o 1 (numero)
+    same_script_elem = ET.SubElement(row_elem, "same_script")
+    same_script_elem.text = "0"
+
+    # ===== SUBQUESTIONS =====
+    subquestions = question_data.get('subquestions', [])
+    if subquestions:
+        print(f"DEBUG: Adding {len(subquestions)} subquestions to XML")
+        subq_elem = ET.SubElement(root, "subquestions")
+        subq_fields = ET.SubElement(subq_elem, "fields")
+
+        subq_field_names = ["qid", "parent_qid", "sid", "gid", "type", "title", "preg",
+                            "other", "mandatory", "encrypted", "question_order", "scale_id",
+                            "same_default", "relevance", "question_theme_name", "modulename",
+                            "same_script", "id", "question", "help", "script", "language"]
+
+        for fname in subq_field_names:
+            ET.SubElement(subq_fields, "fieldname").text = fname
+
+        subq_rows = ET.SubElement(subq_elem, "rows")
+
+        for sub_idx, sub in enumerate(subquestions):
+            subq_row = ET.SubElement(subq_rows, "row")
+
+            # QID - vuoto
+            ET.SubElement(subq_row, "qid")
+
+            # PARENT_QID - vuoto, verrà collegato automaticamente
+            ET.SubElement(subq_row, "parent_qid")
+
+            # SID - vuoto
+            ET.SubElement(subq_row, "sid")
+
+            # GID - vuoto
+            ET.SubElement(subq_row, "gid")
+
+            # TYPE
+            sub_type_elem = ET.SubElement(subq_row, "type")
+            sub_type_elem.text = "T"
+
+            # TITLE - DEVE iniziare con lettera!
+            sub_title = sub.get('title', f'SQ{sub_idx + 1}')
+            if not re.match(r'^[a-zA-Z][a-zA-Z0-9_]*$', sub_title):
+                sub_title = 'SQ' + re.sub(r'[^a-zA-Z0-9_]', '', sub_title)
+                if not sub_title[0].isalpha():
+                    sub_title = 'SQ' + sub_title
+            sub_title_elem = ET.SubElement(subq_row, "title")
+            sub_title_elem.text = sub_title
+
+            # PREG - vuoto
+            ET.SubElement(subq_row, "preg")
+
+            # OTHER
+            sub_other_elem = ET.SubElement(subq_row, "other")
+            sub_other_elem.text = "N"
+
+            # MANDATORY
+            sub_mand_elem = ET.SubElement(subq_row, "mandatory")
+            sub_mand_elem.text = "N"
+
+            # ENCRYPTED
+            sub_enc_elem = ET.SubElement(subq_row, "encrypted")
+            sub_enc_elem.text = "N"
+
+            # QUESTION_ORDER
+            sub_order = sub.get('order', str(sub_idx))
+            sub_order_elem = ET.SubElement(subq_row, "question_order")
+            sub_order_elem.text = str(sub_order)
+
+            # SCALE_ID
+            sub_scale_elem = ET.SubElement(subq_row, "scale_id")
+            sub_scale_elem.text = "0"
+
+            # SAME_DEFAULT
+            sub_default_elem = ET.SubElement(subq_row, "same_default")
+            sub_default_elem.text = "0"
+
+            # RELEVANCE
+            sub_rel_elem = ET.SubElement(subq_row, "relevance")
+            sub_rel_elem.text = "1"
+
+            # QUESTION_THEME_NAME - vuoto
+            ET.SubElement(subq_row, "question_theme_name")
+
+            # MODULENAME - vuoto
+            ET.SubElement(subq_row, "modulename")
+
+            # SAME_SCRIPT
+            sub_script_elem = ET.SubElement(subq_row, "same_script")
+            sub_script_elem.text = "0"
+
+            # ID - vuoto
+            ET.SubElement(subq_row, "id")
+
+            # QUESTION (testo)
+            sub_text = sub.get('text', '')
+            sub_question_elem = ET.SubElement(subq_row, "question")
+            sub_question_elem.text = sub_text
+
+            # HELP - vuoto
+            ET.SubElement(subq_row, "help")
+
+            # SCRIPT - vuoto
+            ET.SubElement(subq_row, "script")
+
+            # LANGUAGE
+            sub_lang_elem = ET.SubElement(subq_row, "language")
+            sub_lang_elem.text = "it"
+
+    # ===== QUESTION_L10NS =====
+    ql10ns_elem = ET.SubElement(root, "question_l10ns")
+    ql10ns_fields = ET.SubElement(ql10ns_elem, "fields")
+
+    l10n_field_names = ["id", "qid", "question", "help", "script", "language"]
+    for fname in l10n_field_names:
+        ET.SubElement(ql10ns_fields, "fieldname").text = fname
+
+    ql10ns_rows = ET.SubElement(ql10ns_elem, "rows")
+    ql10ns_row = ET.SubElement(ql10ns_rows, "row")
+
+    # ID - vuoto
+    ET.SubElement(ql10ns_row, "id")
+
+    # QID - vuoto
+    ET.SubElement(ql10ns_row, "qid")
+
+    # QUESTION (testo domanda)
+    question_text = question_data.get('questionText', '')
+    question_elem = ET.SubElement(ql10ns_row, "question")
+    question_elem.text = question_text
+
+    # HELP - vuoto
+    ET.SubElement(ql10ns_row, "help")
+
+    # SCRIPT - vuoto o da dati
+    script_text = question_data.get('script', '')
+    script_elem = ET.SubElement(ql10ns_row, "script")
+    script_elem.text = script_text if script_text else ""
+
+    # LANGUAGE
+    lang_elem = ET.SubElement(ql10ns_row, "language")
+    lang_elem.text = "it"
+
+    # ===== QUESTION_ATTRIBUTES =====
+    qattrs_elem = ET.SubElement(root, "question_attributes")
+    qattrs_fields = ET.SubElement(qattrs_elem, "fields")
+
+    ET.SubElement(qattrs_fields, "fieldname").text = "qid"
+    ET.SubElement(qattrs_fields, "fieldname").text = "attribute"
+    ET.SubElement(qattrs_fields, "fieldname").text = "value"
+    ET.SubElement(qattrs_fields, "fieldname").text = "language"
+
+    qattrs_rows = ET.SubElement(qattrs_elem, "rows")
+
+    # Aggiungi attributi base necessari
+    default_attributes = {
+        'hidden': '0',
+        'page_break': '0',
+        'random_order': '0',
+        'array_filter': '',
+        'array_filter_exclude': '',
+        'exclude_all_others': '',
+        'hide_tip': '0',
+        'time_limit': '',
+        'time_limit_action': '1',
+        'save_as_default': 'N'
+    }
+
+    # Merge con attributi dal GraphDB
+    all_attributes = {**default_attributes, **attrs}
+
+    # Rimuovi attributi che non devono andare in question_attributes
+    excluded_attrs = ['mandatory', 'question_order', 'relevance', 'question_theme_name']
+    for excluded in excluded_attrs:
+        all_attributes.pop(excluded, None)
+
+    for attr_name, attr_value in all_attributes.items():
+        qattr_row = ET.SubElement(qattrs_rows, "row")
+
+        qattr_qid = ET.SubElement(qattr_row, "qid")
+        qattr_qid.text = ""
+
+        qattr_name = ET.SubElement(qattr_row, "attribute")
+        qattr_name.text = str(attr_name)
+
+        qattr_value = ET.SubElement(qattr_row, "value")
+        qattr_value.text = str(attr_value) if attr_value else ""
+
+        # LANGUAGE - vuoto per attributi generali, "it" per localizzati
+        qattr_lang = ET.SubElement(qattr_row, "language")
+        if attr_name in ['prefix', 'suffix', 'em_validation_q_tip', 'em_validation_sq_tip']:
+            qattr_lang.text = "it"
+        else:
+            qattr_lang.text = ""
+
+    # ===== ANSWERS (Answer Options) =====
+    answer_options = question_data.get('answerOptions', [])
+    if answer_options:
+        print(f"DEBUG: Adding {len(answer_options)} answer options to XML")
+
+        answers_elem = ET.SubElement(root, "answers")
+        answers_fields = ET.SubElement(answers_elem, "fields")
+
+        answer_field_names = ["qid", "code", "answer", "sortorder", "assessment_value", "scale_id", "language"]
+        for fname in answer_field_names:
+            ET.SubElement(answers_fields, "fieldname").text = fname
+
+        answers_rows = ET.SubElement(answers_elem, "rows")
+
+        for ans in answer_options:
+            ans_row = ET.SubElement(answers_rows, "row")
+
+            # QID - vuoto
+            ET.SubElement(ans_row, "qid")
+
+            # CODE
+            ans_code = ans.get('code', '')
+            code_elem = ET.SubElement(ans_row, "code")
+            code_elem.text = str(ans_code)
+
+            # ANSWER (testo)
+            ans_text = ans.get('text', '')
+            answer_elem = ET.SubElement(ans_row, "answer")
+            answer_elem.text = ans_text
+
+            # SORTORDER - numero
+            sort_order = ans.get('sortOrder', '0')
+            sort_elem = ET.SubElement(ans_row, "sortorder")
+            sort_elem.text = str(sort_order)
+
+            # ASSESSMENT_VALUE - numero
+            assessment = ans.get('assessmentValue', '0')
+            assess_elem = ET.SubElement(ans_row, "assessment_value")
+            assess_elem.text = str(assessment)
+
+            # SCALE_ID - numero
+            scale = ans.get('scaleId', '0')
+            scale_elem = ET.SubElement(ans_row, "scale_id")
+            scale_elem.text = str(scale)
+
+            # LANGUAGE
+            lang_elem = ET.SubElement(ans_row, "language")
+            lang_elem.text = "it"
+    print("ciao    ", ET.tostring(root))
+    # Converti in stringa XML
+    xml_str = ET.tostring(root, encoding='unicode', method='xml')
+
+    # Pretty print con minidom
+    try:
+        dom = minidom.parseString(xml_str)
+        pretty_xml = dom.toprettyxml(indent="  ", encoding=None)
+
+        # Rimuovi righe vuote extra
+        lines = [line for line in pretty_xml.split('\n') if line.strip()]
+        final_xml = '\n'.join(lines)
+
+    except Exception as e:
+        print(f"DEBUG: minidom parsing failed, using raw XML: {e}")
+        final_xml = xml_str
+
+    print(f"DEBUG: Generated .lsq XML ({len(final_xml)} bytes)")
+
+    return final_xml
 
 class LimeSurveyAPI:
     """Client per LimeSurvey RemoteControl API"""
@@ -125,21 +507,63 @@ class LimeSurveyAPI:
         print(f"Created group {title} with ID: {group_id}")
         return int(group_id)
 
-    def add_question(self, survey_id: int, group_id: int, question_data: Dict, order: int = 0) -> int:
-        """Aggiunge una domanda al gruppo"""
+    def import_question(self, survey_id: int, group_id: int, lsq_base64: str,
+                        mandatory: str = 'N') -> int:
+        """
+        Importa una domanda da file .lsq in formato Base64
+        Usa la funzione import_question del RemoteControl API
+        """
         session_key = self.get_session_key()
 
-        q_data = {
-            "title": question_data.get("code", f"Q{order}"),
-            "question": question_data.get("text", ""),
-            "type": question_data.get("type", "T"),
-            "mandatory": "Y" if question_data.get("mandatory", False) else "N",
-            "question_order": order
-        }
+        print(f"DEBUG: Importing question to survey {survey_id}, group {group_id}")
+        print(f"DEBUG: Base64 length: {len(lsq_base64)} chars")
 
-        question_id = self._call("add_question", [session_key, survey_id, group_id, q_data])
-        print(f"Created question {q_data['title']} with ID: {question_id}")
-        return int(question_id)
+        params = [
+            session_key,
+            survey_id,
+            group_id,
+            lsq_base64,
+            'lsq',  # formato file
+            mandatory  # obbligatorietà
+        ]
+
+        try:
+            result = self._call("import_question", params)
+
+            print(f"DEBUG: import_question result type: {type(result)}")
+            print(f"DEBUG: import_question result: {result}")
+
+            # Gestisci diverse risposte possibili
+            if isinstance(result, dict):
+                if 'status' in result and result['status'] == 'Error':
+                    error_msg = result.get('message', 'Unknown error')
+                    raise Exception(f"LimeSurvey import error: {error_msg}")
+
+                # Potrebbe ritornare un dict con newqid
+                if 'newqid' in result:
+                    qid = int(result['newqid'])
+                    print(f"DEBUG: Question imported successfully with ID: {qid}")
+                    return qid
+
+                # O un dict con qid
+                if 'qid' in result:
+                    qid = int(result['qid'])
+                    print(f"DEBUG: Question imported successfully with ID: {qid}")
+                    return qid
+
+            # Se è direttamente un intero
+            if isinstance(result, (int, str)):
+                qid = int(result)
+                print(f"DEBUG: Question imported successfully with ID: {qid}")
+                return qid
+
+            # Se non riesci a capire il formato, lancia errore
+            raise Exception(f"Unexpected import_question response format: {result}")
+
+        except Exception as e:
+            print(f"DEBUG: import_question failed: {e}")
+            raise
+
 
     def activate_survey(self, survey_id: int):
         """Attiva la survey"""
@@ -148,9 +572,8 @@ class LimeSurveyAPI:
         print(f"Survey {survey_id} activated")
         return result
 
-
 class GraphDBClient:
-    """Client per interagire con GraphDB"""
+
 
     def __init__(self, endpoint: str, repository: str):
         self.endpoint = f"{endpoint}/repositories/{repository}"
@@ -158,13 +581,213 @@ class GraphDBClient:
         self.sparql.setReturnFormat(JSON)
 
     def execute_query(self, query: str) -> Dict[str, Any]:
-        """Esegue una query SPARQL e ritorna i risultati"""
+            #Esegue una query SPARQL e ritorna i risultati"""
         try:
             self.sparql.setQuery(query)
             results = self.sparql.query().convert()
             return results
         except Exception as e:
             raise Exception(f"Errore query SPARQL: {str(e)}")
+
+        # ... [mantieni tutti i metodi esistenti] ...
+
+    def get_complete_question_data(self, question_uri: str) -> Dict[str, Any]:
+
+        query = f"""
+                PREFIX ls: <https://w3id.org/fossr/ontology/limesurvey/>
+                PREFIX ns1: <https://w3id.org/fossr/ontology/limesurvey/>
+
+                SELECT DISTINCT 
+                  ?qid ?sid ?gid ?type ?title ?questionText ?script
+                  ?attrName ?attrValue
+                  ?parentQid
+                  ?subQuestion ?subQid ?subTitle ?subQuestionText ?subOrder
+                  ?answer ?answerCode ?answerText ?answerSortOrder ?answerAssessmentValue ?answerScaleId
+                WHERE {{
+                  <{question_uri}> a ls:Question .
+                  <{question_uri}> ls:hasId ?idNode .
+                  ?idNode ls:id ?qid .
+
+                  OPTIONAL {{
+                    <{question_uri}> ls:hasSurveyId ?sidNode .
+                    ?sidNode ls:id ?sid .
+                  }}
+
+                  OPTIONAL {{
+                    <{question_uri}> ls:hasGroup ?groupNode .
+                    ?groupNode ns1:hasId ?gidNode .
+                    ?gidNode ns1:id ?gid .
+                  }}
+
+                  OPTIONAL {{
+                    <{question_uri}> ls:hasType ?typeNode .
+                    ?typeNode ls:code ?type .
+                  }}
+
+                  OPTIONAL {{
+                    <{question_uri}> ls:hasVariable ?varNode .
+                    ?varNode ls:variableCod ?title .
+                  }}
+
+                  OPTIONAL {{
+                    <{question_uri}> ls:hasContent ?contentNode .
+                    ?contentNode ls:text ?questionText .
+                  }}
+
+                  OPTIONAL {{
+                    <{question_uri}> ls:hasContent ?contentNode .
+                    ?contentNode ls:script ?script .
+                  }}
+
+                  OPTIONAL {{
+                    <{question_uri}> ls:hasComponentAttribute ?attr .
+                    ?attr ls:componentName ?attrName .
+                    ?attr ls:componentValue ?attrValue .
+                  }}
+
+                  OPTIONAL {{
+                    <{question_uri}> ls:hasParentQuestion ?parentQuestion .
+                    ?parentQuestion ls:hasId ?parentIdNode .
+                    ?parentIdNode ls:id ?parentQid .
+                  }}
+
+                  OPTIONAL {{
+                    ?subQuestion ls:hasParentQuestion <{question_uri}> .
+                    ?subQuestion ls:hasId ?subIdNode .
+                    ?subIdNode ls:id ?subQid .
+
+                    OPTIONAL {{
+                      ?subQuestion ls:hasVariable ?subVarNode .
+                      ?subVarNode ls:variableCod ?subTitle .
+                    }}
+
+                    OPTIONAL {{
+                      ?subQuestion ls:hasContent ?subContentNode .
+                      ?subContentNode ls:text ?subQuestionText .
+                    }}
+
+                    OPTIONAL {{
+                      ?subQuestion ls:hasComponentAttribute ?subOrderAttr .
+                      ?subOrderAttr ls:componentName "question_order" .
+                      ?subOrderAttr ls:componentValue ?subOrder .
+                    }}
+                  }}
+
+                  OPTIONAL {{
+                    ?answer a ls:AnswerOption .
+                    <{question_uri}> ls:hasAnswerOption ?answer .
+
+                    OPTIONAL {{
+                      ?answer ls:componentValue ?answerCode .
+                    }}
+
+                    OPTIONAL {{
+                      ?answer ls:hasContent ?answerContentNode .
+                      ?answerContentNode ls:text ?answerText .
+                    }}
+
+                    OPTIONAL {{
+                      ?answer ls:hasComponentAttribute ?answerAttr1 .
+                      ?answerAttr1 ls:componentName "sortorder" .
+                      ?answerAttr1 ls:componentValue ?answerSortOrder .
+                    }}
+
+                    OPTIONAL {{
+                      ?answer ls:hasComponentAttribute ?answerAttr2 .
+                      ?answerAttr2 ls:componentName "assessment_value" .
+                      ?answerAttr2 ls:componentValue ?answerAssessmentValue .
+                    }}
+
+                    OPTIONAL {{
+                      ?answer ls:hasComponentAttribute ?answerAttr3 .
+                      ?answerAttr3 ls:componentName "scale_id" .
+                      ?answerAttr3 ls:componentValue ?answerScaleId .
+                    }}
+                  }}
+                }}
+                ORDER BY ?qid ?subOrder ?answerSortOrder
+            """
+
+        print(f"DEBUG: Fetching complete data for question: {question_uri}")
+        results = self.execute_query(query)
+        return self._parse_complete_question_data(results)
+
+    def _parse_complete_question_data(self, results: Dict) -> Dict[str, Any]:
+            #"""Parser per organizzare tutti i dati della question"""
+        bindings = results["results"]["bindings"]
+
+        if not bindings:
+            print("DEBUG: No data found for question")
+            return None
+
+            # Dati base dalla prima riga
+        first_row = bindings[0]
+
+        question_data = {
+            "qid": first_row.get("qid", {}).get("value", "0"),
+            "sid": first_row.get("sid", {}).get("value", "0"),
+            "gid": first_row.get("gid", {}).get("value", "0"),
+            "type": first_row.get("type", {}).get("value", "T"),
+            "title": first_row.get("title", {}).get("value", "Q1"),
+            "questionText": first_row.get("questionText", {}).get("value", ""),
+            "script": first_row.get("script", {}).get("value", ""),
+            "parentQid": first_row.get("parentQid", {}).get("value", "0"),
+            "attributes": {},
+            "subquestions": [],
+            "answerOptions": []
+        }
+
+            # Usa set per evitare duplicati
+        subquestions_map = {}
+        answers_map = {}
+
+            # Raccogli attributes, subquestions, answer options
+        for row in bindings:
+                # Attributes
+            if "attrName" in row and row["attrName"].get("value"):
+                attr_name = row["attrName"]["value"]
+                attr_value = row.get("attrValue", {}).get("value", "")
+                question_data["attributes"][attr_name] = attr_value
+
+                # Subquestions
+            if "subQid" in row and row["subQid"].get("value"):
+                sub_qid = row["subQid"]["value"]
+                if sub_qid not in subquestions_map:
+                    subquestions_map[sub_qid] = {
+                        "qid": sub_qid,
+                        "title": row.get("subTitle", {}).get("value", ""),
+                        "text": row.get("subQuestionText", {}).get("value", ""),
+                        "order": row.get("subOrder", {}).get("value", "0")
+                    }
+
+                # Answer Options
+            if "answer" in row and row["answer"].get("value"):
+                answer_uri = row["answer"]["value"]
+                if answer_uri not in answers_map:
+                    answers_map[answer_uri] = {
+                        "code": row.get("answerCode", {}).get("value", ""),
+                        "text": row.get("answerText", {}).get("value", ""),
+                        "sortOrder": row.get("answerSortOrder", {}).get("value", "0"),
+                        "assessmentValue": row.get("answerAssessmentValue", {}).get("value", "0"),
+                        "scaleId": row.get("answerScaleId", {}).get("value", "0")
+                    }
+
+            # Converti in liste
+        question_data["subquestions"] = list(subquestions_map.values())
+        question_data["answerOptions"] = list(answers_map.values())
+
+            # Ordina subquestions e answers
+        question_data["subquestions"].sort(key=lambda x: int(x.get("order", "0")))
+        question_data["answerOptions"].sort(key=lambda x: int(x.get("sortOrder", "0")))
+
+        print(f"DEBUG: Parsed question data:")
+        print(f"  - QID: {question_data['qid']}")
+        print(f"  - Type: {question_data['type']}")
+        print(f"  - Subquestions: {len(question_data['subquestions'])}")
+        print(f"  - Answer options: {len(question_data['answerOptions'])}")
+        print(f"  - Attributes: {len(question_data['attributes'])}")
+
+        return question_data
 
     def get_all_groups(self) -> List[Dict[str, Any]]:
         """Recupera tutti i gruppi con le loro domande in un'unica query"""
@@ -278,6 +901,117 @@ class GraphDBClient:
         return groups
 
     def get_all_questions(self) -> List[Dict[str, Any]]:
+        query = """
+            PREFIX ns1: <https://w3id.org/fossr/ontology/limesurvey/>
+            PREFIX ls: <https://w3id.org/fossr/ontology/limesurvey/>
+            PREFIX data: <https://w3id.org/fossr/data/>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+                 SELECT ?question ?questionId ?questionText ?variableCod ?isMandatory ?questionType
+                        ?answerOptions ?answerCode ?answerText ?answerSortOrder ?answerAssessmentValue ?answerScaleId
+                 WHERE {
+                     ?question a ls:Question .
+                     OPTIONAL { 
+                         ?question ls:hasId ?Identifier. 
+                         ?Identifier ls:id ?questionId 
+                     }
+                     OPTIONAL { 
+                         ?question ls:hasContent ?Content.
+                         ?Content ls:text ?questionText 
+                     }
+                     OPTIONAL {
+                         ?question ls:hasVariable ?var .
+                         ?var ls:variableCod ?variableCod
+                     }
+                     OPTIONAL {
+                         ?question ls:hasType ?type .
+                         ?type ls:code ?questionType
+                     }
+                     OPTIONAL { ?question ls:isMandatory ?isMandatory }
+
+                     OPTIONAL {
+                         ?question ls:hasAnswerOption ?answerOptions .
+
+                         OPTIONAL {
+                             ?answerOptions ls:componentValue ?answerCode .
+                         }
+
+                         OPTIONAL {
+                             ?answerOptions ls:hasContent ?answerContentNode .
+                             ?answerContentNode ls:text ?answerText .
+                         }
+
+                         OPTIONAL {
+                             ?answerOptions ls:hasComponentAttribute ?answerAttr1 .
+                             ?answerAttr1 ls:componentName "sortorder" .
+                             ?answerAttr1 ls:componentValue ?answerSortOrder .
+                         }
+
+                         OPTIONAL {
+                             ?answerOptions ls:hasComponentAttribute ?answerAttr2 .
+                             ?answerAttr2 ls:componentName "assessment_value" .
+                             ?answerAttr2 ls:componentValue ?answerAssessmentValue .
+                         }
+
+                         OPTIONAL {
+                             ?answerOptions ls:hasComponentAttribute ?answerAttr3 .
+                             ?answerAttr3 ls:componentName "scale_id" .
+                             ?answerAttr3 ls:componentValue ?answerScaleId .
+                         }
+                     }
+                 }
+                 ORDER BY ?questionId ?answerSortOrder
+             """
+
+        print(f"DEBUG: Executing questions query...")
+        results = self.execute_query(query)
+
+        # Raggruppa i risultati per domanda
+        questions_dict = {}
+
+        print(f"DEBUG: Found {len(results['results']['bindings'])} result rows")
+
+        for binding in results["results"]["bindings"]:
+            question_uri = binding["question"]["value"]
+
+            # Se la domanda non è ancora nel dizionario, creala
+            if question_uri not in questions_dict:
+                questions_dict[question_uri] = {
+                    "uri": question_uri,
+                    "id": binding.get("questionId", {}).get("value", "N/A"),
+                    "text": binding.get("questionText", {}).get("value", "No text"),
+                    "variableCod": binding.get("variableCod", {}).get("value", ""),
+                    "isMandatory": binding.get("isMandatory", {}).get("value", "0"),
+                    "questionType": binding.get("questionType", {}).get("value", "L"),
+                    "type": "question",
+                    "answers": []
+                }
+
+            # Se c'è un'answer option, aggiungila alla lista
+            if "answer" in binding:
+                answer = {
+                    "uri": binding["answer"]["value"],
+                    "code": binding.get("answerCode", {}).get("value", ""),
+                    "text": binding.get("answerText", {}).get("value", ""),
+                    "sortOrder": binding.get("answerSortOrder", {}).get("value", ""),
+                    "assessmentValue": binding.get("answerAssessmentValue", {}).get("value", ""),
+                    "scaleId": binding.get("answerScaleId", {}).get("value", "0")
+                }
+
+                # Evita duplicati (possono verificarsi con OPTIONAL multipli)
+                if answer not in questions_dict[question_uri]["answers"]:
+                    questions_dict[question_uri]["answers"].append(answer)
+
+        # Converti il dizionario in lista
+        questions = list(questions_dict.values())
+
+        print(f"DEBUG: Found {len(questions)} unique questions")
+
+
+        return questions
+
+    def get_all_questions_old(self) -> List[Dict[str, Any]]:
         """Recupera tutte le domande"""
         query = """
             PREFIX ls: <https://w3id.org/fossr/ontology/limesurvey/>
@@ -327,6 +1061,144 @@ class GraphDBClient:
             print(f"DEBUG: Question found - ID: {question['id']}, Text: {question['text'][:50]}...")
 
         return questions
+
+
+    def get_questions_by_group_old(self, group_uri: str) -> List[Dict[str, Any]]:
+        """Recupera le domande di un gruppo specifico tramite QuestionFlow"""
+        query = f"""
+        PREFIX ls: <https://w3id.org/fossr/ontology/limesurvey/>
+        PREFIX ns1: <https://w3id.org/fossr/ontology/limesurvey/>
+        PREFIX data: <https://w3id.org/fossr/data/>
+        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+        SELECT DISTINCT
+            ?group 
+            ?question ?questionId ?questionText ?variableCod ?questionType ?questionOrder
+            ?parentQid
+            ?subQuestion ?subQid ?subTitle ?subQuestionText ?subOrder
+            ?answerOption ?answerCode ?answerText ?answerSortOrder ?answerAssessmentValue ?answerScaleId
+        WHERE {{
+            OPTIONAL {{
+                ?question ns1:hasGroup <{group_uri}> .
+
+                OPTIONAL {{
+                    ?question ls:hasId ?Identifier .
+                    ?Identifier ls:id ?questionId .
+                }}
+
+                OPTIONAL {{
+                    ?question ls:hasContent ?Content .
+                    ?Content ls:text ?questionText .
+                }}
+
+                OPTIONAL {{ 
+                    ?question ls:hasVariable ?var . 
+                    ?var ls:variableCod ?variableCod .
+                }}
+
+                OPTIONAL {{
+                    ?question ls:hasType ?type .
+                    ?type ls:code ?questionType .
+                }}
+
+                OPTIONAL {{
+                    ?group ls:hasQuestionFlow ?flow .
+                    ?flow ls:hasQuestionStep ?step .
+                    ?step ls:hasQuestion ?question .
+                    ?step ls:questionOrder ?questionOrder .
+                }}
+
+                OPTIONAL {{
+                    ?question ls:hasParentQuestion ?parentQuestion .
+                    ?parentQuestion ls:hasId ?parentIdNode .
+                    ?parentIdNode ls:id ?parentQid .
+                }}
+
+                OPTIONAL {{
+                    {{
+                        ?subQuestion ls:hasParentQuestion ?question .
+                        ?subQuestion ls:hasId ?subIdNode .
+                        ?subIdNode ls:id ?subQid .
+
+                        OPTIONAL {{
+                            ?subQuestion ls:hasVariable ?subVarNode .
+                            ?subVarNode ls:variableCod ?subTitle .
+                        }}
+
+                        OPTIONAL {{
+                            ?subQuestion ls:hasContent ?subContentNode .
+                            ?subContentNode ls:text ?subQuestionText .
+                        }}
+
+                        OPTIONAL {{
+                            ?subQuestion ls:hasComponentAttribute ?subAttr .
+                            ?subAttr ls:componentName "question_order" .
+                            ?subAttr ls:componentValue ?subOrder .
+                        }}
+                    }}
+                }}
+
+                OPTIONAL {{
+                    {{
+                        ?question ls:hasAnswerOption ?ans .
+                        BIND(?ans AS ?answerOption)
+
+                        OPTIONAL {{ ?answerOption ls:componentValue ?answerCode . }}
+
+                        OPTIONAL {{
+                            ?answerOption ls:hasContent ?answerContentNode .
+                            ?answerContentNode ls:text ?answerText .
+                        }}
+
+                        OPTIONAL {{
+                            ?answerOption ls:hasComponentAttribute ?answerAttr1 .
+                            ?answerAttr1 ls:componentName "sortorder" .
+                            ?answerAttr1 ls:componentValue ?answerSortOrder .
+                        }}
+
+                        OPTIONAL {{
+                            ?answerOption ls:hasComponentAttribute ?answerAttr2 .
+                            ?answerAttr2 ls:componentName "assessment_value" .
+                            ?answerAttr2 ls:componentValue ?answerAssessmentValue .
+                        }}
+
+                        OPTIONAL {{
+                            ?answerOption ls:hasComponentAttribute ?answerAttr3 .
+                            ?answerAttr3 ls:componentName "scale_id" .
+                            ?answerAttr3 ls:componentValue ?answerScaleId .
+                        }}
+                    }}
+                }}
+            }}
+        }}
+        ORDER BY
+            ?group
+            ?questionOrder
+            ?questionId
+            ?subQid
+            ?answerSortOrder
+        """
+
+        try:
+            results = self.execute_query(query)
+            questions = []
+
+            for binding in results["results"]["bindings"]:
+                question = {
+                    "uri": binding["question"]["value"],
+                    "id": binding.get("questionId", {}).get("value", "N/A"),
+                    "text": binding.get("questionText", {}).get("value", "No text"),
+                    "variableCod": binding.get("variableCod", {}).get("value", ""),
+                    "order": binding.get("questionOrder", {}).get("value", "0"),
+                    "questionType": binding.get("questionType", {}).get("value", "L"),
+                    "groupUri": group_uri
+                }
+                questions.append(question)
+
+            return questions
+        except Exception as e:
+            print(f"DEBUG: Error getting questions for group {group_uri}: {e}")
+            return []
+
 
     def get_questions_by_group(self, group_uri: str) -> List[Dict[str, Any]]:
         """Recupera le domande di un gruppo specifico tramite QuestionFlow"""
@@ -412,6 +1284,126 @@ class GraphDBClient:
             answers.append(answer)
 
         return answers
+
+
+def get_complete_question_data(self, question_uri: str) -> Dict[str, Any]:
+    """Recupera TUTTI i dati di una domanda per generare .lsq"""
+    query = f"""
+        PREFIX ls: <https://w3id.org/fossr/ontology/limesurvey/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+        SELECT DISTINCT 
+          ?qid ?sid ?gid ?type ?title ?questionText ?script
+          ?attrName ?attrValue
+          ?parentQid
+          ?subQuestion ?subQid ?subTitle ?subQuestionText ?subOrder
+          ?answer ?answerCode ?answerText ?answerSortOrder ?answerAssessmentValue ?answerScaleId
+        WHERE {{
+          <{question_uri}> a ls:Question .
+          <{question_uri}> ls:hasId ?idNode .
+          ?idNode ls:id ?qid .
+
+          OPTIONAL {{
+            <{question_uri}> ls:hasSurveyId ?sidNode .
+            ?sidNode ls:id ?sid .
+          }}
+
+          OPTIONAL {{
+            <{question_uri}> ls:hasGroup ?groupNode .
+            BIND(STRAFTER(STR(?groupNode), "group/") AS ?gid)
+          }}
+
+          OPTIONAL {{
+            <{question_uri}> ls:hasType ?typeNode .
+            BIND(STRAFTER(STR(?typeNode), "questiontype/") AS ?type)
+          }}
+
+          OPTIONAL {{
+            <{question_uri}> ls:hasVariable ?varNode .
+            ?varNode ls:variableCod ?title .
+          }}
+
+          OPTIONAL {{
+            <{question_uri}> ls:hasContent ?contentNode .
+            ?contentNode ls:text ?questionText .
+          }}
+
+          OPTIONAL {{
+            <{question_uri}> ls:hasContent ?contentNode .
+            ?contentNode ls:script ?script .
+          }}
+
+          OPTIONAL {{
+            <{question_uri}> ls:hasComponentAttribute ?attr .
+            ?attr ls:componentName ?attrName .
+            ?attr ls:componentValue ?attrValue .
+          }}
+
+          OPTIONAL {{
+            <{question_uri}> ls:hasParentQuestion ?parentQuestion .
+            ?parentQuestion ls:hasId ?parentIdNode .
+            ?parentIdNode ls:id ?parentQid .
+          }}
+
+          OPTIONAL {{
+            ?subQuestion ls:hasParentQuestion <{question_uri}> .
+            ?subQuestion ls:hasId ?subIdNode .
+            ?subIdNode ls:id ?subQid .
+
+            OPTIONAL {{
+              ?subQuestion ls:hasVariable ?subVarNode .
+              ?subVarNode ls:variableCod ?subTitle .
+            }}
+
+            OPTIONAL {{
+              ?subQuestion ls:hasContent ?subContentNode .
+              ?subContentNode ls:text ?subQuestionText .
+            }}
+
+            OPTIONAL {{
+              ?subQuestion ls:hasComponentAttribute ?subAttr .
+              ?subAttr ls:componentName "question_order" .
+              ?subAttr ls:componentValue ?subOrder .
+            }}
+          }}
+
+          OPTIONAL {{
+            ?answer a ls:AnswerOption .
+            <{question_uri}> ls:hasAnswerOption ?answer .
+
+            OPTIONAL {{
+              ?answer ls:componentValue ?answerCode .
+            }}
+
+            OPTIONAL {{
+              ?answer ls:hasContent ?answerContentNode .
+              ?answerContentNode ls:text ?answerText .
+            }}
+
+            OPTIONAL {{
+              ?answer ls:hasComponentAttribute ?answerAttr1 .
+              ?answerAttr1 ls:componentName "sortorder" .
+              ?answerAttr1 ls:componentValue ?answerSortOrder .
+            }}
+
+            OPTIONAL {{
+              ?answer ls:hasComponentAttribute ?answerAttr2 .
+              ?answerAttr2 ls:componentName "assessment_value" .
+              ?answerAttr2 ls:componentValue ?answerAssessmentValue .
+            }}
+
+            OPTIONAL {{
+              ?answer ls:hasComponentAttribute ?answerAttr3 .
+              ?answerAttr3 ls:componentName "scale_id" .
+              ?answerAttr3 ls:componentValue ?answerScaleId .
+            }}
+          }}
+        }}
+        ORDER BY ?qid ?subQid ?answerSortOrder
+    """
+
+    results = self.execute_query(query)
+    return self._parse_complete_question_data(results)
 
 
 class SurveyExporter:
@@ -531,6 +1523,64 @@ class SurveyExporter:
         # Pretty print
         xml_str = minidom.parseString(ET.tostring(root)).toprettyxml(indent="  ")
         return xml_str
+
+    def _parse_complete_question_data(self, results: Dict) -> Dict[str, Any]:
+        """Parser per organizzare tutti i dati della question"""
+        bindings = results["results"]["bindings"]
+
+        if not bindings:
+            return None
+
+        # Dati base dalla prima riga
+        first_row = bindings[0]
+
+        question_data = {
+            "qid": first_row.get("qid", {}).get("value"),
+            "sid": first_row.get("sid", {}).get("value"),
+            "gid": first_row.get("gid", {}).get("value"),
+            "type": first_row.get("type", {}).get("value", "T"),
+            "title": first_row.get("title", {}).get("value"),
+            "questionText": first_row.get("questionText", {}).get("value"),
+            "script": first_row.get("script", {}).get("value", ""),
+            "parentQid": first_row.get("parentQid", {}).get("value", "0"),
+            "attributes": {},
+            "subquestions": {},
+            "answerOptions": {}
+        }
+
+        # Raccogli attributes, subquestions, answer options
+        for row in bindings:
+            # Attributes
+            if "attrName" in row:
+                attr_name = row["attrName"]["value"]
+                attr_value = row.get("attrValue", {}).get("value", "")
+                question_data["attributes"][attr_name] = attr_value
+
+            # Subquestions
+            if "subQid" in row:
+                sub_qid = row["subQid"]["value"]
+                if sub_qid not in question_data["subquestions"]:
+                    question_data["subquestions"][sub_qid] = {
+                        "qid": sub_qid,
+                        "title": row.get("subTitle", {}).get("value", ""),
+                        "text": row.get("subQuestionText", {}).get("value", ""),
+                        "order": row.get("subOrder", {}).get("value", "0")
+                    }
+
+            # Answer Options
+            if "answer" in row:
+                answer_uri = row["answer"]["value"]
+                if answer_uri not in question_data["answerOptions"]:
+                    question_data["answerOptions"][answer_uri] = {
+                        "code": row.get("answerCode", {}).get("value", ""),
+                        "text": row.get("answerText", {}).get("value", ""),
+                        "sortOrder": row.get("answerSortOrder", {}).get("value", "0"),
+                        "assessmentValue": row.get("answerAssessmentValue", {}).get("value", "0"),
+                        "scaleId": row.get("answerScaleId", {}).get("value", "0")
+                    }
+
+        return question_data
+
 
 
 # Flask Routes
@@ -889,6 +1939,8 @@ def get_question_answers(question_uri):
         return jsonify({"status": "error", "message": str(e)}), 500
 
 
+
+
 @app.route('/api/export/json', methods=['POST'])
 def export_json():
     """Esporta il questionario in formato JSON"""
@@ -1011,49 +2063,121 @@ def create_limesurvey():
         # Inizializza client LimeSurvey
         print(f"Connecting to LimeSurvey at: {LIMESURVEY_URL}")
         ls_client = LimeSurveyAPI(LIMESURVEY_URL, LIMESURVEY_USERNAME, LIMESURVEY_PASSWORD)
+        graphdb_client = GraphDBClient(GRAPHDB_URL, REPOSITORY)
 
         # Crea la survey
         print(f"Step 1: Creating survey '{survey_title}'...")
         survey_id = ls_client.create_survey(survey_title)
         print(f"✓ Survey created with ID: {survey_id}")
+        imported_questions_count = 0
+        failed_questions = []
 
-        # Mappa per tracciare gli ID dei gruppi creati
-        group_map = {}
+        # Step 2: Crea gruppi e importa domande
+        print(f"\nStep 2: Creating groups and importing questions...")
 
-        # Aggiungi gruppi selezionati con le loro domande
-        print(f"\nStep 2: Creating {len(groups)} groups...")
-        for idx, group in enumerate(groups):
-            order = group.get('order', idx + 1)
-            print(f"  Creating group {idx + 1}/{len(groups)}: {group.get('name', 'Unnamed')}")
-            print(group.get('name', f'Group {idx + 1}'),group.get('description', ''),"name senza +1",group.get('name') )
+        for group_idx, group in enumerate(groups):
+            group_name = group.get('name', f'Group {group_idx + 1}')
+            group_desc = group.get('description', '')
+            group_order = group.get('order', group_idx + 1)
+
+            print(f"\n  [{group_idx + 1}/{len(groups)}] Creating group: {group_name}")
+
             try:
-                group_id = ls_client.add_group( survey_id,group.get('name', f'Group {idx + 1}'),group.get('description', ''))
-                group_map[group['uri']] = group_id
+                # Crea gruppo
+                group_id = ls_client.add_group(
+                    survey_id,
+                    group_name,
+                    group_desc,
+                    group_order
+                )
                 print(f"  ✓ Group created with ID: {group_id}")
 
-                # Aggiungi le domande di questo gruppo
-                group_questions = group.get('questions', [])
-                if group_questions:
-                    print(f"    Adding {len(group_questions)} questions to this group...")
-                    for q_idx, question in enumerate(group_questions):
-                        q_order = question.get('order', q_idx + 1)
-                        try:
-                            q_id = ls_client.add_question(
-                                survey_id,
-                                group_id,
-                                question.get('variableCod', f"Q{question.get('id', q_idx)}"),
-                                question.get('text', ''),
-                                question.get('questionType', 'T'),
-                                question.get('isMandatory') == '1',
-                                q_order
-                            )
-                            print(f"    ✓ Question {question.get('variableCod', 'Q?')} added (ID: {q_id})")
-                        except Exception as e:
-                            print(f"    ✗ Failed to add question: {e}")
+                # Trova domande di questo gruppo
+                group_questions = [q for q in questions if q.get('groupUri') == group['uri']]
+
+                if not group_questions:
+                    print(f"  ⚠ No questions for this group")
+                    continue
+
+                print(f"  📊 Importing {len(group_questions)} questions...")
+
+                # Importa ogni domanda
+                for q_idx, question in enumerate(group_questions):
+                    question_uri = question.get('uri')
+                    question_title = question.get('variableCod', f"Q{q_idx + 1}")
+
+                    print(f"    [{q_idx + 1}/{len(group_questions)}] Processing: {question_title}")
+
+                    try:
+                        # Ottieni dati completi se disponibili
+                        if 'completeData' in question and question['completeData']:
+                            complete_data = question['completeData']
+                            print(f"      Using complete data from frontend")
+                        else:
+                            # Altrimenti recuperali dal GraphDB
+                            print(f"      Fetching complete data from GraphDB...")
+                            complete_data = graphdb_client.get_complete_question_data(question_uri)
+
+                        if not complete_data:
+                            print(f"      ✗ No data available, skipping")
+                            failed_questions.append(f"{question_title}: No data available")
+                            continue
+
+                        # Aggiorna IDs per la nuova survey
+                        complete_data['sid'] = str(survey_id)
+                        complete_data['gid'] = str(group_id)
+
+                        # Genera .lsq XML
+                        print(f"      Generating .lsq XML...")
+                        lsq_xml = generate_lsq_xml(complete_data)
+
+                        # Converti in Base64
+                        lsq_base64 = base64.b64encode(lsq_xml.encode('utf-8')).decode('utf-8')
+                        print(f"      .lsq size: {len(lsq_xml)} bytes, Base64: {len(lsq_base64)} chars")
+
+                        # Importa usando import_question
+                        mandatory = complete_data.get('attributes', {}).get('mandatory', 'N')
+                        print(f"      Importing to LimeSurvey (mandatory: {mandatory})...")
+
+                        new_qid = ls_client.import_question(
+                            survey_id=survey_id,
+                            group_id=group_id,
+                            lsq_base64=lsq_base64,
+                            mandatory=mandatory
+                        )
+
+                        print(f"      ✓ Question imported successfully (new ID: {new_qid})")
+                        imported_questions_count += 1
+
+                    except Exception as e:
+                        error_msg = f"{question_title}: {str(e)}"
+                        print(f"      ✗ Failed: {e}")
+                        failed_questions.append(error_msg)
+                        continue
 
             except Exception as e:
                 print(f"  ✗ Failed to create group: {e}")
-                raise
+                import traceback
+                traceback.print_exc()
+                continue
+
+        # Step 3: Rilascia sessione
+        print(f"\nStep 3: Releasing session...")
+        ls_client.release_session_key()
+
+        # Genera URL
+        survey_url = LIMESURVEY_URL.replace('/admin/remotecontrol', '') + f"/admin/survey/sa/view/surveyid/{survey_id}"
+
+        print(f"\n{'=' * 70}")
+        print(f"✓ Survey creation completed!")
+        print(f"Survey ID: {survey_id}")
+        print(f"Groups created: {len(groups)}")
+        print(f"Questions imported: {imported_questions_count}/{len(questions)}")
+        if failed_questions:
+            print(f"Failed questions: {len(failed_questions)}")
+            for failed in failed_questions:
+                print(f"  - {failed}")
+
 
         # Aggiungi domande standalone (senza groupUri o non appartenenti a gruppi selezionati)
         selected_group_uris = [g['uri'] for g in groups]
@@ -1096,35 +2220,35 @@ def create_limesurvey():
         print(f"\nStep 4: Releasing session...")
         ls_client.release_session_key()
 
-        survey_url = LIMESURVEY_URL.replace('/admin/remotecontrol', '') + f"/admin/survey/sa/view/surveyid/{survey_id}"
 
-        print(f"\n{'=' * 70}")
-        print(f"✓ SUCCESS! Survey created successfully")
-        print(f"Survey ID: {survey_id}")
-        print(f"URL: {survey_url}")
-        print(f"{'=' * 70}\n")
-
-        return jsonify({
+        response_data = {
             "status": "success",
             "survey_id": survey_id,
-            "message": f"Survey '{survey_title}' creata con successo con {len(groups)} gruppi!",
-            "url": survey_url
-        })
+            "message": f"Survey '{survey_title}' creata con successo!",
+            "url": survey_url,
+            "importedQuestions": imported_questions_count,
+            "totalQuestions": len(questions)
+            }
+
+        if failed_questions:
+            response_data["failedQuestions"] = failed_questions
+            response_data["message"] += f" ({imported_questions_count}/{len(questions)} domande importate)"
+
+        return jsonify(response_data)
 
     except Exception as e:
         print(f"\n{'=' * 70}")
         print(f"✗ ERROR: {str(e)}")
         print(f"{'=' * 70}\n")
 
-        import traceback
-        traceback.print_exc()
+    import traceback
 
-        return jsonify({
-            "status": "error",
-            "message": str(e),
-            "help": "Verifica che LimeSurvey RemoteControl sia abilitato in config.php: $config['RPCInterface'] = 'json';"
-        }), 500
+    traceback.print_exc()
 
+    return jsonify({
+        "status": "error",
+        "message": str(e)
+    }), 500
 
 @app.route('/api/limesurvey/config', methods=['POST'])
 def set_limesurvey_config():
@@ -1153,6 +2277,72 @@ def test_limesurvey():
             "message": "Connessione riuscita!",
             "surveys_count": len(surveys) if surveys else 0
         })
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message": str(e)
+        }), 500
+
+
+@app.route('/api/question/<path:question_uri>/complete', methods=['GET'])
+def get_complete_question(question_uri):
+    """Recupera dati completi di una domanda per generare .lsq"""
+    try:
+        client = GraphDBClient(GRAPHDB_URL, REPOSITORY)
+        question_data = client.get_complete_question_data(question_uri)
+
+        if not question_data:
+            return jsonify({
+                "status": "error",
+                "message": "Question not found"
+            }), 404
+
+        return jsonify({
+            "status": "success",
+            "data": question_data
+        })
+
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message": str(e)
+        }), 500
+
+
+@app.route('/api/generate_lsq', methods=['POST'])
+def generate_lsq_endpoint():
+    """Genera file .lsq da question URIs"""
+    try:
+        data = request.json
+        question_uris = data.get('questionUris', [])
+
+        if not question_uris:
+            return jsonify({
+                "status": "error",
+                "message": "No questions provided"
+            }), 400
+
+        client = GraphDBClient(GRAPHDB_URL, REPOSITORY)
+        lsq_files = []
+
+        for uri in question_uris:
+            question_data = client.get_complete_question_data(uri)
+            if question_data:
+                lsq_xml = generate_lsq_xml(question_data)
+                lsq_base64 = base64.b64encode(lsq_xml.encode('utf-8')).decode('utf-8')
+
+                lsq_files.append({
+                    "questionUri": uri,
+                    "qid": question_data["qid"],
+                    "title": question_data["title"],
+                    "lsqBase64": lsq_base64
+                })
+
+        return jsonify({
+            "status": "success",
+            "lsqFiles": lsq_files
+        })
+
     except Exception as e:
         return jsonify({
             "status": "error",

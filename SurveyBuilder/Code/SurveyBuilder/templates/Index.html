@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GraphDB Survey Builder</title>
+    <title>Survey Builder</title>
     <style>
         * {
             margin: 0;
@@ -640,8 +640,8 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🗂️ GraphDB Survey Builder</h1>
-            <p>Seleziona gruppi e domande dal tuo repository GraphDB per creare un nuovo questionario</p>
+            <h1>🗂️ Survey Builder</h1>
+            <p>Select groups and questions from your GraphDB repository to create a new questionnaire.</p>
         </div>
 
         <div class="config-bar">
@@ -651,10 +651,10 @@
             </div>
             <div class="config-group">
                 <label>📦 Repository:</label>
-                <input type="text" id="repository" value="limesurvey" placeholder="limesurvey">
+                <input type="text" id="repository" value="test_repo" placeholder="test_repo">
             </div>
-            <button class="btn" onclick="testConnection()">🧪 Test Connessione</button>
-            <button class="btn" onclick="connectToGraphDB()">🔌 Carica Dati</button>
+            <button class="btn" onclick="testConnection()">🧪 Connection Test</button>
+            <button class="btn" onclick="connectToGraphDB()">🔌 Upload Data</button>
             <button class="btn" onclick="showSparqlModal()" style="background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);">
                 🔍 Query SPARQL
             </button>
@@ -664,20 +664,20 @@
         <div class="main-content">
             <div class="sidebar">
                 <div class="sidebar-header">
-                    <h3>📚 Elementi Disponibili</h3>
-                    <input type="text" class="search-box" id="searchBox" placeholder="🔍 Cerca..." onkeyup="filterItems()">
+                    <h3>📚 Available Items</h3>
+                    <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search..." onkeyup="filterItems()">
                 </div>
                 <div class="items-list" id="itemsList">
                     <div class="empty-state">
                         <div class="empty-state-icon">📦</div>
-                        <p>Connettiti a GraphDB per visualizzare<br>gruppi e domande disponibili</p>
+                        <p>Connect to GraphDB to view<br>available groups and questions.</p>
                     </div>
                 </div>
             </div>
 
             <div class="main-panel">
                 <div class="tabs">
-                    <button class="tab active" onclick="switchTab('preview')">👁️ Anteprima</button>
+                    <button class="tab active" onclick="switchTab('preview')">👁️ Preview</button>
                     <button class="tab" onclick="switchTab('json')">📄 JSON</button>
                     <button class="tab" onclick="switchTab('csv')">📊 CSV</button>
                 </div>
@@ -686,42 +686,39 @@
                     <div id="statusMessage" class="status-message"></div>
 
                     <div class="selected-items" id="selectedItems" style="display: none;">
-                        <h4>✅ Elementi Selezionati</h4>
+                        <h4>✅ Selected Items</h4>
                         <div id="selectedChips"></div>
                     </div>
 
                     <div class="preview-section">
-                        <h3>📋 Anteprima Questionario</h3>
+                        <h3>📋 Questionnaire Preview</h3>
                         <div id="previewContent">
                             <div class="empty-state">
                                 <div class="empty-state-icon">📝</div>
-                                <p>Seleziona gruppi o domande dalla barra laterale</p>
+                                <p>Select groups or questions from the sidebar.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div id="json" class="tab-content">
-                    <h3 style="margin-bottom: 15px;">📄 Formato JSON</h3>
-                    <pre class="code-block" id="jsonOutput">Seleziona elementi per generare JSON</pre>
+                    <h3 style="margin-bottom: 15px;">📄 JSON format</h3>
+                    <pre class="code-block" id="jsonOutput">Select items to generate JSON</pre>
                 </div>
 
                 <div id="csv" class="tab-content">
-                    <h3 style="margin-bottom: 15px;">📊 Formato CSV</h3>
-                    <pre class="code-block" id="csvOutput">Seleziona elementi per generare CSV</pre>
+                    <h3 style="margin-bottom: 15px;">📊 CSV Format</h3>
+                    <pre class="code-block" id="csvOutput">Select items to generate CSV</pre>
                 </div>
 
                 <div class="action-bar">
                     <div class="action-bar-left">
-                        <button class="btn" onclick="clearSelection()">🗑️ Cancella</button>
-                        <button class="btn" onclick="selectAllGroups()">☑️ Tutti i Gruppi</button>
-                        <button class="btn" onclick="showImportLsqModal()" style="background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);">
-                            📤 Import da .lsq
-                        </button>
+                        <button class="btn" onclick="clearSelection()">🗑️ Delete</button>
+                        <button class="btn" onclick="selectAllGroups()">☑️ All groups</button>
                     </div>
                     <div>
-                        <button class="btn btn-success" onclick="exportSurvey()">📥 Esporta File</button>
-                        <button class="btn btn-success" onclick="showCreateSurveyModal()">🚀 Crea su LimeSurvey</button>
+                        <button class="btn btn-success" onclick="exportSurvey()">📥 Export File</button>
+                        <button class="btn btn-success" onclick="showCreateSurveyModal()">🚀 Create on LimeSurvey</button>
                     </div>
                 </div>
             </div>
@@ -733,33 +730,33 @@
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close-modal" onclick="closeCreateSurveyModal()">&times;</span>
-                <h2>🚀 Crea Survey su LimeSurvey</h2>
+                <h2>🚀 Create Survey on LimeSurvey</h2>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label>📝 Nome Survey:</label>
-                    <input type="text" id="surveyTitle" placeholder="Es: Questionario CHILD-UP 2025" value="Nuovo Questionario">
+                    <label>📝 Name Survey:</label>
+                    <input type="text" id="surveyTitle" placeholder="Es: Questionario CHILD-UP 2025" value="New Questionnaire">
                 </div>
                 <div class="form-group">
                     <label>🔗 LimeSurvey URL:</label>
-                    <input type="text" id="limesurveyUrl" placeholder="http://localhost:8080/index.php/admin/remotecontrol" value="http://localhost:8080/index.php/admin/remotecontrol">
+                    <input type="text" id="limesurveyUrl" placeholder="http://localhost/limesurvey/index.php/admin/remotecontrol" value="http://localhost/limesurvey/index.php/admin/remotecontrol">
                 </div>
                 <div class="form-group">
                     <label>👤 Username:</label>
-                    <input type="text" id="limesurveyUsername" value="admin">
+                    <input type="text" id="limesurveyUsername" value="sara">
                 </div>
                 <div class="form-group">
                     <label>🔒 Password:</label>
-                    <input type="password" id="limesurveyPassword" value="password">
+                    <input type="password" id="limesurveyPassword" value="sara">
                 </div>
                 <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin-top: 15px;">
-                    <strong>✅ Elementi selezionati:</strong><br>
-                    <span id="modalSelectedCount">0 gruppi, 0 domande</span>
+                    <strong>✅ Selected items:</strong><br>
+                    <span id="modalSelectedCount">0 groups, 0 questions</span>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-cancel" onclick="closeCreateSurveyModal()">Annulla</button>
-                <button class="btn btn-success" onclick="createSurveyOnLimeSurvey()">🚀 Crea Survey</button>
+                <button class="btn btn-cancel" onclick="closeCreateSurveyModal()">Cancel</button>
+                <button class="btn btn-success" onclick="createSurveyOnLimeSurvey()">🚀 Create Survey</button>
             </div>
         </div>
     </div>
@@ -769,11 +766,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close-modal" onclick="closeEditTextModal()">&times;</span>
-                <h2 id="editTextModalTitle">✏️ Modifica</h2>
+                <h2 id="editTextModalTitle">✏️ Edit</h2>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label id="editTextLabel">Testo:</label>
+                    <label id="editTextLabel">Text:</label>
                     <textarea id="editTextArea"
                               style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; resize: vertical;"
                               placeholder="Inserisci il testo..."></textarea>
@@ -783,8 +780,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-cancel" onclick="closeEditTextModal()">Annulla</button>
-                <button class="btn btn-success" onclick="saveEditText()" id="saveEditTextBtn">💾 Salva</button>
+                <button class="btn btn-cancel" onclick="closeEditTextModal()">Cancel</button>
+                <button class="btn btn-success" onclick="saveEditText()" id="saveEditTextBtn">💾 Save</button>
             </div>
         </div>
     </div>
@@ -896,6 +893,42 @@ LIMIT 10"></textarea>
         let draggedElement = null;
         let sparqlTemplates = [];
         let lastQueryResults = null;
+
+        // Mapping dei tipi di domanda LimeSurvey
+        const questionTypes = {
+            '5': '5 punti (1-5)',
+            'A': 'Array (5 punti)',
+            'B': 'Array (10 punti)',
+            'C': 'Array (Sì/No/Non so)',
+            'D': 'Data',
+            'E': 'Array crescente',
+            'F': 'Array (Flessibile)',
+            'G': 'Genere',
+            'H': 'Array per colonna',
+            'I': 'Lingua',
+            'K': 'Scelta multipla numerica',
+            'L': 'Lista (Radio)',
+            'M': 'Scelta multipla',
+            'N': 'Numerico',
+            'O': 'Lista con commento',
+            'P': 'Scelta multipla con commento',
+            'Q': 'Testi multipli brevi',
+            'R': 'Ranking',
+            'S': 'Testo breve',
+            'T': 'Testo lungo',
+            'U': 'Testo lunghissimo',
+            'X': 'Testo Boilerplate',
+            'Y': 'Sì/No',
+            '!': 'Dropdown list',
+            ':': 'Array numerico',
+            ';': 'Array testo',
+            '|': 'Caricamento file',
+            '*': 'Equazione'
+        };
+
+        function getQuestionTypeLabel(typeCode) {
+            return questionTypes[typeCode] || `Tipo ${typeCode}`;
+        }
 
         // SPARQL Modal Functions
         async function showSparqlModal() {
@@ -1473,14 +1506,53 @@ LIMIT 10"></textarea>
                         qEl.className = 'nested-question';
                         qEl.id = `question-${question.uri}`;
                         qEl.innerHTML = `
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <div style="flex: 1;">
-                                    <strong>Q${question.id}:</strong>
-                                    <span id="question-text-${groupIndex}-${qIndex}" style="cursor: pointer;" onclick="editQuestionText(event, ${groupIndex}, ${qIndex})" title="Clicca per modificare">${question.text.substring(0, 60)}...</span>
-                                    <span class="edit-icon" onclick="editQuestionText(event, ${groupIndex}, ${qIndex})" title="Modifica testo domanda">✏️</span>
-                                </div>
-                                <div>
-                                    <span style="font-size: 0.8em; color: #999;">${question.variableCod}</span>
+                                    <div style="margin-bottom: 5px;">
+                                        <strong>Q${question.id}:</strong>
+                                        <span id="question-text-${groupIndex}-${qIndex}" style="cursor: pointer;" onclick="editQuestionText(event, ${groupIndex}, ${qIndex})" title="Clicca per modificare">${question.text.substring(0, 60)}...</span>
+                                        <span class="edit-icon" onclick="editQuestionText(event, ${groupIndex}, ${qIndex})" title="Modifica testo domanda">✏️</span>
+                                    </div>
+                                    <div style="color: #666; font-size: 0.8em; margin-top: 3px;">
+                                        <span style="background: #e3f2fd; padding: 2px 6px; border-radius: 3px; margin-right: 5px;">
+                                            📝 ${getQuestionTypeLabel(question.questionType)}
+                                        </span>
+                                        <span style="color: #999;">${question.variableCod}</span>
+                                    </div>
+                                    ${question.answerOptions && question.answerOptions.length > 0 ? `
+                                        <div style="margin-top: 8px; margin-left: 15px; padding: 8px; background: #f0f8ff; border-left: 3px solid #2196f3; border-radius: 3px;">
+                                            <strong style="font-size: 0.8em; color: #1976d2;">📋 Opzioni di risposta:</strong>
+                                            <div style="margin-top: 5px; font-size: 0.75em;">
+                                                ${question.answerOptions.slice(0, 5).map(ans => `
+                                                    <div style="padding: 2px 0; color: #555;">
+                                                        • <strong>${ans.code}:</strong> ${ans.text}
+                                                    </div>
+                                                `).join('')}
+                                                ${question.answerOptions.length > 5 ? `
+                                                    <div style="padding: 2px 0; color: #999; font-style: italic;">
+                                                        ... e altre ${question.answerOptions.length - 5} opzioni
+                                                    </div>
+                                                ` : ''}
+                                            </div>
+                                        </div>
+                                    ` : ''}
+                                    ${question.subquestions && question.subquestions.length > 0 ? `
+                                        <div style="margin-top: 8px; margin-left: 15px; padding: 8px; background: #fff3e0; border-left: 3px solid #ff9800; border-radius: 3px;">
+                                            <strong style="font-size: 0.8em; color: #e65100;">🔢 Sotto-domande:</strong>
+                                            <div style="margin-top: 5px; font-size: 0.75em;">
+                                                ${question.subquestions.slice(0, 5).map(sub => `
+                                                    <div style="padding: 2px 0; color: #555;">
+                                                        • <strong>${sub.title}:</strong> ${sub.text}
+                                                    </div>
+                                                `).join('')}
+                                                ${question.subquestions.length > 5 ? `
+                                                    <div style="padding: 2px 0; color: #999; font-style: italic;">
+                                                        ... e altre ${question.subquestions.length - 5} sotto-domande
+                                                    </div>
+                                                ` : ''}
+                                            </div>
+                                        </div>
+                                    ` : ''}
                                 </div>
                             </div>
                         `;
