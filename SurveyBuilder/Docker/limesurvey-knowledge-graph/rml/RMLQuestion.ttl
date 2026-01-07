@@ -1,0 +1,133 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ls: <https://w3id.org/fossr/ontology/limesurvey/> .
+@prefix data: <https://w3id.org/fossr/data/> .
+@prefix : <https://w3id.org/fossr/mappings/> .
+@base <https://w3id.org/fossr/data/> .
+
+# ===========================================
+# LOGICAL SOURCE
+# ===========================================
+
+:QuestionSource
+    rml:source "list_questions.csv" ;
+    rml:referenceFormulation ql:CSV .
+
+
+# ===========================================
+# QUESTION
+# ===========================================
+
+:QuestionMap a rr:TriplesMap ;
+    rml:logicalSource :QuestionSource ;
+    rr:subjectMap [
+        rr:template "https://w3id.org/fossr/data/question_{qid}" ;
+        rr:class ls:Question
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:hasId ;
+        rr:objectMap [
+            rr:template "https://w3id.org/fossr/data/question_{qid}_identifier"
+        ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:hasContent ;
+        rr:objectMap [
+            rr:template "https://w3id.org/fossr/data/question_{qid}_content"
+        ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:hasVariable ;
+        rr:objectMap [
+            rr:template "https://w3id.org/fossr/data/variable_{title}"
+        ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:hasType ;
+        rr:objectMap [
+            rr:template "https://w3id.org/fossr/data/questionType_{type}"
+        ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:hasGroup ;
+        rr:objectMap [
+            rr:template "https://w3id.org/fossr/data/questionGroup_{gid}"
+        ]
+    ] .
+
+
+
+
+
+# ===========================================
+# IDENTIFIER QUESTION
+# ===========================================
+
+:IdentifierQuestionMap a rr:TriplesMap ;
+    rml:logicalSource :QuestionSource ;
+    rr:subjectMap [
+        rr:template "https://w3id.org/fossr/data/question_{qid}_identifier" ;
+        rr:class ls:Identifier
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:id ;
+        rr:objectMap [
+            rml:reference "qid" ;
+            rr:datatype xsd:int
+        ]
+    ] .
+
+# ===========================================
+# CONTENT QUESTION
+# ===========================================
+
+:ContentQuestionMap a rr:TriplesMap ;
+    rml:logicalSource :QuestionSource ;
+    rr:subjectMap [
+        rr:template "https://w3id.org/fossr/data/question_{qid}_content" ;
+        rr:class ls:Content
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:text ;
+        rr:objectMap [
+            rml:reference "question"
+        ]
+    ] .
+
+# ===========================================
+# QUESTION TYPE
+# ===========================================
+
+:QuestionTypeMap a rr:TriplesMap ;
+    rml:logicalSource :QuestionSource ;
+    rr:subjectMap [
+        rr:template "https://w3id.org/fossr/data/questionType_{type}" ;
+        rr:class ls:QuestionType
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:code ;
+        rr:objectMap [
+            rml:reference "type"
+        ]
+    ] .
+
+# ===========================================
+# VARIABLE
+# ===========================================
+
+:VariableMap a rr:TriplesMap ;
+    rml:logicalSource :QuestionSource ;
+    rr:subjectMap [
+        rr:template "https://w3id.org/fossr/data/variable_{title}" ;
+        rr:class ls:Variable
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:variableCod ;
+        rr:objectMap [
+            rml:reference "title"
+        ]
+    ] .

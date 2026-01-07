@@ -1,0 +1,32 @@
+# Dockerfile for Initialization Service
+FROM python:3.10-slim
+
+LABEL maintainer="your-email@example.com"
+LABEL description="Initialization service - Sets up GraphDB repository and imports sample data"
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy initialization script
+COPY init_system.py .
+COPY main.py .
+
+# Create directories
+RUN mkdir -p /app/logs
+
+# Set permissions
+RUN chmod +x /app/init_system.py
+
+# Run initialization
+CMD ["python", "init_system.py"]

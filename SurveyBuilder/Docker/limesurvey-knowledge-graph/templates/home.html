@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey & GraphDB Manager - Home</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>🏠 Survey & GraphDB Manager</h1>
+                <p>Complete toolkit for managing surveys and knowledge graphs</p>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link active">🏠 Home</a>
+                <a href="/limesurvey" class="nav-link">📊 LimeSurvey</a>
+                <a href="/graphdb" class="nav-link">🗄️ GraphDB</a>
+                <a href="/surveybuilder" class="nav-link">🔨 Survey Builder</a>
+            </div>
+        </div>
+
+        <div class="hero-section">
+            <h2>Welcome to Survey & GraphDB Manager</h2>
+            <p>A comprehensive solution for exporting survey data from LimeSurvey, storing it in GraphDB knowledge graphs, and building new surveys from existing data.</p>
+        </div>
+
+        <div class="features-grid">
+            <!-- Feature 1: LimeSurvey Export -->
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>LimeSurvey Export</h3>
+                <p>Connect to your LimeSurvey instance and export surveys, questions, groups, and responses in multiple formats (JSON, CSV).</p>
+                <ul style="text-align: left; color: #666; font-size: 0.9em; line-height: 1.8;">
+                    <li>✅ List all surveys</li>
+                    <li>✅ Export questions and groups</li>
+                    <li>✅ Export participant responses</li>
+                    <li>✅ Get survey properties and statistics</li>
+                </ul>
+                <a href="/limesurvey" class="btn btn-success" style="margin-top: 15px;">
+                    Open LimeSurvey Manager →
+                </a>
+            </div>
+
+            <!-- Feature 2: GraphDB Input -->
+            <div class="feature-card">
+                <div class="feature-icon">🗄️</div>
+                <h3>GraphDB Input</h3>
+                <p>Upload ontologies and survey data to GraphDB repositories, creating structured knowledge graphs for advanced querying.</p>
+                <ul style="text-align: left; color: #666; font-size: 0.9em; line-height: 1.8;">
+                    <li>✅ Create and manage repositories</li>
+                    <li>✅ Upload OWL ontologies</li>
+                    <li>✅ Import CSV data with RML mapping</li>
+                    <li>✅ View loaded named graphs</li>
+                </ul>
+                <a href="/graphdb" class="btn btn-success" style="margin-top: 15px;">
+                    Open GraphDB Manager →
+                </a>
+            </div>
+
+            <!-- Feature 3: Survey Builder -->
+            <div class="feature-card">
+                <div class="feature-icon">🔨</div>
+                <h3>Survey Builder</h3>
+                <p>Query your GraphDB knowledge graph, select questions and groups, and create new surveys directly in LimeSurvey.</p>
+                <ul style="text-align: left; color: #666; font-size: 0.9em; line-height: 1.8;">
+                    <li>✅ Query GraphDB with SPARQL</li>
+                    <li>✅ Browse groups and questions</li>
+                    <li>✅ Drag-and-drop survey composition</li>
+                    <li>✅ Create surveys in LimeSurvey</li>
+                </ul>
+                <a href="/surveybuilder" class="btn btn-success" style="margin-top: 15px;">
+                    Open Survey Builder →
+                </a>
+            </div>
+        </div>
+
+        <!-- Workflow Section -->
+        <div style="padding: 40px; background: #f5f7fa;">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #333;">📋 Typical Workflow</h2>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px;">1</div>
+                    <div>
+                        <strong style="color: #333;">Export from LimeSurvey</strong>
+                        <p style="margin: 5px 0 0 0; color: #666;">Use the LimeSurvey page to connect and export your survey structure (groups, questions, properties).</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; margin-bottom: 20px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px;">2</div>
+                    <div>
+                        <strong style="color: #333;">Upload to GraphDB</strong>
+                        <p style="margin: 5px 0 0 0; color: #666;">Use the GraphDB page to create a repository, upload your ontology, and import the CSV data.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; margin-bottom: 20px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px;">3</div>
+                    <div>
+                        <strong style="color: #333;">Query and Compose</strong>
+                        <p style="margin: 5px 0 0 0; color: #666;">Use the Survey Builder to query your knowledge graph, select questions, and organize them.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px;">4</div>
+                    <div>
+                        <strong style="color: #333;">Create New Survey</strong>
+                        <p style="margin: 5px 0 0 0; color: #666;">Export your composition or create a new survey directly in LimeSurvey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Start -->
+        <div style="padding: 40px; text-align: center;">
+            <h2 style="margin-bottom: 20px; color: #333;">🚀 Quick Start</h2>
+            <p style="color: #666; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Choose where you want to start. Each module is independent, so you can start from any point in the workflow.
+            </p>
+            <div class="btn-group" style="justify-content: center;">
+                <a href="/limesurvey" class="btn btn-warning">📊 Export Data</a>
+                <a href="/graphdb" class="btn">🗄️ Manage Knowledge Graph</a>
+                <a href="/surveybuilder" class="btn btn-success">🔨 Build Survey</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/common.js"></script>
+    <script src="/static/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+services:
+  # =============================================
+  # MySQL Database for LimeSurvey
+  # =============================================
+  mysql:
+    image: mysql:8.0
+    container_name: limesurvey-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: limesurvey
+      MYSQL_USER: limesurvey
+      MYSQL_PASSWORD: limesurvey
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - survey-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  # =============================================
+  # LimeSurvey
+  # =============================================
+  limesurvey:
+    image: martialblog/limesurvey:6-apache
+    container_name: limesurvey
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: limesurvey
+      DB_USERNAME: limesurvey
+      DB_PASSWORD: limesurvey
+      ADMIN_USER: admin
+      ADMIN_PASSWORD: admin
+      ADMIN_NAME: Administrator
+      ADMIN_EMAIL: admin@example.com
+      # Enable RemoteControl API
+      LIMESURVEY_USE_INNODB: "true"
+      LIMESURVEY_DEBUG: 0
+      LIMESURVEY_SQL_DEBUG: 0
+    volumes:
+      - limesurvey_upload:/var/www/html/upload
+      - limesurvey_config:/var/www/html/application/config
+      - ./init-scripts/limesurvey:/docker-entrypoint-initdb.d
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - survey-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # =============================================
+  # GraphDB
+  # =============================================
+  graphdb:
+    image: ontotext/graphdb:10.7.3
+    container_name: graphdb
+    restart: unless-stopped
+    ports:
+      - "7200:7200"
+    environment:
+      GDB_HEAP_SIZE: 2G
+      GDB_MIN_MEM: 1G
+      GDB_MAX_MEM: 2G
+      GDB_JAVA_OPTS: >-
+        -Xms1g -Xmx2g
+        -Dgraphdb.home=/opt/graphdb/home
+        -Dgraphdb.workbench.cors.enable=true
+    volumes:
+      - graphdb_data:/opt/graphdb/home
+      - graphdb_import:/root/graphdb-import
+      - ./ontology:/opt/graphdb/ontology:ro
+    networks:
+      - survey-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7200/rest/repositories"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # =============================================
+  # Survey Builder (Flask App) - UPDATED
+  # =============================================
+  survey-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile.builder
+    container_name: survey-builder
+    restart: unless-stopped
+    ports:
+      - "5001:5005"  # Flask gira su 5005 dentro il container
+    environment:
+      # LimeSurvey
+      LIMESURVEY_URL: http://limesurvey:8080/index.php/admin/remotecontrol
+      LIMESURVEY_USERNAME: admin
+      LIMESURVEY_PASSWORD: admin
+      # GraphDB
+      GRAPHDB_URL: http://graphdb:7200
+      GRAPHDB_USERNAME: admin
+      GRAPHDB_PASSWORD: admin
+      GRAPHDB_REPOSITORY: test_repo
+      # Flask
+      FLASK_HOST: 0.0.0.0
+      FLASK_PORT: 5005
+      FLASK_DEBUG: "False"
+      PYTHONUNBUFFERED: 1
+    volumes:
+      # Logs
+      - builder_logs:/app/logs
+      # Output directory for generated files
+      - ./outputs:/app/outputs
+    depends_on:
+      limesurvey:
+        condition: service_healthy
+      graphdb:
+        condition: service_healthy
+    networks:
+      - survey-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5005/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # =============================================
+  # Initialization Service (runs once)
+  # =============================================
+  init-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.init
+    container_name: init-service
+    environment:
+      GRAPHDB_URL: http://graphdb:7200
+      GRAPHDB_USERNAME: admin
+      GRAPHDB_PASSWORD: admin
+      GRAPHDB_REPOSITORY: test_repo
+      LIMESURVEY_URL: http://limesurvey:8080/index.php/admin/remotecontrol
+      LIMESURVEY_USERNAME: admin
+      LIMESURVEY_PASSWORD: admin
+    volumes:
+      - ./ontology:/app/ontology:ro
+      - ./samples:/app/samples:ro
+      - ./init-scripts:/app/init-scripts:ro
+    depends_on:
+      limesurvey:
+        condition: service_healthy
+      graphdb:
+        condition: service_healthy
+    networks:
+      - survey-network
+    command: ["python", "init_system.py"]
+
+# =============================================
+# Networks
+# =============================================
+networks:
+  survey-network:
+    driver: bridge
+
+# =============================================
+# Volumes
+# =============================================
+volumes:
+  mysql_data:
+    driver: local
+  limesurvey_upload:
+    driver: local
+  limesurvey_config:
+    driver: local
+  graphdb_data:
+    driver: local
+  graphdb_import:
+    driver: local
+  builder_logs:
+    driver: local

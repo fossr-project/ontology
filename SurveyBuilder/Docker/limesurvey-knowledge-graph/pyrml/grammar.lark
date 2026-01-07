@@ -1,0 +1,43 @@
+start : f_name "(" parameters ")"
+
+parameters: paramvalue ("," paramvalue)*
+
+f_name: NAME
+
+paramvalue: row | number | string | placeholder | atom | start
+
+row: ROW
+number: dec_number | hex_number | bin_number | oct_number | float_number | imag_number
+string: STRING | LONG_STRING
+placeholder: PLACEHOLDER
+
+dec_number: DEC_NUMBER 
+hex_number: HEX_NUMBER
+bin_number: BIN_NUMBER
+oct_number: OCT_NUMBER
+float_number: FLOAT_NUMBER
+imag_number: IMAG_NUMBER
+
+
+STRING : /[ubf]?r?("(?!"").*?(?<!\\)(\\\\)*?"|'(?!'').*?(?<!\\)(\\\\)*?')/i
+LONG_STRING: /[ubf]?r?(""".*?(?<!\\)(\\\\)*?"""|'''.*?(?<!\\)(\\\\)*?''')/is
+PLACEHOLDER: /\{.+\}/i
+
+DEC_NUMBER: /(-)?(0|[1-9]\d*)/i
+HEX_NUMBER.2: /(-)?0x[\da-f]*/i
+OCT_NUMBER.2: /(-)?0o[0-7]*/i
+BIN_NUMBER.2 : /(-)?0b[0-1]*/i
+FLOAT_NUMBER.2: /(-)?((\d+\.\d*|\.\d+)(e[-+]?\d+)?|\d+(e[-+]?\d+))/i
+IMAG_NUMBER.2: /(-)?\d+j/i | FLOAT_NUMBER "j"i
+
+?atom: "None" -> const_none
+		| boolean
+		
+?boolean: "True"    -> const_true
+		| "False"   -> const_false
+
+NAME: /[a-zA-Z_]\w*/
+
+ROW: "*"
+
+%ignore /[\t \f]+/  // WS
