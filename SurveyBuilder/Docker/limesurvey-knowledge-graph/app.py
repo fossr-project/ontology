@@ -451,10 +451,6 @@ def clean_uri_path(path):
 
 
 def cambiaNomeCSV(input_file):
-    """
-    Pulisce il CSV delle questions e risolve problemi con virgolette e newline.
-    Converte il CSV in un formato compatibile con RML.
-    """
     output_file = "list_questions.csv"
 
     print(f"\n=== PULIZIA CSV QUESTIONS ===")
@@ -750,8 +746,6 @@ def get_complete_question_data(self, question_uri: str) -> Dict[str, Any]:
     results = self.execute_query(query)
     return self._parse_complete_question_data(results)
 
-
-# ==================== RML CONVERTER ====================
 
 class RMLConverter:
     """Classe per convertire file CSV in RDF usando RML mapping"""

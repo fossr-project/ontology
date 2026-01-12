@@ -14,7 +14,7 @@
 # ===========================================
 
 :GroupSource
-    rml:source "list_groups_20251014_105921.csv" ;
+    rml:source "list_groups.csv" ;
     rml:referenceFormulation ql:CSV .
 
 # ===========================================
