@@ -1,0 +1,151 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ls: <https://w3id.org/fossr/ontology/limesurvey/> .
+@prefix data: <https://w3id.org/fossr/data/> .
+@prefix : <https://w3id.org/fossr/mappings/> .
+@base <https://w3id.org/fossr/data/> .
+
+# ===========================================
+# LOGICAL SOURCE
+# ===========================================
+
+:GroupSource
+    rml:source "list_groups.csv" ;
+    rml:referenceFormulation ql:CSV .
+
+# ===========================================
+# SURVEY VERSION
+# ===========================================
+
+:SurveyVersionMap a rr:TriplesMap ;
+    rml:logicalSource :GroupSource ;
+    rr:subjectMap [
+        rr:template "https://w3id.org/fossr/data/surveyVersion_{sid}" ;
+        rr:class ls:SurveyVersion
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:hasSurveyId ;
+        rr:objectMap [
+            rr:parentTriplesMap :IdentifierSurveyMap ;
+            rr:joinCondition [
+                rr:child "sid" ;
+                rr:parent "sid"
+            ]
+        ]
+    ] .
+
+# ===========================================
+# IDENTIFIER SURVEY VERSION (separato)
+# ===========================================
+
+:IdentifierSurveyMap a rr:TriplesMap ;
+    rml:logicalSource :GroupSource ;
+    rr:subjectMap [
+        rr:template "https://w3id.org/fossr/data/surveyVersion_{sid}_identifier" ;
+        rr:class ls:Identifier
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:id ;
+        rr:objectMap [
+            rml:reference "sid" ;
+            rr:datatype xsd:int
+        ]
+    ] .
+
+# ===========================================
+# QUESTION GROUP
+# ===========================================
+
+:QuestionGroupMap a rr:TriplesMap ;
+    rml:logicalSource :GroupSource ;
+    rr:subjectMap [
+        rr:template "https://w3id.org/fossr/data/questionGroup_{gid}" ;
+        rr:class ls:QuestionGroup
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:hasId ;
+        rr:objectMap [
+            rr:parentTriplesMap :IdMap;
+            rr:joinCondition [
+                rr:child "gid" ;
+                rr:parent "gid"
+            ]
+        ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:hasName ;
+        rr:objectMap [
+            rr:parentTriplesMap :NameMap ;
+            rr:joinCondition [
+                rr:child "gid" ;
+                rr:parent "gid"
+            ]
+        ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:hasContent ;
+        rr:objectMap [
+            rr:parentTriplesMap :ContentMap ;
+            rr:joinCondition [
+                rr:child "gid" ;
+                rr:parent "gid"
+            ]
+        ]
+    ] .
+
+
+# ===========================================
+# NAME (separato)
+# ===========================================
+
+:NameMap a rr:TriplesMap ;
+    rml:logicalSource :GroupSource ;
+    rr:subjectMap [
+        rr:template "https://w3id.org/fossr/data/questionGroup_{gid}_name" ;
+        rr:class ls:Name
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:nameText ;
+        rr:objectMap [
+            rml:reference "group_name"
+        ]
+    ] .
+
+# ===========================================
+# CONTENT (separato)
+# ===========================================
+
+:ContentMap a rr:TriplesMap ;
+    rml:logicalSource :GroupSource ;
+    rr:subjectMap [
+        rr:template "https://w3id.org/fossr/data/questionGroup_{gid}_content" ;
+        rr:class ls:Content
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:text ;
+        rr:objectMap [
+            rml:reference "description"
+        ]
+    ] .
+
+# ===========================================
+# IDENTIFIER QUESTION GROUP (separato)
+# ===========================================
+
+:IdMap a rr:TriplesMap ;
+    rml:logicalSource :GroupSource ;
+    rr:subjectMap [
+        rr:template "https://w3id.org/fossr/data/questionGroup_{gid}_identifier" ;
+        rr:class ls:Identifier
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate ls:id ;
+        rr:objectMap [
+            rml:reference "gid";
+            rr:datatype xsd:int
+        ]
+    ] .

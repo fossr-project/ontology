@@ -1,0 +1,779 @@
+[
+  {
+    "qid": "579",
+    "parent_qid": "463",
+    "title": "SQ001",
+    "question": "Dichiaro di aver preso visione del Modulo di Consenso e acconsento a partecipare all'indagine.",
+    "scale_id": "0"
+  },
+  {
+    "qid": "570",
+    "parent_qid": "454",
+    "title": "Nome",
+    "question": "Nome:",
+    "scale_id": "0"
+  },
+  {
+    "qid": "571",
+    "parent_qid": "454",
+    "title": "Cognome",
+    "question": "Cognome:",
+    "scale_id": "0"
+  },
+  {
+    "qid": "480",
+    "parent_qid": "399",
+    "title": "IND",
+    "question": "Via e numero civico:",
+    "scale_id": "0"
+  },
+  {
+    "qid": "481",
+    "parent_qid": "399",
+    "title": "CAP",
+    "question": "CAP:",
+    "scale_id": "0"
+  },
+  {
+    "qid": "588",
+    "parent_qid": "458",
+    "title": "COM",
+    "question": "Comune",
+    "scale_id": "0"
+  },
+  {
+    "qid": "589",
+    "parent_qid": "458",
+    "title": "CMP",
+    "question": "Campione",
+    "scale_id": "0"
+  },
+  {
+    "qid": "574",
+    "parent_qid": "460",
+    "title": "IND",
+    "question": "Via e numero civico:",
+    "scale_id": "0"
+  },
+  {
+    "qid": "575",
+    "parent_qid": "460",
+    "title": "CAP",
+    "question": "CAP:",
+    "scale_id": "0"
+  },
+  {
+    "qid": "576",
+    "parent_qid": "460",
+    "title": "COM",
+    "question": "Comune:",
+    "scale_id": "0"
+  },
+  {
+    "qid": "590",
+    "parent_qid": "460",
+    "title": "CMP",
+    "question": "Campione",
+    "scale_id": "0"
+  },
+  {
+    "qid": "785",
+    "parent_qid": "404",
+    "title": "COD",
+    "question": "Codice",
+    "scale_id": "0"
+  },
+  {
+    "qid": "578",
+    "parent_qid": "404",
+    "title": "TXT",
+    "question": "Testo",
+    "scale_id": "0"
+  },
+  {
+    "qid": "553",
+    "parent_qid": "416",
+    "title": "PRIN",
+    "question": "Lingua principale",
+    "scale_id": "0"
+  },
+  {
+    "qid": "554",
+    "parent_qid": "416",
+    "title": "LING",
+    "question": "Lingua",
+    "scale_id": "1"
+  },
+  {
+    "qid": "555",
+    "parent_qid": "416",
+    "title": "SECO",
+    "question": "Lingua secondaria",
+    "scale_id": "0"
+  },
+  {
+    "qid": "482",
+    "parent_qid": "422",
+    "title": "SQ001",
+    "question": "A casa",
+    "scale_id": "0"
+  },
+  {
+    "qid": "483",
+    "parent_qid": "422",
+    "title": "SQ002",
+    "question": "Sul posto di lavoro",
+    "scale_id": "0"
+  },
+  {
+    "qid": "484",
+    "parent_qid": "422",
+    "title": "SQ003",
+    "question": "Per strada",
+    "scale_id": "0"
+  },
+  {
+    "qid": "485",
+    "parent_qid": "422",
+    "title": "SQ004",
+    "question": "In qualche altro luogo (come bar, centri commerciali, casa di amici, Internet point)",
+    "scale_id": "0"
+  },
+  {
+    "qid": "486",
+    "parent_qid": "422",
+    "title": "SQ005",
+    "question": "In biblioteca, scuola, o università",
+    "scale_id": "0"
+  },
+  {
+    "qid": "487",
+    "parent_qid": "422",
+    "title": "SQ006",
+    "question": "Nessuna delle opzioni precedenti",
+    "scale_id": "0"
+  },
+  {
+    "qid": "488",
+    "parent_qid": "424",
+    "title": "SQ001",
+    "question": "Smartphone ",
+    "scale_id": "0"
+  },
+  {
+    "qid": "489",
+    "parent_qid": "424",
+    "title": "SQ002",
+    "question": "Tablet",
+    "scale_id": "0"
+  },
+  {
+    "qid": "490",
+    "parent_qid": "424",
+    "title": "SQ003",
+    "question": "Computer fisso o portatile",
+    "scale_id": "0"
+  },
+  {
+    "qid": "491",
+    "parent_qid": "424",
+    "title": "SQ004",
+    "question": "Consolle (es. Xbox, PlayStation, ecc.)",
+    "scale_id": "0"
+  },
+  {
+    "qid": "492",
+    "parent_qid": "424",
+    "title": "SQ005",
+    "question": "Smart TV",
+    "scale_id": "0"
+  },
+  {
+    "qid": "493",
+    "parent_qid": "425",
+    "title": "RITE01x401",
+    "question": "Usare servizi di messaggeria istantanea (es. WhatsApp, Skype, Viber, Messenger, Snapchat)",
+    "scale_id": "0"
+  },
+  {
+    "qid": "494",
+    "parent_qid": "425",
+    "title": "RITE01x402",
+    "question": "Spedire o ricevere e-mail",
+    "scale_id": "0"
+  },
+  {
+    "qid": "495",
+    "parent_qid": "425",
+    "title": "RITE01x403",
+    "question": "Effettuare chiamate o video chiamate via Internet (es. WhatsApp, Zoom, Facetime, Skype, Messenger, Viber, Snapchat, MS Teams, Webex, Google Meet, ecc.)",
+    "scale_id": "0"
+  },
+  {
+    "qid": "496",
+    "parent_qid": "425",
+    "title": "RITE01x404",
+    "question": "Guardare video da servizi di condivisione (es. YouTube, Instagram, TikTok)",
+    "scale_id": "0"
+  },
+  {
+    "qid": "497",
+    "parent_qid": "425",
+    "title": "RITE01x405",
+    "question": "Leggere giornali, informazioni, riviste online",
+    "scale_id": "0"
+  },
+  {
+    "qid": "498",
+    "parent_qid": "425",
+    "title": "RITE01x406",
+    "question": "Usare servizi bancari (incluso mobile banking)",
+    "scale_id": "0"
+  },
+  {
+    "qid": "499",
+    "parent_qid": "425",
+    "title": "RITE01x407",
+    "question": "Guardare film o serie TV in streaming da servizi commerciali (es. Netflix, Disney+, DAZN, Sky, Amazon Prime, lnfinity, NowTv, HBO MAX, ecc.)",
+    "scale_id": "0"
+  },
+  {
+    "qid": "500",
+    "parent_qid": "425",
+    "title": "RITE01x408",
+    "question": "Guardare programmi televisivi in streaming, in diretta o in differita da emittenti televisive (es. Rai, Mediaset, ecc.)",
+    "scale_id": "0"
+  },
+  {
+    "qid": "501",
+    "parent_qid": "425",
+    "title": "RITE01x409",
+    "question": "Accedere al fascicolo sanitario elettronico o a cartelle cliniche elettroniche",
+    "scale_id": "0"
+  },
+  {
+    "qid": "502",
+    "parent_qid": "425",
+    "title": "RITE01x410",
+    "question": "Vendere merci o servizi attraverso siti web o app (es. eBay, Facebook Marketplace, Subito, ecc.)",
+    "scale_id": "0"
+  },
+  {
+    "qid": "503",
+    "parent_qid": "426",
+    "title": "RITE02x1",
+    "question": "Stampare un documento",
+    "scale_id": "0"
+  },
+  {
+    "qid": "504",
+    "parent_qid": "426",
+    "title": "RITE02x2",
+    "question": "Installare o disinstallare un programma/app",
+    "scale_id": "0"
+  },
+  {
+    "qid": "505",
+    "parent_qid": "426",
+    "title": "RITE02x3",
+    "question": "Cambiare una password",
+    "scale_id": "0"
+  },
+  {
+    "qid": "506",
+    "parent_qid": "426",
+    "title": "RITE02x4",
+    "question": "Creare o modificare un file (es. un documento Word, un’immagine, ecc.)",
+    "scale_id": "0"
+  },
+  {
+    "qid": "507",
+    "parent_qid": "429",
+    "title": "SQ001",
+    "question": "Un/a familiare",
+    "scale_id": "0"
+  },
+  {
+    "qid": "508",
+    "parent_qid": "429",
+    "title": "SQ002",
+    "question": "Un/a amico/a",
+    "scale_id": "0"
+  },
+  {
+    "qid": "509",
+    "parent_qid": "429",
+    "title": "SQ003",
+    "question": "Un/a collega",
+    "scale_id": "0"
+  },
+  {
+    "qid": "510",
+    "parent_qid": "429",
+    "title": "SQ004",
+    "question": "Un/a vicino/a di casa",
+    "scale_id": "0"
+  },
+  {
+    "qid": "511",
+    "parent_qid": "429",
+    "title": "SQ005",
+    "question": "Un impiegato di call center/numero verde",
+    "scale_id": "0"
+  },
+  {
+    "qid": "512",
+    "parent_qid": "429",
+    "title": "SQ007",
+    "question": "Non so/Non ricordo",
+    "scale_id": "0"
+  },
+  {
+    "qid": "572",
+    "parent_qid": "429",
+    "title": "SQ006",
+    "question": "Assistenza professionale presso il proprio domicilio",
+    "scale_id": "0"
+  },
+  {
+    "qid": "513",
+    "parent_qid": "431",
+    "title": "RHea01x1",
+    "question": "Nell’insieme quanto si ritiene felice? Per rispondere utilizzi questa scala dove 0 corrisponde a “del tutto infelice” e 10 a “del tutto felice”.",
+    "scale_id": "0"
+  },
+  {
+    "qid": "514",
+    "parent_qid": "432",
+    "title": "RHea02",
+    "question": "Nell’insieme quanto si ritiene felice? Per rispondere utilizzi questa scala dove 0 corrisponde a “del tutto infelice” e 10 a “del tutto felice”.",
+    "scale_id": "0"
+  },
+  {
+    "qid": "582",
+    "parent_qid": "466",
+    "title": "RHea02",
+    "question": "Nell’insieme quanto si ritiene felice? Per rispondere utilizzi questa scala dove 0 corrisponde a “del tutto infelice” e 10 a “del tutto felice”.",
+    "scale_id": "0"
+  },
+  {
+    "qid": "583",
+    "parent_qid": "467",
+    "title": "RHea02",
+    "question": "Nell’insieme quanto si ritiene felice? Per rispondere utilizzi questa scala dove 0 corrisponde a “del tutto infelice” e 10 a “del tutto felice”.",
+    "scale_id": "0"
+  },
+  {
+    "qid": "584",
+    "parent_qid": "468",
+    "title": "RHea02",
+    "question": "Nell’insieme quanto si ritiene felice? Per rispondere utilizzi questa scala dove 0 corrisponde a “del tutto infelice” e 10 a “del tutto felice”.",
+    "scale_id": "0"
+  },
+  {
+    "qid": "515",
+    "parent_qid": "433",
+    "title": "RHea03x1",
+    "question": "Sentirsi nervosa/o, ansiosa/o o agitata/o",
+    "scale_id": "0"
+  },
+  {
+    "qid": "516",
+    "parent_qid": "433",
+    "title": "RHea03x2",
+    "question": "Sentirsi depressa/o",
+    "scale_id": "0"
+  },
+  {
+    "qid": "517",
+    "parent_qid": "433",
+    "title": "RHea03x3",
+    "question": "Sentirsi sola/o",
+    "scale_id": "0"
+  },
+  {
+    "qid": "518",
+    "parent_qid": "433",
+    "title": "RHea03x4",
+    "question": "Sentirsi ottimista per il futuro",
+    "scale_id": "0"
+  },
+  {
+    "qid": "519",
+    "parent_qid": "435",
+    "title": "RPIn01x1",
+    "question": "... in televisione ",
+    "scale_id": "0"
+  },
+  {
+    "qid": "520",
+    "parent_qid": "435",
+    "title": "RPIn01x2",
+    "question": "... alla radio",
+    "scale_id": "0"
+  },
+  {
+    "qid": "521",
+    "parent_qid": "435",
+    "title": "RPIn01x3",
+    "question": "... sui quotidiani cartacei",
+    "scale_id": "0"
+  },
+  {
+    "qid": "522",
+    "parent_qid": "435",
+    "title": "RPIn01x4",
+    "question": "... sui quotidiani online",
+    "scale_id": "0"
+  },
+  {
+    "qid": "523",
+    "parent_qid": "435",
+    "title": "RPIn01x6",
+    "question": "... sui social media",
+    "scale_id": "0"
+  },
+  {
+    "qid": "573",
+    "parent_qid": "435",
+    "title": "RPIn01x5",
+    "question": "... sui siti di informazione",
+    "scale_id": "0"
+  },
+  {
+    "qid": "524",
+    "parent_qid": "437",
+    "title": "RVal01x1",
+    "question": "L’aborto",
+    "scale_id": "0"
+  },
+  {
+    "qid": "525",
+    "parent_qid": "437",
+    "title": "RVal01x2",
+    "question": "L'eutanasia (porre fine alla vita di una persona affetta da una malattia inguaribile)",
+    "scale_id": "0"
+  },
+  {
+    "qid": "526",
+    "parent_qid": "437",
+    "title": "RVal01x3",
+    "question": "Il suicidio",
+    "scale_id": "0"
+  },
+  {
+    "qid": "527",
+    "parent_qid": "437",
+    "title": "RVal01x4",
+    "question": "Gestazione per altri (portare avanti una gravidanza per un’altra persona o per una coppia)",
+    "scale_id": "0"
+  },
+  {
+    "qid": "528",
+    "parent_qid": "438",
+    "title": "RVal02x1",
+    "question": "È probabile che un bambino in età pre-scolare soffra se sua madre lavora",
+    "scale_id": "0"
+  },
+  {
+    "qid": "529",
+    "parent_qid": "438",
+    "title": "RVal02x2",
+    "question": "Va bene lavorare, ma ciò che la maggior parte delle donne vuole veramente è una casa e dei figli",
+    "scale_id": "0"
+  },
+  {
+    "qid": "530",
+    "parent_qid": "438",
+    "title": "RVal02x3",
+    "question": "Un padre che lavora dovrebbe usufruire del congedo parentale per prendersi cura dei suoi figli",
+    "scale_id": "0"
+  },
+  {
+    "qid": "531",
+    "parent_qid": "438",
+    "title": "RVal02x4",
+    "question": "Uomini e donne devono contribuire equamente nel prendersi cura dei propri figli",
+    "scale_id": "0"
+  },
+  {
+    "qid": "556",
+    "parent_qid": "439",
+    "title": "RVal03x1",
+    "question": "Buone maniere",
+    "scale_id": "0"
+  },
+  {
+    "qid": "557",
+    "parent_qid": "439",
+    "title": "RVal03x2",
+    "question": "Indipendenza",
+    "scale_id": "0"
+  },
+  {
+    "qid": "558",
+    "parent_qid": "439",
+    "title": "RVal03x3",
+    "question": "Capacità di lavorare sodo",
+    "scale_id": "0"
+  },
+  {
+    "qid": "559",
+    "parent_qid": "439",
+    "title": "RVal03x4",
+    "question": "Senso di responsabilità",
+    "scale_id": "0"
+  },
+  {
+    "qid": "560",
+    "parent_qid": "439",
+    "title": "RVal03x5",
+    "question": "Immaginazione",
+    "scale_id": "0"
+  },
+  {
+    "qid": "561",
+    "parent_qid": "439",
+    "title": "RVal03x6",
+    "question": "Rispetto degli altri",
+    "scale_id": "0"
+  },
+  {
+    "qid": "562",
+    "parent_qid": "439",
+    "title": "RVal03x7",
+    "question": "Tolleranza",
+    "scale_id": "0"
+  },
+  {
+    "qid": "563",
+    "parent_qid": "439",
+    "title": "RVal03x8",
+    "question": "Far economia, capacità di risparmiare denaro e cose",
+    "scale_id": "0"
+  },
+  {
+    "qid": "564",
+    "parent_qid": "439",
+    "title": "RVal03x9",
+    "question": "Determinazione, perseveranza",
+    "scale_id": "0"
+  },
+  {
+    "qid": "565",
+    "parent_qid": "439",
+    "title": "RVal03x10",
+    "question": "Fede religiosa",
+    "scale_id": "0"
+  },
+  {
+    "qid": "566",
+    "parent_qid": "439",
+    "title": "RVal03x11",
+    "question": "Altruismo",
+    "scale_id": "0"
+  },
+  {
+    "qid": "567",
+    "parent_qid": "439",
+    "title": "RVal03x12",
+    "question": "Obbedienza",
+    "scale_id": "0"
+  },
+  {
+    "qid": "568",
+    "parent_qid": "439",
+    "title": "RVal03xNS",
+    "question": "Non so",
+    "scale_id": "0"
+  },
+  {
+    "qid": "569",
+    "parent_qid": "439",
+    "title": "RVal03xNR",
+    "question": "Preferisco non rispondere",
+    "scale_id": "0"
+  },
+  {
+    "qid": "532",
+    "parent_qid": "440",
+    "title": "SQ001",
+    "question": "Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti? Indichi la sua opinione utilizzando una scala da 0 a 10, dove 0 rappresenta la necessità di essere diffidenti e 10 rappresenta la possibilità di fidarsi.",
+    "scale_id": "0"
+  },
+  {
+    "qid": "585",
+    "parent_qid": "469",
+    "title": "SQ001",
+    "question": "Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti? Indichi la sua opinione utilizzando una scala da 0 a 10, dove 0 rappresenta la necessità di essere diffidenti e 10 rappresenta la possibilità di fidarsi.",
+    "scale_id": "0"
+  },
+  {
+    "qid": "586",
+    "parent_qid": "470",
+    "title": "SQ001",
+    "question": "Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti? Indichi la sua opinione utilizzando una scala da 0 a 10, dove 0 rappresenta la necessità di essere diffidenti e 10 rappresenta la possibilità di fidarsi.",
+    "scale_id": "0"
+  },
+  {
+    "qid": "587",
+    "parent_qid": "471",
+    "title": "SQ001",
+    "question": "Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti? Indichi la sua opinione utilizzando una scala da 0 a 10, dove 0 rappresenta la necessità di essere diffidenti e 10 rappresenta la possibilità di fidarsi.",
+    "scale_id": "0"
+  },
+  {
+    "qid": "533",
+    "parent_qid": "441",
+    "title": "RTru02x1",
+    "question": "Il Parlamento italiano",
+    "scale_id": "0"
+  },
+  {
+    "qid": "534",
+    "parent_qid": "441",
+    "title": "RTru02x2",
+    "question": "La Magistratura",
+    "scale_id": "0"
+  },
+  {
+    "qid": "535",
+    "parent_qid": "441",
+    "title": "RTru02x3",
+    "question": "La Polizia",
+    "scale_id": "0"
+  },
+  {
+    "qid": "536",
+    "parent_qid": "441",
+    "title": "RTru02x4",
+    "question": "I politici",
+    "scale_id": "0"
+  },
+  {
+    "qid": "537",
+    "parent_qid": "441",
+    "title": "RTru02x5",
+    "question": "I partiti politici",
+    "scale_id": "0"
+  },
+  {
+    "qid": "538",
+    "parent_qid": "441",
+    "title": "RTru02x6",
+    "question": "Il Parlamento europeo",
+    "scale_id": "0"
+  },
+  {
+    "qid": "539",
+    "parent_qid": "442",
+    "title": "SQ001",
+    "question": "In generale, direbbe che il mondo è migliore o peggiore per via della scienza e della tecnologia? Indichi la Sua posizione utilizzando questa scala, in cui 0 significa che il mondo è \"Molto peggiore\" e 10 che il mondo è “Molto migliore”",
+    "scale_id": "0"
+  },
+  {
+    "qid": "540",
+    "parent_qid": "443",
+    "title": "SQ001",
+    "question": "In politica, a volte si parla di \"sinistra\" e di \"destra\". Dove si collocherebbe in una scala da 0 a 10, dove 0 rappresenta la sinistra e 10 rappresenta la destra?",
+    "scale_id": "0"
+  },
+  {
+    "qid": "541",
+    "parent_qid": "445",
+    "title": "RSAt01x1",
+    "question": "Trovo piacevole rispondere ai questionari, sia per iscritto sia via Internet",
+    "scale_id": "0"
+  },
+  {
+    "qid": "542",
+    "parent_qid": "445",
+    "title": "RSAt01x2",
+    "question": "Trovo piacevole essere intervistata/o per una ricerca",
+    "scale_id": "0"
+  },
+  {
+    "qid": "543",
+    "parent_qid": "445",
+    "title": "RSAt01x3",
+    "question": "Le indagini demoscopiche sono importanti per la società",
+    "scale_id": "0"
+  },
+  {
+    "qid": "544",
+    "parent_qid": "445",
+    "title": "RSAt01x4",
+    "question": "Con i dati provenienti da indagini demoscopiche, si possono ottenere molte informazioni utili",
+    "scale_id": "0"
+  },
+  {
+    "qid": "545",
+    "parent_qid": "445",
+    "title": "RSAt01x5",
+    "question": "Le indagini demoscopiche violano la privacy",
+    "scale_id": "0"
+  },
+  {
+    "qid": "546",
+    "parent_qid": "445",
+    "title": "RSAt01x6",
+    "question": "Trovo faticoso rispondere a/compilare un questionario",
+    "scale_id": "0"
+  },
+  {
+    "qid": "547",
+    "parent_qid": "446",
+    "title": "RSAt02x1",
+    "question": "Noiosa",
+    "scale_id": "0"
+  },
+  {
+    "qid": "548",
+    "parent_qid": "446",
+    "title": "RSAt02x2",
+    "question": "Difficile",
+    "scale_id": "0"
+  },
+  {
+    "qid": "549",
+    "parent_qid": "446",
+    "title": "RSAt02x3",
+    "question": "Sgradevole/Spiacevole",
+    "scale_id": "0"
+  },
+  {
+    "qid": "550",
+    "parent_qid": "446",
+    "title": "RSAt02x4",
+    "question": "Lunga",
+    "scale_id": "0"
+  },
+  {
+    "qid": "551",
+    "parent_qid": "450",
+    "title": "RRec02x1",
+    "question": "Indirizzo e-mail",
+    "scale_id": "0"
+  },
+  {
+    "qid": "552",
+    "parent_qid": "450",
+    "title": "RRec02x2",
+    "question": "Numero di telefonia mobile",
+    "scale_id": "0"
+  },
+  {
+    "qid": "581",
+    "parent_qid": "464",
+    "title": "SQ001",
+    "question": "Dichiaro di aver preso visione dell'Informativa sulla Privacy e autorizzo il trattamento dei miei dati personali.",
+    "scale_id": "0"
+  },
+  {
+    "qid": "580",
+    "parent_qid": "465",
+    "title": "SQ001",
+    "question": "Dichiaro di aver preso visione del Modulo di Consenso e acconsento a partecipare all'indagine.",
+    "scale_id": "0"
+  }
+]

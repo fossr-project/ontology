@@ -1,0 +1,177 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix ls: <https://w3id.org/fossr/ontology/limesurvey/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================
+# LOGICAL SOURCE - ANSWER OPTIONS
+# ============================================
+
+<#AnswerOptionsSource>
+  rml:source "answeroptions_only.json" ;
+  rml:referenceFormulation ql:JSONPath ;
+  rml:iterator "$[*]" .
+
+# ============================================
+# ✅ NUOVO: MAPPING QUESTION → ANSWEROPTION LINK
+# ============================================
+
+<#QuestionToAnswerLinkMapping>
+  rml:logicalSource <#AnswerOptionsSource> ;
+
+  # Soggetto: la Question (usando parent_qid)
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/question_{parent_qid}" ;
+  ] ;
+
+  # Predicato: hasAnswerOption
+  # Oggetto: l'AnswerOption
+  rr:predicateObjectMap [
+    rr:predicate ls:hasAnswerOption ;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/answer_{parent_qid}_{code}" ;
+      rr:termType rr:IRI
+    ]
+  ] .
+
+# ============================================
+# MAPPING ANSWER OPTIONS
+# ============================================
+
+<#AnswerOptionMapping>
+  rml:logicalSource <#AnswerOptionsSource> ;
+
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/answer_{parent_qid}_{code}" ;
+    rr:class ls:AnswerOption
+  ] ;
+
+  # componentValue (code)
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "code"
+    ]
+  ] ;
+
+  # hasContent
+  rr:predicateObjectMap [
+    rr:predicate ls:hasContent ;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/content_answer_{parent_qid}_{code}" ;
+      rr:termType rr:IRI
+    ]
+  ] ;
+
+  # hasComponentAttribute (order)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/attribute_answer_{parent_qid}_{code}_order" ;
+      rr:termType rr:IRI
+    ]
+  ] ;
+
+  # hasComponentAttribute (assessment_value)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/attribute_answer_{parent_qid}_{code}_assessment" ;
+      rr:termType rr:IRI
+    ]
+  ] ;
+
+  # hasComponentAttribute (scale_id)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/attribute_answer_{parent_qid}_{code}_scale_id" ;
+      rr:termType rr:IRI
+    ]
+  ] .
+
+# ============================================
+# ENTITÀ SUPPORTO - ANSWER OPTIONS
+# ============================================
+
+<#AnswerContentMapping>
+  rml:logicalSource <#AnswerOptionsSource> ;
+
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/content_answer_{parent_qid}_{code}" ;
+    rr:class ls:Content
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:text ;
+    rr:objectMap [
+      rml:reference "answer"
+    ]
+  ] .
+
+<#AnswerOrderMapping>
+  rml:logicalSource <#AnswerOptionsSource> ;
+
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/attribute_answer_{parent_qid}_{code}_order" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "sortorder"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "order"
+    ]
+  ] .
+
+<#AnswerAssessmentMapping>
+  rml:logicalSource <#AnswerOptionsSource> ;
+
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/attribute_answer_{parent_qid}_{code}_assessment" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "assessment_value"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "assessment_value"
+    ]
+  ] .
+
+<#AnswerScaleIdMapping>
+  rml:logicalSource <#AnswerOptionsSource> ;
+
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/attribute_answer_{parent_qid}_{code}_scale_id" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "scale_id"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "scale_id"
+    ]
+  ] .

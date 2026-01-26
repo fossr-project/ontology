@@ -1,0 +1,2375 @@
+@base <file:///Users/sara/PycharmProjects/Completo/4_attributes_output.ttl> .
+@prefix ns1: <https://w3id.org/fossr/ontology/limesurvey/> .
+
+<https://w3id.org/fossr/data/attribute_dynamic_397_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_397_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_397_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_397_max_buttons_row> a ns1:ComponentAttribute ;
+    ns1:componentName "max_buttons_row" ;
+    ns1:componentValue "col-md-2" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_397_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_397_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_397_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_398_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_398_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_398_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_398_max_buttons_row> a ns1:ComponentAttribute ;
+    ns1:componentName "max_buttons_row" ;
+    ns1:componentValue "col-md-2" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_398_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_398_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_398_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_399_em_validation_q> a ns1:ComponentAttribute ;
+    ns1:componentName "em_validation_q" ;
+    ns1:componentValue "is_empty(RVer02x1_CAP.NAOK) or regexMatch('/^\\d\\d[01]\\d\\d$/', RVer02x1_CAP.NAOK)" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_399_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_399_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_400_date_format> a ns1:ComponentAttribute ;
+    ns1:componentName "date_format" ;
+    ns1:componentValue "dd/mm/yyyy" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_400_dropdown_dates_minute_step> a ns1:ComponentAttribute ;
+    ns1:componentName "dropdown_dates_minute_step" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_400_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_400_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_401_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_401_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_401_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_401_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_401_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_402_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_402_max_num_value_n> a ns1:ComponentAttribute ;
+    ns1:componentName "max_num_value_n" ;
+    ns1:componentValue "99" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_402_min_num_value_n> a ns1:ComponentAttribute ;
+    ns1:componentName "min_num_value_n" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_402_num_value_int_only> a ns1:ComponentAttribute ;
+    ns1:componentName "num_value_int_only" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_402_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_403_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_403_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_403_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_403_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_403_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_404_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_404_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_405_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_405_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_405_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_405_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_405_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_406_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_406_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_406_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_406_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_406_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_407_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_407_max_num_value_n> a ns1:ComponentAttribute ;
+    ns1:componentName "max_num_value_n" ;
+    ns1:componentValue "30" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_407_num_value_int_only> a ns1:ComponentAttribute ;
+    ns1:componentName "num_value_int_only" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_407_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_408_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_408_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_408_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_408_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_408_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_409_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_409_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_409_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_409_show_search> a ns1:ComponentAttribute ;
+    ns1:componentName "show_search" ;
+    ns1:componentValue "true" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_409_show_tick> a ns1:ComponentAttribute ;
+    ns1:componentName "show_tick" ;
+    ns1:componentValue "true" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_409_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_409_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_409_width_entry> a ns1:ComponentAttribute ;
+    ns1:componentName "width_entry" ;
+    ns1:componentValue "true" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_410_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_410_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_410_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_410_max_buttons_row> a ns1:ComponentAttribute ;
+    ns1:componentName "max_buttons_row" ;
+    ns1:componentValue "col-md-2" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_410_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_410_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_410_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_411_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_411_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_411_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_411_show_search> a ns1:ComponentAttribute ;
+    ns1:componentName "show_search" ;
+    ns1:componentValue "true" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_411_show_tick> a ns1:ComponentAttribute ;
+    ns1:componentName "show_tick" ;
+    ns1:componentValue "true" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_411_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_411_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_411_width_entry> a ns1:ComponentAttribute ;
+    ns1:componentName "width_entry" ;
+    ns1:componentValue "true" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_412_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_412_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_412_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_412_max_buttons_row> a ns1:ComponentAttribute ;
+    ns1:componentName "max_buttons_row" ;
+    ns1:componentValue "col-md-2" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_412_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_412_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_412_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_413_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_413_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_413_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_413_max_buttons_row> a ns1:ComponentAttribute ;
+    ns1:componentName "max_buttons_row" ;
+    ns1:componentValue "col-md-2" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_413_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_413_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_413_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_414_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_414_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_414_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_414_show_search> a ns1:ComponentAttribute ;
+    ns1:componentName "show_search" ;
+    ns1:componentValue "true" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_414_show_tick> a ns1:ComponentAttribute ;
+    ns1:componentName "show_tick" ;
+    ns1:componentValue "true" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_414_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_414_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_414_width_entry> a ns1:ComponentAttribute ;
+    ns1:componentName "width_entry" ;
+    ns1:componentValue "true" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_415_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_415_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_415_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_415_show_search> a ns1:ComponentAttribute ;
+    ns1:componentName "show_search" ;
+    ns1:componentValue "true" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_415_show_tick> a ns1:ComponentAttribute ;
+    ns1:componentName "show_tick" ;
+    ns1:componentValue "true" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_415_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_415_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_415_width_entry> a ns1:ComponentAttribute ;
+    ns1:componentName "width_entry" ;
+    ns1:componentValue "true" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_416_em_validation_q> a ns1:ComponentAttribute ;
+    ns1:componentName "em_validation_q" ;
+    ns1:componentValue "!is_empty(RSDe10_PRIN_LING.NAOK) AND RSDe10_PRIN_LING.NAOK != RSDe10_SECO_LING.NAOK" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_416_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_416_show_totals> a ns1:ComponentAttribute ;
+    ns1:componentName "show_totals" ;
+    ns1:componentValue "X" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_416_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_417_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_417_hidden> a ns1:ComponentAttribute ;
+    ns1:componentName "hidden" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_417_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_417_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_417_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_417_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_418_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_418_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_418_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "specific" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_418_other_position_code> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position_code" ;
+    ns1:componentValue "AO04" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_418_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_418_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_419_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_419_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_419_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_419_max_buttons_row> a ns1:ComponentAttribute ;
+    ns1:componentName "max_buttons_row" ;
+    ns1:componentValue "col-md-2" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_419_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_419_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_419_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_420_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_420_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_420_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_420_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_420_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_421_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_421_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_421_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_421_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_421_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_421_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_422_assessment_value> a ns1:ComponentAttribute ;
+    ns1:componentName "assessment_value" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_422_exclude_all_others> a ns1:ComponentAttribute ;
+    ns1:componentName "exclude_all_others" ;
+    ns1:componentValue "SQ006" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_422_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_422_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "specific" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_422_other_position_code> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position_code" ;
+    ns1:componentValue "SQ005" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_422_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_423_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_423_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_423_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_423_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_423_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_424_assessment_value> a ns1:ComponentAttribute ;
+    ns1:componentName "assessment_value" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_424_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_424_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "end" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_424_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_425_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_425_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_426_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_426_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_427_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_427_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_427_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_427_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_427_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_427_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_428_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_428_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_428_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_428_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_428_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_428_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_429_assessment_value> a ns1:ComponentAttribute ;
+    ns1:componentName "assessment_value" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_429_exclude_all_others> a ns1:ComponentAttribute ;
+    ns1:componentName "exclude_all_others" ;
+    ns1:componentValue "SQ007" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_429_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_429_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "end" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_429_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_430_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_430_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_430_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_430_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_430_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_430_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_431_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_431_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_432_hidden> a ns1:ComponentAttribute ;
+    ns1:componentName "hidden" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_432_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_432_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_433_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_433_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_434_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_434_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_434_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_434_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_434_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_435_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_435_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_436_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_436_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_436_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_436_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_436_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_437_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_437_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_438_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_438_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_439_assessment_value> a ns1:ComponentAttribute ;
+    ns1:componentName "assessment_value" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_439_exclude_all_others> a ns1:ComponentAttribute ;
+    ns1:componentName "exclude_all_others" ;
+    ns1:componentValue "RVal03xNS;RVal03xNR" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_439_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_439_max_answers> a ns1:ComponentAttribute ;
+    ns1:componentName "max_answers" ;
+    ns1:componentValue "5" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_439_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "end" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_439_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_440_hidden> a ns1:ComponentAttribute ;
+    ns1:componentName "hidden" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_440_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_440_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_441_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_441_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_442_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_442_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_443_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_443_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_444_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_444_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_444_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_444_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_444_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_445_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_445_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_446_answer_width> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_width" ;
+    ns1:componentValue "10" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_446_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_446_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_447_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_447_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_447_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_447_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_447_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_447_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_448_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_448_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_448_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_448_max_buttons_row> a ns1:ComponentAttribute ;
+    ns1:componentName "max_buttons_row" ;
+    ns1:componentValue "col-md-12" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_448_other_comment_mandatory> a ns1:ComponentAttribute ;
+    ns1:componentName "other_comment_mandatory" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_448_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_448_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_448_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_449_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_449_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_449_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_450_em_validation_q> a ns1:ComponentAttribute ;
+    ns1:componentName "em_validation_q" ;
+    ns1:componentValue "(is_empty(RRec02_RRec02x1.NAOK) OR regexMatch('/^(\\w[-._+\\w]*\\w@\\w[-._\\w]*\\w\\.\\w{2,5})$/',RRec02_RRec02x1.NAOK)) AND (is_empty(RRec02_RRec02x2.NAOK) OR regexMatch('/^(3\\d{8,9})$/',RRec02_RRec02x2.NAOK))" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_450_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_450_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_451_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_451_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_451_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_451_max_buttons_row> a ns1:ComponentAttribute ;
+    ns1:componentName "max_buttons_row" ;
+    ns1:componentValue "col-md-2" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_451_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_451_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_451_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_452_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_452_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_452_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_452_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_452_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_453_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_453_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_454_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_455_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_455_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_455_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_455_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_455_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_455_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_456_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_456_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_456_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_456_max_buttons_row> a ns1:ComponentAttribute ;
+    ns1:componentName "max_buttons_row" ;
+    ns1:componentValue "col-md-2" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_456_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_456_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_456_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_457_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_457_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_457_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_458_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_459_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_459_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_459_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_459_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_459_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_459_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_460_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_461_em_validation_q> a ns1:ComponentAttribute ;
+    ns1:componentName "em_validation_q" ;
+    ns1:componentValue "RSDe02x1.NAOK < RSDe02.NAOK" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_461_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_461_max_num_value_n> a ns1:ComponentAttribute ;
+    ns1:componentName "max_num_value_n" ;
+    ns1:componentValue "98" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_461_num_value_int_only> a ns1:ComponentAttribute ;
+    ns1:componentName "num_value_int_only" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_461_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_462_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_462_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_462_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_462_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_462_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_463_assessment_value> a ns1:ComponentAttribute ;
+    ns1:componentName "assessment_value" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_463_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_463_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "end" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_463_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_464_assessment_value> a ns1:ComponentAttribute ;
+    ns1:componentName "assessment_value" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_464_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_464_min_answers> a ns1:ComponentAttribute ;
+    ns1:componentName "min_answers" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_464_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "end" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_464_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_465_assessment_value> a ns1:ComponentAttribute ;
+    ns1:componentName "assessment_value" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_465_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_465_min_answers> a ns1:ComponentAttribute ;
+    ns1:componentName "min_answers" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_465_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "end" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_465_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_466_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_466_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_467_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_467_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_468_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_468_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_469_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_469_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_470_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_470_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_471_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_471_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_472_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_472_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_472_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_472_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_472_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_473_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_473_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_473_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_473_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_473_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_474_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_474_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_474_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_474_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_474_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_475_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_475_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_475_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_475_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_476_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_476_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_476_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_476_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_477_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_477_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_477_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_477_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_478_answer_order> a ns1:ComponentAttribute ;
+    ns1:componentName "answer_order" ;
+    ns1:componentValue "normal" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_478_button_size> a ns1:ComponentAttribute ;
+    ns1:componentName "button_size" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_478_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_478_max_buttons_row> a ns1:ComponentAttribute ;
+    ns1:componentName "max_buttons_row" ;
+    ns1:componentValue "col-md-2" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_478_other_position> a ns1:ComponentAttribute ;
+    ns1:componentName "other_position" ;
+    ns1:componentValue "default" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_478_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_478_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_479_em_validation_q> a ns1:ComponentAttribute ;
+    ns1:componentName "em_validation_q" ;
+    ns1:componentValue "(is_empty(RRec01x3tris.NAOK) OR regexMatch('/^([03]\\d{8,11})$/',RRec01x3tris.NAOK))" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_479_hide_tip> a ns1:ComponentAttribute ;
+    ns1:componentName "hide_tip" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_479_location_mapheight> a ns1:ComponentAttribute ;
+    ns1:componentName "location_mapheight" ;
+    ns1:componentValue "300" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_479_location_mapwidth> a ns1:ComponentAttribute ;
+    ns1:componentName "location_mapwidth" ;
+    ns1:componentValue "500" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_479_location_mapzoom> a ns1:ComponentAttribute ;
+    ns1:componentName "location_mapzoom" ;
+    ns1:componentValue "11" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_479_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_479_statistics_showmap> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showmap" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_479_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_480_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_480_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_481_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_481_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_482_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_482_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_483_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_483_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_484_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_484_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_485_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_485_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_486_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_486_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_487_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_487_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_488_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_488_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_489_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_489_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_490_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_490_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_491_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_491_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_492_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_492_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_493_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_493_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_494_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_494_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_495_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_495_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_496_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_496_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_497_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_497_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_498_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_498_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_499_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_499_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_500_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_500_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_501_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_501_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_502_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_502_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_503_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_503_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_504_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_504_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_505_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_505_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_506_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_506_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_507_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_507_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_508_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_508_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_509_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_509_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_510_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_510_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_511_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_511_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_512_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_512_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_513_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_513_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_514_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_514_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_515_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_515_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_516_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_516_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_517_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_517_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_518_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_518_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_519_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_519_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_520_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_520_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_521_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_521_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_522_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_522_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_523_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_523_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_524_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_524_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_525_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_525_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_526_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_526_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_527_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_527_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_528_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_528_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_529_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_529_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_530_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_530_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_531_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_531_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_532_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_532_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_533_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_533_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_534_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_534_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_535_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_535_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_536_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_536_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_537_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_537_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_538_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_538_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_539_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_539_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_540_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_540_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_541_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_541_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_542_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_542_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_543_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_543_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_544_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_544_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_545_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_545_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_546_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_546_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_547_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_547_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_548_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_548_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_549_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_549_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_550_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_550_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_551_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_551_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_552_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_552_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_553_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_553_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_554_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_554_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_555_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_555_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_556_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_556_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_557_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_557_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_558_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_558_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_559_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_559_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_560_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_560_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_561_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_561_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_562_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_562_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_563_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_563_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_564_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_564_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_565_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_565_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_566_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_566_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_567_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_567_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_568_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_568_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_569_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_569_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_570_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_570_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_571_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_571_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_572_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_572_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_573_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_573_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_574_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_574_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_575_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_575_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_576_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_576_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_578_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_578_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_579_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_579_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_580_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_580_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_581_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_581_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_582_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_582_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_583_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_583_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_584_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_584_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_585_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_585_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_586_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_586_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_587_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_587_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_588_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_588_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_589_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_589_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_590_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_590_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_785_statistics_showgraph> a ns1:ComponentAttribute ;
+    ns1:componentName "statistics_showgraph" ;
+    ns1:componentValue "1" .
+
+<https://w3id.org/fossr/data/attribute_dynamic_785_time_limit_action> a ns1:ComponentAttribute ;
+    ns1:componentName "time_limit_action" ;
+    ns1:componentValue "1" .
+

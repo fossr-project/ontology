@@ -1,0 +1,945 @@
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Builder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 40px);
+        }
+
+       .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left h1 {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+}
+
+.header-left p {
+    opacity: 0.9;
+    font-size: 0.95em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-link {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background: white;
+    color: #667eea;
+}
+        .config-bar {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .config-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .config-group label {
+            font-weight: 600;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .config-group input {
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.9em;
+            min-width: 200px;
+        }
+
+        .config-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 350px;
+            border-right: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            background: #fafafa;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .sidebar-header h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .items-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .group-item,
+        .question-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .group-item:hover,
+        .question-item:hover {
+            border-color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .group-item.selected,
+        .question-item.selected {
+            border-color: #667eea;
+            background: #e8ebff;
+        }
+
+        .group-item.expanded {
+            border-color: #667eea;
+        }
+
+        .nested-question {
+            margin-left: 20px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding: 12px 15px;
+            background: linear-gradient(to right, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .nested-question::before {
+            content: "└─";
+            position: absolute;
+            left: -20px;
+            color: #999;
+            font-weight: bold;
+        }
+
+        .nested-question:hover {
+            background: linear-gradient(to right, #e8ebff 0%, #f8f9ff 100%);
+            transform: translateX(3px);
+            border-left-color: #667eea;
+        }
+
+        .nested-question.selected {
+            background: linear-gradient(to right, #d4e3ff 0%, #e8f0ff 100%);
+            border-left-color: #667eea;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+        }
+
+        .questions-container {
+            margin-top: 10px;
+            padding-left: 15px;
+            border-left: 2px solid #e0e0e0;
+            margin-left: 10px;
+        }
+
+        .questions-container.visible {
+            display: block !important;
+        }
+
+        .expand-icon {
+            cursor: pointer;
+            margin-right: 8px;
+            transition: transform 0.3s;
+            display: inline-block;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .expand-icon.expanded {
+            transform: rotate(90deg);
+        }
+
+        .question-count {
+            background: #764ba2;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            margin-left: 8px;
+        }
+
+        .edit-icon {
+            color: #667eea;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 0.9em;
+        }
+
+        .edit-icon:hover {
+            color: #764ba2;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .item-badge {
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+
+        .item-description {
+            color: #666;
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+
+        .item-meta {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+            font-size: 0.8em;
+            color: #999;
+        }
+
+        .main-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .tabs {
+            display: flex;
+            background: white;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab {
+            padding: 15px 25px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab:hover {
+            color: #667eea;
+        }
+
+        .tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 25px;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .preview-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .preview-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .preview-group {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .preview-group-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .preview-group-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .preview-question {
+            background: #fafafa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 3px solid #764ba2;
+        }
+
+        .preview-question-text {
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .empty-state-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .selected-items {
+            background: #e8f5e9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .selected-items h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .selected-chip {
+            display: inline-block;
+            background: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            margin: 3px;
+            font-size: 0.75em;
+            border: 2px solid #4caf50;
+        }
+
+        .action-bar {
+            padding: 20px 25px;
+            background: white;
+            border-top: 2px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .action-bar-left {
+            display: flex;
+            gap: 10px;
+        }
+
+        .status-message {
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        .status-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status-message.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        .btn-remove {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
+
+        .btn-remove:hover {
+            background: #c82333;
+        }
+
+        .draggable {
+            cursor: move;
+        }
+
+        .dragging {
+            opacity: 0.5;
+        }
+
+        .drag-handle {
+            cursor: grab;
+            color: #999;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .drag-handle:active {
+            cursor: grabbing;
+        }
+
+        .order-badge {
+            background: #28a745;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 500px;
+            max-width: 90%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: slideDown 0.3s;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .modal-header h2 {
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .modal-body {
+            margin: 20px 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .btn-cancel {
+            background: #6c757d;
+        }
+
+        .drop-zone {
+            border: 2px dashed #28a745;
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            text-align: center;
+            color: #28a745;
+        }
+
+        .close-modal {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+        .highlighted {
+    animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.expand-icon {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+            <h1>🗂️ Survey Builder</h1>
+            <p>Select groups and questions from your GraphDB repository to create a new questionnaire.</p>
+        </div>
+         <div class="nav-links">
+                <a href="/" class="nav-link active">🏠 Home</a>
+                <a href="/limesurvey" class="nav-link">📊 LimeSurvey</a>
+                <a href="/graphdb" class="nav-link">🗄️ GraphDB</a>
+                <a href="/surveybuilder" class="nav-link">🔨 Survey Builder</a>
+            </div>
+        </div>
+
+        <div class="config-bar">
+            <div class="config-group">
+                <label>🔗 GraphDB URL:</label>
+                <input type="text" id="graphdbUrl" value="http://localhost:7200" placeholder="http://localhost:7200">
+            </div>
+            <div class="config-group">
+                <label>📦 Repository:</label>
+                <input type="text" id="repository" value="test_repo" placeholder="test_repo">
+            </div>
+            <button class="btn" onclick="testConnection()">🧪 Connection Test</button>
+            <button class="btn" onclick="connectToGraphDB()">🔌 Upload Data</button>
+            <button class="btn" onclick="showSparqlModal()" style="background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);">
+                🔍 Query SPARQL
+            </button>
+            <div style="flex: 1;"></div>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <h3>📚 Available Items</h3>
+                    <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search..." onkeyup="filterItems()">
+                </div>
+                <div class="items-list" id="itemsList">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📦</div>
+                        <p>Connect to GraphDB to view<br>available groups and questions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-panel">
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('preview')">👁️ Preview</button>
+                    <button class="tab" onclick="switchTab('json')">📄 JSON</button>
+                    <button class="tab" onclick="switchTab('csv')">📊 CSV</button>
+                </div>
+
+                <div id="preview" class="tab-content active">
+                    <div id="statusMessage" class="status-message"></div>
+
+                    <div class="selected-items" id="selectedItems" style="display: none;">
+                        <h4>✅ Selected Items</h4>
+                        <div id="selectedChips"></div>
+                    </div>
+
+                    <div class="preview-section">
+                        <h3>📋 Questionnaire Preview</h3>
+                        <div id="previewContent">
+                            <div class="empty-state">
+                                <div class="empty-state-icon">📝</div>
+                                <p>Select groups or questions from the sidebar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="json" class="tab-content">
+                    <h3 style="margin-bottom: 15px;">📄 JSON format</h3>
+                    <pre class="code-block" id="jsonOutput">Select items to generate JSON</pre>
+                </div>
+
+                <div id="csv" class="tab-content">
+                    <h3 style="margin-bottom: 15px;">📊 CSV Format</h3>
+                    <pre class="code-block" id="csvOutput">Select items to generate CSV</pre>
+                </div>
+
+                <div class="action-bar">
+                    <div class="action-bar-left">
+                        <button class="btn" onclick="clearSelection()">🗑️ Delete</button>
+                        <button class="btn" onclick="selectAllGroups()">☑️ All groups</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-success" onclick="exportSurvey()">📥 Export File</button>
+                        <button class="btn btn-success" onclick="showCreateSurveyModal()">🚀 Create on LimeSurvey</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per creare survey -->
+    <div id="createSurveyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal" onclick="closeCreateSurveyModal()">&times;</span>
+                <h2>🚀 Create Survey on LimeSurvey</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>📝 Name Survey:</label>
+                    <input type="text" id="surveyTitle" placeholder="Es: Questionario CHILD-UP 2025" value="New Questionnaire">
+                </div>
+                <div class="form-group">
+                    <label>🔗 LimeSurvey URL:</label>
+                    <input type="text" id="limesurveyUrl" placeholder="http://localhost/limesurvey/index.php/admin/remotecontrol" value="http://localhost/limesurvey/index.php/admin/remotecontrol">
+                </div>
+                <div class="form-group">
+                    <label>👤 Username:</label>
+                    <input type="text" id="limesurveyUsername" value="sara">
+                </div>
+                <div class="form-group">
+                    <label>🔒 Password:</label>
+                    <input type="password" id="limesurveyPassword" value="sara">
+                </div>
+                <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                    <strong>✅ Selected items:</strong><br>
+                    <span id="modalSelectedCount">0 groups, 0 questions</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="closeCreateSurveyModal()">Cancel</button>
+                <button class="btn btn-success" onclick="createSurveyOnLimeSurvey()">🚀 Create Survey</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per Modifica Gruppo/Domanda -->
+    <div id="editTextModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal" onclick="closeEditTextModal()">&times;</span>
+                <h2 id="editTextModalTitle">✏️ Edit</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label id="editTextLabel">Text:</label>
+                    <textarea id="editTextArea"
+                              style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; resize: vertical;"
+                              placeholder="Inserisci il testo..."></textarea>
+                    <div style="color: #999; font-size: 0.85em; margin-top: 5px;">
+                        <span id="editTextCharCount">0</span> caratteri
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="closeEditTextModal()">Cancel</button>
+                <button class="btn btn-success" onclick="saveEditText()" id="saveEditTextBtn">💾 Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per Import .lsq -->
+    <div id="importLsqModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal" onclick="closeImportLsqModal()">&times;</span>
+                <h2>📤 Import Domande da file .lsq</h2>
+            </div>
+            <div class="modal-body">
+                <p style="color: #666; margin-bottom: 15px;">
+                    Carica file .lsq (LimeSurvey Question) per importare domande con tutti i loro attributi,
+                    subdomande e opzioni di risposta.
+                </p>
+
+                <div class="form-group">
+                    <label>📁 Seleziona file .lsq:</label>
+                    <input type="file" id="lsqFileInput" accept=".lsq" multiple
+                           style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 8px;">
+                </div>
+
+                <div id="lsqFilesList" style="margin-top: 15px; display: none;">
+                    <h4 style="color: #333; margin-bottom: 10px;">File selezionati:</h4>
+                    <div id="lsqFilesContent" style="max-height: 200px; overflow-y: auto;"></div>
+                </div>
+
+                <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px; border-left: 4px solid #2196f3;">
+                    <strong>ℹ️ Info:</strong><br>
+                    • Puoi selezionare più file .lsq contemporaneamente<br>
+                    • Ogni domanda verrà importata nel gruppo selezionato<br>
+                    • Gli attributi originali verranno preservati<br>
+                    • Le subdomande verranno importate automaticamente
+                </div>
+
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>📦 Gruppo di destinazione:</label>
+                    <select id="lsqTargetGroup" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 8px;">
+                        <option value="">-- Seleziona gruppo --</option>
+                    </select>
+                </div>
+
+                <div id="lsqImportStatus" class="status-message" style="display: none; margin-top: 15px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="closeImportLsqModal()">Annulla</button>
+                <button class="btn btn-success" onclick="importLsqFiles()" id="importLsqBtn">📤 Importa Domande</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per Query SPARQL -->
+    <div id="sparqlModal" class="modal">
+        <div class="modal-content" style="width: 900px; max-width: 95%;">
+            <div class="modal-header">
+                <span class="close-modal" onclick="closeSparqlModal()">&times;</span>
+                <h2>🔍 Query SPARQL sul Knowledge Graph</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>📋 Template Query:</label>
+                    <select id="sparqlTemplate" onchange="loadTemplate()" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 8px;">
+                        <option value="">-- Seleziona un template --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>✍️ Query SPARQL:</label>
+                    <textarea id="sparqlQueryInput"
+                              style="width: 100%; height: 250px; padding: 10px; border: 2px solid #ddd; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 0.9em;"
+                              placeholder="PREFIX ls: <https://w3id.org/fossr/ontology/limesurvey/>
+
+SELECT ?group ?groupname
+WHERE {
+    ?group a ls:QuestionGroup .
+}
+LIMIT 10"></textarea>
+                </div>
+                <div id="sparqlResults" style="display: none; margin-top: 20px;">
+                    <h4 style="color: #28a745; margin-bottom: 10px;">📊 Risultati (<span id="resultCount">0</span>)</h4>
+                    <div style="max-height: 300px; overflow-y: auto; border: 2px solid #e0e0e0; border-radius: 8px;">
+                        <table id="resultsTable" style="width: 100%; border-collapse: collapse;">
+                            <thead id="resultsHeader" style="background: #f8f9fa; position: sticky; top: 0;"></thead>
+                            <tbody id="resultsBody"></tbody>
+                        </table>
+                    </div>
+                    <div style="margin-top: 10px; display: flex; gap: 10px;">
+                        <button class="btn" onclick="exportResultsCSV()">📥 Export CSV</button>
+                        <button class="btn" onclick="exportResultsJSON()">📥 Export JSON</button>
+                        <button class="btn btn-success" onclick="loadResultsIntoApp()" id="loadResultsBtn">
+                            ✅ Carica questi dati nell'app
+                        </button>
+                    </div>
+                </div>
+                <div id="sparqlError" class="status-message error" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="closeSparqlModal()">Chiudi</button>
+                <button class="btn btn-success" onclick="executeSparqlQuery()">▶️ Esegui Query</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/common.js"></script>
+    <script src="/static/js/surveybuilder.js"></script>
+</body>
+</html>

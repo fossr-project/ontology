@@ -1,0 +1,442 @@
+[
+  {
+    "qid": "579",
+    "parent_qid": "463",
+    "sid": "694511",
+    "gid": "41",
+    "type": "T",
+    "title": "SQ001",
+    "preg": null,
+    "other": "N",
+    "mandatory": "N",
+    "encrypted": "N",
+    "question_order": "0",
+    "scale_id": "0",
+    "same_default": "0",
+    "relevance": "1",
+    "question_theme_name": null,
+    "modulename": null,
+    "same_script": "0",
+    "available_answers": "No available answers",
+    "subquestions": [],
+    "attributes": [
+      {
+        "name": "statistics_showgraph",
+        "value": "1",
+        "parent_qid": "579"
+      },
+      {
+        "name": "time_limit_action",
+        "value": "1",
+        "parent_qid": "579"
+      }
+    ],
+    "attributes_lang": {
+      "em_validation_q_tip": "",
+      "time_limit_countdown_message": "",
+      "time_limit_message": "",
+      "time_limit_warning_2_message": "",
+      "time_limit_warning_message": ""
+    },
+    "answeroptions": [],
+    "defaultvalue": null
+  },
+  {
+    "qid": "463",
+    "parent_qid": "0",
+    "sid": "694511",
+    "gid": "41",
+    "type": "M",
+    "title": "CONSENT",
+    "preg": null,
+    "other": "N",
+    "mandatory": "Y",
+    "encrypted": "N",
+    "question_order": "1",
+    "scale_id": "0",
+    "same_default": "0",
+    "relevance": "1",
+    "question_theme_name": "multiplechoice",
+    "modulename": "",
+    "same_script": "0",
+    "available_answers": {
+      "SQ001": "Dichiaro di aver preso visione del Modulo di Consenso e acconsento a partecipare all'indagine."
+    },
+    "subquestions": [
+      {
+        "qid": "579",
+        "parent_qid": "463",
+        "title": "SQ001",
+        "question": "Dichiaro di aver preso visione del Modulo di Consenso e acconsento a partecipare all'indagine.",
+        "scale_id": "0"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "assessment_value",
+        "value": "1",
+        "parent_qid": "463"
+      },
+      {
+        "name": "hide_tip",
+        "value": "1",
+        "parent_qid": "463"
+      },
+      {
+        "name": "other_position",
+        "value": "end",
+        "parent_qid": "463"
+      },
+      {
+        "name": "statistics_showgraph",
+        "value": "1",
+        "parent_qid": "463"
+      }
+    ],
+    "attributes_lang": {
+      "em_validation_q_tip": "",
+      "other_replace_text": "",
+      "printable_help": ""
+    },
+    "answeroptions": [],
+    "defaultvalue": null
+  },
+  {
+    "qid": "480",
+    "parent_qid": "399",
+    "sid": "694511",
+    "gid": "30",
+    "type": "T",
+    "title": "IND",
+    "preg": null,
+    "other": "N",
+    "mandatory": "N",
+    "encrypted": "N",
+    "question_order": "0",
+    "scale_id": "0",
+    "same_default": "0",
+    "relevance": "1",
+    "question_theme_name": null,
+    "modulename": null,
+    "same_script": "0",
+    "available_answers": "No available answers",
+    "subquestions": [],
+    "attributes": [
+      {
+        "name": "statistics_showgraph",
+        "value": "1",
+        "parent_qid": "480"
+      },
+      {
+        "name": "time_limit_action",
+        "value": "1",
+        "parent_qid": "480"
+      }
+    ],
+    "attributes_lang": {
+      "em_validation_q_tip": "",
+      "time_limit_countdown_message": "",
+      "time_limit_message": "",
+      "time_limit_warning_2_message": "",
+      "time_limit_warning_message": ""
+    },
+    "answeroptions": [],
+    "defaultvalue": null
+  },
+  {
+    "qid": "570",
+    "parent_qid": "454",
+    "sid": "694511",
+    "gid": "30",
+    "type": "T",
+    "title": "Nome",
+    "preg": null,
+    "other": "N",
+    "mandatory": "N",
+    "encrypted": "N",
+    "question_order": "0",
+    "scale_id": "0",
+    "same_default": "0",
+    "relevance": "1",
+    "question_theme_name": null,
+    "modulename": null,
+    "same_script": "0",
+    "available_answers": "No available answers",
+    "subquestions": [],
+    "attributes": [
+      {
+        "name": "statistics_showgraph",
+        "value": "1",
+        "parent_qid": "570"
+      },
+      {
+        "name": "time_limit_action",
+        "value": "1",
+        "parent_qid": "570"
+      }
+    ],
+    "attributes_lang": {
+      "em_validation_q_tip": "",
+      "time_limit_countdown_message": "",
+      "time_limit_message": "",
+      "time_limit_warning_2_message": "",
+      "time_limit_warning_message": ""
+    },
+    "answeroptions": [],
+    "defaultvalue": null
+  },
+  {
+    "qid": "574",
+    "parent_qid": "460",
+    "sid": "694511",
+    "gid": "30",
+    "type": "T",
+    "title": "IND",
+    "preg": null,
+    "other": "N",
+    "mandatory": "N",
+    "encrypted": "N",
+    "question_order": "0",
+    "scale_id": "0",
+    "same_default": "0",
+    "relevance": "1",
+    "question_theme_name": null,
+    "modulename": null,
+    "same_script": "0",
+    "available_answers": "No available answers",
+    "subquestions": [],
+    "attributes": [
+      {
+        "name": "statistics_showgraph",
+        "value": "1",
+        "parent_qid": "574"
+      },
+      {
+        "name": "time_limit_action",
+        "value": "1",
+        "parent_qid": "574"
+      }
+    ],
+    "attributes_lang": {
+      "em_validation_q_tip": "",
+      "time_limit_countdown_message": "",
+      "time_limit_message": "",
+      "time_limit_warning_2_message": "",
+      "time_limit_warning_message": ""
+    },
+    "answeroptions": [],
+    "defaultvalue": null
+  },
+  {
+    "qid": "588",
+    "parent_qid": "458",
+    "sid": "694511",
+    "gid": "30",
+    "type": "T",
+    "title": "COM",
+    "preg": null,
+    "other": "N",
+    "mandatory": "N",
+    "encrypted": "N",
+    "question_order": "0",
+    "scale_id": "0",
+    "same_default": "0",
+    "relevance": "1",
+    "question_theme_name": null,
+    "modulename": null,
+    "same_script": "0",
+    "available_answers": "No available answers",
+    "subquestions": [],
+    "attributes": [
+      {
+        "name": "statistics_showgraph",
+        "value": "1",
+        "parent_qid": "588"
+      },
+      {
+        "name": "time_limit_action",
+        "value": "1",
+        "parent_qid": "588"
+      }
+    ],
+    "attributes_lang": {
+      "em_validation_q_tip": "",
+      "time_limit_countdown_message": "",
+      "time_limit_message": "",
+      "time_limit_warning_2_message": "",
+      "time_limit_warning_message": ""
+    },
+    "answeroptions": [],
+    "defaultvalue": null
+  },
+  {
+    "qid": "397",
+    "parent_qid": "0",
+    "sid": "694511",
+    "gid": "30",
+    "type": "L",
+    "title": "RVer01",
+    "preg": null,
+    "other": "N",
+    "mandatory": "Y",
+    "encrypted": "N",
+    "question_order": "1",
+    "scale_id": "0",
+    "same_default": "0",
+    "relevance": "1",
+    "question_theme_name": "bootstrap_buttons",
+    "modulename": null,
+    "same_script": "0",
+    "available_answers": "No available answers",
+    "subquestions": [],
+    "attributes": [
+      {
+        "name": "answer_order",
+        "value": "normal",
+        "parent_qid": "397"
+      },
+      {
+        "name": "button_size",
+        "value": "default",
+        "parent_qid": "397"
+      },
+      {
+        "name": "hide_tip",
+        "value": "1",
+        "parent_qid": "397"
+      },
+      {
+        "name": "max_buttons_row",
+        "value": "col-md-2",
+        "parent_qid": "397"
+      },
+      {
+        "name": "other_position",
+        "value": "default",
+        "parent_qid": "397"
+      },
+      {
+        "name": "statistics_showgraph",
+        "value": "1",
+        "parent_qid": "397"
+      },
+      {
+        "name": "time_limit_action",
+        "value": "1",
+        "parent_qid": "397"
+      }
+    ],
+    "attributes_lang": {
+      "em_validation_q_tip": "",
+      "other_replace_text": "",
+      "printable_help": "",
+      "time_limit_countdown_message": "",
+      "time_limit_message": "",
+      "time_limit_warning_2_message": "",
+      "time_limit_warning_message": ""
+    },
+    "answeroptions": [
+      {
+        "code": "SI",
+        "parent_qid": "397",
+        "answer": "Sì",
+        "assessment_value": "0",
+        "scale_id": "0",
+        "order": "0"
+      },
+      {
+        "code": "NO",
+        "parent_qid": "397",
+        "answer": "No",
+        "assessment_value": "0",
+        "scale_id": "0",
+        "order": "1"
+      }
+    ],
+    "defaultvalue": null
+  },
+  {
+    "qid": "481",
+    "parent_qid": "399",
+    "sid": "694511",
+    "gid": "30",
+    "type": "T",
+    "title": "CAP",
+    "preg": null,
+    "other": "N",
+    "mandatory": "N",
+    "encrypted": "N",
+    "question_order": "1",
+    "scale_id": "0",
+    "same_default": "0",
+    "relevance": "1",
+    "question_theme_name": null,
+    "modulename": null,
+    "same_script": "0",
+    "available_answers": "No available answers",
+    "subquestions": [],
+    "attributes": [
+      {
+        "name": "statistics_showgraph",
+        "value": "1",
+        "parent_qid": "481"
+      },
+      {
+        "name": "time_limit_action",
+        "value": "1",
+        "parent_qid": "481"
+      }
+    ],
+    "attributes_lang": {
+      "em_validation_q_tip": "",
+      "time_limit_countdown_message": "",
+      "time_limit_message": "",
+      "time_limit_warning_2_message": "",
+      "time_limit_warning_message": ""
+    },
+    "answeroptions": [],
+    "defaultvalue": null
+  },
+  {
+    "qid": "571",
+    "parent_qid": "454",
+    "sid": "694511",
+    "gid": "30",
+    "type": "T",
+    "title": "Cognome",
+    "preg": null,
+    "other": "N",
+    "mandatory": "N",
+    "encrypted": "N",
+    "question_order": "1",
+    "scale_id": "0",
+    "same_default": "0",
+    "relevance": "1",
+    "question_theme_name": null,
+    "modulename": null,
+    "same_script": "0",
+    "available_answers": "No available answers",
+    "subquestions": [],
+    "attributes": [
+      {
+        "name": "statistics_showgraph",
+        "value": "1",
+        "parent_qid": "571"
+      },
+      {
+        "name": "time_limit_action",
+        "value": "1",
+        "parent_qid": "571"
+      }
+    ],
+    "attributes_lang": {
+      "em_validation_q_tip": "",
+      "time_limit_countdown_message": "",
+      "time_limit_message": "",
+      "time_limit_warning_2_message": "",
+      "time_limit_warning_message": ""
+    },
+    "answeroptions": [],
+    "defaultvalue": null
+  }
+]
