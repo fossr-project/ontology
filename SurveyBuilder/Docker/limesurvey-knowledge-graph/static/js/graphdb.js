@@ -4,9 +4,62 @@ let availableRepositories = [];
 let selectedFiles = {
     ontology: null,
     groups: null,
-    questions: null
+    questions: null,
+    propertiesquestions: null
 };
+// ============================================
+// FILE HANDLERS - AGGIUNGI DOPO handleQuestionsFileSelect
+// ============================================
 
+function handleQuestionsFileSelect(event) {
+    const file = event.target.files[0];
+    if (file) {
+        selectedFiles.questions = file;
+        document.getElementById('questions_file_path').value = file.name;
+        showToast('File Selected', `Questions: ${file.name}`, 'success');
+    }
+}
+
+// ⭐ FUNZIONE MANCANTE - AGGIUNGI QUESTA! ⭐
+function handleQuestionsPropertiesFileSelect(event) {
+    const file = event.target.files[0];
+
+    if (!file) {
+        console.warn('⚠️ No file selected for question properties');
+        return;
+    }
+
+    // Validazione tipo file
+    if (!file.name.endsWith('.json') && file.type !== 'application/json') {
+        showToast('Error', 'Please select a JSON file', 'error');
+        event.target.value = ''; // Reset input
+        return;
+    }
+
+    selectedFiles.propertiesquestions = file;
+    document.getElementById('question_properties_file_path').value = file.name;
+
+    console.log('✅ Question properties file selected:', {
+        name: file.name,
+        size: `${(file.size / 1024).toFixed(2)} KB`,
+        type: file.type
+    });
+
+    showToast('File Selected', `Question Properties: ${file.name}`, 'success');
+}
+
+// ============================================
+// DEBUG HELPER - AGGIUNGI QUESTA ANCHE
+// ============================================
+
+function debugSelectedFiles() {
+    console.log('📋 Selected Files State:', {
+        ontology: selectedFiles.ontology?.name || 'NOT SELECTED',
+        groups: selectedFiles.groups?.name || 'NOT SELECTED',
+        questions: selectedFiles.questions?.name || 'NOT SELECTED',
+        propertiesquestions: selectedFiles.propertiesquestions?.name || 'NOT SELECTED'
+    });
+}
 // ==================== INITIALIZATION ====================
 document.addEventListener('DOMContentLoaded', function() {
     console.log('GraphDB Manager loaded');
@@ -456,6 +509,10 @@ function handleQuestionsFileSelect(event) {
     }
 }
 
+// ============================================
+// UPLOAD GROUPS
+// ============================================
+
 async function uploadGroups() {
     const repoId = document.getElementById('data_repo_select').value;
     const surveyId = document.getElementById('survey_id_data').value.trim();
@@ -491,34 +548,49 @@ async function uploadGroups() {
             throw new Error(convertResult.error);
         }
 
-        updateProgress('groups_progress', 70, 'Uploading to GraphDB...');
+        // Gestione array di file
+        const filePaths = convertResult.output_paths || [convertResult.output_path];
 
-        // Upload to GraphDB
-        const uploadResponse = await fetch('/api/graphdb/upload/data', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                graphdb_url: document.getElementById('graphdb_url').value,
-                repo_id: repoId,
-                data_type: 'groups',
-                file_path: convertResult.output_path,
-                survey_id: surveyId
-            })
-        });
+        updateProgress('groups_progress', 60, `Uploading ${filePaths.length} file(s) to GraphDB...`);
 
-        const uploadResult = await uploadResponse.json();
+        // Upload sequenziale con progress
+        for (let i = 0; i < filePaths.length; i++) {
+            const filePath = filePaths[i];
+            const progressPercent = 60 + ((i + 1) / filePaths.length) * 30;
 
-        if (uploadResult.success) {
-            updateProgress('groups_progress', 100, 'Upload complete!');
-            showToast('Success', 'Groups uploaded successfully', 'success');
-        } else {
-            throw new Error(uploadResult.message);
+            updateProgress('groups_progress', progressPercent,
+                          `Uploading ${filePath} (${i + 1}/${filePaths.length})...`);
+
+            const uploadResponse = await fetch('/api/graphdb/upload/data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    graphdb_url: document.getElementById('graphdb_url').value,
+                    repo_id: repoId,
+                    data_type: 'groups',
+                    file_path: filePath,
+                    survey_id: surveyId
+                })
+            });
+
+            const uploadResult = await uploadResponse.json();
+            if (!uploadResult.success) {
+                throw new Error(`Failed to upload ${filePath}: ${uploadResult.message}`);
+            }
         }
+
+        updateProgress('groups_progress', 100, 'Upload complete!');
+        showToast('Success', `${filePaths.length} file(s) uploaded successfully`, 'success');
+
     } catch (error) {
         hideProgress('groups_progress');
         handleApiError(error, 'uploadGroups');
     }
 }
+
+// ============================================
+// UPLOAD QUESTIONS
+// ============================================
 
 async function uploadQuestions() {
     const repoId = document.getElementById('data_repo_select').value;
@@ -555,34 +627,282 @@ async function uploadQuestions() {
             throw new Error(convertResult.error);
         }
 
-        updateProgress('questions_progress', 70, 'Uploading to GraphDB...');
+        // Gestione array di file
+        const filePaths = convertResult.output_paths || [convertResult.output_path];
 
-        // Upload to GraphDB
-        const uploadResponse = await fetch('/api/graphdb/upload/data', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                graphdb_url: document.getElementById('graphdb_url').value,
-                repo_id: repoId,
-                data_type: 'questions',
-                file_path: convertResult.output_path,
-                survey_id: surveyId
-            })
-        });
+        updateProgress('questions_progress', 60, `Uploading ${filePaths.length} file(s) to GraphDB...`);
 
-        const uploadResult = await uploadResponse.json();
+        // Upload sequenziale con progress
+        for (let i = 0; i < filePaths.length; i++) {
+            const filePath = filePaths[i];
+            const progressPercent = 60 + ((i + 1) / filePaths.length) * 30;
 
-        if (uploadResult.success) {
-            updateProgress('questions_progress', 100, 'Upload complete!');
-            showToast('Success', 'Questions uploaded successfully', 'success');
-        } else {
-            throw new Error(uploadResult.message);
+            updateProgress('questions_progress', progressPercent,
+                          `Uploading ${filePath} (${i + 1}/${filePaths.length})...`);
+
+            const uploadResponse = await fetch('/api/graphdb/upload/data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    graphdb_url: document.getElementById('graphdb_url').value,
+                    repo_id: repoId,
+                    data_type: 'questions',
+                    file_path: filePath,
+                    survey_id: surveyId
+                })
+            });
+
+            const uploadResult = await uploadResponse.json();
+            if (!uploadResult.success) {
+                throw new Error(`Failed to upload ${filePath}: ${uploadResult.message}`);
+            }
         }
+
+        updateProgress('questions_progress', 100, 'Upload complete!');
+        showToast('Success', `${filePaths.length} file(s) uploaded successfully`, 'success');
+
     } catch (error) {
         hideProgress('questions_progress');
         handleApiError(error, 'uploadQuestions');
     }
 }
+
+// ============================================
+// UPLOAD QUESTION PROPERTIES
+// ============================================
+async function uploadProperitesQuestion() {
+    const repoId = document.getElementById('data_repo_select').value;
+    const surveyId = document.getElementById('survey_id_data').value.trim();
+
+    if (!validateRequired(repoId, 'Repository')) return;
+    if (!validateRequired(surveyId, 'Survey ID')) return;
+    if (!selectedFiles.propertiesquestions) {
+        showToast('Error', 'Please select a question properties JSON file', 'error');
+        return;
+    }
+
+    updateProgress('question_properties_progress', 10, 'Uploading file...');
+
+    try {
+        // Upload file
+        const filepath = await uploadFileToServer(selectedFiles.propertiesquestions);
+
+        updateProgress('question_properties_progress', 40, 'Converting JSON to RDF...');
+
+        // Convert JSON to RDF
+        const convertResponse = await fetch('/api/convert/csv-to-rdf', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                csv_path: filepath,
+                data_type: 'question_properties',
+                survey_id: surveyId
+            })
+        });
+
+        const convertResult = await convertResponse.json();
+        if (!convertResult.success) {
+            throw new Error(convertResult.error);
+        }
+
+        // Gestione array di file
+        const filePaths = convertResult.output_paths || [convertResult.output_path];
+
+        updateProgress('question_properties_progress', 60,
+                      `Uploading ${filePaths.length} file(s) to GraphDB...`);
+
+        // Upload sequenziale con progress dettagliato
+        for (let i = 0; i < filePaths.length; i++) {
+            const filePath = filePaths[i];
+            const progressPercent = 60 + ((i + 1) / filePaths.length) * 30;
+
+            // Estrai nome file per messaggio più chiaro
+            const filePathStr = String(filePath);  // ✅ Converti in stringa
+            const fileName = filePathStr.split('/').pop();
+
+            updateProgress('question_properties_progress', progressPercent,
+                          `Uploading ${fileName} (${i + 1}/${filePaths.length})...`);
+
+            const uploadResponse = await fetch('/api/graphdb/upload/data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    graphdb_url: document.getElementById('graphdb_url').value,
+                    repo_id: repoId,
+                    data_type: 'question_properties',
+                    file_path: filePathStr,  // ✅ Usa la stringa convertita
+                    survey_id: surveyId
+                })
+            });
+
+            const uploadResult = await uploadResponse.json();
+            if (!uploadResult.success) {
+                // ✅ FIX: Aggiungi parentesi aperta dopo 'new Error'
+                throw new Error(`Failed to upload ${fileName}: ${uploadResult.message}`);
+            }
+        }
+
+        updateProgress('question_properties_progress', 100, 'Upload complete!');
+        showToast('Success', `${filePaths.length} file(s) uploaded successfully`, 'success');
+
+    } catch (error) {
+        hideProgress('question_properties_progress');
+        handleApiError(error, 'uploadProperitesQuestion');
+    }
+}
+
+
+// ============================================
+// APPLICA LO STESSO FIX A TUTTE LE FUNZIONI
+// ============================================
+
+async function uploadGroups() {
+    const repoId = document.getElementById('data_repo_select').value;
+    const surveyId = document.getElementById('survey_id_data').value.trim();
+
+    if (!validateRequired(repoId, 'Repository')) return;
+    if (!validateRequired(surveyId, 'Survey ID')) return;
+    if (!selectedFiles.groups) {
+        showToast('Error', 'Please select a groups CSV file', 'error');
+        return;
+    }
+
+    updateProgress('groups_progress', 10, 'Uploading file...');
+
+    try {
+        const filepath = await uploadFileToServer(selectedFiles.groups);
+        updateProgress('groups_progress', 40, 'Converting CSV to RDF...');
+
+        const convertResponse = await fetch('/api/convert/csv-to-rdf', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                csv_path: filepath,
+                data_type: 'group',
+                survey_id: surveyId
+            })
+        });
+
+        const convertResult = await convertResponse.json();
+        if (!convertResult.success) {
+            throw new Error(convertResult.error);
+        }
+
+        const filePaths = convertResult.output_paths || [convertResult.output_path];
+        updateProgress('groups_progress', 60, `Uploading ${filePaths.length} file(s) to GraphDB...`);
+
+        for (let i = 0; i < filePaths.length; i++) {
+            const filePath = filePaths[i];
+            const progressPercent = 60 + ((i + 1) / filePaths.length) * 30;
+
+            const filePathStr = String(filePath);
+            const fileName = filePathStr.split('/').pop();
+
+            updateProgress('groups_progress', progressPercent,
+                          `Uploading ${fileName} (${i + 1}/${filePaths.length})...`);
+
+            const uploadResponse = await fetch('/api/graphdb/upload/data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    graphdb_url: document.getElementById('graphdb_url').value,
+                    repo_id: repoId,
+                    data_type: 'groups',
+                    file_path: filePathStr,
+                    survey_id: surveyId
+                })
+            });
+
+            const uploadResult = await uploadResponse.json();
+            if (!uploadResult.success) {
+                // ✅ FIX: Parentesi corretta
+                throw new Error(`Failed to upload ${fileName}: ${uploadResult.message}`);
+            }
+        }
+
+        updateProgress('groups_progress', 100, 'Upload complete!');
+        showToast('Success', `${filePaths.length} file(s) uploaded successfully`, 'success');
+
+    } catch (error) {
+        hideProgress('groups_progress');
+        handleApiError(error, 'uploadGroups');
+    }
+}
+
+
+async function uploadQuestions() {
+    const repoId = document.getElementById('data_repo_select').value;
+    const surveyId = document.getElementById('survey_id_data').value.trim();
+
+    if (!validateRequired(repoId, 'Repository')) return;
+    if (!validateRequired(surveyId, 'Survey ID')) return;
+    if (!selectedFiles.questions) {
+        showToast('Error', 'Please select a questions CSV file', 'error');
+        return;
+    }
+
+    updateProgress('questions_progress', 10, 'Uploading file...');
+
+    try {
+        const filepath = await uploadFileToServer(selectedFiles.questions);
+        updateProgress('questions_progress', 40, 'Converting CSV to RDF...');
+
+        const convertResponse = await fetch('/api/convert/csv-to-rdf', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                csv_path: filepath,
+                data_type: 'question',
+                survey_id: surveyId
+            })
+        });
+
+        const convertResult = await convertResponse.json();
+        if (!convertResult.success) {
+            throw new Error(convertResult.error);
+        }
+
+        const filePaths = convertResult.output_paths || [convertResult.output_path];
+        updateProgress('questions_progress', 60, `Uploading ${filePaths.length} file(s) to GraphDB...`);
+
+        for (let i = 0; i < filePaths.length; i++) {
+            const filePath = filePaths[i];
+            const progressPercent = 60 + ((i + 1) / filePaths.length) * 30;
+
+            const filePathStr = String(filePath);
+            const fileName = filePathStr.split('/').pop();
+
+            updateProgress('questions_progress', progressPercent,
+                          `Uploading ${fileName} (${i + 1}/${filePaths.length})...`);
+
+            const uploadResponse = await fetch('/api/graphdb/upload/data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    graphdb_url: document.getElementById('graphdb_url').value,
+                    repo_id: repoId,
+                    data_type: 'questions',
+                    file_path: filePathStr,
+                    survey_id: surveyId
+                })
+            });
+
+            const uploadResult = await uploadResponse.json();
+            if (!uploadResult.success) {
+                // ✅ FIX: Parentesi corretta
+                throw new Error(`Failed to upload ${fileName}: ${uploadResult.message}`);
+            }
+        }
+
+        updateProgress('questions_progress', 100, 'Upload complete!');
+        showToast('Success', `${filePaths.length} file(s) uploaded successfully`, 'success');
+
+    } catch (error) {
+        hideProgress('questions_progress');
+        handleApiError(error, 'uploadQuestions');
+    }
+}
+
 
 async function uploadAllData() {
     if (!selectedFiles.groups || !selectedFiles.questions) {

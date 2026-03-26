@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GraphDB Manager</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+
 </head>
 <body>
     <div class="container">
+        <!-- Institutional Banner -->
+        <div class="institutional-banner">
+            <img src="../static/images/institutional-banner.png" alt="Finanziato dall'Unione Europea - Ministero dell'Università e della Ricerca - Italia Domani">
+        </div>
+        <div class="header-logo">
+                    <img src="../static/images/project-logo.png" alt="Project Logo">
+    </div>
         <div class="header">
             <div class="header-left">
-                <h1>🗄️ GraphDB Manager</h1>
-                <p>Manage repositories, ontologies, and survey data</p>
+
+                    <div>
+                        <h1>🗄️ GraphDB Manager</h1>
+                        <p>Manage repositories, ontologies, and survey data</p>
+                    </div>
+            
             </div>
             <div class="nav-links">
                 <a href="/" class="nav-link">🏠 Home</a>
@@ -177,56 +189,46 @@
                     </button>
                 </div>
                 <div class="card-body">
-                    <div id="ontologies_list">
-                        <p style="color: #999; text-align: center; padding: 20px;">
-                            Select a repository to view loaded named graphs
-                        </p>
+                    <div id="ontologies_list" style="color: #999;">
+                        Select a repository to view loaded named graphs
                     </div>
                 </div>
             </div>
 
-            <!-- Upload New Ontology -->
+            <!-- Upload OWL File -->
             <div class="card" style="margin-top: 20px;">
                 <div class="card-header">
                     <div class="card-title">
                         <span>📤</span>
-                        <span>Upload Ontology</span>
+                        <span>Upload OWL Ontology</span>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-                        <label>Ontology File</label>
+                        <label>OWL File (.owl, .rdf, .ttl)</label>
                         <div class="input-with-button">
-                            <input type="text" id="ontology_file_path" placeholder="Select file..." readonly>
-                            <input type="file" id="ontology_file_input" accept=".owl,.rdf,.ttl,.nt" style="display: none;" onchange="handleOntologyFileSelect(event)">
-                            <button class="btn btn-small btn-secondary" onclick="document.getElementById('ontology_file_input').click()">
+                            <input type="text" id="owl_file_path" placeholder="Select ontology file..." readonly>
+                            <input type="file" id="owl_file_input" accept=".owl,.rdf,.ttl" style="display: none;" onchange="handleOWLFileSelect(event)">
+                            <button class="btn btn-small btn-secondary" onclick="document.getElementById('owl_file_input').click()">
                                 📁 Browse
                             </button>
                         </div>
-                        <small>Supported formats: .owl, .rdf, .ttl, .nt</small>
+                        <small>Select your ontology file</small>
                     </div>
                     <div class="form-group">
-                        <label>Named Graph Context</label>
-                        <input type="text" id="ontology_context" value="http://www.w3.org/2002/07/owl#ontology">
-                        <small>URI for the named graph (leave default for ontologies)</small>
-                    </div>
-
-                    <div class="progress-container" id="ontology_progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                        <div class="progress-text">
-                            <span>Uploading...</span>
-                            <span>0%</span>
-                        </div>
+                        <label>Named Graph URI (optional)</label>
+                        <input type="text" id="owl_named_graph" placeholder="http://example.org/ontology">
+                        <small>Leave empty to use default graph</small>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-success" onclick="uploadOntology()" id="upload_ontology_btn">
+                    <button class="btn btn-success" onclick="uploadOWL()">
                         📤 Upload Ontology
                     </button>
                 </div>
             </div>
+
+            <div id="onto_results" style="margin-top: 20px;"></div>
         </div>
 
         <!-- TAB 3: SURVEY DATA UPLOAD -->
@@ -406,7 +408,7 @@
         </div>
     </div>
 
-    <script src="/static/js/common.js"></script>
-    <script src="/static/js/graphdb.js"></script>
+    <script src="../static/js/common.js"></script>
+    <script src="../static/js/graphdb.js"></script>
 </body>
 </html>

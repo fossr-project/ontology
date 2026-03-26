@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOSSR Survey & GraphDB Manager</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            padding-top: 200px; /* Spazio per header + submenu fissi */
+        }
+
+        /* ========================================
+           HEADER FOSSR (come FOSSR Days)
+        ======================================== */
+        .l-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* Top bar */
+        .l-subheader.at_top {
+            background: #f5f6f7;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 8px 0;
+        }
+
+        .l-subheader-h {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .l-subheader-cell { display: flex; align-items: center; gap: 15px; }
+
+        .w-text.ush_text_2 {
+            font-size: 12px;
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        .hidden_for_mobiles { display: block; }
+
+        /* Social icons */
+        .w-socials-list { display: flex; gap: 12px; }
+        .w-socials-item a {
+            color: #6c757d;
+            font-size: 14px;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+        .w-socials-item.facebook a:hover { color: #1877f2; }
+        .w-socials-item.linkedin a:hover { color: #0a66c2; }
+        .w-socials-item.instagram a:hover { color: #e4405f; }
+        .w-socials-item.youtube a:hover { color: #ff0000; }
+
+        /* Language switcher */
+        .wpml-ls-statics-shortcode_actions ul { list-style: none; }
+        .wpml-ls-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .wpml-ls-link:hover { color: #333; }
+
+        /* Middle bar - Logo + Menu FOSSR */
+        .l-subheader.at_middle {
+            background: white;
+            padding: 15px 0;
+        }
+
+        .w-image.ush_image_1 img {
+            height: 55px;
+            width: auto;
+        }
+
+        /* Navigation FOSSR principale */
+        .w-nav-control {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .w-nav-list { list-style: none; margin: 0; padding: 0; }
+        .w-nav-list.level_1 { display: flex; gap: 5px; }
+        .w-nav-item { position: relative; }
+
+        .w-nav-anchor {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.25s;
+            border-radius: 4px;
+        }
+
+        .w-nav-anchor:hover,
+        .current-menu-item > .w-nav-anchor {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        /* Dropdown FOSSR */
+        .w-nav-list.level_2 {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 300px;
+            background: white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-radius: 6px;
+            padding: 10px 0;
+            margin-top: 8px;
+            z-index: 1000;
+        }
+
+        .menu-item-has-children:hover > .w-nav-list.level_2 {
+            display: block;
+        }
+
+        .w-nav-list.level_2 .w-nav-anchor {
+            padding: 10px 20px;
+            color: #555;
+            font-size: 13px;
+            text-transform: none;
+            letter-spacing: normal;
+            border-radius: 0;
+        }
+
+        .w-nav-list.level_2 .w-nav-anchor:hover {
+            background: #f8f9fa;
+            color: #667eea;
+        }
+
+        /* ========================================
+           SOTTOMENU APPLICAZIONE (nuovo)
+        ======================================== */
+        .app-submenu {
+            position: fixed;
+            top: 150px; /* Sotto l'header FOSSR */
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: white;
+            border-bottom: 2px solid #667eea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .app-submenu-h {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .app-submenu-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .app-submenu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .app-submenu-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 5px;
+        }
+
+        .app-submenu-nav a {
+            display: block;
+            padding: 12px 18px;
+            color: #555;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.25s;
+            border-radius: 4px;
+        }
+
+        .app-submenu-nav a:hover,
+        .app-submenu-nav a.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .app-submenu-nav .has-dropdown {
+            position: relative;
+        }
+
+        .app-submenu-nav .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-radius: 6px;
+            padding: 8px 0;
+            margin-top: 5px;
+        }
+
+        .app-submenu-nav .has-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .app-submenu-nav .dropdown-menu a {
+            padding: 10px 18px;
+            font-size: 12px;
+            border-radius: 0;
+        }
+
+        .app-submenu-nav .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #667eea;
+        }
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+        @media (max-width: 1024px) {
+            .hidden_for_mobiles { display: none !important; }
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: 160px; }
+
+            /* Header FOSSR mobile */
+            .w-nav-control { display: block; }
+
+            .w-nav-list.level_1 {
+                display: none;
+                position: fixed;
+                top: 110px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                overflow-y: auto;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            }
+
+            .w-nav-list.level_1.active { display: flex; }
+
+            .w-nav-list.level_2 {
+                position: static;
+                box-shadow: none;
+                padding-left: 20px;
+                margin: 10px 0 0 0;
+                background: #f8f9fa;
+                border-radius: 4px;
+            }
+
+            .menu-item-has-children.open > .w-nav-list.level_2 {
+                display: block;
+            }
+
+            /* App submenu mobile */
+            .app-submenu {
+                top: 110px;
+            }
+
+            .app-submenu-toggle { display: block; }
+
+            .app-submenu-nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 10px 20px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            }
+
+            .app-submenu-nav ul.active { display: flex; }
+
+            .app-submenu-nav .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                padding-left: 15px;
+                margin: 5px 0;
+                background: #f8f9fa;
+            }
+
+            .app-submenu-nav .has-dropdown.open .dropdown-menu {
+                display: block;
+            }
+
+            .w-image.ush_image_1 img { height: 45px; }
+        }
+
+        /* ========================================
+           CONTENT STYLES
+        ======================================== */
+        .container { max-width: 1320px; margin: 0 auto; padding: 0 20px; }
+
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .hero-section h2 { font-size: 2.5em; margin-bottom: 15px; }
+        .hero-section p { font-size: 1.2em; opacity: 0.95; line-height: 1.6; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon { font-size: 48px; margin-bottom: 20px; }
+        .feature-card h3 { color: #333; margin-bottom: 15px; font-size: 1.5em; }
+        .feature-card p { color: #666; line-height: 1.7; margin-bottom: 15px; }
+        .feature-card ul { margin: 20px 0; padding-left: 0; }
+        .feature-card li { list-style: none; padding: 5px 0; }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .workflow-section {
+            padding: 40px;
+            background: #f5f7fa;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .workflow-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .workflow-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .workflow-number.success {
+            background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         HEADER FOSSR (da FOSSR Days)
+    ======================================== -->
+    <header id="page-header" class="l-header" itemscope itemtype="https://schema.org/WPHeader">
+        <!-- Top subheader -->
+        <div class="l-subheader at_top">
+            <div class="l-subheader-h">
+                <div class="l-subheader-cell at_left">
+                    <p class="w-text hidden_for_mobiles ush_text_2">
+                        <span class="w-text-h">
+                            <span class="w-text-value">Fostering Open Science in Social Science Research</span>
+                        </span>
+                    </p>
+                </div>
+                <div class="l-subheader-cell at_center"></div>
+                <div class="l-subheader-cell at_right">
+                    <div class="w-socials">
+                        <div class="w-socials-list">
+                            <div class="w-socials-item facebook">
+                                <a href="https://www.facebook.com/profile.php?id=100090396377027" target="_blank" title="Facebook" aria-label="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </div>
+                            <div class="w-socials-item linkedin">
+                                <a href="http://www.linkedin.com/in/fossr-dissemination-pnrr" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                            <div class="w-socials-item instagram">
+                                <a href="https://www.instagram.com/fossrproject/" target="_blank" title="Instagram" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="w-socials-item youtube">
+                                <a href="https://www.youtube.com/@fossr" target="_blank" title="YouTube" aria-label="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-html ush_html_1">
+                        <div class="wpml-ls-statics-shortcode_actions">
+                            <ul role="menu">
+                                <li role="none">
+                                    <a href="https://www.fossr.eu/en/" class="wpml-ls-link" role="menuitem" aria-label="Passa a EN" title="Passa a EN">
+                                        <img class="wpml-ls-flag" src="https://www.fossr.eu/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.svg" alt="" width="18" height="12">
+                                        <span class="wpml-ls-native" lang="en">EN</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle subheader - Logo + Menu FOSSR -->
+        <div class="l-subheader at_middle">
+            <div class="l-subheader-h">
+                <div class="l-subheader-cell at_left">
+                    <div class="w-image ush_image_1">
+                        <a href="https://www.fossr.eu/" aria-label="FOSSR Logo" target="_blank">
+                            <img src="https://www.fossr.eu/wp-content/uploads/2023/05/FOSSR-Logo.jpg" alt="FOSSR Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="l-subheader-cell at_center"></div>
+                <div class="l-subheader-cell at_right">
+                    <nav class="w-nav" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                        <button class="w-nav-control" aria-label="Menu" onclick="toggleFossrMenu()">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <ul class="w-nav-list level_1" id="fossrMenu">
+                            <li class="menu-item w-nav-item">
+                                <a class="w-nav-anchor" href="https://www.fossr.eu/" target="_blank">
+                                    <span class="w-nav-title">HOME</span>
+                                </a>
+                            </li>
+                            <li class="menu-item menu-item-has-children w-nav-item">
+                                <a class="w-nav-anchor" href="#">
+                                    <span class="w-nav-title">FOSSR</span>
+                                </a>
+                                <ul class="w-nav-list level_2">
+                                    <li class="w-nav-item">
+                                        <a class="w-nav-anchor" href="https://www.fossr.eu/cosa-facciamo/" target="_blank">
+                                            <span class="w-nav-title">Cosa facciamo</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-has-children w-nav-item">
+                                <a class="w-nav-anchor" href="#">
+                                    <span class="w-nav-title">People</span>
+                                </a>
+                                <ul class="w-nav-list level_2">
+                                    <li class="w-nav-item">
+                                        <a class="w-nav-anchor" href="https://www.fossr.eu/istitutiecentripartecipanti/" target="_blank">
+                                            <span class="w-nav-title">Istituti e Centri partecipanti</span>
+                                        </a>
+                                    </li>
+                                    <li class="w-nav-item">
+                                        <a class="w-nav-anchor" href="https://www.fossr.eu/governance/" target="_blank">
+                                            <span class="w-nav-title">Governance</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-has-children w-nav-item">
+                                <a class="w-nav-anchor" href="https://www.fossr.eu/opensciencecloud/" target="_blank">
+                                    <span class="w-nav-title">Open Science Cloud</span>
+                                </a>
+                                <ul class="w-nav-list level_2">
+                                    <li class="w-nav-item">
+                                        <a class="w-nav-anchor" href="https://www.fossr.eu/iopp/" target="_blank">
+                                            <span class="w-nav-title">IOPP</span>
+                                        </a>
+                                    </li>
+                                    <li class="w-nav-item">
+                                        <a class="w-nav-anchor" href="https://www.fossr.eu/online-research-panel-orp/" target="_blank">
+                                            <span class="w-nav-title">ORP</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-has-children w-nav-item">
+                                <a class="w-nav-anchor" href="#">
+                                    <span class="w-nav-title">Media</span>
+                                </a>
+                                <ul class="w-nav-list level_2">
+                                    <li class="w-nav-item">
+                                        <a class="w-nav-anchor" href="https://www.fossr.eu/news/" target="_blank">
+                                            <span class="w-nav-title">News</span>
+                                        </a>
+                                    </li>
+                                    <li class="w-nav-item">
+                                        <a class="w-nav-anchor" href="https://www.fossr.eu/eventi/" target="_blank">
+                                            <span class="w-nav-title">Eventi</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================
+         SOTTOMENU APPLICAZIONE (nuovo)
+    ======================================== -->
+    <nav class="app-submenu">
+        <div class="app-submenu-h">
+            <div class="app-submenu-title">
+                📊 Survey & GraphDB Manager
+            </div>
+            <button class="app-submenu-toggle" aria-label="App Menu" onclick="toggleAppMenu()">
+                <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <div class="app-submenu-nav">
+                <ul id="appMenu">
+                    <li>
+                        <a href="/" class="active">
+                            🏠 Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/limesurvey">
+                            📊 LimeSurvey
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/graphdb">
+                            🗄️ GraphDB
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/surveybuilder">
+                            🔨 Survey Builder
+                        </a>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">
+                            🔧 Tools ▼
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="/tools/export">Export Data</a>
+                            <a href="/tools/import">Import Data</a>
+                            <a href="/tools/query">SPARQL Query</a>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">
+                            📚 Docs ▼
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="/docs/user-guide">User Guide</a>
+                            <a href="/docs/api">API Docs</a>
+                            <a href="/docs/tutorials">Tutorials</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         MAIN CONTENT
+    ======================================== -->
+    <main id="page-content" class="l-main">
+        <div class="container">
+            <div class="hero-section">
+                <h2>🏠 Welcome to Survey & GraphDB Manager</h2>
+                <p>A comprehensive solution for exporting survey data from LimeSurvey, storing it in GraphDB knowledge graphs, and building new surveys from existing data.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>LimeSurvey Export</h3>
+                    <p>Connect to your LimeSurvey instance and export surveys, questions, groups, and responses in multiple formats (JSON, CSV).</p>
+                    <ul>
+                        <li>✅ List all surveys</li>
+                        <li>✅ Export questions and groups</li>
+                        <li>✅ Export participant responses</li>
+                        <li>✅ Get survey properties and statistics</li>
+                    </ul>
+                    <a href="/limesurvey" class="btn">Open LimeSurvey Manager →</a>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🗄️</div>
+                    <h3>GraphDB Input</h3>
+                    <p>Upload ontologies and survey data to GraphDB repositories, creating structured knowledge graphs for advanced querying.</p>
+                    <ul>
+                        <li>✅ Create and manage repositories</li>
+                        <li>✅ Upload OWL ontologies</li>
+                        <li>✅ Import CSV data with RML mapping</li>
+                        <li>✅ View loaded named graphs</li>
+                    </ul>
+                    <a href="/graphdb" class="btn">Open GraphDB Manager →</a>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔨</div>
+                    <h3>Survey Builder</h3>
+                    <p>Query your GraphDB knowledge graph, select questions and groups, and create new surveys directly in LimeSurvey.</p>
+                    <ul>
+                        <li>✅ Query GraphDB with SPARQL</li>
+                        <li>✅ Browse groups and questions</li>
+                        <li>✅ Drag-and-drop survey composition</li>
+                        <li>✅ Create surveys in LimeSurvey</li>
+                    </ul>
+                    <a href="/surveybuilder" class="btn">Open Survey Builder →</a>
+                </div>
+            </div>
+
+            <!-- Workflow -->
+            <div class="workflow-section">
+                <h2 style="text-align: center; margin-bottom: 30px; color: #333;">📋 Typical Workflow</h2>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="workflow-step">
+                        <div class="workflow-number">1</div>
+                        <div>
+                            <strong style="color: #333;">Export from LimeSurvey</strong>
+                            <p style="margin: 5px 0 0 0; color: #666;">Use the LimeSurvey page to connect and export your survey structure (groups, questions, properties).</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-number">2</div>
+                        <div>
+                            <strong style="color: #333;">Upload to GraphDB</strong>
+                            <p style="margin: 5px 0 0 0; color: #666;">Use the GraphDB page to create a repository, upload your ontology, and import the CSV data.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-number">3</div>
+                        <div>
+                            <strong style="color: #333;">Query and Compose</strong>
+                            <p style="margin: 5px 0 0 0; color: #666;">Use the Survey Builder to query your knowledge graph, select questions, and organize them.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-number success">4</div>
+                        <div>
+                            <strong style="color: #333;">Create New Survey</strong>
+                            <p style="margin: 5px 0 0 0; color: #666;">Export your composition or create a new survey directly in LimeSurvey.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Toggle FOSSR menu (mobile)
+        function toggleFossrMenu() {
+            const menu = document.getElementById('fossrMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Toggle App submenu (mobile)
+        function toggleAppMenu() {
+            const menu = document.getElementById('appMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Mobile FOSSR submenu toggle
+        document.querySelectorAll('.menu-item-has-children').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (e.target.closest('.w-nav-anchor') && !e.target.closest('.level_2')) {
+                        e.preventDefault();
+                        this.classList.toggle('open');
+                    }
+                }
+            });
+        });
+
+        // Mobile App dropdown toggle
+        document.querySelectorAll('.app-submenu-nav .has-dropdown').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (e.target.closest('a') && !e.target.closest('.dropdown-menu')) {
+                        e.preventDefault();
+                        this.classList.toggle('open');
+                    }
+                }
+            });
+        });
+
+        // Close menus when clicking outside
+        document.addEventListener('click', function(event) {
+            const fossrMenu = document.getElementById('fossrMenu');
+            const fossrButton = document.querySelector('.w-nav-control');
+            const appMenu = document.getElementById('appMenu');
+            const appButton = document.querySelector('.app-submenu-toggle');
+
+            if (fossrMenu && fossrButton && !fossrMenu.contains(event.target) && !fossrButton.contains(event.target)) {
+                fossrMenu.classList.remove('active');
+            }
+
+            if (appMenu && appButton && !appMenu.contains(event.target) && !appButton.contains(event.target)) {
+                appMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

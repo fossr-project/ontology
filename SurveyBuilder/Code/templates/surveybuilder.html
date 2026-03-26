@@ -12,25 +12,49 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
             min-height: 100vh;
             padding: 20px;
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: calc(100vh - 40px);
-        }
+.institutional-banner {
+    background: #2b5a9e;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Assicura che occupi tutta la larghezza */
+}
 
-       .header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.institutional-banner img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsive per schermi piccoli */
+@media (max-width: 768px) {
+    .institutional-banner {
+        padding: 10px 15px;
+    }
+
+    .institutional-banner img {
+        max-height: 40px; /* Più piccolo su mobile */
+    }
+}
+        /* Project Logo in Header */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-logo img {
+    max-height: 50px;
+    width: auto;
+}
+   .header {
+     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 25px 30px;
     display: flex;
@@ -685,19 +709,29 @@
 </head>
 <body>
     <div class="container">
+        <!-- Institutional Banner -->
+        <div class="institutional-banner">
+            <img src="../static/images/institutional-banner.png" alt="Finanziato dall'Unione Europea - Ministero dell'Università e della Ricerca - Italia Domani">
+        </div>
+    <div class="header-logo">
+                    <img src="../static/images/project-logo.png" alt="Project Logo">
+    </div>
         <div class="header">
             <div class="header-left">
-            <h1>🗂️ Survey Builder</h1>
-            <p>Select groups and questions from your GraphDB repository to create a new questionnaire.</p>
-        </div>
+                
+                    <div>
+                        <h1>🗂️ Survey Builder</h1>
+                        <p>Select groups and questions from your GraphDB repository to create a new questionnaire.</p>
+                    </div>
+                </div>
+        
          <div class="nav-links">
-                <a href="/" class="nav-link active">🏠 Home</a>
+                <a href="/" class="nav-link">🏠 Home</a>
                 <a href="/limesurvey" class="nav-link">📊 LimeSurvey</a>
                 <a href="/graphdb" class="nav-link">🗄️ GraphDB</a>
-                <a href="/surveybuilder" class="nav-link">🔨 Survey Builder</a>
+                <a href="/surveybuilder" class="nav-link active">🔨 Survey Builder</a>
             </div>
         </div>
-
         <div class="config-bar">
             <div class="config-group">
                 <label>🔗 GraphDB URL:</label>
@@ -939,7 +973,7 @@ LIMIT 10"></textarea>
         </div>
     </div>
 
-    <script src="/static/js/common.js"></script>
-    <script src="/static/js/surveybuilder.js"></script>
+    <script src="../static/js/common.js"></script>
+    <script src="../static/js/surveybuilder.js"></script>
 </body>
 </html>

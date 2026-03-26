@@ -13,46 +13,66 @@ from pathlib import Path
 
 # Aggiungi lib/ al PYTHONPATH
 lib_path = Path(__file__).parent / 'lib'
-sys.path.insert(0, '/app')
+sys.path.insert(0, str(lib_path))
 
 # Ora importa pyrml normalmente
 from pyrml import Mapper, PyRML
 
-#from pyrml import Mapper, PyRML
+# from pyrml import Mapper, PyRML
 from rdflib import Graph
 from typing import Dict, List, Any
 from xml.dom import minidom
 from SPARQLWrapper import SPARQLWrapper, JSON
+import subprocess
+import logging
+
+logger = logging.getLogger(__name__)
 
 import xml.etree.ElementTree as ET
 
 # Configurazione GraphDB
 GRAPHDB_URL = "http://graphdb:7200"
-REPOSITORY = "test_repo"
+REPOSITORY = "prova"
 
 # Configurazione LimeSurvey
-LIMESURVEY_URL = os.getenv('LIMESURVEY_URL', 'http://limesurvey:8080/admin/remotecontrol')
+LIMESURVEY_URL = "http://limesurvey:8080/index.php/admin/remotecontrol"
 LIMESURVEY_USERNAME = "admin"
 LIMESURVEY_PASSWORD = "admin"
-#FUNZIONI PER BUILDER SURVEY
 
+
+# FUNZIONI PER BUILDER SURVEY
 def generate_lsq_xml(question_data: Dict) -> str:
     """
     Genera file .lsq XML completo da dati GraphDB
-    CORRETTO: rispetta validazione rigorosa di LimeSurvey
+    BASATO SU ESEMPIO FUNZIONANTE DA LIMESURVEY
     """
 
     print(f"DEBUG: Generating .lsq XML for question {question_data.get('qid', 'unknown')}")
+
+    # Normalizza struttura dati
+    subquestions = data_structure(question_data, 'subquestions')
+    answer_options = data_structure(question_data, 'answerOptions')
+
+    question_data['subquestions'] = subquestions
+    question_data['answerOptions'] = answer_options
+
+    print(f"DEBUG: Normalized - {len(subquestions)} subquestions, {len(answer_options)} answer options")
+
+    # USA QID REALE dal GraphDB
+    main_qid = str(question_data.get('qid', ''))
+    main_sid = str(question_data.get('sid', ''))
+    main_gid = str(question_data.get('gid', ''))
+
+    print(f"DEBUG: Using QID={main_qid}, SID={main_sid}, GID={main_gid}")
 
     root = ET.Element("document")
     ET.SubElement(root, "LimeSurveyDocType").text = "Question"
     ET.SubElement(root, "DBVersion").text = "623"
 
-    # Languages
     languages = ET.SubElement(root, "languages")
     ET.SubElement(languages, "language").text = "it"
 
-    # ===== QUESTIONS (main question) =====
+    # ===== MAIN QUESTION =====
     questions_elem = ET.SubElement(root, "questions")
     fields_elem = ET.SubElement(questions_elem, "fields")
 
@@ -66,35 +86,34 @@ def generate_lsq_xml(question_data: Dict) -> str:
     rows_elem = ET.SubElement(questions_elem, "rows")
     row_elem = ET.SubElement(rows_elem, "row")
 
-    # IMPORTANTE: NON usare CDATA in modo manuale, ET lo gestisce
     attrs = question_data.get('attributes', {})
 
-    # QID - può essere vuoto per auto-generazione
+    # QID dal GraphDB
     qid_elem = ET.SubElement(row_elem, "qid")
-    qid_elem.text = ""  # Lascia vuoto per auto-generazione
+    qid_elem.text = main_qid
 
-    # Parent QID - DEVE essere 0 (numero, non stringa)
+    # Parent QID = 0
     parent_qid_elem = ET.SubElement(row_elem, "parent_qid")
     parent_qid_elem.text = "0"
 
-    # SID - lascia vuoto, verrà assegnato da LimeSurvey
+    # SID dal GraphDB
     sid_elem = ET.SubElement(row_elem, "sid")
-    sid_elem.text = ""
+    sid_elem.text = main_sid
 
-    # GID - lascia vuoto, verrà assegnato da LimeSurvey
+    # GID dal GraphDB
     gid_elem = ET.SubElement(row_elem, "gid")
-    gid_elem.text = ""
+    gid_elem.text = main_gid
 
-    # TYPE - MAX 1 CARATTERE! Importantissimo
+    # TYPE
     question_type = question_data.get('type', 'T')
     if len(question_type) > 1:
-        question_type = question_type[0]  # Prendi solo primo carattere
+        question_type = question_type[0]
     type_elem = ET.SubElement(row_elem, "type")
     type_elem.text = question_type
+    print(f"DEBUG: Question type: {question_type}")
 
-    # TITLE (variableCod)
+    # TITLE
     title = question_data.get('title', 'Q1')
-    # Valida: deve iniziare con lettera, solo alfanumerici
     import re
     if not re.match(r'^[a-zA-Z][a-zA-Z0-9_]*$', title):
         title = 'Q' + re.sub(r'[^a-zA-Z0-9_]', '', title)
@@ -103,34 +122,34 @@ def generate_lsq_xml(question_data: Dict) -> str:
     title_elem = ET.SubElement(row_elem, "title")
     title_elem.text = title
 
-    # PREG - vuoto
-    preg_elem = ET.SubElement(row_elem, "preg")
+    # PREG
+    ET.SubElement(row_elem, "preg")
 
-    # OTHER - DEVE essere Y o N (non "N" con CDATA)
+    # OTHER
     other_elem = ET.SubElement(row_elem, "other")
     other_elem.text = "N"
 
-    # MANDATORY - DEVE essere Y o N
+    # MANDATORY
     mandatory = attrs.get('mandatory', 'N')
     if mandatory not in ['Y', 'N']:
         mandatory = 'Y' if mandatory == '1' else 'N'
     mandatory_elem = ET.SubElement(row_elem, "mandatory")
     mandatory_elem.text = mandatory
 
-    # ENCRYPTED - DEVE essere Y o N
+    # ENCRYPTED
     encrypted_elem = ET.SubElement(row_elem, "encrypted")
     encrypted_elem.text = "N"
 
-    # QUESTION_ORDER - numero
+    # QUESTION_ORDER
     question_order = attrs.get('question_order', '1')
     question_order_elem = ET.SubElement(row_elem, "question_order")
     question_order_elem.text = str(question_order)
 
-    # SCALE_ID - DEVE essere numero
+    # SCALE_ID
     scale_id_elem = ET.SubElement(row_elem, "scale_id")
     scale_id_elem.text = "0"
 
-    # SAME_DEFAULT - DEVE essere 0 o 1 (numero)
+    # SAME_DEFAULT
     same_default_elem = ET.SubElement(row_elem, "same_default")
     same_default_elem.text = "0"
 
@@ -144,20 +163,20 @@ def generate_lsq_xml(question_data: Dict) -> str:
     theme_elem = ET.SubElement(row_elem, "question_theme_name")
     theme_elem.text = question_theme if question_theme else ""
 
-    # MODULENAME - vuoto
-    module_elem = ET.SubElement(row_elem, "modulename")
+    # MODULENAME
+    ET.SubElement(row_elem, "modulename")
 
-    # SAME_SCRIPT - DEVE essere 0 o 1 (numero)
+    # SAME_SCRIPT
     same_script_elem = ET.SubElement(row_elem, "same_script")
     same_script_elem.text = "0"
 
     # ===== SUBQUESTIONS =====
-    subquestions = question_data.get('subquestions', [])
-    if subquestions:
+    if subquestions and len(subquestions) > 0:
         print(f"DEBUG: Adding {len(subquestions)} subquestions to XML")
         subq_elem = ET.SubElement(root, "subquestions")
         subq_fields = ET.SubElement(subq_elem, "fields")
 
+        # ESATTAMENTE come nell'esempio funzionante!
         subq_field_names = ["qid", "parent_qid", "sid", "gid", "type", "title", "preg",
                             "other", "mandatory", "encrypted", "question_order", "scale_id",
                             "same_default", "relevance", "question_theme_name", "modulename",
@@ -171,23 +190,28 @@ def generate_lsq_xml(question_data: Dict) -> str:
         for sub_idx, sub in enumerate(subquestions):
             subq_row = ET.SubElement(subq_rows, "row")
 
-            # QID - vuoto
-            ET.SubElement(subq_row, "qid")
+            # QID della subquestion
+            sub_qid = sub.get('qid', f"{main_qid}{sub_idx + 1}")
+            qid_sub = ET.SubElement(subq_row, "qid")
+            qid_sub.text = str(sub_qid)
 
-            # PARENT_QID - vuoto, verrà collegato automaticamente
-            ET.SubElement(subq_row, "parent_qid")
+            # PARENT_QID - Collegato alla main question!
+            parent_qid_sub = ET.SubElement(subq_row, "parent_qid")
+            parent_qid_sub.text = main_qid
 
-            # SID - vuoto
-            ET.SubElement(subq_row, "sid")
+            # SID - Stesso della main
+            sid_sub = ET.SubElement(subq_row, "sid")
+            sid_sub.text = main_sid
 
-            # GID - vuoto
-            ET.SubElement(subq_row, "gid")
+            # GID - Stesso della main
+            gid_sub = ET.SubElement(subq_row, "gid")
+            gid_sub.text = main_gid
 
-            # TYPE
+            # TYPE - Sempre "T" per subquestions!
             sub_type_elem = ET.SubElement(subq_row, "type")
             sub_type_elem.text = "T"
 
-            # TITLE - DEVE iniziare con lettera!
+            # TITLE
             sub_title = sub.get('title', f'SQ{sub_idx + 1}')
             if not re.match(r'^[a-zA-Z][a-zA-Z0-9_]*$', sub_title):
                 sub_title = 'SQ' + re.sub(r'[^a-zA-Z0-9_]', '', sub_title)
@@ -196,7 +220,7 @@ def generate_lsq_xml(question_data: Dict) -> str:
             sub_title_elem = ET.SubElement(subq_row, "title")
             sub_title_elem.text = sub_title
 
-            # PREG - vuoto
+            # PREG
             ET.SubElement(subq_row, "preg")
 
             # OTHER
@@ -228,28 +252,29 @@ def generate_lsq_xml(question_data: Dict) -> str:
             sub_rel_elem = ET.SubElement(subq_row, "relevance")
             sub_rel_elem.text = "1"
 
-            # QUESTION_THEME_NAME - vuoto
+            # QUESTION_THEME_NAME
             ET.SubElement(subq_row, "question_theme_name")
 
-            # MODULENAME - vuoto
+            # MODULENAME
             ET.SubElement(subq_row, "modulename")
 
             # SAME_SCRIPT
             sub_script_elem = ET.SubElement(subq_row, "same_script")
             sub_script_elem.text = "0"
 
-            # ID - vuoto
-            ET.SubElement(subq_row, "id")
+            # ID (campo separato)
+            id_elem = ET.SubElement(subq_row, "id")
+            id_elem.text = str(sub_qid)
 
-            # QUESTION (testo)
-            sub_text = sub.get('text', '')
+            # QUESTION (testo subquestion - IMPORTANTE!)
+            sub_text = sub.get('text', sub.get('title', ''))
             sub_question_elem = ET.SubElement(subq_row, "question")
             sub_question_elem.text = sub_text
 
-            # HELP - vuoto
+            # HELP
             ET.SubElement(subq_row, "help")
 
-            # SCRIPT - vuoto
+            # SCRIPT
             ET.SubElement(subq_row, "script")
 
             # LANGUAGE
@@ -267,21 +292,23 @@ def generate_lsq_xml(question_data: Dict) -> str:
     ql10ns_rows = ET.SubElement(ql10ns_elem, "rows")
     ql10ns_row = ET.SubElement(ql10ns_rows, "row")
 
-    # ID - vuoto
-    ET.SubElement(ql10ns_row, "id")
+    # ID - Stesso del QID
+    id_l10n = ET.SubElement(ql10ns_row, "id")
+    id_l10n.text = main_qid
 
-    # QID - vuoto
-    ET.SubElement(ql10ns_row, "qid")
+    # QID
+    qid_l10n = ET.SubElement(ql10ns_row, "qid")
+    qid_l10n.text = main_qid
 
-    # QUESTION (testo domanda)
+    # QUESTION (testo main question - IMPORTANTE!)
     question_text = question_data.get('questionText', '')
     question_elem = ET.SubElement(ql10ns_row, "question")
     question_elem.text = question_text
 
-    # HELP - vuoto
+    # HELP
     ET.SubElement(ql10ns_row, "help")
 
-    # SCRIPT - vuoto o da dati
+    # SCRIPT
     script_text = question_data.get('script', '')
     script_elem = ET.SubElement(ql10ns_row, "script")
     script_elem.text = script_text if script_text else ""
@@ -301,7 +328,7 @@ def generate_lsq_xml(question_data: Dict) -> str:
 
     qattrs_rows = ET.SubElement(qattrs_elem, "rows")
 
-    # Aggiungi attributi base necessari
+    # Attributi default necessari
     default_attributes = {
         'hidden': '0',
         'page_break': '0',
@@ -318,7 +345,7 @@ def generate_lsq_xml(question_data: Dict) -> str:
     # Merge con attributi dal GraphDB
     all_attributes = {**default_attributes, **attrs}
 
-    # Rimuovi attributi che non devono andare in question_attributes
+    # Rimuovi attributi che non vanno in question_attributes
     excluded_attrs = ['mandatory', 'question_order', 'relevance', 'question_theme_name']
     for excluded in excluded_attrs:
         all_attributes.pop(excluded, None)
@@ -335,7 +362,6 @@ def generate_lsq_xml(question_data: Dict) -> str:
         qattr_value = ET.SubElement(qattr_row, "value")
         qattr_value.text = str(attr_value) if attr_value else ""
 
-        # LANGUAGE - vuoto per attributi generali, "it" per localizzati
         qattr_lang = ET.SubElement(qattr_row, "language")
         if attr_name in ['prefix', 'suffix', 'em_validation_q_tip', 'em_validation_sq_tip']:
             qattr_lang.text = "it"
@@ -343,8 +369,7 @@ def generate_lsq_xml(question_data: Dict) -> str:
             qattr_lang.text = ""
 
     # ===== ANSWERS (Answer Options) =====
-    answer_options = question_data.get('answerOptions', [])
-    if answer_options:
+    if answer_options and len(answer_options) > 0:
         print(f"DEBUG: Adding {len(answer_options)} answer options to XML")
 
         answers_elem = ET.SubElement(root, "answers")
@@ -356,14 +381,15 @@ def generate_lsq_xml(question_data: Dict) -> str:
 
         answers_rows = ET.SubElement(answers_elem, "rows")
 
-        for ans in answer_options:
+        for ans_idx, ans in enumerate(answer_options):
             ans_row = ET.SubElement(answers_rows, "row")
 
-            # QID - vuoto
-            ET.SubElement(ans_row, "qid")
+            # ✅ QID - Collegato alla main question
+            ans_qid = ET.SubElement(ans_row, "qid")
+            ans_qid.text = main_qid
 
             # CODE
-            ans_code = ans.get('code', '')
+            ans_code = ans.get('code', str(ans_idx + 1))
             code_elem = ET.SubElement(ans_row, "code")
             code_elem.text = str(ans_code)
 
@@ -372,17 +398,17 @@ def generate_lsq_xml(question_data: Dict) -> str:
             answer_elem = ET.SubElement(ans_row, "answer")
             answer_elem.text = ans_text
 
-            # SORTORDER - numero
-            sort_order = ans.get('sortOrder', '0')
+            # SORTORDER
+            sort_order = ans.get('sortOrder', str(ans_idx))
             sort_elem = ET.SubElement(ans_row, "sortorder")
             sort_elem.text = str(sort_order)
 
-            # ASSESSMENT_VALUE - numero
+            # ASSESSMENT_VALUE
             assessment = ans.get('assessmentValue', '0')
             assess_elem = ET.SubElement(ans_row, "assessment_value")
             assess_elem.text = str(assessment)
 
-            # SCALE_ID - numero
+            # SCALE_ID
             scale = ans.get('scaleId', '0')
             scale_elem = ET.SubElement(ans_row, "scale_id")
             scale_elem.text = str(scale)
@@ -390,8 +416,9 @@ def generate_lsq_xml(question_data: Dict) -> str:
             # LANGUAGE
             lang_elem = ET.SubElement(ans_row, "language")
             lang_elem.text = "it"
-    print("ciao    ", ET.tostring(root))
-    # Converti in stringa XML
+    # ===== CONVERTI IN STRINGA XML =====
+    print(f"DEBUG: XML structure created - root has {len(root)} children")
+
     xml_str = ET.tostring(root, encoding='unicode', method='xml')
 
     # Pretty print con minidom
@@ -409,10 +436,8 @@ def generate_lsq_xml(question_data: Dict) -> str:
 
     print(f"DEBUG: Generated .lsq XML ({len(final_xml)} bytes)")
 
+    # ✅ QUESTO RETURN È FONDAMENTALE!
     return final_xml
-
-
-
 
 # Configura Flask con le directory corrette
 app = Flask(__name__,
@@ -426,6 +451,223 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 
 # ==================== FUNZIONI DI UTILITÀ ====================
+def data_structure(data, field_name):
+    """Converte dict in list se necessario"""
+    field_data = data.get(field_name, [])
+
+    if isinstance(field_data, dict):
+        return list(field_data.values())
+    elif isinstance(field_data, list):
+        return field_data
+    else:
+        return []
+def transform_limesurvey_json(questions):
+    """
+    Trasforma subquestions e answeroptions da oggetti ad array.
+
+    Args:
+        questions: Lista di question dal JSON LimeSurvey
+
+    Returns:
+        Lista trasformata
+    """
+    for question in questions:
+        qid = question.get('qid')
+
+        # ===== TRASFORMA SUBQUESTIONS =====
+        subquestions = question.get('subquestions')
+
+        if isinstance(subquestions, dict) and subquestions:
+            # Converti oggetto in array
+            subqs_array = []
+
+            for sub_qid, subq_data in subquestions.items():
+                # Crea nuovo oggetto subquestion
+                subq = {
+                    'qid': sub_qid,  # Usa chiave come qid
+                    'parent_qid': qid,  # Aggiungi parent
+                    **subq_data  # Copia tutti gli altri dati
+                }
+                subqs_array.append(subq)
+
+            # Sostituisci oggetto con array
+            question['subquestions'] = subqs_array
+
+            print(f"✓ Trasformata question {qid}: {len(subqs_array)} subquestions")
+
+        elif subquestions == "No available answers":
+            # Converti stringa in array vuoto
+            question['subquestions'] = []
+
+        # ===== TRASFORMA ANSWEROPTIONS =====
+        answeroptions = question.get('answeroptions')
+
+        if isinstance(answeroptions, dict) and answeroptions:
+            # Converti oggetto in array
+            answers_array = []
+
+            for code, answer_data in answeroptions.items():
+                # Crea nuovo oggetto answer
+                answer = {
+                    'code': code,  # Usa chiave come code
+                    'parent_qid': qid,  # Aggiungi parent
+                    **answer_data  # Copia tutti gli altri dati
+                }
+                answers_array.append(answer)
+
+            # Sostituisci oggetto con array
+            question['answeroptions'] = answers_array
+
+            print(f"✓ Trasformata question {qid}: {len(answers_array)} answeroptions")
+
+        elif answeroptions == "No available answer options":
+            # Converti stringa in array vuoto
+            question['answeroptions'] = []
+
+        # ===== TRASFORMA ATTRIBUTES =====
+        attributes = question.get('attributes')
+
+        if isinstance(attributes, dict) and attributes:
+            # Converti oggetto in array
+            attrs_array = []
+
+            for attr_name, attr_value in attributes.items():
+                # Salta attributes vuoti o null
+                if attr_value in [None, "", "0"]:
+                    continue
+
+                attr = {
+                    'name': attr_name,
+                    'value': str(attr_value),
+                    'parent_qid': qid
+                }
+                attrs_array.append(attr)
+
+            question['attributes'] = attrs_array
+
+            if attrs_array:
+                print(f"✓ Trasformata question {qid}: {len(attrs_array)} attributes")
+
+    return questions
+
+
+def split_limesurvey_json(input_file):
+    """
+    Separa JSON in 4 file distinti:
+    - questions_only.json
+    - subquestions_only.json
+    - answeroptions_only.json
+    - attributes_only.json
+    """
+
+    print(f"📂 Caricamento: {input_file}")
+
+    with open(input_file, 'r', encoding='utf-8') as f:
+        questions = json.load(f)
+
+    print(f"✓ Caricate {len(questions)} questions")
+    print()
+    questions = transform_limesurvey_json(questions)
+    # ====== FILE 1: QUESTIONS ONLY ======
+    print("🔄 Elaborazione questions...")
+    questions_output = []
+
+    for q in questions:
+        # Rimuovi nested arrays - li mapperemo separatamente
+        q_clean = {
+            k: v for k, v in q.items()
+            if k not in ['subquestions', 'answeroptions', 'attributes', 'attributes_lang', 'available_answers']
+        }
+        questions_output.append(q_clean)
+
+    with open('questions_only.json', 'w', encoding='utf-8') as f:
+        json.dump(questions_output, f, indent=2, ensure_ascii=False)
+
+    print(f"✓ Salvato: questions_only.json ({len(questions_output)} questions)")
+
+    # ====== FILE 2: SUBQUESTIONS ONLY ======
+    print("🔄 Elaborazione subquestions...")
+    subquestions_output = []
+
+    for q in questions:
+        subqs = q.get('subquestions', [])
+        if isinstance(subqs, list):
+            for sq in subqs:
+                if sq:  # Solo se non None o vuoto
+                    subquestions_output.append(sq)
+
+    with open('subquestions_only.json', 'w', encoding='utf-8') as f:
+        json.dump(subquestions_output, f, indent=2, ensure_ascii=False)
+
+    print(f"✓ Salvato: subquestions_only.json ({len(subquestions_output)} subquestions)")
+
+    # ====== FILE 3: ANSWEROPTIONS ONLY ======
+    print("🔄 Elaborazione answer options...")
+    answeroptions_output = []
+
+    for q in questions:
+        answers = q.get('answeroptions', [])
+        if isinstance(answers, list):
+            for ao in answers:
+                if ao:  # Solo se non None o vuoto
+                    answeroptions_output.append(ao)
+
+    with open('answeroptions_only.json', 'w', encoding='utf-8') as f:
+        json.dump(answeroptions_output, f, indent=2, ensure_ascii=False)
+
+    print(f"✓ Salvato: answeroptions_only.json ({len(answeroptions_output)} answeroptions)")
+
+    # ====== FILE 4: ATTRIBUTES ONLY ======
+    print("🔄 Elaborazione attributes...")
+    attributes_output = []
+
+    for q in questions:
+        attrs = q.get('attributes', [])
+        if isinstance(attrs, list):
+            for attr in attrs:
+                if attr:  # Solo se non None o vuoto
+                    attributes_output.append(attr)
+
+    with open('attributes_only.json', 'w', encoding='utf-8') as f:
+        json.dump(attributes_output, f, indent=2, ensure_ascii=False)
+
+    print(f"✓ Salvato: attributes_only.json ({len(attributes_output)} attributes)")
+
+    print()
+    print("=" * 70)
+    print("✅ SPLIT COMPLETATO!")
+    print("=" * 70)
+    print()
+    print("📊 Riepilogo:")
+    print(f"  Questions:      {len(questions_output):4d}")
+    print(f"  Subquestions:   {len(subquestions_output):4d}")
+    print(f"  Answer Options: {len(answeroptions_output):4d}")
+    print(f"  Attributes:     {len(attributes_output):4d}")
+    print()
+    print("📝 File creati:")
+    print("  - questions_only.json")
+    print("  - subquestions_only.json")
+    print("  - answeroptions_only.json")
+    print("  - attributes_only.json")
+    print()
+    print("🎯 Ora aggiorna il tuo RML per usare questi file:")
+    print()
+    print("  <#QuestionsSource>")
+    print('    rml:source "questions_only.json" ;')
+    print()
+    print("  <#SubQuestionsSource>")
+    print('    rml:source "subquestions_only.json" ;')
+    print('    rml:iterator "$[*]" .  # ← Nota: root level!')
+    print()
+    print("  <#AnswerOptionsSource>")
+    print('    rml:source "answeroptions_only.json" ;')
+    print('    rml:iterator "$[*]" .  # ← Nota: root level!')
+    print()
+    print("  <#AttributesSource>")
+    print('    rml:source "attributes_only.json" ;')
+    print('    rml:iterator "$[*]" .  # ← Nota: root level!')
+    print()
+
 
 def clean_uri_path(path):
     """
@@ -448,6 +690,31 @@ def clean_uri_path(path):
         return 'default'
 
     return cleaned
+
+
+# ============================================
+# HELPER: Clean URI path
+# ============================================
+
+def clean_uri_path(value):
+    """
+    Clean a string to be used in URIs.
+    Removes special characters and normalizes spaces.
+    """
+    if not value:
+        return ""
+
+    # Remove leading/trailing whitespace
+    value = value.strip()
+
+    # Replace spaces with underscores
+    value = value.replace(' ', '_')
+
+    # Remove special characters (keep only alphanumeric, underscore, hyphen)
+    import re
+    value = re.sub(r'[^a-zA-Z0-9_-]', '', value)
+
+    return value
 
 
 def cambiaNomeCSV(input_file):
@@ -526,6 +793,7 @@ def cambiaNomeCSV(input_file):
         import traceback
         traceback.print_exc()
         return False
+
 
 def pulisciCSV(input_file):
     """Pulisce il CSV dei groups e risolve problemi con virgolette e newline"""
@@ -624,7 +892,6 @@ def appiattisci_dizionario(d, parent_key='', sep='_'):
         else:
             items.append((new_key, v))
     return dict(items)
-
 
 
 def get_complete_question_data(self, question_uri: str) -> Dict[str, Any]:
@@ -747,46 +1014,167 @@ def get_complete_question_data(self, question_uri: str) -> Dict[str, Any]:
     return self._parse_complete_question_data(results)
 
 
+# ==================== RML CONVERTER ====================
+
+logger = logging.getLogger(__name__)
+
+
+class RMLConversionError(Exception):
+    """Custom exception for RML conversion errors."""
+    pass
+
+
 class RMLConverter:
-    """Classe per convertire file CSV in RDF usando RML mapping"""
+    """
+    RML Converter con subprocess isolation per pyrml locale.
+    Ricrea un processo Python fresco per ogni conversione.
+    """
 
     def __init__(self, strict_mode: bool = False):
-        PyRML.RML_STRICT = strict_mode
-        self.mapper: Mapper = PyRML.get_mapper()
+        """
+        Initialize converter.
+
+        Args:
+            strict_mode: If True, enables RML strict mode validation.
+        """
+        self.strict_mode = strict_mode
         self.rdf_graph: Optional[Graph] = None
 
+        logger.info(f"RMLConverter initialized (strict_mode={strict_mode}, subprocess mode)")
+
     def convert_rml_file(self, rml_file_path: Union[str, Path]) -> Graph:
-        rml_file_path = Path(rml_file_path)
+        """
+        Convert RML file using subprocess isolation.
+        Each conversion runs in a fresh Python process.
+        """
+        # Validate
+        if not rml_file_path:
+            raise ValueError("RML file path cannot be empty")
 
-        if not rml_file_path.exists():
-            raise FileNotFoundError(f"File RML non trovato: {rml_file_path}")
+        rml_path = Path(rml_file_path).resolve()
 
-        print(f"📂 Caricamento file RML: {rml_file_path}")
+        if not rml_path.exists():
+            raise FileNotFoundError(f"RML file not found: {rml_path}")
+
+        logger.info(f"Converting RML: {rml_path}")
+        print(f"🔄 Converting RML: {rml_path}")
+
+        # Output file
+        output_path = rml_path.parent / (rml_path.stem + '_output.ttl')
 
         try:
-            self.rdf_graph = self.mapper.convert(str(rml_file_path))
-            print(f"✓ Conversione completata: {len(self.rdf_graph)} triple generate")
+            # Convert in subprocess
+            result = self._convert_in_subprocess(str(rml_path), str(output_path))
+
+            if not result['success']:
+                raise RMLConversionError(result.get('error', 'Unknown error'))
+
+            # Load graph
+            self.rdf_graph = Graph()
+            self.rdf_graph.parse(str(output_path), format='turtle')
+
+            logger.info(f"Conversion complete: {len(self.rdf_graph)} triples")
+            print(f"✅ Conversion complete: {len(self.rdf_graph)} triples")
+
             return self.rdf_graph
+
         except Exception as e:
-            print(f"✗ Errore durante la conversione: {str(e)}")
-            raise
+            error_msg = f"Failed to convert {rml_path}: {str(e)}"
+            logger.error(error_msg, exc_info=True)
+            raise RMLConversionError(error_msg) from e
+
+    def _convert_in_subprocess(self, rml_file: str, output_file: str) -> dict:
+        """Run conversion in isolated subprocess."""
+
+        # Conversion script
+        script = f"""
+import sys
+import json
+
+try:
+    from pyrml import PyRML
+
+    PyRML.RML_STRICT = {self.strict_mode}
+    mapper = PyRML.get_mapper()
+    graph = mapper.convert(r'{rml_file}')
+    graph.serialize(r'{output_file}', format='turtle')
+
+    result = {{'success': True, 'triples': len(graph), 'output': r'{output_file}'}}
+    print(json.dumps(result))
+    sys.exit(0)
+
+except Exception as e:
+    import traceback
+    result = {{'success': False, 'error': str(e), 'traceback': traceback.format_exc()}}
+    print(json.dumps(result))
+    sys.exit(1)
+"""
+
+        logger.debug(f"Running subprocess conversion: {rml_file}")
+        print(f"🔧 Running isolated conversion...")
+
+        try:
+            result = subprocess.run(
+                [sys.executable, '-c', script],
+                capture_output=True,
+                text=True,
+                timeout=300,
+                cwd=os.getcwd()
+            )
+
+            try:
+                # ✅ FIX: Parsing robusto - trova l'ultima riga JSON
+                stdout_lines = result.stdout.strip().split('\n')
+
+                # Cerca l'ultima riga che inizia con '{'
+                json_line = None
+                for line in reversed(stdout_lines):
+                    line = line.strip()
+                    if line.startswith('{'):
+                        json_line = line
+                        break
+
+                if not json_line:
+                    error_msg = f"No JSON output\nstdout: {result.stdout}\nstderr: {result.stderr}"
+                    return {'success': False, 'error': error_msg}
+
+                output = json.loads(json_line)
+
+                if output['success']:
+                    print(f"✓ Subprocess: {output.get('triples', 0)} triples")
+                else:
+                    print(f"✗ Subprocess error: {output.get('error')}")
+
+                return output
+
+            except json.JSONDecodeError as e:
+                error_msg = f"JSON parse error: {e}\nstdout: {result.stdout}\nstderr: {result.stderr}"
+                return {'success': False, 'error': error_msg}
+
+        except subprocess.TimeoutExpired:
+            return {'success': False, 'error': 'Timeout (5 minutes)'}
+
+        except Exception as e:
+            return {'success': False, 'error': str(e)}
 
     def save_to_file(self, output_file: Union[str, Path], format: str = 'turtle') -> bool:
+        """Save current graph to file."""
         if self.rdf_graph is None:
-            raise ValueError("Nessun grafo RDF disponibile. Esegui prima convert_rml_file()")
+            raise ValueError("No RDF graph available. Run convert_rml_file() first")
 
         output_file = Path(output_file)
         output_file.parent.mkdir(parents=True, exist_ok=True)
 
         try:
             self.rdf_graph.serialize(destination=str(output_file), format=format)
-            print(f"✓ File salvato: {output_file} (formato: {format})")
+            print(f"✓ Saved: {output_file}")
             return True
         except Exception as e:
-            print(f"✗ Errore nel salvataggio del file: {str(e)}")
+            print(f"✗ Save error: {e}")
             return False
 
     def get_graph(self) -> Optional[Graph]:
+        """Get current RDF graph."""
         return self.rdf_graph
 
 
@@ -804,9 +1192,9 @@ class LimeSurveyAPI:
         Inizializza il client LimeSurvey
 
         Args:
-            url: URL del RemoteControl API (es: http://limesurvey:8080/index.php/admin/remotecontrol)
-            username: Username admin
-            password: Password admin
+            url: URL del RemoteControl API (es: http://localhost/limesurvey/index.php/admin/remotecontrol)
+            username: Username LimeSurvey
+            password: Password LimeSurvey
         """
         self.url = url
         self.username = username
@@ -1011,6 +1399,41 @@ class LimeSurveyAPI:
         if not self.session_key:
             self.get_session_key()
         return self._call('get_question_properties', [self.session_key, question_id])
+
+    def export_all_question_properties_survey(self, survey_id):
+        if not self.session_key:
+            self.get_session_key()
+
+        data1 = self.list_questions(survey_id)
+        print("sono all'inizio")
+        data = []
+        k = 0
+
+        for e in data1:  # ciclo sulle domande della survey
+            risultato_intermedio = self.get_question_properties(e['qid'])
+            print(risultato_intermedio)
+            data.append(risultato_intermedio)
+
+        # Save to JSON and return path
+        output_path = self._save_to_json(data, "questions.json")
+        print(f"✅ Exported {len(data)} questions to {output_path}")
+        return output_path
+
+    def _save_to_json(self, data: any, filename: str) -> str:
+        """Save data to JSON file in exports directory"""
+        exports_dir = Path("exports")
+        exports_dir.mkdir(exist_ok=True)
+        output_path = exports_dir / filename
+
+        try:
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+
+            print(f"💾 Saved JSON: {output_path}")
+            return str(output_path)
+        except Exception as e:
+            print(f"✗ Error saving JSON: {e}")
+            raise
 
     # ==================== METODI DI SCRITTURA (CREAZIONE) ====================
 
@@ -1356,7 +1779,7 @@ class GraphDBManager:
         if self.auth:
             self.session.auth = self.auth
 
-    def create_repository(self, repo_id, repo_title=None, repo_type="graphdb",ruleset="owl-horst-optimized"):
+    def create_repository(self, repo_id, repo_title=None, repo_type="graphdb", ruleset="owl-horst-optimized"):
         """
         Crea un nuovo repository GraphDB usando un template Turtle
         """
@@ -1526,7 +1949,7 @@ class GraphDBManager:
         if response.status_code in [200, 201]:
             success_msg = f"Created '{repo_id}'"
             print(f"SUCCESS: {success_msg}")
-            return {"success": True, "message":f"'{success_msg}' repository"}
+            return {"success": True, "message": f"'{success_msg}' repository"}
         elif response.status_code == 409:
             print(f"⚠ Repository '{repo_id}' già esistente")
             return {"success": True, "message": f"Repository '{repo_id}' exist"}
@@ -1637,14 +2060,13 @@ class GraphDBManager:
 
 class GraphDBClient:
 
-
     def __init__(self, endpoint: str, repository: str):
         self.endpoint = f"{endpoint}/repositories/{repository}"
         self.sparql = SPARQLWrapper(self.endpoint)
         self.sparql.setReturnFormat(JSON)
 
     def execute_query(self, query: str) -> Dict[str, Any]:
-            #Esegue una query SPARQL e ritorna i risultati"""
+        # Esegue una query SPARQL e ritorna i risultati"""
         try:
             self.sparql.setQuery(query)
             results = self.sparql.query().convert()
@@ -1776,7 +2198,7 @@ class GraphDBClient:
         return self._parse_complete_question_data(results)
 
     def _parse_complete_question_data(self, results: Dict) -> Dict[str, Any]:
-            #"""Parser per organizzare tutti i dati della question"""
+        # """Parser per organizzare tutti i dati della question"""
         bindings = results["results"]["bindings"]
 
         if not bindings:
@@ -1800,13 +2222,13 @@ class GraphDBClient:
             "answerOptions": []
         }
 
-            # Usa set per evitare duplicati
+        # Usa set per evitare duplicati
         subquestions_map = {}
         answers_map = {}
 
-            # Raccogli attributes, subquestions, answer options
+        # Raccogli attributes, subquestions, answer options
         for row in bindings:
-                # Attributes
+            # Attributes
             if "attrName" in row and row["attrName"].get("value"):
                 attr_name = row["attrName"]["value"]
                 attr_value = row.get("attrValue", {}).get("value", "")
@@ -1839,7 +2261,7 @@ class GraphDBClient:
         question_data["subquestions"] = list(subquestions_map.values())
         question_data["answerOptions"] = list(answers_map.values())
 
-            # Ordina subquestions e answers
+        # Ordina subquestions e answers
         question_data["subquestions"].sort(key=lambda x: int(x.get("order", "0")))
         question_data["answerOptions"].sort(key=lambda x: int(x.get("sortOrder", "0")))
 
@@ -1853,7 +2275,7 @@ class GraphDBClient:
         return question_data
 
     def get_all_groups(self) -> List[Dict[str, Any]]:
-        """Recupera tutti i gruppi con le loro domande in un'unica query"""
+        """Recupera tutti i gruppi con le loro domande (solo main questions)"""
         query = """
             PREFIX ns1: <https://w3id.org/fossr/ontology/limesurvey/>
             PREFIX ls: <https://w3id.org/fossr/ontology/limesurvey/>
@@ -1883,6 +2305,9 @@ class GraphDBClient:
                 # Link question -> group
                 OPTIONAL {
                     ?question ns1:hasGroup ?group .
+
+                    # ✅ FIX: Filtra solo main questions (no subquestions)
+                    FILTER NOT EXISTS { ?question ls:hasParentQuestion ?anyParent }
 
                     OPTIONAL {
                         ?question ls:hasId ?Identifier .
@@ -1954,12 +2379,11 @@ class GraphDBClient:
                     }
                     groups_dict[group_uri]["questions"].append(question)
 
-        # Convert to list
         groups = list(groups_dict.values())
 
         print(f"DEBUG: Found {len(groups)} groups")
-        for group in groups:
-            print(f"DEBUG: Group ID={group['id']}, Name={group['name']}, Questions={len(group['questions'])}")
+        for g in groups:
+            print(f"DEBUG: Group ID={g['id']}, Name={g['name']}, Questions={len(g['questions'])}")
 
         return groups
 
@@ -1971,61 +2395,90 @@ class GraphDBClient:
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-                 SELECT ?question ?questionId ?questionText ?variableCod ?isMandatory ?questionType
-                        ?answerOptions ?answerCode ?answerText ?answerSortOrder ?answerAssessmentValue ?answerScaleId
-                 WHERE {
-                     ?question a ls:Question .
-                     OPTIONAL { 
-                         ?question ls:hasId ?Identifier. 
-                         ?Identifier ls:id ?questionId 
-                     }
-                     OPTIONAL { 
-                         ?question ls:hasContent ?Content.
-                         ?Content ls:text ?questionText 
-                     }
-                     OPTIONAL {
-                         ?question ls:hasVariable ?var .
-                         ?var ls:variableCod ?variableCod
-                     }
-                     OPTIONAL {
-                         ?question ls:hasType ?type .
-                         ?type ls:code ?questionType
-                     }
-                     OPTIONAL { ?question ls:isMandatory ?isMandatory }
+            SELECT ?question ?questionId ?questionText ?variableCod ?isMandatory ?questionType
+                   ?answerOptions ?answerCode ?answerText ?answerSortOrder ?answerAssessmentValue ?answerScaleId 
+                   ?subQid ?subTitle ?subQuestionText ?subOrder
+            WHERE {
+                ?question a ls:Question .
 
-                     OPTIONAL {
-                         ?question ls:hasAnswerOption ?answerOptions .
+                # ✅ FILTRO: Solo main questions (non subquestions)
+                FILTER NOT EXISTS { ?question ls:hasParentQuestion ?anyParent }
 
-                         OPTIONAL {
-                             ?answerOptions ls:componentValue ?answerCode .
-                         }
+                OPTIONAL { 
+                    ?question ls:hasId ?Identifier. 
+                    ?Identifier ls:id ?questionId 
+                }
+                OPTIONAL { 
+                    ?question ls:hasContent ?Content.
+                    ?Content ls:text ?questionText 
+                }
+                OPTIONAL {
+                    ?question ls:hasVariable ?var .
+                    ?var ls:variableCod ?variableCod
+                }
+                OPTIONAL {
+                    ?question ls:hasType ?type .
+                    ?type ls:code ?questionType
+                }
+                OPTIONAL { ?question ls:isMandatory ?isMandatory }
 
-                         OPTIONAL {
-                             ?answerOptions ls:hasContent ?answerContentNode .
-                             ?answerContentNode ls:text ?answerText .
-                         }
+                # Answer Options
+                OPTIONAL {
+                    ?question ls:hasAnswerOption ?answerOptions .
 
-                         OPTIONAL {
-                             ?answerOptions ls:hasComponentAttribute ?answerAttr1 .
-                             ?answerAttr1 ls:componentName "sortorder" .
-                             ?answerAttr1 ls:componentValue ?answerSortOrder .
-                         }
+                    OPTIONAL {
+                        ?answerOptions ls:componentValue ?answerCode .
+                    }
 
-                         OPTIONAL {
-                             ?answerOptions ls:hasComponentAttribute ?answerAttr2 .
-                             ?answerAttr2 ls:componentName "assessment_value" .
-                             ?answerAttr2 ls:componentValue ?answerAssessmentValue .
-                         }
+                    OPTIONAL {
+                        ?answerOptions ls:hasContent ?answerContentNode .
+                        ?answerContentNode ls:text ?answerText .
+                    }
 
-                         OPTIONAL {
-                             ?answerOptions ls:hasComponentAttribute ?answerAttr3 .
-                             ?answerAttr3 ls:componentName "scale_id" .
-                             ?answerAttr3 ls:componentValue ?answerScaleId .
-                         }
-                     }
-                 }
-                 ORDER BY ?questionId ?answerSortOrder
-             """
+                    OPTIONAL {
+                        ?answerOptions ls:hasComponentAttribute ?answerAttr1 .
+                        ?answerAttr1 ls:componentName "sortorder" .
+                        ?answerAttr1 ls:componentValue ?answerSortOrder .
+                    }
+
+                    OPTIONAL {
+                        ?answerOptions ls:hasComponentAttribute ?answerAttr2 .
+                        ?answerAttr2 ls:componentName "assessment_value" .
+                        ?answerAttr2 ls:componentValue ?answerAssessmentValue .
+                    }
+
+                    OPTIONAL {
+                        ?answerOptions ls:hasComponentAttribute ?answerAttr3 .
+                        ?answerAttr3 ls:componentName "scale_id" .
+                        ?answerAttr3 ls:componentValue ?answerScaleId .
+                    }
+                }
+
+                # Subquestions
+                OPTIONAL {
+                    ?subQuestion ls:hasParentQuestion ?question .
+                    ?subQuestion ls:hasId ?subIdNode .
+                    ?subIdNode ls:id ?subQid .
+
+                    OPTIONAL {
+                        ?subQuestion ls:hasVariable ?subVarNode .
+                        ?subVarNode ls:variableCod ?subTitle .
+                    }
+
+                    OPTIONAL {
+                        ?subQuestion ls:hasContent ?subContentNode .
+                        ?subContentNode ls:text ?subQuestionText .
+                    }
+
+                    OPTIONAL {
+                        ?subQuestion ls:hasComponentAttribute ?subOrderAttr .
+                        ?subOrderAttr ls:componentName "question_order" .
+                        ?subOrderAttr ls:componentValue ?subOrder .
+                    }
+                }
+            }
+            ORDER BY ?questionId ?answerSortOrder ?subOrder
+        """
 
         print(f"DEBUG: Executing questions query...")
         results = self.execute_query(query)
@@ -2048,29 +2501,71 @@ class GraphDBClient:
                     "isMandatory": binding.get("isMandatory", {}).get("value", "0"),
                     "questionType": binding.get("questionType", {}).get("value", "L"),
                     "type": "question",
-                    "answers": []
+                    "answerOptions": [],
+                    "subquestions": []
                 }
 
-            # Se c'è un'answer option, aggiungila alla lista
-            if "answer" in binding:
-                answer = {
-                    "uri": binding["answer"]["value"],
-                    "code": binding.get("answerCode", {}).get("value", ""),
-                    "text": binding.get("answerText", {}).get("value", ""),
-                    "sortOrder": binding.get("answerSortOrder", {}).get("value", ""),
-                    "assessmentValue": binding.get("answerAssessmentValue", {}).get("value", ""),
-                    "scaleId": binding.get("answerScaleId", {}).get("value", "0")
+            # Processa answer options
+            if "answerOptions" in binding or "answerCode" in binding:
+                answer_code = binding.get("answerCode", {}).get("value", "")
+                answer_text = binding.get("answerText", {}).get("value", "")
+
+                # Aggiungi solo se ha almeno code o text
+                if answer_code or answer_text:
+                    answer = {
+                        "code": answer_code,
+                        "text": answer_text,
+                        "sortOrder": binding.get("answerSortOrder", {}).get("value", ""),
+                        "assessmentValue": binding.get("answerAssessmentValue", {}).get("value", ""),
+                        "scaleId": binding.get("answerScaleId", {}).get("value", "0")
+                    }
+
+                    # Evita duplicati
+                    if not any(a["code"] == answer["code"] for a in questions_dict[question_uri]["answerOptions"]):
+                        questions_dict[question_uri]["answerOptions"].append(answer)
+
+            # Processa subquestions
+            if "subQid" in binding and binding.get("subQid", {}).get("value"):
+                sub_id = binding.get("subQid", {}).get("value", "")
+
+                subquestion = {
+                    "id": sub_id,
+                    "title": binding.get("subTitle", {}).get("value", ""),
+                    "text": binding.get("subQuestionText", {}).get("value", ""),
+                    "order": binding.get("subOrder", {}).get("value", "")
                 }
 
-                # Evita duplicati (possono verificarsi con OPTIONAL multipli)
-                if answer not in questions_dict[question_uri]["answers"]:
-                    questions_dict[question_uri]["answers"].append(answer)
+                # Evita duplicati
+                if not any(s["id"] == sub_id for s in questions_dict[question_uri]["subquestions"]):
+                    questions_dict[question_uri]["subquestions"].append(subquestion)
 
         # Converti il dizionario in lista
         questions = list(questions_dict.values())
 
-        print(f"DEBUG: Found {len(questions)} unique questions")
+        # ✅ Ordina answerOptions e subquestions per sortOrder/order
+        for q in questions:
+            if q["answerOptions"]:
+                q["answerOptions"].sort(key=lambda x: int(x.get("sortOrder") or "0"))
+            if q["subquestions"]:
+                q["subquestions"].sort(key=lambda x: int(x.get("order") or "0"))
 
+        print(f"DEBUG: Found {len(questions)} unique questions")
+        print(f"DEBUG: Found {q['answerOptions']} answerOptions questions")
+        print(f"DEBUG: Found {q['subquestions']} subquestions")
+        # Log di debug dettagliato
+        questions_with_answers = sum(1 for q in questions if len(q["answerOptions"]) > 0)
+        questions_with_subs = sum(1 for q in questions if len(q["subquestions"]) > 0)
+        questions_without_text = sum(1 for q in questions if q["text"] == "No text")
+
+        print(f"DEBUG: {questions_with_answers} questions have answer options")
+        print(f"DEBUG: {questions_with_subs} questions have subquestions")
+
+        if questions_without_text > 0:
+            print(f"⚠️  WARNING: {questions_without_text} questions without text!")
+            # Mostra un esempio
+            no_text_example = next((q for q in questions if q["text"] == "No text"), None)
+            if no_text_example:
+                print(f"   Example: ID={no_text_example['id']}, Type={no_text_example['questionType']}")
 
         return questions
 
@@ -2124,7 +2619,6 @@ class GraphDBClient:
             print(f"DEBUG: Question found - ID: {question['id']}, Text: {question['text'][:50]}...")
 
         return questions
-
 
     def get_questions_by_group_old(self, group_uri: str) -> List[Dict[str, Any]]:
         """Recupera le domande di un gruppo specifico tramite QuestionFlow"""
@@ -2262,7 +2756,6 @@ class GraphDBClient:
             print(f"DEBUG: Error getting questions for group {group_uri}: {e}")
             return []
 
-
     def get_questions_by_group(self, group_uri: str) -> List[Dict[str, Any]]:
         """Recupera le domande di un gruppo specifico tramite QuestionFlow"""
         query = f"""
@@ -2355,6 +2848,9 @@ class GraphDBClient:
 
 
 def ex(data, api, operation):
+    # Debug: print operation name
+    print(f"🔍 ex() called with operation: '{operation}' (type: {type(operation)})")
+
     if operation == 'list_surveys':
         result = api.list_surveys()
         result = [appiattisci_json(item) for item in result]
@@ -2375,6 +2871,13 @@ def ex(data, api, operation):
     elif operation == 'list_participants':
         result = api.list_participants(data['survey_id'])
         result = [appiattisci_json(item) for item in result]
+    elif operation == 'question_properties':
+        print(f"✅ Matched 'question_properties', calling export_all_question_properties_survey")
+        # Export returns file path, not data
+        file_path = api.export_all_question_properties_survey(data['survey_id'])
+        print(f"✅ Export completed, file_path: {file_path}")
+        # Return special marker for file export
+        result = {'_file_export': True, 'file_path': file_path}
     elif operation == 'export_responses':
         responses = api.export_responses(data['survey_id'])
         if isinstance(responses, str):
@@ -2384,6 +2887,12 @@ def ex(data, api, operation):
             result = responses
     elif operation == 'get_summary':
         result = api.get_summary(data['survey_id'])
+    else:
+        # ✅ FIX: Handle unknown operations
+        print(f"❌ Unknown operation: '{operation}'")
+        raise ValueError(f"Unknown operation: {operation}")
+
+    print(f"✅ ex() returning result: {type(result)}")
     return result
 
 
@@ -2394,7 +2903,16 @@ def execute():
         api = LimeSurveyAPI(data['url'], data['username'], data['password'])
         result = ex(data, api, data['operation'])
         api.release_session_key()
-        return jsonify({'success': True, 'data': result})
+
+        # Check if it's a file export operation
+        if isinstance(result, dict) and result.get('_file_export'):
+            return jsonify({
+                'success': True,
+                'file_path': result['file_path'],
+                'message': f'File exported to {result["file_path"]}'
+            })
+        else:
+            return jsonify({'success': True, 'data': result})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
 
@@ -2407,6 +2925,17 @@ def export():
         result = ex(data, api, data['operation'])
         api.release_session_key()
 
+        # Check if it's a file export (returns file path directly)
+        if isinstance(result, dict) and result.get('_file_export'):
+            # File already created, just send it
+            filepath = result['file_path']
+            if os.path.exists(filepath):
+                return send_file(filepath, as_attachment=True,
+                                 download_name=os.path.basename(filepath))
+            else:
+                return jsonify({'success': False, 'error': f'File not found: {filepath}'})
+
+        # Normal data export - create CSV
         output_dir = 'exports'
         os.makedirs(output_dir, exist_ok=True)
         filename = f'{data["operation"]}_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv'
@@ -2503,26 +3032,32 @@ def convert_csv_to_rdf():
             return jsonify({'success': False, 'error': f'File CSV non trovato: {csv_path}'})
 
         rml_converter = RMLConverter(False)
-        rml_file = None
+        rml_file = []
 
         if data_type == "group":
-            rml_file = "RMLGroup2.ttl"
+            rml_file = ["rml/RMLGroup2.ttl"]
             pulisciCSV(csv_path)
         elif data_type == "question":
-            rml_file = "RMLQuestion.ttl"
+            rml_file = ["rml/RMLQuestion.ttl"]
             cambiaNomeCSV(csv_path)
+        elif data_type == "question_properties":
+            rml_file = ["rml/2_subquestions.ttl", "rml/1_questions.ttl", "rml/3_answeroptions.ttl", "rml/4_attributes.ttl"]
+            split_limesurvey_json(csv_path)  # è un json
         else:
             return jsonify({'success': False, 'error': f'Tipo non supportato: {data_type}'})
 
-        if not os.path.exists(rml_file):
-            return jsonify({'success': False, 'error': f'File RML non trovato: {rml_file}'})
+        if not os.path.exists(rml_file[0]):
+            return jsonify({'success': False, 'error': f'File RML non trovato: {rml_file[0]}'})
+        rml_output_file = []
+        k = 0
+        for i in rml_file:
+            rml_converter.convert_rml_file(i)
+            rml_output_file.append(Path(i).stem + "_output.ttl")
+            rml_converter.save_to_file(rml_output_file[k])
+            k = k + 1
 
-        rml_converter.convert_rml_file(rml_file)
-        output_file = Path(rml_file).stem + "_output.ttl"
-        rml_converter.save_to_file(output_file)
-
-        print(f"✅ Conversione OK: {output_file}\n===================")
-        return jsonify({'success': True, 'message': 'CSV convertito in RDF', 'output_path': output_file})
+        print(f"✅ Conversione OK: {rml_output_file}\n===================")
+        return jsonify({'success': True, 'message': 'CSV convertito in RDF', 'output_paths': rml_output_file})
 
     except Exception as e:
         print(f"ERRORE: {e}")
@@ -2559,45 +3094,171 @@ def upload_file_to_server():
 
 @app.route('/api/graphdb/upload/data', methods=['POST'])
 def upload_survey_data():
+    """
+    Upload survey data to GraphDB.
+    Supports both single file and multiple files.
+    """
     try:
         data = request.json
-        print(f"\n=== UPLOAD DATI ===\nData: {data}")
+        print(f"\n=== UPLOAD DATI ===")
+        print(f"Data received: {data}")
 
-        if not os.path.exists(data['file_path']):
-            return jsonify({'success': False, 'error': f'File non trovato: {data["file_path"]}'})
+        # Get GraphDB instance
+        graphdb = GraphDBManager(data.get('graphdb_url', 'http://graphdb:7200'))
 
-        if data['file_path'].endswith('.csv'):
-            return jsonify({'success': False, 'error': 'CSV non supportato, converti in RDF prima'})
-
-        # Pulisci survey_id usando la funzione helper
+        # Clean survey_id
         survey_id = clean_uri_path(data.get("survey_id", ""))
-
         print(f"Survey ID pulito: '{survey_id}'")
 
-        # Costruisci URI puliti
+        # Context map
         context_map = {
             'groups': f'http://example.org/survey/{survey_id}/groups',
             'questions': f'http://example.org/survey/{survey_id}/questions',
-            'properties': f'http://example.org/survey/{survey_id}/properties'
+            'question_properties': f'http://example.org/survey/{survey_id}/properties'
         }
 
-        context_uri = data.get('context', context_map.get(data['data_type']))
-        print(f"Context URI: {context_uri}")
+        # Get context URI
+        base_context = data.get('context', context_map.get(data['data_type']))
 
-        graphdb = GraphDBManager(data.get('graphdb_url', 'http://graphdb:7200'))
-        result = graphdb.upload_file(
-            data['repo_id'],
-            data['file_path'],
-            context_uri
-        )
+        # Check if single file or multiple files
+        file_path = data.get('file_path')
+        file_paths = data.get('file_paths')
 
-        print(f"Risultato: {result}\n================")
-        return jsonify(result)
+        # ============================================
+        # CASO 1: SINGOLO FILE (backward compatibility)
+        # ============================================
+        if data.get('data_type') != "question_properties":
+            print(f"📄 Uploading single file: {file_path}")
+
+            # Validate file exists
+            if not os.path.exists(file_path):
+                return jsonify({
+                    'success': False,
+                    'error': f'File non trovato: {file_path}'
+                })
+
+            # Validate file type
+            if file_path.endswith('.csv') or file_path.endswith('.json'):
+                return jsonify({
+                    'success': False,
+                    'error': 'CSV/JSON non supportato, converti in RDF prima'
+                })
+
+            # Upload single file
+            result = graphdb.upload_file(
+                data['repo_id'],
+                file_path,
+                base_context
+            )
+
+            print(f"✅ Single file uploaded: {result}")
+            return jsonify(result)
+
+        # ============================================
+        # CASO 2: MULTIPLI FILE
+        # ============================================
+        elif data.get('data_type') == "question_properties":
+            file_paths = []
+            file_paths = file_path.split(",")
+            print(f"📦 Uploading {len(file_paths)} files")
+
+            results = []
+            failed = []
+            for fp in file_paths:
+                print(f"\n📄 [ Processing: {fp}")
+
+                # Validate file exists
+                if not os.path.exists(fp):
+                    error_msg = f'File non trovato: {fp}'
+                    print(f"❌ {error_msg}")
+                    failed.append({'file': fp, 'error': error_msg})
+                    continue
+
+                # Validate file type
+                if fp.endswith('.csv') or fp.endswith('.json'):
+                    error_msg = f'CSV/JSON non supportato: {fp}'
+                    print(f"❌ {error_msg}")
+                    failed.append({'file': fp, 'error': error_msg})
+                    continue
+
+                # Create unique context for each file (optional)
+                # Puoi usare lo stesso context o creare uno per file
+                file_name = os.path.basename(fp).replace('.ttl', '')
+                context_uri = f"{base_context}/{file_name}"
+
+                print(f"Context URI: {context_uri}")
+
+                try:
+                    # Upload file
+                    result = graphdb.upload_file(
+                        data['repo_id'],
+                        fp,
+                        context_uri
+                    )
+
+                    if result.get('success'):
+                        print(f"✅ Uploaded successfully")
+                        results.append({
+                            'file': fp,
+                            'success': True,
+                            'triples': result.get('triples', 0),
+                            'context': context_uri
+                        })
+                    else:
+                        error_msg = result.get('error', 'Unknown error')
+                        print(f"❌ Upload failed: {error_msg}")
+                        failed.append({
+                            'file': fp,
+                            'error': error_msg
+                        })
+
+                except Exception as e:
+                    error_msg = str(e)
+                    print(f"❌ Exception: {error_msg}")
+                    failed.append({
+                        'file': fp,
+                        'error': error_msg
+                    })
+
+            # Summary
+            print(f"\n=== UPLOAD SUMMARY ===")
+            print(f"Total files: {len(file_paths)}")
+            print(f"Successful: {len(results)}")
+            print(f"Failed: {len(failed)}")
+            print(f"======================\n")
+
+            # Return results
+            if failed:
+                return jsonify({
+                    'success': len(results) > 0,  # Partial success if at least one succeeded
+                    'message': f'Uploaded {len(results)}/{len(file_path)} files',
+                    'results': results,
+                    'failed': failed
+                })
+            else:
+                return jsonify({
+                    'success': True,
+                    'message': f'All {len(results)} files uploaded successfully',
+                    'results': results
+                })
+
+        # ============================================
+        # CASO 3: NESSUN FILE SPECIFICATO
+        # ============================================
+        else:
+            return jsonify({
+                'success': False,
+                'error': 'Missing file_path'
+            })
+
     except Exception as e:
-        print(f"ERRORE: {e}")
+        print(f"\n❌ ERRORE GENERALE: {e}")
         import traceback
         traceback.print_exc()
-        return jsonify({'success': False, 'error': str(e)})
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        })
 
 
 @app.route('/api/graphdb/delete/survey', methods=['POST'])
@@ -2691,6 +3352,7 @@ def clear_repository():
         return jsonify(graphdb.clear_repository(data['repo_id']))
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
+
 
 # SURVEY BUILDER
 
@@ -2964,6 +3626,22 @@ def create_surveybuilder_limesurvey():
         print(f"Groups: {len(groups)}, Questions: {len(questions)}")
         print(f"{'=' * 70}\n")
 
+        # ✅ DEBUG: Mostra struttura dati ricevuti
+        print("DEBUG: Data structure received:")
+        print(f"  - Groups count: {len(groups)}")
+        if groups:
+            print(f"  - First group keys: {list(groups[0].keys())}")
+        print(f"  - Questions count: {len(questions)}")
+        if questions:
+            print(f"  - First question keys: {list(questions[0].keys())}")
+            first_q = questions[0]
+            print(f"  - First question has subquestions: {'subquestions' in first_q}")
+            print(f"  - First question has answerOptions: {'answerOptions' in first_q}")
+            if 'subquestions' in first_q:
+                print(f"    - Subquestions count: {len(first_q.get('subquestions', []))}")
+            if 'answerOptions' in first_q:
+                print(f"    - AnswerOptions count: {len(first_q.get('answerOptions', []))}")
+
         # Validate
         if not survey_title or survey_title.strip() == "":
             return jsonify({
@@ -3022,49 +3700,114 @@ def create_surveybuilder_limesurvey():
                 # Importa ogni domanda
                 for q_idx, question in enumerate(group_questions):
                     question_uri = question.get('uri')
+                    question_id = question.get('id', 'N/A')
                     question_title = question.get('variableCod', f"Q{q_idx + 1}")
+                    question_type = question.get('questionType', 'Unknown')
 
-                    print(f"    [{q_idx + 1}/{len(group_questions)}] Processing: {question_title}")
+                    print(f"\n    [{q_idx + 1}/{len(group_questions)}] Processing Question:")
+                    print(f"      ID: {question_id}")
+                    print(f"      Title: {question_title}")
+                    print(f"      Type: {question_type}")
+                    print(f"      URI: {question_uri}")
+
+                    # ✅ DEBUG: Mostra dati question dal frontend
+                    print(f"      Frontend data:")
+                    print(f"        - Has text: {bool(question.get('text'))}")
+                    print(f"        - Text preview: {question.get('text', '')[:50]}...")
+                    print(f"        - Has subquestions: {'subquestions' in question}")
+                    print(f"        - Has answerOptions: {'answerOptions' in question}")
+                    if 'subquestions' in question:
+                        subs = question.get('subquestions', [])
+                        print(f"        - Subquestions count from frontend: {len(subs)}")
+                        if subs:
+                            print(f"        - First subquestion: {subs[0]}")
+                    if 'answerOptions' in question:
+                        ans = question.get('answerOptions', [])
+                        print(f"        - AnswerOptions count from frontend: {len(ans)}")
+                        if ans:
+                            print(f"        - First answer: {ans[0]}")
 
                     try:
                         # Ottieni dati completi dal GraphDB
                         print(f"      Fetching complete data from GraphDB...")
                         complete_data = graphdb_client.get_complete_question_data(question_uri)
 
+                        # ✅ DEBUG: Verifica dati da GraphDB
                         if not complete_data:
-                            print(f"      ✗ No data available, skipping")
-                            failed_questions.append(f"{question_title}: No data available")
+                            print(f"      ✗ ERROR: get_complete_question_data returned None/empty")
+                            failed_questions.append(f"{question_title} (ID:{question_id}): No data from GraphDB")
                             continue
 
+                        print(f"      ✓ GraphDB data retrieved:")
+                        print(f"        - QID: {complete_data.get('qid', 'N/A')}")
+                        print(f"        - Type: {complete_data.get('type', 'N/A')}")
+                        print(f"        - Title: {complete_data.get('title', 'N/A')}")
+                        print(f"        - Text: {complete_data.get('questionText', 'N/A')[:50]}...")
+                        print(f"        - Subquestions: {len(complete_data.get('subquestions', {}))}")
+                        print(f"        - AnswerOptions: {len(complete_data.get('answerOptions', {}))}")
+                        print(f"        - Attributes: {len(complete_data.get('attributes', {}))}")
+
+                        # ✅ DEBUG: Mostra subquestions dettaglio
+                        if complete_data.get('subquestions'):
+                            print(f"        - Subquestions detail:")
+                            if complete_data.get('subquestions'):
+                                for idx, sub_data in enumerate(complete_data['subquestions'][:3]):
+                                    print(f"          - {idx}: {sub_data.get('title', 'N/A')}")
+
+                        # ✅ DEBUG: Mostra answer options dettaglio
+                        if complete_data.get('answerOptions'):
+                            print(f"        - AnswerOptions detail:")
+                            if complete_data.get('answerOptions'):
+                                for ans_data in complete_data['answerOptions'][:3]:
+                                    print(
+                                        f"          - [{ans_data.get('code', 'N/A')}]: {ans_data.get('text', 'N/A')[:30]}...")
                         # Aggiorna IDs per la nuova survey
                         complete_data['sid'] = str(survey_id)
                         complete_data['gid'] = str(group_id)
 
                         # Genera .lsq XML
                         print(f"      Generating .lsq XML...")
-                        lsq_xml = generate_lsq_xml(complete_data)
+                        try:
+                            lsq_xml = generate_lsq_xml(complete_data)
+                            print(f"      ✓ XML generated: {len(lsq_xml)} bytes")
+                        except Exception as xml_error:
+                            print(f"      ✗ ERROR generating XML: {xml_error}")
+                            import traceback
+                            traceback.print_exc()
+                            failed_questions.append(f"{question_title} (ID:{question_id}): XML generation failed - {str(xml_error)}")
+                            continue
 
                         # Converti in Base64
                         lsq_base64 = base64.b64encode(lsq_xml.encode('utf-8')).decode('utf-8')
-                        print(f"      .lsq size: {len(lsq_xml)} bytes, Base64: {len(lsq_base64)} chars")
+                        print(f"      Base64 size: {len(lsq_base64)} chars")
 
                         # Importa usando import_question
                         mandatory = complete_data.get('attributes', {}).get('mandatory', 'N')
                         print(f"      Importing to LimeSurvey (mandatory: {mandatory})...")
 
-                        new_qid = ls_client.import_question(
-                            survey_id=survey_id,
-                            group_id=group_id,
-                            lsq_base64=lsq_base64,
-                            mandatory=mandatory
-                        )
+                        try:
+                            new_qid = ls_client.import_question(
+                                survey_id=survey_id,
+                                group_id=group_id,
+                                lsq_base64=lsq_base64,
+                                mandatory=mandatory
+                            )
 
-                        print(f"      ✓ Question imported successfully (new ID: {new_qid})")
-                        imported_questions_count += 1
+                            print(f"      ✓ Question imported successfully (new ID: {new_qid})")
+                            imported_questions_count += 1
+
+                        except Exception as import_error:
+                            print(f"      ✗ ERROR importing to LimeSurvey: {import_error}")
+                            import traceback
+                            traceback.print_exc()
+                            failed_questions.append(f"{question_title} (ID:{question_id}): LimeSurvey import failed - {str(import_error)}")
+                            continue
 
                     except Exception as e:
-                        error_msg = f"{question_title}: {str(e)}"
-                        print(f"      ✗ Failed: {e}")
+                        error_msg = f"{question_title} (ID:{question_id}): {str(e)}"
+                        print(f"      ✗ Failed with exception: {e}")
+                        import traceback
+                        traceback.print_exc()
                         failed_questions.append(error_msg)
                         continue
 
@@ -3079,13 +3822,17 @@ def create_surveybuilder_limesurvey():
         ls_client.release_session_key()
 
         # Genera URL
-        survey_url = LIMESURVEY_URL.replace('/admin/remotecontrol', '') + f"/admin/survey/sa/view/surveyid/{survey_id}"
+        survey_url = LIMESURVEY_URL.replace('/admin/remotecontrol', '') + f"/admin/survey/"
 
         print(f"\n{'=' * 70}")
         print(f"✓ Survey creation completed!")
         print(f"Survey ID: {survey_id}")
         print(f"Groups created: {len(groups)}")
         print(f"Questions imported: {imported_questions_count}/{len(questions)}")
+        if failed_questions:
+            print(f"Failed questions: {len(failed_questions)}")
+            for fail in failed_questions[:5]:  # Mostra primi 5 falliti
+                print(f"  - {fail}")
 
         response_data = {
             "status": "success",
@@ -3104,7 +3851,7 @@ def create_surveybuilder_limesurvey():
 
     except Exception as e:
         print(f"\n{'=' * 70}")
-        print(f"✗ ERROR: {str(e)}")
+        print(f"✗ FATAL ERROR: {str(e)}")
         print(f"{'=' * 70}\n")
         import traceback
         traceback.print_exc()
@@ -3113,7 +3860,6 @@ def create_surveybuilder_limesurvey():
             "status": "error",
             "message": str(e)
         }), 500
-
 
 # ==================== HTML ROUTES ====================
 @app.route('/')
@@ -3138,9 +3884,6 @@ def graphdb_page():
 def surveybuilder_page():
     """Survey Builder page"""
     return render_template('surveybuilder.html')
-
-
-
 
 
 if __name__ == '__main__':

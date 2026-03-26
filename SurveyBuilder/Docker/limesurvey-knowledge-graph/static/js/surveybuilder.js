@@ -123,7 +123,6 @@ async function testConnection() {
 
 // ==================== CONNECT TO GRAPHDB ====================
 async function connectToGraphDB() {
-    // ✅ USA GLI ID CORRETTI DALL'HTML
     const url = document.getElementById('graphdbUrl').value;
     const repo = document.getElementById('repository').value;
 
@@ -156,6 +155,37 @@ async function connectToGraphDB() {
         allQuestions = questionsData.questions;
         console.log('✓ Loaded questions:', allQuestions);
 
+        // ✅ ARRICCHIMENTO: Aggiungi subquestions e answerOptions alle questions dei gruppi
+        allGroups.forEach(group => {
+            if (group.questions && group.questions.length > 0) {
+                group.questions = group.questions.map(groupQuestion => {
+                    // Trova la question completa in allQuestions (con subquestions e answerOptions)
+                    const fullQuestion = allQuestions.find(q => q.uri === groupQuestion.uri);
+
+                    if (fullQuestion) {
+                        // Mergia i dati completi
+                        return {
+                            ...groupQuestion,  // Mantieni i dati base del gruppo
+                            subquestions: fullQuestion.subquestions || [],
+                            answerOptions: fullQuestion.answerOptions || [],
+                            answers: fullQuestion.answerOptions || []  // Per retrocompatibilità
+                        };
+                    }
+
+                    // Se non trovata (non dovrebbe succedere), ritorna con array vuoti
+                    return {
+                        ...groupQuestion,
+                        subquestions: [],
+                        answerOptions: [],
+                        answers: []
+                    };
+                });
+            }
+        });
+
+        console.log('✓ Enriched group questions with subquestions and answers');
+
+        // Continua con il resto del codice originale
         if (allGroups.length === 0 && allQuestions.length === 0) {
             showToast('No Data', '⚠️ No data found! Repository is empty or uses different namespaces.', 'error');
             document.getElementById('itemsList').innerHTML = `
@@ -184,11 +214,21 @@ async function connectToGraphDB() {
         console.error('Load error:', error);
     }
 }
-
 // ==================== DISPLAY ITEMS ====================
 function displayItems() {
     const container = document.getElementById('itemsList');
     container.innerHTML = '';
+
+    // ✅ PULSANTE: Aggiungi nuovo gruppo
+    const addGroupBtn = document.createElement('div');
+    addGroupBtn.style.cssText = 'padding: 10px; margin-bottom: 15px; text-align: center;';
+    addGroupBtn.innerHTML = `
+        <button onclick="addNewGroup()"
+                style="background: #667eea; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-size: 0.9em; font-weight: 600;">
+            ➕ Add New Group
+        </button>
+    `;
+    container.appendChild(addGroupBtn);
 
     // Display groups with questions
     allGroups.forEach((group, groupIndex) => {
@@ -209,48 +249,169 @@ function displayItems() {
             </div>
             <div class="item-description" id="group-desc-${groupIndex}">${group.description || 'No description'}</div>
             <span class="edit-icon" onclick="editGroupDescription(event, ${groupIndex})" title="Edit description" style="margin-left: 10px; font-size: 0.85em;">✏️ desc</span>
+
+            <div style="margin: 10px 0 10px 10px;">
+                <button onclick="addQuestionToGroup(event, ${groupIndex})"
+                        style="background: #28a745; color: white; border: none; padding: 4px 12px; border-radius: 3px; cursor: pointer; font-size: 0.75em;">
+                    ➕ Add Question to Group
+                </button>
+            </div>
+
             <div id="questions-container-${groupIndex}" style="display: none; margin-top: 10px;"></div>
         `;
 
         el.addEventListener('click', (e) => {
             if (!e.target.classList.contains('expand-icon') &&
                 !e.target.classList.contains('edit-icon') &&
-                !e.target.closest('input')) {
+                !e.target.closest('input') &&
+                !e.target.closest('button')) {
                 toggleGroup(group);
             }
         });
 
         container.appendChild(el);
 
-        // Add nested questions if any
+        // Add nested questions with expand/collapse for subquestions and answers
         if (hasQuestions) {
             const questionsContainer = document.getElementById(`questions-container-${groupIndex}`);
-            group.questions.forEach((question) => {
+            group.questions.forEach((question, qIdx) => {
                 const qEl = document.createElement('div');
                 qEl.className = 'nested-question';
                 qEl.id = `question-${question.uri}`;
-                qEl.innerHTML = `
+                // ✅ Aggiunto attributo data per la sincronizzazione
+                qEl.setAttribute('data-question-uri', question.uri);
+
+                const hasSubquestions = question.subquestions && question.subquestions.length > 0;
+                const hasAnswerOptions = question.answerOptions && question.answerOptions.length > 0;
+
+                // Build HTML
+                let html = `
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
+                            <!-- Question Title -->
                             <div style="margin-bottom: 5px;">
                                 <strong>Q${question.id}:</strong>
-                                <span id="question-text-${groupIndex}-${question.id}" style="cursor: pointer;" onclick="editQuestionText(event, ${groupIndex}, '${question.uri}')" title="Click to edit">${question.text.substring(0, 60)}...</span>
-                                <span class="edit-icon" onclick="editQuestionText(event, ${groupIndex}, '${question.uri}')" title="Edit question text">✏️</span>
+                                <span id="question-text-${groupIndex}-${question.id}"
+                                      style="cursor: pointer;"
+                                      onclick="editQuestionText(event, ${groupIndex}, '${question.uri}')"
+                                      title="Click to edit">
+                                    ${question.text.substring(0, 60)}...
+                                </span>
+                                <span class="edit-icon"
+                                      onclick="editQuestionText(event, ${groupIndex}, '${question.uri}')"
+                                      title="Edit question text">✏️</span>
+                                <span class="edit-icon"
+                                      onclick="deleteQuestion(event, '${question.uri}', ${groupIndex})"
+                                      title="Delete question"
+                                      style="color: #dc3545;">🗑️</span>
                             </div>
-                            <div style="color: #666; font-size: 0.8em; margin-top: 3px;">
+
+                            <!-- Question Meta -->
+                            <div style="color: #666; font-size: 0.8em; margin-top: 3px; margin-bottom: 8px;">
                                 <span style="background: #e3f2fd; padding: 2px 6px; border-radius: 3px; margin-right: 5px;">
                                     📝 ${getQuestionTypeLabel(question.questionType)}
                                 </span>
                                 <span style="color: #999;">${question.variableCod}</span>
                             </div>
+
+                            <!-- ✅ SUBQUESTIONS con EXPAND/COLLAPSE -->
+                            <div style="margin-left: 10px;">
+                                <div style="display: flex; align-items: center; padding: 4px 8px; background: #e8f5e9; border-radius: 4px; cursor: pointer; margin-bottom: 4px;"
+                                     onclick="toggleSubquestionsExpand(event, '${question.uri}')">
+                                    <span class="expand-icon" id="expand-sub-${question.uri}" style="margin-right: 8px; font-size: 0.8em;">
+                                        ${hasSubquestions ? '▶' : ''}
+                                    </span>
+                                    <span style="font-weight: 600; color: #2e7d32; font-size: 0.85em; flex: 1;">
+                                        📋 Subquestions (${hasSubquestions ? question.subquestions.length : 0})
+                                    </span>
+                                    <button onclick="addSubquestion(event, '${question.uri}')"
+                                            style="background: #4caf50; color: white; border: none; padding: 2px 8px; border-radius: 3px; cursor: pointer; font-size: 0.75em;">
+                                        + Add
+                                    </button>
+                                </div>
+
+                                <!-- Contenuto subquestions (nascosto di default) -->
+                                <div id="subquestions-content-${question.uri}" style="display: none; margin-left: 15px; padding-left: 10px; border-left: 3px solid #4caf50;">
+                `;
+
+                if (hasSubquestions) {
+                    question.subquestions.forEach((sub, subIdx) => {
+                        html += `
+                            <div style="padding: 4px 8px; margin: 3px 0; background: white; border-radius: 3px; display: flex; justify-content: space-between; align-items: center;">
+                                <div style="flex: 1;">
+                                    <span style="color: #666; font-size: 0.8em;">${sub.order || subIdx + 1}.</span>
+                                    <strong style="font-size: 0.85em;">${sub.title || sub.id}</strong>
+                                    ${sub.text ? `<span style="color: #666; font-size: 0.8em;">: ${sub.text.substring(0, 30)}...</span>` : ''}
+                                </div>
+                                <div>
+                                    <span class="edit-icon" onclick="editSubquestion(event, '${question.uri}', '${sub.id}')" title="Edit">✏️</span>
+                                    <span class="edit-icon" onclick="deleteSubquestion(event, '${question.uri}', '${sub.id}')" title="Delete" style="color: #dc3545;">🗑️</span>
+                                </div>
+                            </div>
+                        `;
+                    });
+                } else {
+                    html += `<div style="padding: 8px; color: #999; font-size: 0.8em; font-style: italic;">No subquestions yet</div>`;
+                }
+
+                html += `
+                                </div>
+                            </div>
+
+                            <!-- ✅ ANSWER OPTIONS con EXPAND/COLLAPSE -->
+                            <div style="margin-left: 10px; margin-top: 8px;">
+                                <div style="display: flex; align-items: center; padding: 4px 8px; background: #fff3e0; border-radius: 4px; cursor: pointer; margin-bottom: 4px;"
+                                     onclick="toggleAnswersExpand(event, '${question.uri}')">
+                                    <span class="expand-icon" id="expand-ans-${question.uri}" style="margin-right: 8px; font-size: 0.8em;">
+                                        ${hasAnswerOptions ? '▶' : ''}
+                                    </span>
+                                    <span style="font-weight: 600; color: #e65100; font-size: 0.85em; flex: 1;">
+                                        ✓ Answer Options (${hasAnswerOptions ? question.answerOptions.length : 0})
+                                    </span>
+                                    <button onclick="addAnswerOption(event, '${question.uri}')"
+                                            style="background: #ff9800; color: white; border: none; padding: 2px 8px; border-radius: 3px; cursor: pointer; font-size: 0.75em;">
+                                        + Add
+                                    </button>
+                                </div>
+
+                                <!-- Contenuto answer options (nascosto di default) -->
+                                <div id="answers-content-${question.uri}" style="display: none; margin-left: 15px; padding-left: 10px; border-left: 3px solid #ff9800;">
+                `;
+
+                if (hasAnswerOptions) {
+                    question.answerOptions.forEach((ans, ansIdx) => {
+                        html += `
+                            <div style="padding: 4px 8px; margin: 3px 0; background: white; border-radius: 3px; display: flex; justify-content: space-between; align-items: center;">
+                                <div style="flex: 1; font-size: 0.85em;">
+                                    <span style="color: #666;">[${ans.code || ansIdx + 1}]</span>
+                                    ${ans.text || 'No text'}
+                                </div>
+                                <div>
+                                    <span class="edit-icon" onclick="editAnswerOption(event, '${question.uri}', '${ans.code}')" title="Edit">✏️</span>
+                                    <span class="edit-icon" onclick="deleteAnswerOption(event, '${question.uri}', '${ans.code}')" title="Delete" style="color: #dc3545;">🗑️</span>
+                                </div>
+                            </div>
+                        `;
+                    });
+                } else {
+                    html += `<div style="padding: 8px; color: #999; font-size: 0.8em; font-style: italic;">No answer options yet</div>`;
+                }
+
+                html += `
+                                </div>
+                            </div>
                         </div>
                     </div>
                 `;
 
+                qEl.innerHTML = html;
+
                 qEl.addEventListener('click', (e) => {
                     if (!e.target.classList.contains('edit-icon') &&
                         !e.target.id.includes('question-text-') &&
-                        !e.target.closest('input')) {
+                        !e.target.closest('input') &&
+                        !e.target.closest('button') &&
+                        !e.target.classList.contains('expand-icon')) {
                         e.stopPropagation();
                         toggleQuestion(question);
                     }
@@ -261,7 +422,7 @@ function displayItems() {
         }
     });
 
-    // Display standalone questions (questions without groups)
+    // Display standalone questions
     const orphanQuestions = allQuestions.filter(q =>
         !allGroups.some(g => g.questions && g.questions.some(gq => gq.uri === q.uri))
     );
@@ -278,6 +439,8 @@ function displayItems() {
             const el = document.createElement('div');
             el.className = 'question-item';
             el.id = `question-${q.uri}`;
+            el.setAttribute('data-question-uri', q.uri);
+
             el.innerHTML = `
                 <div class="item-header">
                     <div class="item-title" style="cursor: pointer;" onclick="editOrphanQuestionText(event, '${q.uri}')" title="Click to edit">${q.text.substring(0, 50)}...</div>
@@ -301,7 +464,6 @@ function displayItems() {
         });
     }
 }
-
 // ==================== TOGGLE FUNCTIONS ====================
 function toggleGroupExpand(event, groupIndex) {
     event.stopPropagation();
@@ -428,17 +590,56 @@ function updatePreview() {
 
         if (groupQuestions.length > 0) {
             groupQuestions.forEach((q, qIdx) => {
+                // ✅ AGGIUNTO: onclick per sincronizzazione con sidebar
                 html += `
-                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 3px solid #28a745;">
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 3px solid #28a745; cursor: pointer;"
+                         onclick="focusQuestionInSidebar(event, '${q.uri}')">
                         <div style="font-weight: bold; margin-bottom: 5px;">Q${qIdx + 1}. ${q.text}</div>
-                        <div style="color: #666; font-size: 0.9em;">
+                        <div style="color: #666; font-size: 0.9em; margin-bottom: 10px;">
                             <span style="background: #e3f2fd; padding: 2px 8px; border-radius: 3px; margin-right: 8px;">
                                 ${getQuestionTypeLabel(q.questionType)}
                             </span>
                             <span>${q.variableCod}</span>
                         </div>
-                    </div>
                 `;
+
+                // ✅ Show subquestions
+                if (q.subquestions && q.subquestions.length > 0) {
+                    html += `
+                        <div style="margin-left: 20px; margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 5px;">
+                            <div style="font-weight: 600; color: #2e7d32; margin-bottom: 5px;">📋 Subquestions (${q.subquestions.length}):</div>
+                    `;
+                    q.subquestions.forEach((sub, subIdx) => {
+                        html += `
+                            <div style="padding: 5px 10px; margin: 3px 0; background: white; border-radius: 3px;">
+                                <span style="color: #666;">${sub.order || subIdx + 1}.</span>
+                                <strong>${sub.title || sub.id}</strong>${sub.text ? ': ' + sub.text : ''}
+                            </div>
+                        `;
+                    });
+                    html += `</div>`;
+                }
+
+                // ✅ Show answer options
+                const answers = q.answerOptions || q.answers || [];
+                if (answers.length > 0) {
+                    html += `
+                        <div style="margin-left: 20px; margin-top: 10px; padding: 10px; background: #fff3e0; border-radius: 5px;">
+                            <div style="font-weight: 600; color: #e65100; margin-bottom: 5px;">✓ Answer Options (${answers.length}):</div>
+                    `;
+                    answers.forEach((ans, ansIdx) => {
+                        html += `
+                            <div style="padding: 5px 10px; margin: 3px 0; background: white; border-radius: 3px;">
+                                <span style="color: #666;">[${ans.code || ansIdx + 1}]</span>
+                                ${ans.text || 'No text'}
+                                ${ans.assessmentValue ? ` <span style="color: #999; font-size: 0.85em;">(score: ${ans.assessmentValue})</span>` : ''}
+                            </div>
+                        `;
+                    });
+                    html += `</div>`;
+                }
+
+                html += `</div>`; // Close question div
             });
         }
 
@@ -457,17 +658,56 @@ function updatePreview() {
         `;
 
         standaloneQuestions.forEach((q, idx) => {
+            // ✅ AGGIUNTO: onclick per sincronizzazione
             html += `
-                <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 3px solid #ffc107;">
+                <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 3px solid #ffc107; cursor: pointer;"
+                     onclick="focusQuestionInSidebar(event, '${q.uri}')">
                     <div style="font-weight: bold; margin-bottom: 5px;">Q${idx + 1}. ${q.text}</div>
-                    <div style="color: #666; font-size: 0.9em;">
+                    <div style="color: #666; font-size: 0.9em; margin-bottom: 10px;">
                         <span style="background: #e3f2fd; padding: 2px 8px; border-radius: 3px; margin-right: 8px;">
                             ${getQuestionTypeLabel(q.questionType)}
                         </span>
                         <span>${q.variableCod}</span>
                     </div>
-                </div>
             `;
+
+            // ✅ Show subquestions
+            if (q.subquestions && q.subquestions.length > 0) {
+                html += `
+                    <div style="margin-left: 20px; margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 5px;">
+                        <div style="font-weight: 600; color: #2e7d32; margin-bottom: 5px;">📋 Subquestions (${q.subquestions.length}):</div>
+                `;
+                q.subquestions.forEach((sub, subIdx) => {
+                    html += `
+                        <div style="padding: 5px 10px; margin: 3px 0; background: white; border-radius: 3px;">
+                            <span style="color: #666;">${sub.order || subIdx + 1}.</span>
+                            <strong>${sub.title || sub.id}</strong>${sub.text ? ': ' + sub.text : ''}
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+
+            // ✅ Show answer options
+            const answers = q.answerOptions || q.answers || [];
+            if (answers.length > 0) {
+                html += `
+                    <div style="margin-left: 20px; margin-top: 10px; padding: 10px; background: #fff3e0; border-radius: 5px;">
+                        <div style="font-weight: 600; color: #e65100; margin-bottom: 5px;">✓ Answer Options (${answers.length}):</div>
+                `;
+                answers.forEach((ans, ansIdx) => {
+                    html += `
+                        <div style="padding: 5px 10px; margin: 3px 0; background: white; border-radius: 3px;">
+                            <span style="color: #666;">[${ans.code || ansIdx + 1}]</span>
+                            ${ans.text || 'No text'}
+                            ${ans.assessmentValue ? ` <span style="color: #999; font-size: 0.85em;">(score: ${ans.assessmentValue})</span>` : ''}
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+
+            html += `</div>`; // Close question div
         });
 
         html += '</div>';
@@ -476,7 +716,6 @@ function updatePreview() {
     html += '</div>';
     container.innerHTML = html;
 }
-
 // ==================== UPDATE JSON ====================
 function updateJSON() {
     const data = {
@@ -492,13 +731,16 @@ function updateJSON() {
             text: q.text,
             variableCod: q.variableCod,
             questionType: q.questionType,
-            groupUri: q.groupUri
+            groupUri: q.groupUri,
+            // ✅ Include subquestions
+            subquestions: q.subquestions || [],
+            // ✅ Include answer options
+            answerOptions: q.answerOptions || []
         }))
     };
 
     document.getElementById('jsonOutput').textContent = JSON.stringify(data, null, 2);
 }
-
 // ==================== ACTIONS ====================
 function clearSelection() {
     selectedGroups = [];
@@ -1036,41 +1278,114 @@ function loadResultsIntoApp() {
     const totalQuestionsInGroups = allGroups.reduce((sum, g) => sum + (g.questions ? g.questions.length : 0), 0);
     alert(`✅ Data loaded successfully!\n\n📁 Groups: ${allGroups.length}\n❓ Total questions: ${allQuestions.length}\n└─ Questions in groups: ${totalQuestionsInGroups}`);
 }
+function parseGroupsAndQuestionsFromResults(results, columns) {
+    // Find columns for groups
+    const groupCol = columns.find(c => c === 'group' || (c.toLowerCase().includes('group') && c.toLowerCase().includes('uri')));
+    const groupIdCol = columns.find(c => c.toLowerCase().includes('groupid'));
+    const groupNameCol = columns.find(c => c.toLowerCase().includes('groupname'));
+    const groupDescCol = columns.find(c => c.toLowerCase().includes('groupdesc'));
 
-function parseGroupsFromResults(results, columns) {
-    // Find key columns
-    const groupCol = columns.find(c => c === 'group' || c.toLowerCase().includes('groupuri'));
-    const groupIdCol = columns.find(c => c.toLowerCase().includes('groupid') || c === 'id');
-    const groupNameCol = columns.find(c => c.toLowerCase().includes('groupname') || c === 'name');
-    const groupDescCol = columns.find(c => c.toLowerCase().includes('description') || c.toLowerCase().includes('desc'));
+    // Find columns for questions
+    const questionCol = columns.find(c => c === 'question' || (c.toLowerCase().includes('question') && c.toLowerCase().includes('uri')));
+    const questionIdCol = columns.find(c => c.toLowerCase().includes('questionid'));
+    const questionTextCol = columns.find(c => c.toLowerCase().includes('questiontext'));
+    const variableCol = columns.find(c => c.toLowerCase().includes('variable'));
+    const typeCol = columns.find(c => c.toLowerCase().includes('questiontype'));
+    const orderCol = columns.find(c => c.toLowerCase().includes('order'));
 
-    if (!groupCol) {
-        console.error('No group column found in results');
-        return [];
-    }
+    // ✅ Subquestion columns
+    const subQidCol = columns.find(c => c.toLowerCase() === 'subqid');
+    const subTitleCol = columns.find(c => c.toLowerCase() === 'subtitle');
+    const subTextCol = columns.find(c => c.toLowerCase() === 'subquestiontext');
+    const subOrderCol = columns.find(c => c.toLowerCase() === 'suborder');
 
-    const groups = [];
+    // ✅ Answer option columns
+    const answerCodeCol = columns.find(c => c.toLowerCase() === 'answercode');
+    const answerTextCol = columns.find(c => c.toLowerCase() === 'answertext');
+    const answerOrderCol = columns.find(c => c.toLowerCase() === 'answersortorder');
+    const answerValueCol = columns.find(c => c.toLowerCase() === 'answerassessmentvalue');
+
     const groupMap = new Map();
+    const questionMap = new Map();
 
     results.forEach(row => {
-        const uri = row[groupCol];
-        if (!uri || groupMap.has(uri)) return;
+        // Parse group
+        if (groupCol && row[groupCol]) {
+            const groupUri = row[groupCol];
+            if (!groupMap.has(groupUri)) {
+                groupMap.set(groupUri, {
+                    uri: groupUri,
+                    id: row[groupIdCol] || `G${groupMap.size + 1}`,
+                    name: row[groupNameCol] || 'Group without name',
+                    description: row[groupDescCol] || '',
+                    type: 'group'
+                });
+            }
+        }
 
-        const group = {
-            uri: uri,
-            id: row[groupIdCol] || `G${groups.length + 1}`,
-            name: row[groupNameCol] || 'Unnamed Group',
-            description: row[groupDescCol] || '',
-            type: 'group',
-            questions: []
-        };
+        // Parse question
+        if (questionCol && row[questionCol]) {
+            const questionUri = row[questionCol];
 
-        groups.push(group);
-        groupMap.set(uri, group);
+            if (!questionMap.has(questionUri)) {
+                questionMap.set(questionUri, {
+                    uri: questionUri,
+                    id: row[questionIdCol] || `Q${questionMap.size + 1}`,
+                    text: row[questionTextCol] || 'Question without text',
+                    variableCod: row[variableCol] || '',
+                    questionType: row[typeCol] || 'L',
+                    order: row[orderCol] || '0',
+                    groupUri: row[groupCol] || null,
+                    type: 'question',
+                    subquestions: [],
+                    answerOptions: []
+                });
+            }
+
+            const question = questionMap.get(questionUri);
+
+            // ✅ Add subquestion if present
+            if (subQidCol && row[subQidCol]) {
+                const subExists = question.subquestions.find(s => s.id === row[subQidCol]);
+                if (!subExists) {
+                    question.subquestions.push({
+                        id: row[subQidCol],
+                        title: row[subTitleCol] || '',
+                        text: row[subTextCol] || '',
+                        order: row[subOrderCol] || ''
+                    });
+                }
+            }
+
+            // ✅ Add answer option if present
+            if (answerCodeCol && row[answerCodeCol]) {
+                const ansExists = question.answerOptions.find(a => a.code === row[answerCodeCol]);
+                if (!ansExists) {
+                    question.answerOptions.push({
+                        code: row[answerCodeCol],
+                        text: row[answerTextCol] || '',
+                        sortOrder: row[answerOrderCol] || '',
+                        assessmentValue: row[answerValueCol] || ''
+                    });
+                }
+            }
+        }
     });
 
-    console.log('Parsed groups:', groups);
-    return groups;
+    // Sort subquestions and answers
+    questionMap.forEach(q => {
+        if (q.subquestions.length > 0) {
+            q.subquestions.sort((a, b) => (parseInt(a.order) || 0) - (parseInt(b.order) || 0));
+        }
+        if (q.answerOptions.length > 0) {
+            q.answerOptions.sort((a, b) => (parseInt(a.sortOrder) || 0) - (parseInt(b.sortOrder) || 0));
+        }
+    });
+
+    return {
+        groups: Array.from(groupMap.values()),
+        questions: Array.from(questionMap.values())
+    };
 }
 
 function parseQuestionsFromResults(results, columns) {
@@ -1082,33 +1397,94 @@ function parseQuestionsFromResults(results, columns) {
     const typeCol = columns.find(c => c.toLowerCase().includes('type') && c.toLowerCase().includes('question'));
     const orderCol = columns.find(c => c.toLowerCase().includes('order'));
 
+    // ✅ Subquestion columns
+    const subQidCol = columns.find(c => c.toLowerCase() === 'subqid');
+    const subTitleCol = columns.find(c => c.toLowerCase() === 'subtitle');
+    const subTextCol = columns.find(c => c.toLowerCase() === 'subquestiontext');
+    const subOrderCol = columns.find(c => c.toLowerCase() === 'suborder');
+
+    // ✅ Answer option columns
+    const answerCodeCol = columns.find(c => c.toLowerCase() === 'answercode');
+    const answerTextCol = columns.find(c => c.toLowerCase() === 'answertext');
+    const answerOrderCol = columns.find(c => c.toLowerCase() === 'answersortorder');
+    const answerValueCol = columns.find(c => c.toLowerCase() === 'answerassessmentvalue');
+
     if (!questionCol) {
         console.error('No question column found in results');
         return [];
     }
 
-    const questions = [];
     const questionMap = new Map();
 
     results.forEach(row => {
         const uri = row[questionCol];
-        if (!uri || questionMap.has(uri)) return;
+        if (!uri) return;
 
-        const question = {
-            uri: uri,
-            id: row[questionIdCol] || `Q${questions.length + 1}`,
-            text: row[questionTextCol] || 'Question without text',
-            variableCod: row[variableCol] || '',
-            questionType: row[typeCol] || 'L',
-            order: row[orderCol] || '0',
-            type: 'question'
-        };
+        // Create or get question
+        if (!questionMap.has(uri)) {
+            questionMap.set(uri, {
+                uri: uri,
+                id: row[questionIdCol] || `Q${questionMap.size + 1}`,
+                text: row[questionTextCol] || 'Question without text',
+                variableCod: row[variableCol] || '',
+                questionType: row[typeCol] || 'L',
+                order: row[orderCol] || '0',
+                type: 'question',
+                subquestions: [],
+                answerOptions: []
+            });
+        }
 
-        questions.push(question);
-        questionMap.set(uri, question);
+        const question = questionMap.get(uri);
+
+        // ✅ Add subquestion if present
+        if (subQidCol && row[subQidCol]) {
+            const subExists = question.subquestions.find(s => s.id === row[subQidCol]);
+            if (!subExists) {
+                question.subquestions.push({
+                    id: row[subQidCol],
+                    title: row[subTitleCol] || '',
+                    text: row[subTextCol] || '',
+                    order: row[subOrderCol] || ''
+                });
+            }
+        }
+
+        // ✅ Add answer option if present
+        if (answerCodeCol && row[answerCodeCol]) {
+            const ansExists = question.answerOptions.find(a => a.code === row[answerCodeCol]);
+            if (!ansExists) {
+                question.answerOptions.push({
+                    code: row[answerCodeCol],
+                    text: row[answerTextCol] || '',
+                    sortOrder: row[answerOrderCol] || '',
+                    assessmentValue: row[answerValueCol] || ''
+                });
+            }
+        }
     });
 
-    console.log('Parsed questions:', questions);
+    const questions = Array.from(questionMap.values());
+
+    // Sort subquestions and answers by order
+    questions.forEach(q => {
+        if (q.subquestions.length > 0) {
+            q.subquestions.sort((a, b) => {
+                const orderA = parseInt(a.order) || 0;
+                const orderB = parseInt(b.order) || 0;
+                return orderA - orderB;
+            });
+        }
+        if (q.answerOptions.length > 0) {
+            q.answerOptions.sort((a, b) => {
+                const orderA = parseInt(a.sortOrder) || 0;
+                const orderB = parseInt(b.sortOrder) || 0;
+                return orderA - orderB;
+            });
+        }
+    });
+
+    console.log('Parsed questions with subquestions and answers:', questions);
     return questions;
 }
 
@@ -1176,6 +1552,288 @@ function parseGroupsAndQuestionsFromResults(results, columns) {
 
     return { groups, questions };
 }
+
+
+// ==================== EDIT SUBQUESTION ====================
+function editSubquestion(event, questionUri, subId) {
+    event.stopPropagation();
+
+    // Trova la question e la subquestion
+    const question = allGroups.flatMap(g => g.questions).find(q => q.uri === questionUri);
+    if (!question) return;
+
+    const subquestion = question.subquestions.find(s => s.id === subId);
+    if (!subquestion) return;
+
+    const newTitle = prompt('Edit subquestion title:', subquestion.title || subquestion.id);
+    if (newTitle !== null && newTitle.trim() !== '') {
+        subquestion.title = newTitle.trim();
+
+        const newText = prompt('Edit subquestion text (optional):', subquestion.text || '');
+        if (newText !== null) {
+            subquestion.text = newText.trim();
+        }
+
+        displayItems();
+        updatePreview();
+        showToast('Updated', 'Subquestion updated', 'success');
+    }
+}
+
+// ==================== DELETE SUBQUESTION ====================
+function deleteSubquestion(event, questionUri, subId) {
+    event.stopPropagation();
+
+    if (!confirm('Delete this subquestion?')) return;
+
+    const question = allGroups.flatMap(g => g.questions).find(q => q.uri === questionUri);
+    if (!question) return;
+
+    const index = question.subquestions.findIndex(s => s.id === subId);
+    if (index > -1) {
+        question.subquestions.splice(index, 1);
+        displayItems();
+        updatePreview();
+        showToast('Deleted', 'Subquestion deleted', 'success');
+    }
+}
+
+// ==================== ADD SUBQUESTION ====================
+function addSubquestion(event, questionUri) {
+    event.stopPropagation();
+
+    const question = allGroups.flatMap(g => g.questions).find(q => q.uri === questionUri);
+    if (!question) return;
+
+    const title = prompt('Enter subquestion title:');
+    if (!title || title.trim() === '') return;
+
+    const text = prompt('Enter subquestion text (optional):');
+
+    // Genera un ID temporaneo
+    const newId = `sub_${Date.now()}`;
+    const order = (question.subquestions?.length || 0) + 1;
+
+    const newSub = {
+        id: newId,
+        title: title.trim(),
+        text: text ? text.trim() : '',
+        order: order.toString()
+    };
+
+    if (!question.subquestions) question.subquestions = [];
+    question.subquestions.push(newSub);
+
+    displayItems();
+    updatePreview();
+    showToast('Added', 'Subquestion added', 'success');
+}
+
+// ==================== EDIT ANSWER OPTION ====================
+function editAnswerOption(event, questionUri, answerCode) {
+    event.stopPropagation();
+
+    const question = allGroups.flatMap(g => g.questions).find(q => q.uri === questionUri);
+    if (!question) return;
+
+    const answer = question.answerOptions.find(a => a.code === answerCode);
+    if (!answer) return;
+
+    const newCode = prompt('Edit answer code:', answer.code);
+    if (newCode !== null && newCode.trim() !== '') {
+        answer.code = newCode.trim();
+
+        const newText = prompt('Edit answer text:', answer.text || '');
+        if (newText !== null) {
+            answer.text = newText.trim();
+        }
+
+        displayItems();
+        updatePreview();
+        showToast('Updated', 'Answer option updated', 'success');
+    }
+}
+
+// ==================== DELETE ANSWER OPTION ====================
+function deleteAnswerOption(event, questionUri, answerCode) {
+    event.stopPropagation();
+
+    if (!confirm('Delete this answer option?')) return;
+
+    const question = allGroups.flatMap(g => g.questions).find(q => q.uri === questionUri);
+    if (!question) return;
+
+    const index = question.answerOptions.findIndex(a => a.code === answerCode);
+    if (index > -1) {
+        question.answerOptions.splice(index, 1);
+        displayItems();
+        updatePreview();
+        showToast('Deleted', 'Answer option deleted', 'success');
+    }
+}
+
+// ==================== ADD ANSWER OPTION ====================
+function addAnswerOption(event, questionUri) {
+    event.stopPropagation();
+
+    const question = allGroups.flatMap(g => g.questions).find(q => q.uri === questionUri);
+    if (!question) return;
+
+    const code = prompt('Enter answer code (e.g., A1, Y, N):');
+    if (!code || code.trim() === '') return;
+
+    const text = prompt('Enter answer text:');
+    if (!text || text.trim() === '') return;
+
+    const newAnswer = {
+        code: code.trim(),
+        text: text.trim(),
+        sortOrder: (question.answerOptions?.length || 0).toString()
+    };
+
+    if (!question.answerOptions) question.answerOptions = [];
+    question.answerOptions.push(newAnswer);
+
+    displayItems();
+    updatePreview();
+    showToast('Added', 'Answer option added', 'success');
+}
+// ==================== ADD NEW GROUP ====================
+function addNewGroup() {
+    const groupName = prompt('Enter group name:');
+    if (!groupName || groupName.trim() === '') return;
+
+    const groupDescription = prompt('Enter group description (optional):');
+
+    // Genera ID temporaneo
+    const newId = `group_${Date.now()}`;
+    const newUri = `https://w3id.org/fossr/data/questionGroup_${newId}`;
+
+    const newGroup = {
+        uri: newUri,
+        id: newId,
+        name: groupName.trim(),
+        description: groupDescription ? groupDescription.trim() : '',
+        type: 'group',
+        questions: []
+    };
+
+    allGroups.push(newGroup);
+    displayItems();
+    showToast('Added', `Group "${groupName}" created`, 'success');
+}
+
+// ==================== ADD QUESTION TO GROUP ====================
+function addQuestionToGroup(event, groupIndex) {
+    event.stopPropagation();
+
+    const group = allGroups[groupIndex];
+    if (!group) return;
+
+    const questionText = prompt('Enter question text:');
+    if (!questionText || questionText.trim() === '') return;
+
+    const variableCod = prompt('Enter variable code (e.g., Q001):');
+    if (!variableCod || variableCod.trim() === '') return;
+
+    const questionType = prompt('Enter question type (L=List, T=Text, Y=Yes/No):', 'L');
+
+    // Genera ID temporaneo
+    const newId = `question_${Date.now()}`;
+    const newUri = `https://w3id.org/fossr/data/question_${newId}`;
+
+    const newQuestion = {
+        uri: newUri,
+        id: newId,
+        text: questionText.trim(),
+        variableCod: variableCod.trim(),
+        questionType: questionType ? questionType.trim().toUpperCase() : 'L',
+        isMandatory: '0',
+        type: 'question',
+        groupUri: group.uri,
+        subquestions: [],
+        answerOptions: [],
+        answers: []
+    };
+
+    // Aggiungi al gruppo
+    if (!group.questions) group.questions = [];
+    group.questions.push(newQuestion);
+
+    // Aggiungi anche ad allQuestions
+    allQuestions.push(newQuestion);
+
+    displayItems();
+    showToast('Added', `Question added to "${group.name}"`, 'success');
+}
+
+// ==================== DELETE QUESTION ====================
+function deleteQuestion(event, questionUri, groupIndex) {
+    event.stopPropagation();
+
+    if (!confirm('Delete this question?')) return;
+
+    const group = allGroups[groupIndex];
+    if (!group) return;
+
+    // Rimuovi dal gruppo
+    const qIndex = group.questions.findIndex(q => q.uri === questionUri);
+    if (qIndex > -1) {
+        group.questions.splice(qIndex, 1);
+    }
+
+    // Rimuovi da allQuestions
+    const allQIndex = allQuestions.findIndex(q => q.uri === questionUri);
+    if (allQIndex > -1) {
+        allQuestions.splice(allQIndex, 1);
+    }
+
+    // Rimuovi da selectedQuestions se selezionata
+    const selIndex = selectedQuestions.findIndex(q => q.uri === questionUri);
+    if (selIndex > -1) {
+        selectedQuestions.splice(selIndex, 1);
+    }
+
+    displayItems();
+    updatePreview();
+    showToast('Deleted', 'Question deleted', 'success');
+}
+// Toggle subquestions expand/collapse
+function toggleSubquestionsExpand(event, questionUri) {
+    event.stopPropagation();
+
+    const content = document.getElementById(`subquestions-content-${questionUri}`);
+    const icon = document.getElementById(`expand-sub-${questionUri}`);
+
+    if (!content) return;
+
+    if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.textContent = '▼';
+    } else {
+        content.style.display = 'none';
+        icon.textContent = '▶';
+    }
+}
+
+// Toggle answer options expand/collapse
+function toggleAnswersExpand(event, questionUri) {
+    event.stopPropagation();
+
+    const content = document.getElementById(`answers-content-${questionUri}`);
+    const icon = document.getElementById(`expand-ans-${questionUri}`);
+
+    if (!content) return;
+
+    if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.textContent = '▼';
+    } else {
+        content.style.display = 'none';
+        icon.textContent = '▶';
+    }
+}
+
 
 // ==================== INITIALIZATION ====================
 console.log('✅ Survey Builder JavaScript loaded and ready!');

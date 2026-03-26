@@ -1,0 +1,143 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix ls: <https://w3id.org/fossr/ontology/limesurvey/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================
+# LOGICAL SOURCE - SUBQUESTIONS
+# ============================================
+
+<#SubQuestionsSource>
+  rml:source "subquestions_only.json" ;
+  rml:referenceFormulation ql:JSONPath ;
+  rml:iterator "$[*]" .
+
+# ============================================
+# MAPPING SUBQUESTIONS
+# ============================================
+
+<#SubQuestionMapping>
+  rml:logicalSource <#SubQuestionsSource> ;
+
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/question_{qid}" ;
+    rr:class ls:Question
+  ] ;
+
+  # hasParentQuestion
+  rr:predicateObjectMap [
+    rr:predicate ls:hasParentQuestion ;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/question_{parent_qid}" ;
+      rr:termType rr:IRI
+    ]
+  ] ;
+
+  # hasId
+  rr:predicateObjectMap [
+    rr:predicate ls:hasId ;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/identifier_{qid}_question" ;
+      rr:termType rr:IRI
+    ]
+  ] ;
+
+  # hasVariable
+  rr:predicateObjectMap [
+    rr:predicate ls:hasVariable ;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/variable_{title}" ;
+      rr:termType rr:IRI
+    ]
+  ] ;
+
+  # hasContent
+  rr:predicateObjectMap [
+    rr:predicate ls:hasContent ;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/question_{qid}_content" ;
+      rr:termType rr:IRI
+    ]
+  ] ;
+
+  # hasComponentAttribute (scale_id)
+  rr:predicateObjectMap [
+    rr:predicate ls:hasComponentAttribute ;
+    rr:objectMap [
+      rr:template "https://w3id.org/fossr/data/attribute_subquestion_{qid}_scale_id" ;
+      rr:termType rr:IRI
+    ]
+  ] .
+
+# ============================================
+# ENTITÀ SUPPORTO - SUBQUESTIONS
+# ============================================
+
+<#SubQuestionIdMapping>
+  rml:logicalSource <#SubQuestionsSource> ;
+
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/identifier_{qid}_question" ;
+    rr:class ls:Identifier
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:id ;
+    rr:objectMap [
+      rml:reference "qid" ;
+      rr:datatype xsd:string
+    ]
+  ] .
+
+<#SubQuestionVariableMapping>
+  rml:logicalSource <#SubQuestionsSource> ;
+
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/variable_{title}" ;
+    rr:class ls:Variable
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:variableCod ;
+    rr:objectMap [
+      rml:reference "title"
+    ]
+  ] .
+
+<#SubQuestionContentMapping>
+  rml:logicalSource <#SubQuestionsSource> ;
+
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/question_{qid}_content" ;
+    rr:class ls:Content
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:text ;
+    rr:objectMap [
+      rml:reference "question"
+    ]
+  ] .
+
+<#SubQuestionScaleIdMapping>
+  rml:logicalSource <#SubQuestionsSource> ;
+
+  rr:subjectMap [
+    rr:template "https://w3id.org/fossr/data/attribute_subquestion_{qid}_scale_id" ;
+    rr:class ls:ComponentAttribute
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentName ;
+    rr:objectMap [
+      rr:constant "scale_id"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ls:componentValue ;
+    rr:objectMap [
+      rml:reference "scale_id"
+    ]
+  ] .

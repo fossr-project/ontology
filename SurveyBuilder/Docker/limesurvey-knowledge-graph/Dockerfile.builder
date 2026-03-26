@@ -33,14 +33,23 @@ COPY pyrml/ ./pyrml/
 # Copy static files
 COPY static/ ./static/
 
+
 # Copy templates
 COPY templates/ ./templates/
+
+COPY rml/ ./rml/
 
 # Create logs directory
 RUN mkdir -p /app/logs
 
 # Expose port
 EXPOSE 5005
+
+# Debug: verifica che rml sia stata copiata
+RUN echo "=== Checking RML files ===" && \
+    ls -la /app/rml/ && \
+    echo "=== RML files count ===" && \
+    ls -1 /app/rml/ | wc -l
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
