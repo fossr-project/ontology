@@ -1,186 +1,143 @@
+# =============================================================
+# docker-compose.yml — Survey Builder App
+# =============================================================
+# ARCHITETTURA SCELTA: due compose separati
+#
+#   docker-compose.yml        ← questo file (la TUA app)
+#   docker-compose.infra.yml  ← GraphDB + LimeSurvey + MySQL
+#
+# PERCHÉ separarli?
+#   - L'infrastruttura (GraphDB, LimeSurvey) si avvia una volta
+#     e rimane su. La riavvii solo se cambia la configurazione.
+#   - La tua app (survey-builder) la riavvii spesso durante sviluppo.
+#   - Separandoli puoi fare "docker compose up" solo sull'app
+#     senza toccare i servizi che già funzionano.
+#   - Comunicano tramite una rete esterna condivisa: "survey-network"
+#     (creata dal docker-compose.infra.yml).
+# =============================================================
+
 services:
-  # =============================================
-  # MySQL Database for LimeSurvey
-  # =============================================
-  mysql:
-    image: mysql:8.0
-    container_name: limesurvey-mysql
-    restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: limesurvey
-      MYSQL_USER: limesurvey
-      MYSQL_PASSWORD: limesurvey
-      MYSQL_ROOT_PASSWORD: rootpassword
-    volumes:
-      - mysql_data:/var/lib/mysql
-    networks:
-      - survey-network
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      timeout: 20s
-      retries: 10
 
-  # =============================================
-  # LimeSurvey
-  # =============================================
-  limesurvey:
-    image: martialblog/limesurvey:6-apache
-    container_name: limesurvey
-    restart: unless-stopped
-    ports:
-      - "8080:8080"
-    environment:
-      DB_TYPE: mysql
-      DB_HOST: mysql
-      DB_PORT: 3306
-      DB_NAME: limesurvey
-      DB_USERNAME: limesurvey
-      DB_PASSWORD: limesurvey
-      ADMIN_USER: admin
-      ADMIN_PASSWORD: admin
-      ADMIN_NAME: Administrator
-      ADMIN_EMAIL: admin@example.com
-      # Enable RemoteControl API
-      LIMESURVEY_USE_INNODB: "true"
-      LIMESURVEY_DEBUG: 0
-      LIMESURVEY_SQL_DEBUG: 0
-    volumes:
-      - limesurvey_upload:/var/www/html/upload
-      - limesurvey_config:/var/www/html/application/config
-      - ./init-scripts/limesurvey:/docker-entrypoint-initdb.d
-    depends_on:
-      mysql:
-        condition: service_healthy
-    networks:
-      - survey-network
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
-  # =============================================
-  # GraphDB
-  # =============================================
-  graphdb:
-    image: ontotext/graphdb:10.7.3
-    container_name: graphdb
-    restart: unless-stopped
-    ports:
-      - "7200:7200"
-    environment:
-      GDB_HEAP_SIZE: 2G
-      GDB_MIN_MEM: 1G
-      GDB_MAX_MEM: 2G
-      GDB_JAVA_OPTS: >-
-        -Xms1g -Xmx2g
-        -Dgraphdb.home=/opt/graphdb/home
-        -Dgraphdb.workbench.cors.enable=true
-    volumes:
-      - graphdb_data:/opt/graphdb/home
-      - graphdb_import:/root/graphdb-import
-      - ./ontology:/opt/graphdb/ontology:ro
-    networks:
-      - survey-network
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:7200/rest/repositories"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
-  # =============================================
-  # Survey Builder (Flask App) - UPDATED
-  # =============================================
+  # =============================================================
+  # SURVEY BUILDER — la tua applicazione Flask
+  # =============================================================
   survey-builder:
     build:
       context: .
       dockerfile: Dockerfile.builder
+
     container_name: survey-builder
     restart: unless-stopped
+
     ports:
-      - "5001:5005"  # Flask gira su 5005 dentro il container
+      # "5001:5005" = porta_host:porta_container
+      # Accedi da browser su http://localhost:5001
+      # Flask dentro il container gira su 5005
+      # Puoi cambiare 5001 se è occupata sul tuo Mac
+      - "5001:5005"
+
     environment:
-      # LimeSurvey
+      # --- LimeSurvey (gira nel compose infra) ---
       LIMESURVEY_URL: http://limesurvey:8080/index.php/admin/remotecontrol
       LIMESURVEY_USERNAME: admin
       LIMESURVEY_PASSWORD: admin
-      # GraphDB
+
+      # --- GraphDB (gira nel compose infra) ---
       GRAPHDB_URL: http://graphdb:7200
       GRAPHDB_USERNAME: admin
       GRAPHDB_PASSWORD: admin
       GRAPHDB_REPOSITORY: test_repo
-      # Flask
+
+      # --- Flask ---
       FLASK_HOST: 0.0.0.0
       FLASK_PORT: 5005
-      FLASK_DEBUG: "False"
+
+      # =============================================================
+      # FLASK_DEBUG in sviluppo vs produzione
+      # =============================================================
+      # "True"  → Flask ricarica automaticamente app.py ad ogni
+      #           salvataggio. MA in Docker questo NON funziona
+      #           da solo: serve il volume (vedi sotto).
+      #           Inoltre mostra errori dettagliati nel browser.
+      # "False" → Modalità produzione: più veloce, nessun debug info.
+      # Durante sviluppo tienilo "True", prima di deployare mettilo "False".
+      FLASK_DEBUG: "True"
+
       PYTHONUNBUFFERED: 1
+      # PERCHÉ PYTHONUNBUFFERED=1?
+      #   - Python di default bufferizza stdout/stderr.
+      #   - Con questo flag i print() e i log appaiono immediatamente
+      #     in "docker compose logs", non dopo secondi o mai.
+
     volumes:
-      # Logs
+      # =============================================================
+      # VOLUMI: il segreto per sviluppare senza duplicare il codice
+      # =============================================================
+      #
+      # SINTASSI: /percorso/sul/tuo/mac:/percorso/nel/container
+      #
+      # Cosa succede: Docker "monta" la tua cartella locale dentro
+      # il container. Non copia i file: il container legge direttamente
+      # dal tuo disco. Quando salvi in PyCharm, il container vede
+      # subito il file aggiornato.
+      #
+      # CON FLASK_DEBUG=True: Flask rileva il cambiamento e si
+      # riavvia in ~1 secondo. Nessun "docker compose restart" necessario.
+      # =============================================================
+
+      # app.py — il file che modifichi più spesso
+      - ./app.py:/app/app.py
+
+      # File RML mapping .ttl — se li modifichi, vengono aggiornati
+      # Nota: il pattern *.ttl non funziona nei volumi, quindi
+      # monta l'intera directory corrente per i .ttl oppure
+      # elenca i singoli file (vedi nota sotto *)
+      - ./templates:/app/templates
+      - ./static:/app/static
+      - ./exports:/app/exports
+
+      # pyrml: NON lo montiamo come volume perché è una libreria
+      # esterna che non modifichi. Rimane quella copiata nel Dockerfile.
+
+      # Log persistenti anche dopo docker compose down
       - builder_logs:/app/logs
-      # Output directory for generated files
-      - ./outputs:/app/outputs
-    depends_on:
-      limesurvey:
-        condition: service_healthy
-      graphdb:
-        condition: service_healthy
+
+      # (*) Se hai più file .ttl con nomi fissi, aggiungili così:
+      # - ./mio_mapping.ttl:/app/mio_mapping.ttl
+      # - ./altro_mapping.ttl:/app/altro_mapping.ttl
+      # Oppure metti tutti i .ttl in una cartella "mappings/" e monta:
+      # - ./mappings:/app/mappings
+
+    # =============================================================
+    # RETE ESTERNA
+    # =============================================================
+    # "external: true" significa che questa rete NON viene creata
+    # da questo compose, ma esiste già (creata da docker-compose.infra.yml).
+    # survey-builder si collega a graphdb e limesurvey usando i loro
+    # nomi container come hostname (es: http://graphdb:7200).
     networks:
       - survey-network
+
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5005/"]
       interval: 30s
       timeout: 10s
       retries: 5
 
-  # =============================================
-  # Initialization Service (runs once)
-  # =============================================
-  init-service:
-    build:
-      context: .
-      dockerfile: Dockerfile.init
-    container_name: init-service
-    environment:
-      GRAPHDB_URL: http://graphdb:7200
-      GRAPHDB_USERNAME: admin
-      GRAPHDB_PASSWORD: admin
-      GRAPHDB_REPOSITORY: test_repo
-      LIMESURVEY_URL: http://limesurvey:8080/index.php/admin/remotecontrol
-      LIMESURVEY_USERNAME: admin
-      LIMESURVEY_PASSWORD: admin
-    volumes:
-      - ./ontology:/app/ontology:ro
-      - ./samples:/app/samples:ro
-      - ./init-scripts:/app/init-scripts:ro
-    depends_on:
-      limesurvey:
-        condition: service_healthy
-      graphdb:
-        condition: service_healthy
-    networks:
-      - survey-network
-    command: ["python", "init_system.py"]
-
-# =============================================
-# Networks
-# =============================================
-networks:
-  survey-network:
-    driver: bridge
-
-# =============================================
-# Volumes
-# =============================================
+# =============================================================
+# VOLUMI
+# =============================================================
 volumes:
-  mysql_data:
-    driver: local
-  limesurvey_upload:
-    driver: local
-  limesurvey_config:
-    driver: local
-  graphdb_data:
-    driver: local
-  graphdb_import:
-    driver: local
   builder_logs:
     driver: local
+
+# =============================================================
+# RETE — dichiarata come esterna
+# =============================================================
+networks:
+  survey-network:
+    external: true
+    # Questa rete è creata da docker-compose.infra.yml.
+    # Se provi ad avviare questo compose senza aver avviato prima
+    # l'infra, riceverai: "network survey-network not found".
+    # Soluzione: avvia sempre prima l'infra.

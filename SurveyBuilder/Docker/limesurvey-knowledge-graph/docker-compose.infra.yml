@@ -1,0 +1,138 @@
+# =============================================================
+# docker-compose.infra.yml — Infrastruttura esterna
+# =============================================================
+# Contiene: MySQL, LimeSurvey, GraphDB
+#
+# PERCHÉ un file separato?
+#   Questi servizi sono "infrastruttura": li avvii una volta
+#   e li lasci girare. Non li tocchi durante lo sviluppo.
+#   La tua app (docker-compose.yml) si connette a loro via rete.
+#
+# COME AVVIARLO:
+#   docker compose -f docker-compose.infra.yml up -d
+#
+# COME FERMARLO (senza perdere i dati):
+#   docker compose -f docker-compose.infra.yml stop
+#
+# COME RIMUOVERE TUTTO (attenzione: cancella i dati!):
+#   docker compose -f docker-compose.infra.yml down -v
+# =============================================================
+
+services:
+
+  # =============================================================
+  # MySQL — Database per LimeSurvey
+  # =============================================================
+  mysql:
+    image: mysql:8.0
+    container_name: limesurvey-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: limesurvey
+      MYSQL_USER: limesurvey
+      MYSQL_PASSWORD: limesurvey
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - mysql_data:/var/lib/mysql
+      # PERCHÉ un volume nominato e non una cartella locale?
+      #   I dati del DB sono binari e cambiano continuamente.
+      #   Un volume Docker è gestito da Docker stesso ed è
+      #   più performante di un bind mount su Mac (specialmente
+      #   su macOS dove il filesystem è case-insensitive).
+    networks:
+      - survey-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  # =============================================================
+  # LimeSurvey
+  # =============================================================
+  limesurvey:
+    image: martialblog/limesurvey:6-apache
+    container_name: limesurvey
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: limesurvey
+      DB_USERNAME: limesurvey
+      DB_PASSWORD: limesurvey
+      ADMIN_USER: admin
+      ADMIN_PASSWORD: admin
+      ADMIN_NAME: Administrator
+      ADMIN_EMAIL: admin@example.com
+      LIMESURVEY_USE_INNODB: "true"
+      LIMESURVEY_DEBUG: 0
+      LIMESURVEY_SQL_DEBUG: 0
+    volumes:
+      - limesurvey_upload:/var/www/html/upload
+      - limesurvey_config:/var/www/html/application/config
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - survey-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # =============================================================
+  # GraphDB
+  # =============================================================
+  graphdb:
+    image: ontotext/graphdb:10.7.3
+    container_name: graphdb
+    restart: unless-stopped
+    ports:
+      - "7200:7200"
+    environment:
+      GDB_HEAP_SIZE: 2G
+      GDB_MIN_MEM: 1G
+      GDB_MAX_MEM: 2G
+      GDB_JAVA_OPTS: >-
+        -Xms1g -Xmx2g
+        -Dgraphdb.home=/opt/graphdb/home
+        -Dgraphdb.workbench.cors.enable=true
+    volumes:
+      - graphdb_data:/opt/graphdb/home
+      - graphdb_import:/root/graphdb-import
+    networks:
+      - survey-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7200/rest/repositories"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+# =============================================================
+# RETE — creata qui, condivisa con docker-compose.yml
+# =============================================================
+networks:
+  survey-network:
+    driver: bridge
+    # Questa rete viene creata da questo file.
+    # Il nome effettivo sarà "survey-network" perché abbiamo
+    # usato "name:" esplicito qui sotto.
+    name: survey-network
+
+# =============================================================
+# VOLUMI — solo per l'infrastruttura
+# =============================================================
+volumes:
+  mysql_data:
+    driver: local
+  limesurvey_upload:
+    driver: local
+  limesurvey_config:
+    driver: local
+  graphdb_data:
+    driver: local
+  graphdb_import:
+    driver: local

@@ -31,13 +31,13 @@ logger = logging.getLogger(__name__)
 import xml.etree.ElementTree as ET
 
 # Configurazione GraphDB
-GRAPHDB_URL = "http://graphdb:7200"
-REPOSITORY = "prova"
+GRAPHDB_URL = "http://localhost:7200"
+REPOSITORY = "test_repo"
 
 # Configurazione LimeSurvey
-LIMESURVEY_URL = "http://limesurvey:8080/index.php/admin/remotecontrol"
-LIMESURVEY_USERNAME = "admin"
-LIMESURVEY_PASSWORD = "admin"
+LIMESURVEY_URL = "http://localhost/limesurvey/index.php/admin/remotecontrol"
+LIMESURVEY_USERNAME = "sara"
+LIMESURVEY_PASSWORD = "sara"
 
 
 # FUNZIONI PER BUILDER SURVEY
@@ -1772,7 +1772,7 @@ class SurveyExporter:
 class GraphDBManager:
     """Gestisce la connessione e le operazioni con GraphDB"""
 
-    def __init__(self, base_url="http://graphdb:7200", username=None, password=None):
+    def __init__(self, base_url="http://localhost:7200", username=None, password=None):
         self.base_url = base_url.rstrip('/')
         self.auth = (username, password) if username and password else None
         self.session = requests.Session()
@@ -2955,7 +2955,7 @@ def export():
 @app.route('/api/graphdb/repositories', methods=['GET'])
 def list_graphdb_repositories():
     try:
-        graphdb = GraphDBManager(request.args.get('url', 'http://graphdb:7200'))
+        graphdb = GraphDBManager(request.args.get('url', 'http://localhost:7200'))
         return jsonify(graphdb.list_repositories())
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
@@ -2967,7 +2967,7 @@ def create_graphdb_repository():
         data = request.json
         print(f"\n=== CREAZIONE REPOSITORY ===\nData: {data}")
 
-        graphdb = GraphDBManager(data.get('graphdb_url', 'http://graphdb:7200'))
+        graphdb = GraphDBManager(data.get('graphdb_url', 'http://localhost:7200'))
         result = graphdb.create_repository(
             data['repo_id'],
             data.get('repo_title', data['repo_id']),
@@ -2987,7 +2987,7 @@ def create_graphdb_repository():
 def delete_graphdb_repository():
     try:
         data = request.json
-        graphdb = GraphDBManager(data.get('graphdb_url', 'http://graphdb:7200'))
+        graphdb = GraphDBManager(data.get('graphdb_url', 'http://localhost:7200'))
         return jsonify(graphdb.delete_repository(data['repo_id']))
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
@@ -3002,7 +3002,7 @@ def upload_ontology():
         if not os.path.exists(data['ontology_file']):
             return jsonify({'success': False, 'error': f'File non trovato: {data["ontology_file"]}'})
 
-        graphdb = GraphDBManager(data.get('graphdb_url', 'http://graphdb:7200'))
+        graphdb = GraphDBManager(data.get('graphdb_url', 'http://localhost:7200'))
         result = graphdb.upload_file(
             data['repo_id'],
             data['ontology_file'],
@@ -3035,13 +3035,13 @@ def convert_csv_to_rdf():
         rml_file = []
 
         if data_type == "group":
-            rml_file = ["rml/RMLGroup2.ttl"]
+            rml_file = ["RMLGroup2.ttl"]
             pulisciCSV(csv_path)
         elif data_type == "question":
-            rml_file = ["rml/RMLQuestion.ttl"]
+            rml_file = ["RMLQuestion.ttl"]
             cambiaNomeCSV(csv_path)
         elif data_type == "question_properties":
-            rml_file = ["rml/2_subquestions.ttl", "rml/1_questions.ttl", "rml/3_answeroptions.ttl", "rml/4_attributes.ttl"]
+            rml_file = ["2_subquestions.ttl", "1_questions.ttl", "3_answeroptions.ttl", "4_attributes.ttl"]
             split_limesurvey_json(csv_path)  # è un json
         else:
             return jsonify({'success': False, 'error': f'Tipo non supportato: {data_type}'})
@@ -3104,7 +3104,7 @@ def upload_survey_data():
         print(f"Data received: {data}")
 
         # Get GraphDB instance
-        graphdb = GraphDBManager(data.get('graphdb_url', 'http://graphdb:7200'))
+        graphdb = GraphDBManager(data.get('graphdb_url', 'http://localhost:7200'))
 
         # Clean survey_id
         survey_id = clean_uri_path(data.get("survey_id", ""))
@@ -3268,7 +3268,7 @@ def delete_survey_data():
         # Pulisci survey_id usando la funzione helper
         survey_id = clean_uri_path(data.get("survey_id", ""))
 
-        graphdb = GraphDBManager(data.get('graphdb_url', 'http://graphdb:7200'))
+        graphdb = GraphDBManager(data.get('graphdb_url', 'http://localhost:7200'))
         return jsonify(graphdb.clear_repository(
             data['repo_id'],
             f'http://example.org/survey/{survey_id}'
@@ -3281,7 +3281,7 @@ def delete_survey_data():
 def delete_question_data():
     try:
         data = request.json
-        graphdb = GraphDBManager(data.get('graphdb_url', 'http://graphdb:7200'))
+        graphdb = GraphDBManager(data.get('graphdb_url', 'http://localhost:7200'))
         return jsonify(graphdb.delete_by_subject(
             data['repo_id'],
             f'http://example.org/question/{data["question_id"]}'
@@ -3294,7 +3294,7 @@ def delete_question_data():
 def delete_group_data():
     try:
         data = request.json
-        graphdb = GraphDBManager(data.get('graphdb_url', 'http://graphdb:7200'))
+        graphdb = GraphDBManager(data.get('graphdb_url', 'http://localhost:7200'))
         return jsonify(graphdb.delete_by_subject(
             data['repo_id'],
             f'http://example.org/group/{data["group_id"]}'
@@ -3311,7 +3311,7 @@ def graphdb_query():
         print(f"\n=== SPARQL QUERY ===")
         print(f"Repository: {data['repo_id']}")
 
-        graphdb_url = data.get('graphdb_url', 'http://graphdb:7200')
+        graphdb_url = data.get('graphdb_url', 'http://localhost:7200')
         repo_id = data['repo_id']
         query = data['query']
 
@@ -3348,7 +3348,7 @@ def graphdb_query():
 def clear_repository():
     try:
         data = request.json
-        graphdb = GraphDBManager(data.get('graphdb_url', 'http://graphdb:7200'))
+        graphdb = GraphDBManager(data.get('graphdb_url', 'http://localhost:7200'))
         return jsonify(graphdb.clear_repository(data['repo_id']))
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
@@ -3822,7 +3822,7 @@ def create_surveybuilder_limesurvey():
         ls_client.release_session_key()
 
         # Genera URL
-        survey_url = LIMESURVEY_URL.replace('/admin/remotecontrol', '') + f"/admin/survey/"
+        survey_url = LIMESURVEY_URL.replace('/admin/remotecontrol', '') + f"/admin/survey/sa/view/surveyid/{survey_id}"
 
         print(f"\n{'=' * 70}")
         print(f"✓ Survey creation completed!")

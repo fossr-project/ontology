@@ -4,26 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LimeSurvey Manager</title>
-    <link rel="stylesheet" href="../static/css/style.css">
- 
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Institutional Banner -->
-        <div class="institutional-banner">
-            <img src="../static/images/institutional-banner.png" alt="Finanziato dall'Unione Europea - Ministero dell'Università e della Ricerca - Italia Domani">
-        </div>
-            <div class="header-logo">
-                    <img src="../static/images/project-logo.png" alt="Project Logo">
-        </div>
         <div class="header">
             <div class="header-left">
-    
-                    <div>
-                        <h1>📊 LimeSurvey Manager</h1>
-                        <p>Export surveys, questions, and data from LimeSurvey</p>
-                    </div>
-          
+                <h1>📊 LimeSurvey Manager</h1>
+                <p>Export surveys, questions, and data from LimeSurvey</p>
             </div>
             <div class="nav-links">
                 <a href="/" class="nav-link">🏠 Home</a>
@@ -35,7 +23,7 @@
 
         <!-- Connection Settings -->
         <div style="padding: 20px; background: #f5f5f5; border-bottom: 2px solid #e0e0e0;">
-            <h3 style="margin-bottom: 15px;">🔌 Connection Settings</h3>
+            <h3 style="margin-bottom: 15px;">🔐 Connection Settings</h3>
             <div class="grid">
                 <div class="form-group">
                     <label>LimeSurvey URL</label>
@@ -100,10 +88,10 @@
                     </div>
                 </div>
 
-                <!-- Export QuestionProperties -->
+                                <!-- Export QuestionProperties -->
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">🔍 Export Question Properties Survey json</div>
+                        <div class="card-title">📁 Export Question Properties Survey json</div>
                     </div>
                     <div class="card-body">
                         <div class="form-group">
@@ -115,6 +103,7 @@
                         <button class="btn btn-success" onclick="exportQuestionProperties()">📥 Export Question Properties Survey</button>
                     </div>
                 </div>
+
 
                 <!-- Export Responses -->
                 <div class="card">
@@ -141,7 +130,7 @@
         </div>
     </div>
 
-    <script src="../static/js/common.js"></script>
-    <script src="../static/js/limesurvey.js"></script>
+    <script src="/static/js/common.js"></script>
+    <script src="/static/js/limesurvey.js"></script>
 </body>
 </html>

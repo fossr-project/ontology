@@ -7,10 +7,11 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: linear-gradient(135deg, #EDE4D9 0%, #F5F0E8 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
 }
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -23,34 +24,6 @@ body {
     flex-direction: column;
 }
 
-/* ==================== INSTITUTIONAL BANNER ==================== */
-/* Nel file style.css o nel tag <style> degli HTML */
-
-.institutional-banner {
-    background: #2b5a9e;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Assicura che occupi tutta la larghezza */
-}
-
-.institutional-banner img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-/* Responsive per schermi piccoli */
-@media (max-width: 768px) {
-    .institutional-banner {
-        padding: 10px 15px;
-    }
-    
-    .institutional-banner img {
-        max-height: 40px; /* Più piccolo su mobile */
-    }
-}
 /* ==================== HEADER ==================== */
 .header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -59,18 +32,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-
-.header-logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.header-logo img {
-    max-height: 50px;
-    width: auto;
 }
 
 .header-left h1 {
@@ -83,14 +44,13 @@ body {
     font-size: 0.95em;
 }
 
-
 .nav-links {
     display: flex;
     gap: 10px;
 }
 
 .nav-link {
-    background: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.2);
     color: white;
     padding: 10px 20px;
     border-radius: 8px;
@@ -103,7 +63,7 @@ body {
 }
 
 .nav-link:hover {
-    background: rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.3);
     transform: translateY(-2px);
 }
 
@@ -723,11 +683,6 @@ tr:hover {
         gap: 15px;
     }
 
-    .header-logo {
-        flex-direction: column;
-        text-align: center;
-    }
-
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
@@ -750,14 +705,6 @@ tr:hover {
         left: 20px;
         right: 20px;
         max-width: none;
-    }
-
-    .institutional-banner {
-        padding: 10px 15px;
-    }
-
-    .institutional-banner img {
-        max-height: 40px;
     }
 }
 

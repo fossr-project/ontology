@@ -25,19 +25,21 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy ALL Python files
-COPY *.py .
+COPY app.py .
 
-# Copy LOCAL pyrml ✅
+# Copy LOCAL pyrml 
 COPY pyrml/ ./pyrml/
 
 # Copy static files
 COPY static/ ./static/
 
+# FILE RML MAPPING (.ttl nella root del progetto)
+COPY *.ttl .
 
 # Copy templates
 COPY templates/ ./templates/
 
-COPY rml/ ./rml/
+#COPY rml/ ./rml/
 
 # Create logs directory
 RUN mkdir -p /app/logs
@@ -45,11 +47,7 @@ RUN mkdir -p /app/logs
 # Expose port
 EXPOSE 5005
 
-# Debug: verifica che rml sia stata copiata
-RUN echo "=== Checking RML files ===" && \
-    ls -la /app/rml/ && \
-    echo "=== RML files count ===" && \
-    ls -1 /app/rml/ | wc -l
+
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --retries=3 \

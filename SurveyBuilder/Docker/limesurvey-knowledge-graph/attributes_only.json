@@ -1,0 +1,2967 @@
+[
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "579"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "579"
+  },
+  {
+    "name": "assessment_value",
+    "value": "1",
+    "parent_qid": "463"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "463"
+  },
+  {
+    "name": "other_position",
+    "value": "end",
+    "parent_qid": "463"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "463"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "480"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "480"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "570"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "570"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "574"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "574"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "588"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "588"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "397"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "397"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "397"
+  },
+  {
+    "name": "max_buttons_row",
+    "value": "col-md-2",
+    "parent_qid": "397"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "397"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "397"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "397"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "481"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "481"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "571"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "571"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "575"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "575"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "589"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "589"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "454"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "576"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "576"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "398"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "398"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "398"
+  },
+  {
+    "name": "max_buttons_row",
+    "value": "col-md-2",
+    "parent_qid": "398"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "398"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "398"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "398"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "590"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "590"
+  },
+  {
+    "name": "em_validation_q",
+    "value": "is_empty(RVer02x1_CAP.NAOK) or regexMatch('/^\\d\\d[01]\\d\\d$/', RVer02x1_CAP.NAOK)",
+    "parent_qid": "399"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "399"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "399"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "458"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "459"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "459"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "459"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "459"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "459"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "459"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "460"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "456"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "456"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "456"
+  },
+  {
+    "name": "max_buttons_row",
+    "value": "col-md-2",
+    "parent_qid": "456"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "456"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "456"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "456"
+  },
+  {
+    "name": "date_format",
+    "value": "dd/mm/yyyy",
+    "parent_qid": "400"
+  },
+  {
+    "name": "dropdown_dates_minute_step",
+    "value": "1",
+    "parent_qid": "400"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "400"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "400"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "455"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "455"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "455"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "455"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "455"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "455"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "553"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "553"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "785"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "785"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "401"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "401"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "401"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "401"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "401"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "555"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "555"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "578"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "578"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "402"
+  },
+  {
+    "name": "max_num_value_n",
+    "value": "99",
+    "parent_qid": "402"
+  },
+  {
+    "name": "min_num_value_n",
+    "value": "1",
+    "parent_qid": "402"
+  },
+  {
+    "name": "num_value_int_only",
+    "value": "1",
+    "parent_qid": "402"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "402"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "554"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "554"
+  },
+  {
+    "name": "em_validation_q",
+    "value": "RSDe02x1.NAOK < RSDe02.NAOK",
+    "parent_qid": "461"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "461"
+  },
+  {
+    "name": "max_num_value_n",
+    "value": "98",
+    "parent_qid": "461"
+  },
+  {
+    "name": "num_value_int_only",
+    "value": "1",
+    "parent_qid": "461"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "461"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "403"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "403"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "403"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "403"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "403"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "404"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "404"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "405"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "405"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "405"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "405"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "405"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "406"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "406"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "406"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "406"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "406"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "407"
+  },
+  {
+    "name": "max_num_value_n",
+    "value": "30",
+    "parent_qid": "407"
+  },
+  {
+    "name": "num_value_int_only",
+    "value": "1",
+    "parent_qid": "407"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "407"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "408"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "408"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "408"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "408"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "408"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "409"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "409"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "409"
+  },
+  {
+    "name": "show_search",
+    "value": "true",
+    "parent_qid": "409"
+  },
+  {
+    "name": "show_tick",
+    "value": "true",
+    "parent_qid": "409"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "409"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "409"
+  },
+  {
+    "name": "width_entry",
+    "value": "true",
+    "parent_qid": "409"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "410"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "410"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "410"
+  },
+  {
+    "name": "max_buttons_row",
+    "value": "col-md-2",
+    "parent_qid": "410"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "410"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "410"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "410"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "411"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "411"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "411"
+  },
+  {
+    "name": "show_search",
+    "value": "true",
+    "parent_qid": "411"
+  },
+  {
+    "name": "show_tick",
+    "value": "true",
+    "parent_qid": "411"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "411"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "411"
+  },
+  {
+    "name": "width_entry",
+    "value": "true",
+    "parent_qid": "411"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "412"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "412"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "412"
+  },
+  {
+    "name": "max_buttons_row",
+    "value": "col-md-2",
+    "parent_qid": "412"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "412"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "412"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "412"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "414"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "414"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "414"
+  },
+  {
+    "name": "show_search",
+    "value": "true",
+    "parent_qid": "414"
+  },
+  {
+    "name": "show_tick",
+    "value": "true",
+    "parent_qid": "414"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "414"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "414"
+  },
+  {
+    "name": "width_entry",
+    "value": "true",
+    "parent_qid": "414"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "413"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "413"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "413"
+  },
+  {
+    "name": "max_buttons_row",
+    "value": "col-md-2",
+    "parent_qid": "413"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "413"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "413"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "413"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "415"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "415"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "415"
+  },
+  {
+    "name": "show_search",
+    "value": "true",
+    "parent_qid": "415"
+  },
+  {
+    "name": "show_tick",
+    "value": "true",
+    "parent_qid": "415"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "415"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "415"
+  },
+  {
+    "name": "width_entry",
+    "value": "true",
+    "parent_qid": "415"
+  },
+  {
+    "name": "em_validation_q",
+    "value": "!is_empty(RSDe10_PRIN_LING.NAOK) AND RSDe10_PRIN_LING.NAOK != RSDe10_SECO_LING.NAOK",
+    "parent_qid": "416"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "416"
+  },
+  {
+    "name": "show_totals",
+    "value": "X",
+    "parent_qid": "416"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "416"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "417"
+  },
+  {
+    "name": "hidden",
+    "value": "1",
+    "parent_qid": "417"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "417"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "417"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "417"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "417"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "472"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "472"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "472"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "472"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "472"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "473"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "473"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "473"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "473"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "473"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "474"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "474"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "474"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "474"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "474"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "477"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "477"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "477"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "477"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "418"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "418"
+  },
+  {
+    "name": "other_position",
+    "value": "specific",
+    "parent_qid": "418"
+  },
+  {
+    "name": "other_position_code",
+    "value": "AO04",
+    "parent_qid": "418"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "418"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "418"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "419"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "419"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "419"
+  },
+  {
+    "name": "max_buttons_row",
+    "value": "col-md-2",
+    "parent_qid": "419"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "419"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "419"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "419"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "420"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "420"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "420"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "420"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "420"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "482"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "482"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "488"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "488"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "493"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "493"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "503"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "503"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "507"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "507"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "421"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "421"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "421"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "421"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "421"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "421"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "483"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "483"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "489"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "489"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "494"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "494"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "504"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "504"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "508"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "508"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "423"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "423"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "423"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "423"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "423"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "484"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "484"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "490"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "490"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "495"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "495"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "505"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "505"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "509"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "509"
+  },
+  {
+    "name": "assessment_value",
+    "value": "1",
+    "parent_qid": "422"
+  },
+  {
+    "name": "exclude_all_others",
+    "value": "SQ006",
+    "parent_qid": "422"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "422"
+  },
+  {
+    "name": "other_position",
+    "value": "specific",
+    "parent_qid": "422"
+  },
+  {
+    "name": "other_position_code",
+    "value": "SQ005",
+    "parent_qid": "422"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "422"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "485"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "485"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "491"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "491"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "496"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "496"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "506"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "506"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "510"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "510"
+  },
+  {
+    "name": "assessment_value",
+    "value": "1",
+    "parent_qid": "424"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "424"
+  },
+  {
+    "name": "other_position",
+    "value": "end",
+    "parent_qid": "424"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "424"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "486"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "486"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "492"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "492"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "497"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "497"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "511"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "511"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "425"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "425"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "487"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "487"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "498"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "498"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "572"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "572"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "426"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "426"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "499"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "499"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "512"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "512"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "427"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "427"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "427"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "427"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "427"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "427"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "500"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "500"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "428"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "428"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "428"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "428"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "428"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "428"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "501"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "501"
+  },
+  {
+    "name": "assessment_value",
+    "value": "1",
+    "parent_qid": "429"
+  },
+  {
+    "name": "exclude_all_others",
+    "value": "SQ007",
+    "parent_qid": "429"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "429"
+  },
+  {
+    "name": "other_position",
+    "value": "end",
+    "parent_qid": "429"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "429"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "502"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "502"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "430"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "430"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "430"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "430"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "430"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "430"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "513"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "513"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "514"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "514"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "515"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "515"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "582"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "582"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "583"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "583"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "584"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "584"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "431"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "431"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "516"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "516"
+  },
+  {
+    "name": "hidden",
+    "value": "1",
+    "parent_qid": "432"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "432"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "432"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "517"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "517"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "466"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "466"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "518"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "518"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "467"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "467"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "468"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "468"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "475"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "475"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "475"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "475"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "433"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "433"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "434"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "434"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "434"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "434"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "434"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "519"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "519"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "435"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "435"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "520"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "520"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "436"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "436"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "436"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "436"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "436"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "521"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "521"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "522"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "522"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "573"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "573"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "523"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "523"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "524"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "524"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "528"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "528"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "556"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "556"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "437"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "437"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "525"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "525"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "529"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "529"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "557"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "557"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "438"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "438"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "526"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "526"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "530"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "530"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "558"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "558"
+  },
+  {
+    "name": "assessment_value",
+    "value": "1",
+    "parent_qid": "439"
+  },
+  {
+    "name": "exclude_all_others",
+    "value": "RVal03xNS;RVal03xNR",
+    "parent_qid": "439"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "439"
+  },
+  {
+    "name": "max_answers",
+    "value": "5",
+    "parent_qid": "439"
+  },
+  {
+    "name": "other_position",
+    "value": "end",
+    "parent_qid": "439"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "439"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "527"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "527"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "531"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "531"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "559"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "559"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "560"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "560"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "561"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "561"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "562"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "562"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "563"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "563"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "564"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "564"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "565"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "565"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "566"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "566"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "567"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "567"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "568"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "568"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "569"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "569"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "532"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "532"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "533"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "533"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "539"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "539"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "585"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "585"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "586"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "586"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "587"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "587"
+  },
+  {
+    "name": "hidden",
+    "value": "1",
+    "parent_qid": "440"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "440"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "440"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "534"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "534"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "469"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "469"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "535"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "535"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "470"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "470"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "536"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "536"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "471"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "471"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "537"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "537"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "476"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "476"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "476"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "476"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "538"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "538"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "441"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "441"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "442"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "442"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "540"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "540"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "443"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "443"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "444"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "444"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "444"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "444"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "444"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "541"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "541"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "547"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "547"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "445"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "445"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "542"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "542"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "548"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "548"
+  },
+  {
+    "name": "answer_width",
+    "value": "10",
+    "parent_qid": "446"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "446"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "446"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "543"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "543"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "549"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "549"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "544"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "544"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "550"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "550"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "545"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "545"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "546"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "546"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "551"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "551"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "447"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "447"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "447"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "447"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "447"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "447"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "552"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "552"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "448"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "448"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "448"
+  },
+  {
+    "name": "max_buttons_row",
+    "value": "col-md-12",
+    "parent_qid": "448"
+  },
+  {
+    "name": "other_comment_mandatory",
+    "value": "1",
+    "parent_qid": "448"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "448"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "448"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "448"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "451"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "451"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "451"
+  },
+  {
+    "name": "max_buttons_row",
+    "value": "col-md-2",
+    "parent_qid": "451"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "451"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "451"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "451"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "478"
+  },
+  {
+    "name": "button_size",
+    "value": "default",
+    "parent_qid": "478"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "478"
+  },
+  {
+    "name": "max_buttons_row",
+    "value": "col-md-2",
+    "parent_qid": "478"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "478"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "478"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "478"
+  },
+  {
+    "name": "em_validation_q",
+    "value": "(is_empty(RRec01x3tris.NAOK) OR regexMatch('/^([03]\\d{8,11})$/',RRec01x3tris.NAOK))",
+    "parent_qid": "479"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "479"
+  },
+  {
+    "name": "location_mapheight",
+    "value": "300",
+    "parent_qid": "479"
+  },
+  {
+    "name": "location_mapwidth",
+    "value": "500",
+    "parent_qid": "479"
+  },
+  {
+    "name": "location_mapzoom",
+    "value": "11",
+    "parent_qid": "479"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "479"
+  },
+  {
+    "name": "statistics_showmap",
+    "value": "1",
+    "parent_qid": "479"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "479"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "452"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "452"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "452"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "452"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "452"
+  },
+  {
+    "name": "answer_order",
+    "value": "normal",
+    "parent_qid": "462"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "462"
+  },
+  {
+    "name": "other_position",
+    "value": "default",
+    "parent_qid": "462"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "462"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "462"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "457"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "457"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "457"
+  },
+  {
+    "name": "em_validation_q",
+    "value": "(is_empty(RRec02_RRec02x1.NAOK) OR regexMatch('/^(\\w[-._+\\w]*\\w@\\w[-._\\w]*\\w\\.\\w{2,5})$/',RRec02_RRec02x1.NAOK)) AND (is_empty(RRec02_RRec02x2.NAOK) OR regexMatch('/^(3\\d{8,9})$/',RRec02_RRec02x2.NAOK))",
+    "parent_qid": "450"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "450"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "450"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "580"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "580"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "581"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "581"
+  },
+  {
+    "name": "assessment_value",
+    "value": "1",
+    "parent_qid": "464"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "464"
+  },
+  {
+    "name": "min_answers",
+    "value": "1",
+    "parent_qid": "464"
+  },
+  {
+    "name": "other_position",
+    "value": "end",
+    "parent_qid": "464"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "464"
+  },
+  {
+    "name": "assessment_value",
+    "value": "1",
+    "parent_qid": "465"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "465"
+  },
+  {
+    "name": "min_answers",
+    "value": "1",
+    "parent_qid": "465"
+  },
+  {
+    "name": "other_position",
+    "value": "end",
+    "parent_qid": "465"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "465"
+  },
+  {
+    "name": "hide_tip",
+    "value": "1",
+    "parent_qid": "449"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "449"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "449"
+  },
+  {
+    "name": "statistics_showgraph",
+    "value": "1",
+    "parent_qid": "453"
+  },
+  {
+    "name": "time_limit_action",
+    "value": "1",
+    "parent_qid": "453"
+  }
+]
