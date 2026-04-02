@@ -1,450 +1,488 @@
-@prefix : <http://istc.cnr.it/fossr/publications#> .
-@prefix ac: <http://istc.cnr.it/fossr/academic-career> .
+@prefix : <https://w3id.org/fossr/onto/publications/> .
+@prefix ac: <https://w3id.org/fossr/onto/academic-career/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pub: <http://istc.cnr.it/fossr/onto/publications/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
-@base <http://istc.cnr.it/fossr/publications#> .
+@base <https://w3id.org/fossr/onto/publications/> .
 
-<http://istc.cnr.it/fossr/publications> rdf:type owl:Ontology .
+<https://w3id.org/fossr/onto/publications> rdf:type owl:Ontology .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://istc.cnr.it/fossr/academic-careerisWrittenBy
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty :inScheme .
+
+
+###  https://w3id.org/fossr/onto/academic-career/isWrittenBy
 ac:isWrittenBy rdf:type owl:ObjectProperty ;
                owl:inverseOf ac:wrote ;
-               rdfs:domain pub:Publication ;
+               rdfs:domain :Publication ;
                rdfs:range ac:Scholar .
 
 
-###  http://istc.cnr.it/fossr/academic-careerwrote
+###  https://w3id.org/fossr/onto/academic-career/wrote
 ac:wrote rdf:type owl:ObjectProperty ;
          rdfs:domain ac:Scholar ;
-         rdfs:range pub:Publication .
+         rdfs:range :Publication .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/contains
-pub:contains rdf:type owl:ObjectProperty ;
-             rdfs:domain pub:Container ;
-             rdfs:range pub:ListItem .
+###  https://w3id.org/fossr/onto/publications/contains
+:contains rdf:type owl:ObjectProperty ;
+          rdfs:domain :Container ;
+          rdfs:range :ListItem .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/containsReferenceTo
-pub:containsReferenceTo rdf:type owl:ObjectProperty ;
-                        rdfs:domain pub:Publication ;
-                        rdfs:range pub:Publication .
+###  https://w3id.org/fossr/onto/publications/containsReferenceTo
+:containsReferenceTo rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Publication ;
+                     rdfs:range :Publication .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/element
-pub:element rdf:type owl:ObjectProperty .
+###  https://w3id.org/fossr/onto/publications/contributedTo
+:contributedTo rdf:type owl:ObjectProperty ;
+               owl:inverseOf :hasContributingOrganization ;
+               rdfs:domain :OrganizationProfile ;
+               rdfs:range :Publication .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/extractedFrom
-pub:extractedFrom rdf:type owl:ObjectProperty ;
-                  rdfs:domain pub:InformationObject ;
-                  rdfs:range pub:Datasource .
+###  https://w3id.org/fossr/onto/publications/element
+:element rdf:type owl:ObjectProperty .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/first
-pub:first rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf pub:contains .
+###  https://w3id.org/fossr/onto/publications/extractedFrom
+:extractedFrom rdf:type owl:ObjectProperty ;
+               rdfs:domain :InformationObject ;
+               rdfs:range :Datasource .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasAffiliationInPublication
-pub:hasAffiliationInPublication rdf:type owl:ObjectProperty ;
-                                rdfs:domain pub:AuthorItem ;
-                                rdfs:range pub:OrganizationProfile .
+###  https://w3id.org/fossr/onto/publications/first
+:first rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :contains .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasAffiliationSet
-pub:hasAffiliationSet rdf:type owl:ObjectProperty ;
-                      rdfs:domain pub:AuthorProfile ;
-                      rdfs:range pub:AffiliationSet .
+###  https://w3id.org/fossr/onto/publications/hasAffiliation
+:hasAffiliation rdf:type owl:ObjectProperty ;
+                rdfs:domain :AuthorProfile ;
+                rdfs:range :OrganizationProfile .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasAlias
-pub:hasAlias rdf:type owl:ObjectProperty ,
-                      owl:SymmetricProperty ,
-                      owl:TransitiveProperty ,
-                      owl:ReflexiveProperty ;
-             rdfs:domain pub:Entity ;
-             rdfs:range pub:Entity .
+###  https://w3id.org/fossr/onto/publications/hasAffiliationInPublication
+:hasAffiliationInPublication rdf:type owl:ObjectProperty ;
+                             rdfs:domain :AuthorItem ;
+                             rdfs:range :OrganizationProfile .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasAuthorList
-pub:hasAuthorList rdf:type owl:ObjectProperty ;
-                  rdfs:domain pub:Publication ;
-                  rdfs:range pub:AuthorList .
+###  https://w3id.org/fossr/onto/publications/hasAlias
+:hasAlias rdf:type owl:ObjectProperty ,
+                   owl:SymmetricProperty ,
+                   owl:TransitiveProperty ,
+                   owl:ReflexiveProperty ;
+          rdfs:domain :Entity ;
+          rdfs:range :Entity .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasAuthorProfile
-pub:hasAuthorProfile rdf:type owl:ObjectProperty ;
-                     owl:inverseOf pub:isAuthorProfileOf ;
-                     rdfs:domain ac:Scholar ;
-                     rdfs:range pub:AuthorProfile .
+###  https://w3id.org/fossr/onto/publications/hasAuthorList
+:hasAuthorList rdf:type owl:ObjectProperty ;
+               rdfs:domain :Publication ;
+               rdfs:range :AuthorList .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasIdentifier
-pub:hasIdentifier rdf:type owl:ObjectProperty ;
-                  rdfs:domain pub:Entity ;
-                  rdfs:range pub:Identifier .
+###  https://w3id.org/fossr/onto/publications/hasAuthorProfile
+:hasAuthorProfile rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :isAuthorProfileOf ;
+                  rdfs:domain ac:Scholar ;
+                  rdfs:range :AuthorProfile .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasItemContent
-pub:hasItemContent rdf:type owl:ObjectProperty ;
-                   rdfs:domain pub:ListItem ;
-                   rdfs:range pub:Entity .
+###  https://w3id.org/fossr/onto/publications/hasContributingOrganization
+:hasContributingOrganization rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty ;
+                             rdfs:domain :Publication ;
+                             rdfs:range :OrganizationProfile .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasName
-pub:hasName rdf:type owl:ObjectProperty ;
-            rdfs:domain pub:Entity ;
-            rdfs:range pub:Name .
+###  https://w3id.org/fossr/onto/publications/hasIdentifier
+:hasIdentifier rdf:type owl:ObjectProperty ;
+               rdfs:domain :Entity ;
+               rdfs:range :Identifier .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasOrganizationType
-pub:hasOrganizationType rdf:type owl:ObjectProperty .
+###  https://w3id.org/fossr/onto/publications/hasItemContent
+:hasItemContent rdf:type owl:ObjectProperty ;
+                rdfs:domain :ListItem ;
+                rdfs:range :Entity .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasParent
-pub:hasParent rdf:type owl:ObjectProperty .
+###  https://w3id.org/fossr/onto/publications/hasName
+:hasName rdf:type owl:ObjectProperty ;
+         rdfs:domain :Entity ;
+         rdfs:range :Name .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasPreferredName
-pub:hasPreferredName rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf pub:hasName .
+###  https://w3id.org/fossr/onto/publications/hasOrganizationType
+:hasOrganizationType rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :isOrganizationTypeOf ;
+                     rdfs:domain :OrganizationProfile ;
+                     rdfs:range :OrganizationType .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasPublicationSourceType
-pub:hasPublicationSourceType rdf:type owl:ObjectProperty .
+###  https://w3id.org/fossr/onto/publications/hasParentOrganization
+:hasParentOrganization rdf:type owl:ObjectProperty ,
+                                owl:TransitiveProperty ;
+                       rdfs:domain :OrganizationProfile ;
+                       rdfs:range :OrganizationProfile .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasPublicationType
-pub:hasPublicationType rdf:type owl:ObjectProperty ;
-                       rdfs:domain pub:Publication ;
-                       rdfs:range pub:PublicationType .
+###  https://w3id.org/fossr/onto/publications/hasPreferredName
+:hasPreferredName rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasName .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/hasReferenceList
-pub:hasReferenceList rdf:type owl:ObjectProperty ;
-                     rdfs:domain pub:Publication ;
-                     rdfs:range pub:ReferenceList .
+###  https://w3id.org/fossr/onto/publications/hasPublicationSourceType
+:hasPublicationSourceType rdf:type owl:ObjectProperty ;
+                          rdfs:domain :PublicationSource ;
+                          rdfs:range :PublicationSourceType .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/inAffililationHistory
-pub:inAffililationHistory rdf:type owl:ObjectProperty .
+###  https://w3id.org/fossr/onto/publications/hasPublicationType
+:hasPublicationType rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Publication ;
+                    rdfs:range :PublicationType .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/inDatasource
-pub:inDatasource rdf:type owl:ObjectProperty .
+###  https://w3id.org/fossr/onto/publications/hasReferenceList
+:hasReferenceList rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Publication ;
+                  rdfs:range :ReferenceList .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/inScheme
-pub:inScheme rdf:type owl:ObjectProperty ;
-             owl:equivalentProperty skos:inScheme ;
-             rdfs:domain pub:Concept ;
-             rdfs:range pub:ConceptScheme .
+###  https://w3id.org/fossr/onto/publications/inDatasource
+:inDatasource rdf:type owl:ObjectProperty .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/isAuthorProfileOf
-pub:isAuthorProfileOf rdf:type owl:ObjectProperty ;
-                      rdfs:domain pub:AuthorProfile ;
-                      rdfs:range ac:Scholar .
+###  https://w3id.org/fossr/onto/publications/inScheme
+:inScheme rdf:type owl:ObjectProperty ;
+          rdfs:domain :Concept ;
+          rdfs:range :ConceptScheme .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/isPartOf
-pub:isPartOf rdf:type owl:ObjectProperty .
+###  https://w3id.org/fossr/onto/publications/isAuthorProfileOf
+:isAuthorProfileOf rdf:type owl:ObjectProperty ;
+                   rdfs:domain :AuthorProfile ;
+                   rdfs:range ac:Scholar .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/last
-pub:last rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf pub:contains .
+###  https://w3id.org/fossr/onto/publications/isOrganizationTypeOf
+:isOrganizationTypeOf rdf:type owl:ObjectProperty ;
+                      rdfs:domain :OrganizationType ;
+                      rdfs:range :OrganizationProfile .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/next
-pub:next rdf:type owl:ObjectProperty ;
-         owl:inverseOf pub:prev ;
-         rdfs:domain pub:ListItem ;
-         rdfs:range pub:ListItem .
+###  https://w3id.org/fossr/onto/publications/isPartOf
+:isPartOf rdf:type owl:ObjectProperty .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/prev
-pub:prev rdf:type owl:ObjectProperty ;
-         rdfs:domain pub:ListItem ;
-         rdfs:range pub:ListItem .
+###  https://w3id.org/fossr/onto/publications/last
+:last rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :contains .
 
 
-###  http://istc.cnr.it/fossr/onto/publications/providedBy
-pub:providedBy rdf:type owl:ObjectProperty ;
-               rdfs:domain pub:ConceptScheme ;
-               rdfs:range pub:Issuer .
+###  https://w3id.org/fossr/onto/publications/next
+:next rdf:type owl:ObjectProperty ;
+      owl:inverseOf :prev ;
+      rdfs:domain :ListItem ;
+      rdfs:range :ListItem .
 
 
-###  http://www.w3.org/2004/02/skos/core#inScheme
-skos:inScheme rdf:type owl:ObjectProperty .
+###  https://w3id.org/fossr/onto/publications/prev
+:prev rdf:type owl:ObjectProperty ;
+      rdfs:domain :ListItem ;
+      rdfs:range :ListItem .
+
+
+###  https://w3id.org/fossr/onto/publications/providedBy
+:providedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :ConceptScheme ;
+            rdfs:range :Issuer .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://istc.cnr.it/fossr/academic-careerScholar
-ac:Scholar rdf:type owl:Class ;
-           rdfs:subClassOf pub:Entity ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty pub:hasAuthorProfile ;
-                             owl:someValuesFrom pub:AuthorProfile
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ac:wrote ;
-                             owl:allValuesFrom pub:Publication
-                           ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/AffiliationSet
-pub:AffiliationSet rdf:type owl:Class ;
-                   rdfs:subClassOf pub:Container ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty pub:contains ;
-                                     owl:someValuesFrom pub:OrganizationProfile
-                                   ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/AuthorItem
-pub:AuthorItem rdf:type owl:Class ;
-               rdfs:subClassOf pub:ListItem ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty pub:hasAffiliationInPublication ;
-                                 owl:someValuesFrom pub:OrganizationProfile
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty pub:hasItemContent ;
-                                 owl:allValuesFrom pub:AuthorProfile
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty pub:next ;
-                                 owl:allValuesFrom pub:AuthorItem
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty pub:prev ;
-                                 owl:allValuesFrom pub:AuthorItem
-                               ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/AuthorList
-pub:AuthorList rdf:type owl:Class ;
-               rdfs:subClassOf pub:List ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty pub:contains ;
-                                 owl:allValuesFrom pub:AuthorItem
-                               ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/AuthorProfile
-pub:AuthorProfile rdf:type owl:Class ;
-                  rdfs:subClassOf pub:InformationObject ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty pub:isAuthorProfileOf ;
-                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass ac:Scholar
-                                  ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/Concept
-pub:Concept rdf:type owl:Class ;
-            owl:equivalentClass skos:Concept ;
-            rdfs:subClassOf pub:Entity ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty pub:inScheme ;
-                              owl:someValuesFrom pub:ConceptScheme
-                            ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/ConceptScheme
-pub:ConceptScheme rdf:type owl:Class ;
-                  owl:equivalentClass skos:ConceptScheme ;
-                  rdfs:subClassOf pub:Entity ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty pub:providedBy ;
-                                    owl:someValuesFrom pub:Issuer
-                                  ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/Container
-pub:Container rdf:type owl:Class ;
-              rdfs:subClassOf pub:Entity .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/Datasource
-pub:Datasource rdf:type owl:Class ;
-               rdfs:subClassOf pub:Entity .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/Entity
-pub:Entity rdf:type owl:Class ;
-           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                             owl:onProperty pub:hasName ;
-                             owl:someValuesFrom pub:Name
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty pub:hasPreferredName ;
-                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass pub:Name
-                           ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/Identifier
-pub:Identifier rdf:type owl:Class ;
-               rdfs:subClassOf pub:Concept .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/InformationObject
-pub:InformationObject rdf:type owl:Class ;
-                      rdfs:subClassOf pub:Entity ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty pub:extractedFrom ;
-                                        owl:someValuesFrom pub:Datasource
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty pub:hasAlias ;
-                                        owl:allValuesFrom pub:InformationObject
-                                      ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/Issuer
-pub:Issuer rdf:type owl:Class ;
-           rdfs:subClassOf pub:Entity .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/List
-pub:List rdf:type owl:Class ;
-         rdfs:subClassOf pub:Container ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty pub:contains ;
-                           owl:someValuesFrom pub:ListItem
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty pub:first ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass pub:ListItem
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty pub:last ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass pub:ListItem
-                         ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/ListItem
-pub:ListItem rdf:type owl:Class ;
-             rdfs:subClassOf pub:Entity ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty pub:hasItemContent ;
-                               owl:someValuesFrom pub:Entity
-                             ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/Name
-pub:Name rdf:type owl:Class ;
-         rdfs:subClassOf pub:Entity .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/OrganizationProfile
-pub:OrganizationProfile rdf:type owl:Class ;
-                        rdfs:subClassOf pub:InformationObject .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/OrganizationType
-pub:OrganizationType rdf:type owl:Class ;
-                     rdfs:subClassOf pub:Concept .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/Publication
-pub:Publication rdf:type owl:Class ;
-                rdfs:subClassOf pub:InformationObject ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty ac:isWrittenBy ;
-                                  owl:someValuesFrom ac:Scholar
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty pub:hasIdentifier ;
-                                  owl:someValuesFrom pub:Identifier
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty pub:hasPublicationType ;
-                                  owl:someValuesFrom pub:PublicationType
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty pub:hasReferenceList ;
-                                  owl:someValuesFrom pub:ReferenceList
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty pub:containsReferenceTo ;
-                                  owl:allValuesFrom pub:Publication
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty pub:hasAuthorList ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass pub:AuthorList
-                                ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/PublicationSource
-pub:PublicationSource rdf:type owl:Class ;
-                      rdfs:subClassOf pub:InformationObject .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/PublicationSourceType
-pub:PublicationSourceType rdf:type owl:Class ;
-                          rdfs:subClassOf pub:Entity .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/PublicationType
-pub:PublicationType rdf:type owl:Class ;
-                    rdfs:subClassOf pub:Concept .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/ReferenceItem
-pub:ReferenceItem rdf:type owl:Class ;
-                  rdfs:subClassOf pub:ListItem ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty pub:hasItemContent ;
-                                    owl:allValuesFrom pub:Publication
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty pub:next ;
-                                    owl:allValuesFrom pub:ReferenceItem
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty pub:prev ;
-                                    owl:allValuesFrom pub:ReferenceItem
-                                  ] .
-
-
-###  http://istc.cnr.it/fossr/onto/publications/ReferenceList
-pub:ReferenceList rdf:type owl:Class ;
-                  rdfs:subClassOf pub:List ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty pub:contains ;
-                                    owl:allValuesFrom pub:ReferenceItem
-                                  ] .
-
-
 ###  http://www.w3.org/2004/02/skos/core#Concept
 skos:Concept rdf:type owl:Class ;
-             rdfs:subClassOf pub:Entity .
+             owl:equivalentClass :Concept ;
+             rdfs:subClassOf :Entity .
 
 
 ###  http://www.w3.org/2004/02/skos/core#ConceptScheme
 skos:ConceptScheme rdf:type owl:Class ;
-                   rdfs:subClassOf pub:Entity .
+                   owl:equivalentClass :ConceptScheme ;
+                   rdfs:subClassOf :Entity .
+
+
+###  https://w3id.org/fossr/onto/academic-career/Scholar
+ac:Scholar rdf:type owl:Class ;
+           rdfs:subClassOf :Entity ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAuthorProfile ;
+                             owl:someValuesFrom :AuthorProfile
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ac:wrote ;
+                             owl:allValuesFrom :Publication
+                           ] .
+
+
+###  https://w3id.org/fossr/onto/publications/AuthorItem
+:AuthorItem rdf:type owl:Class ;
+            rdfs:subClassOf :ListItem ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAffiliationInPublication ;
+                              owl:someValuesFrom :OrganizationProfile
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasItemContent ;
+                              owl:allValuesFrom :AuthorProfile
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :next ;
+                              owl:allValuesFrom :AuthorItem
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :prev ;
+                              owl:allValuesFrom :AuthorItem
+                            ] .
+
+
+###  https://w3id.org/fossr/onto/publications/AuthorList
+:AuthorList rdf:type owl:Class ;
+            rdfs:subClassOf :List ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :contains ;
+                              owl:allValuesFrom :AuthorItem
+                            ] .
+
+
+###  https://w3id.org/fossr/onto/publications/AuthorProfile
+:AuthorProfile rdf:type owl:Class ;
+               rdfs:subClassOf :InformationObject ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAffiliation ;
+                                 owl:someValuesFrom :OrganizationProfile
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isAuthorProfileOf ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass ac:Scholar
+                               ] .
+
+
+###  https://w3id.org/fossr/onto/publications/Concept
+:Concept rdf:type owl:Class ;
+         rdfs:subClassOf :Entity ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :inScheme ;
+                           owl:someValuesFrom :ConceptScheme
+                         ] .
+
+
+###  https://w3id.org/fossr/onto/publications/ConceptScheme
+:ConceptScheme rdf:type owl:Class ;
+               rdfs:subClassOf :Entity ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :providedBy ;
+                                 owl:someValuesFrom :Issuer
+                               ] .
+
+
+###  https://w3id.org/fossr/onto/publications/Container
+:Container rdf:type owl:Class ;
+           rdfs:subClassOf :Entity .
+
+
+###  https://w3id.org/fossr/onto/publications/Datasource
+:Datasource rdf:type owl:Class ;
+            rdfs:subClassOf :Entity .
+
+
+###  https://w3id.org/fossr/onto/publications/Entity
+:Entity rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasName ;
+                          owl:someValuesFrom :Name
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPreferredName ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Name
+                        ] .
+
+
+###  https://w3id.org/fossr/onto/publications/Identifier
+:Identifier rdf:type owl:Class ;
+            rdfs:subClassOf :Concept .
+
+
+###  https://w3id.org/fossr/onto/publications/InformationObject
+:InformationObject rdf:type owl:Class ;
+                   rdfs:subClassOf :Entity ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :extractedFrom ;
+                                     owl:someValuesFrom :Datasource
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAlias ;
+                                     owl:allValuesFrom :InformationObject
+                                   ] .
+
+
+###  https://w3id.org/fossr/onto/publications/Issuer
+:Issuer rdf:type owl:Class ;
+        rdfs:subClassOf :Entity .
+
+
+###  https://w3id.org/fossr/onto/publications/List
+:List rdf:type owl:Class ;
+      rdfs:subClassOf :Container ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :contains ;
+                        owl:someValuesFrom :ListItem
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :first ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :ListItem
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :last ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :ListItem
+                      ] .
+
+
+###  https://w3id.org/fossr/onto/publications/ListItem
+:ListItem rdf:type owl:Class ;
+          rdfs:subClassOf :Entity ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasItemContent ;
+                            owl:someValuesFrom :Entity
+                          ] .
+
+
+###  https://w3id.org/fossr/onto/publications/Name
+:Name rdf:type owl:Class ;
+      rdfs:subClassOf :Entity ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasIdentifier ;
+                        owl:someValuesFrom :Identifier
+                      ] .
+
+
+###  https://w3id.org/fossr/onto/publications/OrganizationProfile
+:OrganizationProfile rdf:type owl:Class ;
+                     rdfs:subClassOf :InformationObject ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasOrganizationType ;
+                                       owl:someValuesFrom :OrganizationType
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasParentOrganization ;
+                                       owl:allValuesFrom :OrganizationProfile
+                                     ] .
+
+
+###  https://w3id.org/fossr/onto/publications/OrganizationType
+:OrganizationType rdf:type owl:Class ;
+                  rdfs:subClassOf :Concept .
+
+
+###  https://w3id.org/fossr/onto/publications/Publication
+:Publication rdf:type owl:Class ;
+             rdfs:subClassOf :InformationObject ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ac:isWrittenBy ;
+                               owl:someValuesFrom ac:Scholar
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasIdentifier ;
+                               owl:someValuesFrom :Identifier
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasPublicationType ;
+                               owl:someValuesFrom :PublicationType
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasReferenceList ;
+                               owl:someValuesFrom :ReferenceList
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :containsReferenceTo ;
+                               owl:allValuesFrom :Publication
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasContributingOrganization ;
+                               owl:allValuesFrom :OrganizationProfile
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAuthorList ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :AuthorList
+                             ] .
+
+
+###  https://w3id.org/fossr/onto/publications/PublicationSource
+:PublicationSource rdf:type owl:Class ;
+                   rdfs:subClassOf :InformationObject ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasPublicationSourceType ;
+                                     owl:someValuesFrom :PublicationSourceType
+                                   ] .
+
+
+###  https://w3id.org/fossr/onto/publications/PublicationSourceType
+:PublicationSourceType rdf:type owl:Class ;
+                       rdfs:subClassOf :Entity .
+
+
+###  https://w3id.org/fossr/onto/publications/PublicationType
+:PublicationType rdf:type owl:Class ;
+                 rdfs:subClassOf :Concept .
+
+
+###  https://w3id.org/fossr/onto/publications/ReferenceItem
+:ReferenceItem rdf:type owl:Class ;
+               rdfs:subClassOf :ListItem ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasItemContent ;
+                                 owl:allValuesFrom :Publication
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :next ;
+                                 owl:allValuesFrom :ReferenceItem
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :prev ;
+                                 owl:allValuesFrom :ReferenceItem
+                               ] .
+
+
+###  https://w3id.org/fossr/onto/publications/ReferenceList
+:ReferenceList rdf:type owl:Class ;
+               rdfs:subClassOf :List ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :contains ;
+                                 owl:allValuesFrom :ReferenceItem
+                               ] .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
