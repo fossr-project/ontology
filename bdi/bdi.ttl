@@ -853,6 +853,23 @@ A example of goal is: \"Learn Python programming.\". This goal may later lead to
       rdfs:label "Goal"@en .
 
 
+###  https://w3id.org/fossr/ontology/bdi/GoalProcess
+:GoalProcess rdf:type owl:Class ;
+             rdfs:subClassOf :MentalProcess ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :affects ;
+                               owl:allValuesFrom :Goal
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasPart ;
+                               owl:allValuesFrom :GoalProcess
+                             ] ;
+             rdfs:comment """GoalProcess is the mental process by which an agent generates, refines, or revises goals based on its current desires, beliefs, and contextual conditions. This process bridges the motivational layer of the agent, where desires express general preferences, and the deliberative layer, where  intentions represent committed courses of action. By elaborating and prioritising goals, the GoalProcess determines which desired outcomes are worth pursuing and prepares them for adoption as actionable intentions.
+
+For example, an agent holding a general desire to improve its programming skills  undergoes a GoalProcess that refines this broad aspiration into a concrete and actionable goal: learning Python programming. This goal may subsequently lead to the formation of an intention: \\\"I intend to enrol in a Python course.\\\", triggering the planning of a structured sequence of learning activities."""@en ;
+             rdfs:label "Goal Process"@en .
+
+
 ###  https://w3id.org/fossr/ontology/bdi/Intention
 :Intention rdf:type owl:Class ;
            rdfs:subClassOf :MentalState ,

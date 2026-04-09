@@ -1165,6 +1165,30 @@ A example of goal is: &quot;Learn Python programming.&quot;. This goal may later
     
 
 
+    <!-- https://w3id.org/fossr/ontology/bdi/GoalProcess -->
+
+    <owl:Class rdf:about="https://w3id.org/fossr/ontology/bdi/GoalProcess">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/ontology/bdi/MentalProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/ontology/bdi/affects"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/fossr/ontology/bdi/Goal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/fossr/ontology/bdi/hasPart"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/fossr/ontology/bdi/GoalProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">GoalProcess is the mental process by which an agent generates, refines, or revises goals based on its current desires, beliefs, and contextual conditions. This process bridges the motivational layer of the agent, where desires express general preferences, and the deliberative layer, where  intentions represent committed courses of action. By elaborating and prioritising goals, the GoalProcess determines which desired outcomes are worth pursuing and prepares them for adoption as actionable intentions.
+
+For example, an agent holding a general desire to improve its programming skills  undergoes a GoalProcess that refines this broad aspiration into a concrete and actionable goal: learning Python programming. This goal may subsequently lead to the formation of an intention: \&quot;I intend to enrol in a Python course.\&quot;, triggering the planning of a structured sequence of learning activities.</rdfs:comment>
+        <rdfs:label xml:lang="en">Goal Process</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/fossr/ontology/bdi/Intention -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/ontology/bdi/Intention">
