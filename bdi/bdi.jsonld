@@ -1285,6 +1285,10 @@
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/addresses",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The object property :addresses links a Plan to the Goal it is intended to fulfil. It captures the teleological nature of planning, where a Plan is not arbitrary but constructed with the explicit purpose of realising a desired state of the world, as described by a Goal. This property formalises the intentional link between planning and goal-oriented behaviour in agents. For example, a Plan to deploy renewable energy subsidies may address a Goal of reducing greenhouse gas emissions. The :addresses relation supports reasoning about the relevance and suitability of plans with respect to their objectives, thereby enabling goal-driven agent behaviour and planning traceability."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Plan"
   } ],
@@ -1292,9 +1296,6 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "The object property :addresses links a Plan to the Goal it is intended to fulfil. It captures the teleological nature of planning, where a Plan is not arbitrary but constructed with the explicit purpose of realising a desired state of the world, as described by a Goal. This property formalises the intentional link between planning and goal-oriented behaviour in agents. For example, a Plan to deploy renewable energy subsidies may address a Goal of reducing greenhouse gas emissions. The :addresses relation supports reasoning about the relevance and suitability of plans with respect to their objectives, thereby enabling goal-driven agent behaviour and planning traceability."
-  }, {
     "@language" : "en",
     "@value" : "addresses"
   } ],
@@ -2290,6 +2291,10 @@
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isMentalProcessOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The isMentalProcessOf property is the inverse object property of hasMentalProcess. It links a mental priocess (such as a belief formation, desire formation, or intentio formationn) to the agent that holds it. This property allows for reasoning and querying in the opposite direction, starting from a mental process and identifying the associated agent."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
   } ],
@@ -2297,9 +2302,6 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "The isMentalProcessOf property is the inverse object property of hasMentalProcess. It links a mental priocess (such as a belief formation, desire formation, or intentio formationn) to the agent that holds it. This property allows for reasoning and querying in the opposite direction, starting from a mental process and identifying the associated agent."
-  }, {
     "@language" : "en",
     "@value" : "is mental process of"
   } ],

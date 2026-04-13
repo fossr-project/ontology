@@ -105,9 +105,9 @@ vs:term_status rdf:type owl:AnnotationProperty .
            owl:inverseOf :isAddressedBy ;
            rdfs:domain :Plan ;
            rdfs:range :Goal ;
+           rdfs:comment "The object property :addresses links a Plan to the Goal it is intended to fulfil. It captures the teleological nature of planning, where a Plan is not arbitrary but constructed with the explicit purpose of realising a desired state of the world, as described by a Goal. This property formalises the intentional link between planning and goal-oriented behaviour in agents. For example, a Plan to deploy renewable energy subsidies may address a Goal of reducing greenhouse gas emissions. The :addresses relation supports reasoning about the relevance and suitability of plans with respect to their objectives, thereby enabling goal-driven agent behaviour and planning traceability."@en ;
            rdfs:isDefinedBy <https://w3id.org/fossr/ontology/bdi/> ;
-           rdfs:label "The object property :addresses links a Plan to the Goal it is intended to fulfil. It captures the teleological nature of planning, where a Plan is not arbitrary but constructed with the explicit purpose of realising a desired state of the world, as described by a Goal. This property formalises the intentional link between planning and goal-oriented behaviour in agents. For example, a Plan to deploy renewable energy subsidies may address a Goal of reducing greenhouse gas emissions. The :addresses relation supports reasoning about the relevance and suitability of plans with respect to their objectives, thereby enabling goal-driven agent behaviour and planning traceability."@en ,
-                      "addresses"@en ;
+           rdfs:label "addresses"@en ;
            vs:term_status "stable" .
 
 
@@ -569,9 +569,9 @@ mental states as part of an agent's reasoning dynamics."""@en ;
                    rdfs:subPropertyOf :isCognisedBy ;
                    rdfs:domain :MentalProcess ;
                    rdfs:range :Agent ;
+                   rdfs:comment "The isMentalProcessOf property is the inverse object property of hasMentalProcess. It links a mental priocess (such as a belief formation, desire formation, or intentio formationn) to the agent that holds it. This property allows for reasoning and querying in the opposite direction, starting from a mental process and identifying the associated agent."@en ;
                    rdfs:isDefinedBy <https://w3id.org/fossr/ontology/bdi/> ;
-                   rdfs:label "The isMentalProcessOf property is the inverse object property of hasMentalProcess. It links a mental priocess (such as a belief formation, desire formation, or intentio formationn) to the agent that holds it. This property allows for reasoning and querying in the opposite direction, starting from a mental process and identifying the associated agent."@en ,
-                              "is mental process of"@en ;
+                   rdfs:label "is mental process of"@en ;
                    vs:term_status "stable" .
 
 

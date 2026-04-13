@@ -147,8 +147,8 @@ This ontology supports reasoning, querying, and analysis of agent behaviour, ena
         <owl:inverseOf rdf:resource="https://w3id.org/fossr/ontology/bdi/isAddressedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/bdi/Plan"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/bdi/Goal"/>
+        <rdfs:comment xml:lang="en">The object property :addresses links a Plan to the Goal it is intended to fulfil. It captures the teleological nature of planning, where a Plan is not arbitrary but constructed with the explicit purpose of realising a desired state of the world, as described by a Goal. This property formalises the intentional link between planning and goal-oriented behaviour in agents. For example, a Plan to deploy renewable energy subsidies may address a Goal of reducing greenhouse gas emissions. The :addresses relation supports reasoning about the relevance and suitability of plans with respect to their objectives, thereby enabling goal-driven agent behaviour and planning traceability.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/fossr/ontology/bdi/"/>
-        <rdfs:label xml:lang="en">The object property :addresses links a Plan to the Goal it is intended to fulfil. It captures the teleological nature of planning, where a Plan is not arbitrary but constructed with the explicit purpose of realising a desired state of the world, as described by a Goal. This property formalises the intentional link between planning and goal-oriented behaviour in agents. For example, a Plan to deploy renewable energy subsidies may address a Goal of reducing greenhouse gas emissions. The :addresses relation supports reasoning about the relevance and suitability of plans with respect to their objectives, thereby enabling goal-driven agent behaviour and planning traceability.</rdfs:label>
         <rdfs:label xml:lang="en">addresses</rdfs:label>
         <vs:term_status>stable</vs:term_status>
     </owl:ObjectProperty>
@@ -510,9 +510,9 @@ mental states as part of an agent&apos;s reasoning dynamics.</rdfs:comment>
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/bdi/hasStartTime">
         <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/bdi/TimeInterval"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/bdi/TimeInstant"/>
+        <rdfs:comment>Defines the temporal istant by specifying when a TimeInterval starts. This is essential for modeling the execution timeframe of an agent’s plans, actions, or mental states.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/fossr/ontology/bdi/"/>
         <rdfs:label xml:lang="en">has start time</rdfs:label>
-        <rdfs:comment>Defines the temporal istant by specifying when a TimeInterval starts. This is essential for modeling the execution timeframe of an agent’s plans, actions, or mental states.</rdfs:comment>
         <vs:term_status>stable</vs:term_status>
     </owl:ObjectProperty>
     
@@ -737,8 +737,8 @@ mental states as part of an agent&apos;s reasoning dynamics.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/fossr/ontology/bdi/isCognisedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/bdi/MentalProcess"/>
         <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/bdi/Agent"/>
+        <rdfs:comment xml:lang="en">The isMentalProcessOf property is the inverse object property of hasMentalProcess. It links a mental priocess (such as a belief formation, desire formation, or intentio formationn) to the agent that holds it. This property allows for reasoning and querying in the opposite direction, starting from a mental process and identifying the associated agent.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/fossr/ontology/bdi/"/>
-        <rdfs:label xml:lang="en">The isMentalProcessOf property is the inverse object property of hasMentalProcess. It links a mental priocess (such as a belief formation, desire formation, or intentio formationn) to the agent that holds it. This property allows for reasoning and querying in the opposite direction, starting from a mental process and identifying the associated agent.</rdfs:label>
         <rdfs:label xml:lang="en">is mental process of</rdfs:label>
         <vs:term_status>stable</vs:term_status>
     </owl:ObjectProperty>
@@ -1410,30 +1410,6 @@ For example, an agent holding a general desire to improve its programming skills
     
 
 
-    <!-- https://w3id.org/fossr/ontology/bdi/GoalProcess -->
-
-    <owl:Class rdf:about="https://w3id.org/fossr/ontology/bdi/GoalProcess">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/fossr/ontology/bdi/MentalProcess"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/ontology/bdi/affects"/>
-                <owl:allValuesFrom rdf:resource="https://w3id.org/fossr/ontology/bdi/Goal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fossr/ontology/bdi/hasPart"/>
-                <owl:allValuesFrom rdf:resource="https://w3id.org/fossr/ontology/bdi/GoalProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">GoalProcess is the mental process by which an agent generates, refines, or revises goals based on its current desires, beliefs, and contextual conditions. This process bridges the motivational layer of the agent, where desires express general preferences, and the deliberative layer, where  intentions represent committed courses of action. By elaborating and prioritising goals, the GoalProcess determines which desired outcomes are worth pursuing and prepares them for adoption as actionable intentions.
-
-For example, an agent holding a general desire to improve its programming skills  undergoes a GoalProcess that refines this broad aspiration into a concrete and actionable goal: learning Python programming. This goal may subsequently lead to the formation of an intention: \&quot;I intend to enrol in a Python course.\&quot;, triggering the planning of a structured sequence of learning activities.</rdfs:comment>
-        <rdfs:label xml:lang="en">Goal Process</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/fossr/ontology/bdi/Intention -->
 
     <owl:Class rdf:about="https://w3id.org/fossr/ontology/bdi/Intention">
@@ -1919,5 +1895,5 @@ This class is useful for modeling events, schedules, and historical data where t
 
 
 
-<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
 
