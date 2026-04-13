@@ -118,6 +118,24 @@
 }, {
   "@id" : "_:genid21",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/Goal"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/affects"
+  } ]
+}, {
+  "@id" : "_:genid22",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/GoalProcess"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/hasPart"
+  } ]
+}, {
+  "@id" : "_:genid23",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/fulfills"
   } ],
@@ -125,7 +143,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/Goal"
   } ]
 }, {
-  "@id" : "_:genid22",
+  "@id" : "_:genid24",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Intention"
@@ -134,7 +152,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/hasPart"
   } ]
 }, {
-  "@id" : "_:genid23",
+  "@id" : "_:genid25",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
@@ -147,7 +165,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid24",
+  "@id" : "_:genid26",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Intention"
@@ -156,7 +174,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/affects"
   } ]
 }, {
-  "@id" : "_:genid25",
+  "@id" : "_:genid27",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/IntentionProcess"
@@ -165,7 +183,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/hasPart"
   } ]
 }, {
-  "@id" : "_:genid26",
+  "@id" : "_:genid28",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/justifies"
@@ -174,7 +192,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity"
   } ]
 }, {
-  "@id" : "_:genid27",
+  "@id" : "_:genid29",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/hasValidity"
@@ -183,7 +201,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/TemporalEntity"
   } ]
 }, {
-  "@id" : "_:genid28",
+  "@id" : "_:genid30",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isCognisedBy"
@@ -192,7 +210,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ]
 }, {
-  "@id" : "_:genid29",
+  "@id" : "_:genid31",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isJustifiedBy"
@@ -201,7 +219,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/Justification"
   } ]
 }, {
-  "@id" : "_:genid30",
+  "@id" : "_:genid32",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/refersTo"
@@ -210,7 +228,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/WorldState"
   } ]
 }, {
-  "@id" : "_:genid31",
+  "@id" : "_:genid33",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity"
@@ -219,7 +237,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/hasPart"
   } ]
 }, {
-  "@id" : "_:genid32",
+  "@id" : "_:genid34",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isTriggeredBy"
@@ -228,7 +246,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity"
   } ]
 }, {
-  "@id" : "_:genid33",
+  "@id" : "_:genid35",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/reasonsUpon"
@@ -237,7 +255,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
   } ]
 }, {
-  "@id" : "_:genid34",
+  "@id" : "_:genid36",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
@@ -246,7 +264,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/hasPart"
   } ]
 }, {
-  "@id" : "_:genid35",
+  "@id" : "_:genid37",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
@@ -259,7 +277,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid36",
+  "@id" : "_:genid38",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/hasValidity"
@@ -268,31 +286,13 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/TimeInterval"
   } ]
 }, {
-  "@id" : "_:genid37",
+  "@id" : "_:genid39",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isJustifiedBy"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Justification"
-  } ]
-}, {
-  "@id" : "_:genid38",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/hasPart"
-  } ]
-}, {
-  "@id" : "_:genid39",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/isReasonedUponBy"
   } ]
 }, {
   "@id" : "_:genid4",
@@ -306,6 +306,24 @@
 }, {
   "@id" : "_:genid40",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/hasPart"
+  } ]
+}, {
+  "@id" : "_:genid41",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/isReasonedUponBy"
+  } ]
+}, {
+  "@id" : "_:genid42",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ],
@@ -317,7 +335,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid41",
+  "@id" : "_:genid43",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/addresses"
@@ -326,7 +344,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/Goal"
   } ]
 }, {
-  "@id" : "_:genid42",
+  "@id" : "_:genid44",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/beginsWith"
@@ -335,7 +353,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/Task"
   } ]
 }, {
-  "@id" : "_:genid43",
+  "@id" : "_:genid45",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/endsWith"
@@ -344,7 +362,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/Task"
   } ]
 }, {
-  "@id" : "_:genid44",
+  "@id" : "_:genid46",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isDefinedBy"
@@ -353,7 +371,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/Planning"
   } ]
 }, {
-  "@id" : "_:genid45",
+  "@id" : "_:genid47",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Task"
@@ -362,7 +380,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/beginsWith"
   } ]
 }, {
-  "@id" : "_:genid46",
+  "@id" : "_:genid48",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Task"
@@ -371,31 +389,13 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/endsWith"
   } ]
 }, {
-  "@id" : "_:genid47",
+  "@id" : "_:genid49",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Task"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/hasComponent"
-  } ]
-}, {
-  "@id" : "_:genid48",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/Plan"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/hasPart"
-  } ]
-}, {
-  "@id" : "_:genid49",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/PlanExecution"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/isSatisfiedBy"
   } ]
 }, {
   "@id" : "_:genid5",
@@ -409,6 +409,24 @@
 }, {
   "@id" : "_:genid50",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/Plan"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/hasPart"
+  } ]
+}, {
+  "@id" : "_:genid51",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/PlanExecution"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/isSatisfiedBy"
+  } ]
+}, {
+  "@id" : "_:genid52",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/atTime"
   } ],
@@ -416,7 +434,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/TemporalEntity"
   } ]
 }, {
-  "@id" : "_:genid51",
+  "@id" : "_:genid53",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/bringsAbout"
@@ -425,7 +443,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/WorldState"
   } ]
 }, {
-  "@id" : "_:genid52",
+  "@id" : "_:genid54",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isExecutedBy"
@@ -434,7 +452,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ]
 }, {
-  "@id" : "_:genid53",
+  "@id" : "_:genid55",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/satisfies"
@@ -443,7 +461,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/Plan"
   } ]
 }, {
-  "@id" : "_:genid54",
+  "@id" : "_:genid56",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/defines"
@@ -452,7 +470,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/Plan"
   } ]
 }, {
-  "@id" : "_:genid55",
+  "@id" : "_:genid57",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/reasonsUpon"
@@ -461,7 +479,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/Intention"
   } ]
 }, {
-  "@id" : "_:genid56",
+  "@id" : "_:genid58",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Planning"
@@ -470,31 +488,13 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/hasPart"
   } ]
 }, {
-  "@id" : "_:genid57",
+  "@id" : "_:genid59",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Intention"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/reasonsUpon"
-  } ]
-}, {
-  "@id" : "_:genid58",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/Task"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/follows"
-  } ]
-}, {
-  "@id" : "_:genid59",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/Task"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/precedes"
   } ]
 }, {
   "@id" : "_:genid6",
@@ -508,28 +508,20 @@
 }, {
   "@id" : "_:genid60",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/TimeIstant"
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/Task"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/hasStartTime"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
+    "@id" : "https://w3id.org/fossr/ontology/bdi/follows"
   } ]
 }, {
   "@id" : "_:genid61",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/TimeIstant"
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/Task"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/hasEndTime"
+    "@id" : "https://w3id.org/fossr/ontology/bdi/precedes"
   } ]
 }, {
   "@id" : "_:genid62",
@@ -547,6 +539,32 @@
 }, {
   "@id" : "_:genid63",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/TimeInstant"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/hasStartTime"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid64",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/TimeInstant"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/hasEndTime"
+  } ]
+}, {
+  "@id" : "_:genid65",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ],
@@ -554,7 +572,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/isPerceivedBy"
   } ]
 }, {
-  "@id" : "_:genid64",
+  "@id" : "_:genid66",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity"
@@ -563,7 +581,7 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/isReferredBy"
   } ]
 }, {
-  "@id" : "_:genid65",
+  "@id" : "_:genid67",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -614,11 +632,35 @@
   "@id" : "http://purl.org/dc/terms/license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/rights",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://purl.org/dc/terms/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocommons/voaf#Vocabulary",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology", "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.org/vocommons/voaf#Vocabulary" ],
   "http://purl.org/dc/elements/1.1/description" : [ {
     "@id" : "https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/bdi.png"
   }, {
@@ -626,7 +668,23 @@
     "@value" : "The BDI Ontology provides a formal framework to model the Belief-Desire-Intention (BDI) architecture for rational agents. It defines key mental states—Beliefs, Desires, and Intentions—and their relationships, capturing the agent’s reasoning, motivation, and commitment to action. Supporting classes include Propositions (content of mental states), Justifications (rationale for mental states), Plans (action sequences for goals), and TimeIntervals (temporal validity of entities).\n\nKey properties like hasBelief, hasDesire, and hasIntention link agents to mental states, while fulfills, adoptsIntention, and motivatesDesire model dynamic interactions. Temporal properties enable reasoning about time-sensitive states and plans. Axioms ensure consistency, such as disjointness between mental states and domain-specific constraints.\n\nThis ontology supports reasoning, querying, and analysis of agent behaviour, enabling applications in AI, multi-agent systems, and decision support."
   } ],
   "http://purl.org/dc/terms/creator" : [ {
-    "@id" : "https://w3id.org/italia/data/organization/support-unit/cnr-Z6HZEH/stlab"
+    "@id" : "https://orcid.org/0000-0001-6577-5606"
+  }, {
+    "@id" : "https://orcid.org/0000-0001-8505-5040"
+  }, {
+    "@id" : "https://orcid.org/0000-0001-9816-5839"
+  }, {
+    "@id" : "https://orcid.org/0000-0002-0266-3452"
+  }, {
+    "@id" : "https://orcid.org/0000-0002-2536-8659"
+  }, {
+    "@id" : "https://orcid.org/0000-0002-5074-2112"
+  }, {
+    "@id" : "https://orcid.org/0000-0003-2928-9496"
+  }, {
+    "@id" : "https://orcid.org/0009-0006-3298-6232"
+  }, {
+    "@id" : "https://orcid.org/0009-0009-3976-0107"
   } ],
   "http://purl.org/dc/terms/issued" : [ {
     "@value" : "2025-10-28"
@@ -634,9 +692,23 @@
   "http://purl.org/dc/terms/license" : [ {
     "@id" : "https://creativecommons.org/licenses/by/4.0/"
   } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2026-04-13"
+  } ],
+  "http://purl.org/dc/terms/publisher" : [ {
+    "@id" : "https://w3id.org/italia/data/organization/support-unit/cnr-Z6HZEH/stlab"
+  } ],
+  "http://purl.org/dc/terms/rights" : [ {
+    "@value" : "Copyright © 2025 CNR-ISTC, STLab"
+  } ],
   "http://purl.org/dc/terms/title" : [ {
     "@language" : "en",
     "@value" : "Belief-Desire-Intention Ontology"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@value" : "bdi"
+  }, {
+    "@value" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -647,11 +719,11 @@
     "@value" : "Belief-Desire-Intention Ontology"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/fossr/bdi/ontology/0.3/"
+    "@id" : "https://w3id.org/fossr/bdi/ontology/0.4/"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@language" : "en",
-    "@value" : "Version 0.3"
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "0.4"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/Action",
@@ -659,6 +731,9 @@
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The class :Action represents a concrete activity carried out by an agent within the environment. Unlike :ActionDescription, which models the abstract or planned specification of an activity, :Action captures the actual execution or occurrence of that activity in time and space. Actions may be physical, communicative, or cognitive, and are typically associated with agents, plans, and goals. This class supports the representation of observable behaviours that result from deliberative processes such as planning and intention formation. By distinguishing between action descriptions and executed actions, the ontology enables clear reasoning over the alignment between what was intended and what was performed, supporting traceability, validation, and explanation of agent behaviour."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -671,6 +746,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Task"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/Agent",
@@ -678,6 +756,9 @@
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An Agent is an autonomous entity capable of perceiving its environment, reasoning about it, and acting upon it to achieve specific goals or objectives. Agents can hold mental states such as beliefs, desires, and intentions, which guide their decision-making processes and interactions with the world. Agents may be individuals, organisations, or artificial systems, depending on the context."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -694,16 +775,23 @@
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/WorldState"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/Belief",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Belief"
-  }, {
-    "@language" : "en",
     "@value" : "The Belief class represents the mental state of an agent regarding something that the agent holds to be true. It captures the subjective perception or understanding of the world by an agent, which may or may not align with objective reality. In this ontology, beliefs are modelled as descriptions that connect"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Belief"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
@@ -713,6 +801,9 @@
     "@id" : "_:genid11"
   }, {
     "@id" : "_:genid12"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/BeliefProcess",
@@ -720,6 +811,9 @@
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "BeliefFormation is the cognitive process through which an agent generates, updates, or modifies beliefs based on perception, inference, or communication with other agents. This process allows agents to maintain a dynamically evolving mental representation of their environment and internal states.\nFor example, an agent monitoring a public health database initially holds the belief that a disease outbreak is contained. However, upon processing new epidemiological reports, the agent updates its belief to reflect the risk of a wider spread and adjusts its reasoning accordingly."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -731,6 +825,9 @@
     "@id" : "_:genid13"
   }, {
     "@id" : "_:genid14"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/Desire",
@@ -738,6 +835,9 @@
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The Desire class represents a motivational mental state of an agent, encapsulating what the agent wishes or aspires to bring about in the world. Desires are expressions of preferences or goals, but unlike intentions, they do not imply a commitment to act. Desires serve as the driving force behind an agent’s decision-making process, often interacting with beliefs and intentions to influence behaviour."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -751,6 +851,9 @@
     "@id" : "_:genid16"
   }, {
     "@id" : "_:genid17"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/DesireProcess",
@@ -758,6 +861,9 @@
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "DesireFormation is the mental process by which an agent generates, modifies, or updates desires based on internal motivations, contextual changes, or interactions with external information sources. This process helps agents structure goal-oriented behaviour before intentions are formed.\nFor example, a decision-support agent in a climate policy system initially lacks any specific desire regarding renewable energy subsidies. After analysing recent economic and environmental reports, it generates a new desire to advocate for increased subsidies, which may later influence its intentions and actions."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -769,6 +875,9 @@
     "@id" : "_:genid18"
   }, {
     "@id" : "_:genid19"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/Goal",
@@ -777,31 +886,68 @@
     "@language" : "en",
     "@value" : "A Goal represents a desired state or outcome that an agent aspires to achieve. Goals reflect the agent's motivational preferences but do not imply any commitment to act or the feasibility of achieving them. Goals serve as the foundation for forming intentions when prioritised and deemed actionable.\n\nA example of goal is: \"Learn Python programming.\". This goal may later lead to an intention: \"I intend to enrol in a Python course.\"."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Goal"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "_:genid20"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ]
+}, {
+  "@id" : "https://w3id.org/fossr/ontology/bdi/GoalProcess",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "GoalProcess is the mental process by which an agent generates, refines, or revises goals based on its current desires, beliefs, and contextual conditions. This process bridges the motivational layer of the agent, where desires express general preferences, and the deliberative layer, where  intentions represent committed courses of action. By elaborating and prioritising goals, the GoalProcess determines which desired outcomes are worth pursuing and prepares them for adoption as actionable intentions.\n\nFor example, an agent holding a general desire to improve its programming skills  undergoes a GoalProcess that refines this broad aspiration into a concrete and actionable goal: learning Python programming. This goal may subsequently lead to the formation of an intention: \\\"I intend to enrol in a Python course.\\\", triggering the planning of a structured sequence of learning activities."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Goal Process"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
+  }, {
+    "@id" : "_:genid21"
+  }, {
+    "@id" : "_:genid22"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/Intention",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Intention"
-  }, {
-    "@language" : "en",
     "@value" : "The Intention class represents a deliberative mental state of an agent, characterised by the agent’s commitment to achieving a specific goal or executing a plan. Unlike a desire, which expresses a motivational preference, an intention reflects a higher degree of resolve, where the agent actively decides to pursue the desired outcome.\n\nIntentions bridge the gap between an agent’s desires and actions, driving goal-oriented behaviour based on the agent’s beliefs about feasibility and circumstances.\n\nIntentions depend on beliefs about feasibility and current conditions (e.g., \"I believe the store is open.\").\nIntentions emerge from prioritised desires or goals (e.g., \"I desire to buy groceries.\")."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Intention"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
   }, {
-    "@id" : "_:genid21"
-  }, {
-    "@id" : "_:genid22"
-  }, {
     "@id" : "_:genid23"
+  }, {
+    "@id" : "_:genid24"
+  }, {
+    "@id" : "_:genid25"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/IntentionProcess",
@@ -810,6 +956,9 @@
     "@language" : "en",
     "@value" : "IntentionFormation is the process by which an agent selects, commits to, and refines intentions based on its desires, available resources, and deliberative reasoning. It determines which desires are pursued as actionable commitments and adapts them as new information emerges.\nFor example, an autonomous assistant tasked with monitoring policy compliance may develop a desire to verify the implementation of a new regulation. After assessing feasibility and priority, it forms an intention to generate a compliance report, refining it further as new data becomes available."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Intention Formation"
@@ -817,9 +966,12 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
   }, {
-    "@id" : "_:genid24"
+    "@id" : "_:genid26"
   }, {
-    "@id" : "_:genid25"
+    "@id" : "_:genid27"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/Justification",
@@ -828,12 +980,18 @@
     "@language" : "en",
     "@value" : "A justification is a reason, evidence, or explanation that supports a mental state (e.g., belief, intention). It provides the grounds or basis for a mental state (e.g., why a belief is held or a goal is pursued) and Explains or supports mental states (e.g., \"I believe it will rain because the forecast says so\"). Justifications are typically agent-specific, reflecting the reasoning or evidence considered by an agent."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Justification"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid26"
+    "@id" : "_:genid28"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity",
@@ -842,20 +1000,26 @@
     "@language" : "en",
     "@value" : "MentalEntity is an abstract class that serves as a unifying concept for representing both mental states and mental processes within an agent's cognitive framework. It provides a high-level categorisation for all entities related to an agent’s reasoning, decision-making, and goal-directed behaviour.\n\nMental states, such as Belief, Desire, and Intention, represent the informational and motivational aspects of an agent’s cognition. These states can influence and be influenced by mental processes, such as BeliefFormation, DesireFormation, and IntentionFormation, which govern their generation, modification, and updating over time.\n\nBy structuring mental states and processes under a common superclass, MentalEntity facilitates a coherent representation of cognitive dynamics, supporting interoperability and reasoning within the ontology."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Mental entity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid27"
-  }, {
-    "@id" : "_:genid28"
-  }, {
     "@id" : "_:genid29"
   }, {
     "@id" : "_:genid30"
   }, {
     "@id" : "_:genid31"
+  }, {
+    "@id" : "_:genid32"
+  }, {
+    "@id" : "_:genid33"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess",
@@ -864,6 +1028,9 @@
     "@language" : "en",
     "@value" : "The class :MentalProcess represents the cognitive operations through which an agent reasons upon, transforms, or generates mental content. It encompasses processes such as belief revision, desire formation, intention refinement, and planning. Each MentalProcess is understood as a type of activity (subclass of d0:Activity) that operates over one or more MentalStates and may lead to the creation, modification, or suppression of new or existing mental entities. For example, an agent may engage in a BeliefProcess that updates its beliefs in response to new perceptions, or perform a Planning process that generates a Plan from a set of intentions. By modelling such cognitive activities explicitly, :MentalProcess enables the ontology to describe not only the states held by agents, but also the reasoning dynamics and deliberative mechanisms that underpin agent behaviour. This class is essential for supporting explainability, simulation, and agent-based modelling of mental state evolution."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Mental Process"
@@ -871,16 +1038,19 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity"
   }, {
-    "@id" : "_:genid32"
-  }, {
-    "@id" : "_:genid33"
-  }, {
     "@id" : "_:genid34"
   }, {
     "@id" : "_:genid35"
+  }, {
+    "@id" : "_:genid36"
+  }, {
+    "@id" : "_:genid37"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState",
@@ -889,6 +1059,9 @@
     "@language" : "en",
     "@value" : "A mental state is a conceptual representation of an agent's internal condition, which encompasses beliefs, desires, intentions, emotions, and other cognitive or affective states. It is the foundation of an agent’s reasoning, decision-making, and behaviour. Mental states are dynamic and context-dependent, changing in response to external stimuli, internal deliberations, or interactions with other agents."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Mental state"
@@ -896,15 +1069,18 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity"
   }, {
-    "@id" : "_:genid36"
-  }, {
-    "@id" : "_:genid37"
-  }, {
     "@id" : "_:genid38"
   }, {
     "@id" : "_:genid39"
   }, {
     "@id" : "_:genid40"
+  }, {
+    "@id" : "_:genid41"
+  }, {
+    "@id" : "_:genid42"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/Plan",
@@ -913,15 +1089,14 @@
     "@language" : "en",
     "@value" : "A plan is a structured sequence of actions or steps devised by an agent to achieve a specific goal or fulfil an intention. It serves as an operational framework that translates an agent’s intentions into actionable strategies, guiding behaviour toward a desired goal."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Plan"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid41"
-  }, {
-    "@id" : "_:genid42"
-  }, {
     "@id" : "_:genid43"
   }, {
     "@id" : "_:genid44"
@@ -935,9 +1110,16 @@
     "@id" : "_:genid48"
   }, {
     "@id" : "_:genid49"
+  }, {
+    "@id" : "_:genid50"
+  }, {
+    "@id" : "_:genid51"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/PlanExecution"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/PlanExecution",
@@ -946,18 +1128,24 @@
     "@language" : "en",
     "@value" : "The class :PlanExecution represents the actual enactment of a Plan by an Agent within a specific temporal and environmental context.  While a Plan provides a structured description of actions or steps intended to achieve a Goal, a PlanExecution captures the situated, real-world unfolding of that plan. This includes the execution of actions, interaction with the environment, and the potential influence of contingencies or external events. By modelling PlanExecution explicitly, the ontology supports reasoning over whether, how, and to what extent plans have been carried out, enabling comparisons between intended and actual behaviour. It also provides a foundation for temporal monitoring, traceability, and post-hoc analysis of agent decisions, which is crucial for explainability and accountability in both human and artificial agents."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Plan"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid50"
-  }, {
-    "@id" : "_:genid51"
-  }, {
     "@id" : "_:genid52"
   }, {
     "@id" : "_:genid53"
+  }, {
+    "@id" : "_:genid54"
+  }, {
+    "@id" : "_:genid55"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/Planning",
@@ -966,6 +1154,9 @@
     "@language" : "en",
     "@value" : "Planning is the cognitive process through which an agent generates, structures, and organises a sequence of actions to achieve a desired goal. It transforms an agent’s intentions into a concrete plan that can guide execution. This process involves selecting appropriate steps, considering constraints, and adapting the plan based on available information.\n\nFor example, an autonomous agent responsible for disaster response may form the intention to deliver medical supplies to a remote area. Through the Planning process, it determines the optimal route, identifies necessary resources, and structures the sequence of actions required to execute the delivery efficiently."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Planning"
@@ -973,13 +1164,16 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
   }, {
-    "@id" : "_:genid54"
-  }, {
-    "@id" : "_:genid55"
-  }, {
     "@id" : "_:genid56"
   }, {
     "@id" : "_:genid57"
+  }, {
+    "@id" : "_:genid58"
+  }, {
+    "@id" : "_:genid59"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/Task",
@@ -988,14 +1182,20 @@
     "@language" : "en",
     "@value" : "The class :Task represents the abstract specification of an action within a plan. It defines the intended activity an agent should perform, including its purpose, expected effects, preconditions, and any constraints relevant to its execution. Unlike concrete actions or events that occur in the world, a Task is a descriptive construct that guides or informs PlanExecutions. This class enables the ontology to model the internal structure of plans as sequences of intentional steps, supporting reasoning over action dependencies, execution order, and alignment with goals. It is particularly useful for representing deliberative and goal-directed behaviour in agent-based systems."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Task"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid58"
+    "@id" : "_:genid60"
   }, {
-    "@id" : "_:genid59"
+    "@id" : "_:genid61"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/TemporalEntity",
@@ -1004,34 +1204,25 @@
     "@language" : "en",
     "@value" : "The TemporalEntity class represents a general temporal concept that can be either a specific point in time (instant) or a time span (interval). \nThis class is useful for modeling events, schedules, and historical data where time-related attributes are essential."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Temporal entity"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
-  "@id" : "https://w3id.org/fossr/ontology/bdi/TimeInterval",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The TimeInterval class represents a bounded period of time with a defined start and end. It is used to specify the temporal extent of events, states, or processes."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Time interval"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/TemporalEntity"
-  }, {
-    "@id" : "_:genid60"
-  }, {
-    "@id" : "_:genid61"
-  } ]
-}, {
-  "@id" : "https://w3id.org/fossr/ontology/bdi/TimeIstant",
+  "@id" : "https://w3id.org/fossr/ontology/bdi/TimeInstant",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The TimeInstant class represents an exact time. It is used to specify the time when events occur, start and end."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1041,6 +1232,33 @@
     "@id" : "https://w3id.org/fossr/ontology/bdi/TemporalEntity"
   }, {
     "@id" : "_:genid62"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ]
+}, {
+  "@id" : "https://w3id.org/fossr/ontology/bdi/TimeInterval",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The TimeInterval class represents a bounded period of time with a defined start and end. It is used to specify the temporal extent of events, states, or processes."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Time interval"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/TemporalEntity"
+  }, {
+    "@id" : "_:genid63"
+  }, {
+    "@id" : "_:genid64"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/WorldState",
@@ -1049,20 +1267,29 @@
     "@language" : "en",
     "@value" : "A World state represents a temporally situated condition of the environment as perceived or described by an agent. It captures facts, circumstances, or events that hold at a given time, and serves as the basis upon which agents form their beliefs, generate desires, and adopt intentions. A world state can change over time, be influenced by agents’ actions or external events, and may function as a target outcome for plans aiming to realise a specific goal."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "World state"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid63"
+    "@id" : "_:genid65"
   }, {
-    "@id" : "_:genid64"
+    "@id" : "_:genid66"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/addresses",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Plan"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1076,6 +1303,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isAddressedBy"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/affects",
@@ -1087,6 +1317,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "affects"
@@ -1096,6 +1329,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isAffectedBy"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/atTime",
@@ -1107,12 +1343,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "at time"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/TemporalEntity"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/beginsWith",
@@ -1124,6 +1366,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "begins with"
@@ -1133,6 +1378,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/endsWith"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/bringsAbout",
@@ -1144,12 +1392,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid1"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "brings about"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/WorldState"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/cognises",
@@ -1161,6 +1415,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "cognises"
@@ -1170,6 +1427,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isCognisedBy"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/defines",
@@ -1181,6 +1441,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Planning"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "defines"
@@ -1190,6 +1453,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isDefinedBy"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/endsWith",
@@ -1201,12 +1467,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ends with"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/executes",
@@ -1218,6 +1490,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "executes"
@@ -1227,6 +1502,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isExecutedBy"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/follows",
@@ -1238,6 +1516,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "follows"
@@ -1247,6 +1528,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/precedes"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/fulfills",
@@ -1258,6 +1542,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Intention"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "fulfills"
@@ -1267,6 +1554,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isFulfilledBy"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/generates",
@@ -1277,6 +1567,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1290,6 +1583,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isGeneratedBy"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasBelief",
@@ -1300,6 +1596,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1313,12 +1612,18 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isBeliefOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasBeliefProcess",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/BeliefProcess"
@@ -1328,6 +1633,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isBeliefProcessOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasComponent",
@@ -1338,6 +1646,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1351,6 +1662,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isComponentOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasDesire",
@@ -1361,6 +1675,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1374,12 +1691,18 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isDesireOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasDesireProcess",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/DesireProcess"
@@ -1389,6 +1712,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isDesireProcessOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasEndTime",
@@ -1400,12 +1726,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/TimeInterval"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "has end time"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/TimeIstant"
+    "@id" : "https://w3id.org/fossr/ontology/bdi/TimeInstant"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasIntention",
@@ -1416,6 +1748,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1429,12 +1764,18 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isIntentionOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasIntentionProcess",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/IntentionProcess"
@@ -1444,6 +1785,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isIntentionProcessOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasMentalProcess",
@@ -1454,6 +1798,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1467,6 +1814,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isMentalProcessOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasMentalState",
@@ -1481,6 +1831,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
   } ],
@@ -1489,6 +1842,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isMentalStateOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasPart",
@@ -1500,6 +1856,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "has part"
@@ -1509,12 +1868,18 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isPartOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasPlanning",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Planning"
@@ -1524,6 +1889,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isPlanningOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasStartTime",
@@ -1531,14 +1899,20 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/TimeInterval"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Defines the temporal istant by specifying when a TimeInterval starts. This is essential for modeling the execution timeframe of an agent’s plans, actions, or mental states."
-  }, {
     "@language" : "en",
     "@value" : "has start time"
+  }, {
+    "@value" : "Defines the temporal istant by specifying when a TimeInterval starts. This is essential for modeling the execution timeframe of an agent’s plans, actions, or mental states."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/fossr/ontology/bdi/TimeIstant"
+    "@id" : "https://w3id.org/fossr/ontology/bdi/TimeInstant"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/hasValidity",
@@ -1549,6 +1923,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1562,6 +1939,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isTemporalValidityOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isAddressedBy",
@@ -1573,12 +1953,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Goal"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is addressed by"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Plan"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isAffectedBy",
@@ -1586,12 +1972,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is affected by"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isBeliefOf",
@@ -1603,6 +1995,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Belief"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is belief of"
@@ -1612,6 +2007,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isMentalStateOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isBeliefProcessOf",
@@ -1619,11 +2017,17 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/BeliefProcess"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isMentalProcessOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isCognisedBy",
@@ -1635,12 +2039,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is cognised by"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isComponentOf",
@@ -1652,6 +2062,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is component of"
@@ -1661,6 +2074,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isPartOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isDefinedBy",
@@ -1672,12 +2088,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Plan"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is defined by"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Planning"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isDesireOf",
@@ -1689,6 +2111,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Desire"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is desire of"
@@ -1698,6 +2123,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isMentalStateOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isDesireProcessOf",
@@ -1705,11 +2133,17 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/DesireProcess"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isMentalProcessOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isExecutedBy",
@@ -1721,12 +2155,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/PlanExecution"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is executed by"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isFulfilledBy",
@@ -1741,8 +2181,14 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Desire"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Intention"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isGeneratedBy",
@@ -1754,6 +2200,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is generated by"
@@ -1763,6 +2212,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isAffectedBy"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isIntentionOf",
@@ -1774,6 +2226,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Intention"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is intention of"
@@ -1783,6 +2238,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isMentalStateOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isIntentionProcessOf",
@@ -1790,11 +2248,17 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/IntentionProcess"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isMentalProcessOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isJustifiedBy",
@@ -1806,6 +2270,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is justified by"
@@ -1815,12 +2282,18 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/justifies"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isMentalProcessOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1834,6 +2307,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isCognisedBy"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isMentalStateOf",
@@ -1845,6 +2321,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is mental state of"
@@ -1854,6 +2333,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isCognisedBy"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isModifiedBy",
@@ -1864,6 +2346,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1877,6 +2362,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/modifies"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isMotivatedBy",
@@ -1888,6 +2376,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Desire"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is desire motivated by"
@@ -1897,6 +2388,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/motivates"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isPartOf",
@@ -1908,12 +2402,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is part of"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isPerceivedBy",
@@ -1925,6 +2425,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/WorldState"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is perceived by"
@@ -1934,6 +2437,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/perceives"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isPlanningOf",
@@ -1941,11 +2447,17 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Planning"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/isMentalProcessOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isProcessedBy",
@@ -1956,6 +2468,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is processed by"
@@ -1965,6 +2480,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/processes"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isReasonedUponBy",
@@ -1976,6 +2494,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is reasoned upon by"
@@ -1985,6 +2506,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/reasonsUpon"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isReferredBy",
@@ -1996,6 +2520,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/WorldState"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is referred by"
@@ -2005,6 +2532,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/refersTo"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isSatisfiedBy",
@@ -2016,6 +2546,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Plan"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is satisfied by"
@@ -2025,6 +2558,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/satisfies"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isSpecifiedBy",
@@ -2036,6 +2572,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Plan"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is specified by"
@@ -2045,6 +2584,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/specifies"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isSupportedBy",
@@ -2056,6 +2598,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Intention"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is intention supported by"
@@ -2065,6 +2610,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/supports"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isSuppressedBy",
@@ -2075,6 +2623,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2088,6 +2639,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/suppresses"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isTemporalValidityOf",
@@ -2099,12 +2653,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/TimeInterval"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is temporal validity of"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/isTriggeredBy",
@@ -2116,6 +2676,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "is triggered by"
@@ -2125,6 +2688,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/triggers"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/justifies",
@@ -2136,12 +2702,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Justification"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "justifies"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/modifies",
@@ -2155,12 +2727,18 @@
   }, {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalState"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "modifies"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/affects"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/motivates",
@@ -2172,12 +2750,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Belief"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "motivates desire"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Desire"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/perceives",
@@ -2189,12 +2773,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "perceives"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/WorldState"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/precedes",
@@ -2206,12 +2796,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "precedes"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/processes",
@@ -2223,12 +2819,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Agent"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "processes"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/reasonsUpon",
@@ -2240,6 +2842,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "reasons upon"
@@ -2249,6 +2854,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/refersTo",
@@ -2260,12 +2868,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "refers to"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/WorldState"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/satisfies",
@@ -2277,12 +2891,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/PlanExecution"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "satisfies"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Plan"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/specifies",
@@ -2294,12 +2914,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Intention"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "specifies"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Plan"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/supports",
@@ -2311,12 +2937,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Belief"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "supports intention"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/Intention"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/suppresses",
@@ -2328,6 +2960,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "suppresses"
@@ -2337,6 +2972,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/affects"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/time",
@@ -2348,12 +2986,18 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/TimeInterval"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "time"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 }, {
   "@id" : "https://w3id.org/fossr/ontology/bdi/triggers",
@@ -2365,11 +3009,17 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/fossr/ontology/bdi/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "triggers"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/fossr/ontology/bdi/MentalProcess"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
   } ]
 } ]
