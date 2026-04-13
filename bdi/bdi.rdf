@@ -512,7 +512,7 @@ mental states as part of an agent&apos;s reasoning dynamics.</rdfs:comment>
         <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/bdi/TimeInstant"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/fossr/ontology/bdi/"/>
         <rdfs:label xml:lang="en">has start time</rdfs:label>
-        <rdfs:comment>Defines the temporal istant by specifying when a TimeInterval starts. This is essential for modeling the execution timeframe of an agent’s plans, actions, or mental states.</rdfs:label>
+        <rdfs:comment>Defines the temporal istant by specifying when a TimeInterval starts. This is essential for modeling the execution timeframe of an agent’s plans, actions, or mental states.</rdfs:comment>
         <vs:term_status>stable</vs:term_status>
     </owl:ObjectProperty>
     
