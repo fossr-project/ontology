@@ -509,16 +509,11 @@ mental states as part of an agent&apos;s reasoning dynamics.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fossr/ontology/bdi/hasStartTime">
         <rdfs:domain rdf:resource="https://w3id.org/fossr/ontology/bdi/TimeInterval"/>
-        <rdfs:range rdf:resource="https://w3id.org/fossr/ontology/bdi/TimeInstant"/>
-<<<<<<< Updated upstream
-        <rdfs:label xml:lang="en">has start time</rdfs:label>
-        <rdfs:label>Defines the temporal istant by specifying when a TimeInterval starts. This is essential for modeling the execution timeframe of an agent’s plans, actions, or mental states.</rdfs:label>
-=======
+        <rdfs:range ref:resource="https://w3id.org/fossr/ontology/bdi/TimeInstant"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/fossr/ontology/bdi/"/>
         <rdfs:label xml:lang="en">has start time</rdfs:label>
-        <rdfs:label>Defines the temporal istant by specifying when a TimeInterval starts. This is essential for modeling the execution timeframe of an agent’s plans, actions, or mental states.</rdfs:label>
+        <rdfs:comment>Defines the temporal istant by specifying when a TimeInterval starts. This is essential for modeling the execution timeframe of an agent’s plans, actions, or mental states.</rdfs:label>
         <vs:term_status>stable</vs:term_status>
->>>>>>> Stashed changes
     </owl:ObjectProperty>
     
 
@@ -1829,13 +1824,9 @@ This class is useful for modeling events, schedules, and historical data where t
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">The TimeInstant class represents an exact time. It is used to specify the time when events occur, start and end.</rdfs:comment>
-<<<<<<< Updated upstream
-        <rdfs:label xml:lang="en">Time istant</rdfs:label>
-=======
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/fossr/ontology/bdi/"/>
         <rdfs:label xml:lang="en">Time istant</rdfs:label>
         <vs:term_status>stable</vs:term_status>
->>>>>>> Stashed changes
     </owl:Class>
     
 
@@ -1859,13 +1850,9 @@ This class is useful for modeling events, schedules, and historical data where t
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">The TimeInterval class represents a bounded period of time with a defined start and end. It is used to specify the temporal extent of events, states, or processes.</rdfs:comment>
-<<<<<<< Updated upstream
-        <rdfs:label xml:lang="en">Time interval</rdfs:label>
-=======
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/fossr/ontology/bdi/"/>
         <rdfs:label xml:lang="en">Time interval</rdfs:label>
         <vs:term_status>stable</vs:term_status>
->>>>>>> Stashed changes
     </owl:Class>
     
 
