@@ -1,0 +1,670 @@
+
+@prefix bdi: <https://w3id.org/fossr/ontology/bdi/> .
+@prefix ex:  <https://example.org/mark/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### Agent
+ex:Mark a bdi:Agent .
+
+### WorldState
+ex:WS_AcademicCalendar a bdi:WorldState ;
+    rdfs:label "Academic calendar 2024/2025" .
+
+ex:WS_ExamSchedule a bdi:WorldState ;
+    rdfs:label "Examination schedule" .
+
+ex:Mark bdi:perceives ex:WS_AcademicCalendar ,
+                      ex:WS_ExamSchedule .
+
+### Beliefs
+ex:Belief_Employment a bdi:Belief ;
+    rdfs:label "CS graduates find employment easily" ;
+    bdi:refersTo ex:WS_AcademicCalendar ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Belief_GoodAtScience a bdi:Belief ;
+    rdfs:label "I am good at science" ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Belief_LovesPC a bdi:Belief ;
+    rdfs:label "I enjoy spending long hours at a computer" ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Belief_LogicalSkills a bdi:Belief ;
+    rdfs:label "I have strong logical reasoning abilities" ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Belief_ExamFailed a bdi:Belief ;
+    rdfs:label "I failed the Algorithms examination" ;
+    bdi:refersTo ex:WS_ExamSchedule ;
+    bdi:atTime ex:TI_ExamResult .
+
+### Desire
+ex:Desire_Graduate a bdi:Desire ;
+    rdfs:label "Obtain a Computer Science degree" ;
+    bdi:isMotivatedBy ex:Belief_Employment ,
+                      ex:Belief_GoodAtScience ,
+                      ex:Belief_LovesPC ,
+                      ex:Belief_LogicalSkills ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Belief_Employment   bdi:motivates ex:Desire_Graduate .
+ex:Belief_GoodAtScience bdi:motivates ex:Desire_Graduate .
+ex:Belief_LovesPC      bdi:motivates ex:Desire_Graduate .
+ex:Belief_LogicalSkills bdi:motivates ex:Desire_Graduate .
+
+### Intentions
+ex:Intention_PassExams a bdi:Intention ;
+    rdfs:label "Pass all required examinations" ;
+    bdi:fulfils ex:Desire_Graduate ;
+    bdi:isSupportedBy ex:Belief_GoodAtScience ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Intention_WriteThesis a bdi:Intention ;
+    rdfs:label "Write the thesis" ;
+    bdi:fulfils ex:Desire_Graduate ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Intention_Graduation a bdi:Intention ;
+    rdfs:label "Attend the graduation ceremony" ;
+    bdi:fulfils ex:Desire_Graduate ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Intention_ResitAlgorithms a bdi:Intention ;
+    rdfs:label "Register for the Algorithms resit" ;
+    bdi:fulfils ex:Desire_Graduate ;
+    bdi:atTime ex:TI_ExamResult .
+
+### Desire has parts (constituent mental entities)
+ex:Desire_Graduate bdi:hasPart ex:Belief_Employment ;
+                   bdi:hasPart ex:Belief_GoodAtScience ;
+                   bdi:hasPart ex:Intention_PassExams ;
+                   bdi:hasPart ex:Intention_WriteThesis ;
+                   bdi:hasPart ex:Intention_Graduation .
+
+### Goal
+ex:Goal_GraduateCS a bdi:Goal ;
+    rdfs:label "Graduate in Computer Science" .
+
+### Plans
+ex:Plan_Graduate a bdi:Plan ;
+    rdfs:label "Graduation plan" ;
+    bdi:addresses ex:Goal_GraduateCS .
+
+ex:Intention_PassExams bdi:specifies ex:Plan_Graduate .
+
+ex:Plan_AlgorithmsCourse a bdi:Plan ;
+    rdfs:label "Plan for Algorithms examination" ;
+    bdi:addresses ex:Goal_GraduateCS .
+
+ex:Plan_ResitAlgorithms a bdi:Plan ;
+    rdfs:label "Revised plan including Algorithms resit" ;
+    bdi:addresses ex:Goal_GraduateCS .
+
+ex:Plan_Graduate bdi:hasPart ex:Plan_AlgorithmsCourse .
+
+### Tasks
+ex:Task_Enrol a bdi:Task ;
+    rdfs:label "Enrol in the programme" .
+
+ex:Task_RegisterExam a bdi:Task ;
+    rdfs:label "Register for examination" .
+
+ex:Task_SitExam a bdi:Task ;
+    rdfs:label "Sit the examination" .
+
+ex:Task_PayFees a bdi:Task ;
+    rdfs:label "Pay tuition fees" .
+
+ex:Task_Graduation a bdi:Task ;
+    rdfs:label "Attend graduation ceremony" .
+
+ex:Plan_Graduate bdi:beginsWith ex:Task_Enrol ;
+                 bdi:endsWith   ex:Task_Graduation ;
+                 bdi:hasComponent ex:Task_Enrol ,
+                                  ex:Task_RegisterExam ,
+                                  ex:Task_SitExam ,
+                                  ex:Task_PayFees ,
+                                  ex:Task_Graduation .
+
+ex:Task_Enrol        bdi:precedes ex:Task_RegisterExam .
+ex:Task_RegisterExam bdi:precedes ex:Task_SitExam .
+ex:Task_SitExam      bdi:precedes ex:Task_PayFees .
+ex:Task_PayFees      bdi:precedes ex:Task_Graduation .
+
+### Mental Processes
+ex:BP_FailureRevision a bdi:BeliefProcess ;
+    rdfs:label "Belief revision upon exam failure" ;
+    bdi:isTriggeredBy ex:Belief_ExamFailed ;
+    bdi:reasonsUpon ex:Belief_ExamFailed ;
+    bdi:generates ex:Belief_ExamFailed ;
+    bdi:atTime ex:TI_ExamResult .
+
+ex:DP_ResitDesire a bdi:DesireProcess ;
+    rdfs:label "Desire update to resit the exam" ;
+    bdi:isTriggeredBy ex:Belief_ExamFailed ;
+    bdi:reasonsUpon ex:Desire_Graduate ;
+    bdi:modifies ex:Desire_Graduate ;
+    bdi:atTime ex:TI_ExamResult .
+
+ex:IP_ResitIntention a bdi:IntentionProcess ;
+    rdfs:label "Intention refinement for resit" ;
+    bdi:isTriggeredBy ex:Belief_ExamFailed ;
+    bdi:generates ex:Intention_ResitAlgorithms ;
+    bdi:atTime ex:TI_ExamResult .
+
+ex:Planning_Graduate a bdi:Planning ;
+    rdfs:label "Planning process for graduation" ;
+    bdi:reasonsUpon ex:Intention_PassExams ;
+    bdi:defines ex:Plan_Graduate ;
+    bdi:atTime ex:TI_AY2024 .
+
+### Justification
+ex:Justification_Graduate a bdi:Justification ;
+    rdfs:label "Mark's academic background justifies the desire to graduate" ;
+    bdi:justifies ex:Desire_Graduate .
+
+### Mark cognises all mental entities
+ex:Mark bdi:cognises ex:Belief_Employment ,
+                     ex:Belief_GoodAtScience ,
+                     ex:Belief_LovesPC ,
+                     ex:Belief_LogicalSkills ,
+                     ex:Belief_ExamFailed ,
+                     ex:Desire_Graduate ,
+                     ex:Intention_PassExams ,
+                     ex:Intention_WriteThesis ,
+                     ex:Intention_Graduation ,
+                     ex:Intention_ResitAlgorithms .
+
+ex:Mark bdi:hasMentalState ex:Belief_Employment ,
+                           ex:Belief_GoodAtScience ,
+                           ex:Belief_LovesPC ,
+                           ex:Belief_LogicalSkills ,
+                           ex:Belief_ExamFailed ,
+                           ex:Desire_Graduate ,
+                           ex:Intention_PassExams ,
+                           ex:Intention_WriteThesis ,
+                           ex:Intention_Graduation ,
+                           ex:Intention_ResitAlgorithms .
+
+### Temporal entities
+ex:TI_AY2024 a bdi:TimeInterval ;
+    rdfs:label "Academic year 2024/2025" ;
+    bdi:hasStartTime ex:TI_Start_AY2024 ;
+    bdi:hasEndTime   ex:TI_End_AY2024 .
+
+ex:TI_Start_AY2024 a bdi:TimeInstant ;
+    bdi:time "2024-09-01T00:00:00"^^xsd:dateTime .
+
+ex:TI_End_AY2024 a bdi:TimeInstant ;
+    bdi:time "2025-07-31T00:00:00"^^xsd:dateTime .
+
+ex:TI_ExamResult a bdi:TimeInterval ;
+    rdfs:label "Moment of exam result notification" ;
+    bdi:hasStartTime ex:TI_Start_ExamResult .
+
+ex:TI_Start_ExamResult a bdi:TimeInstant ;
+    bdi:time "2025-01-15T10:00:00"^^xsd:dateTime .
+
+ex:TI_RegisterWindow a bdi:TimeInterval ;
+    rdfs:label "Examination registration window" ;
+    bdi:hasStartTime ex:TI_Start_Register ;
+    bdi:hasEndTime   ex:TI_End_Register .
+
+ex:TI_Start_Register a bdi:TimeInstant ;
+    bdi:time "2024-12-01T00:00:00"^^xsd:dateTime .
+
+ex:TI_End_Register a bdi:TimeInstant ;
+    bdi:time "2024-12-20T00:00:00"^^xsd:dateTime .
+
+ex:Task_RegisterExam bdi:hasValidity ex:TI_RegisterWindow .
+ 
+
+
+#CQ1. What are mental entities?
+ 
+#This query retrieves all individuals classified as instances of  bdi:MentalEntity or any of its subclasses, together with their most specific type. 
+ 
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT DISTINCT ?entity ?type
+WHERE {
+    ?entity a ?type .
+    ?type rdfs:subClassOf* bdi:MentalEntity .
+}
+ORDER BY ?type ?entity
+ 
+#Expected result:
+#The query returns all beliefs, desires, intentions, and mental 
+#processes held by Mark, e.g.ex:Belief\_Employment
+#(bdi:Belief), ex:Desire\_Graduate 
+#(bdi:Desire), ex:Intention\_PassExams 
+#(bdi:Intention), ex:BP\_FailureRevision
+#(bdi:BeliefProcess).
+
+ #CQ2. What mental states does an agent hold?
+
+#This query retrieves all mental states held by a given agent 
+#via the property \texttt{bdi:hasMentalState}, together with their type.
+ 
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?state ?type
+WHERE {
+    ex:Mark bdi:hasMentalState ?state .
+    ?state a ?type .
+}
+ORDER BY ?type
+ 
+
+#Expected result:
+#The query returns the ten mental states held by Mark: four beliefs 
+#ex:Belief\_Employment,  ex:Belief\_GoodAtScience, 
+#ex:Belief\_LovesPC, ex:Belief\_LogicalSkills, 
+#one desire ex:Desire\_Graduate, and five intentions 
+#(ex:Intention\_PassExams, ex:Intention\_WriteThesis, 
+#ex:Intention\_Graduation, ex:Intention\_ResitAlgorithms, 
+#ex:Belief\_ExamFailed).
+
+#CQ3. What are the constituent mental entities that form part of a given mental entity?
+
+#This query retrieves all mental entities that are constituent 
+#parts of a given mental entity via  bdi:hasPart, traversing the
+#part--whole hierarchy transitively.
+
+ 
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?part ?type
+WHERE {
+    ex:Desire_Graduate bdi:hasPart+ ?part .
+    ?part a ?type .
+}
+ 
+ 
+#Expected result:
+#The query returns the constituent parts of 
+#ex:Desire\_Graduate: the motivating beliefs 
+#ex:Belief\_Employment and 
+#ex:Belief\_GoodAtScience, and the intentions 
+#ex:Intention\_PassExams, 
+#ex:Intention\_WriteThesis, and 
+#ex:Intention\_Graduation.
+
+#CQ4. What mental processes has an agent undergone?
+
+#This query retrieves all mental processes executed by a given agent, navigating the  bdi:isProcessedBy inverse relation.
+
+ 
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?process ?type
+WHERE {
+    ?process bdi:isProcessedBy ex:Mark .
+    ?process a ?type .
+    ?type rdfs:subClassOf* bdi:MentalProcess .
+}
+ 
+
+#Expected result:
+
+#The query returns ex:BP\_FailureRevision 
+#( bdi:BeliefProcess ), ex:DP\_ResitDesire 
+#( bdi:DesireProcess),  ex:IP\_ResitIntention
+#( bdi:IntentionProcess}), and 
+# ex:Planning\_Graduate (bdi:Planning).
+
+
+
+
+#CQ5. What is the world state that a given mental state is about?
+
+#This query retrieves the world state referred to by a given mental state via  bdi:refersTo.
+ 
+ 
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?mentalState ?worldState
+WHERE {
+    ?mentalState bdi:refersTo ?worldState .
+    ?worldState a bdi:WorldState .
+}
+
+
+#Expected result: 
+#The query returns  ex:Belief\_Employment  ->
+#ex:WS\_AcademicCalendar and 
+#ex:Belief\_ExamFailed ->
+#ex:WS\_ExamSchedule.
+
+
+
+#CQ6. What beliefs motivated the formation of a given desire?
+
+#This query retrieves all beliefs that motivated a given desire via bdi:motivates
+
+
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?belief
+WHERE {
+    ?belief a bdi:Belief .
+    ?belief bdi:motivates ex:Desire_Graduate .
+}
+
+
+
+
+#Expected result:
+#The query returns the four motivating beliefs: 
+#ex:Belief\_Employment, 
+#ex:Belief\_GoodAtScience, 
+#ex:Belief\_LovesPC, and 
+#ex:Belief\_LogicalSkills.
+
+#CQ7. Which desire does a particular intention fulfil?
+
+#This query retrieves the desire fulfilled by a given intention via bdi:fulfils
+
+
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?desire
+WHERE {
+    ex:Intention_PassExams bdi:fulfils ?desire .
+    ?desire a bdi:Desire .
+}
+
+
+#Expected result:
+#The query returns ex:Desire\_Graduate
+
+
+
+
+#CQ8. Which mental process generated a given belief, desire, or intention?
+
+#This query retrieves the mental process that generated a given 
+#mental state via  bdi:generates.
+
+
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?process ?type
+WHERE {
+    ?process bdi:generates ex:Belief_ExamFailed .
+    ?process a ?type .
+}
+
+
+ #Expected result:
+#The query returns  ex:BP\_FailureRevision 
+# bdi:BeliefProcess
+
+#CQ9. When was a mental entity generated?
+
+#This query retrieves the generation timestamp of a given mental 
+#entity via  bdi:atTime and bdi:hasStartTime
+
+
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?entity ?timestamp
+WHERE {
+    ?entity a ?type .
+    ?type rdfs:subClassOf* bdi:MentalEntity .
+    ?entity bdi:atTime ?interval .
+    ?interval bdi:hasStartTime ?instant .
+    ?instant bdi:time ?timestamp .
+}
+ORDER BY ?timestamp
+
+#Expected result:
+#Mental entities associated with  ex:TI\_AY2024  return 
+#timestamp  2024-09-01T00:00:00, while ex:Belief\_ExamFailed and 
+#ex:Intention\_ResitAlgorithms return 
+#2025-01-15T10:00:00
+
+
+
+
+
+% ---
+#CQ10. What triggered a mental process?
+
+#This query retrieves the mental entity that triggered a given 
+#mental process via \texttt{bdi:isTriggeredBy}.
+
+
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?process ?trigger ?triggerType
+WHERE {
+    ?process a ?type .
+    ?type rdfs:subClassOf* bdi:MentalProcess .
+    ?process bdi:isTriggeredBy ?trigger .
+    ?trigger a ?triggerType .
+}
+
+
+#Expected result:
+#The query returns  ex:BP\_FailureRevision, 
+# ex:DP\_ResitDesire, and  ex:IP\_ResitIntention, 
+#all triggered by  ex:Belief\_ExamFailed
+# bdi:Belief.
+
+
+#CQ11. What justifications support a specific mental entity?
+
+#This query retrieves all justifications associated with a given mental entity via  bdi:justifies.
+
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?justification
+WHERE {
+    ?justification a bdi:Justification .
+    ?justification bdi:justifies ex:Desire_Graduate .
+}
+ 
+
+#Expected result:
+#The query returns  ex:Justification\_Graduate .
+
+ 
+
+#CQ12. What goal does a given intention or plan aim to fulfil?
+
+#This query retrieves the goal addressed by a given plan via bdi:addresses 
+
+
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?goal
+WHERE {
+    ex:Plan_Graduate bdi:addresses ?goal .
+    ?goal a bdi:Goal .
+}
+
+
+#Expected result:
+#The query returns ex:Goal\_GraduateCS.
+ 
+#CQ13. What plan has been specified by a particular intention?
+
+#This query retrieves the plan specified by a given intention via  bdi:specifies.
+
+
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?plan
+WHERE {
+    ex:Intention_PassExams bdi:specifies ?plan .
+    ?plan a bdi:Plan .
+}
+
+#Expected result:
+#The query returns ex:Plan\_Graduate.
+
+
+
+
+
+% ---
+#CQ14. What planning process led to the creation of a particular plan?
+
+#This query retrieves the planning process that defined a given 
+#plan via bdi:defines.
+
+
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?planning
+WHERE {
+    ?planning a bdi:Planning .
+    ?planning bdi:defines ex:Plan_Graduate .
+}
+
+#Expected result:
+#The query returns ex:Planning\_Graduate.
+
+#CQ15. What is the ordered sequence of tasks that compose a given plan?
+
+#This query retrieves the ordered sequence of tasks within a plan, reconstructing the ordering chain via bdi:precedes.
+ 
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?task ?nextTask
+WHERE {
+    ex:Plan_Graduate bdi:hasComponent ?task .
+    OPTIONAL { ?task bdi:precedes ?nextTask . }
+}
+ORDER BY ?task
+
+#Expected result:
+#The query returns the ordered chain: 
+# ex:Task\_Enrol -> ex:Task\_RegisterExam ->ex:Task\_SitExam ->
+#ex:Task\_PayFees ->ex:Task\_Graduation
+
+
+
+#CQ16. What is the temporal validity (start and end time) of a mental state?}
+
+#This query retrieves the start and end timestamps of the validity interval of a given mental state via 
+#bdi:hasValidity, bdi:hasStartTime, and bdi:hasEndTime.
+
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?state ?start ?end
+WHERE {
+    ?state a ?type .
+    ?type rdfs:subClassOf* bdi:MentalState .
+    ?state bdi:atTime ?interval .
+    ?interval bdi:hasStartTime ?startInstant .
+    ?startInstant bdi:time ?start .
+    OPTIONAL {
+        ?interval bdi:hasEndTime ?endInstant .
+        ?endInstant bdi:time ?end .
+    }
+}
+ORDER BY ?start
+
+#xpected result:
+#Mental states associated with ex:TI\_AY2024 return 
+#start 2024-09-01 and end 2025-07-31. 
+#ex:Belief\_ExamFailed and 
+#ex:Intention\_ResitAlgorithms return start 
+#2025-01-15 with no end time (open interval).
+
+
+
+
+
+#CQ17. What mental states were valid at a specific point in time?
+
+#This query retrieves all mental states whose validity interval 
+#contains a given time point $t$, i.e.
+#start <= t <= end (or t >= start for open intervals).
+
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?state ?type
+WHERE {
+    ?state a ?type .
+    ?type rdfs:subClassOf* bdi:MentalState .
+    ?state bdi:atTime ?interval .
+    ?interval bdi:hasStartTime ?startInstant .
+    ?startInstant bdi:time ?start .
+    OPTIONAL {
+        ?interval bdi:hasEndTime ?endInstant .
+        ?endInstant bdi:time ?end .
+    }
+    BIND("2024-10-01T00:00:00"^^xsd:dateTime AS ?t)
+    FILTER(?start <= ?t && 
+           (!BOUND(?end) || ?end >= ?t))
+}
+
+#Expected result:
+#At 2024-10-01 (the moment of enrolment), the query 
+#returns all mental states associated with  ex:TI\_AY2024: 
+#the four motivating beliefs,  ex:Desire\_Graduate, and 
+#the three original intentions. ex:Belief\_ExamFailed 
+#and ex:Intention\_ResitAlgorithms are not yet valid 
+#at this point.
+
+
+
+
+#CQ18. How has a mental entity evolved over time?}
+
+#This query reconstructs the temporal evolution of a mental 
+#entity by retrieving all mental processes that affected it --- 
+#generating, modifying, or suppressing it --- ordered by 
+#their generation timestamp.
+
+PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?process ?affectType ?timestamp
+WHERE {
+    {
+        ?process bdi:generates ex:Desire_Graduate .
+        BIND("generates" AS ?affectType)
+    } UNION {
+        ?process bdi:modifies ex:Desire_Graduate .
+        BIND("modifies" AS ?affectType)
+    } UNION {
+        ?process bdi:suppresses ex:Desire_Graduate .
+        BIND("suppresses" AS ?affectType)
+    }
+    ?process bdi:atTime ?interval .
+    ?interval bdi:hasStartTime ?instant .
+    ?instant bdi:time ?timestamp .
+}
+ORDER BY ?timestamp
+
+#Expected result:
+#The query returns  ex:DP\_ResitDesire with 
+#affectType = modifies at timestamp 
+#2025-01-15T10:00:00, showing how 
+#ex:Desire\_Graduate was modified when Mark discovered 
+#he had failed the examination. The full evolution of the desire 
+#--- from its initial formation to its revision --- is thus 
+#reconstructed from the process chain.
