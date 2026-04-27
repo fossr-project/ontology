@@ -1,0 +1,222 @@
+@prefix bdi: <https://w3id.org/fossr/ontology/bdi/> .
+@prefix ex:  <https://example.org/mark/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+### Agent
+ex:Mark a bdi:Agent .
+
+### WorldState
+ex:WS_AcademicCalendar a bdi:WorldState ;
+    rdfs:label "Academic calendar 2024/2025" .
+
+ex:WS_ExamSchedule a bdi:WorldState ;
+    rdfs:label "Examination schedule" .
+
+ex:Mark bdi:perceives ex:WS_AcademicCalendar ,
+                      ex:WS_ExamSchedule .
+
+### Beliefs
+ex:Belief_Employment a bdi:Belief ;
+    rdfs:label "CS graduates find employment easily" ;
+    bdi:refersTo ex:WS_AcademicCalendar ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Belief_GoodAtScience a bdi:Belief ;
+    rdfs:label "I am good at science" ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Belief_LovesPC a bdi:Belief ;
+    rdfs:label "I enjoy spending long hours at a computer" ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Belief_LogicalSkills a bdi:Belief ;
+    rdfs:label "I have strong logical reasoning abilities" ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Belief_ExamFailed a bdi:Belief ;
+    rdfs:label "I failed the Algorithms examination" ;
+    bdi:refersTo ex:WS_ExamSchedule ;
+    bdi:atTime ex:TI_ExamResult .
+
+### Desire
+ex:Desire_Graduate a bdi:Desire ;
+    rdfs:label "Obtain a Computer Science degree" ;
+    bdi:isMotivatedBy ex:Belief_Employment ,
+                      ex:Belief_GoodAtScience ,
+                      ex:Belief_LovesPC ,
+                      ex:Belief_LogicalSkills ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Belief_Employment   bdi:motivates ex:Desire_Graduate .
+ex:Belief_GoodAtScience bdi:motivates ex:Desire_Graduate .
+ex:Belief_LovesPC      bdi:motivates ex:Desire_Graduate .
+ex:Belief_LogicalSkills bdi:motivates ex:Desire_Graduate .
+
+### Intentions
+ex:Intention_PassExams a bdi:Intention ;
+    rdfs:label "Pass all required examinations" ;
+    bdi:fulfils ex:Desire_Graduate ;
+    bdi:isSupportedBy ex:Belief_GoodAtScience ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Intention_WriteThesis a bdi:Intention ;
+    rdfs:label "Write the thesis" ;
+    bdi:fulfils ex:Desire_Graduate ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Intention_Graduation a bdi:Intention ;
+    rdfs:label "Attend the graduation ceremony" ;
+    bdi:fulfils ex:Desire_Graduate ;
+    bdi:atTime ex:TI_AY2024 .
+
+ex:Intention_ResitAlgorithms a bdi:Intention ;
+    rdfs:label "Register for the Algorithms resit" ;
+    bdi:fulfils ex:Desire_Graduate ;
+    bdi:atTime ex:TI_ExamResult .
+
+### Desire has parts (constituent mental entities)
+ex:Desire_Graduate bdi:hasPart ex:Belief_Employment ;
+                   bdi:hasPart ex:Belief_GoodAtScience ;
+                   bdi:hasPart ex:Intention_PassExams ;
+                   bdi:hasPart ex:Intention_WriteThesis ;
+                   bdi:hasPart ex:Intention_Graduation .
+
+### Goal
+ex:Goal_GraduateCS a bdi:Goal ;
+    rdfs:label "Graduate in Computer Science" .
+
+### Plans
+ex:Plan_Graduate a bdi:Plan ;
+    rdfs:label "Graduation plan" ;
+    bdi:addresses ex:Goal_GraduateCS .
+
+ex:Intention_PassExams bdi:specifies ex:Plan_Graduate .
+
+ex:Plan_AlgorithmsCourse a bdi:Plan ;
+    rdfs:label "Plan for Algorithms examination" ;
+    bdi:addresses ex:Goal_GraduateCS .
+
+ex:Plan_ResitAlgorithms a bdi:Plan ;
+    rdfs:label "Revised plan including Algorithms resit" ;
+    bdi:addresses ex:Goal_GraduateCS .
+
+ex:Plan_Graduate bdi:hasPart ex:Plan_AlgorithmsCourse .
+
+### Tasks
+ex:Task_Enrol a bdi:Task ;
+    rdfs:label "Enrol in the programme" .
+
+ex:Task_RegisterExam a bdi:Task ;
+    rdfs:label "Register for examination" .
+
+ex:Task_SitExam a bdi:Task ;
+    rdfs:label "Sit the examination" .
+
+ex:Task_PayFees a bdi:Task ;
+    rdfs:label "Pay tuition fees" .
+
+ex:Task_Graduation a bdi:Task ;
+    rdfs:label "Attend graduation ceremony" .
+
+ex:Plan_Graduate bdi:beginsWith ex:Task_Enrol ;
+                 bdi:endsWith   ex:Task_Graduation ;
+                 bdi:hasComponent ex:Task_Enrol ,
+                                  ex:Task_RegisterExam ,
+                                  ex:Task_SitExam ,
+                                  ex:Task_PayFees ,
+                                  ex:Task_Graduation .
+
+ex:Task_Enrol        bdi:precedes ex:Task_RegisterExam .
+ex:Task_RegisterExam bdi:precedes ex:Task_SitExam .
+ex:Task_SitExam      bdi:precedes ex:Task_PayFees .
+ex:Task_PayFees      bdi:precedes ex:Task_Graduation .
+
+### Mental Processes
+ex:BP_FailureRevision a bdi:BeliefProcess ;
+    rdfs:label "Belief revision upon exam failure" ;
+    bdi:isTriggeredBy ex:Belief_ExamFailed ;
+    bdi:reasonsUpon ex:Belief_ExamFailed ;
+    bdi:generates ex:Belief_ExamFailed ;
+    bdi:atTime ex:TI_ExamResult .
+
+ex:DP_ResitDesire a bdi:DesireProcess ;
+    rdfs:label "Desire update to resit the exam" ;
+    bdi:isTriggeredBy ex:Belief_ExamFailed ;
+    bdi:reasonsUpon ex:Desire_Graduate ;
+    bdi:modifies ex:Desire_Graduate ;
+    bdi:atTime ex:TI_ExamResult .
+
+ex:IP_ResitIntention a bdi:IntentionProcess ;
+    rdfs:label "Intention refinement for resit" ;
+    bdi:isTriggeredBy ex:Belief_ExamFailed ;
+    bdi:generates ex:Intention_ResitAlgorithms ;
+    bdi:atTime ex:TI_ExamResult .
+
+ex:Planning_Graduate a bdi:Planning ;
+    rdfs:label "Planning process for graduation" ;
+    bdi:reasonsUpon ex:Intention_PassExams ;
+    bdi:defines ex:Plan_Graduate ;
+    bdi:atTime ex:TI_AY2024 .
+
+### Justification
+ex:Justification_Graduate a bdi:Justification ;
+    rdfs:label "Mark's academic background justifies the desire to graduate" ;
+    bdi:justifies ex:Desire_Graduate .
+
+### Mark cognises all mental entities
+ex:Mark bdi:cognises ex:Belief_Employment ,
+                     ex:Belief_GoodAtScience ,
+                     ex:Belief_LovesPC ,
+                     ex:Belief_LogicalSkills ,
+                     ex:Belief_ExamFailed ,
+                     ex:Desire_Graduate ,
+                     ex:Intention_PassExams ,
+                     ex:Intention_WriteThesis ,
+                     ex:Intention_Graduation ,
+                     ex:Intention_ResitAlgorithms .
+
+ex:Mark bdi:hasMentalState ex:Belief_Employment ,
+                           ex:Belief_GoodAtScience ,
+                           ex:Belief_LovesPC ,
+                           ex:Belief_LogicalSkills ,
+                           ex:Belief_ExamFailed ,
+                           ex:Desire_Graduate ,
+                           ex:Intention_PassExams ,
+                           ex:Intention_WriteThesis ,
+                           ex:Intention_Graduation ,
+                           ex:Intention_ResitAlgorithms .
+
+### Temporal entities
+ex:TI_AY2024 a bdi:TimeInterval ;
+    rdfs:label "Academic year 2024/2025" ;
+    bdi:hasStartTime ex:TI_Start_AY2024 ;
+    bdi:hasEndTime   ex:TI_End_AY2024 .
+
+ex:TI_Start_AY2024 a bdi:TimeInstant ;
+    bdi:time "2024-09-01T00:00:00"^^xsd:dateTime .
+
+ex:TI_End_AY2024 a bdi:TimeInstant ;
+    bdi:time "2025-07-31T00:00:00"^^xsd:dateTime .
+
+ex:TI_ExamResult a bdi:TimeInterval ;
+    rdfs:label "Moment of exam result notification" ;
+    bdi:hasStartTime ex:TI_Start_ExamResult .
+
+ex:TI_Start_ExamResult a bdi:TimeInstant ;
+    bdi:time "2025-01-15T10:00:00"^^xsd:dateTime .
+
+ex:TI_RegisterWindow a bdi:TimeInterval ;
+    rdfs:label "Examination registration window" ;
+    bdi:hasStartTime ex:TI_Start_Register ;
+    bdi:hasEndTime   ex:TI_End_Register .
+
+ex:TI_Start_Register a bdi:TimeInstant ;
+    bdi:time "2024-12-01T00:00:00"^^xsd:dateTime .
+
+ex:TI_End_Register a bdi:TimeInstant ;
+    bdi:time "2024-12-20T00:00:00"^^xsd:dateTime .
+
+ex:Task_RegisterExam bdi:hasValidity ex:TI_RegisterWindow .
