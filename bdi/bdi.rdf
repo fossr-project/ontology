@@ -2027,7 +2027,7 @@ This class is useful for modeling events, schedules, and historical data where t
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2074,7 +2074,7 @@ ORDER BY ?type ?entity</owlunit:hasSPARQLUnitTest>
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2163,7 +2163,7 @@ WHERE {
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2201,7 +2201,7 @@ ORDER BY ?timestamp</owlunit:hasSPARQLUnitTest>
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2233,7 +2233,7 @@ WHERE {
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2265,7 +2265,7 @@ WHERE {
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2313,7 +2313,7 @@ WHERE {
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2391,7 +2391,7 @@ ORDER BY ?task</owlunit:hasSPARQLUnitTest>
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2462,7 +2462,7 @@ ORDER BY ?start</owlunit:hasSPARQLUnitTest>
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2509,7 +2509,7 @@ WHERE {
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2590,7 +2590,7 @@ ORDER BY ?timestamp</owlunit:hasSPARQLUnitTest>
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2640,7 +2640,7 @@ ORDER BY ?type</owlunit:hasSPARQLUnitTest>
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2681,7 +2681,7 @@ WHERE {
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2721,7 +2721,7 @@ WHERE {
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2762,7 +2762,7 @@ WHERE {
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2794,7 +2794,7 @@ WHERE {
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2827,7 +2827,7 @@ WHERE {
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;
@@ -2912,7 +2912,7 @@ WHERE {
     ]
   }
 }</owlunit:hasExpectedResult>
-        <owlunit:hasInputData rdf:resource="https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl"/>
+        <owlunit:hasInputData rdf:resource="https://w3id.org/fossr/ontology/bdi-tests"/>
         <owlunit:hasInputTestDataCategory rdf:resource="https://w3id.org/OWLunit/ontology/ToyDataset"/>
         <owlunit:hasSPARQLUnitTest>PREFIX bdi: &lt;https://w3id.org/fossr/ontology/bdi/&gt;
 PREFIX ex:  &lt;https://example.org/mark/&gt;

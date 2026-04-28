@@ -1530,7 +1530,7 @@ This class is useful for modeling events, schedules, and historical data where t
     ]
   }
 }""" ;
-             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -1574,7 +1574,7 @@ ORDER BY ?type ?entity""" ;
     ]
   }
 }""" ;
-              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
               owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
               owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -1660,7 +1660,7 @@ WHERE {
     ]
   }
 }""" ;
-              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
               owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
               owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -1695,7 +1695,7 @@ ORDER BY ?timestamp""" ;
     ]
   }
 }""" ;
-              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
               owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
               owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -1724,7 +1724,7 @@ WHERE {
     ]
   }
 }""" ;
-              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
               owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
               owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -1753,7 +1753,7 @@ WHERE {
     ]
   }
 }""" ;
-              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
               owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
               owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -1798,7 +1798,7 @@ WHERE {
     ]
   }
 }""" ;
-              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
               owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
               owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -1873,7 +1873,7 @@ ORDER BY ?task""" ;
     ]
   }
 }""" ;
-              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
               owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
               owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -1941,7 +1941,7 @@ ORDER BY ?start""" ;
     ]
   }
 }""" ;
-              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
               owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
               owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -1985,7 +1985,7 @@ WHERE {
     ]
   }
 }""" ;
-              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
               owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
               owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -2063,7 +2063,7 @@ ORDER BY ?timestamp""" ;
     ]
   }
 }""" ;
-             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -2110,7 +2110,7 @@ ORDER BY ?type""" ;
     ]
   }
 }""" ;
-             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -2148,7 +2148,7 @@ WHERE {
     ]
   }
 }""" ;
-             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -2185,7 +2185,7 @@ WHERE {
     ]
   }
 }""" ;
-             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -2223,7 +2223,7 @@ WHERE {
     ]
   }
 }""" ;
-             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -2252,7 +2252,7 @@ WHERE {
     ]
   }
 }""" ;
-             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -2282,7 +2282,7 @@ WHERE {
     ]
   }
 }""" ;
-             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
@@ -2364,7 +2364,7 @@ WHERE {
     ]
   }
 }""" ;
-             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputData <https://w3id.org/fossr/ontology/bdi-tests> ;
              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
 PREFIX ex:  <https://example.org/mark/>
