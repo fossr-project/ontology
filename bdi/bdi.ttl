@@ -8,11 +8,13 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix terms: <http://purl.org/dc/terms/> .
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
 @base <https://w3id.org/fossr/ontology/bdi/> .
 
 <https://w3id.org/fossr/ontology/bdi/> rdf:type owl:Ontology ;
-                                        owl:versionIRI <https://w3id.org/fossr/bdi/ontology/0.4/> ;
+                                        owl:versionIRI <https://w3id.org/fossr/bdi/ontology/0.5/> ;
                                         dc:description <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/bdi.png> ,
                                                        """The BDI Ontology provides a formal framework to model the Belief-Desire-Intention (BDI) architecture for rational agents. It defines key mental states—Beliefs, Desires, and Intentions—and their relationships, capturing the agent’s reasoning, motivation, and commitment to action. Supporting classes include Propositions (content of mental states), Justifications (rationale for mental states), Plans (action sequences for goals), and TimeIntervals (temporal validity of entities).
 
@@ -42,7 +44,7 @@ Key properties like hasBelief, hasDesire, and hasIntention link agents to mental
 
 This ontology supports reasoning, querying, and analysis of agent behaviour, enabling applications in AI, multi-agent systems, and decision support."""@en ;
                                         rdfs:label "Belief-Desire-Intention Ontology"@en ;
-                                        owl:versionInfo 0.4 .
+                                        owl:versionInfo 0.5 .
 
 #################################################################
 #    Annotation properties
@@ -94,6 +96,34 @@ rdf:type rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
 vs:term_status rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/OWLunit/ontology/hasCompetencyQuestion
+owlunit:hasCompetencyQuestion rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/OWLunit/ontology/hasExpectedResult
+owlunit:hasExpectedResult rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/OWLunit/ontology/hasInputData
+owlunit:hasInputData rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/OWLunit/ontology/hasInputTestDataCategory
+owlunit:hasInputTestDataCategory rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/OWLunit/ontology/hasSPARQLUnitTest
+owlunit:hasSPARQLUnitTest rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/OWLunit/ontology/hasTestCase
+owlunit:hasTestCase rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/OWLunit/ontology/testsOntology
+owlunit:testsOntology rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -917,7 +947,15 @@ decision-making and adaptability."""@en ;
 #################################################################
 
 ###  http://purl.org/vocommons/voaf#Vocabulary
-<http://purl.org/vocommons/voaf#Vocabulary> rdf:type owl:Class .
+voaf:Vocabulary rdf:type owl:Class .
+
+
+###  https://w3id.org/OWLunit/ontology/CompetencyQuestionVerification
+owlunit:CompetencyQuestionVerification rdf:type owl:Class .
+
+
+###  https://w3id.org/OWLunit/ontology/TestSuite
+owlunit:TestSuite rdf:type owl:Class .
 
 
 ###  https://w3id.org/fossr/ontology/bdi/Action
@@ -1397,7 +1435,952 @@ This class is useful for modeling events, schedules, and historical data where t
 
 ###  https://w3id.org/fossr/ontology/bdi/
 <https://w3id.org/fossr/ontology/bdi/> rdf:type owl:NamedIndividual ,
-                                                <http://purl.org/vocommons/voaf#Vocabulary> .
+                                                voaf:Vocabulary .
+
+
+###  https://w3id.org/fossr/ontology/bdi/test-suite
+:test-suite rdf:type owl:NamedIndividual ,
+                     owlunit:TestSuite ;
+            owlunit:hasTestCase :unit-test-1 ,
+                                :unit-test-10 ,
+                                :unit-test-11 ,
+                                :unit-test-12 ,
+                                :unit-test-13 ,
+                                :unit-test-14 ,
+                                :unit-test-15 ,
+                                :unit-test-16 ,
+                                :unit-test-17 ,
+                                :unit-test-18 ,
+                                :unit-test-2 ,
+                                :unit-test-3 ,
+                                :unit-test-4 ,
+                                :unit-test-5 ,
+                                :unit-test-6 ,
+                                :unit-test-7 ,
+                                :unit-test-8 ,
+                                :unit-test-9 .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-1
+:unit-test-1 rdf:type owl:NamedIndividual ,
+                      owlunit:CompetencyQuestionVerification ;
+             owlunit:hasCompetencyQuestion "What are mental entities?"@en ;
+             owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"entity\" , \"type\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_Employment\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_ExamFailed\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_GoodAtScience\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LogicalSkills\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LovesPC\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/BP_FailureRevision\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/BeliefProcess\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Desire_Graduate\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Desire\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/DP_ResitDesire\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/DesireProcess\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_Graduation\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_PassExams\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_ResitAlgorithms\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_WriteThesis\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/IP_ResitIntention\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/IntentionProcess\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Planning_Graduate\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Planning\" }
+      }
+    ]
+  }
+}""" ;
+             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+             owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?type
+WHERE {
+    ?entity a ?type .
+    ?type rdfs:subClassOf* bdi:MentalEntity .
+}
+ORDER BY ?type ?entity""" ;
+             owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-10
+:unit-test-10 rdf:type owl:NamedIndividual ,
+                       owlunit:CompetencyQuestionVerification ;
+              owlunit:hasCompetencyQuestion "What triggered a mental process?"@en ;
+              owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"process\" , \"trigger\" , \"triggerType\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"process\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/BP_FailureRevision\" } ,
+        \"trigger\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_ExamFailed\" } ,
+        \"triggerType\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"process\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/DP_ResitDesire\" } ,
+        \"trigger\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_ExamFailed\" } ,
+        \"triggerType\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"process\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/IP_ResitIntention\" } ,
+        \"trigger\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_ExamFailed\" } ,
+        \"triggerType\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      }
+    ]
+  }
+}""" ;
+              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?process ?trigger ?triggerType
+WHERE {
+    ?process a ?type .
+    ?type rdfs:subClassOf* bdi:MentalProcess .
+    ?process bdi:isTriggeredBy ?trigger .
+    ?trigger a ?triggerType .
+}""" ;
+              owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-11
+:unit-test-11 rdf:type owl:NamedIndividual ,
+                       owlunit:CompetencyQuestionVerification ;
+              owlunit:hasCompetencyQuestion "What justifications support a specific mental entity?"@en ;
+              owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"entity\" , \"timestamp\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_Employment\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_GoodAtScience\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LogicalSkills\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LovesPC\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Desire_Graduate\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_Graduation\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_PassExams\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_WriteThesis\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Planning_Graduate\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/BP_FailureRevision\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_ExamFailed\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/DP_ResitDesire\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/IP_ResitIntention\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_ResitAlgorithms\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      }
+    ]
+  }
+}""" ;
+              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?entity ?timestamp
+WHERE {
+    ?entity a ?type .
+    ?type rdfs:subClassOf* bdi:MentalEntity .
+    ?entity bdi:atTime ?interval .
+    ?interval bdi:hasStartTime ?instant .
+    ?instant bdi:time ?timestamp .
+}
+ORDER BY ?timestamp""" ;
+              owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-12
+:unit-test-12 rdf:type owl:NamedIndividual ,
+                       owlunit:CompetencyQuestionVerification ;
+              owlunit:hasCompetencyQuestion "What goal does a given intention or plan aim to fulfil?"@en ;
+              owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"goal\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"goal\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Goal_GraduateCS\" }
+      }
+    ]
+  }
+}""" ;
+              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?goal
+WHERE {
+    ex:Plan_Graduate bdi:addresses ?goal .
+    ?goal a bdi:Goal .
+}""" ;
+              owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-13
+:unit-test-13 rdf:type owl:NamedIndividual ,
+                       owlunit:CompetencyQuestionVerification ;
+              owlunit:hasCompetencyQuestion "What plan has been specified by a particular intention?"@en ;
+              owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"plan\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"plan\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Plan_Graduate\" }
+      }
+    ]
+  }
+}""" ;
+              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?plan
+WHERE {
+    ex:Intention_PassExams bdi:specifies ?plan .
+    ?plan a bdi:Plan .
+}""" ;
+              owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-14
+:unit-test-14 rdf:type owl:NamedIndividual ,
+                       owlunit:CompetencyQuestionVerification ;
+              owlunit:hasCompetencyQuestion "What planning process led to the creation of a particular plan?"@en ;
+              owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"planning\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"planning\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Planning_Graduate\" }
+      }
+    ]
+  }
+}""" ;
+              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?planning
+WHERE {
+    ?planning a bdi:Planning .
+    ?planning bdi:defines ex:Plan_Graduate .
+}""" ;
+              owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-15
+:unit-test-15 rdf:type owl:NamedIndividual ,
+                       owlunit:CompetencyQuestionVerification ;
+              owlunit:hasCompetencyQuestion "What is the ordered sequence of tasks that compose a given plan?"@en ;
+              owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"task\" , \"nextTask\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"task\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Task_Enrol\" } ,
+        \"nextTask\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Task_RegisterExam\" }
+      } ,
+      {
+        \"task\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Task_Graduation\" }
+      } ,
+      {
+        \"task\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Task_PayFees\" } ,
+        \"nextTask\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Task_Graduation\" }
+      } ,
+      {
+        \"task\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Task_RegisterExam\" } ,
+        \"nextTask\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Task_SitExam\" }
+      } ,
+      {
+        \"task\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Task_SitExam\" } ,
+        \"nextTask\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Task_PayFees\" }
+      }
+    ]
+  }
+}""" ;
+              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?task ?nextTask
+WHERE {
+    ex:Plan_Graduate bdi:hasComponent ?task .
+    OPTIONAL { ?task bdi:precedes ?nextTask . }
+}
+ORDER BY ?task""" ;
+              owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-16
+:unit-test-16 rdf:type owl:NamedIndividual ,
+                       owlunit:CompetencyQuestionVerification ;
+              owlunit:hasCompetencyQuestion "What is the temporal validity (start and end time) of a mental state?}"@en ;
+              owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"state\" , \"start\" , \"end\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_Employment\" } ,
+        \"start\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" } ,
+        \"end\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-07-31T00:00:00\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_GoodAtScience\" } ,
+        \"start\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" } ,
+        \"end\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-07-31T00:00:00\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LogicalSkills\" } ,
+        \"start\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" } ,
+        \"end\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-07-31T00:00:00\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LovesPC\" } ,
+        \"start\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" } ,
+        \"end\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-07-31T00:00:00\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Desire_Graduate\" } ,
+        \"start\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" } ,
+        \"end\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-07-31T00:00:00\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_Graduation\" } ,
+        \"start\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" } ,
+        \"end\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-07-31T00:00:00\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_PassExams\" } ,
+        \"start\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" } ,
+        \"end\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-07-31T00:00:00\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_WriteThesis\" } ,
+        \"start\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" } ,
+        \"end\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-07-31T00:00:00\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_ExamFailed\" } ,
+        \"start\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_ResitAlgorithms\" } ,
+        \"start\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      }
+    ]
+  }
+}""" ;
+              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?state ?start ?end
+WHERE {
+    ?state a ?type .
+    ?type rdfs:subClassOf* bdi:MentalState .
+    ?state bdi:atTime ?interval .
+    ?interval bdi:hasStartTime ?startInstant .
+    ?startInstant bdi:time ?start .
+    OPTIONAL {
+        ?interval bdi:hasEndTime ?endInstant .
+        ?endInstant bdi:time ?end .
+    }
+}
+ORDER BY ?start""" ;
+              owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-17
+:unit-test-17 rdf:type owl:NamedIndividual ,
+                       owlunit:CompetencyQuestionVerification ;
+              owlunit:hasCompetencyQuestion "What mental states were valid at a specific point in time?"@en ;
+              owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"state\" , \"type\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_Employment\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_GoodAtScience\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LovesPC\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LogicalSkills\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Desire_Graduate\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Desire\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_PassExams\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_WriteThesis\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_Graduation\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      }
+    ]
+  }
+}""" ;
+              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?state ?type
+WHERE {
+    ?state a ?type .
+    ?type rdfs:subClassOf* bdi:MentalState .
+    ?state bdi:atTime ?interval .
+    ?interval bdi:hasStartTime ?startInstant .
+    ?startInstant bdi:time ?start .
+    OPTIONAL {
+        ?interval bdi:hasEndTime ?endInstant .
+        ?endInstant bdi:time ?end .
+    }
+    BIND(\"2024-10-01T00:00:00\"^^xsd:dateTime AS ?t)
+    FILTER(?start <= ?t && 
+           (!BOUND(?end) || ?end >= ?t))
+}""" ;
+              owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-18
+:unit-test-18 rdf:type owl:NamedIndividual ,
+                       owlunit:CompetencyQuestionVerification ;
+              owlunit:hasCompetencyQuestion "How has a mental entity evolved over time?"@en ;
+              owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"process\" , \"affectType\" , \"timestamp\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"process\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/DP_ResitDesire\" } ,
+        \"affectType\": { \"type\": \"literal\" , \"value\": \"modifies\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      }
+    ]
+  }
+}""" ;
+              owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+              owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+              owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?process ?affectType ?timestamp
+WHERE {
+    {
+        ?process bdi:generates ex:Desire_Graduate .
+        BIND(\"generates\" AS ?affectType)
+    } UNION {
+        ?process bdi:modifies ex:Desire_Graduate .
+        BIND(\"modifies\" AS ?affectType)
+    } UNION {
+        ?process bdi:suppresses ex:Desire_Graduate .
+        BIND(\"suppresses\" AS ?affectType)
+    }
+    ?process bdi:atTime ?interval .
+    ?interval bdi:hasStartTime ?instant .
+    ?instant bdi:time ?timestamp .
+}
+ORDER BY ?timestamp""" ;
+              owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-2
+:unit-test-2 rdf:type owl:NamedIndividual ,
+                      owlunit:CompetencyQuestionVerification ;
+             owlunit:hasCompetencyQuestion "What mental states does an agent hold?"@en ;
+             owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"state\" , \"type\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_Employment\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_ExamFailed\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_GoodAtScience\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LogicalSkills\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LovesPC\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Desire_Graduate\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Desire\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_Graduation\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_PassExams\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_ResitAlgorithms\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      } ,
+      {
+        \"state\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_WriteThesis\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      }
+    ]
+  }
+}""" ;
+             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+             owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?state ?type
+WHERE {
+    ex:Mark bdi:hasMentalState ?state .
+    ?state a ?type .
+}
+ORDER BY ?type""" ;
+             owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-3
+:unit-test-3 rdf:type owl:NamedIndividual ,
+                      owlunit:CompetencyQuestionVerification ;
+             owlunit:hasCompetencyQuestion "What are the constituent mental entities that form part of a given mental entity?"@en ;
+             owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"part\" , \"type\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"part\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_Employment\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"part\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_PassExams\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      } ,
+      {
+        \"part\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_GoodAtScience\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Belief\" }
+      } ,
+      {
+        \"part\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_Graduation\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      } ,
+      {
+        \"part\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_WriteThesis\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Intention\" }
+      }
+    ]
+  }
+}""" ;
+             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+             owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?part ?type
+WHERE {
+    ex:Desire_Graduate bdi:hasPart+ ?part .
+    ?part a ?type .
+}""" ;
+             owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-4
+:unit-test-4 rdf:type owl:NamedIndividual ,
+                      owlunit:CompetencyQuestionVerification ;
+             owlunit:hasCompetencyQuestion "What mental processes has an agent undergone?"@en ;
+             owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"process\" , \"type\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"process\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/BP_FailureRevision\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/BeliefProcess\" }
+      } ,
+      {
+        \"process\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/DP_ResitDesire\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/DesireProcess\" }
+      } ,
+      {
+        \"process\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Planning_Graduate\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/Planning\" }
+      }
+    ]
+  }
+}""" ;
+             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+             owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?process ?type
+WHERE {
+    ?process bdi:isProcessedBy ex:Mark .
+    ?process a ?type .
+    ?type rdfs:subClassOf* bdi:MentalProcess .
+}""" ;
+             owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-5
+:unit-test-5 rdf:type owl:NamedIndividual ,
+                      owlunit:CompetencyQuestionVerification ;
+             owlunit:hasCompetencyQuestion "What is the world state that a given mental state is about?"@en ;
+             owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"mentalState\" , \"worldState\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"mentalState\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_Employment\" } ,
+        \"worldState\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/WS_AcademicCalendar\" }
+      } ,
+      {
+        \"mentalState\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_ExamFailed\" } ,
+        \"worldState\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/WS_ExamSchedule\" }
+      }
+    ]
+  }
+}""" ;
+             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+             owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?mentalState ?worldState
+WHERE {
+    ?mentalState bdi:refersTo ?worldState .
+    ?worldState a bdi:WorldState .
+}""" ;
+             owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-6
+:unit-test-6 rdf:type owl:NamedIndividual ,
+                      owlunit:CompetencyQuestionVerification ;
+             owlunit:hasCompetencyQuestion "What beliefs motivated the formation of a given desire?"@en ;
+             owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"belief\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"belief\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_Employment\" }
+      } ,
+      {
+        \"belief\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_GoodAtScience\" }
+      } ,
+      {
+        \"belief\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LovesPC\" }
+      } ,
+      {
+        \"belief\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LogicalSkills\" }
+      }
+    ]
+  }
+}""" ;
+             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+             owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?belief
+WHERE {
+    ?belief a bdi:Belief .
+    ?belief bdi:motivates ex:Desire_Graduate .
+}""" ;
+             owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-7
+:unit-test-7 rdf:type owl:NamedIndividual ,
+                      owlunit:CompetencyQuestionVerification ;
+             owlunit:hasCompetencyQuestion "Which desire does a particular intention fulfil?"@en ;
+             owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"desire\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"desire\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Desire_Graduate\" }
+      }
+    ]
+  }
+}""" ;
+             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+             owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?desire
+WHERE {
+    ex:Intention_PassExams bdi:fulfils ?desire .
+    ?desire a bdi:Desire .
+}""" ;
+             owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-8
+:unit-test-8 rdf:type owl:NamedIndividual ,
+                      owlunit:CompetencyQuestionVerification ;
+             owlunit:hasCompetencyQuestion "Which mental process generated a given belief, desire, or intention?"@en ;
+             owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"process\" , \"type\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"process\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/BP_FailureRevision\" } ,
+        \"type\": { \"type\": \"uri\" , \"value\": \"https://w3id.org/fossr/ontology/bdi/BeliefProcess\" }
+      }
+    ]
+  }
+}""" ;
+             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+             owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+
+SELECT ?process ?type
+WHERE {
+    ?process bdi:generates ex:Belief_ExamFailed .
+    ?process a ?type .
+}""" ;
+             owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
+
+
+###  https://w3id.org/fossr/ontology/bdi/unit-test-9
+:unit-test-9 rdf:type owl:NamedIndividual ,
+                      owlunit:CompetencyQuestionVerification ;
+             owlunit:hasCompetencyQuestion "When was a mental entity generated?"@en ;
+             owlunit:hasExpectedResult """{
+  \"head\": {
+    \"vars\": [ \"entity\" , \"timestamp\" ]
+  } ,
+  \"results\": {
+    \"bindings\": [
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_Employment\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_GoodAtScience\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LogicalSkills\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_LovesPC\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Desire_Graduate\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_Graduation\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_PassExams\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_WriteThesis\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Planning_Graduate\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2024-09-01T00:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/BP_FailureRevision\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Belief_ExamFailed\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/DP_ResitDesire\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/IP_ResitIntention\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      } ,
+      {
+        \"entity\": { \"type\": \"uri\" , \"value\": \"https://example.org/mark/Intention_ResitAlgorithms\" } ,
+        \"timestamp\": { \"type\": \"literal\" , \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" , \"value\": \"2025-01-15T10:00:00\" }
+      }
+    ]
+  }
+}""" ;
+             owlunit:hasInputData <https://raw.githubusercontent.com/fossr-project/ontology/refs/heads/main/bdi/unittests/data-unit-testing.ttl> ;
+             owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+             owlunit:hasSPARQLUnitTest """PREFIX bdi: <https://w3id.org/fossr/ontology/bdi/>
+PREFIX ex:  <https://example.org/mark/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?entity ?timestamp
+WHERE {
+    ?entity a ?type .
+    ?type rdfs:subClassOf* bdi:MentalEntity .
+    ?entity bdi:atTime ?interval .
+    ?interval bdi:hasStartTime ?instant .
+    ?instant bdi:time ?timestamp .
+}
+ORDER BY ?timestamp""" ;
+             owlunit:testsOntology <https://w3id.org/fossr/ontology/bdi/> .
 
 
 #################################################################

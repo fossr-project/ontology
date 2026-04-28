@@ -1,0 +1,217 @@
+@prefix :      <https://w3id.org/fossr/ontology/bdi-tests/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix bdi:   <https://w3id.org/fossr/ontology/bdi/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+:Task_RegisterExam  a  bdi:Task ;
+        rdfs:label       "Register for examination" ;
+        bdi:hasValidity  :TI_RegisterWindow ;
+        bdi:precedes     :Task_SitExam .
+
+:TI_Start_ExamResult
+        a         bdi:TimeInstant ;
+        bdi:time  "2025-01-15T10:00:00"^^xsd:dateTime .
+
+:Belief_LovesPC  a   bdi:Belief ;
+        rdfs:label     "I enjoy spending long hours at a computer" ;
+        bdi:atTime     :TI_AY2024 ;
+        bdi:motivates  :Desire_Graduate .
+
+:Intention_ResitAlgorithms
+        a            bdi:Intention ;
+        rdfs:label   "Register for the Algorithms resit" ;
+        bdi:atTime   :TI_ExamResult ;
+        bdi:fulfils  :Desire_Graduate .
+
+:TI_End_AY2024  a  bdi:TimeInstant ;
+        bdi:time  "2025-07-31T00:00:00"^^xsd:dateTime .
+
+:Justification_Graduate
+        a              bdi:Justification ;
+        rdfs:label     "Mark's academic background justifies the desire to graduate" ;
+        bdi:justifies  :Desire_Graduate .
+
+:WS_ExamSchedule  a  bdi:WorldState ;
+        rdfs:label  "Examination schedule" .
+
+terms:license  a  owl:AnnotationProperty .
+
+:TI_AY2024  a           bdi:TimeInterval ;
+        rdfs:label        "Academic year 2024/2025" ;
+        bdi:hasEndTime    :TI_End_AY2024 ;
+        bdi:hasStartTime  :TI_Start_AY2024 .
+
+:Intention_Graduation
+        a            bdi:Intention ;
+        rdfs:label   "Attend the graduation ceremony" ;
+        bdi:atTime   :TI_AY2024 ;
+        bdi:fulfils  :Desire_Graduate .
+
+:Plan_AlgorithmsCourse
+        a              bdi:Plan ;
+        rdfs:label     "Plan for Algorithms examination" ;
+        bdi:addresses  :Goal_GraduateCS .
+
+:Desire_Graduate  a      bdi:Desire ;
+        rdfs:label         "Obtain a Computer Science degree" ;
+        bdi:atTime         :TI_AY2024 ;
+        bdi:hasPart        :Intention_PassExams , :Intention_WriteThesis , :Belief_GoodAtScience , :Belief_Employment , :Intention_Graduation ;
+        bdi:isMotivatedBy  :Belief_LogicalSkills , :Belief_LovesPC , :Belief_GoodAtScience , :Belief_Employment .
+
+vann:preferredNamespaceUri
+        a       owl:AnnotationProperty .
+
+:Belief_GoodAtScience
+        a              bdi:Belief ;
+        rdfs:label     "I am good at science" ;
+        bdi:atTime     :TI_AY2024 ;
+        bdi:motivates  :Desire_Graduate .
+
+:TI_Start_AY2024  a  bdi:TimeInstant ;
+        bdi:time  "2024-09-01T00:00:00"^^xsd:dateTime .
+
+:Task_Graduation  a  bdi:Task ;
+        rdfs:label  "Attend graduation ceremony" .
+
+:Task_SitExam  a    bdi:Task ;
+        rdfs:label    "Sit the examination" ;
+        bdi:precedes  :Task_PayFees .
+
+:Belief_LogicalSkills
+        a              bdi:Belief ;
+        rdfs:label     "I have strong logical reasoning abilities" ;
+        bdi:atTime     :TI_AY2024 ;
+        bdi:motivates  :Desire_Graduate .
+
+terms:creator  a  owl:AnnotationProperty .
+
+<http://purl.org/vocommons/voaf#Vocabulary>
+        a       owl:Class .
+
+terms:title  a  owl:AnnotationProperty .
+
+:Belief_Employment  a  bdi:Belief ;
+        rdfs:label     "CS graduates find employment easily" ;
+        bdi:atTime     :TI_AY2024 ;
+        bdi:motivates  :Desire_Graduate ;
+        bdi:refersTo   :WS_AcademicCalendar .
+
+dc:description  a  owl:AnnotationProperty .
+
+:Goal_GraduateCS  a  bdi:Goal ;
+        rdfs:label  "Graduate in Computer Science" .
+
+:Planning_Graduate  a    bdi:Planning ;
+        rdfs:label         "Planning process for graduation" ;
+        bdi:atTime         :TI_AY2024 ;
+        bdi:defines        :Plan_Graduate ;
+        bdi:isProcessedBy  :Mark ;
+        bdi:reasonsUpon    :Intention_PassExams .
+
+terms:publisher  a  owl:AnnotationProperty .
+
+:Task_PayFees  a    bdi:Task ;
+        rdfs:label    "Pay tuition fees" ;
+        bdi:precedes  :Task_Graduation .
+
+:Intention_PassExams
+        a                  bdi:Intention ;
+        rdfs:label         "Pass all required examinations" ;
+        bdi:atTime         :TI_AY2024 ;
+        bdi:fulfils        :Desire_Graduate ;
+        bdi:isSupportedBy  :Belief_GoodAtScience ;
+        bdi:specifies      :Plan_Graduate .
+
+vs:term_status  a  owl:AnnotationProperty .
+
+:IP_ResitIntention  a    bdi:IntentionProcess ;
+        rdfs:label         "Intention refinement for resit" ;
+        bdi:atTime         :TI_ExamResult ;
+        bdi:generates      :Intention_ResitAlgorithms ;
+        bdi:isTriggeredBy  :Belief_ExamFailed .
+
+:TI_End_Register  a  bdi:TimeInstant ;
+        bdi:time  "2024-12-20T00:00:00"^^xsd:dateTime .
+
+:Intention_WriteThesis
+        a            bdi:Intention ;
+        rdfs:label   "Write the thesis" ;
+        bdi:atTime   :TI_AY2024 ;
+        bdi:fulfils  :Desire_Graduate .
+
+:Mark  a                  bdi:Agent ;
+        bdi:cognises        :Belief_Employment , :Intention_Graduation , :Intention_WriteThesis , :Intention_ResitAlgorithms , :Belief_LogicalSkills , :Belief_ExamFailed , :Intention_PassExams , :Belief_GoodAtScience , :Belief_LovesPC , :Desire_Graduate ;
+        bdi:hasMentalState  :Intention_WriteThesis , :Intention_PassExams , :Belief_Employment , :Belief_LogicalSkills , :Belief_LovesPC , :Belief_GoodAtScience , :Intention_ResitAlgorithms , :Intention_Graduation , :Belief_ExamFailed , :Desire_Graduate ;
+        bdi:perceives       :WS_AcademicCalendar , :WS_ExamSchedule .
+
+:BP_FailureRevision
+        a                  bdi:BeliefProcess ;
+        rdfs:label         "Belief revision upon exam failure" ;
+        bdi:atTime         :TI_ExamResult ;
+        bdi:generates      :Belief_ExamFailed ;
+        bdi:isProcessedBy  :Mark ;
+        bdi:isTriggeredBy  :Belief_ExamFailed ;
+        bdi:reasonsUpon    :Belief_ExamFailed .
+
+:TI_Start_Register  a  bdi:TimeInstant ;
+        bdi:time  "2024-12-01T00:00:00"^^xsd:dateTime .
+
+rdf:type  a     owl:AnnotationProperty .
+
+:Plan_ResitAlgorithms
+        a              bdi:Plan ;
+        rdfs:label     "Revised plan including Algorithms resit" ;
+        bdi:addresses  :Goal_GraduateCS .
+
+terms:rights  a  owl:AnnotationProperty .
+
+:DP_ResitDesire  a       bdi:DesireProcess ;
+        rdfs:label         "Desire update to resit the exam" ;
+        bdi:atTime         :TI_ExamResult ;
+        bdi:isProcessedBy  :Mark ;
+        bdi:isTriggeredBy  :Belief_ExamFailed ;
+        bdi:modifies       :Desire_Graduate ;
+        bdi:reasonsUpon    :Desire_Graduate .
+
+terms:modified  a  owl:AnnotationProperty .
+
+:Plan_Graduate  a       bdi:Plan ;
+        rdfs:label        "Graduation plan" ;
+        bdi:addresses     :Goal_GraduateCS ;
+        bdi:beginsWith    :Task_Enrol ;
+        bdi:endsWith      :Task_Graduation ;
+        bdi:hasComponent  :Task_SitExam , :Task_RegisterExam , :Task_Graduation , :Task_PayFees , :Task_Enrol ;
+        bdi:hasPart       :Plan_AlgorithmsCourse .
+
+vann:preferredNamespacePrefix
+        a       owl:AnnotationProperty .
+
+:Task_Enrol  a      bdi:Task ;
+        rdfs:label    "Enrol in the programme" ;
+        bdi:precedes  :Task_RegisterExam .
+
+:TI_RegisterWindow  a   bdi:TimeInterval ;
+        rdfs:label        "Examination registration window" ;
+        bdi:hasEndTime    :TI_End_Register ;
+        bdi:hasStartTime  :TI_Start_Register .
+
+terms:issued  a  owl:AnnotationProperty .
+
+:Belief_ExamFailed  a  bdi:Belief ;
+        rdfs:label    "I failed the Algorithms examination" ;
+        bdi:atTime    :TI_ExamResult ;
+        bdi:refersTo  :WS_ExamSchedule .
+
+:WS_AcademicCalendar
+        a           bdi:WorldState ;
+        rdfs:label  "Academic calendar 2024/2025" .
+
+:TI_ExamResult  a       bdi:TimeInterval ;
+        rdfs:label        "Moment of exam result notification" ;
+        bdi:hasStartTime  :TI_Start_ExamResult .
