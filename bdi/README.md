@@ -154,6 +154,11 @@ The ontology is driven by competency questions (CQs) organised into four groups:
 - What mental states were valid at a specific point in time?
 - How has a mental entity evolved over time?
 
+The functional commitment of the ontology has been rigorously validated using [OWLUnit](https://github.com/luigi-asprino/owl-unit), 
+a framework for ontology unit testing that verifies the alignment between expected and actual reasoning
+outcomes. All CQs, which identify unit tests, are associated with SPARQL queries and validation artefacts in the ontology with the OWLUnit vocabulary.
+All unit tests are explained in a dedicated [document](unittesting.md).
+
 ---
 
 ## ⚙️ Implementation
