@@ -554,19 +554,19 @@ The test validates diachronic reasoning over mental entities by tracking process
 | Test | Competency Question | Main construct tested |
 |---|---|---|
 | `unit-test-1` | What are mental entities? | `bdi:MentalEntity` taxonomy |
-| `unit-test-2` | What mental states does an agent hold? | Agentâmental state relation |
+| `unit-test-2` | What mental states does an agent hold? | Agent-mental state relation |
 | `unit-test-3` | What are the constituent mental entities? | Part-whole structure |
-| `unit-test-4` | What mental processes has an agent undergone? | Agentâprocess participation |
+| `unit-test-4` | What mental processes has an agent undergone? | Agent-process participation |
 | `unit-test-5` | What world state is a mental state about? | Mental state reference |
-| `unit-test-6` | What beliefs motivated a desire? | Beliefâdesire motivation |
-| `unit-test-7` | Which desire does an intention fulfil? | Intentionâdesire fulfilment |
+| `unit-test-6` | What beliefs motivated a desire? | Belief-desire motivation |
+| `unit-test-7` | Which desire does an intention fulfil? | Intention-desire fulfilment |
 | `unit-test-8` | Which process generated a mental state? | Process generation |
 | `unit-test-9` | When was a mental entity generated? | Temporal anchoring |
 | `unit-test-10` | What triggered a mental process? | Triggering relation |
 | `unit-test-11` | What justifications support a mental entity? | Mismatch: currently tests temporal anchoring |
-| `unit-test-12` | What goal does a plan aim to fulfil? | Planâgoal relation |
-| `unit-test-13` | What plan has been specified by an intention? | Intentionâplan relation |
-| `unit-test-14` | What planning process created a plan? | Planningâplan definition |
+| `unit-test-12` | What goal does a plan aim to fulfil? | Plan-goal relation |
+| `unit-test-13` | What plan has been specified by an intention? | Intention-plan relation |
+| `unit-test-14` | What planning process created a plan? | Planning-plan definition |
 | `unit-test-15` | What is the ordered task sequence? | Ordered tasks in plans |
 | `unit-test-16` | What is the temporal validity of a mental state? | Start/end temporal validity |
 | `unit-test-17` | What mental states were valid at a time? | Point-in-time validity |
