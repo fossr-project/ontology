@@ -1,0 +1,365 @@
+{
+  "@graph" : [ {
+    "@id" : "dc:description",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "terms:creator",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "terms:issued",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "terms:license",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "terms:modified",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "terms:publisher",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "terms:rights",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "terms:title",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "vann:preferredNamespacePrefix",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "vann:preferredNamespaceUri",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "http://purl.org/vocommons/voaf#Vocabulary",
+    "@type" : "owl:Class"
+  }, {
+    "@id" : "rdf:type",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "vs:term_status",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/BP_FailureRevision",
+    "@type" : "bdi:BeliefProcess",
+    "label" : "Belief revision upon exam failure",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_ExamResult",
+    "generates" : "https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed",
+    "isProcessedBy" : "https://w3id.org/fossr/ontology/bdi-tests/Mark",
+    "isTriggeredBy" : "https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed",
+    "reasonsUpon" : "https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Belief_Employment",
+    "@type" : "bdi:Belief",
+    "label" : "CS graduates find employment easily",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024",
+    "motivates" : "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate",
+    "refersTo" : "https://w3id.org/fossr/ontology/bdi-tests/WS_AcademicCalendar"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed",
+    "@type" : "bdi:Belief",
+    "label" : "I failed the Algorithms examination",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_ExamResult",
+    "refersTo" : "https://w3id.org/fossr/ontology/bdi-tests/WS_ExamSchedule"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Belief_GoodAtScience",
+    "@type" : "bdi:Belief",
+    "label" : "I am good at science",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024",
+    "motivates" : "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Belief_LogicalSkills",
+    "@type" : "bdi:Belief",
+    "label" : "I have strong logical reasoning abilities",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024",
+    "motivates" : "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Belief_LovesPC",
+    "@type" : "bdi:Belief",
+    "label" : "I enjoy spending long hours at a computer",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024",
+    "motivates" : "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/DP_ResitDesire",
+    "@type" : "bdi:DesireProcess",
+    "label" : "Desire update to resit the exam",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_ExamResult",
+    "isProcessedBy" : "https://w3id.org/fossr/ontology/bdi-tests/Mark",
+    "isTriggeredBy" : "https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed",
+    "modifies" : "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate",
+    "reasonsUpon" : "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate",
+    "@type" : "bdi:Desire",
+    "label" : "Obtain a Computer Science degree",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024",
+    "hasPart" : [ "https://w3id.org/fossr/ontology/bdi-tests/Intention_Graduation", "https://w3id.org/fossr/ontology/bdi-tests/Belief_GoodAtScience", "https://w3id.org/fossr/ontology/bdi-tests/Intention_PassExams", "https://w3id.org/fossr/ontology/bdi-tests/Intention_WriteThesis", "https://w3id.org/fossr/ontology/bdi-tests/Belief_Employment" ],
+    "isMotivatedBy" : [ "https://w3id.org/fossr/ontology/bdi-tests/Belief_Employment", "https://w3id.org/fossr/ontology/bdi-tests/Belief_GoodAtScience", "https://w3id.org/fossr/ontology/bdi-tests/Belief_LogicalSkills", "https://w3id.org/fossr/ontology/bdi-tests/Belief_LovesPC" ]
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Goal_GraduateCS",
+    "@type" : "bdi:Goal",
+    "label" : "Graduate in Computer Science"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/IP_ResitIntention",
+    "@type" : "bdi:IntentionProcess",
+    "label" : "Intention refinement for resit",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_ExamResult",
+    "generates" : "https://w3id.org/fossr/ontology/bdi-tests/Intention_ResitAlgorithms",
+    "isTriggeredBy" : "https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Intention_Graduation",
+    "@type" : "bdi:Intention",
+    "label" : "Attend the graduation ceremony",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024",
+    "fulfils" : "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Intention_PassExams",
+    "@type" : "bdi:Intention",
+    "label" : "Pass all required examinations",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024",
+    "fulfils" : "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate",
+    "isSupportedBy" : "https://w3id.org/fossr/ontology/bdi-tests/Belief_GoodAtScience",
+    "specifies" : "https://w3id.org/fossr/ontology/bdi-tests/Plan_Graduate"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Intention_ResitAlgorithms",
+    "@type" : "bdi:Intention",
+    "label" : "Register for the Algorithms resit",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_ExamResult",
+    "fulfils" : "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Intention_WriteThesis",
+    "@type" : "bdi:Intention",
+    "label" : "Write the thesis",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024",
+    "fulfils" : "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Justification_Graduate",
+    "@type" : "bdi:Justification",
+    "label" : "Mark's academic background justifies the desire to graduate",
+    "justifies" : "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Mark",
+    "@type" : "bdi:Agent",
+    "cognises" : [ "https://w3id.org/fossr/ontology/bdi-tests/Belief_LovesPC", "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate", "https://w3id.org/fossr/ontology/bdi-tests/Belief_LogicalSkills", "https://w3id.org/fossr/ontology/bdi-tests/Intention_PassExams", "https://w3id.org/fossr/ontology/bdi-tests/Intention_WriteThesis", "https://w3id.org/fossr/ontology/bdi-tests/Belief_GoodAtScience", "https://w3id.org/fossr/ontology/bdi-tests/Belief_Employment", "https://w3id.org/fossr/ontology/bdi-tests/Intention_Graduation", "https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed", "https://w3id.org/fossr/ontology/bdi-tests/Intention_ResitAlgorithms" ],
+    "hasMentalState" : [ "https://w3id.org/fossr/ontology/bdi-tests/Intention_ResitAlgorithms", "https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate", "https://w3id.org/fossr/ontology/bdi-tests/Belief_Employment", "https://w3id.org/fossr/ontology/bdi-tests/Intention_Graduation", "https://w3id.org/fossr/ontology/bdi-tests/Intention_PassExams", "https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed", "https://w3id.org/fossr/ontology/bdi-tests/Belief_LovesPC", "https://w3id.org/fossr/ontology/bdi-tests/Belief_LogicalSkills", "https://w3id.org/fossr/ontology/bdi-tests/Belief_GoodAtScience", "https://w3id.org/fossr/ontology/bdi-tests/Intention_WriteThesis" ],
+    "perceives" : [ "https://w3id.org/fossr/ontology/bdi-tests/WS_ExamSchedule", "https://w3id.org/fossr/ontology/bdi-tests/WS_AcademicCalendar" ]
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Plan_AlgorithmsCourse",
+    "@type" : "bdi:Plan",
+    "label" : "Plan for Algorithms examination",
+    "addresses" : "https://w3id.org/fossr/ontology/bdi-tests/Goal_GraduateCS"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Plan_Graduate",
+    "@type" : "bdi:Plan",
+    "label" : "Graduation plan",
+    "addresses" : "https://w3id.org/fossr/ontology/bdi-tests/Goal_GraduateCS",
+    "beginsWith" : "https://w3id.org/fossr/ontology/bdi-tests/Task_Enrol",
+    "endsWith" : "https://w3id.org/fossr/ontology/bdi-tests/Task_Graduation",
+    "hasComponent" : [ "https://w3id.org/fossr/ontology/bdi-tests/Task_SitExam", "https://w3id.org/fossr/ontology/bdi-tests/Task_RegisterExam", "https://w3id.org/fossr/ontology/bdi-tests/Task_Enrol", "https://w3id.org/fossr/ontology/bdi-tests/Task_Graduation", "https://w3id.org/fossr/ontology/bdi-tests/Task_PayFees" ],
+    "hasPart" : "https://w3id.org/fossr/ontology/bdi-tests/Plan_AlgorithmsCourse"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Plan_ResitAlgorithms",
+    "@type" : "bdi:Plan",
+    "label" : "Revised plan including Algorithms resit",
+    "addresses" : "https://w3id.org/fossr/ontology/bdi-tests/Goal_GraduateCS"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Planning_Graduate",
+    "@type" : "bdi:Planning",
+    "label" : "Planning process for graduation",
+    "atTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024",
+    "defines" : "https://w3id.org/fossr/ontology/bdi-tests/Plan_Graduate",
+    "isProcessedBy" : "https://w3id.org/fossr/ontology/bdi-tests/Mark",
+    "reasonsUpon" : "https://w3id.org/fossr/ontology/bdi-tests/Intention_PassExams"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024",
+    "@type" : "bdi:TimeInterval",
+    "label" : "Academic year 2024/2025",
+    "hasEndTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_End_AY2024",
+    "hasStartTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_Start_AY2024"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/TI_End_AY2024",
+    "@type" : "bdi:TimeInstant",
+    "time" : "2025-07-31T00:00:00"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/TI_End_Register",
+    "@type" : "bdi:TimeInstant",
+    "time" : "2024-12-20T00:00:00"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/TI_ExamResult",
+    "@type" : "bdi:TimeInterval",
+    "label" : "Moment of exam result notification",
+    "hasStartTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_Start_ExamResult"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/TI_RegisterWindow",
+    "@type" : "bdi:TimeInterval",
+    "label" : "Examination registration window",
+    "hasEndTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_End_Register",
+    "hasStartTime" : "https://w3id.org/fossr/ontology/bdi-tests/TI_Start_Register"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/TI_Start_AY2024",
+    "@type" : "bdi:TimeInstant",
+    "time" : "2024-09-01T00:00:00"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/TI_Start_ExamResult",
+    "@type" : "bdi:TimeInstant",
+    "time" : "2025-01-15T10:00:00"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/TI_Start_Register",
+    "@type" : "bdi:TimeInstant",
+    "time" : "2024-12-01T00:00:00"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Task_Enrol",
+    "@type" : "bdi:Task",
+    "label" : "Enrol in the programme",
+    "precedes" : "https://w3id.org/fossr/ontology/bdi-tests/Task_RegisterExam"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Task_Graduation",
+    "@type" : "bdi:Task",
+    "label" : "Attend graduation ceremony"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Task_PayFees",
+    "@type" : "bdi:Task",
+    "label" : "Pay tuition fees",
+    "precedes" : "https://w3id.org/fossr/ontology/bdi-tests/Task_Graduation"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Task_RegisterExam",
+    "@type" : "bdi:Task",
+    "label" : "Register for examination",
+    "hasValidity" : "https://w3id.org/fossr/ontology/bdi-tests/TI_RegisterWindow",
+    "precedes" : "https://w3id.org/fossr/ontology/bdi-tests/Task_SitExam"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/Task_SitExam",
+    "@type" : "bdi:Task",
+    "label" : "Sit the examination",
+    "precedes" : "https://w3id.org/fossr/ontology/bdi-tests/Task_PayFees"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/WS_AcademicCalendar",
+    "@type" : "bdi:WorldState",
+    "label" : "Academic calendar 2024/2025"
+  }, {
+    "@id" : "https://w3id.org/fossr/ontology/bdi-tests/WS_ExamSchedule",
+    "@type" : "bdi:WorldState",
+    "label" : "Examination schedule"
+  } ],
+  "@context" : {
+    "time" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/time",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "precedes" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/precedes",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "hasMentalState" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/hasMentalState",
+      "@type" : "@id"
+    },
+    "cognises" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/cognises",
+      "@type" : "@id"
+    },
+    "perceives" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/perceives",
+      "@type" : "@id"
+    },
+    "fulfils" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/fulfils",
+      "@type" : "@id"
+    },
+    "atTime" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/atTime",
+      "@type" : "@id"
+    },
+    "justifies" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/justifies",
+      "@type" : "@id"
+    },
+    "hasStartTime" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/hasStartTime",
+      "@type" : "@id"
+    },
+    "hasEndTime" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/hasEndTime",
+      "@type" : "@id"
+    },
+    "motivates" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/motivates",
+      "@type" : "@id"
+    },
+    "specifies" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/specifies",
+      "@type" : "@id"
+    },
+    "isSupportedBy" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/isSupportedBy",
+      "@type" : "@id"
+    },
+    "isTriggeredBy" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/isTriggeredBy",
+      "@type" : "@id"
+    },
+    "generates" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/generates",
+      "@type" : "@id"
+    },
+    "refersTo" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/refersTo",
+      "@type" : "@id"
+    },
+    "hasPart" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/hasPart",
+      "@type" : "@id"
+    },
+    "addresses" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/addresses",
+      "@type" : "@id"
+    },
+    "hasComponent" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/hasComponent",
+      "@type" : "@id"
+    },
+    "beginsWith" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/beginsWith",
+      "@type" : "@id"
+    },
+    "endsWith" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/endsWith",
+      "@type" : "@id"
+    },
+    "hasValidity" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/hasValidity",
+      "@type" : "@id"
+    },
+    "reasonsUpon" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/reasonsUpon",
+      "@type" : "@id"
+    },
+    "isProcessedBy" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/isProcessedBy",
+      "@type" : "@id"
+    },
+    "modifies" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/modifies",
+      "@type" : "@id"
+    },
+    "isMotivatedBy" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/isMotivatedBy",
+      "@type" : "@id"
+    },
+    "defines" : {
+      "@id" : "https://w3id.org/fossr/ontology/bdi/defines",
+      "@type" : "@id"
+    },
+    "terms" : "http://purl.org/dc/terms/",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "bdi" : "https://w3id.org/fossr/ontology/bdi/",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "vann" : "http://purl.org/vocab/vann/",
+    "vs" : "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+    "dc" : "http://purl.org/dc/elements/1.1/"
+  }
+}

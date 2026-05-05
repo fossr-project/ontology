@@ -1,0 +1,255 @@
+<rdf:RDF
+    xmlns:terms="http://purl.org/dc/terms/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    xmlns="https://w3id.org/fossr/ontology/bdi-tests/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:bdi="https://w3id.org/fossr/ontology/bdi/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:vann="http://purl.org/vocab/vann/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Class rdf:about="http://purl.org/vocommons/voaf#Vocabulary"/>
+  <bdi:BeliefProcess rdf:about="https://w3id.org/fossr/ontology/bdi-tests/BP_FailureRevision">
+    <bdi:isTriggeredBy>
+      <bdi:Belief rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed">
+        <bdi:refersTo>
+          <bdi:WorldState rdf:about="https://w3id.org/fossr/ontology/bdi-tests/WS_ExamSchedule">
+            <rdfs:label>Examination schedule</rdfs:label>
+          </bdi:WorldState>
+        </bdi:refersTo>
+        <bdi:atTime>
+          <bdi:TimeInterval rdf:about="https://w3id.org/fossr/ontology/bdi-tests/TI_ExamResult">
+            <bdi:hasStartTime>
+              <bdi:TimeInstant rdf:about="https://w3id.org/fossr/ontology/bdi-tests/TI_Start_ExamResult">
+                <bdi:time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                >2025-01-15T10:00:00</bdi:time>
+              </bdi:TimeInstant>
+            </bdi:hasStartTime>
+            <rdfs:label>Moment of exam result notification</rdfs:label>
+          </bdi:TimeInterval>
+        </bdi:atTime>
+        <rdfs:label>I failed the Algorithms examination</rdfs:label>
+      </bdi:Belief>
+    </bdi:isTriggeredBy>
+    <bdi:generates rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed"/>
+    <bdi:reasonsUpon rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed"/>
+    <bdi:isProcessedBy>
+      <bdi:Agent rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Mark">
+        <bdi:hasMentalState>
+          <bdi:Intention rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Intention_ResitAlgorithms">
+            <bdi:fulfils>
+              <bdi:Desire rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate">
+                <rdfs:label>Obtain a Computer Science degree</rdfs:label>
+                <bdi:isMotivatedBy>
+                  <bdi:Belief rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Belief_Employment">
+                    <bdi:refersTo>
+                      <bdi:WorldState rdf:about="https://w3id.org/fossr/ontology/bdi-tests/WS_AcademicCalendar">
+                        <rdfs:label>Academic calendar 2024/2025</rdfs:label>
+                      </bdi:WorldState>
+                    </bdi:refersTo>
+                    <bdi:motivates rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"/>
+                    <bdi:atTime>
+                      <bdi:TimeInterval rdf:about="https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024">
+                        <bdi:hasStartTime>
+                          <bdi:TimeInstant rdf:about="https://w3id.org/fossr/ontology/bdi-tests/TI_Start_AY2024">
+                            <bdi:time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                            >2024-09-01T00:00:00</bdi:time>
+                          </bdi:TimeInstant>
+                        </bdi:hasStartTime>
+                        <bdi:hasEndTime>
+                          <bdi:TimeInstant rdf:about="https://w3id.org/fossr/ontology/bdi-tests/TI_End_AY2024">
+                            <bdi:time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                            >2025-07-31T00:00:00</bdi:time>
+                          </bdi:TimeInstant>
+                        </bdi:hasEndTime>
+                        <rdfs:label>Academic year 2024/2025</rdfs:label>
+                      </bdi:TimeInterval>
+                    </bdi:atTime>
+                    <rdfs:label>CS graduates find employment easily</rdfs:label>
+                  </bdi:Belief>
+                </bdi:isMotivatedBy>
+                <bdi:hasPart>
+                  <bdi:Intention rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Intention_Graduation">
+                    <bdi:fulfils rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"/>
+                    <bdi:atTime rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024"/>
+                    <rdfs:label>Attend the graduation ceremony</rdfs:label>
+                  </bdi:Intention>
+                </bdi:hasPart>
+                <bdi:atTime rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024"/>
+                <bdi:hasPart>
+                  <bdi:Belief rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Belief_GoodAtScience">
+                    <bdi:motivates rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"/>
+                    <bdi:atTime rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024"/>
+                    <rdfs:label>I am good at science</rdfs:label>
+                  </bdi:Belief>
+                </bdi:hasPart>
+                <bdi:hasPart>
+                  <bdi:Intention rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Intention_PassExams">
+                    <bdi:specifies>
+                      <bdi:Plan rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Plan_Graduate">
+                        <rdfs:label>Graduation plan</rdfs:label>
+                        <bdi:hasPart>
+                          <bdi:Plan rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Plan_AlgorithmsCourse">
+                            <bdi:addresses>
+                              <bdi:Goal rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Goal_GraduateCS">
+                                <rdfs:label>Graduate in Computer Science</rdfs:label>
+                              </bdi:Goal>
+                            </bdi:addresses>
+                            <rdfs:label>Plan for Algorithms examination</rdfs:label>
+                          </bdi:Plan>
+                        </bdi:hasPart>
+                        <bdi:addresses rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Goal_GraduateCS"/>
+                        <bdi:hasComponent>
+                          <bdi:Task rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Task_SitExam">
+                            <bdi:precedes>
+                              <bdi:Task rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Task_PayFees">
+                                <bdi:precedes>
+                                  <bdi:Task rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Task_Graduation">
+                                    <rdfs:label>Attend graduation ceremony</rdfs:label>
+                                  </bdi:Task>
+                                </bdi:precedes>
+                                <rdfs:label>Pay tuition fees</rdfs:label>
+                              </bdi:Task>
+                            </bdi:precedes>
+                            <rdfs:label>Sit the examination</rdfs:label>
+                          </bdi:Task>
+                        </bdi:hasComponent>
+                        <bdi:hasComponent>
+                          <bdi:Task rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Task_RegisterExam">
+                            <bdi:precedes rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Task_SitExam"/>
+                            <bdi:hasValidity>
+                              <bdi:TimeInterval rdf:about="https://w3id.org/fossr/ontology/bdi-tests/TI_RegisterWindow">
+                                <bdi:hasStartTime>
+                                  <bdi:TimeInstant rdf:about="https://w3id.org/fossr/ontology/bdi-tests/TI_Start_Register">
+                                    <bdi:time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                                    >2024-12-01T00:00:00</bdi:time>
+                                  </bdi:TimeInstant>
+                                </bdi:hasStartTime>
+                                <bdi:hasEndTime>
+                                  <bdi:TimeInstant rdf:about="https://w3id.org/fossr/ontology/bdi-tests/TI_End_Register">
+                                    <bdi:time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                                    >2024-12-20T00:00:00</bdi:time>
+                                  </bdi:TimeInstant>
+                                </bdi:hasEndTime>
+                                <rdfs:label>Examination registration window</rdfs:label>
+                              </bdi:TimeInterval>
+                            </bdi:hasValidity>
+                            <rdfs:label>Register for examination</rdfs:label>
+                          </bdi:Task>
+                        </bdi:hasComponent>
+                        <bdi:beginsWith>
+                          <bdi:Task rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Task_Enrol">
+                            <bdi:precedes rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Task_RegisterExam"/>
+                            <rdfs:label>Enrol in the programme</rdfs:label>
+                          </bdi:Task>
+                        </bdi:beginsWith>
+                        <bdi:hasComponent rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Task_Enrol"/>
+                        <bdi:endsWith rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Task_Graduation"/>
+                        <bdi:hasComponent rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Task_Graduation"/>
+                        <bdi:hasComponent rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Task_PayFees"/>
+                      </bdi:Plan>
+                    </bdi:specifies>
+                    <bdi:isSupportedBy rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_GoodAtScience"/>
+                    <bdi:fulfils rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"/>
+                    <bdi:atTime rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024"/>
+                    <rdfs:label>Pass all required examinations</rdfs:label>
+                  </bdi:Intention>
+                </bdi:hasPart>
+                <bdi:isMotivatedBy rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_GoodAtScience"/>
+                <bdi:isMotivatedBy>
+                  <bdi:Belief rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Belief_LogicalSkills">
+                    <bdi:motivates rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"/>
+                    <bdi:atTime rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024"/>
+                    <rdfs:label>I have strong logical reasoning abilities</rdfs:label>
+                  </bdi:Belief>
+                </bdi:isMotivatedBy>
+                <bdi:isMotivatedBy>
+                  <bdi:Belief rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Belief_LovesPC">
+                    <bdi:motivates rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"/>
+                    <bdi:atTime rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024"/>
+                    <rdfs:label>I enjoy spending long hours at a computer</rdfs:label>
+                  </bdi:Belief>
+                </bdi:isMotivatedBy>
+                <bdi:hasPart>
+                  <bdi:Intention rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Intention_WriteThesis">
+                    <bdi:fulfils rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"/>
+                    <bdi:atTime rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024"/>
+                    <rdfs:label>Write the thesis</rdfs:label>
+                  </bdi:Intention>
+                </bdi:hasPart>
+                <bdi:hasPart rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_Employment"/>
+              </bdi:Desire>
+            </bdi:fulfils>
+            <bdi:atTime rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/TI_ExamResult"/>
+            <rdfs:label>Register for the Algorithms resit</rdfs:label>
+          </bdi:Intention>
+        </bdi:hasMentalState>
+        <bdi:hasMentalState rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"/>
+        <bdi:hasMentalState rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_Employment"/>
+        <bdi:hasMentalState rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Intention_Graduation"/>
+        <bdi:cognises rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_LovesPC"/>
+        <bdi:hasMentalState rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Intention_PassExams"/>
+        <bdi:hasMentalState rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed"/>
+        <bdi:cognises rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"/>
+        <bdi:cognises rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_LogicalSkills"/>
+        <bdi:hasMentalState rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_LovesPC"/>
+        <bdi:perceives rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/WS_ExamSchedule"/>
+        <bdi:hasMentalState rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_LogicalSkills"/>
+        <bdi:hasMentalState rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_GoodAtScience"/>
+        <bdi:perceives rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/WS_AcademicCalendar"/>
+        <bdi:cognises rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Intention_PassExams"/>
+        <bdi:cognises rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Intention_WriteThesis"/>
+        <bdi:cognises rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_GoodAtScience"/>
+        <bdi:cognises rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_Employment"/>
+        <bdi:cognises rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Intention_Graduation"/>
+        <bdi:cognises rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed"/>
+        <bdi:cognises rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Intention_ResitAlgorithms"/>
+        <bdi:hasMentalState rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Intention_WriteThesis"/>
+      </bdi:Agent>
+    </bdi:isProcessedBy>
+    <bdi:atTime rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/TI_ExamResult"/>
+    <rdfs:label>Belief revision upon exam failure</rdfs:label>
+  </bdi:BeliefProcess>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/rights"/>
+  <bdi:Planning rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Planning_Graduate">
+    <bdi:reasonsUpon rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Intention_PassExams"/>
+    <bdi:isProcessedBy rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Mark"/>
+    <bdi:defines rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Plan_Graduate"/>
+    <bdi:atTime rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/TI_AY2024"/>
+    <rdfs:label>Planning process for graduation</rdfs:label>
+  </bdi:Planning>
+  <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+  <bdi:Justification rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Justification_Graduate">
+    <bdi:justifies rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"/>
+    <rdfs:label>Mark's academic background justifies the desire to graduate</rdfs:label>
+  </bdi:Justification>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+  <bdi:IntentionProcess rdf:about="https://w3id.org/fossr/ontology/bdi-tests/IP_ResitIntention">
+    <bdi:isTriggeredBy rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed"/>
+    <bdi:generates rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Intention_ResitAlgorithms"/>
+    <bdi:atTime rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/TI_ExamResult"/>
+    <rdfs:label>Intention refinement for resit</rdfs:label>
+  </bdi:IntentionProcess>
+  <bdi:Plan rdf:about="https://w3id.org/fossr/ontology/bdi-tests/Plan_ResitAlgorithms">
+    <bdi:addresses rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Goal_GraduateCS"/>
+    <rdfs:label>Revised plan including Algorithms resit</rdfs:label>
+  </bdi:Plan>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+  <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+  <bdi:DesireProcess rdf:about="https://w3id.org/fossr/ontology/bdi-tests/DP_ResitDesire">
+    <bdi:modifies rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"/>
+    <bdi:isTriggeredBy rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Belief_ExamFailed"/>
+    <bdi:reasonsUpon rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Desire_Graduate"/>
+    <bdi:isProcessedBy rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/Mark"/>
+    <bdi:atTime rdf:resource="https://w3id.org/fossr/ontology/bdi-tests/TI_ExamResult"/>
+    <rdfs:label>Desire update to resit the exam</rdfs:label>
+  </bdi:DesireProcess>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+</rdf:RDF>
