@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Maps the FOSSR ontology IRIs to local files, so that owl:imports
+     can be resolved (e.g. in Protégé) before the w3id redirects are active.
+     Keep this file in the same folder as the .ttl files. -->
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:1.0:catalog">
+    <uri id="publications" name="https://w3id.org/fossr/onto/publications" uri="publications.ttl"/>
+    <uri id="documents"    name="https://w3id.org/fossr/onto/documents"    uri="documents.ttl"/>
+    <uri id="vocabularies" name="https://w3id.org/fossr/vocab"             uri="publication-vocabularies.ttl"/>
+</catalog>

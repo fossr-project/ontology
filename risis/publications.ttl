@@ -1,488 +1,569 @@
 @prefix : <https://w3id.org/fossr/onto/publications/> .
+@prefix pub: <https://w3id.org/fossr/onto/publications/> .
 @prefix ac: <https://w3id.org/fossr/onto/academic-career/> .
+@prefix doc: <https://w3id.org/fossr/onto/documents/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @base <https://w3id.org/fossr/onto/publications/> .
 
-<https://w3id.org/fossr/onto/publications> rdf:type owl:Ontology .
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  http://www.w3.org/2004/02/skos/core#inScheme
-skos:inScheme rdf:type owl:ObjectProperty ;
-              owl:equivalentProperty :inScheme .
-
-
-###  https://w3id.org/fossr/onto/academic-career/isWrittenBy
-ac:isWrittenBy rdf:type owl:ObjectProperty ;
-               owl:inverseOf ac:wrote ;
-               rdfs:domain :Publication ;
-               rdfs:range ac:Scholar .
-
-
-###  https://w3id.org/fossr/onto/academic-career/wrote
-ac:wrote rdf:type owl:ObjectProperty ;
-         rdfs:domain ac:Scholar ;
-         rdfs:range :Publication .
-
-
-###  https://w3id.org/fossr/onto/publications/contains
-:contains rdf:type owl:ObjectProperty ;
-          rdfs:domain :Container ;
-          rdfs:range :ListItem .
-
-
-###  https://w3id.org/fossr/onto/publications/containsReferenceTo
-:containsReferenceTo rdf:type owl:ObjectProperty ;
-                     rdfs:domain :Publication ;
-                     rdfs:range :Publication .
-
-
-###  https://w3id.org/fossr/onto/publications/contributedTo
-:contributedTo rdf:type owl:ObjectProperty ;
-               owl:inverseOf :hasContributingOrganization ;
-               rdfs:domain :OrganizationProfile ;
-               rdfs:range :Publication .
-
-
-###  https://w3id.org/fossr/onto/publications/element
-:element rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/fossr/onto/publications/extractedFrom
-:extractedFrom rdf:type owl:ObjectProperty ;
-               rdfs:domain :InformationObject ;
-               rdfs:range :Datasource .
-
-
-###  https://w3id.org/fossr/onto/publications/first
-:first rdf:type owl:ObjectProperty ;
-       rdfs:subPropertyOf :contains .
-
-
-###  https://w3id.org/fossr/onto/publications/hasAffiliation
-:hasAffiliation rdf:type owl:ObjectProperty ;
-                rdfs:domain :AuthorProfile ;
-                rdfs:range :OrganizationProfile .
-
-
-###  https://w3id.org/fossr/onto/publications/hasAffiliationInPublication
-:hasAffiliationInPublication rdf:type owl:ObjectProperty ;
-                             rdfs:domain :AuthorItem ;
-                             rdfs:range :OrganizationProfile .
-
-
-###  https://w3id.org/fossr/onto/publications/hasAlias
-:hasAlias rdf:type owl:ObjectProperty ,
-                   owl:SymmetricProperty ,
-                   owl:TransitiveProperty ,
-                   owl:ReflexiveProperty ;
-          rdfs:domain :Entity ;
-          rdfs:range :Entity .
-
-
-###  https://w3id.org/fossr/onto/publications/hasAuthorList
-:hasAuthorList rdf:type owl:ObjectProperty ;
-               rdfs:domain :Publication ;
-               rdfs:range :AuthorList .
-
-
-###  https://w3id.org/fossr/onto/publications/hasAuthorProfile
-:hasAuthorProfile rdf:type owl:ObjectProperty ;
-                  owl:inverseOf :isAuthorProfileOf ;
-                  rdfs:domain ac:Scholar ;
-                  rdfs:range :AuthorProfile .
-
-
-###  https://w3id.org/fossr/onto/publications/hasContributingOrganization
-:hasContributingOrganization rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf owl:topObjectProperty ;
-                             rdfs:domain :Publication ;
-                             rdfs:range :OrganizationProfile .
-
-
-###  https://w3id.org/fossr/onto/publications/hasIdentifier
-:hasIdentifier rdf:type owl:ObjectProperty ;
-               rdfs:domain :Entity ;
-               rdfs:range :Identifier .
-
-
-###  https://w3id.org/fossr/onto/publications/hasItemContent
-:hasItemContent rdf:type owl:ObjectProperty ;
-                rdfs:domain :ListItem ;
-                rdfs:range :Entity .
-
-
-###  https://w3id.org/fossr/onto/publications/hasName
-:hasName rdf:type owl:ObjectProperty ;
-         rdfs:domain :Entity ;
-         rdfs:range :Name .
-
-
-###  https://w3id.org/fossr/onto/publications/hasOrganizationType
-:hasOrganizationType rdf:type owl:ObjectProperty ;
-                     owl:inverseOf :isOrganizationTypeOf ;
-                     rdfs:domain :OrganizationProfile ;
-                     rdfs:range :OrganizationType .
-
-
-###  https://w3id.org/fossr/onto/publications/hasParentOrganization
-:hasParentOrganization rdf:type owl:ObjectProperty ,
-                                owl:TransitiveProperty ;
-                       rdfs:domain :OrganizationProfile ;
-                       rdfs:range :OrganizationProfile .
-
-
-###  https://w3id.org/fossr/onto/publications/hasPreferredName
-:hasPreferredName rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :hasName .
-
-
-###  https://w3id.org/fossr/onto/publications/hasPublicationSourceType
-:hasPublicationSourceType rdf:type owl:ObjectProperty ;
-                          rdfs:domain :PublicationSource ;
-                          rdfs:range :PublicationSourceType .
-
-
-###  https://w3id.org/fossr/onto/publications/hasPublicationType
-:hasPublicationType rdf:type owl:ObjectProperty ;
-                    rdfs:domain :Publication ;
-                    rdfs:range :PublicationType .
-
-
-###  https://w3id.org/fossr/onto/publications/hasReferenceList
-:hasReferenceList rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Publication ;
-                  rdfs:range :ReferenceList .
-
-
-###  https://w3id.org/fossr/onto/publications/inDatasource
-:inDatasource rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/fossr/onto/publications/inScheme
-:inScheme rdf:type owl:ObjectProperty ;
-          rdfs:domain :Concept ;
-          rdfs:range :ConceptScheme .
-
-
-###  https://w3id.org/fossr/onto/publications/isAuthorProfileOf
-:isAuthorProfileOf rdf:type owl:ObjectProperty ;
-                   rdfs:domain :AuthorProfile ;
-                   rdfs:range ac:Scholar .
-
-
-###  https://w3id.org/fossr/onto/publications/isOrganizationTypeOf
-:isOrganizationTypeOf rdf:type owl:ObjectProperty ;
-                      rdfs:domain :OrganizationType ;
-                      rdfs:range :OrganizationProfile .
-
-
-###  https://w3id.org/fossr/onto/publications/isPartOf
-:isPartOf rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/fossr/onto/publications/last
-:last rdf:type owl:ObjectProperty ;
-      rdfs:subPropertyOf :contains .
-
-
-###  https://w3id.org/fossr/onto/publications/next
-:next rdf:type owl:ObjectProperty ;
-      owl:inverseOf :prev ;
-      rdfs:domain :ListItem ;
-      rdfs:range :ListItem .
-
-
-###  https://w3id.org/fossr/onto/publications/prev
-:prev rdf:type owl:ObjectProperty ;
-      rdfs:domain :ListItem ;
-      rdfs:range :ListItem .
-
-
-###  https://w3id.org/fossr/onto/publications/providedBy
-:providedBy rdf:type owl:ObjectProperty ;
-            rdfs:domain :ConceptScheme ;
-            rdfs:range :Issuer .
+<https://w3id.org/fossr/onto/publications> a owl:Ontology ;
+    rdfs:label "FOSSR Publications module"@en ;
+    rdfs:comment "Record-level module: publications, author profiles, organization profiles and venues as described by bibliographic data sources (e.g. Scopus, Web of Science). Every record states what its source says; records are linked to real-world entities (documents, scholars) through pub:describes. Controlled vocabularies (document types, source types) are in a separate file (vocabularies.ttl)."@en ;
+    owl:versionInfo "0.5 (2026-11-11), generated from publications_2026-11-10_v3.graphml" ;
+    owl:imports <https://w3id.org/fossr/vocab> .
 
 
 #################################################################
-#    Classes
+#    External terms (declarations only; no axioms on terms owned by other vocabularies)
 #################################################################
 
-###  http://www.w3.org/2004/02/skos/core#Concept
-skos:Concept rdf:type owl:Class ;
-             owl:equivalentClass :Concept ;
-             rdfs:subClassOf :Entity .
+dul:InformationObject a owl:Class .
+doc:Document a owl:Class .
+ac:Scholar a owl:Class .
+skos:Concept a owl:Class .
+skos:ConceptScheme a owl:Class .
+dul:isAbout a owl:ObjectProperty .
+skos:inScheme a owl:ObjectProperty .
+dc:title a owl:DatatypeProperty .
+dc:creator a owl:DatatypeProperty .
+dct:abstract a owl:DatatypeProperty .
+prism:pageRange a owl:DatatypeProperty .
+prism:coverDate a owl:DatatypeProperty .
+prism:coverDisplayDate a owl:DatatypeProperty .
+prism:keyword a owl:DatatypeProperty .
+prism:volume a owl:DatatypeProperty .
+prism:issueIdentifier a owl:DatatypeProperty .
+skos:notation a owl:DatatypeProperty .
+skos:prefLabel a owl:AnnotationProperty .
 
 
-###  http://www.w3.org/2004/02/skos/core#ConceptScheme
-skos:ConceptScheme rdf:type owl:Class ;
-                   owl:equivalentClass :ConceptScheme ;
-                   rdfs:subClassOf :Entity .
+#################################################################
+#    Classes: records
+#################################################################
+
+pub:Record a owl:Class ;
+    rdfs:label "Record"@en ;
+    rdfs:comment "A record describing an entity (a publication, an author, an organization, a venue) as stated by a specific data source, e.g. a Scopus or Web of Science record. Records of different sources describing the same real-world entity are linked by pub:hasAlias."@en ;
+    rdfs:subClassOf dul:InformationObject ,
+        [ a owl:Restriction ; owl:onProperty pub:extractedFrom ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass pub:Datasource ] .
+
+pub:PublicationRecord a owl:Class ;
+    rdfs:label "Publication record"@en ;
+    rdfs:comment "A record describing a publication (article, conference paper, book, chapter, ...) as stated by a data source."@en ;
+    rdfs:subClassOf pub:Record ,
+        [ a owl:Restriction ; owl:onProperty pub:hasAuthorList ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass pub:AuthorList ] ,
+        [ a owl:Restriction ; owl:onProperty pub:hasReferenceList ; owl:someValuesFrom pub:ReferenceList ] ,
+        [ a owl:Restriction ; owl:onProperty pub:publishedIn ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass pub:VenueIssue ] ,
+        [ a owl:Restriction ; owl:onProperty pub:describes ; owl:allValuesFrom doc:Document ] ,
+        [ a owl:Restriction ; owl:onProperty pub:hasAlias ; owl:allValuesFrom pub:PublicationRecord ] ,
+        [ a owl:Restriction ; owl:onProperty dc:title ; owl:someValuesFrom xsd:string ] ,
+        [ a owl:Restriction ; owl:onProperty prism:coverDate ; owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:date ] ,
+        [ a owl:Restriction ; owl:onProperty prism:coverDisplayDate ; owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:string ] ,
+        [ a owl:Restriction ; owl:onProperty prism:pageRange ; owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:string ] ,
+        [ a owl:Restriction ; owl:onProperty dc:creator ; owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:string ] .
+
+pub:AuthorProfile a owl:Class ;
+    rdfs:label "Author profile"@en ;
+    rdfs:comment "A record describing an author as profiled by a data source (e.g. a Scopus author profile, identified by its Scopus author ID)."@en ;
+    rdfs:subClassOf pub:Record ,
+        [ a owl:Restriction ; owl:onProperty pub:isAuthorProfileOf ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass ac:Scholar ] ,
+        [ a owl:Restriction ; owl:onProperty pub:hasPreferredName ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass pub:AuthorName ] ,
+        [ a owl:Restriction ; owl:onProperty pub:hasAffiliation ; owl:someValuesFrom pub:OrganizationProfile ] ,
+        [ a owl:Restriction ; owl:onProperty pub:hasAlias ; owl:allValuesFrom pub:AuthorProfile ] .
+
+pub:OrganizationProfile a owl:Class ;
+    rdfs:label "Organization profile"@en ;
+    rdfs:comment "A record describing an organization as profiled by a data source (e.g. a Scopus affiliation profile, identified by its affiliation ID)."@en ;
+    rdfs:subClassOf pub:Record ,
+        [ a owl:Restriction ; owl:onProperty pub:hasAlias ; owl:allValuesFrom pub:OrganizationProfile ] .
+
+pub:Venue a owl:Class ;
+    rdfs:label "Venue"@en ;
+    rdfs:comment "A record describing the venue in which publications appear (a journal, a book series, a conference proceedings series, a book), as described by a data source; e.g. a Scopus 'source', identified by its source-id. Holds venue-level data only: titles (a venue may have several), ISSN and eISSN (possibly more than one), the venue type. When the source assigns different venue types to records of the same venue, the most frequent one is used (ties: the most recent record)."@en ;
+    rdfs:subClassOf pub:Record ,
+        [ a owl:Restriction ; owl:onProperty pub:hasVenueType ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass pub:VenueType ] ,
+        [ a owl:Restriction ; owl:onProperty dc:title ; owl:someValuesFrom xsd:string ] ,
+        [ a owl:Restriction ; owl:onProperty pub:hasAlias ; owl:allValuesFrom pub:Venue ] .
+
+pub:VenueIssue a owl:Class ;
+    rdfs:label "Venue issue"@en ;
+    rdfs:comment "A record describing a specific issue of a venue: a journal issue or volume, a volume of a conference proceedings or book series, a book edition. Holds issue-level data: year, volume, issue number, ISBN. Built from the publication records of a data source and identified by its ISBN when available, otherwise by venue identifier + year + volume + issue number. The cover date is kept on the publication record, since in continuously published journals each article has its own date."@en ;
+    rdfs:subClassOf pub:Record ,
+        [ a owl:Restriction ; owl:onProperty pub:isIssueOf ; owl:someValuesFrom pub:Venue ] ,
+        [ a owl:Restriction ; owl:onProperty pub:hasAlias ; owl:allValuesFrom pub:VenueIssue ] .
 
 
-###  https://w3id.org/fossr/onto/academic-career/Scholar
-ac:Scholar rdf:type owl:Class ;
-           rdfs:subClassOf :Entity ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasAuthorProfile ;
-                             owl:someValuesFrom :AuthorProfile
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ac:wrote ;
-                             owl:allValuesFrom :Publication
-                           ] .
+#################################################################
+#    Classes: lists (author lists and reference lists)
+#################################################################
+
+pub:List a owl:Class ;
+    rdfs:label "List"@en ;
+    rdfs:comment "An ordered list of items."@en ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty pub:first ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass pub:ListItem ] ,
+        [ a owl:Restriction ; owl:onProperty pub:last ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass pub:ListItem ] .
+
+pub:ListItem a owl:Class ;
+    rdfs:label "List item"@en ;
+    rdfs:comment "An item of an ordered list, pointing to its content and to the previous and next items."@en ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty pub:index ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:positiveInteger ] .
+
+pub:AuthorList a owl:Class ;
+    rdfs:label "Author list"@en ;
+    rdfs:comment "The ordered list of the authors of a publication record."@en ;
+    rdfs:subClassOf pub:List ,
+        [ a owl:Restriction ; owl:onProperty pub:contains ; owl:allValuesFrom pub:AuthorItem ] .
+
+pub:AuthorItem a owl:Class ;
+    rdfs:label "Author item"@en ;
+    rdfs:comment "An author as listed in a specific publication record, with the name and affiliations stated in that record."@en ;
+    rdfs:subClassOf pub:ListItem ,
+        [ a owl:Restriction ; owl:onProperty pub:hasItemContent ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass pub:AuthorProfile ] ,
+        [ a owl:Restriction ; owl:onProperty pub:hasStatedName ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass pub:AuthorName ] ,
+        [ a owl:Restriction ; owl:onProperty pub:hasStatedAffiliation ; owl:someValuesFrom pub:OrganizationProfile ] ,
+        [ a owl:Restriction ; owl:onProperty pub:next ; owl:allValuesFrom pub:AuthorItem ] ,
+        [ a owl:Restriction ; owl:onProperty pub:prev ; owl:allValuesFrom pub:AuthorItem ] .
+
+pub:ReferenceList a owl:Class ;
+    rdfs:label "Reference list"@en ;
+    rdfs:comment "The ordered list of the references of a publication record."@en ;
+    rdfs:subClassOf pub:List ,
+        [ a owl:Restriction ; owl:onProperty pub:contains ; owl:allValuesFrom pub:ReferenceItem ] .
+
+pub:ReferenceItem a owl:Class ;
+    rdfs:label "Reference item"@en ;
+    rdfs:comment "A reference as listed in a specific publication record."@en ;
+    rdfs:subClassOf pub:ListItem ,
+        [ a owl:Restriction ; owl:onProperty pub:hasItemContent ; owl:allValuesFrom pub:PublicationRecord ] ,
+        [ a owl:Restriction ; owl:onProperty pub:next ; owl:allValuesFrom pub:ReferenceItem ] ,
+        [ a owl:Restriction ; owl:onProperty pub:prev ; owl:allValuesFrom pub:ReferenceItem ] .
 
 
-###  https://w3id.org/fossr/onto/publications/AuthorItem
-:AuthorItem rdf:type owl:Class ;
-            rdfs:subClassOf :ListItem ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty :hasAffiliationInPublication ;
-                              owl:someValuesFrom :OrganizationProfile
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty :hasItemContent ;
-                              owl:allValuesFrom :AuthorProfile
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty :next ;
-                              owl:allValuesFrom :AuthorItem
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty :prev ;
-                              owl:allValuesFrom :AuthorItem
-                            ] .
+#################################################################
+#    Classes: names, identifiers, sources, classifications
+#################################################################
+
+pub:AuthorName a owl:Class ;
+    rdfs:label "Author name"@en ;
+    rdfs:comment "The name of an author, as stated in a publication record or in an author profile."@en ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty pub:surname ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:string ] .
+
+pub:Identifier a owl:Class ;
+    rdfs:label "Identifier"@en ;
+    rdfs:comment "An identifier (e.g. a DOI, a Scopus ID, an EID, an ISSN, an ISBN, an ORCID, a Scopus affiliation ID), modelled as a concept of the identifier scheme it belongs to; its value is the skos:notation. Identifier nodes are shared by all records stating the same identifier."@en ;
+    rdfs:subClassOf skos:Concept ,
+        [ a owl:Restriction ; owl:onProperty skos:inScheme ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass skos:ConceptScheme ] ,
+        [ a owl:Restriction ; owl:onProperty skos:notation ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:string ] .
+
+pub:Datasource a owl:Class ;
+    rdfs:label "Data source"@en ;
+    rdfs:comment "A bibliographic data source from which records are extracted, e.g. Scopus or Web of Science."@en .
+
+pub:Issuer a owl:Class ;
+    rdfs:label "Issuer"@en ;
+    rdfs:comment "An agent that defines and maintains a concept scheme (a classification or an identifier scheme), e.g. Scopus, the ISSN International Centre."@en .
+
+pub:PublicationType a owl:Class ;
+    rdfs:label "Publication type"@en ;
+    rdfs:comment "A type of publication, as a concept of a classification scheme (e.g. the Scopus document types)."@en ;
+    rdfs:subClassOf skos:Concept ,
+        [ a owl:Restriction ; owl:onProperty skos:inScheme ; owl:someValuesFrom skos:ConceptScheme ] .
+
+pub:VenueType a owl:Class ;
+    rdfs:label "Venue type"@en ;
+    rdfs:comment "A type of venue, as a concept of a classification scheme (e.g. the Scopus source types)."@en ;
+    rdfs:subClassOf skos:Concept ,
+        [ a owl:Restriction ; owl:onProperty skos:inScheme ; owl:someValuesFrom skos:ConceptScheme ] .
+
+pub:OrganizationType a owl:Class ;
+    rdfs:label "Organization type"@en ;
+    rdfs:comment "A type of organization, as a concept of a classification scheme (e.g. the Scopus organization types)."@en ;
+    rdfs:subClassOf skos:Concept ,
+        [ a owl:Restriction ; owl:onProperty skos:inScheme ; owl:someValuesFrom skos:ConceptScheme ] .
 
 
-###  https://w3id.org/fossr/onto/publications/AuthorList
-:AuthorList rdf:type owl:Class ;
-            rdfs:subClassOf :List ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty :contains ;
-                              owl:allValuesFrom :AuthorItem
-                            ] .
+#################################################################
+#    Disjointness
+#################################################################
+
+[] a owl:AllDisjointClasses ; owl:members ( pub:Record pub:List pub:ListItem pub:AuthorName pub:Datasource skos:Concept ) .
+[] a owl:AllDisjointClasses ; owl:members ( pub:PublicationRecord pub:AuthorProfile pub:OrganizationProfile pub:Venue pub:VenueIssue ) .
+[] a owl:AllDisjointClasses ; owl:members ( pub:Identifier pub:PublicationType pub:VenueType pub:OrganizationType ) .
+pub:AuthorList owl:disjointWith pub:ReferenceList .
+pub:AuthorItem owl:disjointWith pub:ReferenceItem .
 
 
-###  https://w3id.org/fossr/onto/publications/AuthorProfile
-:AuthorProfile rdf:type owl:Class ;
-               rdfs:subClassOf :InformationObject ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :hasAffiliation ;
-                                 owl:someValuesFrom :OrganizationProfile
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :isAuthorProfileOf ;
-                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onClass ac:Scholar
-                               ] .
+#################################################################
+#    Object properties: records and sources
+#################################################################
+
+pub:describes a owl:ObjectProperty ;
+    rdfs:label "describes"@en ;
+    rdfs:comment "Links a source record to the real-world entity it describes (e.g. a publication record to a doc:Document, an author profile to an ac:Scholar)."@en ;
+    rdfs:subPropertyOf dul:isAbout ;
+    rdfs:domain pub:Record .
+
+pub:extractedFrom a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "extracted from"@en ;
+    rdfs:comment "Links a record to the data source it was extracted from."@en ;
+    rdfs:domain pub:Record ;
+    rdfs:range pub:Datasource .
+
+pub:hasAlias a owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty ;
+    rdfs:label "has alias"@en ;
+    rdfs:comment "Links records of different data sources (or duplicate records of the same source) that describe the same real-world entity."@en ;
+    rdfs:domain pub:Record ;
+    rdfs:range pub:Record .
+
+pub:hasIdentifier a owl:ObjectProperty ;
+    rdfs:label "has identifier"@en ;
+    rdfs:comment "Links a record to an identifier stated by its source (e.g. DOI, Scopus ID, EID, ISSN, ISBN, ORCID)."@en ;
+    rdfs:domain pub:Record ;
+    rdfs:range pub:Identifier .
 
 
-###  https://w3id.org/fossr/onto/publications/Concept
-:Concept rdf:type owl:Class ;
-         rdfs:subClassOf :Entity ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :inScheme ;
-                           owl:someValuesFrom :ConceptScheme
-                         ] .
+#################################################################
+#    Object properties: publication records
+#################################################################
+
+pub:hasPublicationType a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "has publication type"@en ;
+    rdfs:comment "Links a publication record to its publication type."@en ;
+    rdfs:domain pub:PublicationRecord ;
+    rdfs:range pub:PublicationType .
+
+pub:hasAuthorList a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty ;
+    rdfs:label "has author list"@en ;
+    rdfs:comment "Links a publication record to its ordered list of authors."@en ;
+    rdfs:domain pub:PublicationRecord ;
+    rdfs:range pub:AuthorList .
+
+pub:hasReferenceList a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty ;
+    rdfs:label "has reference list"@en ;
+    rdfs:comment "Links a publication record to its ordered list of references (when available from the source)."@en ;
+    rdfs:domain pub:PublicationRecord ;
+    rdfs:range pub:ReferenceList .
+
+pub:containsReferenceTo a owl:ObjectProperty ;
+    rdfs:label "contains reference to"@en ;
+    rdfs:comment "Links a publication record to a publication record it cites. Derived from the reference list."@en ;
+    rdfs:domain pub:PublicationRecord ;
+    rdfs:range pub:PublicationRecord ;
+    owl:propertyChainAxiom ( pub:hasReferenceList pub:contains pub:hasItemContent ) .
+
+pub:hasContributingOrganization a owl:ObjectProperty ;
+    rdfs:label "has contributing organization"@en ;
+    rdfs:comment "Links a publication record to an organization listed among the affiliations of the publication. Includes (by property chain) the affiliations stated for its authors."@en ;
+    rdfs:domain pub:PublicationRecord ;
+    rdfs:range pub:OrganizationProfile ;
+    owl:propertyChainAxiom ( pub:hasAuthorList pub:contains pub:hasStatedAffiliation ) .
+
+pub:publishedIn a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "published in"@en ;
+    rdfs:comment "Links a publication record to the venue issue in which the publication appears."@en ;
+    rdfs:domain pub:PublicationRecord ;
+    rdfs:range pub:VenueIssue .
+
+pub:hasAttributedAuthor a owl:ObjectProperty ;
+    rdfs:label "has attributed author"@en ;
+    rdfs:comment "Links a publication record to a scholar to whom the source attributes authorship, i.e. a scholar one of whose author profiles appears in the record's author list. Derived via a property chain; should be materialised at import time when no reasoner is used."@en ;
+    rdfs:domain pub:PublicationRecord ;
+    rdfs:range ac:Scholar ;
+    owl:propertyChainAxiom ( pub:hasAuthorList pub:contains pub:hasItemContent pub:isAuthorProfileOf ) .
+
+pub:hasPublicationRecord a owl:ObjectProperty ;
+    rdfs:label "has publication record"@en ;
+    rdfs:comment "Links a scholar to a publication record whose author list includes one of the scholar's author profiles (e.g. 'which Scopus records list scholar X as an author?')."@en ;
+    owl:inverseOf pub:hasAttributedAuthor ;
+    rdfs:domain ac:Scholar ;
+    rdfs:range pub:PublicationRecord .
 
 
-###  https://w3id.org/fossr/onto/publications/ConceptScheme
-:ConceptScheme rdf:type owl:Class ;
-               rdfs:subClassOf :Entity ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :providedBy ;
-                                 owl:someValuesFrom :Issuer
-                               ] .
+#################################################################
+#    Object properties: lists
+#################################################################
+
+pub:contains a owl:ObjectProperty, owl:InverseFunctionalProperty ;
+    rdfs:label "contains"@en ;
+    rdfs:comment "Links a list to one of its items."@en ;
+    rdfs:domain pub:List ;
+    rdfs:range pub:ListItem .
+
+pub:first a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty ;
+    rdfs:label "first"@en ;
+    rdfs:comment "Links a list to its first item."@en ;
+    rdfs:subPropertyOf pub:contains ;
+    rdfs:domain pub:List ;
+    rdfs:range pub:ListItem .
+
+pub:last a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty ;
+    rdfs:label "last"@en ;
+    rdfs:comment "Links a list to its last item."@en ;
+    rdfs:subPropertyOf pub:contains ;
+    rdfs:domain pub:List ;
+    rdfs:range pub:ListItem .
+
+pub:next a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty, owl:IrreflexiveProperty, owl:AsymmetricProperty ;
+    rdfs:label "next"@en ;
+    rdfs:comment "Links a list item to the following item of the same list."@en ;
+    rdfs:domain pub:ListItem ;
+    rdfs:range pub:ListItem .
+
+pub:prev a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty, owl:IrreflexiveProperty, owl:AsymmetricProperty ;
+    rdfs:label "previous"@en ;
+    rdfs:comment "Links a list item to the preceding item of the same list."@en ;
+    owl:inverseOf pub:next ;
+    rdfs:domain pub:ListItem ;
+    rdfs:range pub:ListItem .
+
+pub:hasItemContent a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "has item content"@en ;
+    rdfs:comment "Links a list item to the entity it stands for (an author profile, a cited publication record)."@en ;
+    rdfs:domain pub:ListItem .
 
 
-###  https://w3id.org/fossr/onto/publications/Container
-:Container rdf:type owl:Class ;
-           rdfs:subClassOf :Entity .
+#################################################################
+#    Object properties: authors and names
+#################################################################
+
+pub:hasStatedAffiliation a owl:ObjectProperty ;
+    rdfs:label "has stated affiliation"@en ;
+    rdfs:comment "Links an author item (an author as listed in a specific publication record) to an affiliation stated for that author in that record. An author item may have more than one."@en ;
+    rdfs:domain pub:AuthorItem ;
+    rdfs:range pub:OrganizationProfile .
+
+pub:hasName a owl:ObjectProperty ;
+    rdfs:label "has name"@en ;
+    rdfs:comment "Links an author item or an author profile to a name of the author. For author profiles, used for name variants."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( pub:AuthorItem pub:AuthorProfile ) ] ;
+    rdfs:range pub:AuthorName .
+
+pub:hasPreferredName a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "has preferred name"@en ;
+    rdfs:comment "Links an author profile to its preferred name (e.g. Scopus preferred-name)."@en ;
+    rdfs:subPropertyOf pub:hasName ;
+    rdfs:domain pub:AuthorProfile ;
+    rdfs:range pub:AuthorName .
+
+pub:hasStatedName a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "has stated name"@en ;
+    rdfs:comment "Links an author item to the name with which the author appears in that specific publication record."@en ;
+    rdfs:subPropertyOf pub:hasName ;
+    rdfs:domain pub:AuthorItem ;
+    rdfs:range pub:AuthorName .
+
+pub:isAuthorProfileOf a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "is author profile of"@en ;
+    rdfs:comment "Links an author profile to the scholar it describes."@en ;
+    rdfs:subPropertyOf pub:describes ;
+    rdfs:domain pub:AuthorProfile ;
+    rdfs:range ac:Scholar .
+
+pub:hasAuthorProfile a owl:ObjectProperty ;
+    rdfs:label "has author profile"@en ;
+    rdfs:comment "Links a scholar to one of the author profiles describing them in a data source."@en ;
+    owl:inverseOf pub:isAuthorProfileOf ;
+    rdfs:domain ac:Scholar ;
+    rdfs:range pub:AuthorProfile .
+
+pub:hasAffiliation a owl:ObjectProperty ;
+    rdfs:label "has affiliation"@en ;
+    rdfs:comment "Links an author profile to any organization listed among its affiliations by the source, whether current or past."@en ;
+    rdfs:domain pub:AuthorProfile ;
+    rdfs:range pub:OrganizationProfile .
+
+pub:hasCurrentAffiliation a owl:ObjectProperty ;
+    rdfs:label "has current affiliation"@en ;
+    rdfs:comment "Links an author profile to an organization the source lists as a current affiliation (e.g. Scopus affiliation-current). An author profile may have more than one."@en ;
+    rdfs:subPropertyOf pub:hasAffiliation ;
+    rdfs:domain pub:AuthorProfile ;
+    rdfs:range pub:OrganizationProfile .
 
 
-###  https://w3id.org/fossr/onto/publications/Datasource
-:Datasource rdf:type owl:Class ;
-            rdfs:subClassOf :Entity .
+#################################################################
+#    Object properties: organizations
+#################################################################
+
+pub:hasOrganizationType a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "has organization type"@en ;
+    rdfs:comment "Links an organization profile to its organization type."@en ;
+    rdfs:domain pub:OrganizationProfile ;
+    rdfs:range pub:OrganizationType .
+
+pub:hasParentOrganization a owl:ObjectProperty, owl:FunctionalProperty, owl:IrreflexiveProperty ;
+    rdfs:label "has parent organization"@en ;
+    rdfs:comment "Links an organization profile to its direct parent organization in the hierarchy of the source (e.g. Scopus @parent)."@en ;
+    rdfs:subPropertyOf pub:hasAncestorOrganization ;
+    rdfs:domain pub:OrganizationProfile ;
+    rdfs:range pub:OrganizationProfile .
+
+pub:hasAncestorOrganization a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:label "has ancestor organization"@en ;
+    rdfs:comment "Transitive closure of pub:hasParentOrganization: links an organization profile to any organization above it in the hierarchy."@en ;
+    rdfs:domain pub:OrganizationProfile ;
+    rdfs:range pub:OrganizationProfile .
 
 
-###  https://w3id.org/fossr/onto/publications/Entity
-:Entity rdf:type owl:Class ;
-        rdfs:subClassOf [ rdf:type owl:Restriction ;
-                          owl:onProperty :hasName ;
-                          owl:someValuesFrom :Name
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty :hasPreferredName ;
-                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onClass :Name
-                        ] .
+#################################################################
+#    Object properties: venues
+#################################################################
+
+pub:isIssueOf a owl:ObjectProperty ;
+    rdfs:label "is issue of"@en ;
+    rdfs:comment "Links a venue issue to its venue. A venue issue may be linked to more than one venue when the source has duplicate venue records for the same venue (e.g. two Scopus source-ids for the same proceedings)."@en ;
+    rdfs:domain pub:VenueIssue ;
+    rdfs:range pub:Venue .
+
+pub:hasVenueType a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "has venue type"@en ;
+    rdfs:comment "Links a venue to its venue type."@en ;
+    rdfs:domain pub:Venue ;
+    rdfs:range pub:VenueType .
 
 
-###  https://w3id.org/fossr/onto/publications/Identifier
-:Identifier rdf:type owl:Class ;
-            rdfs:subClassOf :Concept .
+#################################################################
+#    Object properties: classification schemes
+#################################################################
+
+pub:issuedBy a owl:ObjectProperty ;
+    rdfs:label "issued by"@en ;
+    rdfs:comment "Links a concept scheme (a classification or an identifier scheme) to the authority that defines and maintains it."@en ;
+    rdfs:domain skos:ConceptScheme ;
+    rdfs:range pub:Issuer .
 
 
-###  https://w3id.org/fossr/onto/publications/InformationObject
-:InformationObject rdf:type owl:Class ;
-                   rdfs:subClassOf :Entity ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :extractedFrom ;
-                                     owl:someValuesFrom :Datasource
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :hasAlias ;
-                                     owl:allValuesFrom :InformationObject
-                                   ] .
+#################################################################
+#    Object properties from the academic-career module (declared here for reference)
+#################################################################
+
+ac:wrote a owl:ObjectProperty ;
+    rdfs:label "wrote"@en ;
+    rdfs:comment "Entity-level authorship: links a scholar to a document (doc:Document) they wrote. Its domain and range are defined in the academic-career module; source records are linked to scholars through pub:hasPublicationRecord instead."@en .
+
+ac:isWrittenBy a owl:ObjectProperty ;
+    rdfs:label "is written by"@en ;
+    rdfs:comment "Inverse of ac:wrote."@en ;
+    owl:inverseOf ac:wrote .
 
 
-###  https://w3id.org/fossr/onto/publications/Issuer
-:Issuer rdf:type owl:Class ;
-        rdfs:subClassOf :Entity .
+#################################################################
+#    Datatype properties
+#################################################################
+
+pub:retrievedAt a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "retrieved at"@en ;
+    rdfs:comment "Date and time at which the record was retrieved from the data source (e.g. Scopus request-time)."@en ;
+    rdfs:domain pub:Record ;
+    rdfs:range xsd:dateTime .
+
+pub:hasURL a owl:DatatypeProperty ;
+    rdfs:label "has URL"@en ;
+    rdfs:comment "A URL of the record in the data source (e.g. Scopus record page or API URL)."@en ;
+    rdfs:domain pub:Record ;
+    rdfs:range xsd:anyURI .
+
+pub:citedByCount a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "cited-by count"@en ;
+    rdfs:comment "Number of citations of the publication according to the source, at retrieval time (see pub:retrievedAt)."@en ;
+    rdfs:domain pub:PublicationRecord ;
+    rdfs:range xsd:nonNegativeInteger .
+
+pub:articleNumber a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "article number"@en ;
+    rdfs:comment "Article number assigned by the venue (used instead of page numbers by many continuously published journals)."@en ;
+    rdfs:domain pub:PublicationRecord ;
+    rdfs:range xsd:string .
+
+pub:openAccess a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "open access"@en ;
+    rdfs:comment "Whether the source marks the publication as open access."@en ;
+    rdfs:domain pub:PublicationRecord ;
+    rdfs:range xsd:boolean .
+
+pub:authorCount a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "author count"@en ;
+    rdfs:comment "Total number of authors declared by the source; may exceed the number of items in the author list when the list is truncated."@en ;
+    rdfs:domain pub:PublicationRecord ;
+    rdfs:range xsd:nonNegativeInteger .
+
+pub:index a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "index"@en ;
+    rdfs:comment "Position of an item in its list, starting from 1."@en ;
+    rdfs:domain pub:ListItem ;
+    rdfs:range xsd:positiveInteger .
+
+pub:size a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "size"@en ;
+    rdfs:comment "Number of items in a list."@en ;
+    rdfs:domain pub:List ;
+    rdfs:range xsd:nonNegativeInteger .
+
+pub:surname a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "surname"@en ;
+    rdfs:comment "Surname of the author."@en ;
+    rdfs:domain pub:AuthorName ;
+    rdfs:range xsd:string .
+
+pub:givenName a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "given name"@en ;
+    rdfs:comment "Given name(s) of the author, possibly abbreviated."@en ;
+    rdfs:domain pub:AuthorName ;
+    rdfs:range xsd:string .
+
+pub:initials a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "initials"@en ;
+    rdfs:comment "Initials of the given name(s) of the author."@en ;
+    rdfs:domain pub:AuthorName ;
+    rdfs:range xsd:string .
+
+pub:fullName a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "full name"@en ;
+    rdfs:comment "Full name of the author as a single string (e.g. Scopus authname)."@en ;
+    rdfs:domain pub:AuthorName ;
+    rdfs:range xsd:string .
+
+pub:affName a owl:DatatypeProperty ;
+    rdfs:label "affiliation name"@en ;
+    rdfs:comment "Name of the organization as stated by the source."@en ;
+    rdfs:domain pub:OrganizationProfile ;
+    rdfs:range xsd:string .
+
+pub:affCity a owl:DatatypeProperty ;
+    rdfs:label "affiliation city"@en ;
+    rdfs:comment "City of the organization as stated by the source."@en ;
+    rdfs:domain pub:OrganizationProfile ;
+    rdfs:range xsd:string .
+
+pub:affCountry a owl:DatatypeProperty ;
+    rdfs:label "affiliation country"@en ;
+    rdfs:comment "Country of the organization as stated by the source."@en ;
+    rdfs:domain pub:OrganizationProfile ;
+    rdfs:range xsd:string .
+
+pub:year a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "year"@en ;
+    rdfs:comment "Year of a venue issue."@en ;
+    rdfs:domain pub:VenueIssue ;
+    rdfs:range xsd:gYear .
 
 
-###  https://w3id.org/fossr/onto/publications/List
-:List rdf:type owl:Class ;
-      rdfs:subClassOf :Container ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :contains ;
-                        owl:someValuesFrom :ListItem
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :first ;
-                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onClass :ListItem
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :last ;
-                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onClass :ListItem
-                      ] .
+#################################################################
+#    Axioms on academic-career terms
+#################################################################
+
+ac:Scholar rdfs:subClassOf [ a owl:Restriction ; owl:onProperty pub:hasAuthorProfile ; owl:someValuesFrom pub:AuthorProfile ] .
 
 
-###  https://w3id.org/fossr/onto/publications/ListItem
-:ListItem rdf:type owl:Class ;
-          rdfs:subClassOf :Entity ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :hasItemContent ;
-                            owl:someValuesFrom :Entity
-                          ] .
+#################################################################
+#    Restrictions on external datatype properties (no global domain/range on terms owned by other vocabularies)
+#################################################################
 
-
-###  https://w3id.org/fossr/onto/publications/Name
-:Name rdf:type owl:Class ;
-      rdfs:subClassOf :Entity ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :hasIdentifier ;
-                        owl:someValuesFrom :Identifier
-                      ] .
-
-
-###  https://w3id.org/fossr/onto/publications/OrganizationProfile
-:OrganizationProfile rdf:type owl:Class ;
-                     rdfs:subClassOf :InformationObject ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :hasOrganizationType ;
-                                       owl:someValuesFrom :OrganizationType
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :hasParentOrganization ;
-                                       owl:allValuesFrom :OrganizationProfile
-                                     ] .
-
-
-###  https://w3id.org/fossr/onto/publications/OrganizationType
-:OrganizationType rdf:type owl:Class ;
-                  rdfs:subClassOf :Concept .
-
-
-###  https://w3id.org/fossr/onto/publications/Publication
-:Publication rdf:type owl:Class ;
-             rdfs:subClassOf :InformationObject ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ac:isWrittenBy ;
-                               owl:someValuesFrom ac:Scholar
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasIdentifier ;
-                               owl:someValuesFrom :Identifier
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasPublicationType ;
-                               owl:someValuesFrom :PublicationType
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasReferenceList ;
-                               owl:someValuesFrom :ReferenceList
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :containsReferenceTo ;
-                               owl:allValuesFrom :Publication
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasContributingOrganization ;
-                               owl:allValuesFrom :OrganizationProfile
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasAuthorList ;
-                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onClass :AuthorList
-                             ] .
-
-
-###  https://w3id.org/fossr/onto/publications/PublicationSource
-:PublicationSource rdf:type owl:Class ;
-                   rdfs:subClassOf :InformationObject ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :hasPublicationSourceType ;
-                                     owl:someValuesFrom :PublicationSourceType
-                                   ] .
-
-
-###  https://w3id.org/fossr/onto/publications/PublicationSourceType
-:PublicationSourceType rdf:type owl:Class ;
-                       rdfs:subClassOf :Entity .
-
-
-###  https://w3id.org/fossr/onto/publications/PublicationType
-:PublicationType rdf:type owl:Class ;
-                 rdfs:subClassOf :Concept .
-
-
-###  https://w3id.org/fossr/onto/publications/ReferenceItem
-:ReferenceItem rdf:type owl:Class ;
-               rdfs:subClassOf :ListItem ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :hasItemContent ;
-                                 owl:allValuesFrom :Publication
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :next ;
-                                 owl:allValuesFrom :ReferenceItem
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :prev ;
-                                 owl:allValuesFrom :ReferenceItem
-                               ] .
-
-
-###  https://w3id.org/fossr/onto/publications/ReferenceList
-:ReferenceList rdf:type owl:Class ;
-               rdfs:subClassOf :List ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :contains ;
-                                 owl:allValuesFrom :ReferenceItem
-                               ] .
-
-
-###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
+pub:VenueIssue rdfs:subClassOf [ a owl:Restriction ; owl:onProperty prism:volume ; owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:string ] ,
+        [ a owl:Restriction ; owl:onProperty prism:issueIdentifier ; owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:string ] .

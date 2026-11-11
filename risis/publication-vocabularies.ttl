@@ -1,0 +1,242 @@
+@prefix pub: <https://w3id.org/fossr/onto/publications/> .
+@prefix vocab: <https://w3id.org/fossr/vocab/> .
+@prefix sdt: <https://w3id.org/fossr/vocab/scopus-document-types/> .
+@prefix sst: <https://w3id.org/fossr/vocab/scopus-source-types/> .
+@prefix src: <https://w3id.org/fossr/data/datasource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/fossr/vocab> a owl:Ontology ;
+    rdfs:label "FOSSR controlled vocabularies"@en ;
+    dc:description "SKOS concept schemes used by the FOSSR publications module: Scopus document types and Scopus source types, with Scopus as data source and issuer. Imported by the publications module (https://w3id.org/fossr/onto/publications); this file does not import the module, to avoid circular imports."@en ;
+    owl:versionInfo "0.3 (2026-11-11)" .
+
+#################################################################
+#    FOSSR controlled vocabularies (SKOS concept schemes)
+#    Used by the publications module (https://w3id.org/fossr/onto/publications/)
+#################################################################
+
+#################################################################
+#    Data sources and issuers
+#################################################################
+
+src:scopus a pub:Datasource , pub:Issuer ;
+    rdfs:label "Scopus"@en ;
+    dc:description "Bibliographic and citation database by Elsevier. Data source of publication, author and affiliation records, and issuer of the classifications it uses (e.g. document types)."@en ;
+    rdfs:seeAlso <https://www.scopus.com> .
+
+#################################################################
+#    Concept scheme: Scopus document types
+#    Values of the Scopus 'subtype' field; preferred label = 'subtypeDescription'.
+#    Label source: D = observed in Scopus records (subtype/subtypeDescription)
+#                  S = Scopus support page "How can I best use the Advanced search?"
+#                      (https://www.elsevier.support/scopus/answer/how-can-i-best-use-the-advanced-search)
+#                  ? = to be verified
+#    Descriptions are paraphrased from the Scopus content coverage documentation.
+#################################################################
+
+vocab:scopus-document-types a skos:ConceptScheme ;
+    skos:prefLabel "Scopus document types"@en ;
+    dc:description "Document types assigned by Scopus to the documents it indexes. The notation is the code of the Scopus 'subtype' field; the preferred label is the corresponding 'subtypeDescription'."@en ;
+    pub:issuedBy src:scopus ;
+    skos:hasTopConcept sdt:ab , sdt:ar , sdt:bk , sdt:bz , sdt:cb , sdt:ch ,
+                       sdt:cp , sdt:cr , sdt:dp , sdt:ed , sdt:er , sdt:le ,
+                       sdt:no , sdt:pr , sdt:re , sdt:rp , sdt:sh , sdt:tb ,
+                       sdt:undefined .
+
+sdt:ab a skos:Concept , pub:PublicationType ;    # label source: S
+    skos:notation "ab" ;
+    skos:prefLabel "Abstract Report"@en ;
+    dc:description "A document consisting of an abstract or summary of a work (for instance of a paper presented at a meeting) rather than of the full text."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:ar a skos:Concept , pub:PublicationType ;    # label source: D
+    skos:notation "ar" ;
+    skos:prefLabel "Article"@en ;
+    dc:description "Original research or opinion published in a journal, conference proceedings or book series; also includes case reports, technical notes and short communications."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:bk a skos:Concept , pub:PublicationType ;    # label source: D
+    skos:notation "bk" ;
+    skos:prefLabel "Book"@en ;
+    dc:description "A whole book (monograph or edited volume) indexed as a single item."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:bz a skos:Concept , pub:PublicationType ;    # label source: S
+    skos:notation "bz" ;
+    skos:prefLabel "Business Article"@en ;
+    dc:description "An article published in a trade journal or other business-oriented publication."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:cb a skos:Concept , pub:PublicationType ;    # label source: ?
+    skos:notation "cb" ;
+    skos:prefLabel "Conference Abstract"@en ;
+    dc:description "Code used by Scopus; its exact meaning has not been confirmed in the documentation consulted (provisionally: an abstract presented at a conference)."@en ;
+    skos:editorialNote "Label and description to be verified: the meaning of the code 'cb' was not found in the Scopus documentation consulted."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:ch a skos:Concept , pub:PublicationType ;    # label source: D
+    skos:notation "ch" ;
+    skos:prefLabel "Book Chapter"@en ;
+    dc:description "A chapter of a book or of a book series volume, identified as such in the publication."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:cp a skos:Concept , pub:PublicationType ;    # label source: D
+    skos:notation "cp" ;
+    skos:prefLabel "Conference Paper"@en ;
+    dc:description "An original paper reporting work presented at a conference or symposium; conference abstracts are excluded."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:cr a skos:Concept , pub:PublicationType ;    # label source: S
+    skos:notation "cr" ;
+    skos:prefLabel "Conference Review"@en ;
+    dc:description "An overview of a whole conference proceedings, typically describing or listing the papers it contains."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:dp a skos:Concept , pub:PublicationType ;    # label source: D
+    skos:notation "dp" ;
+    skos:prefLabel "Data Paper"@en ;
+    dc:description "A document describing a dataset (or a group of datasets) that is accessible online."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:ed a skos:Concept , pub:PublicationType ;    # label source: D
+    skos:notation "ed" ;
+    skos:prefLabel "Editorial"@en ;
+    dc:description "A text expressing the opinion of editors or summarising several articles, such as an editorial, an introduction, a preface or a foreword."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:er a skos:Concept , pub:PublicationType ;    # label source: D
+    skos:notation "er" ;
+    skos:prefLabel "Erratum"@en ;
+    dc:description "A notice reporting errors in, or corrections to, a previously published document."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:le a skos:Concept , pub:PublicationType ;    # label source: D
+    skos:notation "le" ;
+    skos:prefLabel "Letter"@en ;
+    dc:description "A letter to the editor or other correspondence, often commenting on previously published work."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:no a skos:Concept , pub:PublicationType ;    # label source: D
+    skos:notation "no" ;
+    skos:prefLabel "Note"@en ;
+    dc:description "A short item such as a discussion or commentary on a previously published article, including questions and answers."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:pr a skos:Concept , pub:PublicationType ;    # label source: S
+    skos:notation "pr" ;
+    skos:prefLabel "Press Release"@en ;
+    dc:description "A press release, i.e. an official statement issued to the media by an organization."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:re a skos:Concept , pub:PublicationType ;    # label source: D
+    skos:notation "re" ;
+    skos:prefLabel "Review"@en ;
+    dc:description "A substantial review of existing research on a topic, usually with an extensive bibliography."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:rp a skos:Concept , pub:PublicationType ;    # label source: S
+    skos:notation "rp" ;
+    skos:prefLabel "Report"@en ;
+    dc:description "A report, such as a technical or research report, indexed as a document."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:sh a skos:Concept , pub:PublicationType ;    # label source: D
+    skos:notation "sh" ;
+    skos:prefLabel "Short Survey"@en ;
+    dc:description "A short review of existing research, briefer than a review and with a smaller bibliography."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:tb a skos:Concept , pub:PublicationType ;    # label source: S
+    skos:notation "tb" ;
+    skos:prefLabel "Retracted"@en ;
+    dc:description "A document that has been withdrawn after publication by its authors or publisher, typically following a retraction notice."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+sdt:undefined a skos:Concept , pub:PublicationType ;    # label source: D
+    skos:notation "undefined" ;
+    skos:prefLabel "Undefined"@en ;
+    dc:description "Code used by Scopus when no document type is defined for the record."@en ;
+    skos:inScheme vocab:scopus-document-types ;
+    skos:topConceptOf vocab:scopus-document-types .
+
+#################################################################
+#    Concept scheme: Scopus source types
+#    Values of the Scopus 'prism:aggregationType' field, assigned to a venue (pub:hasVenueType).
+#    Local names and preferred labels follow the aggregationType values found in the records;
+#    the notation is the Scopus source-type code (SRCTYPE).
+#    Source: D  = value observed in Scopus records (prism:aggregationType)
+#            S1 = code from the Scopus support page "How can I best use the Advanced search?"
+#                 (https://www.elsevier.support/scopus/answer/how-can-i-best-use-the-advanced-search)
+#            S2 = code from the legend of the Scopus source list (D = trade journal)
+#            ?  = to be verified
+#    Descriptions are paraphrased from the Scopus content coverage documentation.
+#################################################################
+
+vocab:scopus-source-types a skos:ConceptScheme ;
+    skos:prefLabel "Scopus source types"@en ;
+    dc:description "Types of the venues (sources) indexed by Scopus. The preferred label is the value of the Scopus 'prism:aggregationType' field; the notation is the Scopus source-type code. When records of the same venue carry different values, the venue takes the most frequent one (ties: the value of the most recent record); records without a value inherit the type of their venue."@en ;
+    pub:issuedBy src:scopus ;
+    skos:hasTopConcept sst:journal , sst:book , sst:book-series , sst:conference-proceeding , sst:trade-journal , sst:report .
+
+sst:journal a skos:Concept , pub:VenueType ;    # source: D, S1
+    skos:notation "j" ;
+    skos:prefLabel "Journal"@en ;
+    dc:description "A serial publication with an ISSN that publishes peer-reviewed research in volumes and issues, regularly or continuously."@en ;
+    skos:inScheme vocab:scopus-source-types ;
+    skos:topConceptOf vocab:scopus-source-types .
+
+sst:book a skos:Concept , pub:VenueType ;    # source: D, S1
+    skos:notation "b" ;
+    skos:prefLabel "Book"@en ;
+    dc:description "A non-serial publication with an ISBN, such as a monograph, an edited volume or a one-off conference volume published as a book."@en ;
+    skos:inScheme vocab:scopus-source-types ;
+    skos:topConceptOf vocab:scopus-source-types .
+
+sst:book-series a skos:Concept , pub:VenueType ;    # source: D, S1
+    skos:notation "k" ;
+    skos:prefLabel "Book Series"@en ;
+    dc:description "A serial publication with an overall series title and an ISSN, in which each volume is a book with its own title and editors (usually with its own ISBN); volumes are often published irregularly."@en ;
+    skos:inScheme vocab:scopus-source-types ;
+    skos:topConceptOf vocab:scopus-source-types .
+
+sst:conference-proceeding a skos:Concept , pub:VenueType ;    # source: D, S1
+    skos:notation "p" ;
+    skos:prefLabel "Conference Proceeding"@en ;
+    dc:description "A publication collecting papers presented at a conference, symposium or workshop, either as a series (with an ISSN) or as a one-off volume (with an ISBN)."@en ;
+    skos:inScheme vocab:scopus-source-types ;
+    skos:topConceptOf vocab:scopus-source-types .
+
+sst:trade-journal a skos:Concept , pub:VenueType ;    # source: D, S2
+    skos:notation "d" ;
+    skos:prefLabel "Trade Journal"@en ;
+    dc:description "A serial publication addressed to a specific industry, trade or business, usually magazine-like, with articles on topical subjects and news items."@en ;
+    skos:inScheme vocab:scopus-source-types ;
+    skos:topConceptOf vocab:scopus-source-types .
+
+sst:report a skos:Concept , pub:VenueType ;    # source: ?
+    skos:prefLabel "Report"@en ;
+    dc:description "A report or report series, such as technical or research reports. Not observed in the Scopus records analysed; included for completeness."@en ;
+    skos:editorialNote "The Scopus source-type code for this type was not found in the documentation consulted, so no notation is given; the value was not observed in the records analysed."@en ;
+    skos:inScheme vocab:scopus-source-types ;
+    skos:topConceptOf vocab:scopus-source-types .
