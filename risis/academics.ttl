@@ -1,0 +1,277 @@
+@prefix : <https://w3id.org/fossr/onto/academic-career/> .
+@prefix ac: <https://w3id.org/fossr/onto/academic-career/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <https://w3id.org/fossr/onto/academic-career/> .
+
+<https://w3id.org/fossr/onto/academic-career> a owl:Ontology ;
+    rdfs:label "FOSSR Academic career module"@en ;
+    rdfs:comment "Entity-level module: scholars, their positions (service at an institution, with position type, employment type, working-time regime and disciplines), the units they belong to over time, their offices, and the organizations involved. Built on the W3C Organization Ontology (org:Membership). PARTIAL DRAFT: it contains the position, membership and academic-discipline parts; the rest of the module will be generated from the academics Graffoo diagram."@en ;
+    owl:versionInfo "0.5-draft (2026-11-19)" ;
+    owl:imports <https://w3id.org/fossr/vocab/academic-disciplines> ,
+                <https://w3id.org/fossr/vocab/academics> .
+
+
+#################################################################
+#    External terms (declarations only)
+#################################################################
+
+skos:Concept a owl:Class .
+skos:altLabel a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+org:Membership a owl:Class .
+org:Organization a owl:Class .
+org:FormalOrganization a owl:Class .
+org:Role a owl:Class .
+org:Site a owl:Class .
+org:member a owl:ObjectProperty .
+org:hasMembership a owl:ObjectProperty .
+org:organization a owl:ObjectProperty .
+org:role a owl:ObjectProperty .
+
+
+#################################################################
+#    Scholars, positions, unit memberships
+#################################################################
+
+ac:Scholar a owl:Class ;
+    rdfs:subClassOf foaf:Person ;
+    rdfs:label "scholar"@en , "studioso"@it ;
+    rdfs:comment "A person who works or has worked in research or higher education: university professors and researchers, researchers and technologists of research organizations, researchers in companies."@en .
+
+ac:firstName a owl:DatatypeProperty ;
+    rdfs:label "first name"@en , "nome"@it ;
+    rdfs:comment "Given name(s) of a scholar, as in the source (e.g. \"Francesco\")."@en ;
+    rdfs:domain ac:Scholar ;
+    rdfs:range xsd:string .
+
+ac:lastName a owl:DatatypeProperty ;
+    rdfs:label "last name"@en , "cognome"@it ;
+    rdfs:comment "Family name(s) of a scholar, as in the source (e.g. \"Poggi\")."@en ;
+    rdfs:domain ac:Scholar ;
+    rdfs:range xsd:string .
+
+ac:Position a owl:Class ;
+    rdfs:subClassOf org:Membership , ac:TimeBoundedEntity ;
+    rdfs:label "position"@en , "posizione"@it ;
+    rdfs:comment "Continuous service of a scholar (org:member) at an institution (ac:atInstitution: the legal entity, e.g. a university, CNR, a company) with a given position type (ac:hasPositionType, e.g. associate professor, CNR researcher level III) and employment type (ac:hasEmploymentType, e.g. fixed-term), during a period (ac:startDate, ac:endDate, ac:isOngoing). A new position starts when the institution, the position type or the employment type changes, or when the service is interrupted: e.g. RTDb -> associate professor at the same university, a move to another university, the stabilisation of a fixed-term researcher. Within a position, each with its own dates: the home units (ac:hasHomeUnitMembership; units of the institution only), temporary secondments (ac:hasSecondment; also at other institutions), and the working-time regime (ac:hasRegimePeriod). So a change of department or institute within the same institution, a secondment, or a switch between full time and definite time does not start a new position. Offices without employment (e.g. deputy director of a consortium, member of an association) are plain org:Membership with org:role."@en .
+
+ac:UnitMembership a owl:Class ;
+    rdfs:subClassOf org:Membership , ac:TimeBoundedEntity ;
+    rdfs:label "unit membership"@en , "appartenenza a una struttura"@it ;
+    rdfs:comment "Attachment of a position to an organizational unit (org:organization: a department, an institute, a campus) during a period (ac:startDate, ac:endDate, ac:isOngoing), optionally at a site (ac:atSite). It is reached from the position (ac:hasHomeUnitMembership or ac:hasSecondment) and has no org:member of its own: the person is the member of the position."@en .
+
+ac:hasPosition a owl:ObjectProperty ;
+    rdfs:subPropertyOf org:hasMembership ;
+    rdfs:label "has position"@en ;
+    rdfs:comment "Links a scholar to one of their positions."@en ;
+    rdfs:domain ac:Scholar ;
+    rdfs:range ac:Position .
+
+ac:atInstitution a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:subPropertyOf org:organization ;
+    rdfs:label "at institution"@en , "presso l'ente"@it ;
+    rdfs:comment "Links a position to the institution at which the scholar serves: the legally recognized organization (employer, or the body that confers a non-employment position such as a research grant), e.g. Università di Bologna, CNR. Not a department or an institute of CNR: these are units, reached through ac:hasHomeUnitMembership. One institution per position: a change of institution starts a new position. Subproperty of org:organization, so that ORG applications see the position as a membership of the institution (data without a reasoner should state org:organization too)."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range org:FormalOrganization .
+
+ac:hasPositionType a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:subPropertyOf org:role ;
+    rdfs:label "has position type"@en , "ha qualifica"@it ;
+    rdfs:comment "Links a position to its position type (qualifica / inquadramento), e.g. associate professor, RTDb, CNR primo tecnologo. One position type per position: a change (e.g. promotion) starts a new position. Subproperty of org:role: the position type is the role the scholar plays in the membership."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range ac:PositionType .
+
+ac:hasEmploymentType a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has employment type"@en , "tipo di rapporto"@it ;
+    rdfs:comment "Links a position to the type of its employment relationship, e.g. permanent (tempo indeterminato), fixed-term (tempo determinato). For some position types it is fixed by law (an RTDb is always fixed-term); for research organizations it distinguishes e.g. a fixed-term from a permanent researcher at the same level. One value per position: a change (e.g. stabilisation) starts a new position."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range ac:EmploymentType .
+
+ac:hasRegimePeriod a owl:ObjectProperty , owl:InverseFunctionalProperty ;
+    rdfs:label "has regime period"@en , "ha periodo di regime"@it ;
+    rdfs:comment "Links a position to a period with a given working-time regime (regime di impegno). A position can have several, consecutive and non-overlapping (checked in SHACL), because the regime can change without starting a new position (e.g. a professor who switches from full time to definite time). Each period belongs to exactly one position."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range ac:RegimePeriod .
+
+ac:hasRegime a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has regime"@en , "regime"@it ;
+    rdfs:comment "Links a regime period to its working-time regime, e.g. full time (tempo pieno), definite time (tempo definito), part time (tempo parziale)."@en ;
+    rdfs:domain ac:RegimePeriod ;
+    rdfs:range ac:Regime .
+
+ac:hasUnitMembership a owl:ObjectProperty , owl:InverseFunctionalProperty ;
+    rdfs:label "has unit membership"@en ;
+    rdfs:comment "Links a position to one of its dated attachments to an organizational unit. Umbrella property of ac:hasHomeUnitMembership and ac:hasSecondment; each unit membership belongs to exactly one position."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range ac:UnitMembership .
+
+ac:hasHomeUnitMembership a owl:ObjectProperty ;
+    rdfs:subPropertyOf ac:hasUnitMembership ;
+    rdfs:label "has home unit membership"@en , "afferenza / appartenenza"@it ;
+    rdfs:comment "Links a position to a period of membership in its home unit: the department of affiliation for university staff (afferenza), the institute of a research organization (appartenenza, e.g. a CNR institute; the site, e.g. Rome, with ac:atSite). Only units of the institution of the position (org:unitOf, possibly through several levels; checked in SHACL). A position can have several, consecutive and non-overlapping (checked in SHACL)."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range ac:UnitMembership .
+
+ac:hasSecondment a owl:ObjectProperty ;
+    rdfs:subPropertyOf ac:hasUnitMembership ;
+    rdfs:label "has secondment"@en , "assegnazione temporanea"@it ;
+    rdfs:comment "Links a position to a temporary secondment to another unit (assegnazione temporanea), e.g. a CNR researcher working for some months at another site of the institute, or at a unit of another institution (comando, distacco, convenzione). The secondment lies within the period of the position (checked in SHACL); when it ends, the scholar is back at the home unit."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range ac:UnitMembership .
+
+ac:atSite a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "at site"@en , "presso la sede"@it ;
+    rdfs:comment "Links a unit membership to the site where the scholar works in that period, e.g. the Cesena site of a department, the Catania site of a CNR institute. Dated through the unit membership (org:basedAt, by contrast, links a person to a site without dates)."@en ;
+    rdfs:domain ac:UnitMembership ;
+    rdfs:range org:Site .
+
+
+#################################################################
+#    Position types, employment types, working-time regimes
+#################################################################
+
+ac:PositionType a owl:Class ;
+    rdfs:subClassOf org:Role , skos:Concept ;
+    rdfs:label "position type"@en , "qualifica"@it ;
+    skos:altLabel "inquadramento"@it , "rank"@en , "job title"@en ;
+    rdfs:comment "The qualifica with which a person holds a position at an institution, e.g. professore associato, ricercatore a tempo determinato di tipo B, primo tecnologo. Instances are SKOS concepts of controlled vocabularies (one for Italian universities, one for Italian public research organizations): a concept can denote a single qualifica or a group of qualifiche (e.g. professori). It does not include the employment type (ac:EmploymentType), the working-time regime (ac:Regime), nor offices such as director (other org:Role)."@en .
+
+ac:EmploymentType a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "employment type"@en , "tipo di rapporto"@it ;
+    rdfs:comment "Type of the relationship of a position with its institution, by duration and nature: e.g. permanent (tempo indeterminato), fixed-term (tempo determinato), non-employment (e.g. research grant). Instances are SKOS concepts of a controlled vocabulary."@en .
+
+ac:Regime a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "working-time regime"@en , "regime di impegno"@it ;
+    rdfs:comment "Working-time commitment of a position: full time (tempo pieno), definite time (tempo definito: universities and research organizations), part time (tempo parziale). Instances are SKOS concepts of a controlled vocabulary."@en .
+
+ac:RegimePeriod a owl:Class ;
+    rdfs:subClassOf ac:TimeBoundedEntity ;
+    rdfs:label "regime period"@en , "periodo di regime"@it ;
+    rdfs:comment "A period (ac:startDate, ac:endDate, ac:isOngoing) of a position with a given working-time regime (ac:hasRegime). It is reached from the position with ac:hasRegimePeriod."@en .
+
+
+#################################################################
+#    Periods of memberships (positions, unit memberships, offices) and of regimes
+#################################################################
+
+ac:TimeBoundedEntity a owl:Class ;
+    rdfs:label "time-bounded entity"@en , "entità con periodo"@it ;
+    rdfs:comment "Something that holds over a period of time, described with ac:startDate, ac:endDate and ac:isOngoing, even when the dates are unknown. Asserted superclass of ac:Position, ac:UnitMembership and ac:RegimePeriod; other memberships with dates (e.g. offices, plain org:Membership) are classified as time-bounded entities through the domain of the period properties."@en .
+
+ac:startDate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "start date"@en , "data di inizio"@it ;
+    rdfs:comment "Start of a membership or of a regime period. The datatype gives the precision: xsd:gYear (\"2015\"), xsd:gYearMonth (\"2021-03\") or xsd:date (\"2021-03-01\"). No value means that the start is unknown. The range is not declared because these datatypes are not in the OWL 2 datatype map; it is checked in SHACL."@en ;
+    rdfs:domain ac:TimeBoundedEntity .
+
+ac:endDate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "end date"@en , "data di fine"@it ;
+    rdfs:comment "End of a membership or of a regime period, with the same datatypes as ac:startDate. No value means either that it is still in progress (ac:isOngoing true) or that its end is unknown (ac:isOngoing false, or not stated)."@en ;
+    rdfs:domain ac:TimeBoundedEntity .
+
+ac:isOngoing a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "is ongoing"@en , "in corso"@it ;
+    rdfs:comment "True if the membership or regime period is still in progress as of the date of the source data; false if it has ended (with or without a known ac:endDate). Not stated: unknown."@en ;
+    rdfs:domain ac:TimeBoundedEntity ;
+    rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Academic disciplines
+#################################################################
+
+ac:AcademicDiscipline a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "academic discipline"@en , "disciplina accademica"@it ;
+    rdfs:comment "A discipline, or a group of disciplines, taken from a classification of academic or research fields and used to place a position. Instances are SKOS concepts of controlled vocabularies, at any level of their hierarchy: for Italy, CUN areas, macrosettori, settori concorsuali, gruppi scientifico-disciplinari (GSD) and settori scientifico-disciplinari (SSD); possibly other classifications in the future (e.g. ERC panels). The level of a concept is given by its subclass, the edition (2015 or 2024) by its concept scheme."@en .
+
+ac:CunArea a owl:Class ;
+    rdfs:subClassOf ac:AcademicDiscipline ;
+    rdfs:label "CUN area"@en , "area CUN"@it ;
+    rdfs:comment "One of the 14 scientific areas defined by the Italian Consiglio Universitario Nazionale (CUN). Top level of the Italian classification of academic disciplines, both in the 2015 and in the 2024 system. Example: 01 Scienze matematiche e informatiche."@en .
+
+ac:MacroSector a owl:Class ;
+    rdfs:subClassOf ac:AcademicDiscipline ;
+    rdfs:label "macro-sector"@en , "macrosettore concorsuale"@it ;
+    rdfs:comment "Macrosettore concorsuale: a group of settori concorsuali within a CUN area (2015 system, D.M. 855/2015). Abolished by D.M. 639/2024. Example: 01/A Matematica."@en .
+
+ac:RecruitmentField a owl:Class ;
+    rdfs:subClassOf ac:AcademicDiscipline ;
+    rdfs:label "academic recruitment field"@en , "settore concorsuale"@it ;
+    rdfs:comment "Settore concorsuale: in the 2015 system (D.M. 855/2015), the reference unit for the national scientific qualification (ASN) and for recruitment procedures; it groups one or more SSDs within a macrosettore. Replaced by the gruppi scientifico-disciplinari (D.M. 639/2024). Example: 09/H1 Sistemi di elaborazione delle informazioni."@en .
+
+ac:ScientificDisciplinaryGroup a owl:Class ;
+    rdfs:subClassOf ac:AcademicDiscipline ;
+    rdfs:label "scientific disciplinary group"@en , "gruppo scientifico-disciplinare"@it ;
+    rdfs:comment "Gruppo scientifico-disciplinare (GSD): in the 2024 system (D.M. 639/2024), a group of SSDs within a CUN area that replaces macrosettori and settori concorsuali as the reference for the national scientific qualification, recruitment procedures and teaching duties. Example: 01/INFO-01 Informatica."@en .
+
+ac:ScientificDisciplinarySector a owl:Class ;
+    rdfs:subClassOf ac:AcademicDiscipline ;
+    rdfs:label "scientific disciplinary sector"@en , "settore scientifico-disciplinare"@it ;
+    rdfs:comment "Settore scientifico-disciplinare (SSD): the finest level of the Italian classification, in which every professor and researcher is placed. Two editions exist, each with its own subclass and concept scheme: 2015 (ac:ScientificDisciplinarySector2015) and 2024 (ac:ScientificDisciplinarySector2024)."@en .
+
+ac:ScientificDisciplinarySector2015 a owl:Class ;
+    rdfs:subClassOf ac:ScientificDisciplinarySector ;
+    rdfs:label "scientific disciplinary sector (2015)"@en , "settore scientifico-disciplinare (2015)"@it ;
+    rdfs:comment "SSD of the 2015 system: the SSDs of D.M. 4 October 2000 as amended, grouped into the settori concorsuali of D.M. 855/2015. Its instances belong to the concept scheme vocab:it-academic-disciplines-2015. Example: INF/01 Informatica."@en .
+
+ac:ScientificDisciplinarySector2024 a owl:Class ;
+    rdfs:subClassOf ac:ScientificDisciplinarySector ;
+    rdfs:label "scientific disciplinary sector (2024)"@en , "settore scientifico-disciplinare (2024)"@it ;
+    rdfs:comment "SSD of the 2024 system (D.M. 639/2024), grouped into gruppi scientifico-disciplinari. Its instances belong to the concept scheme vocab:it-academic-disciplines-2024. Example: INFO-01/A Informatica."@en .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( ac:ScientificDisciplinarySector2015 ac:ScientificDisciplinarySector2024 ) .
+
+
+#################################################################
+#    Object properties: placement of a position (disciplines)
+#################################################################
+
+ac:hasAcademicDiscipline a owl:ObjectProperty ;
+    rdfs:label "has academic discipline"@en ;
+    rdfs:comment "Links a position to a discipline in which the position is placed. General property: its subproperties express the official placement (inquadramento) of the position in the Italian classification (2015 system: settore concorsuale + SSD 2015; 2024 system: GSD + SSD 2024) and should be used whenever it applies; the general property can be used directly for any other association (e.g. a discipline from another classification). Querying this property returns all the disciplines of a position."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range ac:AcademicDiscipline .
+
+ac:hasScientificDisciplinarySector a owl:ObjectProperty ;
+    rdfs:subPropertyOf ac:hasAcademicDiscipline ;
+    rdfs:label "has scientific disciplinary sector"@en ;
+    rdfs:comment "Links a position to an SSD of its official placement (inquadramento), whatever the edition. Umbrella property: data should use its subproperties ac:hasScientificDisciplinarySector2015 and ac:hasScientificDisciplinarySector2024; this property returns the SSDs of both editions (before 2024 only the 2015 SSD; from 2024-2025 on both)."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range ac:ScientificDisciplinarySector .
+
+ac:hasScientificDisciplinarySector2015 a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:subPropertyOf ac:hasScientificDisciplinarySector ;
+    rdfs:label "has scientific disciplinary sector (2015)"@en ;
+    rdfs:comment "Links a position to its SSD in the 2015 system (concept scheme vocab:it-academic-disciplines-2015, e.g. INF/01). Together with ac:hasRecruitmentField it gives the placement of the position in the 2015 system, which the data report both before and after 2024. At most one value per position."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range ac:ScientificDisciplinarySector2015 .
+
+ac:hasScientificDisciplinarySector2024 a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:subPropertyOf ac:hasScientificDisciplinarySector ;
+    rdfs:label "has scientific disciplinary sector (2024)"@en ;
+    rdfs:comment "Links a position to its SSD in the 2024 system (concept scheme vocab:it-academic-disciplines-2024, D.M. 639/2024, e.g. INFO-01/A). Together with ac:hasScientificDisciplinaryGroup it gives the placement of the position in the 2024 system, reported in the data from 2024-2025 on. At most one value per position."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range ac:ScientificDisciplinarySector2024 .
+
+ac:hasRecruitmentField a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:subPropertyOf ac:hasAcademicDiscipline ;
+    rdfs:label "has recruitment field"@en ;
+    rdfs:comment "Links a position to the settore concorsuale of its placement in the 2015 system (D.M. 855/2015), reported in the data both before and after 2024. It must be stated explicitly because for some SSDs the settore concorsuale cannot be derived from the SSD (non-univocal correspondence); the macrosettore and the CUN area can instead be derived through skos:broader. At most one value per position."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range ac:RecruitmentField .
+
+ac:hasScientificDisciplinaryGroup a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:subPropertyOf ac:hasAcademicDiscipline ;
+    rdfs:label "has scientific disciplinary group"@en ;
+    rdfs:comment "Links a position to the gruppo scientifico-disciplinare (GSD) of its placement in the 2024 system (D.M. 639/2024), reported in the data from 2024-2025 on. At most one value per position."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range ac:ScientificDisciplinaryGroup .
