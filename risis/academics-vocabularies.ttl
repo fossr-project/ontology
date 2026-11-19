@@ -1,544 +1,224 @@
 @prefix ac: <https://w3id.org/fossr/onto/academic-career/> .
+@prefix pub: <https://w3id.org/fossr/onto/publications/> .
 @prefix vocab: <https://w3id.org/fossr/vocab/> .
-@prefix ptype-it: <https://w3id.org/fossr/vocab/it-university-position-types/> .
-@prefix ptype-epr: <https://w3id.org/fossr/vocab/it-epr-position-types/> .
-@prefix grade-it: <https://w3id.org/fossr/vocab/it-equivalent-grades/> .
-@prefix emptype: <https://w3id.org/fossr/vocab/employment-types/> .
-@prefix regime: <https://w3id.org/fossr/vocab/working-time-regimes/> .
+@prefix orgtype: <https://w3id.org/fossr/vocab/organization-types/> .
+@prefix uni-type-it: <https://w3id.org/fossr/vocab/it-university-types/> .
+@prefix issuer: <https://w3id.org/fossr/data/issuer/> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<https://w3id.org/fossr/vocab/academics> a owl:Ontology ;
-    rdfs:label "FOSSR controlled vocabularies: academic careers"@en ;
-    dc:description "SKOS vocabularies used by the FOSSR academic-career module: position types (qualifiche) of Italian universities (vocab:it-university-position-types) and of Italian public research organizations (vocab:it-epr-position-types, with the levels I-VIII as collections), the equivalence between university tiers and research organization levels (collections grade-it:fascia-1, -2, -3), employment types (vocab:employment-types, provisional) and working-time regimes (vocab:working-time-regimes). Hierarchies use skos:broader, with skos:narrower materialised as its inverse; successions between position types use dct:isReplacedBy / dct:replaces. The research organization concepts do not yet carry the source strings of the CNR staff directory as skos:hiddenLabel."@en ;
+<https://w3id.org/fossr/vocab/academics-organizations> a owl:Ontology ;
+    rdfs:label "FOSSR controlled vocabularies: organizations"@en ;
+    dc:description "SKOS vocabularies of the FOSSR academic-career module for organizations: the FOSSR organization types (vocab:organization-types: organizations such as universities, research organizations, companies, and their units such as departments and institutes) and the Italian university types of the MUR Cercauniversità service (vocab:it-university-types), mapped to orgtype:university with skos:broadMatch. Organizations are classified with org:classification. Mappings to VIVO classes use skos:closeMatch; ROR organization types, which have no IRIs, are given in skos:note."@en ;
     owl:versionInfo "0.1 (2026-11-19)" .
 
 
 #################################################################
-#    Italian universities
+#    Issuers
 #################################################################
 
-vocab:it-university-position-types a skos:ConceptScheme ;
-    skos:prefLabel "Qualifiche universitarie (Italia)"@it , "Italian university position types"@en ;
-    dc:description "Position types (qualifiche) of professors and researchers of Italian universities, including figures that can no longer be appointed (kept for historical data). Concepts follow the values of the \"Ruolo\" filter of the MUR Cercauniversità service; employment type (fixed-term / permanent) and working-time regime (tempo pieno / tempo definito) are not part of the concepts: they are recorded on the position (ac:hasEmploymentType, ac:hasRegimePeriod). The Cercauniversità strings that combine the position type with the regime are kept as skos:hiddenLabel of the corresponding concept."@en ;
-    skos:hasTopConcept ptype-it:professore , ptype-it:ricercatore .
+issuer:fossr a pub:Issuer ;
+    rdfs:label "FOSSR"@en ;
+    dc:description "FOSSR project (Fostering Open Science in Social Science Research), issuer of the vocabularies it defines."@en .
 
-ptype-it:professore a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:topConceptOf vocab:it-university-position-types ;
-    skos:prefLabel "Professore"@it , "Professor"@en ;
-    skos:definition "University professor: first-tier (prima fascia) or second-tier (seconda fascia) professor, or a historical figure assimilated to them."@en ;
-    skos:narrower ptype-it:professore-prima-fascia , ptype-it:professore-seconda-fascia , ptype-it:incaricato .
+issuer:mur a pub:Issuer ;
+    rdfs:label "Ministero dell'Università e della Ricerca"@it , "Italian Ministry of University and Research"@en ;
+    dc:description "Italian Ministry of University and Research (MUR), issuer of the classifications of its Cercauniversità service."@en ;
+    rdfs:seeAlso <https://cercauniversita.mur.gov.it> .
 
-ptype-it:professore-prima-fascia a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Professore di prima fascia"@it , "Full professor (first tier)"@en ;
-    skos:definition "First-tier professor (professore di prima fascia): ordinario, and the historical straordinario."@en ;
-    skos:broader ptype-it:professore ;
-    skos:narrower ptype-it:ordinario , ptype-it:ordinario-re , ptype-it:straordinario , ptype-it:straordinario-td .
-
-ptype-it:ordinario a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Professore ordinario"@it , "Full professor"@en ;
-    skos:hiddenLabel "Ordinario"@it ;
-    skos:broader ptype-it:professore-prima-fascia .
-
-ptype-it:ordinario-re a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Ordinario r.e."@it ;
-    skos:hiddenLabel "Ordinario r.e."@it ;
-    skos:editorialNote "Label taken from the Cercauniversità \"Ruolo\" filter; the meaning of \"r.e.\" is to be documented."@en ;
-    skos:broader ptype-it:professore-prima-fascia .
-
-ptype-it:straordinario a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Professore straordinario"@it , "Full professor (pre-confirmation)"@en ;
-    skos:hiddenLabel "Straordinario"@it ;
-    skos:historyNote "First-tier professor in the period before confirmation as ordinario, under the rules in force before L. 240/2010."@en ;
-    skos:broader ptype-it:professore-prima-fascia .
-
-ptype-it:straordinario-td a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Professore straordinario a tempo determinato"@it , "Fixed-term full professor"@en ;
-    skos:hiddenLabel "Straordinario tempo determinato"@it ;
-    skos:broader ptype-it:professore-prima-fascia .
-
-ptype-it:professore-seconda-fascia a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Professore di seconda fascia"@it , "Associate professor (second tier)"@en ;
-    skos:definition "Second-tier professor (professore di seconda fascia): professore associato."@en ;
-    skos:broader ptype-it:professore ;
-    skos:narrower ptype-it:associato , ptype-it:associato-confermato , ptype-it:associato-non-confermato , ptype-it:associato-re .
-
-ptype-it:associato a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Professore associato"@it , "Associate professor"@en ;
-    skos:hiddenLabel "Associato"@it ;
-    skos:broader ptype-it:professore-seconda-fascia .
-
-ptype-it:associato-confermato a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Professore associato confermato"@it , "Associate professor (confirmed)"@en ;
-    skos:hiddenLabel "Associato confermato"@it ;
-    skos:scopeNote "Confirmation (conferma) does not start a new position: the change from non confermato to confermato is a change within the same position."@en ;
-    skos:broader ptype-it:professore-seconda-fascia .
-
-ptype-it:associato-non-confermato a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Professore associato non confermato"@it , "Associate professor (not yet confirmed)"@en ;
-    skos:hiddenLabel "Associato non confermato"@it ;
-    skos:broader ptype-it:professore-seconda-fascia .
-
-ptype-it:associato-re a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Associato r.e."@it ;
-    skos:hiddenLabel "Associato r.e."@it ;
-    skos:editorialNote "Label taken from the Cercauniversità \"Ruolo\" filter; the meaning of \"r.e.\" is to be documented."@en ;
-    skos:broader ptype-it:professore-seconda-fascia .
-
-ptype-it:incaricato a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Professore incaricato"@it , "Appointed lecturer (incaricato)"@en ;
-    skos:hiddenLabel "Incaricato"@it ;
-    skos:historyNote "Historical figure: professore incaricato stabilizzato (L. 766/1973), no longer appointed."@en ;
-    skos:broader ptype-it:professore .
-
-ptype-it:ricercatore a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:topConceptOf vocab:it-university-position-types ;
-    skos:prefLabel "Ricercatore universitario"@it , "University researcher"@en ;
-    skos:definition "University researcher: permanent (ruolo a esaurimento) or fixed-term researcher, the historical assistente, and the pre-tenure research positions (pre-ruolo)."@en ;
-    skos:narrower ptype-it:ricercatore-tempo-indeterminato , ptype-it:ricercatore-non-confermato , ptype-it:assistente-re , ptype-it:rtd-l230-05 , ptype-it:rtda , ptype-it:rtdb , ptype-it:rtt , ptype-it:pre-ruolo .
-
-ptype-it:ricercatore-tempo-indeterminato a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Ricercatore a tempo indeterminato"@it , "Permanent researcher"@en ;
-    skos:hiddenLabel "Ricercatore"@it ;
-    skos:definition "University researcher of the permanent role (ruolo dei ricercatori universitari), confirmed."@en ;
-    skos:historyNote "No new appointments after L. 240/2010: the role is being phased out (ruolo a esaurimento)."@en ;
-    skos:broader ptype-it:ricercatore .
-
-ptype-it:ricercatore-non-confermato a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Ricercatore non confermato"@it , "Permanent researcher (not yet confirmed)"@en ;
-    skos:hiddenLabel "Ricercatore non confermato"@it ;
-    skos:broader ptype-it:ricercatore .
-
-ptype-it:assistente-re a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Assistente del ruolo a esaurimento"@it , "Assistant (role being phased out)"@en ;
-    skos:hiddenLabel "Assistente ruolo esaurimento"@it ;
-    skos:historyNote "Historical figure of the assistenti universitari, placed in a role being phased out by D.P.R. 382/1980."@en ;
-    skos:broader ptype-it:ricercatore .
-
-ptype-it:rtd-l230-05 a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Ricercatore a tempo determinato (L. 230/2005)"@it , "Fixed-term researcher (L. 230/2005)"@en ;
-    skos:hiddenLabel "Ricercatore a t.d. (art.1 comma 14 L. 230/05)"@it ;
-    skos:definition "Fixed-term researcher under art. 1, c. 14, L. 230/2005."@en ;
-    skos:broader ptype-it:ricercatore .
-
-ptype-it:rtda a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Ricercatore a tempo determinato di tipo A"@it , "Fixed-term researcher, type A (RTDa)"@en ;
-    skos:altLabel "RTDa"@it ;
-    skos:hiddenLabel "Ricercatore a t.d. - t.pieno (art. 24 c.3-a L. 240/10)"@it , "Ricercatore a t.d. - t.defin. (art. 24 c.3-a L. 240/10)"@it ;
-    skos:definition "Fixed-term researcher under art. 24, c. 3, lett. a), L. 240/2010 (previous wording)."@en ;
-    skos:historyNote "Replaced by the tenure-track researcher (RTT) introduced by D.L. 36/2022, converted by L. 79/2022."@en ;
-    skos:broader ptype-it:ricercatore ;
-    dct:isReplacedBy ptype-it:rtt .
-
-ptype-it:rtdb a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Ricercatore a tempo determinato di tipo B"@it , "Fixed-term researcher, type B (RTDb)"@en ;
-    skos:altLabel "RTDb"@it ;
-    skos:hiddenLabel "Ricercatore a t.d. - t.pieno (art. 24 c.3-b L. 240/10)"@it , "Ricercatore a t.d. - t.defin. (art. 24 c.3-b L. 240/10)"@it ;
-    skos:definition "Fixed-term researcher under art. 24, c. 3, lett. b), L. 240/2010 (previous wording)."@en ;
-    skos:historyNote "Replaced by the tenure-track researcher (RTT) introduced by D.L. 36/2022, converted by L. 79/2022."@en ;
-    skos:broader ptype-it:ricercatore ;
-    dct:isReplacedBy ptype-it:rtt .
-
-ptype-it:rtt a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Ricercatore in tenure track"@it , "Tenure-track researcher (RTT)"@en ;
-    skos:altLabel "RTT"@it ;
-    skos:hiddenLabel "Ricercatore a t.d. - t.pieno (L. 79/2022)"@it , "Ricercatore a t.d. - t.defin. (L. 79/2022)"@it ;
-    skos:definition "Fixed-term tenure-track researcher under art. 24 L. 240/2010 as amended by D.L. 36/2022, converted by L. 79/2022 (six-year contract leading to the role of associate professor)."@en ;
-    skos:broader ptype-it:ricercatore ;
-    dct:replaces ptype-it:rtda , ptype-it:rtdb .
-
-ptype-it:pre-ruolo a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Pre-ruolo"@it , "Pre-tenure research position"@en ;
-    skos:definition "Research positions before the researcher career (pre-ruolo): research contracts, research grants and post-doc or research appointments."@en ;
-    skos:broader ptype-it:ricercatore ;
-    skos:narrower ptype-it:assegno-ricerca , ptype-it:contratto-ricerca , ptype-it:incarico-post-doc , ptype-it:incarico-ricerca .
-
-ptype-it:assegno-ricerca a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Assegno di ricerca"@it , "Research grant (assegno di ricerca)"@en ;
-    skos:definition "Research grant under art. 22 L. 240/2010 (previous wording)."@en ;
-    skos:historyNote "Replaced by the research contract (contratto di ricerca) by D.L. 36/2022, converted by L. 79/2022."@en ;
-    skos:broader ptype-it:pre-ruolo ;
-    dct:isReplacedBy ptype-it:contratto-ricerca .
-
-ptype-it:contratto-ricerca a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Contratto di ricerca"@it , "Research contract"@en ;
-    skos:definition "Fixed-term employment contract for a specific research project, under art. 22 L. 240/2010 as amended by D.L. 36/2022, converted by L. 79/2022."@en ;
-    skos:broader ptype-it:pre-ruolo ;
-    dct:replaces ptype-it:assegno-ricerca .
-
-ptype-it:incarico-post-doc a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Incarico post-doc"@it , "Post-doc appointment"@en ;
-    skos:definition "Post-doc appointment under art. 22-bis L. 240/2010, introduced by D.L. 45/2025, converted by L. 79/2025."@en ;
-    skos:broader ptype-it:pre-ruolo .
-
-ptype-it:incarico-ricerca a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-university-position-types ;
-    skos:prefLabel "Incarico di ricerca"@it , "Research appointment"@en ;
-    skos:definition "Research appointment under art. 22-ter L. 240/2010, introduced by D.L. 45/2025, converted by L. 79/2025."@en ;
-    skos:broader ptype-it:pre-ruolo .
 
 #################################################################
-#    Italian public research organizations
+#    Organization types (FOSSR)
 #################################################################
 
-vocab:it-epr-position-types a skos:ConceptScheme ;
-    skos:prefLabel "Qualifiche degli enti pubblici di ricerca (Italia)"@it , "Italian public research organization position types"@en ;
-    dc:description "Position types (qualifiche) of the staff of Italian public research organizations (enti pubblici di ricerca, EPR) covered by the national collective agreement (CCNL Istruzione e Ricerca), in the arrangement of D.P.R. 171/1991 and of the CCNL in force. The hierarchy is by area and professional profile (skos:broader: a primo ricercatore is a kind of ricercatore); the leaves are the profile at a given level. Levels (I-VIII) are a separate dimension, given by the skos:Collection ptype-epr:livello-i ... ptype-epr:livello-viii. Employment type and working-time regime are recorded on the position."@en ;
-    skos:hasTopConcept ptype-epr:personale-ricerca-tecnologia , ptype-epr:personale-tecnico-amministrativo , ptype-epr:dirigente-amministrativo .
+vocab:organization-types a skos:ConceptScheme ;
+    skos:prefLabel "Tipi di organizzazione"@it , "Organization types"@en ;
+    dc:description "Types of organizations (e.g. university, research organization, company) and of their units (e.g. department, institute, laboratory), used with org:classification. Organizations are usually org:FormalOrganization, units org:OrganizationalUnit."@en ;
+    pub:issuedBy issuer:fossr ;
+    skos:hasTopConcept orgtype:university ,
+        orgtype:researchOrganization ,
+        orgtype:company ,
+        orgtype:foundation ,
+        orgtype:consortium ,
+        orgtype:association ,
+        orgtype:school ,
+        orgtype:department ,
+        orgtype:institute ,
+        orgtype:interdepartmentalCentre ,
+        orgtype:researchGroup ,
+        orgtype:laboratory .
 
-ptype-epr:personale-ricerca-tecnologia a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:topConceptOf vocab:it-epr-position-types ;
-    skos:prefLabel "Personale ricercatore e tecnologo"@it , "Researchers and technologists"@en ;
-    skos:definition "Staff with the professional profiles of ricercatore and tecnologo, on levels I to III."@en ;
-    skos:narrower ptype-epr:ricercatore , ptype-epr:tecnologo .
+orgtype:university a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:topConceptOf vocab:organization-types ;
+    skos:prefLabel "Università"@it , "University"@en ;
+    skos:definition "Institution of higher education and research that awards academic degrees."@en ;
+    skos:closeMatch vivo:University ;
+    skos:note "ROR organization type: education"@en .
 
-ptype-epr:ricercatore a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Ricercatore (profilo)"@it , "Researcher (profile)"@en ;
-    skos:definition "Professional profile of ricercatore, articulated on three levels: dirigente di ricerca (I), primo ricercatore (II), ricercatore (III)."@en ;
-    skos:broader ptype-epr:personale-ricerca-tecnologia ;
-    skos:narrower ptype-epr:dirigente-ricerca , ptype-epr:primo-ricercatore , ptype-epr:ricercatore-iii .
+orgtype:researchOrganization a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:topConceptOf vocab:organization-types ;
+    skos:prefLabel "Ente di ricerca"@it , "Research organization"@en ;
+    skos:definition "Organization whose main mission is research, e.g. a public research organization such as CNR."@en ;
+    skos:closeMatch vivo:ResearchOrganization .
 
-ptype-epr:dirigente-ricerca a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Dirigente di ricerca"@it , "Research director"@en ;
-    skos:broader ptype-epr:ricercatore .
+orgtype:company a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:topConceptOf vocab:organization-types ;
+    skos:prefLabel "Impresa"@it , "Company"@en ;
+    skos:definition "Business organization, e.g. a company with a research and development unit."@en ;
+    skos:closeMatch vivo:Company ;
+    skos:note "ROR organization type: company"@en .
 
-ptype-epr:primo-ricercatore a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Primo ricercatore"@it , "Senior researcher"@en ;
-    skos:broader ptype-epr:ricercatore .
+orgtype:foundation a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:topConceptOf vocab:organization-types ;
+    skos:prefLabel "Fondazione"@it , "Foundation"@en ;
+    skos:definition "Non-profit foundation, e.g. one that carries out or funds research."@en ;
+    skos:closeMatch vivo:Foundation ;
+    skos:note "ROR organization type: nonprofit"@en .
 
-ptype-epr:ricercatore-iii a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Ricercatore III livello"@it , "Researcher (level III)"@en ;
-    skos:broader ptype-epr:ricercatore .
+orgtype:consortium a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:topConceptOf vocab:organization-types ;
+    skos:prefLabel "Consorzio"@it , "Consortium"@en ;
+    skos:definition "Organization formed by other organizations to work together, e.g. an inter-university consortium such as CINI."@en ;
+    skos:closeMatch vivo:Consortium .
 
-ptype-epr:tecnologo a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Tecnologo (profilo)"@it , "Technologist (profile)"@en ;
-    skos:definition "Professional profile of tecnologo, articulated on three levels: dirigente tecnologo (I), primo tecnologo (II), tecnologo (III)."@en ;
-    skos:broader ptype-epr:personale-ricerca-tecnologia ;
-    skos:narrower ptype-epr:dirigente-tecnologo , ptype-epr:primo-tecnologo , ptype-epr:tecnologo-iii .
+orgtype:association a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:topConceptOf vocab:organization-types ;
+    skos:prefLabel "Associazione"@it , "Association"@en ;
+    skos:definition "Non-profit association of persons or organizations, e.g. a scientific society such as GRIN."@en ;
+    skos:closeMatch vivo:Association ;
+    skos:note "ROR organization type: nonprofit"@en .
 
-ptype-epr:dirigente-tecnologo a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Dirigente tecnologo"@it , "Technologist director"@en ;
-    skos:broader ptype-epr:tecnologo .
+orgtype:school a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:topConceptOf vocab:organization-types ;
+    skos:prefLabel "Scuola"@it , "School"@en ;
+    skos:definition "Unit of a university that coordinates teaching across departments (scuola, formerly facoltà)."@en .
 
-ptype-epr:primo-tecnologo a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Primo tecnologo"@it , "Senior technologist"@en ;
-    skos:broader ptype-epr:tecnologo .
+orgtype:department a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:topConceptOf vocab:organization-types ;
+    skos:prefLabel "Dipartimento"@it , "Department"@en ;
+    skos:definition "Unit of an organization that carries out research and, in universities, teaching."@en ;
+    skos:narrower orgtype:universityDepartment , orgtype:researchOrganizationDepartment ;
+    skos:closeMatch vivo:Department .
 
-ptype-epr:tecnologo-iii a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Tecnologo III livello"@it , "Technologist (level III)"@en ;
-    skos:broader ptype-epr:tecnologo .
+orgtype:universityDepartment a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:prefLabel "Dipartimento universitario"@it , "University department"@en ;
+    skos:definition "Department of a university."@en ;
+    skos:broader orgtype:department ;
+    skos:closeMatch vivo:AcademicDepartment .
 
-ptype-epr:personale-tecnico-amministrativo a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:topConceptOf vocab:it-epr-position-types ;
-    skos:prefLabel "Personale tecnico-amministrativo"@it , "Technical and administrative staff"@en ;
-    skos:definition "Technical and administrative staff, on levels IV to VIII."@en ;
-    skos:narrower ptype-epr:cter , ptype-epr:funzionario-amministrazione , ptype-epr:collaboratore-amministrazione , ptype-epr:operatore-tecnico , ptype-epr:operatore-amministrazione .
+orgtype:researchOrganizationDepartment a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:prefLabel "Dipartimento di un ente di ricerca"@it , "Research organization department"@en ;
+    skos:definition "Department of a research organization, e.g. a CNR department that coordinates institutes in a scientific area."@en ;
+    skos:broader orgtype:department .
 
-ptype-epr:cter a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Collaboratore tecnico enti di ricerca (profilo)"@it , "Technical collaborator (profile)"@en ;
-    skos:altLabel "CTER"@it ;
-    skos:definition "Professional profile of collaboratore tecnico enti di ricerca, on levels IV, V, VI."@en ;
-    skos:broader ptype-epr:personale-tecnico-amministrativo ;
-    skos:narrower ptype-epr:cter-iv , ptype-epr:cter-v , ptype-epr:cter-vi .
+orgtype:institute a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:topConceptOf vocab:organization-types ;
+    skos:prefLabel "Istituto"@it , "Institute"@en ;
+    skos:definition "Research unit of an organization, e.g. an institute of CNR such as ISTC-CNR."@en ;
+    skos:closeMatch vivo:Institute .
 
-ptype-epr:cter-iv a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Collaboratore tecnico enti di ricerca IV livello"@it , "Technical collaborator (level IV)"@en ;
-    skos:altLabel "CTER IV livello"@it ;
-    skos:broader ptype-epr:cter .
+orgtype:interdepartmentalCentre a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:topConceptOf vocab:organization-types ;
+    skos:prefLabel "Centro interdipartimentale"@it , "Interdepartmental centre"@en ;
+    skos:definition "Unit of a university formed by several departments on a common research or service topic."@en ;
+    skos:closeMatch vivo:Center .
 
-ptype-epr:cter-v a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Collaboratore tecnico enti di ricerca V livello"@it , "Technical collaborator (level V)"@en ;
-    skos:altLabel "CTER V livello"@it ;
-    skos:broader ptype-epr:cter .
+orgtype:researchGroup a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:topConceptOf vocab:organization-types ;
+    skos:prefLabel "Gruppo di ricerca"@it , "Research group"@en ;
+    skos:definition "Group of people who carry out research together within an organization."@en .
 
-ptype-epr:cter-vi a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Collaboratore tecnico enti di ricerca VI livello"@it , "Technical collaborator (level VI)"@en ;
-    skos:altLabel "CTER VI livello"@it ;
-    skos:broader ptype-epr:cter .
-
-ptype-epr:funzionario-amministrazione a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Funzionario di amministrazione (profilo)"@it , "Administrative officer (profile)"@en ;
-    skos:definition "Professional profile of funzionario di amministrazione, on levels IV, V."@en ;
-    skos:broader ptype-epr:personale-tecnico-amministrativo ;
-    skos:narrower ptype-epr:funzionario-amministrazione-iv , ptype-epr:funzionario-amministrazione-v .
-
-ptype-epr:funzionario-amministrazione-iv a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Funzionario di amministrazione IV livello"@it , "Administrative officer (level IV)"@en ;
-    skos:broader ptype-epr:funzionario-amministrazione .
-
-ptype-epr:funzionario-amministrazione-v a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Funzionario di amministrazione V livello"@it , "Administrative officer (level V)"@en ;
-    skos:broader ptype-epr:funzionario-amministrazione .
-
-ptype-epr:collaboratore-amministrazione a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Collaboratore di amministrazione (profilo)"@it , "Administrative collaborator (profile)"@en ;
-    skos:definition "Professional profile of collaboratore di amministrazione, on levels V, VI, VII."@en ;
-    skos:broader ptype-epr:personale-tecnico-amministrativo ;
-    skos:narrower ptype-epr:collaboratore-amministrazione-v , ptype-epr:collaboratore-amministrazione-vi , ptype-epr:collaboratore-amministrazione-vii .
-
-ptype-epr:collaboratore-amministrazione-v a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Collaboratore di amministrazione V livello"@it , "Administrative collaborator (level V)"@en ;
-    skos:broader ptype-epr:collaboratore-amministrazione .
-
-ptype-epr:collaboratore-amministrazione-vi a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Collaboratore di amministrazione VI livello"@it , "Administrative collaborator (level VI)"@en ;
-    skos:broader ptype-epr:collaboratore-amministrazione .
-
-ptype-epr:collaboratore-amministrazione-vii a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Collaboratore di amministrazione VII livello"@it , "Administrative collaborator (level VII)"@en ;
-    skos:broader ptype-epr:collaboratore-amministrazione .
-
-ptype-epr:operatore-tecnico a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Operatore tecnico (profilo)"@it , "Technical operator (profile)"@en ;
-    skos:definition "Professional profile of operatore tecnico, on levels VI, VII, VIII."@en ;
-    skos:broader ptype-epr:personale-tecnico-amministrativo ;
-    skos:narrower ptype-epr:operatore-tecnico-vi , ptype-epr:operatore-tecnico-vii , ptype-epr:operatore-tecnico-viii .
-
-ptype-epr:operatore-tecnico-vi a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Operatore tecnico VI livello"@it , "Technical operator (level VI)"@en ;
-    skos:broader ptype-epr:operatore-tecnico .
-
-ptype-epr:operatore-tecnico-vii a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Operatore tecnico VII livello"@it , "Technical operator (level VII)"@en ;
-    skos:broader ptype-epr:operatore-tecnico .
-
-ptype-epr:operatore-tecnico-viii a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Operatore tecnico VIII livello"@it , "Technical operator (level VIII)"@en ;
-    skos:broader ptype-epr:operatore-tecnico .
-
-ptype-epr:operatore-amministrazione a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Operatore di amministrazione (profilo)"@it , "Administrative operator (profile)"@en ;
-    skos:definition "Professional profile of operatore di amministrazione, on levels VII, VIII."@en ;
-    skos:broader ptype-epr:personale-tecnico-amministrativo ;
-    skos:narrower ptype-epr:operatore-amministrazione-vii , ptype-epr:operatore-amministrazione-viii .
-
-ptype-epr:operatore-amministrazione-vii a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Operatore di amministrazione VII livello"@it , "Administrative operator (level VII)"@en ;
-    skos:broader ptype-epr:operatore-amministrazione .
-
-ptype-epr:operatore-amministrazione-viii a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Operatore di amministrazione VIII livello"@it , "Administrative operator (level VIII)"@en ;
-    skos:broader ptype-epr:operatore-amministrazione .
-
-ptype-epr:dirigente-amministrativo a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:topConceptOf vocab:it-epr-position-types ;
-    skos:prefLabel "Dirigente amministrativo"@it , "Administrative executive"@en ;
-    skos:definition "Administrative executive (dirigente amministrativo) of a public research organization, of first or second tier."@en ;
-    skos:narrower ptype-epr:dirigente-prima-fascia , ptype-epr:dirigente-seconda-fascia .
-
-ptype-epr:dirigente-prima-fascia a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Dirigente amministrativo di prima fascia"@it , "First-tier administrative executive"@en ;
-    skos:notation "D1" ;
-    skos:editorialNote "Code D1 as in the CNR staff directory; to be checked against the source table."@en ;
-    skos:broader ptype-epr:dirigente-amministrativo .
-
-ptype-epr:dirigente-seconda-fascia a skos:Concept , ac:PositionType ;
-    skos:inScheme vocab:it-epr-position-types ;
-    skos:prefLabel "Dirigente amministrativo di seconda fascia"@it , "Second-tier administrative executive"@en ;
-    skos:notation "D2" ;
-    skos:editorialNote "Code D2 as in the CNR staff directory; to be checked against the source table."@en ;
-    skos:broader ptype-epr:dirigente-amministrativo .
+orgtype:laboratory a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:organization-types ;
+    skos:topConceptOf vocab:organization-types ;
+    skos:prefLabel "Laboratorio"@it , "Laboratory"@en ;
+    skos:definition "Unit with facilities for research or experimental work."@en ;
+    skos:closeMatch vivo:Laboratory .
 
 #################################################################
-#    Levels of the public research organizations (collections)
+#    Italian university types (MUR Cercauniversità)
 #################################################################
 
-ptype-epr:livello-i a skos:Collection ;
-    skos:prefLabel "Livello I"@it , "Level I"@en ;
-    skos:notation "I" ;
-    skos:definition "Position types of level I (livello professionale) of the public research organizations."@en ;
-    skos:member ptype-epr:dirigente-ricerca , ptype-epr:dirigente-tecnologo .
+vocab:it-university-types a skos:ConceptScheme ;
+    skos:prefLabel "Tipologie di ateneo (Italia)"@it , "Italian university types"@en ;
+    dc:description "Types of Italian universities in the classification of the MUR Cercauniversità service. Every concept is a narrower match of orgtype:university (skos:broadMatch). The Cercauniversità strings are kept as skos:hiddenLabel."@en ;
+    pub:issuedBy issuer:mur ;
+    skos:hasTopConcept uni-type-it:stateUniversity ,
+        uni-type-it:nonStateUniversity ,
+        uni-type-it:telematicUniversity ,
+        uni-type-it:foreignersUniversity ,
+        uni-type-it:excellenceInstitute ,
+        uni-type-it:superiorSchool ,
+        uni-type-it:advancedDoctoralInstitute .
 
-ptype-epr:livello-ii a skos:Collection ;
-    skos:prefLabel "Livello II"@it , "Level II"@en ;
-    skos:notation "II" ;
-    skos:definition "Position types of level II (livello professionale) of the public research organizations."@en ;
-    skos:member ptype-epr:primo-ricercatore , ptype-epr:primo-tecnologo .
+uni-type-it:stateUniversity a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:it-university-types ;
+    skos:topConceptOf vocab:it-university-types ;
+    skos:prefLabel "Ateneo statale"@it , "State university"@en ;
+    skos:hiddenLabel "Ateneo Statale"@it ;
+    skos:definition "State university."@en ;
+    skos:broadMatch orgtype:university .
 
-ptype-epr:livello-iii a skos:Collection ;
-    skos:prefLabel "Livello III"@it , "Level III"@en ;
-    skos:notation "III" ;
-    skos:definition "Position types of level III (livello professionale) of the public research organizations."@en ;
-    skos:member ptype-epr:ricercatore-iii , ptype-epr:tecnologo-iii .
+uni-type-it:nonStateUniversity a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:it-university-types ;
+    skos:topConceptOf vocab:it-university-types ;
+    skos:prefLabel "Ateneo non statale"@it , "Non-state university"@en ;
+    skos:hiddenLabel "Ateneo Non Statale"@it ;
+    skos:definition "Non-state university legally recognized by the State (università non statale legalmente riconosciuta)."@en ;
+    skos:broadMatch orgtype:university .
 
-ptype-epr:livello-iv a skos:Collection ;
-    skos:prefLabel "Livello IV"@it , "Level IV"@en ;
-    skos:notation "IV" ;
-    skos:definition "Position types of level IV (livello professionale) of the public research organizations."@en ;
-    skos:member ptype-epr:cter-iv , ptype-epr:funzionario-amministrazione-iv .
+uni-type-it:telematicUniversity a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:it-university-types ;
+    skos:topConceptOf vocab:it-university-types ;
+    skos:prefLabel "Ateneo telematico"@it , "Online university"@en ;
+    skos:hiddenLabel "Ateneo Telematico"@it ;
+    skos:definition "Non-state university that delivers its courses online (università telematica)."@en ;
+    skos:broadMatch orgtype:university .
 
-ptype-epr:livello-v a skos:Collection ;
-    skos:prefLabel "Livello V"@it , "Level V"@en ;
-    skos:notation "V" ;
-    skos:definition "Position types of level V (livello professionale) of the public research organizations."@en ;
-    skos:member ptype-epr:cter-v , ptype-epr:funzionario-amministrazione-v , ptype-epr:collaboratore-amministrazione-v .
+uni-type-it:foreignersUniversity a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:it-university-types ;
+    skos:topConceptOf vocab:it-university-types ;
+    skos:prefLabel "Università per stranieri"@it , "University for foreigners"@en ;
+    skos:hiddenLabel "Università per Stranieri"@it ;
+    skos:definition "University devoted in particular to the teaching and spread of Italian language and culture to foreign students."@en ;
+    skos:broadMatch orgtype:university .
 
-ptype-epr:livello-vi a skos:Collection ;
-    skos:prefLabel "Livello VI"@it , "Level VI"@en ;
-    skos:notation "VI" ;
-    skos:definition "Position types of level VI (livello professionale) of the public research organizations."@en ;
-    skos:member ptype-epr:cter-vi , ptype-epr:collaboratore-amministrazione-vi , ptype-epr:operatore-tecnico-vi .
+uni-type-it:excellenceInstitute a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:it-university-types ;
+    skos:topConceptOf vocab:it-university-types ;
+    skos:prefLabel "Istituto speciale"@it , "Special institute"@en ;
+    skos:hiddenLabel "Istituto Speciale"@it ;
+    skos:editorialNote "Category of the Cercauniversità classification; definition and list of the institutions to be documented from the MUR sources."@en ;
+    skos:broadMatch orgtype:university .
 
-ptype-epr:livello-vii a skos:Collection ;
-    skos:prefLabel "Livello VII"@it , "Level VII"@en ;
-    skos:notation "VII" ;
-    skos:definition "Position types of level VII (livello professionale) of the public research organizations."@en ;
-    skos:member ptype-epr:collaboratore-amministrazione-vii , ptype-epr:operatore-tecnico-vii , ptype-epr:operatore-amministrazione-vii .
+uni-type-it:superiorSchool a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:it-university-types ;
+    skos:topConceptOf vocab:it-university-types ;
+    skos:prefLabel "Scuola superiore"@it , "Superior school"@en ;
+    skos:hiddenLabel "Scuola Superiore"@it ;
+    skos:editorialNote "Category of the Cercauniversità classification; definition and list of the institutions to be documented from the MUR sources."@en ;
+    skos:broadMatch orgtype:university .
 
-ptype-epr:livello-viii a skos:Collection ;
-    skos:prefLabel "Livello VIII"@it , "Level VIII"@en ;
-    skos:notation "VIII" ;
-    skos:definition "Position types of level VIII (livello professionale) of the public research organizations."@en ;
-    skos:member ptype-epr:operatore-tecnico-viii , ptype-epr:operatore-amministrazione-viii .
-
-#################################################################
-#    Equivalent tiers between universities and research organizations (collections)
-#################################################################
-
-grade-it:fascia-1 a skos:Collection ;
-    skos:prefLabel "Prima fascia (posizioni equiparate)"@it , "First tier (equivalent positions)"@en ;
-    skos:definition "University and public research organization position types considered equivalent for the mobility between universities and research organizations: first-tier professors and level I researchers and technologists."@en ;
-    skos:scopeNote "Members can be groups (concepts with narrower concepts) or collections: to get all the position types, follow skos:member+ and then skos:narrower*."@en ;
-    dct:source <https://www.mur.gov.it/sites/default/files/2022-06/DM%20n.%20367%20del%2029-04-2022.pdf> ;
-    skos:member ptype-it:professore-prima-fascia , ptype-epr:livello-i .
-
-grade-it:fascia-2 a skos:Collection ;
-    skos:prefLabel "Seconda fascia (posizioni equiparate)"@it , "Second tier (equivalent positions)"@en ;
-    skos:definition "University and public research organization position types considered equivalent for the mobility between universities and research organizations: second-tier professors and level II researchers and technologists."@en ;
-    skos:scopeNote "Members can be groups (concepts with narrower concepts) or collections: to get all the position types, follow skos:member+ and then skos:narrower*."@en ;
-    dct:source <https://www.mur.gov.it/sites/default/files/2022-06/DM%20n.%20367%20del%2029-04-2022.pdf> ;
-    skos:member ptype-it:professore-seconda-fascia , ptype-epr:livello-ii .
-
-grade-it:fascia-3 a skos:Collection ;
-    skos:prefLabel "Terza fascia (posizioni equiparate)"@it , "Third tier (equivalent positions)"@en ;
-    skos:definition "University researchers (permanent and fixed-term) and level III researchers and technologists of the public research organizations."@en ;
-    skos:scopeNote "Conventional equivalence, used in practice (e.g. 'qualifica pari o superiore al III livello/fascia' in calls), not established by a norm. Pre-tenure positions (pre-ruolo) and the historical assistente are not included."@en ;
-    skos:member ptype-it:ricercatore-tempo-indeterminato , ptype-it:ricercatore-non-confermato , ptype-it:rtd-l230-05 , ptype-it:rtda , ptype-it:rtdb , ptype-it:rtt , ptype-epr:livello-iii .
-
-#################################################################
-#    Employment types (provisional)
-#################################################################
-
-vocab:employment-types a skos:ConceptScheme ;
-    skos:prefLabel "Tipi di rapporto"@it , "Employment types"@en ;
-    dc:description "Types of the relationship between a scholar and the institution of a position, by nature (employment or not) and duration. PROVISIONAL: to be checked against the values of the sources (e.g. the \"rapporto\" field of the CNR staff directory)."@en ;
-    skos:hasTopConcept emptype:employment , emptype:non-employment .
-
-emptype:employment a skos:Concept , ac:EmploymentType ;
-    skos:inScheme vocab:employment-types ;
-    skos:topConceptOf vocab:employment-types ;
-    skos:prefLabel "Rapporto di lavoro subordinato"@it , "Employment"@en ;
-    skos:definition "Subordinate service relationship with the institution: employment contract, or public-law service relationship of tenured professors and researchers."@en ;
-    skos:narrower emptype:permanent , emptype:fixed-term .
-
-emptype:permanent a skos:Concept , ac:EmploymentType ;
-    skos:inScheme vocab:employment-types ;
-    skos:prefLabel "Tempo indeterminato"@it , "Permanent"@en ;
-    skos:altLabel "Di ruolo"@it ;
-    skos:broader emptype:employment .
-
-emptype:fixed-term a skos:Concept , ac:EmploymentType ;
-    skos:inScheme vocab:employment-types ;
-    skos:prefLabel "Tempo determinato"@it , "Fixed-term"@en ;
-    skos:broader emptype:employment .
-
-emptype:non-employment a skos:Concept , ac:EmploymentType ;
-    skos:inScheme vocab:employment-types ;
-    skos:topConceptOf vocab:employment-types ;
-    skos:prefLabel "Rapporto non subordinato"@it , "Non-employment relationship"@en ;
-    skos:definition "Relationship with the institution that is not subordinate employment."@en ;
-    skos:narrower emptype:research-grant , emptype:collaboration .
-
-emptype:research-grant a skos:Concept , ac:EmploymentType ;
-    skos:inScheme vocab:employment-types ;
-    skos:prefLabel "Assegno o borsa di ricerca"@it , "Research grant or fellowship"@en ;
-    skos:broader emptype:non-employment .
-
-emptype:collaboration a skos:Concept , ac:EmploymentType ;
-    skos:inScheme vocab:employment-types ;
-    skos:prefLabel "Collaborazione o incarico autonomo"@it , "Self-employed collaboration"@en ;
-    skos:definition "Self-employed collaboration or professional appointment (e.g. co.co.co., incarico professionale)."@en ;
-    skos:broader emptype:non-employment .
-
-#################################################################
-#    Working-time regimes
-#################################################################
-
-vocab:working-time-regimes a skos:ConceptScheme ;
-    skos:prefLabel "Regimi di impegno"@it , "Working-time regimes"@en ;
-    dc:description "Working-time commitment of a position (regime di impegno), recorded on regime periods of the position (ac:hasRegimePeriod, ac:hasRegime)."@en ;
-    skos:hasTopConcept regime:full-time , regime:definite-time , regime:part-time .
-
-regime:full-time a skos:Concept , ac:Regime ;
-    skos:inScheme vocab:working-time-regimes ;
-    skos:topConceptOf vocab:working-time-regimes ;
-    skos:prefLabel "Tempo pieno"@it , "Full time"@en .
-
-regime:definite-time a skos:Concept , ac:Regime ;
-    skos:inScheme vocab:working-time-regimes ;
-    skos:topConceptOf vocab:working-time-regimes ;
-    skos:prefLabel "Tempo definito"@it , "Definite time"@en ;
-    skos:definition "Reduced commitment regime of university professors and researchers (tempo definito); it also exists for the staff of public research organizations."@en .
-
-regime:part-time a skos:Concept , ac:Regime ;
-    skos:inScheme vocab:working-time-regimes ;
-    skos:topConceptOf vocab:working-time-regimes ;
-    skos:prefLabel "Tempo parziale"@it , "Part time"@en ;
-    skos:definition "Part-time employment (tempo parziale), with a percentage of the full time."@en .
+uni-type-it:advancedDoctoralInstitute a skos:Concept , ac:OrganizationType ;
+    skos:inScheme vocab:it-university-types ;
+    skos:topConceptOf vocab:it-university-types ;
+    skos:prefLabel "Istituto di alta formazione dottorale"@it , "Advanced doctoral institute"@en ;
+    skos:hiddenLabel "Istituto di Alta Formazione Dottorale"@it ;
+    skos:editorialNote "Category of the Cercauniversità classification; definition and list of the institutions to be documented from the MUR sources."@en ;
+    skos:broadMatch orgtype:university .

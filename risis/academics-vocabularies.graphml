@@ -80,7 +80,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n301">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="44.0" width="192.8" x="1703.6" y="-202"/>
+          <y:Geometry height="44.0" width="192.8" x="1703.6" y="-98"/>
           <y:Fill color="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="172.8" x="10.0" xml:space="preserve" y="9.103978157043457">skos:ConceptScheme</y:NodeLabel>
@@ -91,7 +91,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n302">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="44.0" width="201.4" x="2579.3" y="8"/>
+          <y:Geometry height="44.0" width="201.4" x="2579.3" y="112"/>
           <y:Fill color="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="181.4" x="10.0" xml:space="preserve" y="9.103978157043457">ac:OrganizationType</y:NodeLabel>
@@ -102,7 +102,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n303">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="44.0" width="141.2" x="2649.4" y="-162"/>
+          <y:Geometry height="44.0" width="141.2" x="2649.4" y="-58"/>
           <y:Fill color="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="121.19999999999999" x="10.0" xml:space="preserve" y="9.103978157043457">skos:Concept</y:NodeLabel>
@@ -113,7 +113,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n310">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="20.0" width="20.0" x="1790" y="20"/>
+          <y:Geometry height="20.0" width="20.0" x="1790" y="124"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="214.4" x="-218.4" xml:space="preserve" y="-3.0">vocab:organization-types</y:NodeLabel>
@@ -124,7 +124,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n311">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="20.0" width="20.0" x="1790" y="280"/>
+          <y:Geometry height="20.0" width="20.0" x="1790" y="384"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="111.2" x="-115.2" xml:space="preserve" y="-3.0">issuer:fossr</y:NodeLabel>
@@ -135,7 +135,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n304">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="44.0" width="124.0" x="1738.0" y="408"/>
+          <y:Geometry height="44.0" width="124.0" x="1738.0" y="512"/>
           <y:Fill color="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="104.0" x="10.0" xml:space="preserve" y="9.103978157043457">pub:Issuer</y:NodeLabel>
@@ -193,7 +193,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
           <y:Geometry height="20.0" width="20.0" x="2240" y="-32"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="128.4" x="-54.2" xml:space="preserve" y="-27.8">orgtype:school</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="162.8" x="-71.4" xml:space="preserve" y="-27.8">orgtype:consortium</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
       </data>
@@ -204,7 +204,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
           <y:Geometry height="20.0" width="20.0" x="2240" y="20"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="162.8" x="-71.4" xml:space="preserve" y="-27.8">orgtype:department</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="171.4" x="-75.7" xml:space="preserve" y="-27.8">orgtype:association</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
       </data>
@@ -215,7 +215,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
           <y:Geometry height="20.0" width="20.0" x="2240" y="72"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="248.8" x="-114.4" xml:space="preserve" y="-27.8">orgtype:universityDepartment</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="128.4" x="-54.2" xml:space="preserve" y="-27.8">orgtype:school</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
       </data>
@@ -226,7 +226,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
           <y:Geometry height="20.0" width="20.0" x="2240" y="124"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="334.8" x="-157.4" xml:space="preserve" y="-27.8">orgtype:researchOrganizationDepartment</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="162.8" x="-71.4" xml:space="preserve" y="-27.8">orgtype:department</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
       </data>
@@ -237,7 +237,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
           <y:Geometry height="20.0" width="20.0" x="2240" y="176"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="154.2" x="-67.1" xml:space="preserve" y="-27.8">orgtype:institute</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="248.8" x="-114.4" xml:space="preserve" y="-27.8">orgtype:universityDepartment</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
       </data>
@@ -248,7 +248,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
           <y:Geometry height="20.0" width="20.0" x="2240" y="228"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="274.6" x="-127.30000000000001" xml:space="preserve" y="-27.8">orgtype:interdepartmentalCentre</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="334.8" x="-157.4" xml:space="preserve" y="-27.8">orgtype:researchOrganizationDepartment</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
       </data>
@@ -259,7 +259,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
           <y:Geometry height="20.0" width="20.0" x="2240" y="280"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="188.6" x="-84.3" xml:space="preserve" y="-27.8">orgtype:researchGroup</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="154.2" x="-67.1" xml:space="preserve" y="-27.8">orgtype:institute</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
       </data>
@@ -268,6 +268,28 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="20.0" width="20.0" x="2240" y="332"/>
+          <y:Fill color="#FF99CC" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="3.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="274.6" x="-127.30000000000001" xml:space="preserve" y="-27.8">orgtype:interdepartmentalCentre</y:NodeLabel>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n332">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="20.0" width="20.0" x="2240" y="384"/>
+          <y:Fill color="#FF99CC" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="3.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="188.6" x="-84.3" xml:space="preserve" y="-27.8">orgtype:researchGroup</y:NodeLabel>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n333">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="20.0" width="20.0" x="2240" y="436"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="162.8" x="-71.4" xml:space="preserve" y="-27.8">orgtype:laboratory</y:NodeLabel>
@@ -435,7 +457,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="centered" modelPosition="center" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="119.8" x="-284.9" xml:space="preserve" y="-26.9">skos:inScheme<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -446,7 +468,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="centered" modelPosition="center" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="76.8" x="136.6" xml:space="preserve" y="-26.9">rdf:type<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -479,7 +501,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          
+          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="centered" modelPosition="center" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="119.8" x="-284.9" xml:space="preserve" y="-26.9">skos:inScheme<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -490,7 +512,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          
+          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="centered" modelPosition="center" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="76.8" x="136.6" xml:space="preserve" y="-26.9">rdf:type<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -583,12 +605,56 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e229" source="n326" target="n325">
+    <edge id="e229" source="n332" target="n310">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e230" source="n332" target="n302">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e231" source="n333" target="n310">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e232" source="n333" target="n302">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e233" source="n328" target="n327">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="2180" y="82"/>
-            <y:Point x="2180" y="30"/>
+            <y:Point x="2180" y="186"/>
+            <y:Point x="2180" y="134"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
@@ -597,12 +663,12 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e230" source="n327" target="n325">
+    <edge id="e234" source="n329" target="n327">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="2152" y="238"/>
             <y:Point x="2152" y="134"/>
-            <y:Point x="2152" y="30"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
@@ -633,7 +699,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:ShapeNode>
       </data>
     </node>
-    <edge id="e231" source="n320" target="n360">
+    <edge id="e235" source="n320" target="n360">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -644,7 +710,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e232" source="n320" target="n361">
+    <edge id="e236" source="n320" target="n361">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -658,7 +724,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n410">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="20.0" width="20.0" x="1790" y="796"/>
+          <y:Geometry height="20.0" width="20.0" x="1790" y="900"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="223.0" x="-227.0" xml:space="preserve" y="-3.0">vocab:it-university-types</y:NodeLabel>
@@ -669,7 +735,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n401">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="44.0" width="192.8" x="1703.6" y="614"/>
+          <y:Geometry height="44.0" width="192.8" x="1703.6" y="718"/>
           <y:Fill color="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="172.8" x="10.0" xml:space="preserve" y="9.103978157043457">skos:ConceptScheme</y:NodeLabel>
@@ -680,7 +746,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n411">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="20.0" width="20.0" x="1790" y="996"/>
+          <y:Geometry height="20.0" width="20.0" x="1790" y="1100"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="94.0" x="-98.0" xml:space="preserve" y="-3.0">issuer:mur</y:NodeLabel>
@@ -691,7 +757,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n404">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="44.0" width="124.0" x="1738.0" y="1114"/>
+          <y:Geometry height="44.0" width="124.0" x="1738.0" y="1218"/>
           <y:Fill color="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="104.0" x="10.0" xml:space="preserve" y="9.103978157043457">pub:Issuer</y:NodeLabel>
@@ -702,7 +768,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n402">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="44.0" width="201.4" x="2579.3" y="904"/>
+          <y:Geometry height="44.0" width="201.4" x="2579.3" y="1008"/>
           <y:Fill color="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="181.4" x="10.0" xml:space="preserve" y="9.103978157043457">ac:OrganizationType</y:NodeLabel>
@@ -713,7 +779,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n403">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="20.0" width="20.0" x="2670" y="626"/>
+          <y:Geometry height="20.0" width="20.0" x="2670" y="730"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="e" textColor="#000000" verticalTextPosition="bottom" visible="true" width="162.8" x="24.0" xml:space="preserve" y="-3.0">orgtype:university</y:NodeLabel>
@@ -724,7 +790,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n420">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="20.0" width="20.0" x="2240" y="640"/>
+          <y:Geometry height="20.0" width="20.0" x="2240" y="744"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="240.2" x="-110.1" xml:space="preserve" y="-27.8">uni-type-it:stateUniversity</y:NodeLabel>
@@ -735,7 +801,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n421">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="20.0" width="20.0" x="2240" y="692"/>
+          <y:Geometry height="20.0" width="20.0" x="2240" y="796"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="266.0" x="-123.0" xml:space="preserve" y="-27.8">uni-type-it:nonStateUniversity</y:NodeLabel>
@@ -746,7 +812,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n422">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="20.0" width="20.0" x="2240" y="744"/>
+          <y:Geometry height="20.0" width="20.0" x="2240" y="848"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="274.6" x="-127.30000000000001" xml:space="preserve" y="-27.8">uni-type-it:telematicUniversity</y:NodeLabel>
@@ -757,7 +823,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n423">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="20.0" width="20.0" x="2240" y="796"/>
+          <y:Geometry height="20.0" width="20.0" x="2240" y="900"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="283.2" x="-131.6" xml:space="preserve" y="-27.8">uni-type-it:foreignersUniversity</y:NodeLabel>
@@ -768,7 +834,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n424">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="20.0" width="20.0" x="2240" y="848"/>
+          <y:Geometry height="20.0" width="20.0" x="2240" y="952"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="274.6" x="-127.30000000000001" xml:space="preserve" y="-27.8">uni-type-it:excellenceInstitute</y:NodeLabel>
@@ -779,7 +845,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n425">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="20.0" width="20.0" x="2240" y="900"/>
+          <y:Geometry height="20.0" width="20.0" x="2240" y="1004"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="231.6" x="-105.8" xml:space="preserve" y="-27.8">uni-type-it:superiorSchool</y:NodeLabel>
@@ -790,7 +856,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n426">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="20.0" width="20.0" x="2240" y="952"/>
+          <y:Geometry height="20.0" width="20.0" x="2240" y="1056"/>
           <y:Fill color="#FF99CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="n" textColor="#000000" verticalTextPosition="bottom" visible="true" width="326.2" x="-153.1" xml:space="preserve" y="-27.8">uni-type-it:advancedDoctoralInstitute</y:NodeLabel>
@@ -798,7 +864,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:ShapeNode>
       </data>
     </node>
-    <edge id="e233" source="n410" target="n401">
+    <edge id="e237" source="n410" target="n401">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -809,7 +875,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e234" source="n410" target="n411">
+    <edge id="e238" source="n410" target="n411">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -820,7 +886,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e235" source="n411" target="n404">
+    <edge id="e239" source="n411" target="n404">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -831,7 +897,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e236" source="n420" target="n410">
+    <edge id="e240" source="n420" target="n410">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -842,7 +908,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e237" source="n420" target="n402">
+    <edge id="e241" source="n420" target="n402">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -853,7 +919,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e238" source="n420" target="n403">
+    <edge id="e242" source="n420" target="n403">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -864,7 +930,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e239" source="n421" target="n410">
+    <edge id="e243" source="n421" target="n410">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -875,7 +941,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e240" source="n421" target="n402">
+    <edge id="e244" source="n421" target="n402">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -886,7 +952,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e241" source="n421" target="n403">
+    <edge id="e245" source="n421" target="n403">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -897,7 +963,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e242" source="n422" target="n410">
+    <edge id="e246" source="n422" target="n410">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -908,7 +974,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e243" source="n422" target="n402">
+    <edge id="e247" source="n422" target="n402">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -919,7 +985,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e244" source="n422" target="n403">
+    <edge id="e248" source="n422" target="n403">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -930,7 +996,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e245" source="n423" target="n410">
+    <edge id="e249" source="n423" target="n410">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -941,7 +1007,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e246" source="n423" target="n402">
+    <edge id="e250" source="n423" target="n402">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -952,7 +1018,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e247" source="n423" target="n403">
+    <edge id="e251" source="n423" target="n403">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -963,7 +1029,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e248" source="n424" target="n410">
+    <edge id="e252" source="n424" target="n410">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -974,7 +1040,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e249" source="n424" target="n402">
+    <edge id="e253" source="n424" target="n402">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -985,7 +1051,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e250" source="n424" target="n403">
+    <edge id="e254" source="n424" target="n403">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -996,7 +1062,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e251" source="n425" target="n410">
+    <edge id="e255" source="n425" target="n410">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1007,7 +1073,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e252" source="n425" target="n402">
+    <edge id="e256" source="n425" target="n402">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1018,7 +1084,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e253" source="n425" target="n403">
+    <edge id="e257" source="n425" target="n403">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1029,7 +1095,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e254" source="n426" target="n410">
+    <edge id="e258" source="n426" target="n410">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1040,7 +1106,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e255" source="n426" target="n402">
+    <edge id="e259" source="n426" target="n402">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1051,7 +1117,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e256" source="n426" target="n403">
+    <edge id="e260" source="n426" target="n403">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1065,7 +1131,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n460">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="36.0" width="201.4" x="2129.3" y="552"/>
+          <y:Geometry height="36.0" width="201.4" x="2129.3" y="656"/>
           <y:Fill color="#CCFFCC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="181.4" x="10.0" xml:space="preserve" y="5.1">&quot;Ateneo statale&quot;@it</y:NodeLabel>
@@ -1073,7 +1139,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
         </y:ShapeNode>
       </data>
     </node>
-    <edge id="e257" source="n420" target="n460">
+    <edge id="e261" source="n420" target="n460">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1087,7 +1153,7 @@ Organization types (ours) and Italian university types (Cercauniversità / MUR)<
     <node id="n470">
       <data key="d6">
         <y:UMLNoteNode>
-          <y:Geometry height="250" width="520" x="2870" y="610"/>
+          <y:Geometry height="250" width="520" x="2870" y="714"/>
           <y:Fill color="#CCFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="234" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="l" textColor="#000000" verticalTextPosition="bottom" visible="true" width="504" x="8.0" xml:space="preserve" y="8.0">Labels (skos:prefLabel @it) – Cercauniversità
@@ -1105,12 +1171,13 @@ advancedDoctoralInstitute – Istituto di Alta Formazione
     <node id="n471">
       <data key="d6">
         <y:UMLNoteNode>
-          <y:Geometry height="190" width="520" x="2870" y="-230"/>
+          <y:Geometry height="215" width="520" x="2870" y="-230"/>
           <y:Fill color="#CCFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="174" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="l" textColor="#000000" verticalTextPosition="bottom" visible="true" width="504" x="8.0" xml:space="preserve" y="8.0">Our organization types (vocab:organization-types)
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="199" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="l" textColor="#000000" verticalTextPosition="bottom" visible="true" width="504" x="8.0" xml:space="preserve" y="8.0">Our organization types (vocab:organization-types)
 Organizations: university, researchOrganization (e.g. CNR),
-company, foundation (non-profit).
+company, foundation (non-profit), consortium
+(e.g. CINI), association (non-profit, e.g. GRIN).
 Units: school (faculty), department (narrower:
 universityDepartment, researchOrganizationDepartment),
 institute (e.g. ISTC-CNR), interdepartmentalCentre,
