@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
   <!--Created by yEd 3.25.1-->
   <key attr.name="Description" attr.type="string" for="graph" id="d0"/>
@@ -60,7 +60,7 @@
     </node>
     <node id="n4">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="44.0" width="261.1870435967303" x="-287.90366031923065" y="1283.0"/>
@@ -72,7 +72,7 @@
     </node>
     <node id="n5">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="44.0" width="261.1870435967303" x="-287.90366031923065" y="1121.0"/>
@@ -84,7 +84,7 @@
     </node>
     <node id="n6">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="44.0" width="261.1870435967303" x="-287.90366031923065" y="1175.0"/>
@@ -129,7 +129,7 @@
     </node>
     <node id="n10">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="44.0" width="334.2051850434567" x="-287.9036603192309" y="1229.0"/>
@@ -141,7 +141,7 @@
     </node>
     <node id="n11">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="44.0" width="261.1870435967303" x="-287.9036603192309" y="1359.0"/>
@@ -153,7 +153,7 @@
     </node>
     <node id="n12">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="44.0" width="261.1870435967305" x="-287.903660319231" y="883.0"/>
@@ -176,7 +176,7 @@
     </node>
     <node id="n14">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="37.46875" width="261.1870435967303" x="-287.9036603192309" y="940.265625"/>
@@ -199,7 +199,7 @@
     </node>
     <node id="n16">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="44.0" width="261.1870435967303" x="-287.90366031923077" y="1435.0"/>
@@ -223,7 +223,7 @@ tempo indeterminato"</y:NodeLabel>
     </node>
     <node id="n18">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="44.0" width="293.83882145084306" x="-287.9036603192309" y="1597.0"/>
@@ -247,7 +247,7 @@ tempo indeterminato"</y:NodeLabel>
     </node>
     <node id="n20">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="44.0" width="333.7397493000899" x="-287.9036603192312" y="1781.0"/>
@@ -271,7 +271,7 @@ tempo indeterminato"</y:NodeLabel>
     </node>
     <node id="n22">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="54.9375" width="293.83882145084306" x="-287.9036603192311" y="1645.53125"/>
@@ -317,7 +317,7 @@ tempo indeterminato"</y:NodeLabel>
     </node>
     <node id="n26">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="44.0" width="293.83882145084306" x="-287.90366031923145" y="1705.0"/>
@@ -330,7 +330,7 @@ tempo indeterminato"</y:NodeLabel>
     </node>
     <node id="n27">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="44.0" width="261.1870435967303" x="-287.90366031923145" y="1489.0"/>
@@ -343,7 +343,7 @@ non confermato"</y:NodeLabel>
     </node>
     <node id="n28">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="44.0" width="261.1870435967305" x="-287.90366031923156" y="991.0"/>
@@ -366,7 +366,7 @@ non confermato"</y:NodeLabel>
     </node>
     <node id="n30">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[UMLNote]]></data>
+      <data key="d5" xml:space="preserve">UMLNote</data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="54.9375" width="261.1870435967303" x="-287.90366031923145" y="1039.53125"/>
@@ -416,7 +416,7 @@ tempo determinato"</y:NodeLabel>
               <y:BorderStyle hasColor="false" type="line" width="1.0"/>
               <y:NodeLabel alignment="left" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="374.46474266052246" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="547.201171875" x="-257.88330078125" xml:space="preserve" y="-176.11127758026123">ac:     https://w3id.org/fossr/onto/academic-career/
 doc:    https://w3id.org/fossr/onto/documents/
-pub:    https://w3id.org/fossr/onto/publications/
+rec:    https://w3id.org/fossr/onto/bibliographic-records/
 org:    http://www.w3.org/ns/org#
 skos:   http://www.w3.org/2004/02/skos/core#
 rdf:    http://www.w3.org/1999/02/22-rdf-syntax-ns#
@@ -430,6 +430,8 @@ regime:      https://w3id.org/fossr/vocab/working-time-regimes/
 uni-type-it: https://w3id.org/fossr/vocab/it-university-types/
 vocab:  https://w3id.org/fossr/vocab/
 dct:    http://purl.org/dc/terms/
+agent:  https://w3id.org/fossr/data/agent/
+orcid:  https://orcid.org/
 :       (examples)</y:NodeLabel>
               <y:Shape type="rectangle"/>
             </y:ShapeNode>
@@ -3145,7 +3147,19 @@ ac:RegimePeriod (ac:hasRegime).</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-  </graph>
+  <node id="n990"><data key="d6"><y:UMLNoteNode>
+<y:Geometry height="250" width="700" x="-1405" y="3135"/><y:Fill color="#CCFFFF" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="234" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="l" textColor="#000000" verticalTextPosition="bottom" visible="true" width="684" x="8.0" xml:space="preserve" y="8.0">Provenance (in the TTL; not drawn)
+dct:creator agent:mur:
+  vocab:it-university-position-types (dct:contributor orcid:0000-0001-6577-5606,
+    dct:source Cercauniversità)
+  vocab:it-epr-position-types (dct:contributor orcid:0000-0001-6577-5606)
+  vocab:working-time-regimes; grade-it:fascia-1, -2, -3 (dct:source D.M. 367/2022)
+dct:creator orcid:0000-0001-6577-5606: vocab:employment-types
+File (owl:Ontology): dct:creator orcid:0000-0001-6577-5606;
+  dct:publisher agent:fossr, agent:istc-cnr (agents.ttl)</y:NodeLabel>
+</y:UMLNoteNode></data></node></graph>
   <data key="d7">
     <y:Resources/>
   </data>

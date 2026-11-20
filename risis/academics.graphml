@@ -130,7 +130,7 @@
           <y:Geometry height="44.0" width="152.2994635548544" x="-1825.5609589367841" y="679.4818818652848"/>
           <y:Fill color="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="138.6722869873047" x="6.813588283774834" xml:space="preserve" y="9.103978157043457">pub:AuthorProfile</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="138.6722869873047" x="6.813588283774834" xml:space="preserve" y="9.103978157043457">rec:AuthorProfile</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -174,7 +174,7 @@
               <y:BorderStyle hasColor="false" type="line" width="1.0"/>
               <y:NodeLabel alignment="left" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="16" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="287.2965679168701" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="b" textColor="#000000" verticalTextPosition="bottom" visible="true" width="485.7769775390625" x="-227.17120361328125" xml:space="preserve" y="-265.0543804168701">ac:     https://w3id.org/fossr/onto/academic-career/
 doc:    https://w3id.org/fossr/onto/documents/
-pub:    https://w3id.org/fossr/onto/publications/
+rec:    https://w3id.org/fossr/onto/bibliographic-records/
 org:    http://www.w3.org/ns/org#
 skos:   http://www.w3.org/2004/02/skos/core#
 rdf:    http://www.w3.org/1999/02/22-rdf-syntax-ns#
@@ -208,7 +208,7 @@ dct:    http://purl.org/dc/terms/
           <y:Geometry height="44.0" width="210.0" x="-1854.411227159357" y="1006.2655917402394"/>
           <y:Fill color="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="174.43238830566406" x="17.78380584716797" xml:space="preserve" y="9.103978157043457">pub:PublicationRecord</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="174.43238830566406" x="17.78380584716797" xml:space="preserve" y="9.103978157043457">rec:PublicationRecord</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -358,8 +358,8 @@ org:hasSubOrganization (inversa org:subOrganizationOf) – contenimento generale
    org:hasUnit ⊑ org:hasSubOrganization.
 org:transitiveSubOrganizationOf – chiusura transitiva di org:subOrganizationOf
    (es. gruppo → istituto → dipartimento CNR → CNR).
-org:classification – il tipo dell'organizzazione, come concetto SKOS di uno schema
-   (es. university, department, researchGroup, laboratory).</y:NodeLabel>
+org:classification – classificazione dell'organizzazione con un concetto SKOS; per il tipo usiamo
+   la sottoproprietà ac:hasOrganizationType (es. university, department, researchGroup, laboratory).</y:NodeLabel>
         </y:UMLNoteNode>
       </data>
     </node>
@@ -566,13 +566,15 @@ ac:PositionType, ac:EmploymentType, ac:Regime).</y:NodeLabel>
     <node id="n42">
       <data key="d6">
         <y:UMLNoteNode>
-          <y:Geometry height="96.0" width="330.0" x="899.5329390324392" y="568.3008334469594"/>
+          <y:Geometry height="132.0" width="380.0" x="899.5329390324392" y="568.3008334469594"/>
           <y:Fill color="#CCFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="80.27166748046875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="l" textColor="#000000" verticalTextPosition="bottom" visible="true" width="269.22894287109375" x="4.0" xml:space="preserve" y="7.864166259765625">Values of org:classification are concepts
-of type ac:OrganizationType (orgtype:,
-uni-type-it:): see academics-vocabularies
-.graphml / academics-vocabularies.ttl</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="116.0" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="l" textColor="#000000" verticalTextPosition="bottom" visible="true" width="370.0" x="4.0" xml:space="preserve" y="7.864166259765625">ac:hasOrganizationType ⊑ org:classification
+(as ac:hasPositionType ⊑ org:role); not functional.
+Values: concepts of type ac:OrganizationType
+(orgtype:, uni-type-it:): see academics-vocabularies
+.graphml / academics-vocabularies.ttl.
+Data without a reasoner: state org:classification too.</y:NodeLabel>
         </y:UMLNoteNode>
       </data>
     </node>
@@ -670,7 +672,7 @@ uni-type-it:): see academics-vocabularies
           <y:Geometry height="170.0" width="515.9205003326681" x="-560.0" y="-800.0"/>
           <y:Fill color="#CCFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="137.4754180908203" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="l" textColor="#000000" verticalTextPosition="bottom" visible="true" width="477.38006591796875" x="4.0" xml:space="preserve" y="16.262290954589844">Disciplinary category (concepts: academics-disciplines_vocabularies.ttl)
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="137.4754180908203" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="l" textColor="#000000" verticalTextPosition="bottom" visible="true" width="477.38006591796875" x="4.0" xml:space="preserve" y="16.262290954589844">Disciplinary category (concepts: academics-disciplines-vocabularies.ttl)
 Levels: CUN area (both systems); 2015 (D.M. 855/2015): macro-sector,
 settore concorsuale (RecruitmentField), SSD 2015; 2024 (D.M. 639/2024):
 GSD (ScientificDisciplinaryGroup), SSD 2024.
@@ -768,7 +770,7 @@ are subproperties of ac:hasScientificDisciplinarySector.</y:NodeLabel>
           </y:Path>
           <y:LineStyle color="#000080" type="line" width="1.0"/>
           <y:Arrows source="circle" target="delta"/>
-          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="centered" modelPosition="center" preferredPlacement="anywhere" ratio="0.5" textColor="#000080" verticalTextPosition="bottom" visible="true" width="165.20033264160156" x="-167.0344302769181" xml:space="preserve" y="54.43711760423855">pub:hasAuthorProfile<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="centered" modelPosition="center" preferredPlacement="anywhere" ratio="0.5" textColor="#000080" verticalTextPosition="bottom" visible="true" width="165.20033264160156" x="-167.0344302769181" xml:space="preserve" y="54.43711760423855">rec:hasAuthorProfile<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -854,7 +856,7 @@ are subproperties of ac:hasScientificDisciplinarySector.</y:NodeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="165.20033264160156" x="-183.5549099902605" xml:space="preserve" y="125.20720891142798">pub:hasAuthorProfile<y:LabelModel><y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/></y:LabelModel><y:ModelParameter><y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="10.0" distanceToCenter="false" position="center" ratio="0.7382164607112284" segment="-1"/></y:ModelParameter><y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="165.20033264160156" x="-183.5549099902605" xml:space="preserve" y="125.20720891142798">rec:hasAuthorProfile<y:LabelModel><y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/></y:LabelModel><y:ModelParameter><y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="10.0" distanceToCenter="false" position="center" ratio="0.7382164607112284" segment="-1"/></y:ModelParameter><y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -865,7 +867,7 @@ are subproperties of ac:hasScientificDisciplinarySector.</y:NodeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="165.20033264160156" x="-26.927257039385495" xml:space="preserve" y="146.32895956155699">pub:hasAuthorProfile<y:LabelModel><y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/></y:LabelModel><y:ModelParameter><y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="10.0" distanceToCenter="false" position="center" ratio="0.8785721329831291" segment="-1"/></y:ModelParameter><y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="165.20033264160156" x="-26.927257039385495" xml:space="preserve" y="146.32895956155699">rec:hasAuthorProfile<y:LabelModel><y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/></y:LabelModel><y:ModelParameter><y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="10.0" distanceToCenter="false" position="center" ratio="0.8785721329831291" segment="-1"/></y:ModelParameter><y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -905,13 +907,16 @@ are subproperties of ac:hasScientificDisciplinarySector.</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e19" source="n21" target="n24">
+    <edge id="e19" source="n21" target="n1">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="87.8" sy="0.0" tx="-94.15" ty="0.0">
+            <y:Point x="600.0" y="458.30083344695936"/>
+            <y:Point x="600.0" y="618.3008334469594"/>
+          </y:Path>
           <y:LineStyle color="#000080" type="line" width="1.0"/>
           <y:Arrows source="circle" target="delta"/>
-          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="centered" modelPosition="center" preferredPlacement="anywhere" ratio="0.5" textColor="#000080" verticalTextPosition="bottom" visible="true" width="130.41627502441406" x="115.57204729696355" xml:space="preserve" y="-12.896030681153434">org:classification<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="25.792043685913086" horizontalTextPosition="center" iconTextGap="4" modelName="centered" modelPosition="center" preferredPlacement="anywhere" ratio="0.5" textColor="#000080" verticalTextPosition="bottom" visible="true" width="181.0" x="115.57204729696355" xml:space="preserve" y="-12.896030681153434">ac:hasOrganizationType<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>

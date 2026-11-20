@@ -1,8 +1,10 @@
+@prefix agent: <https://w3id.org/fossr/data/agent/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix : <https://w3id.org/fossr/onto/academic-career/> .
 @prefix ac: <https://w3id.org/fossr/onto/academic-career/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix doc: <https://w3id.org/fossr/onto/documents/> .
-@prefix pub: <https://w3id.org/fossr/onto/publications/> .
+@prefix rec: <https://w3id.org/fossr/onto/bibliographic-records/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -13,8 +15,10 @@
 
 <https://w3id.org/fossr/onto/academic-career> a owl:Ontology ;
     rdfs:label "FOSSR Academic career module"@en ;
-    rdfs:comment "Entity-level module: scholars, their positions (service at an institution, with position type, employment type, working-time regime and disciplinary categories), the units they belong to over time, their offices, and the organizations involved. Built on the W3C Organization Ontology (org:Membership). Organizations are org:FormalOrganization and their units org:OrganizationalUnit, classified (org:classification) with concepts of type ac:OrganizationType. Generated from the academics Graffoo diagram (academics.graphml)."@en ;
-    owl:versionInfo "0.7-draft (2026-11-20)" ;
+    rdfs:comment "Entity-level module: scholars, their positions (service at an institution, with position type, employment type, working-time regime and disciplinary categories), the units they belong to over time, their offices, and the organizations involved. Built on the W3C Organization Ontology (org:Membership). Organizations are org:FormalOrganization and their units org:OrganizationalUnit, typed (ac:hasOrganizationType, a subproperty of org:classification) with concepts of type ac:OrganizationType. Generated from the academics Graffoo diagram (academics.graphml)."@en ;
+    dct:creator <https://orcid.org/0000-0001-6577-5606> ;
+    dct:publisher agent:fossr , agent:istc-cnr ;
+    owl:versionInfo "1.0-draft (2026-11-20)" ;
     owl:imports <https://w3id.org/fossr/vocab/academic-disciplines> ,
                 <https://w3id.org/fossr/vocab/academics> ,
                 <https://w3id.org/fossr/vocab/academics-organizations> .
@@ -33,11 +37,12 @@ org:FormalOrganization a owl:Class .
 org:Role a owl:Class .
 org:Site a owl:Class .
 doc:Document a owl:Class .
-pub:PublicationRecord a owl:Class .
+rec:PublicationRecord a owl:Class .
 org:member a owl:ObjectProperty .
 org:hasMembership a owl:ObjectProperty .
 org:organization a owl:ObjectProperty .
 org:role a owl:ObjectProperty .
+org:classification a owl:ObjectProperty .
 
 
 #################################################################
@@ -63,7 +68,7 @@ ac:lastName a owl:DatatypeProperty ;
 
 ac:wrote a owl:ObjectProperty ;
     rdfs:label "wrote"@en , "ha scritto"@it ;
-    rdfs:comment "Entity-level authorship: links a scholar to a document (doc:Document) they wrote. Source records are linked to scholars through pub:hasPublicationRecord instead."@en ;
+    rdfs:comment "Entity-level authorship: links a scholar to a document (doc:Document) they wrote. Source records are linked to scholars through rec:hasPublicationRecord instead."@en ;
     rdfs:domain ac:Scholar ;
     rdfs:range doc:Document .
 
@@ -169,7 +174,7 @@ ac:inPublication a owl:ObjectProperty ;
     rdfs:label "in publication"@en , "nella pubblicazione"@it ;
     rdfs:comment "Links a co-authorship relation to a publication record whose author list includes both scholars."@en ;
     rdfs:domain ac:CoAuthorshipRelation ;
-    rdfs:range pub:PublicationRecord .
+    rdfs:range rec:PublicationRecord .
 
 ac:numPapers a owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:label "number of papers"@en , "numero di pubblicazioni"@it ;
@@ -179,13 +184,25 @@ ac:numPapers a owl:DatatypeProperty , owl:FunctionalProperty ;
 
 
 #################################################################
-#    Position types, employment types, working-time regimes
+#    Organization types
 #################################################################
+
+ac:hasOrganizationType a owl:ObjectProperty ;
+    rdfs:subPropertyOf org:classification ;
+    rdfs:label "has organization type"@en , "ha tipo di organizzazione"@it ;
+    rdfs:comment "Links an organization or an organizational unit to its type, e.g. university, research organization, department, institute. Not functional: an organization can have types from several vocabularies, e.g. orgtype:university and uni-type-it:stateUniversity. Subproperty of org:classification, as ac:hasPositionType is of org:role: ORG applications see the type as a classification of the organization, while org:classification remains available for other classifications (e.g. economic sector, legal form). Data without a reasoner should state org:classification too."@en ;
+    rdfs:domain org:Organization ;
+    rdfs:range ac:OrganizationType .
 
 ac:OrganizationType a owl:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label "organization type"@en , "tipo di organizzazione"@it ;
-    rdfs:comment "Type of an organization or of an organizational unit (e.g. university, research organization, department, institute), as a SKOS concept of a controlled vocabulary (vocab:organization-types, vocab:it-university-types). Organizations are classified with org:classification. Distinct from pub:OrganizationType, which classifies the organization profiles of the data sources."@en .
+    rdfs:comment "Type of an organization or of an organizational unit (e.g. university, research organization, department, institute), as a SKOS concept of a controlled vocabulary (vocab:organization-types, vocab:it-university-types). Organizations are linked to their types with ac:hasOrganizationType (subproperty of org:classification). Distinct from rec:OrganizationType, which classifies the organization profiles of the data sources."@en .
+
+
+#################################################################
+#    Position types, employment types, working-time regimes
+#################################################################
 
 ac:PositionType a owl:Class ;
     rdfs:subClassOf org:Role , skos:Concept ;

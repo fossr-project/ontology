@@ -1,9 +1,9 @@
+@prefix agent: <https://w3id.org/fossr/data/agent/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix ac: <https://w3id.org/fossr/onto/academic-career/> .
-@prefix pub: <https://w3id.org/fossr/onto/publications/> .
 @prefix vocab: <https://w3id.org/fossr/vocab/> .
 @prefix orgtype: <https://w3id.org/fossr/vocab/organization-types/> .
 @prefix uni-type-it: <https://w3id.org/fossr/vocab/it-university-types/> .
-@prefix issuer: <https://w3id.org/fossr/data/issuer/> .
 @prefix vivo: <http://vivoweb.org/ontology/core#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -12,22 +12,10 @@
 
 <https://w3id.org/fossr/vocab/academics-organizations> a owl:Ontology ;
     rdfs:label "FOSSR controlled vocabularies: organizations"@en ;
-    dc:description "SKOS vocabularies of the FOSSR academic-career module for organizations: the FOSSR organization types (vocab:organization-types: organizations such as universities, research organizations, companies, and their units such as departments and institutes) and the Italian university types of the MUR Cercauniversità service (vocab:it-university-types), mapped to orgtype:university with skos:broadMatch. Organizations are classified with org:classification. Mappings to VIVO classes use skos:closeMatch; ROR organization types, which have no IRIs, are given in skos:note."@en ;
-    owl:versionInfo "0.1 (2026-11-19)" .
-
-
-#################################################################
-#    Issuers
-#################################################################
-
-issuer:fossr a pub:Issuer ;
-    rdfs:label "FOSSR"@en ;
-    dc:description "FOSSR project (Fostering Open Science in Social Science Research), issuer of the vocabularies it defines."@en .
-
-issuer:mur a pub:Issuer ;
-    rdfs:label "Ministero dell'Università e della Ricerca"@it , "Italian Ministry of University and Research"@en ;
-    dc:description "Italian Ministry of University and Research (MUR), issuer of the classifications of its Cercauniversità service."@en ;
-    rdfs:seeAlso <https://cercauniversita.mur.gov.it> .
+    dc:description "SKOS vocabularies of the FOSSR academic-career module for organizations: the FOSSR organization types (vocab:organization-types: organizations such as universities, research organizations, companies, and their units such as departments and institutes) and the Italian university types of the MUR Cercauniversità service (vocab:it-university-types), mapped to orgtype:university with skos:broadMatch. Organizations are linked to these concepts with ac:hasOrganizationType (subproperty of org:classification). Mappings to VIVO classes use skos:closeMatch; ROR organization types, which have no IRIs, are given in skos:note. Provenance convention: each concept scheme (the classification) has as dct:creator the agent that conceived it (e.g. the MUR, through its decrees) and as dct:source the document it comes from; this file (its formalization in SKOS) has as dct:creator its author and as dct:publisher FOSSR and ISTC-CNR. Agents are described in https://w3id.org/fossr/data/agents."@en ;
+    dct:creator <https://orcid.org/0000-0001-6577-5606> ;
+    dct:publisher agent:fossr , agent:istc-cnr ;
+    owl:versionInfo "0.4 (2026-11-20)" .
 
 
 #################################################################
@@ -36,8 +24,8 @@ issuer:mur a pub:Issuer ;
 
 vocab:organization-types a skos:ConceptScheme ;
     skos:prefLabel "Tipi di organizzazione"@it , "Organization types"@en ;
-    dc:description "Types of organizations (e.g. university, research organization, company) and of their units (e.g. department, institute, laboratory), used with org:classification. Organizations are usually org:FormalOrganization, units org:OrganizationalUnit."@en ;
-    pub:issuedBy issuer:fossr ;
+    dct:creator <https://orcid.org/0000-0001-6577-5606> ;
+    dc:description "Types of organizations (e.g. university, research organization, company) and of their units (e.g. department, institute, laboratory), used with ac:hasOrganizationType (subproperty of org:classification). Organizations are usually org:FormalOrganization, units org:OrganizationalUnit."@en ;
     skos:hasTopConcept orgtype:university ,
         orgtype:researchOrganization ,
         orgtype:company ,
@@ -157,8 +145,9 @@ orgtype:laboratory a skos:Concept , ac:OrganizationType ;
 
 vocab:it-university-types a skos:ConceptScheme ;
     skos:prefLabel "Tipologie di ateneo (Italia)"@it , "Italian university types"@en ;
+    dct:creator agent:mur ;
+    dct:source <https://cercauniversita.mur.gov.it> ;
     dc:description "Types of Italian universities in the classification of the MUR Cercauniversità service. Every concept is a narrower match of orgtype:university (skos:broadMatch). The Cercauniversità strings are kept as skos:hiddenLabel."@en ;
-    pub:issuedBy issuer:mur ;
     skos:hasTopConcept uni-type-it:stateUniversity ,
         uni-type-it:nonStateUniversity ,
         uni-type-it:telematicUniversity ,

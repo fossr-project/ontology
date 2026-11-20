@@ -1,0 +1,61 @@
+@prefix agent: <https://w3id.org/fossr/data/agent/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/fossr/data/agents> a owl:Ontology ;
+    rdfs:label "FOSSR agents"@en ;
+    dc:description "Persons and organizations cited in the provenance of the FOSSR ontology modules and vocabularies (dct:creator, dct:contributor, dct:publisher). Each agent is defined only here; the other files refer to it by its IRI."@en ;
+    dct:creator <https://orcid.org/0000-0001-6577-5606> ;
+    dct:publisher agent:fossr , agent:istc-cnr ;
+    owl:versionInfo "0.1 (2026-11-20)" .
+
+foaf:Person a owl:Class .
+foaf:Organization a owl:Class .
+foaf:name a owl:DatatypeProperty .
+foaf:homepage a owl:AnnotationProperty .
+
+
+#################################################################
+#    Persons
+#################################################################
+
+<https://orcid.org/0000-0001-6577-5606> a foaf:Person ;
+    foaf:name "Francesco Poggi" ;
+    rdfs:label "Francesco Poggi" ;
+    dc:description "Researcher at ISTC-CNR. Author of the FOSSR ontology modules and of the formalization of the vocabularies."@en .
+
+
+#################################################################
+#    Organizations
+#################################################################
+
+agent:fossr a foaf:Organization ;
+    foaf:name "FOSSR" ;
+    rdfs:label "FOSSR research infrastructure"@en , "Infrastruttura di ricerca FOSSR"@it ;
+    dc:description "FOSSR (Fostering Open Science in Social Science Research): research infrastructure for open science in the social sciences, which hosts the FOSSR knowledge graphs. Publisher of the FOSSR ontology modules and vocabularies, together with ISTC-CNR."@en .
+
+agent:istc-cnr a foaf:Organization ;
+    foaf:name "ISTC-CNR" ;
+    rdfs:label "Istituto di Scienze e Tecnologie della Cognizione (ISTC-CNR)"@it , "Institute of Cognitive Sciences and Technologies (ISTC-CNR)"@en ;
+    dc:description "Institute of the Italian National Research Council (CNR) whose data centres host the servers of the FOSSR infrastructure. Publisher of the FOSSR ontology modules and vocabularies, together with FOSSR."@en .
+
+agent:mur a foaf:Organization ;
+    foaf:name "MUR" ;
+    rdfs:label "Ministero dell'Università e della Ricerca"@it , "Ministry of University and Research"@en ;
+    dc:description "Italian Ministry of University and Research. Author, through its decrees and services, of the Italian classifications of academic disciplines, university position types and university types."@en ;
+    foaf:homepage <https://www.mur.gov.it> .
+
+agent:agid a foaf:Organization ;
+    foaf:name "AgID" ;
+    rdfs:label "Agenzia per l'Italia Digitale"@it , "Agency for Digital Italy"@en ;
+    dc:description "Italian Agency for Digital Italy. Publisher of the OntoPiA vocabulary academic-disciplines, from which the 2015 classification of academic disciplines is derived."@en ;
+    foaf:homepage <https://www.agid.gov.it> .
+
+agent:elsevier a foaf:Organization ;
+    foaf:name "Elsevier" ;
+    rdfs:label "Elsevier"@en ;
+    dc:description "Publisher of the Scopus database and author of the Scopus document type and source type classifications."@en ;
+    foaf:homepage <https://www.elsevier.com> .

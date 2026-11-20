@@ -1,10 +1,9 @@
+@prefix agent: <https://w3id.org/fossr/data/agent/> .
 @prefix ac: <https://w3id.org/fossr/onto/academic-career/> .
-@prefix pub: <https://w3id.org/fossr/onto/publications/> .
 @prefix vocab: <https://w3id.org/fossr/vocab/> .
 @prefix cunarea: <https://w3id.org/fossr/vocab/it-cun-areas/> .
 @prefix ad2015: <https://w3id.org/fossr/vocab/it-academic-disciplines-2015/> .
 @prefix ad2024: <https://w3id.org/fossr/vocab/it-academic-disciplines-2024/> .
-@prefix issuer: <https://w3id.org/fossr/data/issuer/> .
 @prefix ad: <https://w3id.org/italia/controlled-vocabulary/classifications-for-universities/academic-disciplines/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -14,18 +13,13 @@
 
 <https://w3id.org/fossr/vocab/academic-disciplines> a owl:Ontology ;
     rdfs:label "FOSSR controlled vocabularies: academic disciplines"@en ;
-    dc:description "SKOS concept schemes used by the FOSSR academic-career module for the Italian classification of academic disciplines: CUN areas (shared by both systems), the 2015 system (D.M. 855/2015: macrosettori, settori concorsuali, settori scientifico-disciplinari) and the 2024 system (D.M. 639/2024: gruppi scientifico-disciplinari and settori scientifico-disciplinari). Hierarchies use skos:broader, with skos:narrower materialised as its inverse. Each concept is typed with the class of its level (academic-career module); SSDs also with the class of their edition (ac:ScientificDisciplinarySector2015 or ac:ScientificDisciplinarySector2024), consistent with their concept scheme. 2015 concepts are derived from the AgID/OntoPiA vocabulary academic-disciplines v0.3 (CC BY 4.0), with one correction (missing skos:broader of settore concorsuale 02/B1), and linked to their AgID counterparts with skos:exactMatch; the settore concorsuale - SSD memberships have been checked against D.M. 855/2015 Allegato A; the unofficial AgID mappings to ERC panels and OECD FORD fields are not copied. 2024 concepts are taken from Allegati A (codes, Italian names, declaratorie), B (correspondences) and C (English names) of D.M. 639/2024. Each 2015 settore concorsuale and SSD is linked to its 2024 successors with dct:isReplacedBy (inverse: dct:replaces); when a 2015 concept has several successors, a skos:scopeNote states the condition."@en ;
+    dc:description "SKOS concept schemes used by the FOSSR academic-career module for the Italian classification of academic disciplines: CUN areas (shared by both systems), the 2015 system (D.M. 855/2015: macrosettori, settori concorsuali, settori scientifico-disciplinari) and the 2024 system (D.M. 639/2024: gruppi scientifico-disciplinari and settori scientifico-disciplinari). Hierarchies use skos:broader, with skos:narrower materialised as its inverse. Each concept is typed with the class of its level (academic-career module); SSDs also with the class of their edition (ac:ScientificDisciplinarySector2015 or ac:ScientificDisciplinarySector2024), consistent with their concept scheme. 2015 concepts are derived from the AgID/OntoPiA vocabulary academic-disciplines v0.3 (CC BY 4.0), with one correction (missing skos:broader of settore concorsuale 02/B1), and linked to their AgID counterparts with skos:exactMatch; the settore concorsuale - SSD memberships have been checked against D.M. 855/2015 Allegato A; the unofficial AgID mappings to ERC panels and OECD FORD fields are not copied. 2024 concepts are taken from Allegati A (codes, Italian names, declaratorie), B (correspondences) and C (English names) of D.M. 639/2024. Each 2015 settore concorsuale and SSD is linked to its 2024 successors with dct:isReplacedBy (inverse: dct:replaces); when a 2015 concept has several successors, a skos:scopeNote states the condition. Provenance convention: each concept scheme (the classification) has as dct:creator the agent that conceived it (e.g. the MUR, through its decrees) and as dct:source the document it comes from; this file (its formalization in SKOS) has as dct:creator its author and as dct:publisher FOSSR and ISTC-CNR. Agents are described in https://w3id.org/fossr/data/agents."@en ;
     dct:source <https://w3id.org/italia/controlled-vocabulary/classifications-for-universities/academic-disciplines> ,
                <https://www.mur.gov.it/it/atti-e-normativa/decreto-ministeriale-n-639-del-02-05-2024> ;
-    owl:versionInfo "0.3 (2026-11-16)" .
-
-#################################################################
-#    Issuer
-#################################################################
-
-issuer:mur a pub:Issuer ;
-    rdfs:label "Ministero dell'Università e della Ricerca"@it , "Ministry of University and Research"@en ;
-    rdfs:seeAlso <https://www.mur.gov.it> .
+    dct:creator <https://orcid.org/0000-0001-6577-5606> ;
+    dct:publisher agent:fossr , agent:istc-cnr ;
+    dct:contributor agent:agid ;
+    owl:versionInfo "0.5 (2026-11-20)" .
 
 #################################################################
 #    Concept schemes
@@ -33,15 +27,16 @@ issuer:mur a pub:Issuer ;
 
 vocab:it-cun-areas a skos:ConceptScheme ;
     skos:prefLabel "Aree CUN"@it , "CUN areas"@en ;
+    dct:creator agent:mur ;
+    dct:source <https://www.mur.gov.it/it/atti-e-normativa/decreto-ministeriale-n-639-del-02-05-2024> ;
     dc:description "The 14 scientific areas defined by the Consiglio Universitario Nazionale (CUN). They are the top level of both the 2015 and the 2024 classification of academic disciplines."@en ;
-    pub:issuedBy issuer:mur ;
     skos:hasTopConcept cunarea:01 , cunarea:02 , cunarea:03 , cunarea:04 , cunarea:05 , cunarea:06 , cunarea:07 , cunarea:08 , cunarea:09 , cunarea:10 , cunarea:11 , cunarea:12 , cunarea:13 , cunarea:14 .
 
 vocab:it-academic-disciplines-2015 a skos:ConceptScheme ;
     skos:prefLabel "Macrosettori, settori concorsuali e settori scientifico-disciplinari (D.M. 855/2015)"@it ,
                    "Macro-sectors, academic recruitment fields and scientific disciplinary sectors (Ministerial Decree 855/2015)"@en ;
+    dct:creator agent:mur ;
     dc:description "Four-level hierarchy: CUN area > macrosettore > settore concorsuale > settore scientifico-disciplinare (SSD). Settori concorsuali and macrosettori were determined by D.M. 30 October 2015 n. 855; SSDs are those of D.M. 4 October 2000 as amended. A few SSDs belong to two settori concorsuali (non-univocal correspondence), so the settore concorsuale of a scholar cannot always be derived from the SSD. Replaced by the 2024 system (D.M. 639/2024): settori concorsuali and SSDs are linked to their successors with dct:isReplacedBy; macrosettori were abolished and have no successor."@en ;
-    pub:issuedBy issuer:mur ;
     dct:source <https://www.mur.gov.it/it/aree-tematiche/universita/docenti-universitari-e-carriera-accademica/settori-concorsuali-e-settori> ;
     dct:isReplacedBy vocab:it-academic-disciplines-2024 ;
     skos:hasTopConcept cunarea:01 , cunarea:02 , cunarea:03 , cunarea:04 , cunarea:05 , cunarea:06 , cunarea:07 , cunarea:08 , cunarea:09 , cunarea:10 , cunarea:11 , cunarea:12 , cunarea:13 , cunarea:14 .
@@ -49,8 +44,8 @@ vocab:it-academic-disciplines-2015 a skos:ConceptScheme ;
 vocab:it-academic-disciplines-2024 a skos:ConceptScheme ;
     skos:prefLabel "Gruppi scientifico-disciplinari e settori scientifico-disciplinari (D.M. 639/2024)"@it ,
                    "Scientific disciplinary groups and scientific disciplinary sectors (Ministerial Decree 639/2024)"@en ;
+    dct:creator agent:mur ;
     dc:description "Three-level hierarchy: CUN area > gruppo scientifico-disciplinare (GSD) > settore scientifico-disciplinare (SSD). Determined by D.M. 2 May 2024 n. 639, which replaces the macrosettori and settori concorsuali of D.M. 855/2015 with the GSDs and updates the SSDs. Names (uppercase for GSDs, as in the decree) and declaratorie from Allegato A, English names from Allegato C; links to the 2015 concepts (dct:replaces) from Allegati A and B."@en ;
-    pub:issuedBy issuer:mur ;
     dct:source <https://www.mur.gov.it/it/atti-e-normativa/decreto-ministeriale-n-639-del-02-05-2024> ;
     dct:replaces vocab:it-academic-disciplines-2015 ;
     skos:hasTopConcept cunarea:01 , cunarea:02 , cunarea:03 , cunarea:04 , cunarea:05 , cunarea:06 , cunarea:07 , cunarea:08 , cunarea:09 , cunarea:10 , cunarea:11 , cunarea:12 , cunarea:13 , cunarea:14 .

@@ -1,3 +1,5 @@
+@prefix agent: <https://w3id.org/fossr/data/agent/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix : <https://w3id.org/fossr/onto/documents/> .
 @prefix doc: <https://w3id.org/fossr/onto/documents/> .
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
@@ -9,7 +11,10 @@
 
 <https://w3id.org/fossr/onto/documents> rdf:type owl:Ontology ;
     rdfs:label "FOSSR Documents module"@en ;
-    rdfs:comment "Entity-level module for documents (publications, project deliverables, reports, administrative documents such as minutes), independent of the data sources they are described in. Source records (e.g. Scopus or Web of Science records) are modelled in the publications module and linked to documents through pub:describes."@en .
+    rdfs:comment "Entity-level module for documents (publications, project deliverables, reports, administrative documents such as minutes), independent of the data sources they are described in. Source records (e.g. Scopus or Web of Science records) are modelled in the bibliographic-records module and linked to documents through rec:describes."@en ;
+    dct:creator <https://orcid.org/0000-0001-6577-5606> ;
+    dct:publisher agent:fossr , agent:istc-cnr ;
+    owl:versionInfo "0.2 (2026-11-20)" .
 
 #################################################################
 #    Classes
