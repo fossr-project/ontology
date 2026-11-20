@@ -4,7 +4,6 @@
 @prefix ac: <https://w3id.org/fossr/onto/academic-career/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix doc: <https://w3id.org/fossr/onto/documents/> .
-@prefix rec: <https://w3id.org/fossr/onto/bibliographic-records/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -18,7 +17,7 @@
     rdfs:comment "Entity-level module: scholars, their positions (service at an institution, with position type, employment type, working-time regime and disciplinary categories), the units they belong to over time, their offices, and the organizations involved. Built on the W3C Organization Ontology (org:Membership). Organizations are org:FormalOrganization and their units org:OrganizationalUnit, typed (ac:hasOrganizationType, a subproperty of org:classification) with concepts of type ac:OrganizationType. Generated from the academics Graffoo diagram (academics.graphml)."@en ;
     dct:creator <https://orcid.org/0000-0001-6577-5606> ;
     dct:publisher agent:fossr , agent:istc-cnr ;
-    owl:versionInfo "1.0-draft (2026-11-20)" ;
+    owl:versionInfo "1.2-draft (2026-11-20)" ;
     owl:imports <https://w3id.org/fossr/vocab/academic-disciplines> ,
                 <https://w3id.org/fossr/vocab/academics> ,
                 <https://w3id.org/fossr/vocab/academics-organizations> .
@@ -30,6 +29,7 @@
 
 skos:Concept a owl:Class .
 skos:altLabel a owl:AnnotationProperty .
+skos:notation a owl:DatatypeProperty .
 foaf:Person a owl:Class .
 org:Membership a owl:Class .
 org:Organization a owl:Class .
@@ -37,7 +37,6 @@ org:FormalOrganization a owl:Class .
 org:Role a owl:Class .
 org:Site a owl:Class .
 doc:Document a owl:Class .
-rec:PublicationRecord a owl:Class .
 org:member a owl:ObjectProperty .
 org:hasMembership a owl:ObjectProperty .
 org:organization a owl:ObjectProperty .
@@ -156,12 +155,68 @@ ac:atSite a owl:ObjectProperty , owl:FunctionalProperty ;
 
 
 #################################################################
+#    Identifiers
+#################################################################
+
+ac:identifier a owl:DatatypeProperty ;
+    rdfs:label "identifier"@en , "identificativo"@it ;
+    rdfs:comment "An identifier of a scholar in a registry or in a data source, as a string. Abstract property: data use its subproperties (ac:orcid, ac:scopusAuthorId, ac:wosResearcherId), one per kind of identifier; querying the subproperties of ac:identifier returns all the identifiers of a scholar. A new kind of identifier is added as a new subproperty. Identifiers valid only within an organization are modelled differently: ac:hasIrisId (with the university) and ac:employeeNumber (on the position)."@en ;
+    rdfs:domain ac:Scholar ;
+    rdfs:range xsd:string .
+
+ac:orcid a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:subPropertyOf ac:identifier ;
+    rdfs:label "ORCID iD"@en ;
+    rdfs:comment "ORCID iD of the scholar, in its bare form (e.g. \"0000-0001-6577-5606\", without https://orcid.org/; the format is checked in SHACL). The persistent, person-level identifier adopted at national level for researchers. One per scholar."@en ;
+    rdfs:domain ac:Scholar ;
+    rdfs:range xsd:string .
+
+ac:scopusAuthorId a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ac:identifier ;
+    rdfs:label "Scopus author ID"@en ;
+    rdfs:comment "Scopus author identifier of the scholar (e.g. \"57190000000\"). It identifies a Scopus author profile, so a scholar can have several; only the ones verified as belonging to the scholar are stated here. The same values identify the author profiles of the bibliographic-records module."@en ;
+    rdfs:domain ac:Scholar ;
+    rdfs:range xsd:string .
+
+ac:wosResearcherId a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ac:identifier ;
+    rdfs:label "Web of Science ResearcherID"@en ;
+    rdfs:comment "Web of Science ResearcherID of the scholar (e.g. \"A-1234-2010\")."@en ;
+    rdfs:domain ac:Scholar ;
+    rdfs:range xsd:string .
+
+ac:hasIrisId a owl:ObjectProperty ;
+    rdfs:label "has IRIS ID"@en , "ha ID IRIS"@it ;
+    rdfs:comment "Links a scholar to the identifier of their profile in the IRIS research information system of a university. Each university has its own IRIS installation, which assigns its own IDs: a scholar who has worked at several universities has several IRIS IDs, all still valid, and an ID is meaningful only together with its university (ac:assignedBy)."@en ;
+    rdfs:domain ac:Scholar ;
+    rdfs:range ac:InstitutionalIdentifier .
+
+ac:InstitutionalIdentifier a owl:Class ;
+    rdfs:label "institutional identifier"@en , "identificativo istituzionale"@it ;
+    rdfs:comment "An identifier assigned to a person by an organization and valid only within it, e.g. the ID of a profile in the IRIS system of a university. Its value is the skos:notation, the organization that assigned it is given by ac:assignedBy."@en ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty skos:notation ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:string ] ,
+        [ a owl:Restriction ; owl:onProperty ac:assignedBy ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass org:FormalOrganization ] .
+
+ac:assignedBy a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "assigned by"@en , "assegnato da"@it ;
+    rdfs:comment "Links an institutional identifier to the organization that assigned it, e.g. the university whose IRIS system the ID belongs to."@en ;
+    rdfs:domain ac:InstitutionalIdentifier ;
+    rdfs:range org:FormalOrganization .
+
+ac:employeeNumber a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "employee number"@en , "matricola"@it ;
+    rdfs:comment "Employee number (matricola) of the scholar at the institution of the position (ac:atInstitution), e.g. the CNR matricola. Stated on the position because it is meaningful only together with the institution; when it stays the same over several positions at the same institution, it is repeated on each."@en ;
+    rdfs:domain ac:Position ;
+    rdfs:range xsd:string .
+
+
+#################################################################
 #    Co-authorship
 #################################################################
 
 ac:CoAuthorshipRelation a owl:Class ;
     rdfs:label "co-authorship relation"@en , "relazione di coautorialità"@it ;
-    rdfs:comment "The co-authorship between two scholars: one per pair of scholars (ac:concerns, exactly two), with the publication records they share (ac:inPublication) and the number of their common publications (ac:numPapers). Derived from the author lists of the publication records; it makes co-authorship networks easy to query."@en ;
+    rdfs:comment "The co-authorship between two scholars: one per pair of scholars (ac:concerns, exactly two), with the documents they wrote together (ac:inPublication) and their number (ac:numPapers). Curated data: it can be derived from ac:wrote (two scholars who wrote the same document) and makes co-authorship networks easy to query. The source records are reached through the documents (rec:describes in the bibliographic-records module)."@en ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty ac:concerns ; owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ; owl:onClass ac:Scholar ] .
 
 ac:concerns a owl:ObjectProperty ;
@@ -172,13 +227,13 @@ ac:concerns a owl:ObjectProperty ;
 
 ac:inPublication a owl:ObjectProperty ;
     rdfs:label "in publication"@en , "nella pubblicazione"@it ;
-    rdfs:comment "Links a co-authorship relation to a publication record whose author list includes both scholars."@en ;
+    rdfs:comment "Links a co-authorship relation to a document (doc:Document) written by both scholars."@en ;
     rdfs:domain ac:CoAuthorshipRelation ;
-    rdfs:range rec:PublicationRecord .
+    rdfs:range doc:Document .
 
 ac:numPapers a owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:label "number of papers"@en , "numero di pubblicazioni"@it ;
-    rdfs:comment "Number of publications co-authored by the two scholars of a co-authorship relation. Records of different data sources describing the same publication count once, so the value can be lower than the number of ac:inPublication links."@en ;
+    rdfs:comment "Number of documents co-authored by the two scholars of a co-authorship relation, i.e. the number of their ac:inPublication links."@en ;
     rdfs:domain ac:CoAuthorshipRelation ;
     rdfs:range xsd:nonNegativeInteger .
 

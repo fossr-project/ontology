@@ -56,7 +56,7 @@ flowchart LR
   AC -- "owl:imports" --> VDIS
   PUB -- "owl:imports" --> VPUB
   AC -. "ac:wrote" .-> DOC
-  AC -. "ac:inPublication" .-> PUB
+  AC -. "ac:inPublication" .-> DOC
   PUB -. "rec:describes" .-> DOC
   PUB -. "rec:isAuthorProfileOf" .-> AC
   PHD -.-> AC
@@ -74,9 +74,9 @@ flowchart LR
 
 | Module | What it represents | Ontology IRI (prefix) | Turtle | Graffoo diagram |
 |---|---|---|---|---|
-| **Academic career** | Scholars and their careers. A *position* (`ac:Position`, an `org:Membership`) is the continuous service of a scholar at an institution (the legal entity, e.g. a university or CNR) with a given position type and employment type. Within a position, the module records dated attachments to home units (departments, institutes) and secondments, the site of work, and the working-time regime over time. Each position is placed in the Italian classification of academic disciplines (2015 system: settore concorsuale + SSD; 2024 system: GSD + SSD). The module also covers authorship of documents and co-authorship relations between scholars. | `https://w3id.org/fossr/onto/academic-career` (`ac:`) | `academics.ttl` | `academics.graphml` |
+| **Academic career** | Scholars and their careers. A *position* (`ac:Position`, an `org:Membership`) is the continuous service of a scholar at an institution (the legal entity, e.g. a university or CNR) with a given position type and employment type. Within a position, the module records dated attachments to home units (departments, institutes) and secondments, the site of work, and the working-time regime over time. Each position is placed in the Italian classification of academic disciplines (2015 system: settore concorsuale + SSD; 2024 system: GSD + SSD). Scholars carry their identifiers (ORCID, Scopus author ID, Web of Science ResearcherID as subproperties of `ac:identifier`; IRIS IDs together with the university that assigned them), and positions the employee number (matricola). The module also covers authorship of documents and co-authorship relations between scholars. | `https://w3id.org/fossr/onto/academic-career` (`ac:`) | `academics.ttl` | `academics.graphml` |
 | **Bibliographic records** | What bibliographic data sources (currently Scopus) state about publications, authors, organizations and venues: publication records with ordered author and reference lists, author profiles and names, organization profiles and their hierarchy, venues and venue issues, identifiers (DOI, Scopus ID, ORCID, ISSN, ISBN…), data sources and classifications. Every record is extracted from exactly one data source and is linked to the real-world entity it describes. | `https://w3id.org/fossr/onto/bibliographic-records` (`rec:`) | `bibliographic-records.ttl` | `bibliographic-records.graphml` |
-| **Documents** | Real-world documents (scholarly publications, project deliverables, reports, administrative documents such as minutes), independent of the data sources that describe them. | `https://w3id.org/fossr/onto/documents` (`doc:`) | `documents.ttl` | — |
+| **Documents** | Real-world documents (scholarly publications, project deliverables, reports, administrative documents such as minutes), independent of the data sources that describe them. | `https://w3id.org/fossr/onto/documents` (`doc:`) | `documents.ttl` | `documents.graphml` |
 | **PhD** *(planned)* | Doctoral education: PhD programmes, cycles, supervision and theses. | — | — | placeholder in `academics.graphml` |
 
 ## Controlled vocabularies

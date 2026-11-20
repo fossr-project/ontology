@@ -3,6 +3,7 @@
 @prefix rec: <https://w3id.org/fossr/onto/bibliographic-records/> .
 @prefix ac: <https://w3id.org/fossr/onto/academic-career/> .
 @prefix doc: <https://w3id.org/fossr/onto/documents/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -19,7 +20,7 @@
     rdfs:comment "Record-level module: records of publications, author profiles, organization profiles and venues as described by bibliographic data sources (e.g. Scopus, Web of Science). Every record states what its source says; records are linked to real-world entities (documents, scholars) through rec:describes. Controlled vocabularies (document types, source types) are in a separate file (bibliographic-records-vocabularies.ttl)."@en ;
     dct:creator <https://orcid.org/0000-0001-6577-5606> ;
     dct:publisher agent:fossr , agent:istc-cnr ;
-    owl:versionInfo "0.7 (2026-11-20), generated from bibliographic-records.graphml (formerly the publications module, prefix pub:)" ;
+    owl:versionInfo "0.8 (2026-11-20), generated from bibliographic-records.graphml (formerly the publications module, prefix pub:)" ;
     owl:imports <https://w3id.org/fossr/vocab/bibliographic-records> .
 
 
@@ -30,6 +31,7 @@
 dul:InformationObject a owl:Class .
 doc:Document a owl:Class .
 ac:Scholar a owl:Class .
+org:Organization a owl:Class .
 skos:Concept a owl:Class .
 skos:ConceptScheme a owl:Class .
 dul:isAbout a owl:ObjectProperty .
@@ -389,6 +391,20 @@ rec:hasCurrentAffiliation a owl:ObjectProperty ;
 #################################################################
 #    Object properties: organizations
 #################################################################
+
+rec:isOrganizationProfileOf a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "is organization profile of"@en ;
+    rdfs:comment "Links an organization profile to the real-world organization it describes: an institution (e.g. a university, CNR) or one of its units (e.g. a department, a CNR institute)."@en ;
+    rdfs:subPropertyOf rec:describes ;
+    rdfs:domain rec:OrganizationProfile ;
+    rdfs:range org:Organization .
+
+rec:hasOrganizationProfile a owl:ObjectProperty ;
+    rdfs:label "has organization profile"@en ;
+    rdfs:comment "Links an organization (an institution or one of its units) to one of the organization profiles describing it in a data source, e.g. a Scopus affiliation profile. An organization may have several profiles, also in the same source."@en ;
+    owl:inverseOf rec:isOrganizationProfileOf ;
+    rdfs:domain org:Organization ;
+    rdfs:range rec:OrganizationProfile .
 
 rec:hasOrganizationType a owl:ObjectProperty, owl:FunctionalProperty ;
     rdfs:label "has organization type"@en ;
