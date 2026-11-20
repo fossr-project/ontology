@@ -667,10 +667,10 @@ uni-type-it:): see academics-vocabularies
     <node id="n51">
       <data key="d6">
         <y:UMLNoteNode>
-          <y:Geometry height="170.0" width="700.0" x="-560.0" y="-800.0"/>
+          <y:Geometry height="170.0" width="515.9205003326681" x="-560.0" y="-800.0"/>
           <y:Fill color="#CCFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="137.4754180908203" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="l" textColor="#000000" verticalTextPosition="bottom" visible="true" width="477.38006591796875" x="4.0" xml:space="preserve" y="16.262290954589844">Disciplinary category (concepts: academic-disciplines_vocabularies.ttl)
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="137.4754180908203" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="l" textColor="#000000" verticalTextPosition="bottom" visible="true" width="477.38006591796875" x="4.0" xml:space="preserve" y="16.262290954589844">Disciplinary category (concepts: academics-disciplines_vocabularies.ttl)
 Levels: CUN area (both systems); 2015 (D.M. 855/2015): macro-sector,
 settore concorsuale (RecruitmentField), SSD 2015; 2024 (D.M. 639/2024):
 GSD (ScientificDisciplinaryGroup), SSD 2024.
